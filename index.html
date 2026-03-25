@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Професионални Ремонти София | 50 € Консултация</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --navy: #0d1b2e; --navy2: #162540; --navy3: #1c2e48;
+      --gold: #c9943a; --gold2: #e8b84b; --cream: #f4f0e8;
+      --white: #ffffff; --text: #1a2535; --muted: #8a9ab0;
+      --viber: #7360f2;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Jost', sans-serif; background: var(--cream); color: var(--text); line-height: 1.6; }
+
+    /* ПЛАВАЩИ БУТОНИ */
+    .floating-btns { position: fixed; bottom: 20px; right: 20px; display: flex; flex-direction: column; gap: 12px; z-index: 1000; }
+    .float-btn { width: 55px; height: 55px; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; color: white; font-size: 24px; box-shadow: 0 8px 20px rgba(0,0,0,0.3); transition: 0.3s; }
+    .btn-call { background: linear-gradient(135deg, var(--gold), var(--gold2)); color: var(--navy); animation: pulse 2s infinite; }
+    .btn-viber { background-color: var(--viber); }
+    @keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(201,148,58,0.7); } 70% { box-shadow: 0 0 0 15px rgba(201,148,58,0); } 100% { box-shadow: 0 0 0 0 rgba(201,148,58,0); } }
+
+    /* NAVIGATION */
+    nav { position: fixed; top: 0; width: 100%; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 1rem 5%; background: rgba(13,27,46,.98); backdrop-filter: blur(10px); border-bottom: 1px solid rgba(201,148,58,.2); }
+    .logo { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; color: var(--gold); font-weight: 600; }
+    .logo span { display: block; font-size: .6rem; color: var(--muted); text-transform: uppercase; letter-spacing: 2px; font-family: 'Jost'; }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a { color: #c8d6e8; text-decoration: none; font-size: .75rem; text-transform: uppercase; letter-spacing: 1px; transition: 0.3s; }
+    .nav-links a:hover { color: var(--gold); }
+
+    /* HERO SECTION */
+    .hero { min-height: 100vh; background: linear-gradient(160deg, #080f1a 0%, var(--navy) 100%); display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 120px 5% 60px; text-align: center; }
+    .hero-badge { border: 1px solid rgba(201,148,58,.4); border-radius: 30px; padding: .5rem 1.5rem; color: var(--gold2); font-size: .7rem; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 2rem; }
+    .hero h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.5rem, 8vw, 5.5rem); color: white; line-height: 1.1; margin-bottom: 1.5rem; }
+    .hero h1 .accent { color: var(--gold); display: block; }
+    .hero-sub { color: #7a90a8; max-width: 700px; margin: 0 auto 2.5rem; font-size: 1.1rem; }
+    .btn-gold { background: linear-gradient(135deg, var(--gold), var(--gold2)); color: var(--navy); padding: 1.2rem 3rem; border-radius: 3px; text-decoration: none; font-weight: 700; text-transform: uppercase; display: inline-block; box-shadow: 0 10px 30px rgba(201,148,58,0.3); transition: 0.3s; border:none; cursor:pointer; }
+
+    /* SECTIONS */
+    section { padding: 6rem 10%; }
+    .section-tag { display: block; font-size: .7rem; color: var(--gold); text-transform: uppercase; letter-spacing: 3px; margin-bottom: 1rem; text-align: center; }
+    .section-h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem, 5vw, 3rem); text-align: center; margin-bottom: 1.5rem; color: var(--navy); }
+    .gold-line { width: 60px; height: 2px; background: var(--gold); margin: 0 auto 3rem; }
+
+    /* VIDEOS */
+    .video-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+    .video-item { border: 1px solid var(--gold); border-radius: 8px; overflow: hidden; background: #000; }
+    .video-container { position: relative; padding-bottom: 56.25%; height: 0; }
+    .video-container iframe { position: absolute; top:0; left:0; width:100%; height:100%; border:none; }
+
+    /* GALLERY */
+    .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+    .gallery-item { height: 400px; position: relative; overflow: hidden; border-radius: 4px; border: 1px solid rgba(0,0,0,0.1); }
+    .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s; }
+
+    @media (max-width: 800px) {
+      section { padding: 4rem 5%; }
+      nav .nav-links { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="floating-btns">
+  <a href="viber://chat?number=%2B359877810418" class="float-btn btn-viber">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/5/5d/Viber_logo_2018.svg" width="30" alt="Viber">
+  </a>
+  <a href="tel:0877810418" class="float-btn btn-call">📞</a>
+</div>
+
+<nav>
+  <div class="logo">ТИ ПОЧИВАШ — НИЕ РЕМОНТИРАМЕ<span>Професионални Ремонти София</span></div>
+  <ul class="nav-links">
+    <li><a href="#about">Експертиза</a></li>
+    <li><a href="#videos">Видео</a></li>
+    <li><a href="#gallery">Галерия</a></li>
+    <li><a href="#contact">Контакт</a></li>
+  </ul>
+</nav>
+
+<section class="hero">
+  <span class="hero-badge">✦ Първокласна техника и прецизност</span>
+  <h1>Ти Почиваш —<br><span class="accent">Ние Ремонтираме!</span></h1>
+  <p class="hero-sub">Професионални ремонти в София с гаранция. Експертна консултация и оглед на място: <strong>50 €</strong></p>
+  <a href="#contact" class="btn-gold">Запази час за оглед</a>
+</section>
+
+<section id="videos" style="background: var(--navy3); color: white;">
+  <span class="section-tag">✦ Техника в действие</span>
+  <h2 class="section-h2" style="color:white;">Нашите инструменти и процес</h2>
+  <div class="gold-line"></div>
+  
+  <div class="video-grid">
+    <div class="video-item">
+      <div class="video-container">
+        <iframe src="https://www.youtube.com/embed/Wp8iLS5HqPM" allowfullscreen></iframe>
+      </div>
+      <p style="padding:15px; text-align:center; font-size:0.9rem;">Монтаж на гипсокартон и нивелация</p>
+    </div>
+    <div class="video-item">
+      <div class="video-container">
+        <iframe src="https://www.youtube.com/embed/Wp8iLS5HqPM" allowfullscreen></iframe>
+      </div>
+      <p style="padding:15px; text-align:center; font-size:0.9rem;">Прецизна шпакловка и шлайфане</p>
+    </div>
+    <div class="video-item">
+      <div class="video-container">
+        <iframe src="https://www.youtube.com/embed/Wp8iLS5HqPM" allowfullscreen></iframe>
+      </div>
+      <p style="padding:15px; text-align:center; font-size:0.9rem;">Финално боядисване и детайли</p>
+    </div>
+  </div>
+</section>
+
+<section id="about" style="background: white;">
+  <span class="section-tag">✦ Условия за работа</span>
+  <h2 class="section-h2">Сигурност и Прозрачност</h2>
+  <div class="gold-line"></div>
+  <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(300px, 1fr)); gap:2rem; max-width:1100px; margin:0 auto;">
+    <div style="background:var(--cream); padding:2.5rem; border-radius:4px; border-top:4px solid var(--gold);">
+      <h3 style="font-family:'Cormorant Garamond'; font-size:1.8rem; margin-bottom:1rem;">Експертен Оглед</h3>
+      <p>Професионална консултация на обекта, замерване и изготвяне на подробна оферта: <strong>50 €</strong>.</p>
+    </div>
+    <div style="background:var(--cream); padding:2.5rem; border-radius:4px; border-top:4px solid var(--gold);">
+      <h3 style="font-family:'Cormorant Garamond'; font-size:1.8rem; margin-bottom:1rem;">Писмена Гаранция</h3>
+      <p>Гарантираме за качеството на всеки квадратен метър. Използваме само най-висок клас инструменти.</p>
+    </div>
+  </div>
+</section>
+
+<section id="gallery">
+  <span class="section-tag">✦ Резултати</span>
+  <h2 class="section-h2">Галерия от обекти</h2>
+  <div class="gold-line"></div>
+  <div class="gallery-grid">
+    <div class="gallery-item"><img src="IMG_20230322_134120.jpg" alt="Ремонт 1"></div>
+    <div class="gallery-item"><img src="IMG_20260325_170739.jpg" alt="Ремонт 2"></div>
+    <div class="gallery-item"><img src="IMG_20240724_172122.jpg" alt="Ремонт 3"></div>
+  </div>
+</section>
+
+<section id="contact" style="background: var(--navy); color: white; text-align:center;">
+  <h2 class="section-h2" style="color:white;">Запазете час за оглед в София</h2>
+  <p style="margin-bottom:2rem; font-size:1.2rem;">Цена на консултация и оферта: 50 €</p>
+  <a href="tel:0877810418" style="font-size: 2.5rem; color: var(--gold); text-decoration:none; font-weight:700;">0877 810 418</a>
+  <div style="margin-top:2rem;">
+    <a href="viber://chat?number=%2B359877810418" style="background:var(--viber); color:white; padding:12px 30px; border-radius:5px; text-decoration:none; display:inline-block; font-weight:600;">ПИШЕТЕ НИ ВЪВ VIBER</a>
+  </div>
+</section>
+
+<footer style="padding:2rem; text-align:center; background:#050a12; color:#3a5070; font-size:0.8rem;">
+  © 2026 Траян Иванов - Професионални Ремонти София.
+</footer>
+
+</body>
+</html>
