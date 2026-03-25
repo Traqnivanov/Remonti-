@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ти Почиваш – Ние Ремонтираме | София</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --navy: #0d1b2e; --navy2: #162540; --gold: #c9943a; --gold2: #e8b84b; --cream: #f4f0e8; --white: #ffffff; --text: #1a2535; --light-text: #6a7a8a; --viber: #7360f2;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Jost', sans-serif; background: var(--cream); color: var(--text); overflow-x: hidden; line-height: 1.6; }
+
+    /* FLOATING BUTTONS */
+    .floating-btns { position: fixed; bottom: 20px; right: 20px; display: flex; flex-direction: column; gap: 12px; z-index: 1000; }
+    .float-btn { width: 55px; height: 55px; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; color: white; font-size: 24px; box-shadow: 0 8px 20px rgba(0,0,0,0.3); transition: 0.3s; }
+    .btn-call { background: var(--gold); animation: pulse 2s infinite; }
+    .btn-viber { background-color: var(--viber); }
+    @keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(201,148,58,0.7); } 70% { box-shadow: 0 0 0 15px rgba(201,148,58,0); } 100% { box-shadow: 0 0 0 0 rgba(201,148,58,0); } }
+
+    /* NAVIGATION */
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 1rem 3rem; background: rgba(13,27,46,.97); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(201,148,58,.2); }
+    .logo { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; color: var(--gold); line-height: 1.2; }
+    .logo span { display: block; font-size: 0.6rem; color: var(--muted); text-transform: uppercase; letter-spacing: 2px; }
+    .nav-links { display: flex; gap: 1.5rem; list-style: none; }
+    .nav-links a { color: #c8d6e8; text-decoration: none; font-size: .75rem; text-transform: uppercase; letter-spacing: 1px; transition: 0.3s; }
+    .nav-links a:hover { color: var(--gold); }
+
+    /* HERO SECTION */
+    .hero { min-height: 100vh; background: linear-gradient(160deg, #080f1a 0%, var(--navy) 50%, #1a2f50 100%); display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 120px 20px 60px; text-align: center; position: relative; overflow: hidden; }
+    .hero h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.5rem, 7vw, 5.5rem); color: white; line-height: 1.1; font-weight: 700; }
+    .hero h1 span { color: var(--gold); display: block; }
+    .hero p { color: #a0b4cc; max-width: 650px; margin: 25px 0; font-size: 1.15rem; font-weight: 300; }
+    .btn-gold { background: linear-gradient(135deg, var(--gold), var(--gold2)); color: var(--navy); padding: 1.2rem 3rem; text-decoration: none; font-weight: 700; border-radius: 2px; text-transform: uppercase; display: inline-block; transition: 0.3s; box-shadow: 0 4px 20px rgba(201,148,58,0.3); }
+    .btn-gold:hover { transform: translateY(-3px); box-shadow: 0 8px 30px rgba(201,148,58,0.5); }
+
+    /* ADVISOR SECTION */
+    .advisor { padding: 90px 10%; background: white; position: relative; }
+    .advisor-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; max-width: 1200px; margin: 0 auto; }
+    .advisor-quote { border-left: 4px solid var(--gold); padding: 25px; background: #faf8f5; font-style: italic; font-size: 1.25rem; font-family: 'Cormorant Garamond', serif; margin: 25px 0; color: var(--navy); }
+    .advisor-warning { margin-top: 30px; padding: 20px; background: #fff8f0; border: 1px solid rgba(201,148,58,0.2); border-radius: 4px; font-size: 0.95rem; }
+
+    /* VIDEO SECTION */
+    .video-section { padding: 90px 10%; background: var(--navy2); color: white; text-align: center; }
+    .video-container { max-width: 850px; margin: 45px auto; position: relative; padding-bottom: 56.25%; height: 0; border: 3px solid var(--gold); border-radius: 8px; overflow: hidden; box-shadow: 0 20px 50px rgba(0,0,0,0.5); }
+    .video-container iframe { position: absolute; top:0; left:0; width:100%; height:100%; }
+
+    /* GALLERY SECTION */
+    .gallery { padding: 90px 10%; background: var(--white); text-align: center; }
+    .swiper { width: 100%; max-width: 900px; height: 550px; margin-top: 45px; border-radius: 8px; box-shadow: 0 15px 40px rgba(0,0,0,0.1); }
+    .swiper-slide img { width: 100%; height: 100%; object-fit: cover; }
+
+    /* SERVICES SECTION */
+    .services { padding: 90px 10%; background: var(--cream); text-align: center; }
+    .service-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; margin-top: 50px; max-width: 1200px; margin-left: auto; margin-right: auto; }
+    .service-card { background: white; padding: 40px 30px; border-bottom: 4px solid var(--gold); text-align: left; transition: 0.3s; }
+    .service-card:hover { transform: translateY(-10px); box-shadow: 0 15px 35px rgba(0,0,0,0.08); }
+    .service-card h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; color: var(--navy); margin-bottom: 15px; font-weight: 700; }
+    .service-card p { font-size: 0.95rem; color: var(--light-text); font-weight: 300; }
+    .original-tag { background: var(--navy); color: var(--gold); font-size: 0.7rem; padding: 4px 10px; text-transform: uppercase; font-weight: 700; letter-spacing: 1px; display: inline-block; margin-bottom: 15px; }
+
+    /* BONUS SECTION */
+    .bonuses { padding: 90px 10%; background: var(--navy); color: white; text-align: center; }
+    .bonus-box { border: 2px dashed var(--gold); padding: 50px; max-width: 750px; margin: 0 auto; border-radius: 12px; background: rgba(255,255,255,0.02); }
+    .bonus-box h2 { font-family: 'Cormorant Garamond', serif; font-size: 2.5rem; color: var(--gold2); margin-bottom: 25px; }
+    .bonus-item { margin: 20px 0; }
+    .bonus-item h4 { font-size: 1.8rem; color: white; }
+    .bonus-item p { color: var(--gold2); font-size: 1.2rem; }
+
+    /* FOOTER / CONTACT */
+    footer { background: #060d18; color: white; padding: 80px 20px; text-align: center; border-top: 1px solid rgba(201,148,58,0.2); }
+    footer h2 { font-size: clamp(2rem, 5vw, 3.5rem); margin-bottom: 25px; font-family: 'Cormorant Garamond', serif; color: var(--gold); }
+    .btn-viber-big { background: var(--viber); color: white; padding: 18px 45px; text-decoration: none; border-radius: 5px; font-weight: 700; display: inline-block; transition: 0.3s; font-size: 1.1rem; }
+    .btn-viber-big:hover { transform: scale(1.05); box-shadow: 0 10px 25px rgba(115, 96, 242, 0.4); }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      .advisor-inner { grid-template-columns: 1fr; }
+      nav { padding: 1rem 1.5rem; }
+      .nav-links { display: none; }
+      .swiper { height: 350px; }
+      .hero h1 { font-size: 3rem; }
+      .advisor, .video-section, .gallery, .services, .bonuses { padding: 60px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="floating-btns">
+  <a href="viber://chat?number=%2B359877810418" class="float-btn btn-viber" title="Viber Чат">💬</a>
+  <a href="tel:0877810418" class="float-btn btn-call" title="Обади се">📞</a>
+</div>
+
+<nav>
+  <div class="logo">ТИ ПОЧИВАШ — НИЕ РЕМОНТИРАМЕ<span>Професионални Ремонти София</span></div>
+  <ul class="nav-links">
+    <li><a href="#advisor">Съвет</a></li>
+    <li><a href="#video">Обекти</a></li>
+    <li><a href="#gallery">Снимки</a></li>
+    <li><a href="#services">Услуги</a></li>
+    <li><a href="#bonuses">Бонуси</a></li>
+  </ul>
+</nav>
+
+<section class="hero">
+  <span style="color:var(--gold2); text-transform:uppercase; letter-spacing:3px; font-size:0.8rem; margin-bottom:15px;">✦ Майсторска работа с гаранция ✦</span>
+  <h1>Ти Почиваш —<span>Ние Ремонтираме!</span></h1>
+  <p>Забравете за стреса и безкрайните разправии. Доверете се на професионално отношение в гр. София и влезте в готов, чист и уютен дом.</p>
+  <div style="margin-top:30px;">
+    <a href="tel:0877810418" class="btn-gold">БЕЗПЛАТЕН ОГЛЕД И КОНСУЛТАЦИЯ</a>
+  </div>
+  <p style="margin-top:25px; font-size:0.9rem; opacity:0.8;">📍 Обслужваме София и региона</p>
+</section>
+
+<section class="advisor" id="advisor">
+  <div class="advisor-inner">
+    <div>
+      <h2 style="font-family:'Cormorant Garamond'; font-size: 3rem; color:var(--navy);">Безплатен и честен съвет</h2>
+      <div class="advisor-quote">
+        „Напълно безпристрастно и във ваша полза ще ви дам безценни съвети — точно от какво се нуждае вашият ремонт, без да преплащате за излишни процедури.“
+      </div>
+      <p style="color:var(--light-text); font-size:1.05rem;">Преди да започнете какъвто и да е ремонт, е важно да знаете реалната последователност. Аз ще ви обясня всичко стъпка по стъпка, за да имате пълна яснота и сигурност.</p>
+      <div class="advisor-warning">
+        <strong>⚠️ Внимание:</strong> Много майстори предлагат ненужни дейности само за да вдигнат цената. С моята консултация ще платите точно за това, от което имате нужда.
+      </div>
+    </div>
+    <div style="background:var(--cream); padding: 40px; border-radius: 8px; border: 1px solid #e0d8cc;">
+      <h3 style="margin-bottom:25px; font-family:'Cormorant Garamond'; font-size:1.8rem;">Защо да ни се доверите?</h3>
+      <ul style="list-style:none; line-height:2.8; font-size:1.1rem; color:var(--navy);">
+        <li>✅ <strong>БЕЗПЛАТЕН ОГЛЕД</strong> и консултация</li>
+        <li>✅ <strong>ПИСМЕНА ГАРАНЦИЯ</strong> за качество</li>
+        <li>✅ <strong>ЧИСТОТА</strong> - Предаваме обекта готов за живеене</li>
+        <li>✅ <strong>СПАЗВАНЕ НА СРОКОВЕ</strong> - Без закъснения</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="video-section" id="video">
+  <span style="color:var(--gold); text-transform:uppercase; letter-spacing:2px; font-size:0.8rem;">Доказателство за качество</span>
+  <h2 style="font-family:'Cormorant Garamond'; font-size: 2.8rem; margin-top:10px;">На живо от нашите обекти</h2>
+  <div class="video-container">
+    <iframe src="https://www.youtube.com/embed/Wp8iLS5HqPM?rel=0" frameborder="0" allowfullscreen></iframe>
+  </div>
+</section>
+
+<section class="gallery" id="gallery">
+  <h2 style="font-family:'Cormorant Garamond'; font-size: 2.8rem; color:var(--navy);">Галерия Проекти</h2>
+  <div class="swiper mySwiper">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide"><img src="IMG_20230322_134120.jpg" alt="Ремонт 1"></div>
+      <div class="swiper-slide"><img src="IMG_20260325_170739.jpg" alt="Ремонт 2"></div>
+      <div class="swiper-slide"><img src="IMG_20240724_172122.jpg" alt="Ремонт 3"></div>
+    </div>
+    <div class="swiper-button-next" style="color:var(--gold)"></div>
+    <div class="swiper-button-prev" style="color:var(--gold)"></div>
+    <div class="swiper-pagination"></div>
+  </div>
+</section>
+
+<section class="services" id="services">
+  <span style="color:var(--gold); text-transform:uppercase; letter-spacing:2px; font-size:0.8rem;">Какво изпълняваме</span>
+  <h2 style="font-family:'Cormorant Garamond'; font-size: 3rem; margin: 15px 0 50px;">Нашите Услуги</h2>
+  <div class="service-grid">
+    <div class="service-card">
+      <h3>Шпакловка и Боядисване</h3>
+      <p>Постигаме максимална гладкост и здравина на основата. Подготвяме стените така, че боята да стои отлично, без видими дефекти и драскотини, съобразявайки се с реалното състояние на стените.</p>
+    </div>
+    <div class="service-card">
+      <h3>Гипсокартон и Тавани</h3>
+      <p>Професионално изправяне на стени и тавани, изграждане на прегради и растерни тавани с подобрена изолация без излишно оскъпяване.</p>
+    </div>
+    <div class="service-card">
+      <h3>ВиК и Електро услуги</h3>
+      <p>Цялостна подмяна на инсталации, монтаж на санитария, смесители, душ кабини и осветителни тела по проект.</p>
+    </div>
+    <div class="service-card" style="background:#fffcf5;">
+      <span class="original-tag">Оригинално</span>
+      <h3>Финални щрихи</h3>
+      <p>Ние не си тръгваме, докато всичко не е по местата си! Монтираме вашите лампи, корнизи, огледала и аксесоари, за да влезете в напълно завършен дом.</p>
+    </div>
+  </div>
+</section>
+
+<section class="bonuses" id="bonuses">
+  <div class="bonus-box">
+    <h2>🎁 СПЕЦИАЛНИ БОНУСИ</h2>
+    <div class="bonus-item">
+      <h4>50 € БОНУС</h4>
+      <p>за всеки нов клиент към настоящия проект</p>
+    </div>
+    <div style="width:60px; height:1px; background:rgba(201,148,58,0.5); margin:30px auto;"></div>
+    <div class="bonus-item">
+      <h4>-10% ОТСТЪПКА</h4>
+      <p>за всеки ваш следващ обект или препоръка</p>
+    </div>
+  </div>
+</section>
+
+<footer id="contact">
+  <span style="color:var(--gold2); text-transform:uppercase; letter-spacing:3px; font-size:0.9rem;">Свържете се с мен</span>
+  <h2>0877 810 418</h2>
+  <div style="margin: 40px 0;">
+    <a href="viber://chat?number=%2B359877810418" class="btn-viber-big">ОТВОРИ VIBER ЧАТ</a>
+  </div>
+  <p style="opacity:0.6; font-weight:300;">© 2026 Траян Иванов – Професионални Ремонти София. <br>Всички права запазени.</p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script>
+  const swiper = new Swiper(".mySwiper", {
+    loop: true,
+    speed: 1000,
+    autoplay: { delay: 4000, disableOnInteraction: false },
+    pagination: { el: ".swiper-pagination", clickable: true },
+    navigation: { nextEl: ".swiper-button-next", prevEl: ".swiper-button-prev" },
+  });
+</script>
+
+</body>
+</html>
