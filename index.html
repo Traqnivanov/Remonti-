@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ти Почиваш - Ние Ремонтираме | Безплатен Оглед София</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+  <style>
+    :root { --navy: #0d1b2e; --gold: #c9943a; --viber: #7360f2; --cream: #f4f0e8; }
+    body { font-family: 'Segoe UI', Arial, sans-serif; margin: 0; background: var(--cream); color: #333; overflow-x: hidden; }
+    
+    /* Floating Contact Buttons */
+    .float-btn { position: fixed; right: 20px; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; z-index: 1000; text-decoration: none; box-shadow: 0 4px 15px rgba(0,0,0,0.3); transition: 0.3s; }
+    .btn-viber { bottom: 90px; background: var(--viber); }
+    .btn-call { bottom: 20px; background: var(--gold); animation: pulse 2s infinite; }
+    @keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(201,148,58,0.7); } 70% { box-shadow: 0 0 0 15px rgba(201,148,58,0); } 100% { box-shadow: 0 0 0 0 rgba(201,148,58,0); } }
+
+    /* Hero Section */
+    .hero { background: linear-gradient(rgba(13,27,46,0.9), rgba(13,27,46,0.9)), url('https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&q=80') center/cover; color: white; padding: 120px 20px; text-align: center; }
+    .hero h1 { font-size: clamp(2rem, 5vw, 3.5rem); margin-bottom: 10px; color: var(--gold); }
+    .hero p { font-size: 1.2rem; max-width: 700px; margin: 0 auto 30px; }
+    .badge { background: #e74c3c; color: white; padding: 10px 20px; border-radius: 50px; display: inline-block; font-weight: bold; margin-bottom: 20px; }
+
+    /* Sections */
+    section { padding: 60px 5%; max-width: 1200px; margin: 0 auto; text-align: center; }
+    h2 { font-size: 2.2rem; color: var(--navy); margin-bottom: 30px; position: relative; padding-bottom: 15px; }
+    h2::after { content: ''; width: 60px; height: 3px; background: var(--gold); position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); }
+
+    /* Video & Gallery Sliders */
+    .swiper { width: 100%; padding-bottom: 50px; }
+    .video-card { background: #000; border-radius: 12px; overflow: hidden; border: 2px solid var(--gold); }
+    .video-container { position: relative; padding-bottom: 56.25%; height: 0; }
+    .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
+    .gallery-img { width: 100%; height: 450px; object-fit: cover; border-radius: 12px; }
+
+    /* Contact Card */
+    .contact-card { background: var(--navy); color: white; padding: 40px; border-radius: 15px; margin-top: 40px; }
+    .contact-card a { color: var(--gold); text-decoration: none; font-size: 2rem; font-weight: bold; }
+
+    @media (max-width: 768px) { .gallery-img { height: 300px; } }
+  </style>
+</head>
+<body>
+
+<a href="viber://chat?number=%2B359877810418" class="float-btn btn-viber" title="Viber">💬</a>
+<a href="tel:0877810418" class="float-btn btn-call" title="Обаждане">📞</a>
+
+<header class="hero">
+  <div class="badge">🎁 СПЕЦИАЛЕН БОНУС: 50 €</div>
+  <h1>Ти Почиваш - Ние Ремонтираме!</h1>
+  <p>Професионални ремонти в София и региона. Вземете 50 € бонус към вашия проект!</p>
+  <div style="font-size: 1.5rem; color: #2ecc71; font-weight: bold; margin-top: 20px;">✓ БЕЗПЛАТЕН ОГЛЕД И КОНСУЛТАЦИЯ</div>
+</header>
+
+<section id="videos">
+  <h2>На Живо от Нашите Обекти</h2>
+  <p style="color: #666; margin-bottom: 3rem;">Вижте реалните резултати и качеството, което предлагаме в София</p>
+  <div class="swiper videoSwiper">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">
+        <div class="video-card">
+          <div class="video-container">
+            <iframe src="https://www.youtube.com/embed/Wp8iLS5HqPM?rel=0&showinfo=0" allowfullscreen></iframe>
+          </div>
+          <p style="color:white; padding:10px;">Завършен таван със скрито осветление</p>
+        </div>
+      </div>
+      </div>
+    <div class="swiper-pagination"></div>
+  </div>
+</section>
+
+<section id="gallery">
+  <h2>Завършени Проекти</h2>
+  <div class="gold-line"></div>
+  <div class="swiper gallerySwiper">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide"><img src="IMG_20230322_134120.jpg" class="gallery-img"></div>
+      <div class="swiper-slide"><img src="IMG_20260325_170739.jpg" class="gallery-img"></div>
+      <div class="swiper-slide"><img src="IMG_20240724_172122.jpg" class="gallery-img"></div>
+    </div>
+    <div class="swiper-button-next" style="color:var(--gold)"></div>
+    <div class="swiper-button-prev" style="color:var(--gold)"></div>
+    <div class="swiper-pagination"></div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="contact-card">
+    <h2>Готови ли сте за Вашия нов дом?</h2>
+    <p>Обадете се сега за безплатен оглед и вземете своя бонус от 50 €!</p>
+    <a href="tel:0877810418">0877 810 418</a>
+    <p style="margin-top: 20px;">📍 гр. София и околността</p>
+    <div style="margin-top: 20px;">
+        <a href="viber://chat?number=%2B359877810418" style="background:var(--viber); color:white; padding:10px 25px; border-radius:5px; font-size:1.1rem; display:inline-block;">Пишете ни във Viber</a>
+    </div>
+  </div>
+</section>
+
+<footer style="text-align:center; padding:20px; color:#777; font-size:0.9rem;">
+  © 2026 Траян Иванов - Професионални Ремонти. Всички права запазени.
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script>
+  // Слайдър за Видеа
+  new Swiper(".videoSwiper", {
+    pagination: { el: ".swiper-pagination", clickable: true },
+  });
+
+  // Слайдър за Галерия
+  new Swiper(".gallerySwiper", {
+    loop: true,
+    autoplay: { delay: 4000 },
+    navigation: { nextEl: ".swiper-button-next", prevEl: ".swiper-button-prev" },
+    pagination: { el: ".swiper-pagination", clickable: true },
+  });
+</script>
+
+</body>
+</html>
