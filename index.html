@@ -1,0 +1,91 @@
+/* =========================
+   ROOT & BASE
+========================= */
+:root {
+  --navy: #0d1b2e; --navy2: #162540; --navy3: #1c2e48; --blue: #1a3a6b;
+  --gold: #c9943a; --gold2: #e8b84b; --cream: #f4f0e8; --warm: #ede8dc;
+  --white: #ffffff; --muted: #8a9ab0; --text: #1a2535; --light-text: #6a7a8a;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin:0; padding:0; }
+html { scroll-behavior: smooth; }
+body { font-family: 'Jost', sans-serif; font-size: 16px; line-height: 1.8; background: var(--cream); color: var(--text); overflow-x: hidden; }
+
+/* =========================
+   FLOATING BUTTONS
+========================= */
+.floating-btns { position: fixed; bottom: 20px; right: 20px; display:flex; flex-direction: column; gap:12px; z-index:1000; }
+.float-btn { width:55px; height:55px; border-radius:50%; display:flex; align-items:center; justify-content:center; text-decoration:none; font-size:24px; box-shadow:0 8px 20px rgba(0,0,0,0.35); transition: transform .2s; }
+.float-btn:hover { transform: scale(1.12); }
+.btn-call { background: linear-gradient(135deg,var(--gold),var(--gold2)); color: var(--navy); animation: pulse 2s infinite; }
+.btn-viber { background-color: #7360f2; color:white; }
+@keyframes pulse { 0%,100% { box-shadow:0 0 0 0 rgba(201,148,58,0.7); } 70% { box-shadow:0 0 0 15px rgba(201,148,58,0); } }
+
+/* =========================
+   NAVIGATION
+========================= */
+nav { position: fixed; top:0; left:0; right:0; z-index:100; display:flex; justify-content:space-between; align-items:center; padding:1rem 3rem; background: rgba(13,27,46,0.97); backdrop-filter: blur(12px); border-bottom:1px solid rgba(201,148,58,0.2); }
+.logo { font-family:'Cormorant Garamond', serif; font-size:1.2rem; color: var(--gold); letter-spacing:.06em; }
+.logo span { display:block; font-size:.6rem; color: var(--muted); letter-spacing:.18em; text-transform: uppercase; font-family:'Jost'; font-weight:300; margin-top:.1rem; }
+.nav-links { display:flex; gap:1.6rem; list-style:none; align-items:center; }
+.nav-links a { color:#c8d6e8; text-decoration:none; font-size:.75rem; font-weight:400; letter-spacing:.08em; text-transform:uppercase; transition: color .2s; }
+.nav-links a:hover { color: var(--gold); }
+.nav-phone { background: linear-gradient(135deg,var(--gold),var(--gold2)); color: var(--navy) !important; padding:.45rem 1.2rem; border-radius:2px; font-weight:700 !important; white-space:nowrap; }
+
+/* =========================
+   HERO SECTION
+========================= */
+.hero { min-height:100vh; background: linear-gradient(160deg,#060d18 0%,var(--navy) 55%,#1a2f50 100%); display:flex; flex-direction:column; align-items:center; justify-content:center; padding:8rem 3rem 5rem; position:relative; text-align:center; overflow:hidden; }
+.hero h1 { position:relative; z-index:1; font-family:'Cormorant Garamond', serif; font-size:clamp(3rem,7.5vw,6rem); line-height:1.05; color:var(--white); margin-bottom:.8rem; font-weight:700; }
+.hero h1 .accent { color: var(--gold); display:block; }
+.hero-sub { font-size:1rem; color:#7a90a8; font-weight:300; max-width:600px; line-height:1.9; margin:0 auto 1rem; }
+.hero-tagline { font-family:'Cormorant Garamond', serif; font-style:italic; font-size:clamp(1.2rem,2.2vw,1.5rem); color:#a0b4cc; margin-bottom:.6rem; }
+
+/* =========================
+   BUTTONS
+========================= */
+.btn-gold { background: linear-gradient(135deg,var(--gold),var(--gold2)); color: var(--navy); padding:1rem 2.8rem; border-radius:2px; text-decoration:none; font-weight:700; font-size:.95rem; letter-spacing:.07em; text-transform:uppercase; transition: transform .2s, box-shadow .2s; box-shadow:0 4px 22px rgba(201,148,58,0.4); border:none; cursor:pointer; font-family:'Jost',sans-serif; }
+.btn-gold:hover { transform:translateY(-3px); box-shadow:0 10px 32px rgba(201,148,58,0.6); }
+.btn-outline { border:1px solid rgba(201,148,58,0.45); color: var(--gold2); padding:1rem 2.8rem; border-radius:2px; text-decoration:none; font-weight:400; font-size:.95rem; letter-spacing:.07em; text-transform:uppercase; transition:border-color .2s, background .2s; }
+.btn-outline:hover { border-color: var(--gold); background: rgba(201,148,58,0.08); }
+
+/* =========================
+   HERO STATS
+========================= */
+.hero-stats { display:flex; border:1px solid rgba(201,148,58,0.2); border-radius:4px; overflow:hidden; flex-wrap:wrap; }
+.hstat { padding:1.2rem 2rem; text-align:center; border-right:1px solid rgba(201,148,58,0.15); background: rgba(255,255,255,0.04); flex:1; min-width:120px; }
+.hstat:last-child { border-right:none; }
+.hstat-num { font-family:'Cormorant Garamond', serif; font-size:2.4rem; color:var(--gold); font-weight:700; }
+.hstat-label { font-size:.68rem; color:var(--muted); text-transform:uppercase; letter-spacing:.12em; margin-top:.35rem; display:block; }
+
+/* =========================
+   GALLERY / BEFORE-AFTER SLIDER
+========================= */
+.gallery-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:1.2rem; margin-top:3rem; max-width:1200px; margin-left:auto; margin-right:auto; }
+.gallery-item { height:260px; border:1px solid rgba(255,255,255,0.08); overflow:hidden; border-radius:4px; position:relative; }
+.gallery-item img { width:100%; height:100%; object-fit:cover; transition:transform .5s; }
+.gallery-item:hover img { transform: scale(1.08); }
+
+/* =========================
+   REVIEWS
+========================= */
+.review-text { font-family:'Cormorant Garamond', serif; font-style:italic; font-size:1rem; line-height:1.8; color: var(--text); margin-bottom:1.4rem; }
+
+/* =========================
+   BENEFITS
+========================= */
+.benefit-row p { font-size:.88rem; line-height:1.8; }
+
+/* =========================
+   MOBILE RESPONSIVE
+========================= */
+@media (max-width:700px) {
+    body { font-size:15px; }
+    .section-lead, .hero-sub, .review-text, .benefit-row p { font-size:0.95rem; }
+}
+
+/* =========================
+   SMALL ANIMATION IMPROVEMENTS
+========================= */
+.gallery-item img { transition: transform .45s ease-in-out; }
+.btn-gold, .btn-outline { transition: transform .25s ease, box-shadow .25s ease; }
