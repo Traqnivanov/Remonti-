@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ти Почиваш – Ние Ремонтираме | Професионални Ремонти София</title>
+  <meta property="og:title" content="Ти Почиваш – Ние Ремонтираме | София" />
+  <meta property="og:description" content="Професионални довършителни ремонти в София. Безплатна консултация. Писмена гаранция. 0877 810 418" />
+  <meta property="og:image" content="https://traqnivanov.github.io/Remonti-/1000092374.png" />
+  <meta property="og:url" content="https://traqnivanov.github.io/Remonti-" />
+  <meta property="og:type" content="website" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Ти Почиваш — Ние Ремонтираме",
+    "description": "Професионални довършителни ремонти в София. Шпакловка, боядисване, гипсокартон, ВиК, декоративна мазилка.",
+    "telephone": "+359877810418",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "гр. София",
+      "addressLocality": "София",
+      "addressCountry": "BG"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 42.6977,
+      "longitude": 23.3219
+    },
+    "url": "https://traqnivanov.github.io/Remonti-",
+    "image": "https://traqnivanov.github.io/Remonti-/1000092374.png",
+    "priceRange": "$$"
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --gold: #d4af37;
+      --dark-bg: #0b0b0b;
+      --text-white: #f5f5f5;
+      --accent-gray: #1a1a1a;
+      --font-main: 'Montserrat', sans-serif;
+      --font-title: 'Playfair Display', serif;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background-color: var(--dark-bg);
+      color: var(--text-white);
+      font-family: var(--font-main);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+    a { text-decoration: none; color: inherit; }
+    ul { list-style: none; }
+
+    /* NAVBAR */
+    header {
+      position: fixed; top: 0; width: 100%; z-index: 1000;
+      background: rgba(11,11,11,0.9);
+      backdrop-filter: blur(5px);
+      border-bottom: 1px solid rgba(212,175,55,0.2);
+    }
+    .nav-container {
+      max-width: 1200px; margin: 0 auto;
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 1rem 2rem;
+    }
+    .logo {
+      font-family: var(--font-title); font-size: 1.5rem; color: var(--gold); font-weight: 700;
+    }
+    .nav-menu { display: flex; gap: 2rem; }
+    .nav-menu a:hover { color: var(--gold); transition: 0.3s; }
+    .nav-toggle { display: none; font-size: 1.5rem; cursor: pointer; color: var(--gold); }
+
+    /* HERO SECTION */
+    .hero {
+      height: 100vh;
+      background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('1000092374.png') center/cover no-repeat;
+      display: flex; flex-direction: column; justify-content: center; align-items: center;
+      text-align: center; padding: 0 1rem;
+    }
+    .hero h1 {
+      font-family: var(--font-title); font-size: 3.5rem; margin-bottom: 1rem; color: #fff;
+    }
+    .hero p { font-size: 1.2rem; max-width: 700px; margin-bottom: 2rem; }
+    .cta-button {
+      background-color: var(--gold); color: #000; padding: 1rem 2.5rem;
+      font-weight: 700; border-radius: 5px; transition: 0.3s;
+    }
+    .cta-button:hover { background-color: #fff; transform: translateY(-3px); }
+
+    /* SECTIONS */
+    section { padding: 5rem 2rem; max-width: 1200px; margin: 0 auto; }
+    .section-title {
+      font-family: var(--font-title); font-size: 2.5rem; text-align: center;
+      margin-bottom: 3rem; color: var(--gold);
+    }
+
+    /* SERVICES */
+    .services-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem;
+    }
+    .service-card {
+      background: var(--accent-gray); padding: 2rem; border-radius: 10px;
+      border: 1px solid transparent; transition: 0.3s; text-align: center;
+    }
+    .service-card:hover { border-color: var(--gold); transform: translateY(-5px); }
+    .service-card i { font-size: 2.5rem; color: var(--gold); margin-bottom: 1rem; }
+    .service-card h3 { margin-bottom: 1rem; font-family: var(--font-title); }
+
+    /* BEFORE/AFTER SLIDER (Simplified) */
+    .ba-container {
+      position: relative; width: 100%; max-width: 800px; margin: 0 auto;
+      aspect-ratio: 16/9; overflow: hidden; border-radius: 10px; border: 2px solid var(--gold);
+    }
+    .ba-img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; }
+    .ba-before { z-index: 2; width: 50%; border-right: 3px solid var(--gold); }
+    .ba-handle {
+      position: absolute; top: 0; bottom: 0; left: 50%; width: 4px;
+      background: var(--gold); z-index: 3; cursor: ew-resize; transform: translateX(-50%);
+    }
+
+    /* GALLERY */
+    .gallery-grid {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 1rem;
+    }
+    .gallery-item {
+      height: 250px; overflow: hidden; border-radius: 5px; cursor: pointer;
+    }
+    .gallery-item img {
+      width: 100%; height: 100%; object-fit: cover; transition: 0.5s;
+    }
+    .gallery-item:hover img { transform: scale(1.1); }
+
+    /* LIGHTBOX */
+    #lightbox {
+      position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0,0,0,0.9); display: none; justify-content: center; align-items: center;
+      z-index: 2000;
+    }
+    #lightbox img { max-width: 90%; max-height: 80%; border: 2px solid var(--gold); }
+    .close-lightbox { position: absolute; top: 20px; right: 30px; font-size: 3rem; color: #fff; cursor: pointer; }
+    .nav-arrow {
+      position: absolute; top: 50%; transform: translateY(-50%);
+      font-size: 3rem; color: #fff; cursor: pointer; background: rgba(0,0,0,0.5); padding: 10px;
+    }
+    #prevArrow { left: 20px; }
+    #nextArrow { right: 20px; }
+
+    /* CONTACT / FOOTER */
+    .contact-info {
+      text-align: center; background: var(--accent-gray); padding: 3rem; border-radius: 10px;
+    }
+    .phone-link { font-size: 2rem; color: var(--gold); font-weight: 700; display: block; margin: 1rem 0; }
+    footer { text-align: center; padding: 2rem; border-top: 1px solid rgba(212,175,55,0.2); margin-top: 3rem; font-size: 0.9rem; }
+
+    /* FAQ */
+    .faq-item { background: var(--accent-gray); margin-bottom: 1rem; border-radius: 5px; overflow: hidden; }
+    .faq-q { padding: 1rem; cursor: pointer; display: flex; justify-content: space-between; font-weight: 700; }
+    .faq-a { padding: 0 1rem; max-height: 0; overflow: hidden; transition: 0.3s ease-out; color: #ccc; }
+    .faq-item.active .faq-a { padding: 1rem; max-height: 200px; }
+
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 2.2rem; }
+      .nav-menu {
+        position: fixed; top: 70px; left: -100%; flex-direction: column;
+        background: var(--dark-bg); width: 100%; text-align: center; padding: 2rem 0;
+        transition: 0.3s; border-bottom: 1px solid var(--gold);
+      }
+      .nav-menu.active { left: 0; }
+      .nav-toggle { display: block; }
+    }
+  </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+  <header>
+    <div class="nav-container">
+      <div class="logo">ТИ ПОЧИВАШ — НИЕ РЕМОНТИРАМЕ</div>
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="#services">Услуги</a></li>
+        <li><a href="#gallery">Проекти</a></li>
+        <li><a href="#faq">Въпроси</a></li>
+        <li><a href="#contact">Контакти</a></li>
+      </ul>
+      <div class="nav-toggle" id="navToggle"><i class="fas fa-bars"></i></div>
+    </div>
+  </header>
+
+  <section class="hero">
+    <h1>Твоят нов дом започва тук</h1>
+    <p>Професионално изпълнение на довършителни ремонти. Ние превръщаме идеите в реалност, докато вие се наслаждавате на свободното си време.</p>
+    <a href="tel:+359877810418" class="cta-button">Поискай оферта сега</a>
+  </section>
+
+  <section id="services">
+    <h2 class="section-title">Какво правим най-добре?</h2>
+    <div class="services-grid">
+      <div class="service-card">
+        <i class="fas fa-paint-roller"></i>
+        <h3>Шпакловка и Боя</h3>
+        <p>Идеално гладки стени и прецизно нанасяне на цветове за вашия комфорт.</p>
+      </div>
+      <div class="service-card">
+        <i class="fas fa-layer-group"></i>
+        <h3>Гипсокартон</h3>
+        <p>Окачени тавани, преградни стени и фигури с модерен дизайн.</p>
+      </div>
+      <div class="service-card">
+        <i class="fas fa-faucet"></i>
+        <h3>ВиК услуги</h3>
+        <p>Цялостно изграждане и ремонт на водопроводни и канализационни инсталации.</p>
+      </div>
+      <div class="service-card">
+        <i class="fas fa-gem"></i>
+        <h3>Декоративни мазилки</h3>
+        <p>Луксозни финиши, които придават уникален характер на всяко помещение.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="before-after">
+    <h2 class="section-title">Преди и След</h2>
+    <div class="ba-container" id="baSlider">
+      <img src="1000092374.png" class="ba-img" alt="След">
+      <div class="ba-img ba-before" id="baBefore" style="background: url('1000092374.png') center/cover; filter: grayscale(1);"></div>
+      <div class="ba-handle" id="baHandle"></div>
+    </div>
+    <p style="text-align:center; margin-top:1rem; color:var(--gold);">Плъзнете лентата, за да видите разликата</p>
+  </section>
+
+  <section id="gallery">
+    <h2 class="section-title">Нашите Проекти</h2>
+    <div class="gallery-grid" id="galleryGrid">
+      <div class="gallery-item"><img src="1000092374.png" alt="Ремонт 1"></div>
+      <div class="gallery-item"><img src="1000092374.png" alt="Ремонт 2"></div>
+      <div class="gallery-item"><img src="1000092374.png" alt="Ремонт 3"></div>
+      <div class="gallery-item"><img src="1000092374.png" alt="Ремонт 4"></div>
+    </div>
+  </section>
+
+  <section id="faq">
+    <h2 class="section-title">Често задавани въпроси</h2>
+    <div class="faq-item">
+      <div class="faq-q">Предлагате ли писмена гаранция? <i class="fas fa-plus"></i></div>
+      <div class="faq-a">Да, за всеки ремонт издаваме договор с ясни срокове и гаранционен период за извършените дейности.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Как се определя цената? <i class="fas fa-plus"></i></div>
+      <div class="faq-a">Цената се формира след безплатен оглед и обсъждане на вашите изисквания и материали.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Работите ли в почивните дни? <i class="fas fa-plus"></i></div>
+      <div class="faq-a">Графикът ни е гъвкав и винаги се стремим да завършим обекта в най-кратките възможни срокове.</div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="contact-info">
+      <h2 class="section-title">Готови ли сте за промяна?</h2>
+      <p>Свържете се с нас за безплатна консултация и оглед в рамките на София.</p>
+      <a href="tel:+359877810418" class="phone-link">0877 810 418</a>
+      <p>Локация: гр. София</p>
+    </div>
+  </section>
+
+  <div id="lightbox">
+    <span class="close-lightbox">&times;</span>
+    <span class="nav-arrow" id="prevArrow">&lt;</span>
+    <img src="" id="lightboxImg">
+    <span class="nav-arrow" id="nextArrow">&gt;</span>
+  </div>
+
+  <footer>
+    <p>&copy; 2024 Ти Почиваш – Ние Ремонтираме. Всички права запазени.</p>
+  </footer>
+
+  <script>
+    const navToggle = document.getElementById('navToggle');
+    const navMenu = document.getElementById('navMenu');
+    navToggle.addEventListener('click', () => navMenu.classList.toggle('active'));
+
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightboxImg');
+    const galleryItems = Array.from(document.querySelectorAll('.gallery-item img'));
+    let currentIndex = 0;
+
+    function showPhoto(index) {
+      if (index < 0) index = galleryItems.length - 1;
+      if (index >= galleryItems.length) index = 0;
+      currentIndex = index;
+      lightboxImg.src = galleryItems[currentIndex].src;
+    }
+
+    galleryItems.forEach((img, index) => {
+      img.addEventListener('click', () => {
+        lightbox.style.display = 'flex';
+        showPhoto(index);
+        document.body.style.overflow = 'hidden';
+      });
+    });
+
+    document.querySelector('.close-lightbox').addEventListener('click', () => {
+      lightbox.style.display = 'none';
+      document.body.style.overflow = '';
+    });
+
+    document.getElementById('prevArrow').addEventListener('click', (e) => { e.stopPropagation(); showPhoto(currentIndex - 1); });
+    document.getElementById('nextArrow').addEventListener('click', (e) => { e.stopPropagation(); showPhoto(currentIndex + 1); });
+
+    lightbox.addEventListener('click', (e) => {
+      if (e.target === lightbox) { lightbox.style.display = 'none'; document.body.style.overflow = ''; }
+    });
+
+    window.addEventListener('keydown', (e) => {
+      if (lightbox.style.display === 'flex') {
+        if (e.key === 'Escape') { lightbox.style.display = 'none'; document.body.style.overflow = ''; }
+        if (e.key === 'ArrowRight') showPhoto(currentIndex + 1);
+        if (e.key === 'ArrowLeft') showPhoto(currentIndex - 1);
+      }
+    });
+
+    const slider = document.getElementById('baSlider');
+    const before = document.getElementById('baBefore');
+    const handle = document.getElementById('baHandle');
+    if (slider) {
+      let dragging = false;
+      function setPos(x) {
+        const rect = slider.getBoundingClientRect();
+        let pct = Math.min(Math.max((x - rect.left) / rect.width, 0.05), 0.95);
+        before.style.width = (pct * 100) + '%';
+        handle.style.left = (pct * 100) + '%';
+      }
+      slider.addEventListener('mousedown', e => { dragging = true; setPos(e.clientX); });
+      window.addEventListener('mouseup', () => dragging = false);
+      window.addEventListener('mousemove', e => { if (dragging) setPos(e.clientX); });
+      slider.addEventListener('touchstart', e => { dragging = true; setPos(e.touches[0].clientX); }, {passive:true});
+      window.addEventListener('touchend', () => dragging = false);
+      window.addEventListener('touchmove', e => { if (dragging) setPos(e.touches[0].clientX); }, {passive:true});
+    }
+
+    document.querySelectorAll('.faq-q').forEach(q => {
+      q.addEventListener('click', () => q.parentElement.classList.toggle('active'));
+    });
+  </script>
+</body>
+</html>
