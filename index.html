@@ -1,0 +1,906 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ти Почиваш – Ние Ремонтираме | Професионални Ремонти София</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --navy: #0d1b2e;
+      --navy2: #162540;
+      --navy3: #1c2e48;
+      --blue: #1a3a6b;
+      --gold: #c9943a;
+      --gold2: #e8b84b;
+      --cream: #f4f0e8;
+      --warm: #ede8dc;
+      --white: #ffffff;
+      --muted: #8a9ab0;
+      --text: #1a2535;
+      --light-text: #6a7a8a;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Jost', sans-serif; background: var(--cream); color: var(--text); overflow-x: hidden; }
+
+    /* ══ FLOATING BUTTONS ══ */
+    .floating-btns { position: fixed; bottom: 20px; right: 20px; display: flex; flex-direction: column; gap: 12px; z-index: 1000; }
+    .float-btn { width: 55px; height: 55px; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; color: white; font-size: 24px; box-shadow: 0 8px 20px rgba(0,0,0,0.3); }
+    .btn-call { background: linear-gradient(135deg, var(--gold), var(--gold2)); color: var(--navy); animation: pulse 2s infinite; }
+    .btn-wa { background-color: #25D366; }
+    @keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(201,148,58,0.7); } 70% { box-shadow: 0 0 0 15px rgba(201,148,58,0); } 100% { box-shadow: 0 0 0 0 rgba(201,148,58,0); } }
+
+    /* ══ NAV ══ */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 1rem 3rem;
+      background: rgba(13,27,46,.97);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(201,148,58,.2);
+    }
+    .logo { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; color: var(--gold); letter-spacing: .06em; line-height: 1.2; }
+    .logo span { display: block; font-size: .6rem; color: var(--muted); letter-spacing: .18em; text-transform: uppercase; font-family: 'Jost', sans-serif; font-weight: 300; margin-top: .1rem; }
+    .nav-links { display: flex; gap: 1.8rem; list-style: none; }
+    .nav-links a { color: #c8d6e8; text-decoration: none; font-size: .78rem; font-weight: 400; letter-spacing: .08em; text-transform: uppercase; transition: color .2s; }
+    .nav-links a:hover { color: var(--gold); }
+    .nav-phone { background: linear-gradient(135deg, var(--gold), var(--gold2)); color: var(--navy) !important; padding: .45rem 1.2rem; border-radius: 2px; font-weight: 600 !important; white-space: nowrap; }
+
+    /* ══ HERO ══ */
+    .hero {
+      min-height: 100vh;
+      background: linear-gradient(160deg, #080f1a 0%, var(--navy) 50%, #1a2f50 100%);
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      padding: 8rem 3rem 5rem; position: relative; overflow: hidden; text-align: center;
+    }
+    .hero-bg-lines {
+      position: absolute; inset: 0; pointer-events: none;
+      background:
+        radial-gradient(ellipse at 15% 60%, rgba(201,148,58,.13) 0%, transparent 50%),
+        radial-gradient(ellipse at 85% 25%, rgba(26,58,107,.4) 0%, transparent 50%),
+        repeating-linear-gradient(90deg, transparent, transparent 80px, rgba(201,148,58,.025) 80px, rgba(201,148,58,.025) 81px),
+        repeating-linear-gradient(0deg, transparent, transparent 80px, rgba(201,148,58,.025) 80px, rgba(201,148,58,.025) 81px);
+    }
+    .hero::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 1px; background: linear-gradient(90deg, transparent, var(--gold), transparent); }
+
+    .hero-badge {
+      position: relative; z-index: 1;
+      display: inline-flex; align-items: center; gap: .6rem;
+      border: 1px solid rgba(201,148,58,.35); border-radius: 30px;
+      padding: .45rem 1.5rem; margin-bottom: 2.2rem;
+      font-size: .7rem; letter-spacing: .18em; text-transform: uppercase; color: var(--gold2);
+    }
+    .hero h1 {
+      position: relative; z-index: 1;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(3.2rem, 7.5vw, 6rem);
+      line-height: 1.05; color: var(--white); margin-bottom: .8rem; font-weight: 700;
+    }
+    .hero h1 .accent { color: var(--gold); display: block; }
+    .hero-tagline {
+      position: relative; z-index: 1;
+      font-family: 'Cormorant Garamond', serif; font-style: italic;
+      font-size: clamp(1.1rem, 2.2vw, 1.5rem); color: #a0b4cc; margin-bottom: .6rem;
+    }
+    .hero-sub {
+      position: relative; z-index: 1;
+      font-size: .9rem; color: #7a90a8; font-weight: 300; max-width: 580px;
+      line-height: 1.8; margin: 0 auto 1rem;
+    }
+    .hero-sub strong { color: #c8d6e8; font-weight: 500; }
+    .hero-location {
+      position: relative; z-index: 1;
+      font-size: .82rem; color: var(--muted); margin-bottom: 3rem;
+      letter-spacing: .04em; line-height: 1.8;
+    }
+    .hero-location span { color: var(--gold2); font-weight: 600; }
+    .hero-btns { position: relative; z-index: 1; display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center; margin-bottom: 3.5rem; }
+
+    .btn-gold {
+      background: linear-gradient(135deg, var(--gold), var(--gold2));
+      color: var(--navy); padding: 1rem 2.5rem; border-radius: 2px;
+      text-decoration: none; font-weight: 600; font-size: .85rem;
+      letter-spacing: .07em; text-transform: uppercase;
+      transition: transform .2s, box-shadow .2s;
+      box-shadow: 0 4px 22px rgba(201,148,58,.35);
+      border: none; cursor: pointer; font-family: 'Jost', sans-serif;
+    }
+    .btn-gold:hover { transform: translateY(-3px); box-shadow: 0 10px 32px rgba(201,148,58,.5); }
+    .btn-outline {
+      border: 1px solid rgba(201,148,58,.45); color: var(--gold2);
+      padding: 1rem 2.5rem; border-radius: 2px;
+      text-decoration: none; font-weight: 400; font-size: .85rem;
+      letter-spacing: .07em; text-transform: uppercase;
+      transition: border-color .2s, background .2s;
+    }
+    .btn-outline:hover { border-color: var(--gold); background: rgba(201,148,58,.08); }
+
+    .hero-stats {
+      position: relative; z-index: 1;
+      display: flex; border: 1px solid rgba(201,148,58,.2);
+      border-radius: 4px; overflow: hidden;
+    }
+    .hstat { padding: 1.2rem 2rem; text-align: center; border-right: 1px solid rgba(201,148,58,.15); background: rgba(255,255,255,.04); }
+    .hstat:last-child { border-right: none; }
+    .hstat-num { font-family: 'Cormorant Garamond', serif; font-size: 2rem; color: var(--gold); display: block; line-height: 1; }
+    .hstat-label { font-size: .64rem; color: var(--muted); text-transform: uppercase; letter-spacing: .12em; margin-top: .35rem; display: block; }
+
+    /* ══ SHARED HELPERS ══ */
+    .section-tag { display: block; font-size: .68rem; letter-spacing: .2em; text-transform: uppercase; color: var(--gold); margin-bottom: .8rem; }
+    .section-h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem, 4vw, 2.8rem); line-height: 1.15; margin-bottom: 1rem; }
+    .section-lead { font-weight: 300; font-size: .95rem; line-height: 1.85; color: var(--light-text); }
+    .gold-line { width: 50px; height: 2px; background: linear-gradient(90deg, var(--gold), var(--gold2)); margin: 1.4rem 0; }
+    .gold-line.center { margin-left: auto; margin-right: auto; }
+
+    /* ══ ADVISOR ══ */
+    .advisor {
+      padding: 7rem 3rem;
+      background: var(--white);
+      position: relative; overflow: hidden;
+    }
+    .advisor::before {
+      content: '"'; position: absolute; top: -2rem; left: 2rem;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 20rem; color: rgba(201,148,58,.05);
+      line-height: 1; pointer-events: none; user-select: none;
+    }
+    .advisor-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: start; }
+    .advisor-left .section-h2 { color: var(--navy); }
+    .advisor-quote {
+      margin: 2rem 0;
+      border-left: 3px solid var(--gold);
+      padding: 1.2rem 1.8rem;
+      background: linear-gradient(90deg, rgba(201,148,58,.06), transparent);
+      border-radius: 0 3px 3px 0;
+    }
+    .advisor-quote p {
+      font-family: 'Cormorant Garamond', serif; font-style: italic;
+      font-size: 1.15rem; color: var(--navy); line-height: 1.7;
+    }
+    .advisor-text { font-weight: 300; font-size: .93rem; line-height: 1.9; color: var(--light-text); margin-bottom: 1rem; }
+    .advisor-text strong { color: var(--navy); font-weight: 500; }
+    .advisor-warning {
+      margin-top: 2rem; padding: 1.5rem 1.8rem;
+      background: linear-gradient(135deg, #fff8f0, #fff3e5);
+      border: 1px solid rgba(201,148,58,.3);
+      border-radius: 3px;
+    }
+    .advisor-warning p { font-size: .9rem; color: var(--text); line-height: 1.8; font-weight: 300; }
+    .advisor-warning strong { color: #b8531a; font-weight: 600; }
+
+    .advisor-services-title { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; color: var(--navy); margin-bottom: 1.5rem; }
+    .advisor-list { list-style: none; display: flex; flex-direction: column; gap: .9rem; }
+    .advisor-list li {
+      display: flex; align-items: flex-start; gap: 1rem;
+      padding: 1.1rem 1.4rem;
+      background: var(--cream); border-radius: 3px;
+      border: 1px solid var(--warm);
+      transition: border-color .2s, box-shadow .2s;
+    }
+    .advisor-list li:hover { border-color: rgba(201,148,58,.4); box-shadow: 0 4px 16px rgba(13,27,46,.07); }
+    .adv-icon { font-size: 1.3rem; flex-shrink: 0; margin-top: .1rem; }
+    .adv-content strong { display: block; font-size: .88rem; font-weight: 600; color: var(--navy); margin-bottom: .25rem; }
+    .adv-content span { font-size: .82rem; color: var(--light-text); font-weight: 300; line-height: 1.6; }
+
+    /* ══ VIDEO & GALLERY ══ */
+    .work-showcase { background: var(--navy3); color: white; padding: 7rem 3rem; }
+    .work-showcase .section-h2 { color: white; text-align: center; }
+    .work-showcase .section-tag { text-align: center; }
+    .video-container { max-width: 850px; margin: 3rem auto; border: 2px solid var(--gold); border-radius: 8px; overflow: hidden; position: relative; padding-bottom: 56.25%; height: 0; }
+    .video-container iframe { position: absolute; top:0; left:0; width:100%; height:100%; border:none; }
+    .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 3rem; }
+    .gallery-item { height: 280px; border: 1px solid rgba(255,255,255,0.1); overflow: hidden; position: relative; border-radius: 3px; }
+    .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s; }
+    .gallery-item:hover img { transform: scale(1.1); }
+
+    /* ══ SERVICES ══ */
+    .services { padding: 7rem 3rem; background: var(--cream); }
+    .services-inner { max-width: 1200px; margin: 0 auto; }
+    .services-header { text-align: center; margin-bottom: 4rem; }
+    .services-header .section-h2 { color: var(--navy); }
+    .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem; }
+    .service-card {
+      border: 1px solid #e0d8cc; border-radius: 3px; padding: 2rem 1.6rem;
+      position: relative; overflow: hidden;
+      transition: box-shadow .3s, transform .3s; background: var(--white);
+    }
+    .service-card::after {
+      content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 2px;
+      background: linear-gradient(90deg, var(--gold), var(--gold2));
+      transform: scaleX(0); transform-origin: left; transition: transform .35s;
+    }
+    .service-card:hover { box-shadow: 0 12px 36px rgba(13,27,46,.1); transform: translateY(-5px); }
+    .service-card:hover::after { transform: scaleX(1); }
+    .service-num { font-family: 'Cormorant Garamond', serif; font-size: 3rem; color: rgba(201,148,58,.15); line-height: 1; margin-bottom: .5rem; font-weight: 700; }
+    .service-icon { font-size: 1.8rem; margin-bottom: .8rem; display: block; }
+    .service-card h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; color: var(--navy); margin-bottom: .6rem; }
+    .service-card p { color: var(--light-text); font-size: .84rem; line-height: 1.7; font-weight: 300; }
+
+    /* ══ BENEFITS ══ */
+    .benefits { padding: 7rem 3rem; background: var(--navy); }
+    .benefits-inner { max-width: 1200px; margin: 0 auto; }
+    .benefits-top { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
+    .benefits-top .section-h2 { color: var(--white); }
+    .benefits-top .section-lead { color: var(--muted); }
+    .benefits-top-right { display: flex; flex-direction: column; gap: 1rem; }
+    .benefit-row {
+      display: flex; align-items: flex-start; gap: 1rem;
+      padding: 1.4rem 1.6rem;
+      background: rgba(255,255,255,.04);
+      border: 1px solid rgba(201,148,58,.15);
+      border-radius: 3px; transition: background .25s;
+    }
+    .benefit-row:hover { background: rgba(255,255,255,.07); }
+    .benefit-icon-wrap {
+      width: 44px; height: 44px; flex-shrink: 0; border-radius: 50%;
+      background: rgba(201,148,58,.12); border: 1px solid rgba(201,148,58,.3);
+      display: flex; align-items: center; justify-content: center; font-size: 1.2rem;
+    }
+    .benefit-row h4 { font-family: 'Cormorant Garamond', serif; font-size: 1.15rem; color: var(--gold2); margin-bottom: .35rem; }
+    .benefit-row p { color: #7a90a8; font-size: .84rem; line-height: 1.7; font-weight: 300; }
+
+    .guarantee-strip {
+      border: 1px solid rgba(201,148,58,.25);
+      border-radius: 4px; padding: 2rem 2.5rem;
+      background: rgba(201,148,58,.05);
+      display: flex; align-items: center; gap: 2rem; flex-wrap: wrap;
+    }
+    .guarantee-strip .big-num { font-family: 'Cormorant Garamond', serif; font-size: 4rem; color: var(--gold); line-height: 1; flex-shrink: 0; }
+    .guarantee-strip p { color: var(--muted); font-size: .9rem; line-height: 1.8; font-weight: 300; }
+    .guarantee-strip strong { color: var(--white); font-weight: 500; }
+
+    /* ══ BONUSES ══ */
+    .bonuses { padding: 7rem 3rem; background: var(--warm); }
+    .bonuses-inner { max-width: 1200px; margin: 0 auto; }
+    .bonuses-header { text-align: center; margin-bottom: 4rem; }
+    .bonuses-header .section-h2 { color: var(--navy); }
+    .bonuses-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+    .bonus-card {
+      background: var(--white); border-radius: 3px; padding: 2.5rem 2rem;
+      border: 1px solid #ddd8cc; position: relative; overflow: hidden;
+      transition: box-shadow .3s, transform .3s;
+    }
+    .bonus-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, var(--gold), var(--gold2)); }
+    .bonus-card:hover { box-shadow: 0 10px 35px rgba(13,27,46,.1); transform: translateY(-4px); }
+    .bonus-icon { font-size: 2.4rem; margin-bottom: 1.2rem; display: block; }
+    .bonus-card h4 { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; color: var(--navy); margin-bottom: .7rem; }
+    .bonus-card p { color: var(--light-text); font-size: .86rem; line-height: 1.75; font-weight: 300; }
+    .bonus-pill {
+      display: inline-block; margin-top: 1.2rem;
+      background: linear-gradient(135deg, var(--gold), var(--gold2));
+      color: var(--navy); font-size: .72rem; font-weight: 700;
+      padding: .32rem 1rem; border-radius: 20px; letter-spacing: .07em; text-transform: uppercase;
+    }
+
+    /* ══ REVIEWS ══ */
+    .reviews { padding: 7rem 3rem; background: var(--navy); }
+    .reviews-inner { max-width: 1200px; margin: 0 auto; }
+    .reviews-header { text-align: center; margin-bottom: 4rem; }
+    .reviews-header .section-h2 { color: var(--white); }
+    .reviews-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+    .review-card {
+      background: rgba(255,255,255,.04); border: 1px solid rgba(201,148,58,.2);
+      border-radius: 4px; padding: 2rem 2.2rem; position: relative;
+      transition: background .25s, border-color .25s;
+    }
+    .review-card:hover { background: rgba(255,255,255,.07); border-color: rgba(201,148,58,.45); }
+    .review-card::before {
+      content: '"'; position: absolute; top: .5rem; right: 1.5rem;
+      font-family: 'Cormorant Garamond', serif; font-size: 5rem;
+      color: rgba(201,148,58,.15); line-height: 1;
+    }
+    .review-stars { color: var(--gold); font-size: 1rem; margin-bottom: .8rem; letter-spacing: 2px; }
+    .review-text { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.05rem; color: #c8d6e8; line-height: 1.75; margin-bottom: 1.4rem; }
+    .review-author { display: flex; align-items: center; gap: .8rem; }
+    .review-avatar {
+      width: 42px; height: 42px; border-radius: 50%;
+      background: linear-gradient(135deg, var(--gold), var(--gold2));
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 700; color: var(--navy); font-size: .95rem; flex-shrink: 0;
+    }
+    .review-name { font-weight: 600; font-size: .9rem; color: var(--white); }
+    .review-meta { font-size: .72rem; color: var(--muted); margin-top: .15rem; letter-spacing: .05em; }
+
+    /* ══ SVC TAG CHIPS ══ */
+    .svc-tag {
+      display: inline-flex; align-items: center; gap: .4rem;
+      padding: .55rem 1.1rem; border-radius: 30px;
+      background: var(--white); border: 1px solid #e0d8cc;
+      font-size: .8rem; color: var(--navy); font-weight: 400;
+      transition: border-color .2s, background .2s, transform .2s;
+      cursor: default;
+    }
+    .svc-tag:hover { border-color: var(--gold); background: #fffbf3; transform: translateY(-2px); }
+
+    /* ══ COVERAGE ══ */
+    .coverage {
+      background: linear-gradient(135deg, var(--navy) 0%, var(--blue) 100%);
+      padding: 2.5rem 3rem; text-align: center;
+    }
+    .coverage p { color: #a0b4cc; font-size: .9rem; font-weight: 300; line-height: 1.9; }
+    .coverage strong { color: var(--gold2); }
+
+    /* ══ FAQ ══ */
+    .faq { padding: 7rem 3rem; background: var(--cream); }
+    .faq-inner { max-width: 800px; margin: 0 auto; }
+    .faq-inner .section-tag, .faq-inner .section-h2 { text-align: center; }
+    .faq-inner .section-h2 { color: var(--navy); }
+    .faq-item { background: white; margin-bottom: 10px; border: 1px solid #ddd; border-radius: 4px; }
+    .faq-q { padding: 1.5rem; cursor: pointer; display: flex; justify-content: space-between; font-weight: 600; gap: 1rem; }
+    .faq-q span { color: var(--gold); font-size: 1.3rem; transition: transform .3s; flex-shrink: 0; }
+    .faq-item.active .faq-q span { transform: rotate(45deg); }
+    .faq-a { max-height: 0; overflow: hidden; transition: max-height .3s; background: #fafafa; }
+    .faq-a p { padding: 1.5rem; font-size: .93rem; color: var(--light-text); line-height: 1.8; font-weight: 300; }
+    .faq-item.active .faq-a { max-height: 300px; }
+
+    /* ══ CONTACT ══ */
+    .contact { padding: 7rem 3rem; background: var(--navy2); }
+    .contact-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start; }
+    .contact-left .section-h2 { color: var(--white); }
+    .contact-left .section-lead { color: var(--muted); margin-bottom: 2.5rem; }
+    .phone-block { margin-bottom: 2.5rem; }
+    .phone-link { display: block; font-family: 'Cormorant Garamond', serif; font-size: 3rem; color: var(--gold); letter-spacing: .04em; text-decoration: none; line-height: 1; transition: color .2s; }
+    .phone-link:hover { color: var(--gold2); }
+    .phone-sub { font-size: .7rem; color: var(--muted); letter-spacing: .12em; text-transform: uppercase; margin-top: .4rem; }
+    .contact-items { display: flex; flex-direction: column; gap: 1.2rem; }
+    .contact-item { display: flex; align-items: center; gap: 1rem; }
+    .c-icon {
+      width: 42px; height: 42px; flex-shrink: 0; border-radius: 50%;
+      background: rgba(201,148,58,.1); border: 1px solid rgba(201,148,58,.3);
+      display: flex; align-items: center; justify-content: center; font-size: 1rem;
+    }
+    .c-text strong { display: block; font-size: .68rem; text-transform: uppercase; letter-spacing: .12em; color: var(--gold); margin-bottom: .2rem; }
+    .c-text span, .c-text a { color: var(--white); font-size: .9rem; text-decoration: none; font-weight: 300; }
+    .c-text a:hover { color: var(--gold2); }
+
+    .contact-form { display: flex; flex-direction: column; gap: 1rem; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .form-group { display: flex; flex-direction: column; gap: .4rem; }
+    .form-group label { font-size: .67rem; font-weight: 500; color: var(--gold); text-transform: uppercase; letter-spacing: .14em; }
+    .form-group input, .form-group textarea, .form-group select {
+      padding: .85rem 1rem; border: 1px solid rgba(201,148,58,.18); border-radius: 2px;
+      background: rgba(255,255,255,.05); font-family: 'Jost', sans-serif; font-size: .9rem;
+      color: var(--white); outline: none; transition: border-color .2s, background .2s;
+    }
+    .form-group input::placeholder, .form-group textarea::placeholder { color: #3a5070; }
+    .form-group select option { background: var(--navy2); color: var(--white); }
+    .form-group input:focus, .form-group textarea:focus, .form-group select:focus { border-color: var(--gold); background: rgba(201,148,58,.05); }
+    .form-group textarea { resize: vertical; min-height: 100px; }
+    .form-submit {
+      background: linear-gradient(135deg, var(--gold), var(--gold2));
+      color: var(--navy); border: none; padding: 1rem 2rem; border-radius: 2px;
+      font-family: 'Jost', sans-serif; font-size: .87rem; font-weight: 700;
+      cursor: pointer; letter-spacing: .08em; text-transform: uppercase;
+      transition: transform .2s, box-shadow .2s;
+      box-shadow: 0 4px 20px rgba(201,148,58,.25);
+    }
+    .form-submit:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(201,148,58,.4); }
+
+    /* ══ FOOTER ══ */
+    footer {
+      background: #060d18; padding: 2rem 3rem;
+      display: flex; align-items: center; justify-content: space-between;
+      flex-wrap: wrap; gap: 1rem;
+      border-top: 1px solid rgba(201,148,58,.12);
+    }
+    footer .logo { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; color: var(--gold); }
+    footer p { color: #2e3e50; font-size: .76rem; }
+
+    /* ══ ANIMATIONS ══ */
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(28px); } to { opacity: 1; transform: translateY(0); } }
+    .hero > * { animation: fadeUp .8s ease both; }
+    .hero-badge     { animation-delay: .1s; }
+    .hero h1        { animation-delay: .25s; }
+    .hero-tagline   { animation-delay: .38s; }
+    .hero-sub       { animation-delay: .46s; }
+    .hero-location  { animation-delay: .54s; }
+    .hero-btns      { animation-delay: .64s; }
+    .hero-stats     { animation-delay: .76s; }
+
+    /* ══ RESPONSIVE ══ */
+    @media (max-width: 1024px) {
+      .services-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 900px) {
+      nav { padding: 1rem 1.5rem; }
+      .nav-links { display: none; }
+      .hero { padding: 6rem 1.5rem 4rem; }
+      .hero-stats { flex-wrap: wrap; }
+      .advisor, .services, .benefits, .bonuses, .contact, .faq { padding: 4.5rem 1.5rem; }
+      .advisor-inner { grid-template-columns: 1fr; gap: 3rem; }
+      .benefits-top { grid-template-columns: 1fr; gap: 2.5rem; }
+      .services-grid { grid-template-columns: 1fr; }
+      .bonuses-grid { grid-template-columns: 1fr; }
+      .reviews-grid { grid-template-columns: 1fr; }
+      .contact-inner { grid-template-columns: 1fr; gap: 3rem; }
+      .form-row { grid-template-columns: 1fr; }
+      footer { justify-content: center; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ══ FLOATING BUTTONS ══ -->
+<div class="floating-btns">
+  <a href="viber://chat?number=%2B359877810418" class="float-btn btn-wa" style="background-color:#7360f2;">📲</a>
+  <a href="tel:0877810418" class="float-btn btn-call">📞</a>
+</div>
+
+<!-- ══ NAV ══ -->
+<nav>
+  <div class="logo">
+    Ти Почиваш — Ние Ремонтираме
+    <span>Довършителни ремонти · София и региона</span>
+  </div>
+  <ul class="nav-links">
+    <li><a href="#advisor">Безплатен съвет</a></li>
+    <li><a href="#video">На живо</a></li>
+    <li><a href="#services">Услуги</a></li>
+    <li><a href="#benefits">Ползи</a></li>
+    <li><a href="#bonuses">Бонуси</a></li>
+    <li><a href="#reviews">Отзиви</a></li>
+    <li><a href="#faq">Въпроси</a></li>
+    <li><a href="#contact">Контакти</a></li>
+    <li><a href="tel:0877810418" class="nav-phone">📞 0877 810 418</a></li>
+  </ul>
+</nav>
+
+<!-- ══ HERO ══ -->
+<section class="hero">
+  <div class="hero-bg-lines"></div>
+  <span class="hero-badge">✦ Майсторска работа с гаранция · София</span>
+  <h1>Ти Почиваш —<span class="accent">Ние Ремонтираме!</span></h1>
+  <p class="hero-tagline">Коректност. Качество. Договорен срок.</p>
+  <p class="hero-sub">
+    Забравете за праха, хаоса и некоректните майстори. Ние <strong>поемаме всичко</strong> —<br/>
+    от консултацията до финалното почистване. Вие получавате <strong>готов дом без нито един проблем</strong>.
+  </p>
+  <p class="hero-location">
+    📍 <span>гр. София</span> · Банкя · Бояна · Лозен и всички квартали на столицата
+  </p>
+  <div class="hero-btns">
+    <a href="tel:0877810418" class="btn-gold">📞 Обадете се сега</a>
+    <a href="#advisor" class="btn-outline">Безплатен съвет →</a>
+  </div>
+  <div class="hero-stats">
+    <div class="hstat"><span class="hstat-num">0%</span><span class="hstat-label">Стрес</span></div>
+    <div class="hstat"><span class="hstat-num">100%</span><span class="hstat-label">Гаранция</span></div>
+    <div class="hstat"><span class="hstat-num">5★</span><span class="hstat-label">Качество</span></div>
+    <div class="hstat"><span class="hstat-num">25€</span><span class="hstat-label">Бонус препоръка</span></div>
+  </div>
+</section>
+
+<!-- ══ ADVISOR ══ -->
+<section class="advisor" id="advisor">
+  <div class="advisor-inner">
+    <div class="advisor-left">
+      <span class="section-tag">✦ Нещо, което малко майстори предлагат</span>
+      <h2 class="section-h2">Безплатен<br/>и безпристрастен съвет</h2>
+      <div class="gold-line"></div>
+      <div class="advisor-quote">
+        <p>„Напълно безпристрастно и във ваша полза ще ви дам безценни съвети — как най-качествено, най-ефикасно и точно от какво се нуждае вашият ремонт според вашите изисквания и бюджет."</p>
+      </div>
+      <p class="advisor-text">
+        Преди да вземете каквото и да е решение, аз ще ви обясня <strong>точно какви процедури са необходими</strong> за вашия обект — без излишно, без скрито, само това, което наистина трябва. Работя с <strong>коректност и гаранция</strong>, спазвам договорения срок и не напускам обекта, докато вие не сте доволни.
+      </p>
+      <p class="advisor-text">
+        Когато знаете как протича строителният процес, <strong>никой не може да ви заблуди</strong> или да ви накара да платите за ненужни дейности.
+      </p>
+      <div class="advisor-warning">
+        <p>⚠️ <strong>Внимание:</strong> Много майстори предлагат напълно нереални процедури с цел финансово ощетяване. Когато ви запозная с реалните стъпки — <strong>това няма как да се случи</strong>. Ще заплатите точно за това, от което имате нужда — нищо повече.</p>
+      </div>
+    </div>
+
+    <div class="advisor-right">
+      <p class="advisor-services-title">Получавате безплатна консултация за:</p>
+      <ul class="advisor-list">
+        <li>
+          <span class="adv-icon">📋</span>
+          <div class="adv-content">
+            <strong>Последователността на строителния процес</strong>
+            <span>Каква е правилната последователност на ремонта — кое е първо, кое е второ, защо е важно.</span>
+          </div>
+        </li>
+        <li>
+          <span class="adv-icon">🧱</span>
+          <div class="adv-content">
+            <strong>Съвети за избора на строителни материали</strong>
+            <span>Кои материали са с добро качество, кои са подходящи за вашата ситуация и бюджет.</span>
+          </div>
+        </li>
+        <li>
+          <span class="adv-icon">💰</span>
+          <div class="adv-content">
+            <strong>Оценка на разходите за труд и материали</strong>
+            <span>Реална картина на цялостните разходи — без изненади и скрити суми.</span>
+          </div>
+        </li>
+        <li>
+          <span class="adv-icon">🔍</span>
+          <div class="adv-content">
+            <strong>Точна оценка на реалната процедура</strong>
+            <span>Стена, таван, под, баня, кухня, спалня, водопровод, канализация, изолация и др. — ще знаете точно какво е нужно.</span>
+          </div>
+        </li>
+        <li>
+          <span class="adv-icon">🛡️</span>
+          <div class="adv-content">
+            <strong>Защита от некоректни оферти</strong>
+            <span>Ще разберете как да разпознаете надута или нереална оферта и как да се предпазите.</span>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ══ VIDEO & GALLERY ══ -->
+<section class="work-showcase" id="video">
+  <span class="section-tag" style="text-align:center; display:block;">✦ Доказателство за качество</span>
+  <h2 class="section-h2">На живо от нашите обекти</h2>
+  <div class="gold-line center"></div>
+
+  <!-- 3 видеа -->
+  <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(300px,1fr)); gap:1.5rem; max-width:1100px; margin:3rem auto;">
+    <div class="video-container" style="margin:0;">
+      <iframe src="https://www.youtube.com/embed/WNbgtSS7hlU" title="Ремонт 1" allowfullscreen></iframe>
+    </div>
+    <div class="video-container" style="margin:0;">
+      <iframe src="https://www.youtube.com/embed/Wp8iLS5HqPM" title="Ремонт 2" allowfullscreen></iframe>
+    </div>
+    <div class="video-container" style="margin:0;">
+      <iframe src="https://www.youtube.com/embed/P9afybbtrWM" title="Ремонт 3" allowfullscreen></iframe>
+    </div>
+  </div>
+
+  <!-- 4 снимки + инфографика -->
+  <div class="gallery-grid">
+    <div class="gallery-item"><img src="https://raw.githubusercontent.com/Traqnivanov/Remonti-/main/IMG_20230322_094845.jpg" alt="Ремонт 1"></div>
+    <div class="gallery-item"><img src="https://raw.githubusercontent.com/Traqnivanov/Remonti-/main/IMG_20230322_134120.jpg" alt="Ремонт 2"></div>
+    <div class="gallery-item"><img src="https://raw.githubusercontent.com/Traqnivanov/Remonti-/main/IMG_20240724_172122.jpg" alt="Ремонт 3"></div>
+    <div class="gallery-item"><img src="https://raw.githubusercontent.com/Traqnivanov/Remonti-/main/IMG_20260325_170739.jpg" alt="Ремонт 4"></div>
+    <div class="gallery-item" style="height:340px;"><img src="https://raw.githubusercontent.com/Traqnivanov/Remonti-/main/1000092374.png" alt="Инфографика"></div>
+  </div>
+</section>
+
+<!-- ══ SERVICES ══ -->
+<section class="services" id="services">
+  <div class="services-inner">
+    <div class="services-header">
+      <span class="section-tag">✦ Основни услуги</span>
+      <h2 class="section-h2">Какво изпълняваме</h2>
+      <div class="gold-line center"></div>
+      <p class="section-lead" style="max-width:560px; margin:0 auto;">Всяка услуга се изпълнява с <strong style="color:var(--navy); font-weight:500;">договорен срок</strong>, коректност и писмена гаранция за качеството на изпълнението.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-num">01</div>
+        <span class="service-icon">🪄</span>
+        <h3>Шпакловка</h3>
+        <p>Огледално гладки стени и тавани — без вълни, без следи, без компромис. Работим с висококачествени маси за финиш, който издържа десетилетия.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-num">02</div>
+        <span class="service-icon">🎨</span>
+        <h3>Боядисване</h3>
+        <p>Интериорно и екстериорно боядисване с наситени цветове и изключителна прецизност. Работим с доказани бои за дълготраен резултат.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-num">03</div>
+        <span class="service-icon">🧱</span>
+        <h3>Гипсокартон и Окачени Тавани</h3>
+        <p>Окачени тавани, преградни стени, декоративни ниши и скрито осветление — прецизно изпълнение с отлична топло и шумоизолация.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-num">04</div>
+        <span class="service-icon">🔧</span>
+        <h3>ВиК и Електро</h3>
+        <p>Пълна подмяна или изграждане на нови инсталации по проект. Бързо реагираме при аварийни ситуации — дребни и по-сериозни ремонти.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-num">05</div>
+        <span class="service-icon">🪟</span>
+        <h3>Обръщане Дограма</h3>
+        <p>Прецизно обръщане и оформяне около врати и прозорци — шпакловка, ъгли, маскиране и довършване за безупречен вид на всеки отвор.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-num">06</div>
+        <span class="service-icon">🏛️</span>
+        <h3>Декоративна Мазилка</h3>
+        <p>Венецианска, структурна или релефна мазилка — превръщаме стените в декоративен елемент. Уникална текстура, характер и трайност, която не избледнява с годините.</p>
+      </div>
+    </div>
+
+    <!-- ══ MANY MORE SERVICES ══ -->
+    <div style="margin-top: 3rem;">
+      <p class="section-lead" style="text-align:center; margin-bottom:2rem; color:var(--light-text);">✦ И много повече услуги по вашето желание</p>
+      <div style="display:flex; flex-wrap:wrap; gap:.7rem; justify-content:center;">
+        <span class="svc-tag">🪵 Полагане на ламинат и паркет</span>
+        <span class="svc-tag">🛁 Ремонт на бани и тоалетни</span>
+        <span class="svc-tag">🪴 Облицовка с плочки и фаянс</span>
+        <span class="svc-tag">🔩 Монтаж на окачени тавани</span>
+        <span class="svc-tag">🏠 Топлоизолация на фасади</span>
+        <span class="svc-tag">🚪 Монтаж на врати и каси</span>
+        <span class="svc-tag">💡 Скрито осветление LED</span>
+        <span class="svc-tag">🪞 Монтаж на огледала и рафтове</span>
+        <span class="svc-tag">🧹 Почистване след ремонт</span>
+        <span class="svc-tag">🔨 Демонтажни работи</span>
+        <span class="svc-tag">🧱 Зидария и преградни стени</span>
+        <span class="svc-tag">🖼️ Декоративни шини и корнизи</span>
+        <span class="svc-tag">🌡️ Шумо и топлоизолация</span>
+        <span class="svc-tag">🏗️ Цялостен ремонт на апартамент</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ BENEFITS ══ -->
+<section class="benefits" id="benefits">
+  <div class="benefits-inner">
+    <div class="benefits-top">
+      <div>
+        <span class="section-tag">✦ Защо да изберете нас</span>
+        <h2 class="section-h2">Работим с отговорност и прозрачност</h2>
+        <div class="gold-line"></div>
+        <p class="section-lead" style="color:var(--muted);">Не сме поредният майстор — ние сме вашият партньор в ремонта. Поемаме всичко и ви информираме на всяка крачка.</p>
+        <div class="guarantee-strip" style="margin-top:2rem;">
+          <span class="big-num">✦</span>
+          <p><strong>Гарантираме коректност, качество и изпълнение в договорения срок.</strong> Ако нещо не е наред — връщаме се и оправяме. Без оправдания, без доплащане.</p>
+        </div>
+      </div>
+      <div class="benefits-top-right">
+        <div class="benefit-row">
+          <div class="benefit-icon-wrap">😌</div>
+          <div>
+            <h4>0% Стрес за вас</h4>
+            <p>Поемаме цялата работа и отговорност. Вие се отпускате — ние се грижим за всичко от начало до край.</p>
+          </div>
+        </div>
+        <div class="benefit-row">
+          <div class="benefit-icon-wrap">🤝</div>
+          <div>
+            <h4>Без скрити проблеми</h4>
+            <p>Пълна прозрачност — без оправдания, без изненади. Само чист, завършен резултат и ясна сметка.</p>
+          </div>
+        </div>
+        <div class="benefit-row">
+          <div class="benefit-icon-wrap">👑</div>
+          <div>
+            <h4>Гарантирано качество</h4>
+            <p>Поемаме ограничен брой обекти едновременно, за да посветим пълно внимание на вашия ремонт.</p>
+          </div>
+        </div>
+        <div class="benefit-row">
+          <div class="benefit-icon-wrap">⏱️</div>
+          <div>
+            <h4>Спазваме сроковете</h4>
+            <p>Договореният срок е свещен. Планираме точно и изпълняваме навреме — без извинения и закъснения.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ BONUSES ══ -->
+<section class="bonuses" id="bonuses">
+  <div class="bonuses-inner">
+    <div class="bonuses-header">
+      <span class="section-tag">✦ Само при нас</span>
+      <h2 class="section-h2" style="color:var(--navy)">Ексклузивни бонуси</h2>
+      <div class="gold-line center"></div>
+      <p class="section-lead" style="max-width:480px; margin:0 auto;">Допълнителна стойност, която не получавате другаде — защото за нас клиентът е на първо място.</p>
+    </div>
+    <div class="bonuses-grid">
+      <div class="bonus-card">
+        <span class="bonus-icon">✨</span>
+        <h4>Детайлно финално почистване</h4>
+        <p>Влизате в готов обект без грижи за строителни отпадъци и прах. Почистваме задълбочено след приключване на ремонта — напускаме обекта чист и готов за живеене.</p>
+        <span class="bonus-pill">Включено безплатно</span>
+      </div>
+      <div class="bonus-card">
+        <span class="bonus-icon">📸</span>
+        <h4>Фото и видео отчет</h4>
+        <p>Пълна прозрачност на всеки етап от ремонта директно на вашия телефон. Виждате какво се случва, дори когато не сте на обекта — следите процеса в реално време.</p>
+        <span class="bonus-pill">На всеки етап</span>
+      </div>
+      <div class="bonus-card" style="border: 2px solid rgba(201,148,58,.4); background: linear-gradient(135deg, #fffdf8, #fff8ec);">
+        <span class="bonus-icon">🤝</span>
+        <h4>Доверен кръг — Бонус за препоръка</h4>
+        <p>Работим предимно с <strong>доверен кръг от хора</strong> — клиенти, които ни познават и ни препоръчват на своите близки и колеги. Препоръчайте ни и получавате <strong>25€ / 50 лв.</strong> кеш бонус, <strong>10% отстъпка</strong> за следващия си ремонт, и <strong>експресно обслужване</strong> при следваща нужда — без чакане на опашка.</p>
+        <span class="bonus-pill">25€ + 10% + Приоритет</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ REVIEWS ══ -->
+<section class="reviews" id="reviews">
+  <div class="reviews-inner">
+    <div class="reviews-header">
+      <span class="section-tag">✦ Доволни клиенти</span>
+      <h2 class="section-h2">Какво казват хората</h2>
+      <div class="gold-line center"></div>
+    </div>
+    <div class="reviews-grid">
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">„Изключително доволни сме от резултата. Апартаментът изглежда като нов — шпакловката е перфектна, боята лежи равно, всичко е чисто и спретнато. Работиха бързо и без излишен шум. Определено ще ги препоръчаме на приятелите си."</p>
+        <div class="review-author">
+          <div class="review-avatar">МП</div>
+          <div>
+            <div class="review-name">Мария Петрова</div>
+            <div class="review-meta">Шпакловка и боядисване · кв. Витоша, София</div>
+          </div>
+        </div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">„Препоръчан от съсед и не съжалявам нито за минута. Обясниха ми точно какво е нужно, не ме накараха да плащам ненужни неща. Гипсокартонът около осветлението е прецизно направен. Следващия път пак при тях."</p>
+        <div class="review-author">
+          <div class="review-avatar">ГД</div>
+          <div>
+            <div class="review-name">Георги Димитров</div>
+            <div class="review-meta">Гипсокартон и ПВЦ дограма · кв. Младост, София</div>
+          </div>
+        </div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">„Izkluchitelno dovolni sme! Apartamentyt izglezda neveroqtno — shpaklovkata e idealna, boqta e napoena i ravna. Rabotiha bez prah i bez borkotiq. Zashtoto ni preporycha priqtel, poluchihme i bonusite — i dvata ostanaha dovolni!"</p>
+        <div class="review-author">
+          <div class="review-avatar">ИВ</div>
+          <div>
+            <div class="review-name">Ivan Vasilev</div>
+            <div class="review-meta">Shpaklovka i boyadisване · кv. Lyulin, Sofiq</div>
+          </div>
+        </div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">„Mnogo profesionalen ekip. Obqsniha ni vsichko predi da zapochnat — bez iznenadvaniq, bez skiti razxodi. Dekorativnata mazilka v hola e zashemetqvashta — vseki gost q zabelvqzva. Definitivno shte gi preporycha na vsichki poznati."</p>
+        <div class="review-author">
+          <div class="review-avatar">СМ</div>
+          <div>
+            <div class="review-name">Stella Mihaylova</div>
+            <div class="review-meta">Dekorativna mazilka i gipsokartоn · кv. Manastirski livadi, Sofiq</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ COVERAGE ══ -->
+<div class="coverage">
+  <p>📍 Обслужваме <strong>гр. София</strong> и всички квартали на столицата —<br/><strong>Банкя · Бояна · Лозен · Витоша</strong> и околните населени места.</p>
+</div>
+
+<!-- ══ FAQ ══ -->
+<section class="faq" id="faq">
+  <div class="faq-inner">
+    <span class="section-tag">✦ Отговори на вашите въпроси</span>
+    <h2 class="section-h2">Често задавани въпроси</h2>
+    <div class="gold-line center"></div>
+    <div class="faq-item">
+      <div class="faq-q">Променя ли се цената в процеса на работа? <span>+</span></div>
+      <div class="faq-a"><p>Категорично не. Цената, която договорим в началото след огледа, остава крайна. Промяна има само ако вие добавите нова дейност.</p></div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Кой купува материалите? <span>+</span></div>
+      <div class="faq-a"><p>Ние можем да се погрижим за всичко – доставка, качване и избор на най-добрите материали с нашите отстъпки.</p></div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Работите ли в цяла София? <span>+</span></div>
+      <div class="faq-a"><p>Да, обслужваме всички квартали на София и околните населени места — Банкя, Бояна, Лозен, Витоша и др.</p></div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Има ли писмена гаранция? <span>+</span></div>
+      <div class="faq-a"><p>Да. За всяка извършена дейност предоставяме писмена гаранция. Ако нещо не е наред — връщаме се и оправяме без доплащане.</p></div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Как протича безплатната консултация? <span>+</span></div>
+      <div class="faq-a"><p>Идваме на обекта, оглеждаме и ви обясняваме точно какво е необходимо, в каква последователност и на каква цена — без никакъв ангажимент от ваша страна.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ CONTACT ══ -->
+<section class="contact" id="contact">
+  <div class="contact-inner">
+    <div class="contact-left">
+      <span class="section-tag">✦ Свържете се с нас сега</span>
+      <h2 class="section-h2">Безплатна консултация и оферта</h2>
+      <div class="gold-line"></div>
+      <p class="section-lead">Обадете се или попълнете формата. Ще ви отговорим бързо с безплатна оферта и честен съвет — без ангажимент.</p>
+      <div class="phone-block" style="margin-top:2rem;">
+        <a href="tel:0877810418" class="phone-link">0877 810 418</a>
+        <p class="phone-sub">За безплатна консултация · Viber</p>
+      </div>
+      <div class="contact-items">
+        <div class="contact-item">
+          <div class="c-icon">📍</div>
+          <div class="c-text">
+            <strong>Работна зона</strong>
+            <span>гр. София и региона</span>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="c-icon">⏰</div>
+          <div class="c-text">
+            <strong>Работно време</strong>
+            <span>Пон – Съб: 08:00 – 19:00 · Нед: 09:00 – 16:00</span>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="c-icon">📲</div>
+          <div class="c-text">
+            <strong>Viber</strong>
+            <a href="viber://chat?number=%2B359877810418">0877 810 418</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <form class="contact-form" onsubmit="handleSubmit(event)">
+      <div class="form-row">
+        <div class="form-group">
+          <label>Вашето Име</label>
+          <input type="text" placeholder="Иван Петров" required />
+        </div>
+        <div class="form-group">
+          <label>Телефон</label>
+          <input type="tel" placeholder="08XX XXX XXX" required />
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Вид услуга</label>
+        <select>
+          <option>Шпакловка</option>
+          <option>Боядисване</option>
+          <option>Гипсокартон и Окачени Тавани</option>
+          <option>ВиК и Електро</option>
+          <option>Обръщане Дограма (врати и прозорци)</option>
+          <option>Декоративна Мазилка</option>
+          <option>Ламинат и Паркет</option>
+          <option>Плочки и Фаянс</option>
+          <option>Ремонт на баня</option>
+          <option>Безплатна консултация</option>
+          <option>Цялостен ремонт</option>
+          <option>Друго</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Съобщение</label>
+        <textarea placeholder="Опишете накратко какво ви е нужно — обект, размер, какво е нужно…"></textarea>
+      </div>
+      <button type="submit" class="form-submit">Изпрати запитване →</button>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="logo">
+    Ти Почиваш — Ние Ремонтираме
+    <span style="font-size:.58rem; color:#2e3e50; letter-spacing:.15em; font-family:'Jost',sans-serif; font-weight:300; display:block; margin-top:.2rem;">София · Банкя · Бояна · Лозен</span>
+  </div>
+  <p>© 2026 · Всички права запазени</p>
+  <p style="color:#1e2e3e;">Шпакловка · Боядисване · Гипсокартон · ВиК</p>
+</footer>
+
+<script>
+  document.querySelectorAll('.faq-q').forEach(q => {
+    q.addEventListener('click', () => {
+      q.parentElement.classList.toggle('active');
+    });
+  });
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    alert('Благодарим! Ще се свържем с вас скоро. 🏗');
+    e.target.reset();
+  }
+</script>
+</body>
+</html>
