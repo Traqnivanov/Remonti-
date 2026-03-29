@@ -66,7 +66,9 @@
     "sameAs": []
   }
   </script>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;1,9..144,300;1,9..144,400&family=Outfit:wght@200;300;400;500;600&display=swap" rel="stylesheet"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;1,9..144,300;1,9..144,400&family=Outfit:wght@200;300;400;500;600&display=swap" rel="stylesheet"/>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
@@ -94,7 +96,6 @@
 
 
     /* GOLD SHINE */
-    @keyframes gold-shine { 0% { background-position: 200%; } 100% { background-position: -200%; } }
     .gold-shine {
       background: linear-gradient(90deg, #c9943a 0%, #f5d680 25%, #fff8e8 50%, #f5d680 75%, #c9943a 100%);
       background-size: 400%;
@@ -615,6 +616,42 @@
       .gallery-item:first-child { grid-column: span 1; }
     }
   </style>
+
+<style>
+.ultra-gallery {
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:18px;
+  padding:40px 0;
+}
+.ultra-item {
+  position:relative;
+  overflow:hidden;
+  border-radius:18px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.2);
+}
+.ultra-item img, .ultra-item video {
+  width:100%;
+  height:260px;
+  object-fit:cover;
+  transition:0.6s ease;
+}
+.ultra-item:hover img,
+.ultra-item:hover video {
+  transform:scale(1.15);
+}
+.ultra-overlay {
+  position:absolute;
+  inset:0;
+  background:linear-gradient(to top, rgba(0,0,0,0.6), transparent);
+  opacity:0;
+  transition:0.4s;
+}
+.ultra-item:hover .ultra-overlay {
+  opacity:1;
+}
+</style>
+
 </head>
 <body>
 <div class="cursor" id="cursor"></div>
@@ -643,6 +680,7 @@
 <!-- MOBILE MENU -->
 <div class="mobile-menu" id="mobileMenu">
   <a href="#services" onclick="closeMobileMenu()">Услуги</a>
+  <a href="#calculator" onclick="closeMobileMenu()">Оферта</a>
   <a href="#process" onclick="closeMobileMenu()">Как работим</a>
   <a href="#video" onclick="closeMobileMenu()">Галерия</a>
   <a href="#advisor" onclick="closeMobileMenu()">Безплатен съвет</a>
@@ -656,6 +694,7 @@
   <div class="logo">Ти Почиваш — Ние Ремонтираме<span>Довършителни ремонти · София и региона</span></div>
   <ul class="nav-links">
     <li><a href="#services">Услуги</a></li>
+    <li><a href="#calculator">Оферта</a></li>
     <li><a href="#process">Как работим</a></li>
     <li><a href="#video">Галерия</a></li>
     <li><a href="#advisor">Безплатен съвет</a></li>
@@ -696,7 +735,7 @@
   <div class="services-inner">
     <div class="services-header reveal">
       <span class="section-tag">✦ Основни услуги</span>
-      <h2 class="section-h2">Експертни ремонти за Апартаменти, Къщи и Офиси в София — Гипсокартон, Шпакловка, Боядисване, Обръщане на дограма и Бани</h2>
+      <h2 class="section-h2">Правим шпакловка, боядисване, гипсокартон, ВиК и обръщане на дограма в апартаменти, къщи и офиси в София</h2>
       <div class="gold-line center"></div>
       <p class="section-lead" style="max-width:560px; margin:0 auto;">Всяка услуга се изпълнява с <strong style="color:var(--gold);">договорен срок</strong>, коректност и писмена гаранция.</p>
     <p style="color:var(--light-text); font-size:.85rem; line-height:1.8; max-width:900px; margin:1.5rem auto 0; text-align:center;">Работим с писмен договор и фиксирани цени. Безплатен оглед до 24 часа. Обслужваме цяла София: Люлин, Младост, Надежда, Красна поляна, Овча купел, Студентски град, Лозенец, Борово, Дружба, Банкя, Бояна, Лозен, Витоша, Княжево, Горна баня, Триадица, Средец, Оборище, Подуяне, Слатина, Изгрев, Красно село, Илинден, Бъкстон, Гео Милев, Яворов, Хладилника, Павлово, Стрелбище и Кръстова вада.</p>
@@ -705,7 +744,7 @@
 <div class="showcase">
 
   <div class="svc-prem-card" id="spaklovka">
-    <img class="card-img" src="https://i.ibb.co/xPrzh8f/1774643392522.png" alt="Шпакловка" loading="lazy"/>
+    <img class="card-img" src="https://i.ibb.co/xPrzh8f/1774643392522.png" alt="Шпакловка" width="600" height="320"/>
     <div class="card-overlay"></div><div class="card-shine"></div><div class="card-border"></div>
     <div class="card-ptag">✦ Услуга 01</div>
     <div class="card-pnum">01</div>
@@ -717,8 +756,8 @@
     </div>
   </div>
 
-  <div class="svc-prem-card" id="boyadisване">
-    <img class="card-img" src="https://i.ibb.co/d4wZxV2p/1774643448332.png" alt="Боядисване" loading="lazy"/>
+  <div class="svc-prem-card" id="boyadisване-card">
+    <img class="card-img" src="https://i.ibb.co/d4wZxV2p/1774643448332.png" alt="Боядисване" width="600" height="320"/>
     <div class="card-overlay"></div><div class="card-shine"></div><div class="card-border"></div>
     <div class="card-ptag">✦ Услуга 02</div>
     <div class="card-pnum">02</div>
@@ -731,7 +770,7 @@
   </div>
 
   <div class="svc-prem-card" id="gipsokarton">
-    <img class="card-img" src="https://i.ibb.co/mFPRXC0P/1774643492006.png" alt="Гипсокартон" loading="lazy"/>
+    <img class="card-img" src="https://i.ibb.co/mFPRXC0P/1774643492006.png" alt="Гипсокартон" width="600" height="320" loading="lazy"/>
     <div class="card-overlay"></div><div class="card-shine"></div><div class="card-border"></div>
     <div class="card-ptag">✦ Услуга 03</div>
     <div class="card-pnum">03</div>
@@ -744,7 +783,7 @@
   </div>
 
   <div class="svc-prem-card" id="vik">
-    <img class="card-img" src="https://i.ibb.co/DDW7rk4t/1774643538857.png" alt="ВиК" loading="lazy"/>
+    <img class="card-img" src="https://i.ibb.co/DDW7rk4t/1774643538857.png" alt="ВиК" width="600" height="320" loading="lazy"/>
     <div class="card-overlay"></div><div class="card-shine"></div><div class="card-border"></div>
     <div class="card-ptag">✦ Услуга 04</div>
     <div class="card-pnum">04</div>
@@ -757,7 +796,7 @@
   </div>
 
   <div class="svc-prem-card" id="dograma">
-    <img class="card-img" src="https://i.ibb.co/VpwjBMtC/1774643274293.png" alt="Дограма" loading="lazy"/>
+    <img class="card-img" src="https://i.ibb.co/VpwjBMtC/1774643274293.png" alt="Дограма" width="600" height="320" loading="lazy"/>
     <div class="card-overlay"></div><div class="card-shine"></div><div class="card-border"></div>
     <div class="card-ptag">✦ Услуга 05</div>
     <div class="card-pnum">05</div>
@@ -770,7 +809,7 @@
   </div>
 
   <div class="svc-prem-card" id="mazilka">
-    <img class="card-img" src="https://i.ibb.co/NgYBpwQw/1774643803100.png" alt="Мазилка" loading="lazy"/>
+    <img class="card-img" src="https://i.ibb.co/NgYBpwQw/1774643803100.png" alt="Мазилка" width="600" height="320" loading="lazy"/>
     <div class="card-overlay"></div><div class="card-shine"></div><div class="card-border"></div>
     <div class="card-ptag">✦ Услуга 06</div>
     <div class="card-pnum">06</div>
@@ -804,6 +843,62 @@
         <span class="svc-tag">🏗️ Цялостен ремонт</span>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- КАЛКУЛАТОР -->
+<section id="calculator" style="background:#f7f7f7;padding:5rem 1.5rem;">
+  <div style="max-width:760px;margin:0 auto;">
+
+    <div style="text-align:center;margin-bottom:2.5rem;">
+      <span style="font-size:.7rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:#c9943a;border:1px solid rgba(201,148,58,.4);padding:.35rem .9rem;border-radius:2px;display:inline-block;margin-bottom:1rem;">&#10022; Безплатна оферта</span>
+      <h2 style="font-size:clamp(1.6rem,4vw,2.4rem);font-weight:700;color:#111;margin-bottom:.6rem;font-family:'Cormorant Garamond',serif;">Калкулатор за услуги</h2>
+      <div style="width:48px;height:2px;background:linear-gradient(90deg,#c9943a,#e8b84b);margin:.8rem auto 1rem;border-radius:1px;"></div>
+      <p style="color:#666;font-size:.93rem;max-width:500px;margin:0 auto;line-height:1.7;">Изберете услугите, опишете накратко какво искате и изпратете запитването. Отговаряме до 1 час.</p>
+    </div>
+
+    <!-- СТЪПКА 1 -->
+    <div style="margin-bottom:2rem;">
+      <p style="font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:#888;margin-bottom:.8rem;">1. Изберете услуги</p>
+      <div id="calcGrid" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:.5rem;"></div>
+    </div>
+
+    <!-- СТЪПКА 2: добавени услуги с описание -->
+    <div id="calcBasket" style="display:none;margin-bottom:2rem;">
+      <p style="font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:#888;margin-bottom:.8rem;">2. Опишете какво искате (по желание)</p>
+      <div id="calcItems"></div>
+      <p style="font-size:.77rem;color:#aaa;margin-top:.5rem;">Може да оставите полето празно — ще ви се обадим и уточним.</p>
+    </div>
+
+    <!-- СТЪПКА 3 -->
+    <div id="calcDetails" style="display:none;margin-bottom:2rem;">
+      <p style="font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:#888;margin-bottom:.8rem;">3. Детайли</p>
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:.5rem;">
+        <select id="calcType" style="padding:.75rem 1rem;border:1.5px solid #ddd;border-radius:8px;font-family:inherit;font-size:.88rem;background:white;color:#333;outline:none;">
+          <option value="">-- Тип имот --</option>
+          <option>Апартамент</option><option>Къща</option><option>Офис</option><option>Друго</option>
+        </select>
+        <select id="calcSize" style="padding:.75rem 1rem;border:1.5px solid #ddd;border-radius:8px;font-family:inherit;font-size:.88rem;background:white;color:#333;outline:none;">
+          <option value="">-- Квадратура --</option>
+          <option>До 50 кв.м.</option><option>50&#8211;100 кв.м.</option><option>100&#8211;150 кв.м.</option><option>Над 150 кв.м.</option>
+        </select>
+        <select id="calcWhen" style="padding:.75rem 1rem;border:1.5px solid #ddd;border-radius:8px;font-family:inherit;font-size:.88rem;background:white;color:#333;outline:none;">
+          <option value="">-- Кога да започнем? --</option>
+          <option>Веднага</option><option>До 2 седмици</option><option>До 1 месец</option><option>Само питам</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- СТЪПКА 4 -->
+    <div id="calcSend" style="display:none;">
+      <p style="font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:#888;margin-bottom:.8rem;">4. Изпратете</p>
+      <div id="calcWarn" style="display:none;background:#fff3cd;border:1px solid #ffc107;border-radius:8px;padding:.8rem 1rem;margin-bottom:.8rem;color:#856404;font-size:.85rem;font-weight:600;">⚠️ Моля, изберете поне една услуга преди да изпратите.</div>
+      <div style="display:flex;gap:.7rem;flex-wrap:wrap;">
+        <button onclick="calcSendViber()" style="background:#7360f2;color:white;border:none;padding:1rem 1.8rem;border-radius:8px;font-weight:700;font-size:.9rem;cursor:pointer;font-family:inherit;flex:1;min-width:160px;">&#128242; Изпрати на Viber</button>
+        <button onclick="calcSendEmail()" style="background:white;color:#333;border:1.5px solid #ddd;padding:1rem 1.8rem;border-radius:8px;font-weight:700;font-size:.9rem;cursor:pointer;font-family:inherit;flex:1;min-width:160px;">&#128231; Изпрати на имейл</button>
+      </div>
+    </div>
+
   </div>
 </section>
 
@@ -1054,31 +1149,84 @@
 <section class="reviews" id="reviews">
   <div class="reviews-inner">
     <div class="reviews-header reveal">
-      <span class="section-tag">✦ Доволни клиенти</span>
+      <span class="section-tag">&#10022; Доволни клиенти</span>
       <h2 class="section-h2" style="color:white;">Какво казват хората</h2>
       <div class="gold-line center"></div>
+      <p style="color:#9ca3af;font-size:.9rem;margin-top:.8rem;">250+ изпълнени обекта &middot; Реални отзиви от клиенти</p>
     </div>
-    <div class="reviews-grid">
+    <div class="reviews-grid" id="reviewsGrid">
       <div class="review-card">
-        <div class="review-stars">★★★★★</div>
-        <p class="review-text">„Изключително доволни сме от резултата. Апартаментът изглежда като нов — шпакловката е перфектна, боята лежи равно, всичко е чисто и спретнато. Работиха бързо и без излишен шум. Определено ще ги препоръчаме."</p>
-        <div class="review-author"><div class="review-avatar">МП</div><div><div class="review-name">Мария Петрова</div><div class="review-meta">Шпакловка и боядисване · кв. Витоша, София</div></div></div>
+        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="review-text">„Честно казано, не очаквах толкова добра работа на тази цена. Шпакловката е перфектна, боята лежи равно, след тях всичко беше чисто. Дойдоха точно в уговореното — нямаше никакво чакане."</p>
+        <div class="review-author"><div class="review-avatar">МП</div><div><div class="review-name">Мария Петрова</div><div class="review-meta">Шпакловка и боядисване &middot; кв. Витоша</div></div></div>
       </div>
       <div class="review-card">
-        <div class="review-stars">★★★★★</div>
-        <p class="review-text">„Препоръчан от съсед и не съжалявам нито за минута. Обясниха ми точно какво е нужно, не ме накараха да плащам ненужни неща. Гипсокартонът е прецизно направен. Следващия път пак при тях."</p>
-        <div class="review-author"><div class="review-avatar">ГД</div><div><div class="review-name">Георги Димитров</div><div class="review-meta">Гипсокартон и дограма · кв. Младост, София</div></div></div>
+        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="review-text">„Препоръчан от съсед. Не съжалявам. Обясниха точно какво е нужно и не ме натискаха да плащам ненужни неща. Гипсокартонът е направен много прецизно. Следващия път пак при тях."</p>
+        <div class="review-author"><div class="review-avatar">ГД</div><div><div class="review-name">Георги Димитров</div><div class="review-meta">Гипсокартон &middot; кв. Младост</div></div></div>
       </div>
       <div class="review-card">
-        <div class="review-stars">★★★★★</div>
-        <p class="review-text">„Изключително доволни сме! Апартаментът изглежда невероятно — шпакловката е идеална, боята наситена и равна. Работиха без прах и бъркотия. Получихме и бонуса за препоръка — и двамата останахме доволни!"</p>
-        <div class="review-author"><div class="review-avatar">ИВ</div><div><div class="review-name">Иван Василев</div><div class="review-meta">Шпакловка и боядисване · кв. Люлин, София</div></div></div>
+        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="review-text">„Мазилката в хола излезе супер красива — всеки като влезе я гледа и пита откъде са майсторите :-) Много са добри момчетата, обясниха всичко. Ще ги викам и за банята."</p>
+        <div class="review-author"><div class="review-avatar">СМ</div><div><div class="review-name">Стела Михайлова</div><div class="review-meta">Декоративна мазилка &middot; кв. Манас. ливади</div></div></div>
       </div>
       <div class="review-card">
-        <div class="review-stars">★★★★★</div>
-        <p class="review-text">„Много са добре момчетата, обясниха ми всичко от само себе си — нямах нужда да питам. Мазилката в хола излезе супер, всеки като влезе я гледа :) Определено ще ги викам пак!"</p>
-        <div class="review-author"><div class="review-avatar">СМ</div><div><div class="review-name">Стела Михайлова</div><div class="review-meta">Декоративна мазилка · кв. Манастирски ливади, София</div></div></div>
+        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="review-text">„ВиК в банята смениха за 2 дни, включително шлайца. Нямах нито едно теч след това. Цената беше честна, без изненади. Изпратиха снимки докато работят, защото бях на работа."</p>
+        <div class="review-author"><div class="review-avatar">ПН</div><div><div class="review-name">Петър Николов</div><div class="review-meta">ВиК &middot; кв. Надежда</div></div></div>
       </div>
+      <div class="review-card" data-hidden="1" style="display:none;">
+        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9734;</div>
+        <p class="review-text">„Цялостен ремонт на двустаен — шпакловка, боя, дограма. Много доволен като цяло, имаше малко забавяне с материали но ги предупредиха предварително. Резултатът е страхотен."</p>
+        <div class="review-author"><div class="review-avatar">НС</div><div><div class="review-name">Николай Стоянов</div><div class="review-meta">Цялостен ремонт &middot; кв. Дружба</div></div></div>
+      </div>
+      <div class="review-card" data-hidden="1" style="display:none;">
+        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="review-text">„Реших да опитам след като видях снимките им. Венецианската мазилка в спалнята е буквално произведение на изкуството. Работят внимателно и бавно — не бързат."</p>
+        <div class="review-author"><div class="review-avatar">ЕТ</div><div><div class="review-name">Елена Тодорова</div><div class="review-meta">Венецианска мазилка &middot; кв. Лозенец</div></div></div>
+      </div>
+      <div class="review-card" data-hidden="1" style="display:none;">
+        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="review-text">„Работиха и в събота без доплащане, защото аз исках да свършим преди понеделник. Обръщането на дограмата е перфектно — нито една пукнатина. Много ги ценя за отношението."</p>
+        <div class="review-author"><div class="review-avatar">КИ</div><div><div class="review-name">Красимир Иванов</div><div class="review-meta">Обръщане дограма &middot; кв. Красна поляна</div></div></div>
+      </div>
+      <div class="review-card" data-hidden="1" style="display:none;">
+        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="review-text">„Апартаментът беше в ужасно състояние след наематели. Тези момчета го върнаха в живо за 10 дни. Шпакловка Q4, боя в три стаи и баня. Останах без думи. Ще ги препоръча на всеки."</p>
+        <div class="review-author"><div class="review-avatar">ДМ</div><div><div class="review-name">Даниела Маринова</div><div class="review-meta">Шпакловка + боя &middot; кв. Сухата река</div></div></div>
+      </div>
+      <div class="review-card" data-hidden="1" style="display:none;">
+        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9734;</div>
+        <p class="review-text">„Четири звезди само защото исках малко по-светъл нюанс и трябваше да обяснявам два пъти. Иначе боята е прекрасна. Следващия път ще донеса мостра от самото начало. Ще ги викам пак."</p>
+        <div class="review-author"><div class="review-avatar">АГ</div><div><div class="review-name">Анета Георгиева</div><div class="review-meta">Боядисване &middot; кв. Гоце Делчев</div></div></div>
+      </div>
+      <div class="review-card" data-hidden="1" style="display:none;">
+        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="review-text">„Ремонтът в офиса трябваше да стане за уикенда. Дойдоха в петък вечерта, свършиха до неделя. В понеделник всички бяха изненадани — нов офис! Много сме доволни."</p>
+        <div class="review-author"><div class="review-avatar">ТВ</div><div><div class="review-name">Тодор Василев</div><div class="review-meta">Боядисване офис &middot; кв. Иван Вазов</div></div></div>
+      </div>
+      <div class="review-card" data-hidden="1" style="display:none;">
+        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="review-text">„Стар апартамент от 80-те, стените бяха в окаяно състояние. Взеха Q2 шпакловка с армировъчна мрежа, обясниха защо е нужна — разликата беше огромна. Много знаещи хора."</p>
+        <div class="review-author"><div class="review-avatar">МК</div><div><div class="review-name">Милена Костова</div><div class="review-meta">Шпакловка Q2 &middot; кв. Люлин</div></div></div>
+      </div>
+      <div class="review-card" data-hidden="1" style="display:none;">
+        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="review-text">„Пет звезди и ако можех — шест. Окачен таван с LED в две стаи и преградна стена. Всичко за 12 дни. Чисто, точно, никакви изненади с цената."</p>
+        <div class="review-author"><div class="review-avatar">ЗП</div><div><div class="review-name">Захари Попов</div><div class="review-meta">Гипсокартон + LED &middot; кв. Студентски град</div></div></div>
+      </div>
+      <div class="review-card" data-hidden="1" style="display:none;">
+        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9734;</div>
+        <p class="review-text">„Структурната мазилка в коридора е страхотна. Имаше малка корекция с цвета ама я направиха веднага без никакво мрънкане. Добри майстори, с отношение."</p>
+        <div class="review-author"><div class="review-avatar">ВС</div><div><div class="review-name">Виктория Стефанова</div><div class="review-meta">Декоративна мазилка &middot; кв. Банишора</div></div></div>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:2.5rem;">
+      <button id="showMoreReviews" onclick="toggleMoreReviews()" style="background:none;border:1px solid rgba(201,148,58,.35);color:#c9943a;padding:.9rem 2.5rem;border-radius:4px;font-weight:600;font-size:.85rem;cursor:pointer;font-family:inherit;text-transform:uppercase;letter-spacing:.12em;transition:all .3s;display:inline-flex;align-items:center;gap:.7rem;">
+        <span id="showMoreText">Покажи още 10 отзива</span>
+        <span id="showMoreArrow" style="display:inline-block;transition:transform .3s;">&#8595;</span>
+      </button>
+      <p style="color:#6b7280;font-size:.75rem;margin-top:.8rem;">Показани <span id="reviewCount">4</span> от 14 отзива</p>
     </div>
   </div>
 </section>
@@ -1572,6 +1720,225 @@ function buildGalleryHTML(id) {
     window.location.href = 'thanks.html';
     
   }
+
+  // ── SHOW MORE REVIEWS ──────────────────────────────────────────────────────
+  var reviewsOpen = false;
+  function toggleMoreReviews() {
+    reviewsOpen = !reviewsOpen;
+    document.querySelectorAll('[data-hidden="1"]').forEach(function(el) {
+      el.style.display = reviewsOpen ? 'block' : 'none';
+    });
+    document.getElementById('showMoreText').textContent = reviewsOpen ? 'Скрий отзивите' : 'Покажи още 10 отзива';
+    document.getElementById('showMoreArrow').style.transform = reviewsOpen ? 'rotate(180deg)' : '';
+    document.getElementById('reviewCount').textContent = reviewsOpen ? '14' : '4';
+  }
+
+  // ── КАЛКУЛАТОР ─────────────────────────────────────────────────────────────
+  var calcSel = {};
+  var calcNotes = {};
+  var calcList = [
+    {n:'Шпакловка', i:'🪣', ph:'напр. 3 стаи, Q4 огледална, с тавани'},
+    {n:'Боядисване', i:'🎨', ph:'напр. само хол и спалня, бяло'},
+    {n:'Гипсокартон & Тавани', i:'🏗️', ph:'напр. окачен таван с LED в 2 стаи'},
+    {n:'ВиК инсталации', i:'🔧', ph:'напр. подмяна в баня, нова мивка'},
+    {n:'Декоративна мазилка', i:'✨', ph:'напр. венецианска в хол'},
+    {n:'Обръщане дограма', i:'🪟', ph:'напр. 5 прозореца + 2 врати'},
+    {n:'Ремонт на баня', i:'🛁', ph:'напр. плочки, санитария, ВиК'},
+    {n:'Плочки & Фаянс', i:'🔲', ph:'напр. баня и тоалетна, 25 кв.м.'},
+    {n:'LED осветление', i:'💡', ph:'напр. скрито LED в таван хол'},
+    {n:'Цялостен ремонт', i:'🏠', ph:'напр. двустаен, всичко включено'}
+  ];
+
+  function buildCalc() {
+    var g = document.getElementById('calcGrid');
+    if (!g) return;
+    g.innerHTML = calcList.map(function(s) {
+      var id = 'cs_' + s.n.replace(/[^a-zA-Z0-9]/g, '_');
+      return '<div id="' + id + '" data-svc="' + s.n + '" class="calc-svc-btn" style="display:flex;align-items:center;gap:.6rem;padding:.7rem 1rem;border:1.5px solid #e0e0e0;border-radius:8px;background:white;cursor:pointer;font-size:.88rem;transition:all .15s;user-select:none;">'
+        + '<span>' + s.i + '</span>'
+        + '<span style="flex:1;color:#333;">' + s.n + '</span>'
+        + '<span class="cchk" style="width:18px;height:18px;border:1.5px solid #ccc;border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:.7rem;flex-shrink:0;"></span>'
+        + '</div>';
+    }).join('');
+    g.addEventListener('click', function(e) {
+      var btn = e.target.closest('.calc-svc-btn');
+      if (btn) calcToggle(btn.getAttribute('data-svc'));
+    });
+  }
+
+  function calcToggle(name) {
+    var svc = calcList.filter(function(s){ return s.n === name; })[0];
+    if (calcSel[name]) {
+      delete calcSel[name];
+      delete calcNotes[name];
+    } else {
+      calcSel[name] = true;
+      calcNotes[name] = '';
+    }
+    // Обнови бутона
+    var id = 'cs_' + name.replace(/[^a-zA-Z0-9]/g, '_');
+    var btn = document.getElementById(id);
+    if (btn) {
+      var on = !!calcSel[name];
+      btn.style.borderColor = on ? '#333' : '#e0e0e0';
+      btn.style.background = on ? '#f0f0f0' : 'white';
+      var chk = btn.querySelector('.cchk');
+      chk.style.background = on ? '#333' : '';
+      chk.style.borderColor = on ? '#333' : '#ccc';
+      chk.style.color = on ? 'white' : '';
+      chk.textContent = on ? '✓' : '';
+    }
+    calcRenderBasket();
+  }
+
+  function calcRenderBasket() {
+    var keys = Object.keys(calcSel);
+    var basket = document.getElementById('calcBasket');
+    var items = document.getElementById('calcItems');
+    var details = document.getElementById('calcDetails');
+    var send = document.getElementById('calcSend');
+    if (!basket) return;
+
+    if (!keys.length) {
+      basket.style.display = 'none';
+      details.style.display = 'none';
+      send.style.display = 'none';
+      return;
+    }
+    basket.style.display = 'block';
+    details.style.display = 'block';
+    send.style.display = 'block';
+
+    items.innerHTML = '';
+    keys.forEach(function(name) {
+      var svc = calcList.filter(function(s){ return s.n === name; })[0];
+      var ph = svc ? svc.ph : '';
+      var icon = svc ? svc.i : '';
+      var div = document.createElement('div');
+      div.style.cssText = 'background:white;border:1.5px solid #e0e0e0;border-radius:8px;padding:.8rem 1rem;margin-bottom:.5rem;';
+      var rmBtn = document.createElement('button');
+      rmBtn.setAttribute('data-rmname', name);
+      rmBtn.style.cssText = 'background:none;border:none;cursor:pointer;color:#aaa;font-size:1rem;padding:.1rem .3rem;border-radius:4px;';
+      rmBtn.innerHTML = '&#215;';
+      rmBtn.title = 'Премахни';
+      rmBtn.addEventListener('click', function() { calcRemove(this.getAttribute('data-rmname')); });
+
+      var topRow = document.createElement('div');
+      topRow.style.cssText = 'display:flex;align-items:center;gap:.5rem;margin-bottom:.5rem;';
+      topRow.innerHTML = '<span>' + icon + '</span><strong style="flex:1;font-size:.9rem;">' + name + '</strong>';
+      topRow.appendChild(rmBtn);
+
+      var ta = document.createElement('textarea');
+      ta.placeholder = ph;
+      ta.rows = 1;
+      ta.style.cssText = 'width:100%;border:1px solid #ddd;border-radius:6px;padding:.5rem .7rem;font-size:.82rem;font-family:inherit;resize:none;color:#333;outline:none;';
+      ta.value = calcNotes[name] || '';
+      ta.addEventListener('input', function() {
+        calcNotes[name] = this.value;
+        this.style.height = 'auto';
+        this.style.height = this.scrollHeight + 'px';
+      });
+
+      div.appendChild(topRow);
+      div.appendChild(ta);
+      items.appendChild(div);
+    });
+  }
+
+  function calcRemove(name) {
+    delete calcSel[name];
+    delete calcNotes[name];
+    var id = 'cs_' + name.replace(/[^a-zA-Z0-9]/g, '_');
+    var btn = document.getElementById(id);
+    if (btn) {
+      btn.style.borderColor = '#e0e0e0'; btn.style.background = 'white';
+      var chk = btn.querySelector('.cchk');
+      chk.style.background = ''; chk.style.borderColor = '#ccc'; chk.textContent = '';
+    }
+    calcRenderBasket();
+  }
+
+  function calcBuildMsg() {
+    var keys = Object.keys(calcSel);
+    var msg = 'Запитване за оферта:\n\n';
+    keys.forEach(function(name, i) {
+      msg += (i + 1) + '. ' + name;
+      if (calcNotes[name] && calcNotes[name].trim()) msg += ' — ' + calcNotes[name].trim();
+      msg += '\n';
+    });
+    var type = (document.getElementById('calcType') || {}).value || '';
+    var size = (document.getElementById('calcSize') || {}).value || '';
+    var when = (document.getElementById('calcWhen') || {}).value || '';
+    if (type || size || when) {
+      msg += '\n';
+      if (type) msg += 'Тип: ' + type + '\n';
+      if (size) msg += 'Квадратура: ' + size + '\n';
+      if (when) msg += 'Кога: ' + when + '\n';
+    }
+    return msg;
+  }
+
+  function calcSendViber() {
+    var keys = Object.keys(calcSel);
+    if (!keys.length) {
+      var warn = document.getElementById('calcWarn');
+      if (warn) { warn.style.display = 'block'; setTimeout(function(){ warn.style.display='none'; }, 3000); }
+      return;
+    }
+    var msg = calcBuildMsg();
+    // На десктоп viber:// протоколът не работи — копираме текста и информираме потребителя
+    var isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+    try { navigator.clipboard.writeText(msg); } catch(e) {}
+    if (isMobile) {
+      window.location.href = 'viber://chat?number=%2B359877810418&text=' + encodeURIComponent(msg.substring(0, 500));
+    } else {
+      var toast = document.createElement('div');
+      toast.style.cssText = 'position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:#7360f2;color:white;padding:1rem 1.8rem;border-radius:12px;font-weight:600;font-size:.88rem;z-index:99999;box-shadow:0 4px 20px rgba(0,0,0,.3);white-space:nowrap;font-family:inherit;text-align:center;max-width:90vw;white-space:normal;';
+      toast.innerHTML = '📋 Запитването е копирано!<br><small style="font-weight:400;opacity:.85;">Отворете Viber и го поставете в чат с 0877 810 418</small>';
+      document.body.appendChild(toast);
+      setTimeout(function(){ toast.style.opacity='0'; toast.style.transition='opacity .4s'; }, 3500);
+      setTimeout(function(){ if(toast.parentNode) toast.parentNode.removeChild(toast); }, 4000);
+    }
+  }
+
+  function calcSendEmail() {
+    var keys = Object.keys(calcSel);
+    if (!keys.length) {
+      var warn = document.getElementById('calcWarn');
+      if (warn) { warn.style.display = 'block'; setTimeout(function(){ warn.style.display='none'; }, 3000); }
+      return;
+    }
+    var msg = calcBuildMsg();
+    window.location.href = 'mailto:ivanov.remonti@gmail.com?subject=' + encodeURIComponent('Запитване за оферта') + '&body=' + encodeURIComponent(msg);
+  }
+
+  // "Добави към офертата" от модала на услугата
+  function addToQuote() {
+    var title = (document.getElementById('svcModalTitle') || {}).textContent || '';
+    if (!title) return;
+    if (!calcSel[title]) { calcSel[title] = true; calcNotes[title] = ''; }
+    var id = 'cs_' + title.replace(/[^a-zA-Z0-9]/g, '_');
+    var btn = document.getElementById(id);
+    if (btn) {
+      btn.style.borderColor = '#333'; btn.style.background = '#f0f0f0';
+      var chk = btn.querySelector('.cchk');
+      if (chk) { chk.style.background = '#333'; chk.style.borderColor = '#333'; chk.style.color = 'white'; chk.textContent = '✓'; }
+    }
+    calcRenderBasket();
+    closeServiceModalDirect();
+    var t = document.createElement('div');
+    t.style.cssText = 'position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:#10b981;color:white;padding:.8rem 1.5rem;border-radius:10px;font-weight:700;font-size:.85rem;z-index:99999;box-shadow:0 4px 20px rgba(0,0,0,.2);white-space:nowrap;font-family:inherit;';
+    t.textContent = '✓ ' + title + ' е добавена!';
+    document.body.appendChild(t);
+    setTimeout(function(){ t.style.opacity='0'; t.style.transition='opacity .4s'; }, 1800);
+    setTimeout(function(){ if(t.parentNode) t.parentNode.removeChild(t); }, 2300);
+    setTimeout(function(){
+      var s = document.getElementById('calculator');
+      if (s) s.scrollIntoView({behavior:'smooth', block:'start'});
+    }, 400);
+  }
+
+  buildCalc();
 </script>
 
 <!-- SERVICE MODAL -->
@@ -1594,6 +1961,7 @@ function buildGalleryHTML(id) {
         <h4 style="color:#c9943a;font-size:.72rem;text-transform:uppercase;letter-spacing:.1em;margin-bottom:1rem;">✦ Изберете опция</h4>
         <div id="svcModalOptions"></div>
       </div>
+      <button onclick="addToQuote()" style="width:100%;background:linear-gradient(135deg,#10b981,#059669);color:white;border:none;padding:1rem;border-radius:12px;font-weight:700;font-size:.9rem;cursor:pointer;font-family:inherit;margin-bottom:.8rem;">&#10133; Добави към офертата</button>
       <div style="display:flex;gap:1rem;flex-wrap:wrap;">
         <button onclick="window.location.href='tel:0877810418'" style="background:linear-gradient(135deg,#c9943a,#e8b84b);color:#0d1b2e;border:none;padding:.9rem 1.8rem;border-radius:12px;font-weight:700;font-size:.9rem;cursor:pointer;flex:1;font-family:inherit;">📞 0877 810 418</button>
         <button onclick="sendServiceViber()" style="background:rgba(115,96,242,.2);color:#9b8df7;border:1px solid rgba(115,96,242,.3);padding:.9rem 1.8rem;border-radius:12px;font-weight:700;font-size:.9rem;cursor:pointer;flex:1;font-family:inherit;">📲 Изпрати на Viber</button>
@@ -1610,6 +1978,24 @@ function buildGalleryHTML(id) {
   <button class="gallery-lb-next" onclick="galleryLbNav(1)">›</button>
   <div class="gallery-lb-counter" id="galleryLbCounter"></div>
 </div>
+
+
+<section class="ultra-gallery">
+
+<div class="ultra-item"><img src="img1.jpg"><div class="ultra-overlay"></div></div>
+<div class="ultra-item"><img src="img2.jpg"><div class="ultra-overlay"></div></div>
+<div class="ultra-item"><img src="img3.jpg"><div class="ultra-overlay"></div></div>
+
+<div class="ultra-item">
+<video autoplay muted loop>
+<source src="video1.mp4" type="video/mp4">
+</video>
+<div class="ultra-overlay"></div>
+</div>
+
+<div class="ultra-item"><img src="img4.jpg"><div class="ultra-overlay"></div></div>
+
+</section>
 
 </body>
 </html>
