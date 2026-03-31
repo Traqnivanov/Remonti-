@@ -2,138 +2,453 @@
 <html lang="bg">
 <head>
 <meta charset="UTF-8">
-<title>ivanov-remonti — Калкулатор + Админ панел</title>
+<title>ivanov-remonti.com — Премиум довършителни ремонти</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
-body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
-
-/* Основно съдържание */
-.main-content {
-    padding: 40px 20px;
-    max-width: 900px;
-    margin: 0 auto;
+/* ========== ГЛОБАЛНИ СТИЛОВЕ ========== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: Arial, sans-serif;
+    background: #f5f5f5;
+    color: #222;
 }
 
-/* Плаващ бутон */
+/* ========== ХЕДЪР ========== */
+header {
+    background: #111;
+    color: #fff;
+    padding: 20px 0;
+}
+.header-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.logo {
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+nav a {
+    color: #fff;
+    text-decoration: none;
+    margin-left: 20px;
+    font-size: 14px;
+}
+nav a:hover {
+    text-decoration: underline;
+}
+
+/* ========== HERO СЕКЦИЯ ========== */
+.hero {
+    background: #222;
+    color: #fff;
+    padding: 60px 20px;
+}
+.hero-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+.hero-text {
+    flex: 1 1 300px;
+    padding-right: 20px;
+}
+.hero-text h1 {
+    font-size: 32px;
+    margin-bottom: 15px;
+}
+.hero-text p {
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+.hero-cta {
+    display: inline-block;
+    padding: 12px 20px;
+    background: #f0b400;
+    color: #222;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: 600;
+}
+.hero-cta:hover {
+    background: #ffcc33;
+}
+.hero-side {
+    flex: 1 1 250px;
+    text-align: center;
+    margin-top: 20px;
+}
+.hero-side div {
+    display: inline-block;
+    padding: 20px;
+    background: #333;
+    border-radius: 8px;
+    font-size: 14px;
+}
+
+/* ========== СЕКЦИИ ========== */
+.section {
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+.section h2 {
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+.section p {
+    margin-bottom: 10px;
+    line-height: 1.5;
+}
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+.service-box {
+    background: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 0 12px rgba(0,0,0,0.06);
+}
+.service-box h3 {
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+.service-box p {
+    font-size: 14px;
+}
+
+/* ========== КОНТАКТИ ========== */
+.contact-box {
+    background: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 0 12px rgba(0,0,0,0.06);
+    margin-top: 20px;
+}
+.contact-box p {
+    margin-bottom: 8px;
+}
+
+/* ========== ФУТЪР ========== */
+footer {
+    background: #111;
+    color: #aaa;
+    padding: 20px 0;
+    margin-top: 40px;
+}
+.footer-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+    font-size: 13px;
+}
+
+/* ========== ПЛАВАЩ БОТ ========== */
 #calc-btn {
     position: fixed;
-    bottom: 30px;
-    right: 30px;
+    bottom: 25px;
+    right: 25px;
     width: 70px;
     height: 70px;
-    background: #222;
+    background: #111;
     border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
     cursor: pointer;
-    box-shadow: 0 0 20px rgba(0,0,0,0.3);
+    box-shadow: 0 0 20px rgba(0,0,0,0.35);
     z-index: 9999;
 }
-#calc-btn img { width: 40px; height: 40px; }
+#calc-btn span {
+    color: #fff;
+    font-size: 30px;
+    line-height: 1;
+}
 
-/* Панел на калкулатора */
+/* ПАНЕЛ НА БОТА */
 #calc-panel {
     position: fixed;
-    bottom: 120px;
-    right: 30px;
-    width: 320px;
+    bottom: 110px;
+    right: 25px;
+    width: 340px;
+    max-width: 95vw;
     background: #fff;
-    padding: 20px;
+    padding: 18px;
     border-radius: 12px;
     box-shadow: 0 0 25px rgba(0,0,0,0.25);
     display: none;
     z-index: 9999;
 }
-#calc-panel.open { display: block; }
-
+#calc-panel.open {
+    display: block;
+}
+#calc-panel h3 {
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+#calc-panel p {
+    font-size: 13px;
+    margin-bottom: 10px;
+}
+#calc-panel label {
+    font-size: 13px;
+    font-weight: 600;
+    margin-top: 8px;
+    display: block;
+}
 #calc-panel input,
-#calc-panel textarea {
+#calc-panel textarea,
+#calc-panel select {
     width: 100%;
-    padding: 10px;
-    margin-bottom: 12px;
-    border: 1px solid #ccc;
+    padding: 8px;
+    margin-top: 4px;
+    margin-bottom: 8px;
     border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 13px;
+}
+#calc-panel textarea {
+    resize: vertical;
+    min-height: 60px;
 }
 #calc-panel button {
     width: 100%;
-    padding: 12px;
-    background: #222;
+    padding: 10px;
+    background: #111;
     color: #fff;
     border: none;
     border-radius: 6px;
     cursor: pointer;
+    font-size: 14px;
+    margin-top: 6px;
+}
+#calc-panel button:hover {
+    background: #333;
+}
+.calc-note {
+    font-size: 11px;
+    color: #666;
+    margin-top: 6px;
 }
 
-/* Админ панел */
+/* ========== АДМИН ПАНЕЛ ========== */
 #admin-panel {
     display: none;
-    padding: 40px;
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 0 20px 40px;
 }
-#admin-panel.active { display: block; }
-
-table { width: 100%; border-collapse: collapse; margin-top: 20px; }
-td, th { border: 1px solid #ccc; padding: 10px; }
-th { background: #f5f5f5; }
+#admin-panel.active {
+    display: block;
+}
+#admin-panel h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+#admin-panel p {
+    font-size: 13px;
+    margin-bottom: 15px;
+    color: #555;
+}
+.admin-table-wrap {
+    overflow-x: auto;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    background: #fff;
+    box-shadow: 0 0 12px rgba(0,0,0,0.06);
+}
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px 10px;
+    font-size: 13px;
+    vertical-align: top;
+}
+th {
+    background: #f5f5f5;
+    font-weight: 600;
+}
 button.del {
-    padding: 6px 12px;
-    background: red;
+    padding: 4px 10px;
+    background: #c62828;
     color: #fff;
     border: none;
+    border-radius: 4px;
     cursor: pointer;
+    font-size: 12px;
+}
+button.del:hover {
+    background: #e53935;
+}
+
+/* ========== РЕСПОНСИВНОСТ ========== */
+@media (max-width: 768px) {
+    .hero-inner {
+        flex-direction: column;
+    }
+    .hero-text {
+        padding-right: 0;
+    }
 }
 </style>
 </head>
 <body>
 
-<!-- Основен сайт -->
-<div class="main-content" id="site">
-    <h1>ivanov-remonti.com</h1>
-    <p>Премиум довършителни ремонти. Калкулаторът е долу вдясно.</p>
-    <p>Админ панел → добави #admin в URL</p>
-</div>
+<!-- ========== ХЕДЪР ========== -->
+<header id="site-header">
+    <div class="header-inner">
+        <div class="logo">ivanov-remonti.com</div>
+        <nav>
+            <a href="#uslugi">Услуги</a>
+            <a href="#proces">Процес</a>
+            <a href="#kontakti">Контакти</a>
+        </nav>
+    </div>
+</header>
 
-<!-- Плаващ бутон -->
+<!-- ========== HERO ========== -->
+<section class="hero" id="hero">
+    <div class="hero-inner">
+        <div class="hero-text">
+            <h1>Премиум довършителни ремонти с ясни оферти</h1>
+            <p>Структуриран процес, реалистични цени и ясен обхват на услугите. Калкулаторът долу вдясно ти дава бърза заявка за оферта.</p>
+            <a href="#uslugi" class="hero-cta">Виж услугите</a>
+        </div>
+        <div class="hero-side">
+            <div>
+                <strong>Фокус:</strong><br>
+                шпакловка, боядисване, гипсокартон,<br>
+                детайл и чист завършек.
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ========== СЕКЦИЯ УСЛУГИ ========== -->
+<section class="section" id="uslugi">
+    <h2>Основни услуги</h2>
+    <p>Работим с ясно дефинирани услуги и обхват, за да няма изненади в процеса и цената.</p>
+
+    <div class="services-grid">
+        <div class="service-box">
+            <h3>Шпакловка</h3>
+            <p>Пълна система шпакловка с подготовка на основата, мрежа при нужда и фино заглаждане за боядисване.</p>
+        </div>
+        <div class="service-box">
+            <h3>Боядисване</h3>
+            <p>Професионално боядисване с подготвени повърхности, качествени материали и чисто предаване на обекта.</p>
+        </div>
+        <div class="service-box">
+            <h3>Гипсокартон</h3>
+            <p>Преградни стени, предстенни обшивки, окачени тавани и детайли, изпълнени по система.</p>
+        </div>
+    </div>
+</section>
+
+<!-- ========== СЕКЦИЯ ПРОЦЕС ========== -->
+<section class="section" id="proces">
+    <h2>Как работим</h2>
+    <p>1. Първоначален разговор и базова информация за обекта.</p>
+    <p>2. Ориентировъчна оферта по квадратура и вид услуга.</p>
+    <p>3. Оглед на място при нужда и финализиране на офертата.</p>
+    <p>4. Договорен график и изпълнение.</p>
+</section>
+
+<!-- ========== СЕКЦИЯ КОНТАКТИ ========== -->
+<section class="section" id="kontakti">
+    <h2>Контакти</h2>
+    <div class="contact-box">
+        <p><strong>Телефон:</strong> 08xx xxx xxx</p>
+        <p><strong>E-mail:</strong> info@ivanov-remonti.com</p>
+        <p><strong>Заявка за оферта:</strong> използвай калкулатора долу вдясно.</p>
+    </div>
+</section>
+
+<!-- ========== ФУТЪР ========== -->
+<footer id="site-footer">
+    <div class="footer-inner">
+        © ivanov-remonti.com — структурирани довършителни ремонти.
+    </div>
+</footer>
+
+<!-- ========== ПЛАВАЩ БОТ ========== -->
 <div id="calc-btn">
-    <img src="calculator-icon.png" alt="calc">
+    <span>€</span>
 </div>
 
-<!-- Панел на калкулатора -->
 <div id="calc-panel">
-    <h3>Калкулатор за оферта</h3>
+    <h3>Заявка за оферта</h3>
+    <p>Попълни кратко данните и ще се свържем за детайли.</p>
 
+    <label>Име</label>
     <input id="c-name" type="text" placeholder="Вашето име">
-    <input id="c-phone" type="text" placeholder="Телефон">
-    <textarea id="c-desc" placeholder="Опишете накратко ремонта"></textarea>
 
-    <button id="c-send">Изпрати</button>
+    <label>Телефон</label>
+    <input id="c-phone" type="text" placeholder="Телефон за връзка">
+
+    <label>Вид услуга</label>
+    <select id="c-service">
+        <option value="Шпакловка">Шпакловка</option>
+        <option value="Боядисване">Боядисване</option>
+        <option value="Гипсокартон">Гипсокартон</option>
+        <option value="Комбинирано">Комбинирано</option>
+    </select>
+
+    <label>Квадратура (ориентировъчно)</label>
+    <input id="c-area" type="number" min="1" placeholder="м²">
+
+    <label>Кратко описание</label>
+    <textarea id="c-desc" placeholder="Стаи, състояние, срокове..."></textarea>
+
+    <button id="c-send">Изпрати заявка</button>
+    <div class="calc-note">* Това не е автоматична крайна оферта, а структурирана заявка за контакт.</div>
 </div>
 
-<!-- Админ панел -->
+<!-- ========== АДМИН ПАНЕЛ ========== -->
 <div id="admin-panel">
     <h2>Админ панел — заявки от калкулатора</h2>
+    <p>Виждаш всички заявки, подадени през плаващия калкулатор. Можеш да ги триеш след обработка.</p>
 
-    <table>
-        <thead>
-            <tr>
-                <th>Име</th>
-                <th>Телефон</th>
-                <th>Описание</th>
-                <th>Дата</th>
-                <th>Действие</th>
-            </tr>
-        </thead>
-        <tbody id="offers"></tbody>
-    </table>
+    <div class="admin-table-wrap">
+        <table>
+            <thead>
+                <tr>
+                    <th>Име</th>
+                    <th>Телефон</th>
+                    <th>Услуга</th>
+                    <th>Квадратура</th>
+                    <th>Описание</th>
+                    <th>Дата</th>
+                    <th>Действие</th>
+                </tr>
+            </thead>
+            <tbody id="offers"></tbody>
+        </table>
+    </div>
 </div>
 
-<!-- Firebase -->
+<!-- ========== FIREBASE 8 ========== -->
 <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
 <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
 
 <script>
-// ТВОЯТА FIREBASE КОНФИГУРАЦИЯ
+// ========== FIREBASE CONFIG ==========
 const firebaseConfig = {
     apiKey: "YOUR_KEY",
     authDomain: "YOUR_DOMAIN",
@@ -143,76 +458,102 @@ const firebaseConfig = {
     appId: "YOUR_APP_ID"
 };
 firebase.initializeApp(firebaseConfig);
+const db = firebase.firestore();
 
-// Показване на админ панела при #admin
-if (location.hash === "#admin") {
-    document.getElementById("site").style.display = "none";
-    document.getElementById("calc-btn").style.display = "none";
-    document.getElementById("calc-panel").style.display = "none";
-    document.getElementById("admin-panel").classList.add("active");
-}
-
-// Отваряне/затваряне на калкулатора
-document.getElementById("calc-btn").onclick = () => {
-    document.getElementById("calc-panel").classList.toggle("open");
-};
-
-// Изпращане на заявка
-document.getElementById("c-send").onclick = async () => {
-    const name = document.getElementById("c-name").value.trim();
-    const phone = document.getElementById("c-phone").value.trim();
-    const desc = document.getElementById("c-desc").value.trim();
-
-    if (!name || !phone || !desc) {
-        alert("Моля, попълнете всички полета.");
-        return;
-    }
-
-    await firebase.firestore().collection("offers").add({
-        name,
-        phone,
-        desc,
-        date: new Date().toISOString()
-    });
-
-    alert("Заявката е изпратена успешно!");
-    document.getElementById("calc-panel").classList.remove("open");
-};
-
-// Админ панел — зареждане на заявки
+// ========== ПОМОЩНА ФУНКЦИЯ ЗА ESCAPE ==========
 function esc(str) {
-    return str.replace(/[&<>"']/g, m => ({
+    if (!str) return "";
+    return String(str).replace(/[&<>"']/g, m => ({
         "&":"&amp;", "<":"&lt;", ">":"&gt;", '"':"&quot;", "'":"&#39;"
     }[m]));
 }
 
-firebase.firestore().collection("offers").orderBy("date", "desc").onSnapshot(snapshot => {
+// ========== РЕЖИМ АДМИН (#admin) ==========
+if (location.hash === "#admin") {
+    // Скриваме сайта, показваме админ панела
+    document.getElementById("hero").style.display = "none";
+    document.getElementById("uslugi").style.display = "none";
+    document.getElementById("proces").style.display = "none";
+    document.getElementById("kontakti").style.display = "none";
+    document.getElementById("site-header").style.display = "none";
+    document.getElementById("site-footer").style.display = "none";
+    document.getElementById("calc-btn").style.display = "none";
+    document.getElementById("calc-panel").style.display = "none";
+
+    document.getElementById("admin-panel").classList.add("active");
+}
+
+// ========== ПЛАВАЩ БОТ — ОТВАРЯНЕ/ЗАТВАРЯНЕ ==========
+document.getElementById("calc-btn").onclick = () => {
+    const panel = document.getElementById("calc-panel");
+    panel.classList.toggle("open");
+};
+
+// ========== ИЗПРАЩАНЕ НА ЗАЯВКА ==========
+document.getElementById("c-send").onclick = async () => {
+    const name = document.getElementById("c-name").value.trim();
+    const phone = document.getElementById("c-phone").value.trim();
+    const service = document.getElementById("c-service").value;
+    const area = document.getElementById("c-area").value.trim();
+    const desc = document.getElementById("c-desc").value.trim();
+
+    if (!name || !phone || !desc) {
+        alert("Моля, попълни поне име, телефон и кратко описание.");
+        return;
+    }
+
+    try {
+        await db.collection("offers").add({
+            name,
+            phone,
+            service,
+            area,
+            desc,
+            date: new Date().toISOString()
+        });
+        alert("Заявката е изпратена успешно.");
+        document.getElementById("calc-panel").classList.remove("open");
+        document.getElementById("c-name").value = "";
+        document.getElementById("c-phone").value = "";
+        document.getElementById("c-area").value = "";
+        document.getElementById("c-desc").value = "";
+    } catch (e) {
+        console.error(e);
+        alert("Възникна грешка при изпращане. Провери Firestore конфигурацията.");
+    }
+};
+
+// ========== АДМИН ПАНЕЛ — ЗАРЕЖДАНЕ НА ЗАЯВКИ ==========
+db.collection("offers").orderBy("date", "desc").onSnapshot(snapshot => {
     const table = document.getElementById("offers");
+    if (!table) return;
     table.innerHTML = "";
 
     snapshot.forEach(doc => {
         const d = doc.data();
-        const date = new Date(d.date).toLocaleString("bg-BG");
+        const date = d.date ? new Date(d.date).toLocaleString("bg-BG") : "";
 
         table.innerHTML += `
             <tr>
                 <td>${esc(d.name)}</td>
                 <td>${esc(d.phone)}</td>
+                <td>${esc(d.service)}</td>
+                <td>${esc(d.area)}</td>
                 <td>${esc(d.desc)}</td>
-                <td>${date}</td>
-                <td><button class="del" onclick="del('${doc.id}')">X</button></td>
+                <td>${esc(date)}</td>
+                <td><button class="del" onclick="delOffer('${doc.id}')">X</button></td>
             </tr>
         `;
     });
 });
 
-function del(id) {
-    if (confirm("Сигурни ли сте?")) {
-        firebase.firestore().collection("offers").doc(id).delete();
+// ========== ИЗТРИВАНЕ НА ЗАЯВКА ==========
+function delOffer(id) {
+    if (confirm("Сигурни ли сте, че искате да изтриете тази заявка?")) {
+        db.collection("offers").doc(id).delete();
     }
 }
 </script>
 
 </body>
 </html>
-
