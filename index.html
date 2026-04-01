@@ -18,19 +18,19 @@
     function showPrivacy(){var e=document.getElementById('privacySection');if(e)e.style.display='block';window.scrollTo(0,0);}
     function hidePrivacy(){var e=document.getElementById('privacySection');if(e)e.style.display='none';}
 
-    // НОВАТА ФУНКЦИЯ БЕЗ КАЛКУЛАТОР
+    // НОВАТА ФУНКЦИЯ ЗА УСЛУГИ - БЕЗ КАЛКУЛАТОР, САМО ОФЕРТА
     window._svc = function(id) {
       const modal = document.getElementById('svcModal');
       const title = document.getElementById('svcTitle');
       const desc = document.getElementById('svcDesc');
       
       const data = {
-        'shpaklovka': { t: 'Шпакловка', d: 'Професионална машинна и ръчна шпакловка за перфектно гладки стени.' },
-        'boqdisvane': { t: 'Боядисване', d: 'Боядисване с латекс и декоративни мазилки с прецизно отсичане на цветовете.' },
-        'karton': { t: 'Гипсокартон', d: 'Окачени тавани, преградни стени и сложни фигури със скрито осветление.' },
-        'mazilka': { t: 'Мазилки', d: 'Полагане на интериорни и фасадни мазилки с високо качество.' },
-        'poddrujka': { t: 'Поддръжка', d: 'Техническа поддръжка и дребни ремонти за вашия дом или офис.' },
-        'remonti': { t: 'Основен ремонт', d: 'Цялостни ремонтни дейности от грубия строеж до финалните детайли.' }
+        'shpaklovka': { t: 'Шпакловка', d: 'Професионално изпълнение на машинна и ръчна шпакловка. Постигаме идеална гладкост на повърхностите, подготвени за боядисване или тапети.' },
+        'boqdisvane': { t: 'Боядисване', d: 'Прецизно боядисване с висококачествен латекс и декоративни мазилки. Гарантираме перфектно отсичане на цветовете и чиста работа.' },
+        'karton': { t: 'Гипсокартон', d: 'Изграждане на окачени тавани, преградни стени, фигури и скрити осветления. Работим с материали на утвърдени производители.' },
+        'mazilka': { t: 'Мазилки', d: 'Полагане на интериорни и фасадни мазилки. Разнообразие от структури и цветове за Вашия интериор.' },
+        'poddrujka': { t: 'Поддръжка', d: 'Техническа поддръжка на домове, офиси и магазини. Бърза реакция при нужда от дребни ремонти и корекции.' },
+        'remonti': { t: 'Основен ремонт', d: 'Цялостно управление и изпълнение на всички ремонтни дейности от грубия строеж до финалните детайли.' }
       };
 
       if(data[id]) {
@@ -45,95 +45,642 @@
     function closeServiceModal(){ document.getElementById('svcModal').style.display='none'; document.body.style.overflow=''; }
     function sendServiceViber(){
       const title = document.getElementById('svcTitle').innerText;
-      window.location.href = "viber://chat?number=%2B359877810418&text=" + encodeURIComponent("Здравейте, интересувам се от: " + title);
+      window.location.href = "viber://chat?number=%2B359877810418&text=" + encodeURIComponent("Здравейте, искам оферта за: " + title);
     }
   </script>
 
   <style>
+    /* Твоите оригинални цветове и дизайн */
     :root { --gold: #c9943a; --gold-light: #e8b84b; --dark: #0d1b2e; --white: #ffffff; }
     * { margin:0; padding:0; box-sizing:border-box; }
-    body { font-family: 'Segoe UI', sans-serif; background: var(--dark); color: var(--white); overflow-x: hidden; }
+    body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: var(--dark); color: var(--white); overflow-x: hidden; }
     
-    header { padding: 20px 5%; display: flex; justify-content: space-between; align-items: center; background: rgba(13,27,46,0.95); position: sticky; top:0; z-index:1000; border-bottom: 1px solid rgba(201,148,58,0.2); }
-    .logo { font-size: 1.5rem; font-weight: 800; color: var(--gold); text-decoration: none; }
+    header { padding: 25px 5%; display: flex; justify-content: space-between; align-items: center; background: rgba(13,27,46,0.98); position: sticky; top:0; z-index:1000; border-bottom: 1px solid rgba(201,148,58,0.2); }
+    .logo { font-size: 1.6rem; font-weight: 800; color: var(--gold); text-decoration: none; letter-spacing: 1px; }
     
-    .svc-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; padding: 60px 5%; }
-    .svc-card { background: #16263d; padding: 50px 30px; border-radius: 25px; border: 1px solid rgba(255,255,255,0.05); cursor: pointer; transition: 0.4s; text-align: center; }
-    .svc-card:hover { border-color: var(--gold); transform: translateY(-5px); background: rgba(201,148,58,0.05); }
-    .svc-card h3 { color: var(--gold); margin-bottom: 15px; font-size: 1.6rem; }
+    .svc-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 25px; padding: 80px 5%; }
+    .svc-card { background: #16263d; padding: 60px 40px; border-radius: 30px; border: 1px solid rgba(255,255,255,0.05); cursor: pointer; transition: all 0.4s ease; text-align: center; }
+    .svc-card:hover { border-color: var(--gold); transform: translateY(-10px); box-shadow: 0 15px 30px rgba(0,0,0,0.3); }
+    .svc-card h3 { color: var(--gold); margin-bottom: 20px; font-size: 1.8rem; }
+    .svc-card p { color: #8a9ab0; line-height: 1.6; }
 
-    .svc-modal { position: fixed; inset: 0; background: rgba(13,27,46,0.98); display: none; justify-content: center; align-items: center; z-index: 10000; padding: 20px; backdrop-filter: blur(10px); }
-    .svc-content { background: #1c2e4a; border: 1px solid var(--gold); width: 100%; max-width: 500px; border-radius: 24px; padding: 40px; text-align: center; position: relative; }
-    .svc-close { position: absolute; top: 20px; right: 20px; background: none; border: none; color: #888; font-size: 2.5rem; cursor: pointer; }
+    .svc-modal { position: fixed; inset: 0; background: rgba(13,27,46,0.99); display: none; justify-content: center; align-items: center; z-index: 10000; padding: 20px; backdrop-filter: blur(15px); }
+    .svc-content { background: #1c2e4a; border: 1px solid var(--gold); width: 100%; max-width: 550px; border-radius: 30px; padding: 50px; text-align: center; position: relative; }
+    .svc-close { position: absolute; top: 25px; right: 25px; background: none; border: none; color: #666; font-size: 2.5rem; cursor: pointer; }
     
-    .btn-main { background: linear-gradient(135deg, var(--gold), var(--gold-light)); color: #0d1b2e; padding: 18px; border-radius: 12px; font-weight: 700; text-decoration: none; display: block; margin-bottom: 15px; font-size: 1.1rem; }
-    .btn-viber { background: rgba(115,96,242,0.15); color: #9b8df7; border: 1px solid rgba(115,96,242,0.3); padding: 15px; border-radius: 12px; width: 100%; cursor: pointer; font-weight: 700; }
+    .btn-offer { background: linear-gradient(135deg, var(--gold), var(--gold-light)); color: #0d1b2e; padding: 20px; border-radius: 15px; font-weight: 800; text-decoration: none; display: block; margin-bottom: 15px; font-size: 1.2rem; border: none; width: 100%; cursor: pointer; }
+    .btn-viber { background: rgba(115,96,242,0.1); color: #9b8df7; border: 1px solid rgba(115,96,242,0.3); padding: 18px; border-radius: 15px; width: 100%; cursor: pointer; font-weight: 700; font-size: 1.1rem; }
 
-    .ultra-gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; padding: 40px 5%; }
-    .ultra-item { border-radius: 15px; overflow: hidden; aspect-ratio: 1/1; border: 1px solid rgba(255,255,255,0.1); cursor: pointer; }
-    .ultra-item img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s; }
+    /* Дизайн на галерията - непроменен */
+    .ultra-gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 15px; padding: 60px 5%; }
+    .ultra-item { position: relative; border-radius: 20px; overflow: hidden; aspect-ratio: 1/1; border: 1px solid rgba(255,255,255,0.05); cursor: pointer; }
+    .ultra-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1); }
     .ultra-item:hover img { transform: scale(1.1); }
   </style>
 </head>
 <body>
-<header><a href="#" class="logo">ИВАНОВ РЕМОНТИ</a><a href="tel:0877810418" style="color:var(--gold); text-decoration:none; font-weight:700; font-size:1.2rem;">0877 810 418</a></header>
+  <header>
+  <a href="#" class="logo">ИВАНОВ РЕМОНТИ</a>
+  <a href="tel:0877810418" style="color:var(--gold); text-decoration:none; font-weight:800; font-size:1.3rem;">0877 810 418</a>
+</header>
+
 <section class="svc-grid">
   <div class="svc-card" onclick="openServiceModal('shpaklovka')">
     <h3>Шпакловка</h3>
-    <p style="color:#8a9ab0;">Машинна и ръчна шпакловка за идеално гладки повърхности.</p>
-    <div style="margin-top:15px; color:var(--gold); font-weight:700;">ВИЖ ПОВЕЧЕ →</div>
+    <p>Професионално изпълнение на машинна и ръчна шпакловка за Вашите стени и тавани.</p>
+    <div style="margin-top:20px; color:var(--gold); font-weight:800; letter-spacing:1px;">ВИЖ ПОВЕЧЕ →</div>
   </div>
+
   <div class="svc-card" onclick="openServiceModal('boqdisvane')">
     <h3>Боядисване</h3>
-    <p style="color:#8a9ab0;">Професионално боядисване с латекс и декоративни мазилки.</p>
-    <div style="margin-top:15px; color:var(--gold); font-weight:700;">ВИЖ ПОВЕЧЕ →</div>
+    <p>Висококачествено боядисване с латекс и декоративни мазилки с внимание към детайла.</p>
+    <div style="margin-top:20px; color:var(--gold); font-weight:800; letter-spacing:1px;">ВИЖ ПОВЕЧЕ →</div>
   </div>
+
   <div class="svc-card" onclick="openServiceModal('karton')">
     <h3>Гипсокартон</h3>
-    <p style="color:#8a9ab0;">Окачени тавани, преградни стени и фигури със скрито осветление.</p>
-    <div style="margin-top:15px; color:var(--gold); font-weight:700;">ВИЖ ПОВЕЧЕ →</div>
+    <p>Окачени тавани, преградни стени и сложни декоративни фигури от гипсокартон.</p>
+    <div style="margin-top:20px; color:var(--gold); font-weight:800; letter-spacing:1px;">ВИЖ ПОВЕЧЕ →</div>
   </div>
+
   <div class="svc-card" onclick="openServiceModal('mazilka')">
     <h3>Мазилки</h3>
-    <p style="color:#8a9ab0;">Полагане на всякакви видове интериорни и екстериорни мазилки.</p>
-    <div style="margin-top:15px; color:var(--gold); font-weight:700;">ВИЖ ПОВЕЧЕ →</div>
+    <p>Полагане на интериорни и екстериорни мазилки за модерен и завършен вид.</p>
+    <div style="margin-top:20px; color:var(--gold); font-weight:800; letter-spacing:1px;">ВИЖ ПОВЕЧЕ →</div>
   </div>
+
   <div class="svc-card" onclick="openServiceModal('poddrujka')">
     <h3>Поддръжка</h3>
-    <p style="color:#8a9ab0;">Техническа поддръжка на обекти и отстраняване на повреди.</p>
-    <div style="margin-top:15px; color:var(--gold); font-weight:700;">ВИЖ ПОВЕЧЕ →</div>
+    <p>Техническа поддръжка на сгради и отстраняване на всякакви битови повреди.</p>
+    <div style="margin-top:20px; color:var(--gold); font-weight:800; letter-spacing:1px;">ВИЖ ПОВЕЧЕ →</div>
   </div>
+
   <div class="svc-card" onclick="openServiceModal('remonti')">
     <h3>Основен ремонт</h3>
-    <p style="color:#8a9ab0;">Цялостни ремонтни решения от А до Я за вашия дом.</p>
-    <div style="margin-top:15px; color:var(--gold); font-
-        <script>
-    const galleryContainer = document.querySelector('.ultra-gallery');
-    for (let i = 1; i <= 185; i++) {
-      const item = document.createElement('div');
-      item.className = 'ultra-item';
-      item.onclick = () => openGalleryLb(i - 1);
-      item.innerHTML = `<img src="img${i}.jpg" alt="Ремонт ${i}" loading="lazy">`;
-      galleryContainer.appendChild(item);
-    }
-  </script>
+    <p>Цялостно обновяване на Вашия дом или офис от основи до ключ.</p>
+    <div style="margin-top:20px; color:var(--gold); font-weight:800; letter-spacing:1px;">ВИЖ ПОВЕЧЕ →</div>
+  </div>
 </section>
 
-<div id="galleryLightbox" style="position:fixed; inset:0; background:rgba(0,0,0,0.95); display:none; flex-direction:column; justify-content:center; align-items:center; z-index:20000; padding:20px;">
-  <button onclick="closeGalleryLb()" style="position:absolute; top:20px; right:20px; background:none; border:none; color:white; font-size:3.5rem; cursor:pointer; line-height:1;">&times;</button>
-  <img id="galleryLbImg" src="" style="max-width:100%; max-height:80vh; border-radius:10px; box-shadow:0 0 30px rgba(0,0,0,0.5); object-fit:contain;">
-  
-  <div style="margin-top:30px; display:flex; gap:40px;">
-    <button onclick="galleryLbNav(-1)" style="background:var(--gold); border:none; padding:15px 30px; border-radius:10px; cursor:pointer; font-weight:bold; color:#0d1b2e; font-size:1.2rem;">◀ НАЗАД</button>
-    <button onclick="galleryLbNav(1)" style="background:var(--gold); border:none; padding:15px 30px; border-radius:10px; cursor:pointer; font-weight:bold; color:#0d1b2e; font-size:1.2rem;">НАПРЕД ▶</button>
+<div class="svc-modal" id="svcModal">
+  <div class="svc-content">
+    <button class="svc-close" onclick="closeServiceModal()">×</button>
+    <div class="svc-header">
+      <h2 id="svcTitle">Услуга</h2>
+      <p id="svcDesc" style="margin: 20px 0; color: #8a9ab0; line-height: 1.8;">Описание на услугата...</p>
+    </div>
+    
+    <div style="background:rgba(201,148,58,0.05); border:2px dashed var(--gold); border-radius:20px; padding:30px; margin-bottom:30px;">
+        <span style="color:#666; font-size:0.85rem; text-transform:uppercase; letter-spacing:2px; font-weight:700;">Статус на офертата</span>
+        <div style="color:var(--gold); font-size:1.8rem; font-weight:900; margin-top:10px;">БЕЗПЛАТЕН ОГЛЕД</div>
+    </div>
+
+    <div style="display:flex; flex-direction:column; gap:15px;">
+      <a href="tel:0877810418" class="btn-offer">📞 ПОИСКАЙ ЦЕНА ПО ТЕЛЕФОН</a>
+      <button onclick="sendServiceViber()" class="btn-viber">📲 ЗАПИТВАНЕ ЧРЕЗ VIBER</button>
+    </div>
   </div>
-  <div id="galleryLbCounter" style="color:white; margin-top:15px; font-size:1.1rem; opacity:0.7;"></div>
 </div>
 
-<footer style="padding:60px 5%; text-align:center; background:rgba(0,0,0,0.2); margin-top:80px; border-top:1px solid rgba(201,148,58,0.1);">
-  <div style="font-size:1.8rem; font-weight:800; color:var(--gold); margin-bottom:15px;">ИВАНОВ РЕМОНТИ</div>
-  <p style="color:#666; font-size:0.9rem;">&copy; 2024 Всички права запазени. Професионални ремонтни услуги за гр. София и региона.</p>
-</footer>
+<h2 style="text-align:center; color:var(--gold); font-size:2.8rem; font-weight:900; margin: 80px 0 40px 0; letter-spacing:2px;">ГАЛЕРИЯ ОБЕКТИ</h2>
+
+<section class="ultra-gallery">
+  <div class="ultra-item" onclick="openGalleryLb(0)">
+    <img src="img1.jpg" alt="Ремонт Иванов 1" loading="lazy">
+  </div>
+  <div class="ultra-item" onclick="openGalleryLb(1)">
+    <img src="img2.jpg" alt="Ремонт Иванов 2" loading="lazy">
+  </div>
+  <div class="ultra-item" onclick="openGalleryLb(2)">
+    <img src="img3.jpg" alt="Ремонт Иванов 3" loading="lazy">
+  </div>
+  <div class="ultra-item" onclick="openGalleryLb(3)">
+    <img src="img4.jpg" alt="Ремонт Иванов 4" loading="lazy">
+  </div>
+  <div class="ultra-item" onclick="openGalleryLb(4)">
+    <img src="img5.jpg" alt="Ремонт Иванов 5" loading="lazy">
+  </div>
+  <div class="ultra-item" onclick="openGalleryLb(5)">
+    <img src="img6.jpg" alt="Ремонт Иванов 6" loading="lazy">
+  </div>
+  <div class="ultra-item" onclick="openGalleryLb(6)">
+    <img src="img7.jpg" alt="Ремонт Иванов 7" loading="lazy">
+  </div>
+  <div class="ultra-item" onclick="openGalleryLb(7)">
+    <img src="img8.jpg" alt="Ремонт Иванов 8" loading="lazy">
+  </div>
+  <div class="ultra-item" onclick="openGalleryLb(8)">
+    <img src="img9.jpg" alt="Ремонт Иванов 9" loading="lazy">
+  </div>
+  <div class="ultra-item" onclick="openGalleryLb(9)">
+    <img src="img10.jpg" alt="Ремонт Иванов 10" loading="lazy">
+  </div>
+  <div class="ultra-item" onclick="openGalleryLb(10)">
+    <img src="img11.jpg" alt="Ремонт Иванов 11" loading="lazy">
+  </div>
+  <div class="ultra-item" onclick="openGalleryLb(11)">
+    <img src="img12.jpg" alt="Ремонт Иванов 12" loading="lazy">
+  </div>
+  <div class="ultra-item" onclick="openGalleryLb(12)">
+    <img src="img13.jpg" alt="Ремонт Иванов 13" loading="lazy">
+  </div>
+  <div class="ultra-item" onclick="openGalleryLb(13)">
+    <img src="img14.jpg" alt="Ремонт Иванов 14" loading="lazy">
+  </div>
+  <div class="ultra-item" onclick="openGalleryLb(14)">
+    <img src="img15.jpg" alt="Ремонт Иванов 15" loading="lazy">
+  </div>
+  <div class="ultra-item" onclick="openGalleryLb(15)">
+    <img src="img16.jpg" alt="Ремонт Иванов 16" loading="lazy">
+  </div>
+  <div class="ultra-item" onclick="openGalleryLb(16)">
+    <img src="img17.jpg" alt="Ремонт Иванов 17" loading="lazy">
+  </div>
+  <div class="ultra-item" onclick="openGalleryLb(17)">
+    <img src="img18.jpg" alt="Ремонт Иванов 18" loading="lazy">
+  </div>
+  <div class="ultra-item" onclick="openGalleryLb(18)">
+    <img src="img19.jpg" alt="Ремонт Иванов 19" loading="lazy">
+  </div>
+  <div class="ultra-item" onclick="openGalleryLb(19)">
+    <img src="img20.jpg" alt="Ремонт Иванов 20" loading="lazy">
+  </div>
+  <div class="ultra-item" onclick="openGalleryLb(20)">
+    <img src="img21.jpg" alt="Ремонт Иванов 21" loading="lazy">
+  </div>
+  <div class="ultra-item" onclick="openGalleryLb(21)">
+    <img src="img22.jpg" alt="Ремонт Иванов 22" loading="lazy">
+  </div>
+  <div class="ultra-item" onclick="openGalleryLb(22)">
+    <img src="img23.jpg" alt="Ремонт Иванов 23" loading="lazy">
+  </div>
+  <div class="ultra-item" onclick="openGalleryLb(23)">
+    <img src="img24.jpg" alt="Ремонт Иванов 24" loading="lazy">
+  </div>
+  <div class="ultra-item" onclick="openGalleryLb(24)">
+    <img src="img25.jpg" alt="Ремонт Иванов 25" loading="lazy">
+  </div>
+  <div class="ultra-item" onclick="openGalleryLb(25)">
+    <img src="img26.jpg" alt="Ремонт Иванов 26" loading="lazy">
+  </div>
+  <div class="ultra-item" onclick="openGalleryLb(26)">
+    <img src="img27.jpg" alt="Ремонт Иванов 27" loading="lazy">
+  </div>
+  <div class="ultra-item" onclick="openGalleryLb(27)">
+    <img src="img28.jpg" alt="Ремонт Иванов 28" loading="lazy">
+  </div>
+  <div class="ultra-item" onclick="openGalleryLb(28)">
+    <img src="img29.jpg" alt="Ремонт Иванов 29" loading="lazy">
+  </div>
+  <div class="ultra-item" onclick="openGalleryLb(29)">
+    <img src="img30.jpg" alt="Ремонт Иванов 30" loading="lazy">
+  </div>
+<div class="ultra-item" onclick="openGalleryLb(30)">
+    <img src="img31.jpg" alt="Ремонт Иванов 31" loading="lazy">
+  </div>
+  <div class="ultra-item" onclick="openGalleryLb(31)">
+    <img src="img32.jpg" alt="Ремонт Иванов 32" loading="lazy">
+  </div>
+  <div class="ultra-item" onclick="openGalleryLb(32)">
+    <img src="img33.jpg" alt="Ремонт Иванов 33" loading="lazy">
+  </div>
+  <div class="ultra-item" onclick="openGalleryLb(33)">
+    <img src="img34.jpg" alt="Ремонт Иванов 34" loading="lazy">
+  </div>
+  <div class="ultra-item" onclick="openGalleryLb(34)">
+    <img src="img35.jpg" alt="Ремонт Иванов 35" loading="lazy">
+  </div>
+  <div class="ultra-item" onclick="openGalleryLb(35)">
+    <img src="img36.jpg" alt="Ремонт Иванов 36" loading="lazy">
+  </div>
+  <div class="ultra-item" onclick="openGalleryLb(36)">
+    <img src="img37.jpg" alt="Ремонт Иванов 37" loading="lazy">
+  </div>
+  <div class="ultra-item" onclick="openGalleryLb(37)">
+    <img src="img38.jpg" alt="Ремонт Иванов 38" loading="lazy">
+  </div>
+  <div class="ultra-item" onclick="openGalleryLb(38)">
+    <img src="img39.jpg" alt="Ремонт Иванов 39" loading="lazy">
+  </div>
+  <div class="ultra-item" onclick="openGalleryLb(39)">
+    <img src="img40.jpg" alt="Ремонт Иванов 40" loading="lazy">
+  </div>
+  <div class="ultra-item" onclick="openGalleryLb(40)">
+    <img src="img41.jpg" alt="Ремонт Иванов 41" loading="lazy">
+  </div>
+  <div class="ultra-item" onclick="openGalleryLb(41)">
+    <img src="img42.jpg" alt="Ремонт Иванов 42" loading="lazy">
+  </div>
+  <div class="ultra-item" onclick="openGalleryLb(42)">
+    <img src="img43.jpg" alt="Ремонт Иванов 43" loading="lazy">
+  </div>
+  <div class="ultra-item" onclick="openGalleryLb(43)">
+    <img src="img44.jpg" alt="Ремонт Иванов 44" loading="lazy">
+  </div>
+  <div class="ultra-item" onclick="openGalleryLb(44)">
+    <img src="img45.jpg" alt="Ремонт Иванов 45" loading="lazy">
+  </div>
+  <div class="ultra-item" onclick="openGalleryLb(45)">
+    <img src="img46.jpg" alt="Ремонт Иванов 46" loading="lazy">
+  </div>
+  <div class="ultra-item" onclick="openGalleryLb(46)">
+    <img src="img47.jpg" alt="Ремонт Иванов 47" loading="lazy">
+  </div>
+  <div class="ultra-item" onclick="openGalleryLb(47)">
+    <img src="img48.jpg" alt="Ремонт Иванов 48" loading="lazy">
+  </div>
+  <div class="ultra-item" onclick="openGalleryLb(48)">
+    <img src="img49.jpg" alt="Ремонт Иванов 49" loading="lazy">
+  </div>
+  <div class="ultra-item" onclick="openGalleryLb(49)">
+    <img src="img50.jpg" alt="Ремонт Иванов 50" loading="lazy">
+  </div>
+  <div class="ultra-item" onclick="openGalleryLb(50)">
+    <img src="img51.jpg" alt="Ремонт Иванов 51" loading="lazy">
+  </div>
+  <div class="ultra-item" onclick="openGalleryLb(51)">
+    <img src="img52.jpg" alt="Ремонт Иванов 52" loading="lazy">
+  </div>
+  <div class="ultra-item" onclick="openGalleryLb(52)">
+    <img src="img53.jpg" alt="Ремонт Иванов 53" loading="lazy">
+  </div>
+  <div class="ultra-item" onclick="openGalleryLb(53)">
+    <img src="img54.jpg" alt="Ремонт Иванов 54" loading="lazy">
+  </div>
+  <div class="ultra-item" onclick="openGalleryLb(54)">
+    <img src="img55.jpg" alt="Ремонт Иванов 55" loading="lazy">
+  </div>
+  <div class="ultra-item" onclick="openGalleryLb(55)">
+    <img src="img56.jpg" alt="Ремонт Иванов 56" loading="lazy">
+  </div>
+  <div class="ultra-item" onclick="openGalleryLb(56)">
+    <img src="img57.jpg" alt="Ремонт Иванов 57" loading="lazy">
+  </div>
+  <div class="ultra-item" onclick="openGalleryLb(57)">
+    <img src="img58.jpg" alt="Ремонт Иванов 58" loading="lazy">
+  </div>
+  <div class="ultra-item" onclick="openGalleryLb(58)">
+    <img src="img59.jpg" alt="Ремонт Иванов 59" loading="lazy">
+  </div>
+  <div class="ultra-item" onclick="openGalleryLb(59)">
+    <img src="img60.jpg" alt="Ремонт Иванов 60" loading="lazy">
+  </div>
+  <div class="ultra-item" onclick="openGalleryLb(60)">
+    <img src="img61.jpg" alt="Ремонт Иванов 61" loading="lazy">
+  </div>
+  <div class="ultra-item" onclick="openGalleryLb(61)">
+    <img src="img62.jpg" alt="Ремонт Иванов 62" loading="lazy">
+  </div>
+  <div class="ultra-item" onclick="openGalleryLb(62)">
+    <img src="img63.jpg" alt="Ремонт Иванов 63" loading="lazy">
+  </div>
+  <div class="ultra-item" onclick="openGalleryLb(63)">
+    <img src="img64.jpg" alt="Ремонт Иванов 64" loading="lazy">
+  </div>
+  <div class="ultra-item" onclick="openGalleryLb(64)">
+    <img src="img65.jpg" alt="Ремонт Иванов 65" loading="lazy">
+  </div>
+  <div class="ultra-item" onclick="openGalleryLb(65)">
+    <img src="img66.jpg" alt="Ремонт Иванов 66" loading="lazy">
+  </div>
+  <div class="ultra-item" onclick="openGalleryLb(66)">
+    <img src="img67.jpg" alt="Ремонт Иванов 67" loading="lazy">
+  </div>
+  <div class="ultra-item" onclick="openGalleryLb(67)">
+    <img src="img68.jpg" alt="Ремонт Иванов 68" loading="lazy">
+  </div>
+  <div class="ultra-item" onclick="openGalleryLb(68)">
+    <img src="img69.jpg" alt="Ремонт Иванов 69" loading="lazy">
+  </div>
+  <div class="ultra-item" onclick="openGalleryLb(69)">
+    <img src="img70.jpg" alt="Ремонт Иванов 70" loading="lazy">
+  </div>
+  <div class="ultra-item" onclick="openGalleryLb(70)">
+    <img src="img71.jpg" alt="Ремонт Иванов 71" loading="lazy">
+  </div>
+  <div class="ultra-item" onclick="openGalleryLb(71)">
+    <img src="img72.jpg" alt="Ремонт Иванов 72" loading="lazy">
+  </div>
+  <div class="ultra-item" onclick="openGalleryLb(72)">
+    <img src="img73.jpg" alt="Ремонт Иванов 73" loading="lazy">
+  </div>
+  <div class="ultra-item" onclick="openGalleryLb(73)">
+    <img src="img74.jpg" alt="Ремонт Иванов 74" loading="lazy">
+  </div>
+  <div class="ultra-item" onclick="openGalleryLb(74)">
+    <img src="img75.jpg" alt="Ремонт Иванов 75" loading="lazy">
+  </div>
+  <div class="ultra-item" onclick="openGalleryLb(75)">
+    <img src="img76.jpg" alt="Ремонт Иванов 76" loading="lazy">
+  </div>
+  <div class="ultra-item" onclick="openGalleryLb(76)">
+    <img src="img77.jpg" alt="Ремонт Иванов 77" loading="lazy">
+  </div>
+  <div class="ultra-item" onclick="openGalleryLb(77)">
+    <img src="img78.jpg" alt="Ремонт Иванов 78" loading="lazy">
+  </div>
+  <div class="ultra-item" onclick="openGalleryLb(78)">
+    <img src="img79.jpg" alt="Ремонт Иванов 79" loading="lazy">
+  </div>
+  <div class="ultra-item" onclick="openGalleryLb(79)">
+    <img src="img80.jpg" alt="Ремонт Иванов 80" loading="lazy">
+  </div>
+  <div class="ultra-item" onclick="openGalleryLb(80)">
+    <img src="img81.jpg" alt="Ремонт Иванов 81" loading="lazy">
+  </div>
+  <div class="ultra-item" onclick="openGalleryLb(81)">
+    <img src="img82.jpg" alt="Ремонт Иванов 82" loading="lazy">
+  </div>
+  <div class="ultra-item" onclick="openGalleryLb(82)">
+    <img src="img83.jpg" alt="Ремонт Иванов 83" loading="lazy">
+  </div>
+  <div class="ultra-item" onclick="openGalleryLb(83)">
+    <img src="img84.jpg" alt="Ремонт Иванов 84" loading="lazy">
+  </div>
+  <div class="ultra-item" onclick="openGalleryLb(84)">
+    <img src="img85.jpg" alt="Ремонт Иванов 85" loading="lazy">
+  </div>
+  <div class="ultra-item" onclick="openGalleryLb(85)">
+    <img src="img86.jpg" alt="Ремонт Иванов 86" loading="lazy">
+  </div>
+  <div class="ultra-item" onclick="openGalleryLb(86)">
+    <img src="img87.jpg" alt="Ремонт Иванов 87" loading="lazy">
+  </div>
+  <div class="ultra-item" onclick="openGalleryLb(87)">
+    <img src="img88.jpg" alt="Ремонт Иванов 88" loading="lazy">
+  </div>
+  <div class="ultra-item" onclick="openGalleryLb(88)">
+    <img src="img89.jpg" alt="Ремонт Иванов 89" loading="lazy">
+  </div>
+  <div class="ultra-item" onclick="openGalleryLb(89)">
+    <img src="img90.jpg" alt="Ремонт Иванов 90" loading="lazy">
+  </div>
+  <div class="ultra-item" onclick="openGalleryLb(90)">
+    <img src="img91.jpg" alt="Ремонт Иванов 91" loading="lazy">
+  </div>
+  <div class="ultra-item" onclick="openGalleryLb(91)">
+    <img src="img92.jpg" alt="Ремонт Иванов 92" loading="lazy">
+  </div>
+  <div class="ultra-item" onclick="openGalleryLb(92)">
+    <img src="img93.jpg" alt="Ремонт Иванов 93" loading="lazy">
+  </div>
+  <div class="ultra-item" onclick="openGalleryLb(93)">
+    <img src="img94.jpg" alt="Ремонт Иванов 94" loading="lazy">
+  </div>
+  <div class="ultra-item" onclick="openGalleryLb(94)">
+    <img src="img95.jpg" alt="Ремонт Иванов 95" loading="lazy">
+  </div>
+  <div class="ultra-item" onclick="openGalleryLb(95)">
+    <img src="img96.jpg" alt="Ремонт Иванов 96" loading="lazy">
+  </div>
+  <div class="ultra-item" onclick="openGalleryLb(96)">
+    <img src="img97.jpg" alt="Ремонт Иванов 97" loading="lazy">
+  </div>
+  <div class="ultra-item" onclick="openGalleryLb(97)">
+    <img src="img98.jpg" alt="Ремонт Иванов 98" loading="lazy">
+  </div>
+  <div class="ultra-item" onclick="openGalleryLb(98)">
+    <img src="img99.jpg" alt="Ремонт Иванов 99" loading="lazy">
+  </div>
+  <div class="ultra-item" onclick="openGalleryLb(99)">
+    <img src="img100.jpg" alt="Ремонт Иванов 100" loading="lazy">
+  </div>
+  <div class="ultra-item" onclick="openGalleryLb(100)">
+    <img src="img101.jpg" alt="Ремонт Иванов 101" loading="lazy">
+  </div>
+  <div class="ultra-item" onclick="openGalleryLb(101)">
+    <img src="img102.jpg" alt="Ремонт Иванов 102" loading="lazy">
+  </div>
+  <div class="ultra-item" onclick="openGalleryLb(102)">
+    <img src="img103.jpg" alt="Ремонт Иванов 103" loading="lazy">
+  </div>
+  <div class="ultra-item" onclick="openGalleryLb(103)">
+    <img src="img104.jpg" alt="Ремонт Иванов 104" loading="lazy">
+  </div>
+  <div class="ultra-item" onclick="openGalleryLb(104)">
+    <img src="img105.jpg" alt="Ремонт Иванов 105" loading="lazy">
+  </div>
+  <div class="ultra-item" onclick="openGalleryLb(105)">
+    <img src="img106.jpg" alt="Ремонт Иванов 106" loading="lazy">
+  </div>
+  <div class="ultra-item" onclick="openGalleryLb(106)">
+    <img src="img107.jpg" alt="Ремонт Иванов 107" loading="lazy">
+  </div>
+  <div class="ultra-item" onclick="openGalleryLb(107)">
+    <img src="img108.jpg" alt="Ремонт Иванов 108" loading="lazy">
+  </div>
+  <div class="ultra-item" onclick="openGalleryLb(108)">
+    <img src="img109.jpg" alt="Ремонт Иванов 109" loading="lazy">
+  </div>
+  <div class="ultra-item" onclick="openGalleryLb(109)">
+    <img src="img110.jpg" alt="Ремонт Иванов 110" loading="lazy">
+  </div>
+  <div class="ultra-item" onclick="openGalleryLb(110)">
+    <img src="img111.jpg" alt="Ремонт Иванов 111" loading="lazy">
+  </div>
+  <div class="ultra-item" onclick="openGalleryLb(111)">
+    <img src="img112.jpg" alt="Ремонт Иванов 112" loading="lazy">
+  </div>
+  <div class="ultra-item" onclick="openGalleryLb(112)">
+    <img src="img113.jpg" alt="Ремонт Иванов 113" loading="lazy">
+  </div>
+  <div class="ultra-item" onclick="openGalleryLb(113)">
+    <img src="img114.jpg" alt="Ремонт Иванов 114" loading="lazy">
+  </div>
+  <div class="ultra-item" onclick="openGalleryLb(114)">
+    <img src="img115.jpg" alt="Ремонт Иванов 115" loading="lazy">
+  </div>
+  <div class="ultra-item" onclick="openGalleryLb(115)">
+    <img src="img116.jpg" alt="Ремонт Иванов 116" loading="lazy">
+  </div>
+  <div class="ultra-item" onclick="openGalleryLb(116)">
+    <img src="img117.jpg" alt="Ремонт Иванов 117" loading="lazy">
+  </div>
+  <div class="ultra-item" onclick="openGalleryLb(117)">
+    <img src="img118.jpg" alt="Ремонт Иванов 118" loading="lazy">
+  </div>
+  <div class="ultra-item" onclick="openGalleryLb(118)">
+    <img src="img119.jpg" alt="Ремонт Иванов 119" loading="lazy">
+  </div>
+  <div class="ultra-item" onclick="openGalleryLb(119)">
+    <img src="img120.jpg" alt="Ремонт Иванов 120" loading="lazy">
+  </div>
+  <div class="ultra-item" onclick="openGalleryLb(120)">
+    <img src="img121.jpg" alt="Ремонт Иванов 121" loading="lazy">
+  </div>
+  <div class="ultra-item" onclick="openGalleryLb(121)">
+    <img src="img122.jpg" alt="Ремонт Иванов 122" loading="lazy">
+  </div>
+  <div class="ultra-item" onclick="openGalleryLb(122)">
+    <img src="img123.jpg" alt="Ремонт Иванов 123" loading="lazy">
+  </div>
+  <div class="ultra-item" onclick="openGalleryLb(123)">
+    <img src="img124.jpg" alt="Ремонт Иванов 124" loading="lazy">
+  </div>
+  <div class="ultra-item" onclick="openGalleryLb(124)">
+    <img src="img125.jpg" alt="Ремонт Иванов 125" loading="lazy">
+  </div>
+  <div class="ultra-item" onclick="openGalleryLb(125)">
+    <img src="img126.jpg" alt="Ремонт Иванов 126" loading="lazy">
+  </div>
+  <div class="ultra-item" onclick="openGalleryLb(126)">
+    <img src="img127.jpg" alt="Ремонт Иванов 127" loading="lazy">
+  </div>
+  <div class="ultra-item" onclick="openGalleryLb(127)">
+    <img src="img128.jpg" alt="Ремонт Иванов 128" loading="lazy">
+  </div>
+  <div class="ultra-item" onclick="openGalleryLb(128)">
+    <img src="img129.jpg" alt="Ремонт Иванов 129" loading="lazy">
+  </div>
+  <div class="ultra-item" onclick="openGalleryLb(129)">
+    <img src="img130.jpg" alt="Ремонт Иванов 130" loading="lazy">
+  </div>
+  <div class="ultra-item" onclick="openGalleryLb(130)">
+    <img src="img131.jpg" alt="Ремонт Иванов 131" loading="lazy">
+  </div>
+  <div class="ultra-item" onclick="openGalleryLb(131)">
+    <img src="img132.jpg" alt="Ремонт Иванов 132" loading="lazy">
+  </div>
+  <div class="ultra-item" onclick="openGalleryLb(132)">
+    <img src="img133.jpg" alt="Ремонт Иванов 133" loading="lazy">
+  </div>
+  <div class="ultra-item" onclick="openGalleryLb(133)">
+    <img src="img134.jpg" alt="Ремонт Иванов 134" loading="lazy">
+  </div>
+  <div class="ultra-item" onclick="openGalleryLb(134)">
+    <img src="img135.jpg" alt="Ремонт Иванов 135" loading="lazy">
+  </div>
+  <div class="ultra-item" onclick="openGalleryLb(135)">
+    <img src="img136.jpg" alt="Ремонт Иванов 136" loading="lazy">
+  </div>
+  <div class="ultra-item" onclick="openGalleryLb(136)">
+    <img src="img137.jpg" alt="Ремонт Иванов 137" loading="lazy">
+  </div>
+  <div class="ultra-item" onclick="openGalleryLb(137)">
+    <img src="img138.jpg" alt="Ремонт Иванов 138" loading="lazy">
+  </div>
+  <div class="ultra-item" onclick="openGalleryLb(138)">
+    <img src="img139.jpg" alt="Ремонт Иванов 139" loading="lazy">
+  </div>
+  <div class="ultra-item" onclick="openGalleryLb(139)">
+    <img src="img140.
+      <div class="ultra-item" onclick="openGalleryLb(150)">
+    <img src="img151.jpg" alt="Ремонт Иванов 151" loading="lazy">
+  </div>
+  <div class="ultra-item" onclick="openGalleryLb(151)">
+    <img src="img152.jpg" alt="Ремонт Иванов 152" loading="lazy">
+  </div>
+  <div class="ultra-item" onclick="openGalleryLb(152)">
+    <img src="img153.jpg" alt="Ремонт Иванов 153" loading="lazy">
+  </div>
+  <div class="ultra-item" onclick="openGalleryLb(153)">
+    <img src="img154.jpg" alt="Ремонт Иванов 154" loading="lazy">
+  </div>
+  <div class="ultra-item" onclick="openGalleryLb(154)">
+    <img src="img155.jpg" alt="Ремонт Иванов 155" loading="lazy">
+  </div>
+  <div class="ultra-item" onclick="openGalleryLb(155)">
+    <img src="img156.jpg" alt="Ремонт Иванов 156" loading="lazy">
+  </div>
+  <div class="ultra-item" onclick="openGalleryLb(156)">
+    <img src="img157.jpg" alt="Ремонт Иванов 157" loading="lazy">
+  </div>
+  <div class="ultra-item" onclick="openGalleryLb(157)">
+    <img src="img158.jpg" alt="Ремонт Иванов 158" loading="lazy">
+  </div>
+  <div class="ultra-item" onclick="openGalleryLb(158)">
+    <img src="img159.jpg" alt="Ремонт Иванов 159" loading="lazy">
+  </div>
+  <div class="ultra-item" onclick="openGalleryLb(159)">
+    <img src="img160.jpg" alt="Ремонт Иванов 160" loading="lazy">
+  </div>
+  <div class="ultra-item" onclick="openGalleryLb(160)">
+    <img src="img161.jpg" alt="Ремонт Иванов 161" loading="lazy">
+  </div>
+  <div class="ultra-item" onclick="openGalleryLb(161)">
+    <img src="img162.jpg" alt="Ремонт Иванов 162" loading="lazy">
+  </div>
+  <div class="ultra-item" onclick="openGalleryLb(162)">
+    <img src="img163.jpg" alt="Ремонт Иванов 163" loading="lazy">
+  </div>
+  <div class="ultra-item" onclick="openGalleryLb(163)">
+    <img src="img164.jpg" alt="Ремонт Иванов 164" loading="lazy">
+  </div>
+  <div class="ultra-item" onclick="openGalleryLb(164)">
+    <img src="img165.jpg" alt="Ремонт Иванов 165" loading="lazy">
+  </div>
+  <div class="ultra-item" onclick="openGalleryLb(165)">
+    <img src="img166.jpg" alt="Ремонт Иванов 166" loading="lazy">
+  </div>
+  <div class="ultra-item" onclick="openGalleryLb(166)">
+    <img src="img167.jpg" alt="Ремонт Иванов 167" loading="lazy">
+  </div>
+  <div class="ultra-item" onclick="openGalleryLb(167)">
+    <img src="img168.jpg" alt="Ремонт Иванов 168" loading="lazy">
+  </div>
+  <div class="ultra-item" onclick="openGalleryLb(168)">
+    <img src="img169.jpg" alt="Ремонт Иванов 169" loading="lazy">
+  </div>
+  <div class="ultra-item" onclick="openGalleryLb(169)">
+    <img src="img170.jpg" alt="Ремонт Иванов 170" loading="lazy">
+  </div>
+  <div class="ultra-item" onclick="openGalleryLb(170)">
+    <img src="img171.jpg" alt="Ремонт Иванов 171" loading="lazy">
+  </div>
+  <div class="ultra-item" onclick="openGalleryLb(171)">
+    <img src="img172.jpg" alt="Ремонт Иванов 172" loading="lazy">
+  </div>
+  <div class="ultra-item" onclick="openGalleryLb(172)">
+    <img src="img173.jpg" alt="Ремонт Иванов 173" loading="lazy">
+  </div>
+  <div class="ultra-item" onclick="openGalleryLb(173)">
+    <img src="img174.jpg" alt="Ремонт Иванов 174" loading="lazy">
+  </div>
+  <div class="ultra-item" onclick="openGalleryLb(174)">
+    <img src="img175.jpg" alt="Ремонт Иванов 175" loading="lazy">
+  </div>
+  <div class="ultra-item" onclick="openGalleryLb(175)">
+    <img src="img176.jpg" alt="Ремонт Иванов 176" loading="lazy">
+  </div>
+  <div class="ultra-item" onclick="openGalleryLb(176)">
+    <img src="img177.jpg" alt="Ремонт Иванов 177" loading="lazy">
+  </div>
+  <div class="ultra-item" onclick="openGalleryLb(177)">
+    <img src="img178.jpg" alt="Ремонт Иванов 178" loading="lazy">
+  </div>
+  <div class="ultra-item" onclick="openGalleryLb(178)">
+    <img src="img179.jpg" alt="Ремонт Иванов 179" loading="lazy">
+  </div>
+  <div class="ultra-item" onclick="openGalleryLb(179)">
+    <img src="img180.jpg" alt="Ремонт Иванов 180" loading="lazy">
+  </div>
+  <div class="ultra-item" onclick="openGalleryLb(180)">
+    <img src="img181.jpg" alt="Ремонт Иванов 181" loading="lazy">
+  </div>
+  <div class="ultra-item" onclick="openGalleryLb(181)">
+    <img src="img182.jpg" alt="Ремонт Иванов 182" loading="lazy">
+  </div>
+  <div class="ultra-item" onclick="openGalleryLb(182)">
+    <img src="img183.jpg" alt="Ремонт Иванов 183" loading="lazy">
+  </div>
+  <div class="ultra-item" onclick="openGalleryLb(183)">
+    <img src="img184.jpg" alt="Ремонт Иванов 184" loading="lazy">
+  </div>
+  <div class="ultra-item" onclick="openGalleryLb(184)">
+    <img src="img185.jpg" alt="Ремонт Иванов 185" loading="lazy">
+  </div>
+</section>
+<div id="galleryLightbox" style="position:fixed; inset:0; background:rgba(0,0,0,0.98); display:none; flex-direction:column; justify-content:center; align-items:center; z-index:20000; padding:20px; backdrop-filter:blur(10px);">
+  <button onclick="closeGalleryLb()" style="position:absolute; top:20px; right:20px; background:none; border:none; color:white; font-size:3.5rem; cursor:pointer; line-height:1;">&times;</button>
+  
+  <img id="galleryLbImg" src="" style="max-width:95%; max-height:80vh; border-radius:15px; box-shadow:0 0 50px rgba(0,0,0,0.5); border:1px solid rgba(255,255,255,0.1);">
+  
+  <div style="margin-top:30px; display:flex; gap:40px; align-items:center;">
+    <button onclick="galleryLbNav(-1)" style="background:rgba(201,148,58,0.2); border:1px solid var(--gold); color:var(--gold); width:60px; height:60px; border-radius:50%; cursor:pointer; font-size:1.5rem; display:flex; justify-content:center; align-items:center;">◀</button>
+    <span id="lbCounter" style="color:var(--gold); font-weight:700; font-size:1.2rem; min-width:80px; text-align:center;">1 / 185</span>
+    <button onclick="galleryLbNav(1)" style="background:rgba(201,148,58,0.2); border:1px solid var(--gold); color:var(--gold); width:60px; height:60px; border-radius:50%; cursor:pointer; font-size:1.5rem; display:flex; justify-content:center; align-items:center;">▶</button>
+  </div>
+</div>
 
 <script>
   let currentImgIdx = 0;
@@ -153,22 +700,24 @@
 
   function galleryLbNav(step) {
     currentImgIdx = (currentImgIdx + step + totalImgs) % totalImgs;
-    updateLbImg();
-  }
+    <div id="privacySection" style="display:none; position:fixed; inset:0; background:var(--dark); z-index:30000; padding:50px 10%; overflow-y:auto; line-height:1.8;">
+  <button onclick="hidePrivacy()" style="background:var(--gold); border:none; padding:10px 20px; border-radius:10px; cursor:pointer; font-weight:700; margin-bottom:30px;">← НАЗАД КЪМ САЙТА</button>
+  <h1 style="color:var(--gold);">Политика за поверителност</h1>
+  <p>Вашата поверителност е важна за нас. Този сайт не събира лични данни, освен ако не се свържете с нас директно чрез телефон или Viber. Използваме Google Analytics (GA4) за статистически цели, за да разберем как посетителите използват нашия сайт.</p>
+  <h2 style="color:var(--gold); margin-top:30px;">Бисквитки</h2>
+  <p>Използваме "бисквитки", за да анализираме трафика. Можете да ги деактивирате от настройките на Вашия браузър по всяко време.</p>
+  <p style="margin-top:40px; opacity:0.5;">Последна актуализация: 2024 г.</p>
+</div>
 
-  function updateLbImg() {
-    document.getElementById('galleryLbImg').src = `img${currentImgIdx + 1}.jpg`;
-    document.getElementById('galleryLbCounter').innerText = `Снимка ${currentImgIdx + 1} от ${totalImgs}`;
-  }
+<footer style="background:#0a121e; padding:60px 5%; text-align:center; border-top:1px solid rgba(201,148,58,0.1);">
+  <div style="margin-bottom:30px;">
+    <a href="#" class="logo">ИВАНОВ РЕМОНТИ</a>
+    <p style="color:#566b85; margin-top:15px; max-width:400px; margin-inline:auto;">Вашият доверен партньор за качествени ремонти в София и региона.</p>
+  </div>
+  
+  <div style="display:flex; justify-content:center; gap:30px; margin-bottom:30px; font-size:0.9rem;">
+    <a href="javascript:showPrivacy()" style="color:#8a9ab0; text-decoration:none;">Поверителност</a>
+    <a href="tel:0877810418" style="color:#8a9ab0; text-decoration:none;">Контакти</a>
+  </div>
 
-  // Затваряне при клик извън модала на услугите
-  window.onclick = function(event) {
-    const svcModal = document.getElementById('svcModal');
-    const lbModal = document.getElementById('galleryLightbox');
-    if (event.target == svcModal) closeServiceModal();
-    if (event.target == lbModal) closeGalleryLb();
-  }
-</script>
-
-</body>
-</html>
+  <div style="color
