@@ -1,26 +1,39 @@
-
 <!DOCTYPE html>
 <html lang="bg">
 <head>
+  <link rel="preconnect" href="https://traqnivanov.github.io" crossorigin/>
+  <link rel="preconnect" href="https://www.youtube.com" crossorigin/>
+  <link rel="dns-prefetch" href="https://traqnivanov.github.io"/>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <!-- Google tag (gtag.js) — GA4 : G-SVED9CDFPR -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-SVED9CDFPR"></script>
+  <!-- Google tag (gtag.js) — GA4 : G-SVED9CDFPR — зарежда се само след съгласие -->
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-SVED9CDFPR');
-    document.addEventListener('DOMContentLoaded', function() {
-      document.querySelectorAll('a[href^="tel:"]').forEach(function(el) {
-        el.addEventListener('click', function() {
-          gtag('event', 'phone_call_click', { event_category: 'Contact', event_label: 'Call 0877810418' });
+
+    function loadGA4() {
+      if (window._ga4Loaded) return;
+      window._ga4Loaded = true;
+      var s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=G-SVED9CDFPR';
+      document.head.appendChild(s);
+      s.onload = function() {
+        gtag('js', new Date());
+        gtag('config', 'G-SVED9CDFPR');
+        document.querySelectorAll('a[href^="tel:"]').forEach(function(el) {
+          el.addEventListener('click', function() {
+            gtag('event', 'phone_call_click', { event_category: 'Contact', event_label: 'Call 0877810418' });
+          });
         });
-      });
-    });
+      };
+    }
+
+    // Ако вече е дадено съгласие — зареждаме веднага
+    try { if (localStorage.getItem('cookiesAccepted') === '1') loadGA4(); } catch(x) {}
   </script>
   <script>
-    function acceptCookies(){var e=document.getElementById('cookieBanner');if(e)e.classList.add('hidden');try{localStorage.setItem('cookiesAccepted','1')}catch(x){}}
+    function acceptCookies(){var e=document.getElementById('cookieBanner');if(e)e.classList.add('hidden');try{localStorage.setItem('cookiesAccepted','1')}catch(x){}loadGA4();}
     function showPrivacy(){var e=document.getElementById('privacySection');if(e)e.style.display='block';window.scrollTo(0,0);}
     function hidePrivacy(){var e=document.getElementById('privacySection');if(e)e.style.display='none';}
     function openServiceModal(id){setTimeout(function(){if(window._svc)window._svc(id);},50);}
@@ -30,15 +43,16 @@
     function closeServiceModalDirect(){if(window._closeSvcD)window._closeSvcD();}
     document.addEventListener('DOMContentLoaded',function(){try{if(localStorage.getItem('cookiesAccepted')){var e=document.getElementById('cookieBanner');if(e)e.classList.add('hidden');}}catch(x){}});
   </script>
-  <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/Traqnivanov/Remonti-/main/favicon.png"/>
-  <link rel="apple-touch-icon" href="https://raw.githubusercontent.com/Traqnivanov/Remonti-/main/favicon.png"/>
-  <title>Ремонти София 2026 | Шпакловка, Боядисване, Гипсокартон | 0877 810 418</title>
-  <meta name="description" content="Довършителни ремонти на апартаменти и къщи в София. Шпакловка, боядисване, бани, ВиК. Безплатна консултация, писмена гаранция и безплатен оглед до 24 часа. 0877 810 418" />
+  <link rel="icon" type="image/x-icon" href="https://traqnivanov.github.io/Remonti-/favicon.png"/>
+  <link rel="icon" type="image/png" href="https://traqnivanov.github.io/Remonti-/favicon.png"/>
+  <link rel="apple-touch-icon" href="https://traqnivanov.github.io/Remonti-/favicon.png"/>
+  <title>Ремонти София 2026 | Шпакловка, Боядисване, Гипсокартон</title>
+  <meta name="description" content="Довършителни ремонти в София — шпакловка, боядисване, гипсокартон, ВиК. Писмена гаранция, безплатен оглед до 24ч. Обадете се: 0877 810 418" />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://ivanov-remonti.com/" />
   <meta property="og:title" content="Ремонти София 2026 | Шпакловка, Боядисване, Гипсокартон | 0877 810 418" />
   <meta property="og:description" content="Довършителни ремонти на апартаменти и къщи в София. Шпакловка, боядисване, бани, ВиК. Безплатна консултация, писмена гаранция и безплатен оглед до 24 часа. 0877 810 418" />
-  <meta property="og:image" content="https://raw.githubusercontent.com/Traqnivanov/Remonti-/main/ivanov-remonti-stroitelni-uslugi-kachestvo-garantsiya-sofia.jpg" />
+  <meta property="og:image" content="https://traqnivanov.github.io/Remonti-/ivanov-remonti-stroitelni-uslugi-kachestvo-garantsiya-sofia.jpg" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta property="og:url" content="https://ivanov-remonti.com/" />
@@ -64,7 +78,7 @@
     "url": "https://ivanov-remonti.com",
     "openingHours": ["Mo-Sa 08:00-19:00", "Su 09:00-16:00"],
     "priceRange": "$$",
-    "image": "https://raw.githubusercontent.com/Traqnivanov/Remonti-/main/ivanov-remonti-stroitelni-uslugi-kachestvo-garantsiya-sofia.jpg",
+    "image": "https://traqnivanov.github.io/Remonti-/ivanov-remonti-stroitelni-uslugi-kachestvo-garantsiya-sofia.jpg",
     "sameAs": []
   }
   </script>
@@ -151,36 +165,47 @@
       filter: brightness(.6) saturate(.7) contrast(1.1);
       will-change: transform;
     }
-    .svc-prem-card:hover .card-img { transform: scale(1.12); filter: brightness(.4) saturate(.5) contrast(1.2); }
+    .svc-prem-card:hover .card-img,
+    .svc-prem-card.touched .card-img { transform: scale(1.12); filter: brightness(.4) saturate(.5) contrast(1.2); }
     .card-overlay {
       position: absolute; inset: 0;
       background: linear-gradient(to top, rgba(8,17,30,.98) 0%, rgba(8,17,30,.1) 60%), linear-gradient(135deg, rgba(201,148,58,.08) 0%, transparent 60%);
       transition: background 1s ease; z-index: 1;
     }
-    .svc-prem-card:hover .card-overlay { background: linear-gradient(to top, rgba(8,17,30,1) 0%, rgba(8,17,30,.6) 50%, rgba(8,17,30,.15) 100%), linear-gradient(135deg, rgba(201,148,58,.15) 0%, transparent 60%); }
+    .svc-prem-card:hover .card-overlay,
+    .svc-prem-card.touched .card-overlay { background: linear-gradient(to top, rgba(8,17,30,1) 0%, rgba(8,17,30,.6) 50%, rgba(8,17,30,.15) 100%), linear-gradient(135deg, rgba(201,148,58,.15) 0%, transparent 60%); }
     .card-shine { position: absolute; inset: 0; background: linear-gradient(135deg, rgba(201,148,58,0) 0%, rgba(201,148,58,.06) 50%, rgba(201,148,58,0) 100%); opacity: 0; transition: opacity .8s; z-index: 2; pointer-events: none; }
-    .svc-prem-card:hover .card-shine { opacity: 1; }
+    .svc-prem-card:hover .card-shine,
+    .svc-prem-card.touched .card-shine { opacity: 1; }
     .card-border { position: absolute; inset: 0; z-index: 3; pointer-events: none; }
     .card-border::before { content: ''; position: absolute; top: 0; left: 0; height: 1px; width: 0; background: var(--gold); transition: width .8s cubic-bezier(0.25, 0.46, 0.45, 0.94); }
     .card-border::after { content: ''; position: absolute; top: 0; right: 0; width: 1px; height: 0; background: var(--gold); transition: height .8s .2s cubic-bezier(0.25, 0.46, 0.45, 0.94); }
-    .svc-prem-card:hover .card-border::before { width: 100%; }
-    .svc-prem-card:hover .card-border::after { height: 100%; }
+    .svc-prem-card:hover .card-border::before,
+    .svc-prem-card.touched .card-border::before { width: 100%; }
+    .svc-prem-card:hover .card-border::after,
+    .svc-prem-card.touched .card-border::after { height: 100%; }
     .card-ptag { position: absolute; top: 24px; left: 24px; z-index: 4; font-size: .58rem; letter-spacing: .22em; text-transform: uppercase; color: var(--gold2); opacity: .8; transition: opacity .4s; }
-    .svc-prem-card:hover .card-ptag { opacity: 0; }
+    .svc-prem-card:hover .card-ptag,
+    .svc-prem-card.touched .card-ptag { opacity: 0; }
     .card-pnum { position: absolute; top: 16px; right: 20px; z-index: 4; font-family: 'DM Serif Display', serif; font-size: 7rem; font-weight: 700; line-height: 1; color: rgba(201,148,58,.07); transition: all .8s; user-select: none; }
-    .svc-prem-card:hover .card-pnum { color: rgba(201,148,58,.18); transform: scale(1.05) translateY(-5px); }
+    .svc-prem-card:hover .card-pnum,
+    .svc-prem-card.touched .card-pnum { color: rgba(201,148,58,.18); transform: scale(1.05) translateY(-5px); }
     .card-pcontent { position: absolute; bottom: 0; left: 0; right: 0; padding: 2.5rem 2.5rem 2rem; z-index: 4; transform: translateY(0); transition: transform .6s cubic-bezier(0.25, 0.46, 0.45, 0.94); }
-    .svc-prem-card:hover .card-pcontent { transform: translateY(-8px); }
+    .svc-prem-card:hover .card-pcontent,
+    .svc-prem-card.touched .card-pcontent { transform: translateY(-8px); }
     .card-pline { display: flex; align-items: center; gap: .8rem; margin-bottom: 1rem; }
     .card-pline::before { content: ''; height: 1px; background: linear-gradient(90deg, var(--gold), var(--gold2)); width: 35px; transition: width .6s .1s; }
     .card-pline span { font-size: .62rem; letter-spacing: .2em; text-transform: uppercase; color: #f5d680; white-space: nowrap; font-weight: 500; }
-    .svc-prem-card:hover .card-pline::before { width: 60px; }
+    .svc-prem-card:hover .card-pline::before,
+    .svc-prem-card.touched .card-pline::before { width: 60px; }
     .card-pname { font-family: 'DM Serif Display', serif; font-size: clamp(1.8rem, 3.5vw, 2.8rem); font-weight: 400; font-style: italic; line-height: 1.05; color: #f0d090; text-shadow: 0 2px 20px rgba(0,0,0,.8), 0 0 30px rgba(201,148,58,.2); margin-bottom: .5rem; letter-spacing: .02em; }
     .card-pdesc { font-size: .82rem; color: rgba(255,255,255,.55); font-weight: 300; line-height: 1.7; letter-spacing: .02em; max-height: 0; overflow: hidden; transition: max-height .6s .05s, opacity .5s .05s; opacity: 0; }
-    .svc-prem-card:hover .card-pdesc { max-height: 80px; opacity: 1; }
+    .svc-prem-card:hover .card-pdesc,
+    .svc-prem-card.touched .card-pdesc { max-height: 80px; opacity: 1; }
     .card-pbtn { display: inline-flex; align-items: center; gap: .8rem; margin-top: 1.2rem; font-size: .68rem; font-weight: 500; letter-spacing: .18em; text-transform: uppercase; color: white; opacity: 0; transform: translateY(12px); transition: opacity .4s .15s, transform .4s .15s; background: none; border: none; cursor: pointer; font-family: inherit; }
     .card-pbtn .pbtn-circle { width: 32px; height: 32px; border-radius: 50%; background: linear-gradient(135deg, var(--gold), var(--gold2)); display: flex; align-items: center; justify-content: center; font-size: .85rem; color: #08111e; transition: transform .3s; box-shadow: 0 4px 15px rgba(201,148,58,.4); }
-    .svc-prem-card:hover .card-pbtn { opacity: 1; transform: translateY(0); }
+    .svc-prem-card:hover .card-pbtn,
+    .svc-prem-card.touched .card-pbtn { opacity: 1; transform: translateY(0); }
     .svc-prem-card:hover .card-pbtn .pbtn-circle { transform: rotate(45deg); }
     .card-calc-btn { display: inline-flex; align-items: center; gap: .6rem; margin-top: .5rem; font-size: .62rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--gold); opacity: 0; transform: translateY(8px); transition: opacity .4s .25s, transform .4s .25s; background: rgba(201,148,58,.12); border: 1px solid rgba(201,148,58,.35); border-radius: 20px; padding: .4rem 1rem; cursor: pointer; font-family: inherit; }
     .svc-prem-card:hover .card-calc-btn { opacity: 1; transform: translateY(0); }
@@ -263,7 +288,7 @@
     #progress-bar { position: fixed; top: 0; left: 0; height: 3px; width: 0%; background: linear-gradient(90deg, var(--gold), var(--gold2)); z-index: 9999; transition: width .1s linear; }
 
     /* FLOATING */
-    .floating-btns { position: fixed; bottom: 24px; left: 20px; display: flex; flex-direction: column; gap: 12px; z-index: 1000; }
+    .floating-btns { position: fixed; bottom: 24px; right: 20px; display: flex; flex-direction: column; gap: 12px; z-index: 1000; }
     .float-btn { width: 58px; height: 58px; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; font-size: 26px; box-shadow: 0 8px 24px rgba(0,0,0,0.4); transition: transform .25s, box-shadow .25s; }
     .float-btn:hover { transform: scale(1.15) translateY(-3px); box-shadow: 0 16px 32px rgba(0,0,0,0.5); }
     .btn-call { background: linear-gradient(135deg, var(--gold), var(--gold2)); color: white; animation: pulse 2s infinite; }
@@ -641,7 +666,7 @@
 
 <div class="floating-btns">
   <div id="bot-tooltip" style="position:absolute;bottom:calc(100% + 10px);right:0;background:#1a1910;border:1px solid rgba(201,148,58,0.45);border-radius:10px;padding:8px 14px;white-space:nowrap;font-size:.78rem;font-weight:600;color:#c9943a;pointer-events:none;opacity:0;transition:opacity .4s;font-family:'Outfit',sans-serif;">💬 Изчисли цена<span style="position:absolute;bottom:-6px;right:20px;width:10px;height:6px;background:#1a1910;clip-path:polygon(0 0,100% 0,50% 100%);border-bottom:1px solid rgba(201,148,58,0.45);"></span></div>
-  <a href="https://m.me/IvanovRemonti" target="_blank" class="float-btn btn-messenger" title="Пишете ни в Messenger">
+  <a href="https://m.me/IvanovRemonti" target="_blank" rel="noopener noreferrer" class="float-btn btn-messenger" title="Пишете ни в Messenger">
     <div class="ms-live"><div class="ms-dot"></div><span class="ms-txt">Онлайн</span></div>
     <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M12 2C6.477 2 2 6.145 2 11.243c0 2.906 1.395 5.503 3.582 7.235V22l3.27-1.793c.874.24 1.8.37 2.748.37 5.523 0 10-4.145 10-9.243C22 6.145 17.523 2 12 2z" fill="#fff"/><path d="M13.5 14.5L10.5 11 5 14.5l6.167-6.5 3 3.5 5.5-3.5L13.5 14.5z" fill="#1877f2"/></svg>
   </a>
@@ -656,38 +681,112 @@
 
 <!-- COOKIE BANNER -->
 <div class="cookie-banner" id="cookieBanner">
-  <p><strong>Бисквитки:</strong> Използваме бисквитки за да подобрим вашето преживяване. С продължаването на сайта приемате нашата <a href="#" onclick="showPrivacy()">Политика за поверителност</a>.</p>
-  <button class="cookie-btn" onclick="acceptCookies()">Приемам</button>
+  <p><strong>Бисквитки:</strong> Използваме бисквитки за да подобрим вашето преживяване. С продължаването на сайта приемате нашата <a href="javascript:void(0)" onclick="showPrivacy()">Политика за поверителност</a>.</p>
+  <button type="button" class="cookie-btn" onclick="acceptCookies()">Приемам</button>
 </div>
 
 <!-- MOBILE MENU -->
 <div class="mobile-menu" id="mobileMenu">
-  <a href="#services" onclick="closeMobileMenu()">Услуги</a>
+  <a href="#services" onclick="closeMobileMenu()">Услуги и цени</a>
   <a href="#process" onclick="closeMobileMenu()">Как работим</a>
   <a href="#video" onclick="closeMobileMenu()">Галерия</a>
   <a href="#advisor" onclick="closeMobileMenu()">Безплатен съвет</a>
   <a href="#bonuses" onclick="closeMobileMenu()">Бонуси</a>
   <a href="#reviews" onclick="closeMobileMenu()">Отзиви</a>
   <a href="#faq" onclick="closeMobileMenu()">Въпроси</a>
-  <a href="#contact" class="mob-phone" onclick="closeMobileMenu()">📞 0877 810 418</a>
+  <div style="border-top:1px solid rgba(201,148,58,.2);margin:.5rem 0;padding-top:.8rem;">
+    <div style="font-size:.65rem;color:rgba(201,148,58,.5);text-transform:uppercase;letter-spacing:.1em;margin-bottom:.6rem;padding:0 1.5rem;">За нас</div>
+    <a href="tel:0877810418" onclick="closeMobileMenu()" style="display:flex;align-items:center;gap:.8rem;"><span style="font-size:1rem;">📞</span> 0877 810 418</a>
+    <a href="https://m.me/IvanovRemonti" target="_blank" rel="noopener noreferrer" onclick="closeMobileMenu()" style="display:flex;align-items:center;gap:.8rem;"><span style="font-size:1rem;">💬</span> Messenger</a>
+    <a href="viber://chat?number=%2B359877810418" onclick="closeMobileMenu()" style="display:flex;align-items:center;gap:.8rem;"><span style="font-size:1rem;">📲</span> Viber</a>
+    <a href="mailto:ivanovremontibg@gmail.com" onclick="closeMobileMenu()" style="display:flex;align-items:center;gap:.8rem;"><span style="font-size:1rem;">✉️</span> ivanovremontibg@gmail.com</a>
+    <a href="#contact" onclick="closeMobileMenu()" class="mob-phone" style="margin-top:.5rem;">📍 гр. София и региона</a>
+  </div>
 </div>
 
 <nav>
-  <div class="logo" style="display:flex;align-items:center;gap:10px;"><img src="https://raw.githubusercontent.com/Traqnivanov/Remonti-/main/ivanov-remonti-logo-stroitelni-uslugi-sofia.jpg" alt="Ivanov Remonti — строителни услуги София" style="width:38px;height:38px;object-fit:contain;border-radius:6px;flex-shrink:0;" loading="lazy"/><div>Ти Почиваш — Ние Ремонтираме<span>Довършителни ремонти · София и региона</span></div></div>
+  <div class="logo" style="display:flex;align-items:center;gap:10px;"><img src="https://traqnivanov.github.io/Remonti-/ivanov-remonti-logo-stroitelni-uslugi-sofia.jpg" alt="Ivanov Remonti — строителни услуги София" style="width:38px;height:38px;object-fit:contain;border-radius:6px;flex-shrink:0;" loading="lazy"/><div>Ти Почиваш — Ние Ремонтираме<span>Довършителни ремонти · София и региона</span></div></div>
   <ul class="nav-links">
-    <li><a href="#services">Услуги</a></li>
+    <li><a href="#services">Услуги и цени</a></li>
     <li><a href="#process">Как работим</a></li>
     <li><a href="#video">Галерия</a></li>
     <li><a href="#advisor">Безплатен съвет</a></li>
     <li><a href="#bonuses">Бонуси</a></li>
     <li><a href="#reviews">Отзиви</a></li>
     <li><a href="#faq">Въпроси</a></li>
+    <li class="nav-dropdown">
+      <span class="nav-dropdown-trigger" style="cursor:pointer;">За нас ▾</span>
+      <div class="nav-dropdown-menu">
+        <a href="tel:0877810418"><span>📞</span> 0877 810 418</a>
+        <a href="https://m.me/IvanovRemonti" target="_blank" rel="noopener noreferrer"><span>💬</span> Messenger</a>
+        <a href="viber://chat?number=%2B359877810418"><span>📲</span> Viber</a>
+        <a href="mailto:ivanovremontibg@gmail.com"><span>✉️</span> ivanovremontibg@gmail.com</a>
+        <a href="#contact"><span>📍</span> гр. София и региона</a>
+      </div>
+    </li>
     <li><a href="#contact" class="nav-phone">📞 0877 810 418</a></li>
   </ul>
   <div class="hamburger" id="hamburger" onclick="toggleMenu()">
     <span></span><span></span><span></span>
   </div>
 </nav>
+
+<style>
+  .nav-dropdown { position: relative; }
+  .nav-dropdown-trigger { cursor: pointer; }
+  .nav-dropdown-menu {
+    display: none;
+    position: absolute;
+    top: calc(100% + 2px);
+    right: 0;
+    background: #0d1b2e;
+    border: 1px solid rgba(201,148,58,.3);
+    border-radius: 12px;
+    padding: .6rem 0;
+    min-width: 220px;
+    z-index: 999;
+    box-shadow: 0 8px 32px rgba(0,0,0,.5);
+  }
+  .nav-dropdown::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    height: 12px;
+  }
+  .nav-dropdown-menu a {
+    display: flex;
+    align-items: center;
+    gap: .7rem;
+    padding: .6rem 1.2rem;
+    font-size: .8rem;
+    color: #c8d6e8 !important;
+    text-transform: none !important;
+    letter-spacing: 0 !important;
+    transition: background .15s, color .15s;
+    text-decoration: none;
+  }
+  .nav-dropdown-menu a:hover { background: rgba(201,148,58,.1); color: var(--gold) !important; }
+  .nav-dropdown-menu a span { font-size: 1rem; }
+  .nav-dropdown:hover .nav-dropdown-menu { display: block; }
+  .nav-dropdown-menu.open { display: block; }
+</style>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const trigger = document.querySelector('.nav-dropdown-trigger');
+  const menu = document.querySelector('.nav-dropdown-menu');
+  if (trigger && menu) {
+    trigger.addEventListener('click', function(e) {
+      e.stopPropagation();
+      menu.classList.toggle('open');
+    });
+    document.addEventListener('click', function() {
+      menu.classList.remove('open');
+    });
+  }
+});
+</script>
 
 <!-- HERO -->
 <section class="hero">
@@ -730,13 +829,13 @@
       <h2 class="section-h2">Експертни ремонти за Апартаменти, Къщи и Офиси в София — Гипсокартон, Шпакловка, Боядисване, Обръщане на дограма и Бани</h2>
       <div class="gold-line center"></div>
       <p class="section-lead" style="max-width:560px; margin:0 auto;">Всяка услуга се изпълнява с <strong style="color:var(--gold);">договорен срок</strong>, коректност и писмена гаранция.</p>
-    <p style="color:var(--light-text); font-size:.85rem; line-height:1.8; max-width:900px; margin:1.5rem auto 0; text-align:center;">Работим с писмен договор и фиксирани цени. Безплатен оглед до 24 часа. Обслужваме цяла София: Люлин, Младост, Надежда, Красна поляна, Овча купел, Студентски град, Лозенец, Борово, Дружба, Банкя, Бояна, Лозен, Витоша, Княжево, Горна баня, Триадица, Средец, Оборище, Подуяне, Слатина, Изгрев, Красно село, Илинден, Бъкстон, Гео Милев, Яворов, Хладилника, Павлово, Стрелбище и Кръстова вада.</p>
+    
     </div>
     
 <div class="showcase">
 
   <div class="svc-prem-card" id="spaklovka">
-    <img class="card-img" src="https://raw.githubusercontent.com/Traqnivanov/Remonti-/main/shpaklovka-steni-apartament-sofia.jpg" alt="Шпакловка" loading="lazy"/>
+    <img class="card-img" src="https://traqnivanov.github.io/Remonti-/shpaklovka-steni-apartament-sofia.jpg" alt="Шпакловка" loading="lazy"/>
     <div class="card-overlay"></div><div class="card-shine"></div><div class="card-border"></div>
     <div class="card-ptag">✦ Услуга 01</div>
     <div class="card-pnum">01</div>
@@ -744,13 +843,13 @@
       <div class="card-pline"><span>Шпакловка</span></div>
       <div class="card-pname">Шпакловка</div>
       <div class="card-pdesc">Огледално гладки стени и тавани — без вълни, без следи, без компромис.</div>
-      <button class="card-pbtn" onclick="openServiceModal('spak')">Подробности и цени <span class="pbtn-circle">→</span></button>
-      <button class="card-calc-btn" onclick="openTeryBot('putty_menu')"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#c9943a" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="3"/><rect x="7" y="5" width="10" height="3" rx="1"/><circle cx="8" cy="12" r="1" fill="#c9943a" stroke="none"/><circle cx="12" cy="12" r="1" fill="#c9943a" stroke="none"/><circle cx="16" cy="12" r="1" fill="#c9943a" stroke="none"/><circle cx="8" cy="16" r="1" fill="#c9943a" stroke="none"/><circle cx="12" cy="16" r="1" fill="#c9943a" stroke="none"/><rect x="14.5" y="14" width="3" height="4" rx="1" fill="#c9943a" stroke="none"/></svg> Изчисли цена</button>
+      <button type="button" class="card-pbtn" onclick="openServiceModal('spak')">Подробности и цени <span class="pbtn-circle">→</span></button>
+      <button type="button" class="card-calc-btn" onclick="openTeryBot('putty_menu')"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#c9943a" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="3"/><rect x="7" y="5" width="10" height="3" rx="1"/><circle cx="8" cy="12" r="1" fill="#c9943a" stroke="none"/><circle cx="12" cy="12" r="1" fill="#c9943a" stroke="none"/><circle cx="16" cy="12" r="1" fill="#c9943a" stroke="none"/><circle cx="8" cy="16" r="1" fill="#c9943a" stroke="none"/><circle cx="12" cy="16" r="1" fill="#c9943a" stroke="none"/><rect x="14.5" y="14" width="3" height="4" rx="1" fill="#c9943a" stroke="none"/></svg> Изчисли цена</button>
     </div>
   </div>
 
   <div class="svc-prem-card" id="boyadisvane">
-    <img class="card-img" src="https://raw.githubusercontent.com/Traqnivanov/Remonti-/main/boyadisvane-apartament-sofia.jpg" alt="Боядисване" loading="lazy"/>
+    <img class="card-img" src="https://traqnivanov.github.io/Remonti-/boyadisvane-apartament-sofia.jpg" alt="Боядисване" loading="lazy"/>
     <div class="card-overlay"></div><div class="card-shine"></div><div class="card-border"></div>
     <div class="card-ptag">✦ Услуга 02</div>
     <div class="card-pnum">02</div>
@@ -758,13 +857,13 @@
       <div class="card-pline"><span>Боядисване</span></div>
       <div class="card-pname">Боядисване</div>
       <div class="card-pdesc">Наситени цветове и прецизност. Доказани бои за дълготраен резултат.</div>
-      <button class="card-pbtn" onclick="openServiceModal('boya')">Подробности и цени <span class="pbtn-circle">→</span></button>
-      <button class="card-calc-btn" onclick="openTeryBot('painting_menu')"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#c9943a" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="3"/><rect x="7" y="5" width="10" height="3" rx="1"/><circle cx="8" cy="12" r="1" fill="#c9943a" stroke="none"/><circle cx="12" cy="12" r="1" fill="#c9943a" stroke="none"/><circle cx="16" cy="12" r="1" fill="#c9943a" stroke="none"/><circle cx="8" cy="16" r="1" fill="#c9943a" stroke="none"/><circle cx="12" cy="16" r="1" fill="#c9943a" stroke="none"/><rect x="14.5" y="14" width="3" height="4" rx="1" fill="#c9943a" stroke="none"/></svg> Изчисли цена</button>
+      <button type="button" class="card-pbtn" onclick="openServiceModal('boya')">Подробности и цени <span class="pbtn-circle">→</span></button>
+      <button type="button" class="card-calc-btn" onclick="openTeryBot('painting_menu')"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#c9943a" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="3"/><rect x="7" y="5" width="10" height="3" rx="1"/><circle cx="8" cy="12" r="1" fill="#c9943a" stroke="none"/><circle cx="12" cy="12" r="1" fill="#c9943a" stroke="none"/><circle cx="16" cy="12" r="1" fill="#c9943a" stroke="none"/><circle cx="8" cy="16" r="1" fill="#c9943a" stroke="none"/><circle cx="12" cy="16" r="1" fill="#c9943a" stroke="none"/><rect x="14.5" y="14" width="3" height="4" rx="1" fill="#c9943a" stroke="none"/></svg> Изчисли цена</button>
     </div>
   </div>
 
   <div class="svc-prem-card" id="gipsokarton">
-    <img class="card-img" src="https://raw.githubusercontent.com/Traqnivanov/Remonti-/main/gipsokarton-okachen-tavan-sofia.jpg" alt="Гипсокартон" loading="lazy"/>
+    <img class="card-img" src="https://traqnivanov.github.io/Remonti-/gipsokarton-okachen-tavan-sofia.jpg" alt="Гипсокартон" loading="lazy"/>
     <div class="card-overlay"></div><div class="card-shine"></div><div class="card-border"></div>
     <div class="card-ptag">✦ Услуга 03</div>
     <div class="card-pnum">03</div>
@@ -772,13 +871,13 @@
       <div class="card-pline"><span>Гипсокартон</span></div>
       <div class="card-pname">Гипсокартон и Тавани</div>
       <div class="card-pdesc">Окачени тавани, преградни стени и декоративни ниши с отлична изолация.</div>
-      <button class="card-pbtn" onclick="openServiceModal('gyp')">Подробности и цени <span class="pbtn-circle">→</span></button>
-      <button class="card-calc-btn" onclick="openTeryBot('gk_menu')"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#c9943a" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="3"/><rect x="7" y="5" width="10" height="3" rx="1"/><circle cx="8" cy="12" r="1" fill="#c9943a" stroke="none"/><circle cx="12" cy="12" r="1" fill="#c9943a" stroke="none"/><circle cx="16" cy="12" r="1" fill="#c9943a" stroke="none"/><circle cx="8" cy="16" r="1" fill="#c9943a" stroke="none"/><circle cx="12" cy="16" r="1" fill="#c9943a" stroke="none"/><rect x="14.5" y="14" width="3" height="4" rx="1" fill="#c9943a" stroke="none"/></svg> Изчисли цена</button>
+      <button type="button" class="card-pbtn" onclick="openServiceModal('gyp')">Подробности и цени <span class="pbtn-circle">→</span></button>
+      <button type="button" class="card-calc-btn" onclick="openTeryBot('gk_menu')"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#c9943a" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="3"/><rect x="7" y="5" width="10" height="3" rx="1"/><circle cx="8" cy="12" r="1" fill="#c9943a" stroke="none"/><circle cx="12" cy="12" r="1" fill="#c9943a" stroke="none"/><circle cx="16" cy="12" r="1" fill="#c9943a" stroke="none"/><circle cx="8" cy="16" r="1" fill="#c9943a" stroke="none"/><circle cx="12" cy="16" r="1" fill="#c9943a" stroke="none"/><rect x="14.5" y="14" width="3" height="4" rx="1" fill="#c9943a" stroke="none"/></svg> Изчисли цена</button>
     </div>
   </div>
 
   <div class="svc-prem-card" id="vik">
-    <img class="card-img" src="https://raw.githubusercontent.com/Traqnivanov/Remonti-/main/vik-uslugi-sofia.jpg" alt="ВиК" loading="lazy"/>
+    <img class="card-img" src="https://traqnivanov.github.io/Remonti-/vik-uslugi-sofia.jpg" alt="ВиК" loading="lazy"/>
     <div class="card-overlay"></div><div class="card-shine"></div><div class="card-border"></div>
     <div class="card-ptag">✦ Услуга 04</div>
     <div class="card-pnum">04</div>
@@ -786,13 +885,13 @@
       <div class="card-pline"><span>ВиК</span></div>
       <div class="card-pname">ВиК</div>
       <div class="card-pdesc">Пълна подмяна или изграждане на нови водопроводни инсталации по проект.</div>
-      <button class="card-pbtn" onclick="openServiceModal('vik')">Подробности и цени <span class="pbtn-circle">→</span></button>
-      <button class="card-calc-btn" onclick="openTeryBot('vik_menu')"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#c9943a" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="3"/><rect x="7" y="5" width="10" height="3" rx="1"/><circle cx="8" cy="12" r="1" fill="#c9943a" stroke="none"/><circle cx="12" cy="12" r="1" fill="#c9943a" stroke="none"/><circle cx="16" cy="12" r="1" fill="#c9943a" stroke="none"/><circle cx="8" cy="16" r="1" fill="#c9943a" stroke="none"/><circle cx="12" cy="16" r="1" fill="#c9943a" stroke="none"/><rect x="14.5" y="14" width="3" height="4" rx="1" fill="#c9943a" stroke="none"/></svg> Изчисли цена</button>
+      <button type="button" class="card-pbtn" onclick="openServiceModal('vik')">Подробности и цени <span class="pbtn-circle">→</span></button>
+      <button type="button" class="card-calc-btn" onclick="openTeryBot('vik_menu')"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#c9943a" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="3"/><rect x="7" y="5" width="10" height="3" rx="1"/><circle cx="8" cy="12" r="1" fill="#c9943a" stroke="none"/><circle cx="12" cy="12" r="1" fill="#c9943a" stroke="none"/><circle cx="16" cy="12" r="1" fill="#c9943a" stroke="none"/><circle cx="8" cy="16" r="1" fill="#c9943a" stroke="none"/><circle cx="12" cy="16" r="1" fill="#c9943a" stroke="none"/><rect x="14.5" y="14" width="3" height="4" rx="1" fill="#c9943a" stroke="none"/></svg> Изчисли цена</button>
     </div>
   </div>
 
   <div class="svc-prem-card" id="dograma">
-    <img class="card-img" src="https://raw.githubusercontent.com/Traqnivanov/Remonti-/main/obrushchane-dograma-prozorci-sofia.jpg" alt="Дограма" loading="lazy"/>
+    <img class="card-img" src="https://traqnivanov.github.io/Remonti-/obrushchane-dograma-prozorci-sofia.jpg" alt="Дограма" loading="lazy"/>
     <div class="card-overlay"></div><div class="card-shine"></div><div class="card-border"></div>
     <div class="card-ptag">✦ Услуга 05</div>
     <div class="card-pnum">05</div>
@@ -800,13 +899,13 @@
       <div class="card-pline"><span>Обръщане Дограма</span></div>
       <div class="card-pname">Обръщане Дограма</div>
       <div class="card-pdesc">Прецизно обръщане около врати и прозорци — безупречен финиш.</div>
-      <button class="card-pbtn" onclick="openServiceModal('dog')">Подробности и цени <span class="pbtn-circle">→</span></button>
-      <button class="card-calc-btn" onclick="openTeryBot('windows_menu')"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#c9943a" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="3"/><rect x="7" y="5" width="10" height="3" rx="1"/><circle cx="8" cy="12" r="1" fill="#c9943a" stroke="none"/><circle cx="12" cy="12" r="1" fill="#c9943a" stroke="none"/><circle cx="16" cy="12" r="1" fill="#c9943a" stroke="none"/><circle cx="8" cy="16" r="1" fill="#c9943a" stroke="none"/><circle cx="12" cy="16" r="1" fill="#c9943a" stroke="none"/><rect x="14.5" y="14" width="3" height="4" rx="1" fill="#c9943a" stroke="none"/></svg> Изчисли цена</button>
+      <button type="button" class="card-pbtn" onclick="openServiceModal('dog')">Подробности и цени <span class="pbtn-circle">→</span></button>
+      <button type="button" class="card-calc-btn" onclick="openTeryBot('windows_menu')"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#c9943a" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="3"/><rect x="7" y="5" width="10" height="3" rx="1"/><circle cx="8" cy="12" r="1" fill="#c9943a" stroke="none"/><circle cx="12" cy="12" r="1" fill="#c9943a" stroke="none"/><circle cx="16" cy="12" r="1" fill="#c9943a" stroke="none"/><circle cx="8" cy="16" r="1" fill="#c9943a" stroke="none"/><circle cx="12" cy="16" r="1" fill="#c9943a" stroke="none"/><rect x="14.5" y="14" width="3" height="4" rx="1" fill="#c9943a" stroke="none"/></svg> Изчисли цена</button>
     </div>
   </div>
 
   <div class="svc-prem-card" id="mazilka">
-    <img class="card-img" src="https://raw.githubusercontent.com/Traqnivanov/Remonti-/main/dekorativna-mazilka-sofia.jpg" alt="Мазилка" loading="lazy"/>
+    <img class="card-img" src="https://traqnivanov.github.io/Remonti-/dekorativna-mazilka-sofia.jpg" alt="Мазилка" loading="lazy"/>
     <div class="card-overlay"></div><div class="card-shine"></div><div class="card-border"></div>
     <div class="card-ptag">✦ Услуга 06</div>
     <div class="card-pnum">06</div>
@@ -903,11 +1002,11 @@
     <p class="section-tag" style="text-align:center;margin-bottom:1.5rem;">&#10234; Преди и след &mdash; плъзни, за да видиш разликата</p>
     <div class="before-after" id="baSlider">
       <div class="ba-after">
-        <img src="https://raw.githubusercontent.com/Traqnivanov/Remonti-/main/IMG_20180612_121525.jpg" alt="След ремонт" loading="lazy">
+        <img src="https://traqnivanov.github.io/Remonti-/IMG_20180612_121525.jpg" alt="След ремонт" loading="lazy">
         <span class="ba-label ba-label-after">СЛЕД</span>
       </div>
       <div class="ba-before" id="baBefore">
-        <img src="https://raw.githubusercontent.com/Traqnivanov/Remonti-/main/IMG_20180605_075756.jpg" alt="Преди ремонт" loading="lazy">
+        <img src="https://traqnivanov.github.io/Remonti-/IMG_20180605_075756.jpg" alt="Преди ремонт" loading="lazy">
         <span class="ba-label ba-label-before">ПРЕДИ</span>
       </div>
       <div class="ba-handle" id="baHandle">
@@ -920,17 +1019,17 @@
 
   <p class="section-tag" style="text-align:center;margin-bottom:1.2rem;">&#128247; Портфолио</p>
   <div id="gal-filters" style="display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-bottom:1.5rem;">
-    <button class="gal-filter active" data-cat="all" onclick="filterGallery('all')">Всички</button>
-    <button class="gal-filter" data-cat="spak" onclick="filterGallery('spak')">Шпакловка</button>
-    <button class="gal-filter" data-cat="boya" onclick="filterGallery('boya')">Боядисване</button>
-    <button class="gal-filter" data-cat="gyp" onclick="filterGallery('gyp')">Гипсокартон</button>
-    <button class="gal-filter" data-cat="vik" onclick="filterGallery('vik')">ВиК</button>
-    <button class="gal-filter" data-cat="dog" onclick="filterGallery('dog')">Дограма</button>
+    <button type="button" class="gal-filter active" data-cat="all" onclick="filterGallery('all')">Всички</button>
+    <button type="button" class="gal-filter" data-cat="spak" onclick="filterGallery('spak')">Шпакловка</button>
+    <button type="button" class="gal-filter" data-cat="boya" onclick="filterGallery('boya')">Боядисване</button>
+    <button type="button" class="gal-filter" data-cat="gyp" onclick="filterGallery('gyp')">Гипсокартон</button>
+    <button type="button" class="gal-filter" data-cat="vik" onclick="filterGallery('vik')">ВиК</button>
+    <button type="button" class="gal-filter" data-cat="dog" onclick="filterGallery('dog')">Дограма</button>
   </div>
   <!-- PREVIEW GRID — 6 случайни снимки -->
   <div id="gal-preview" style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px;max-width:1200px;margin:0 auto;"></div>
   <div style="text-align:center;margin-top:1.2rem;">
-    <button onclick="openFullGallery()" style="background:rgba(201,148,58,.1);border:1px solid rgba(201,148,58,.35);color:var(--gold);padding:.75rem 2rem;border-radius:30px;font-size:.85rem;font-weight:700;cursor:pointer;font-family:inherit;transition:all .25s;" onmouseover="this.style.background='rgba(201,148,58,.2)'" onmouseout="this.style.background='rgba(201,148,58,.1)'">📸 Виж всички 39 снимки →</button>
+    <button type="button" onclick="openFullGallery()" style="background:rgba(201,148,58,.1);border:1px solid rgba(201,148,58,.35);color:var(--gold);padding:.75rem 2rem;border-radius:30px;font-size:.85rem;font-weight:700;cursor:pointer;font-family:inherit;transition:all .25s;" onmouseover="this.style.background='rgba(201,148,58,.2)'" onmouseout="this.style.background='rgba(201,148,58,.1)'">📸 Виж всички 39 снимки →</button>
   </div>
 
   <!-- FULL GALLERY OVERLAY -->
@@ -938,28 +1037,28 @@
     <div style="max-width:1200px;margin:0 auto;padding:1.5rem;">
       <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:1.5rem;">
         <h3 style="color:#c9943a;font-size:1.1rem;font-weight:600;margin:0;">📸 Портфолио</h3>
-        <button onclick="closeFullGallery()" style="background:rgba(255,255,255,.1);border:none;color:white;width:38px;height:38px;border-radius:50%;font-size:1.3rem;cursor:pointer;">&times;</button>
+        <button type="button" onclick="closeFullGallery()" style="background:rgba(255,255,255,.1);border:none;color:white;width:38px;height:38px;border-radius:50%;font-size:1.3rem;cursor:pointer;">&times;</button>
       </div>
       <div id="gal-overlay-filters" style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:1.2rem;">
-        <button class="gal-filter active" data-cat="all" onclick="filterGallery('all')">Всички</button>
-        <button class="gal-filter" data-cat="spak" onclick="filterGallery('spak')">Шпакловка</button>
-        <button class="gal-filter" data-cat="boya" onclick="filterGallery('boya')">Боядисване</button>
-        <button class="gal-filter" data-cat="gyp" onclick="filterGallery('gyp')">Гипсокартон</button>
-        <button class="gal-filter" data-cat="vik" onclick="filterGallery('vik')">ВиК</button>
-        <button class="gal-filter" data-cat="dog" onclick="filterGallery('dog')">Дограма</button>
-        <button class="gal-filter" data-cat="maz" onclick="filterGallery('maz')">Мазилка</button>
+        <button type="button" class="gal-filter active" data-cat="all" onclick="filterGallery('all')">Всички</button>
+        <button type="button" class="gal-filter" data-cat="spak" onclick="filterGallery('spak')">Шпакловка</button>
+        <button type="button" class="gal-filter" data-cat="boya" onclick="filterGallery('boya')">Боядисване</button>
+        <button type="button" class="gal-filter" data-cat="gyp" onclick="filterGallery('gyp')">Гипсокартон</button>
+        <button type="button" class="gal-filter" data-cat="vik" onclick="filterGallery('vik')">ВиК</button>
+        <button type="button" class="gal-filter" data-cat="dog" onclick="filterGallery('dog')">Дограма</button>
+        <button type="button" class="gal-filter" data-cat="maz" onclick="filterGallery('maz')">Мазилка</button>
       </div>
       <div id="masonry-grid" style="columns:2;column-gap:8px;"></div>
       <div id="gal-load-more" style="text-align:center;margin-top:1.5rem;display:none;">
-        <button onclick="loadMoreGallery()" style="background:rgba(201,148,58,.1);border:1px solid rgba(201,148,58,.35);color:var(--gold);padding:.7rem 2rem;border-radius:30px;font-size:.82rem;font-weight:700;cursor:pointer;font-family:inherit;">+ Зареди още снимки</button>
+        <button type="button" onclick="loadMoreGallery()" style="background:rgba(201,148,58,.1);border:1px solid rgba(201,148,58,.35);color:var(--gold);padding:.7rem 2rem;border-radius:30px;font-size:.82rem;font-weight:700;cursor:pointer;font-family:inherit;">+ Зареди още снимки</button>
       </div>
     </div>
   </div>
 
   <div id="gal-lightbox" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.95);z-index:999999;align-items:center;justify-content:center;" onclick="closeLightboxGal(event)">
-    <button onclick="navLightbox(-1);event.stopPropagation();" style="position:absolute;left:16px;top:50%;transform:translateY(-50%);background:rgba(201,168,76,.15);border:1px solid rgba(201,168,76,.3);color:#C9A84C;width:44px;height:44px;border-radius:50%;font-size:1.4rem;cursor:pointer;z-index:2;">&#8249;</button>
-    <button onclick="navLightbox(1);event.stopPropagation();" style="position:absolute;right:16px;top:50%;transform:translateY(-50%);background:rgba(201,168,76,.15);border:1px solid rgba(201,168,76,.3);color:#C9A84C;width:44px;height:44px;border-radius:50%;font-size:1.4rem;cursor:pointer;z-index:2;">&#8250;</button>
-    <button onclick="closeLightboxGal()" style="position:absolute;top:16px;right:16px;background:rgba(255,255,255,.1);border:none;color:white;width:36px;height:36px;border-radius:50%;font-size:1.2rem;cursor:pointer;z-index:2;">&times;</button>
+    <button type="button" onclick="navLightbox(-1);event.stopPropagation();" style="position:absolute;left:16px;top:50%;transform:translateY(-50%);background:rgba(201,168,76,.15);border:1px solid rgba(201,168,76,.3);color:#C9A84C;width:44px;height:44px;border-radius:50%;font-size:1.4rem;cursor:pointer;z-index:2;">&#8249;</button>
+    <button type="button" onclick="navLightbox(1);event.stopPropagation();" style="position:absolute;right:16px;top:50%;transform:translateY(-50%);background:rgba(201,168,76,.15);border:1px solid rgba(201,168,76,.3);color:#C9A84C;width:44px;height:44px;border-radius:50%;font-size:1.4rem;cursor:pointer;z-index:2;">&#8250;</button>
+    <button type="button" onclick="closeLightboxGal()" style="position:absolute;top:16px;right:16px;background:rgba(255,255,255,.1);border:none;color:white;width:36px;height:36px;border-radius:50%;font-size:1.2rem;cursor:pointer;z-index:2;">&times;</button>
     <span id="gal-lb-badge" style="position:absolute;top:16px;left:50%;transform:translateX(-50%);background:rgba(13,27,46,.75);border:1px solid rgba(201,168,76,.35);border-radius:20px;padding:4px 14px;font-size:.7rem;color:#C9A84C;font-weight:700;z-index:2;"></span>
     <img id="gal-lb-img" src="" alt="" style="max-width:90vw;max-height:85vh;object-fit:contain;border-radius:8px;user-select:none;"/>
     <div id="gal-lb-counter" style="position:absolute;bottom:16px;left:50%;transform:translateX(-50%);font-size:.72rem;color:rgba(255,255,255,.4);"></div>
@@ -997,45 +1096,45 @@
 
 <script>
 const galleryImages=[
-  {url:"https://raw.githubusercontent.com/Traqnivanov/Remonti-/main/fina-shpaklovka-steni-sofia-01.jpg",cat:"spak",label:"Шпакловка"},
-  {url:"https://raw.githubusercontent.com/Traqnivanov/Remonti-/main/shpaklovka-s-mreja-sofia-01.jpg",cat:"spak",label:"Шпакловка"},
-  {url:"https://raw.githubusercontent.com/Traqnivanov/Remonti-/main/shpaklovka-boyadisvane-gipsokarton-sofia-08.jpg",cat:"spak",label:"Шпакловка"},
-  {url:"https://raw.githubusercontent.com/Traqnivanov/Remonti-/main/cyalosen-remont-shpaklovka-sofia-01.jpg",cat:"spak",label:"Шпакловка"},
-  {url:"https://raw.githubusercontent.com/Traqnivanov/Remonti-/main/remont-apartament-sofia-01.jpg",cat:"spak",label:"Шпакловка"},
-  {url:"https://raw.githubusercontent.com/Traqnivanov/Remonti-/main/gipsokarton-shpaklovka-boyadisvane-sofia-01.jpg",cat:"spak",label:"Шпакловка"},
-  {url:"https://raw.githubusercontent.com/Traqnivanov/Remonti-/main/bezprahovo-shlaifane-sofia-01.jpg",cat:"spak",label:"Шпакловка"},
-  {url:"https://raw.githubusercontent.com/Traqnivanov/Remonti-/main/instrumenti-shpaklovka-sofia.jpg",cat:"spak",label:"Шпакловка"},
-  {url:"https://raw.githubusercontent.com/Traqnivanov/Remonti-/main/boyadisvane-apartament-naseteni-cvetove-lateks-sofia.jpg",cat:"boya",label:"Боядисване"},
-  {url:"https://raw.githubusercontent.com/Traqnivanov/Remonti-/main/boyadisvane-lateks-steni-cena-trud-sofia.jpg",cat:"boya",label:"Боядисване"},
-  {url:"https://raw.githubusercontent.com/Traqnivanov/Remonti-/main/gipsokarton-tavan-shpaklovka-lateks-cena-trud-sofia.jpg",cat:"boya",label:"Боядисване"},
-  {url:"https://raw.githubusercontent.com/Traqnivanov/Remonti-/main/remont-apartament-gipsokarton-shpaklovka-boyadisvane-sofia.jpg",cat:"boya",label:"Боядисване"},
-  {url:"https://raw.githubusercontent.com/Traqnivanov/Remonti-/main/boyadisvane-steni-tavani-apartament-sofia.jpg",cat:"boya",label:"Боядисване"},
-  {url:"https://raw.githubusercontent.com/Traqnivanov/Remonti-/main/oferta-boyadisvane-lateks-kvadraten-metar-sofia.jpg",cat:"boya",label:"Боядисване"},
-  {url:"https://raw.githubusercontent.com/Traqnivanov/Remonti-/main/boyadisvane-gipsovo-lepilo-lateks-sofia.jpg",cat:"boya",label:"Боядисване"},
-  {url:"https://raw.githubusercontent.com/Traqnivanov/Remonti-/main/boyadisvane-gipsokarton-skrito-osvetlenie-led-nisha-sofia.jpg",cat:"boya",label:"Боядисване"},
-  {url:"https://raw.githubusercontent.com/Traqnivanov/Remonti-/main/boyadisvane-steni-cveten-lateks-apartament-sofia.jpg",cat:"boya",label:"Боядисване"},
-  {url:"https://raw.githubusercontent.com/Traqnivanov/Remonti-/main/boyadisvane-lateks-ceni-apartament-sofia.jpg",cat:"boya",label:"Боядисване"},
-  {url:"https://raw.githubusercontent.com/Traqnivanov/Remonti-/main/gipsokarton-led-nisha-sofia-03.jpg",cat:"gyp",label:"Гипсокартон"},
-  {url:"https://raw.githubusercontent.com/Traqnivanov/Remonti-/main/gipsokarton-predstenna-obshivka-sofia.jpg",cat:"gyp",label:"Гипсокартон"},
-  {url:"https://raw.githubusercontent.com/Traqnivanov/Remonti-/main/gipsokarton-tavan-sofia-16.jpg",cat:"gyp",label:"Гипсокартон"},
-  {url:"https://raw.githubusercontent.com/Traqnivanov/Remonti-/main/shpaklovka-boyadisvane-gipsokarton-sofia-01.jpg",cat:"gyp",label:"Гипсокартон"},
-  {url:"https://raw.githubusercontent.com/Traqnivanov/Remonti-/main/gipsokarton-montazh-apartament-sofia.jpg",cat:"gyp",label:"Гипсокартон"},
-  {url:"https://raw.githubusercontent.com/Traqnivanov/Remonti-/main/predi-sled-remont-dnevna-gipsokarton-led-sofia.jpg",cat:"gyp",label:"Гипсокартон"},
-  {url:"https://raw.githubusercontent.com/Traqnivanov/Remonti-/main/gipsokarton-predstena-dnevna-sofia.jpg",cat:"gyp",label:"Гипсокартон"},
-  {url:"https://raw.githubusercontent.com/Traqnivanov/Remonti-/main/gipsokarton-rgb-led-nisha-dnevna-sofia.jpg",cat:"gyp",label:"Гипсокартон"},
-  {url:"https://raw.githubusercontent.com/Traqnivanov/Remonti-/main/gipsokarton-nishi-banya-vlagoustoichiv-sofia.jpg",cat:"gyp",label:"Гипсокартон"},
-  {url:"https://raw.githubusercontent.com/Traqnivanov/Remonti-/main/gipsokarton-izolaciya-mineralna-vata-tavan-steni-sofia.jpg",cat:"gyp",label:"Гипсокартон"},
-  {url:"https://raw.githubusercontent.com/Traqnivanov/Remonti-/main/gipsokarton-tavan-figura-dekorativen-dnevna-sofia.jpg",cat:"gyp",label:"Гипсокартон"},
-  {url:"https://raw.githubusercontent.com/Traqnivanov/Remonti-/main/vik-instalacia-sofia-02.jpg",cat:"vik",label:"ВиК"},
-  {url:"https://raw.githubusercontent.com/Traqnivanov/Remonti-/main/smyana-vik-instalaciya-apartament-sofia.jpg",cat:"vik",label:"ВиК"},
-  {url:"https://raw.githubusercontent.com/Traqnivanov/Remonti-/main/vik-remont-apartament-maystor-sofia.jpg",cat:"vik",label:"ВиК"},
-  {url:"https://raw.githubusercontent.com/Traqnivanov/Remonti-/main/obrushchane-prozorci-apartament-sofia-01.jpg",cat:"dog",label:"Дограма"},
-  {url:"https://raw.githubusercontent.com/Traqnivanov/Remonti-/main/obrushchane-vrata-apartament-sofia.jpg",cat:"dog",label:"Дограма"},
-  {url:"https://raw.githubusercontent.com/Traqnivanov/Remonti-/main/obrushchane-dograma-cena-trud-sofia.jpg",cat:"dog",label:"Дограма"},
-  {url:"https://raw.githubusercontent.com/Traqnivanov/Remonti-/main/obrushchane-prozorci-sofia-03.jpg",cat:"dog",label:"Дограма"},
-  {url:"https://raw.githubusercontent.com/Traqnivanov/Remonti-/main/dekorativna-mazilka-sofia-02.jpg",cat:"maz",label:"Мазилка"},
-  {url:"https://raw.githubusercontent.com/Traqnivanov/Remonti-/main/dekorativna-pqsachna-mazilka-sofia-04.jpg",cat:"maz",label:"Мазилка"},
-  {url:"https://raw.githubusercontent.com/Traqnivanov/Remonti-/main/dekorativna-pqsachna-mazilka-sofia-01.jpg",cat:"maz",label:"Мазилка"},
+  {url:"https://traqnivanov.github.io/Remonti-/fina-shpaklovka-steni-sofia-01.jpg",cat:"spak",label:"Шпакловка"},
+  {url:"https://traqnivanov.github.io/Remonti-/shpaklovka-s-mreja-sofia-01.jpg",cat:"spak",label:"Шпакловка"},
+  {url:"https://traqnivanov.github.io/Remonti-/shpaklovka-boyadisvane-gipsokarton-sofia-08.jpg",cat:"spak",label:"Шпакловка"},
+  {url:"https://traqnivanov.github.io/Remonti-/cyalosen-remont-shpaklovka-sofia-01.jpg",cat:"spak",label:"Шпакловка"},
+  {url:"https://traqnivanov.github.io/Remonti-/remont-apartament-sofia-01.jpg",cat:"spak",label:"Шпакловка"},
+  {url:"https://traqnivanov.github.io/Remonti-/gipsokarton-shpaklovka-boyadisvane-sofia-01.jpg",cat:"spak",label:"Шпакловка"},
+  {url:"https://traqnivanov.github.io/Remonti-/bezprahovo-shlaifane-sofia-01.jpg",cat:"spak",label:"Шпакловка"},
+  {url:"https://traqnivanov.github.io/Remonti-/instrumenti-shpaklovka-sofia.jpg",cat:"spak",label:"Шпакловка"},
+  {url:"https://traqnivanov.github.io/Remonti-/boyadisvane-apartament-naseteni-cvetove-lateks-sofia.jpg",cat:"boya",label:"Боядисване"},
+  {url:"https://traqnivanov.github.io/Remonti-/boyadisvane-lateks-steni-cena-trud-sofia.jpg",cat:"boya",label:"Боядисване"},
+  {url:"https://traqnivanov.github.io/Remonti-/gipsokarton-tavan-shpaklovka-lateks-cena-trud-sofia.jpg",cat:"boya",label:"Боядисване"},
+  {url:"https://traqnivanov.github.io/Remonti-/remont-apartament-gipsokarton-shpaklovka-boyadisvane-sofia.jpg",cat:"boya",label:"Боядисване"},
+  {url:"https://traqnivanov.github.io/Remonti-/boyadisvane-steni-tavani-apartament-sofia.jpg",cat:"boya",label:"Боядисване"},
+  {url:"https://traqnivanov.github.io/Remonti-/oferta-boyadisvane-lateks-kvadraten-metar-sofia.jpg",cat:"boya",label:"Боядисване"},
+  {url:"https://traqnivanov.github.io/Remonti-/boyadisvane-gipsovo-lepilo-lateks-sofia.jpg",cat:"boya",label:"Боядисване"},
+  {url:"https://traqnivanov.github.io/Remonti-/boyadisvane-gipsokarton-skrito-osvetlenie-led-nisha-sofia.jpg",cat:"boya",label:"Боядисване"},
+  {url:"https://traqnivanov.github.io/Remonti-/boyadisvane-steni-cveten-lateks-apartament-sofia.jpg",cat:"boya",label:"Боядисване"},
+  {url:"https://traqnivanov.github.io/Remonti-/boyadisvane-lateks-ceni-apartament-sofia.jpg",cat:"boya",label:"Боядисване"},
+  {url:"https://traqnivanov.github.io/Remonti-/gipsokarton-led-nisha-sofia-03.jpg",cat:"gyp",label:"Гипсокартон"},
+  {url:"https://traqnivanov.github.io/Remonti-/gipsokarton-predstenna-obshivka-sofia.jpg",cat:"gyp",label:"Гипсокартон"},
+  {url:"https://traqnivanov.github.io/Remonti-/gipsokarton-tavan-sofia-16.jpg",cat:"gyp",label:"Гипсокартон"},
+  {url:"https://traqnivanov.github.io/Remonti-/shpaklovka-boyadisvane-gipsokarton-sofia-01.jpg",cat:"gyp",label:"Гипсокартон"},
+  {url:"https://traqnivanov.github.io/Remonti-/gipsokarton-montazh-apartament-sofia.jpg",cat:"gyp",label:"Гипсокартон"},
+  {url:"https://traqnivanov.github.io/Remonti-/predi-sled-remont-dnevna-gipsokarton-led-sofia.jpg",cat:"gyp",label:"Гипсокартон"},
+  {url:"https://traqnivanov.github.io/Remonti-/gipsokarton-predstena-dnevna-sofia.jpg",cat:"gyp",label:"Гипсокартон"},
+  {url:"https://traqnivanov.github.io/Remonti-/gipsokarton-rgb-led-nisha-dnevna-sofia.jpg",cat:"gyp",label:"Гипсокартон"},
+  {url:"https://traqnivanov.github.io/Remonti-/gipsokarton-nishi-banya-vlagoustoichiv-sofia.jpg",cat:"gyp",label:"Гипсокартон"},
+  {url:"https://traqnivanov.github.io/Remonti-/gipsokarton-izolaciya-mineralna-vata-tavan-steni-sofia.jpg",cat:"gyp",label:"Гипсокартон"},
+  {url:"https://traqnivanov.github.io/Remonti-/gipsokarton-tavan-figura-dekorativen-dnevna-sofia.jpg",cat:"gyp",label:"Гипсокартон"},
+  {url:"https://traqnivanov.github.io/Remonti-/vik-instalacia-sofia-02.jpg",cat:"vik",label:"ВиК"},
+  {url:"https://traqnivanov.github.io/Remonti-/smyana-vik-instalaciya-apartament-sofia.jpg",cat:"vik",label:"ВиК"},
+  {url:"https://traqnivanov.github.io/Remonti-/vik-remont-apartament-maystor-sofia.jpg",cat:"vik",label:"ВиК"},
+  {url:"https://traqnivanov.github.io/Remonti-/obrushchane-prozorci-apartament-sofia-01.jpg",cat:"dog",label:"Дограма"},
+  {url:"https://traqnivanov.github.io/Remonti-/obrushchane-vrata-apartament-sofia.jpg",cat:"dog",label:"Дограма"},
+  {url:"https://traqnivanov.github.io/Remonti-/obrushchane-dograma-cena-trud-sofia.jpg",cat:"dog",label:"Дограма"},
+  {url:"https://traqnivanov.github.io/Remonti-/obrushchane-prozorci-sofia-03.jpg",cat:"dog",label:"Дограма"},
+  {url:"https://traqnivanov.github.io/Remonti-/dekorativna-mazilka-sofia-02.jpg",cat:"maz",label:"Мазилка"},
+  {url:"https://traqnivanov.github.io/Remonti-/dekorativna-pqsachna-mazilka-sofia-04.jpg",cat:"maz",label:"Мазилка"},
+  {url:"https://traqnivanov.github.io/Remonti-/dekorativna-pqsachna-mazilka-sofia-01.jpg",cat:"maz",label:"Мазилка"},
 ];
 let galCat='all',galIdx=0,galVisible=[],galShown=0;
 const GAL_BATCH=12;
@@ -1113,6 +1212,7 @@ function openLightboxGal(idx){
   galIdx=idx;
   const img=galVisible[idx]||galleryImages[idx];
   document.getElementById('gal-lb-img').src=img.url;
+  document.getElementById('gal-lb-img').alt=img.label;
   document.getElementById('gal-lb-badge').textContent=img.label;
   document.getElementById('gal-lb-counter').textContent=(idx+1)+' / '+(galVisible.length||galleryImages.length);
   document.getElementById('gal-lightbox').style.display='flex';
@@ -1140,6 +1240,69 @@ document.addEventListener('keydown',e=>{
 // Премахваме филтрите от основната секция (са в overlay)
 document.getElementById('gal-overlay')&&(document.getElementById('gal-overlay').style.display='none');
 initPreview();
+
+// ВИЗИТКА LIGHTBOX
+function openVizitkaLightbox() {
+  const url = 'https://traqnivanov.github.io/Remonti-/ivanov-remonti-stroitelni-uslugi-kachestvo-garantsiya-sofia.jpg';
+  document.getElementById('gal-lb-img').src = url;
+  document.getElementById('gal-lb-badge').textContent = 'Ivanov Remonti';
+  document.getElementById('gal-lb-counter').textContent = '';
+  document.getElementById('gal-lightbox').style.display = 'flex';
+  document.body.style.overflow = 'hidden';
+  pushModalState('lightbox');
+}
+
+// TOUCH ЕФЕКТИ ЗА КАРТИ
+document.querySelectorAll('.svc-prem-card').forEach(card => {
+  card.addEventListener('touchstart', function() {
+    document.querySelectorAll('.svc-prem-card').forEach(c => c.classList.remove('touched'));
+    this.classList.add('touched');
+  }, {passive: true});
+});
+document.addEventListener('touchstart', function(e) {
+  if (!e.target.closest('.svc-prem-card')) {
+    document.querySelectorAll('.svc-prem-card').forEach(c => c.classList.remove('touched'));
+  }
+}, {passive: true});
+
+// BACK BUTTON — затваря overlay/модал/lightbox вместо да излиза от сайта
+function pushModalState(id) {
+  history.pushState({ modal: id }, '');
+}
+function closeTopModal() {
+  const lb = document.getElementById('gal-lightbox');
+  const ov = document.getElementById('gal-overlay');
+  const svc = document.getElementById('serviceOverlay');
+  if (lb && lb.style.display === 'flex') {
+    lb.style.display = 'none';
+    document.body.style.overflow = '';
+  } else if (ov && ov.style.display === 'block') {
+    ov.style.display = 'none';
+    document.body.style.overflow = '';
+  } else if (svc && svc.style.display === 'flex') {
+    closeServiceModalDirect();
+  }
+}
+window.addEventListener('popstate', function(e) {
+  closeTopModal();
+});
+
+// Patch open functions to push state
+const _origOpenLightbox = openLightboxGal;
+openLightboxGal = function(idx) {
+  _origOpenLightbox(idx);
+  pushModalState('lightbox');
+};
+const _origOpenFull = openFullGallery;
+openFullGallery = function() {
+  _origOpenFull();
+  pushModalState('gallery');
+};
+const _origOpenSvc = openServiceModal;
+openServiceModal = function(id) {
+  _origOpenSvc(id);
+  pushModalState('service');
+};
 </script>
 <section class="reviews" id="reviews">
   <div class="reviews-inner">
@@ -1351,7 +1514,7 @@ initPreview();
       <p style="font-size:.78rem; color:var(--muted); margin-bottom:1.4rem; font-weight:300;">Питайте ни директно — отговаряме веднага.</p>
       <div style="display:flex; justify-content:center; gap:1rem; flex-wrap:wrap;">
         <a onclick="openTeryBot('consultation')" style="display:inline-flex; align-items:center; gap:.6rem; background:rgba(201,148,58,.12); border:1px solid rgba(201,148,58,.4); color:var(--gold); padding:.75rem 1.6rem; border-radius:30px; font-size:.8rem; font-weight:700; cursor:pointer; text-decoration:none; transition:all .25s; letter-spacing:.04em;" onmouseover="this.style.background='rgba(201,148,58,.22)'" onmouseout="this.style.background='rgba(201,148,58,.12)'">💬 Задайте въпрос на бота →</a>
-        <a href="https://m.me/IvanovRemonti" target="_blank" style="display:inline-flex; align-items:center; gap:.6rem; background:rgba(24,119,242,.1); border:1px solid rgba(24,119,242,.35); color:#4A9EF5; padding:.75rem 1.6rem; border-radius:30px; font-size:.8rem; font-weight:700; text-decoration:none; transition:all .25s;" onmouseover="this.style.background='rgba(24,119,242,.2)'" onmouseout="this.style.background='rgba(24,119,242,.1)'">
+        <a href="https://m.me/IvanovRemonti" target="_blank" rel="noopener noreferrer" style="display:inline-flex; align-items:center; gap:.6rem; background:rgba(24,119,242,.1); border:1px solid rgba(24,119,242,.35); color:#4A9EF5; padding:.75rem 1.6rem; border-radius:30px; font-size:.8rem; font-weight:700; text-decoration:none; transition:all .25s;" onmouseover="this.style.background='rgba(24,119,242,.2)'" onmouseout="this.style.background='rgba(24,119,242,.1)'">
           <span style="width:6px;height:6px;border-radius:50%;background:#4CAF82;display:inline-block;animation:dotPulse 2s ease-in-out infinite;flex-shrink:0;"></span>
           Пишете в Messenger
         </a>
@@ -1382,7 +1545,7 @@ initPreview();
       <div class="gold-line"></div>
       <p class="section-lead">Обадете се или попълнете формата. Ще ви отговорим бързо с честен съвет — без ангажимент.</p>
       <div style="display:flex; align-items:center; gap:2rem; margin-bottom:1.5rem; flex-wrap:wrap;">
-        <img src="https://raw.githubusercontent.com/Traqnivanov/Remonti-/main/ivanov-remonti-stroitelni-uslugi-kachestvo-garantsiya-sofia.jpg" alt="Ivanov Remonti строителни услуги Sofia" style="width:160px;height:160px;object-fit:contain;border-radius:12px;border:1px solid rgba(201,148,58,.3);" loading="lazy"/>
+        <img src="https://traqnivanov.github.io/Remonti-/ivanov-remonti-stroitelni-uslugi-kachestvo-garantsiya-sofia.jpg" alt="Ivanov Remonti строителни услуги Sofia" style="width:160px;height:160px;object-fit:contain;border-radius:12px;border:1px solid rgba(201,148,58,.3);cursor:pointer;transition:transform .2s,box-shadow .2s;" loading="lazy" onclick="openVizitkaLightbox()" onmouseover="this.style.transform='scale(1.04)';this.style.boxShadow='0 0 20px rgba(201,148,58,.3)'" onmouseout="this.style.transform='';this.style.boxShadow=''"/>
         <div>
           <a href="tel:0877810418" class="phone-link">0877 810 418</a>
           <p class="phone-sub">За безплатна консултация · Viber</p>
@@ -1392,15 +1555,16 @@ initPreview();
         <div class="contact-item"><div class="c-icon">📍</div><div class="c-text"><strong>Работна зона</strong><span>гр. София и региона</span></div></div>
         <div class="contact-item"><div class="c-icon">⏰</div><div class="c-text"><strong>Работно време</strong><span>Пон – Съб: 08:00 – 19:00 · Нед: 09:00 – 16:00</span></div></div>
         <div class="contact-item"><div class="c-icon">📲</div><div class="c-text"><strong>Viber</strong><a href="viber://chat?number=%2B359877810418">0877 810 418</a></div></div>
+        <div class="contact-item"><div class="c-icon">✉️</div><div class="c-text"><strong>Имейл</strong><a href="mailto:ivanovremontibg@gmail.com">ivanovremontibg@gmail.com</a></div></div>
         <div class="contact-item"><div class="c-icon" style="background:rgba(24,119,242,.12);border-color:rgba(24,119,242,.35);">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 2C6.477 2 2 6.145 2 11.243c0 2.906 1.395 5.503 3.582 7.235V22l3.27-1.793c.874.24 1.8.37 2.748.37 5.523 0 10-4.145 10-9.243C22 6.145 17.523 2 12 2z" fill="#4A9EF5"/><path d="M13.5 14.5L10.5 11 5 14.5l6.167-6.5 3 3.5 5.5-3.5L13.5 14.5z" fill="#fff"/></svg>
-        </div><div class="c-text"><strong style="color:#4A9EF5;">Messenger</strong><a href="https://m.me/IvanovRemonti" target="_blank" style="color:#4A9EF5;">Най-бързият начин да се свържете с нас</a></div></div>
+        </div><div class="c-text"><strong style="color:#4A9EF5;">Messenger</strong><a href="https://m.me/IvanovRemonti" target="_blank" rel="noopener noreferrer" style="color:#4A9EF5;">Най-бързият начин да се свържете с нас</a></div></div>
       </div>
     </div>
     <div style="display:flex; flex-direction:column; align-items:flex-start; gap:1.5rem; padding-top:1rem;">
       <p style="color:var(--muted); font-size:.95rem; line-height:1.8; font-weight:300;">Обадете се директно — отговаряме бързо и даваме честен съвет без ангажимент.</p>
       <a href="tel:0877810418" class="btn-gold" style="font-size:1.1rem; padding:1.2rem 2.5rem; display:inline-flex; align-items:center; gap:.7rem;">📞 0877 810 418</a>
-      <a href="https://m.me/IvanovRemonti" target="_blank" style="display:inline-flex;align-items:center;gap:.9rem;background:rgba(24,119,242,0.12);border:1px solid rgba(24,119,242,0.4);color:#4A9EF5;padding:1rem 2rem;border-radius:2px;text-decoration:none;font-weight:600;font-size:.95rem;transition:all .25s;" onmouseover="this.style.background='rgba(24,119,242,0.22)'" onmouseout="this.style.background='rgba(24,119,242,0.12)'">
+      <a href="https://m.me/IvanovRemonti" target="_blank" rel="noopener noreferrer" style="display:inline-flex;align-items:center;gap:.9rem;background:rgba(24,119,242,0.12);border:1px solid rgba(24,119,242,0.4);color:#4A9EF5;padding:1rem 2rem;border-radius:2px;text-decoration:none;font-weight:600;font-size:.95rem;transition:all .25s;" onmouseover="this.style.background='rgba(24,119,242,0.22)'" onmouseout="this.style.background='rgba(24,119,242,0.12)'">
         <span style="display:inline-flex;align-items:center;gap:5px;"><span style="width:8px;height:8px;border-radius:50%;background:#4CAF82;display:inline-block;animation:dotPulse 2s ease-in-out infinite;flex-shrink:0;"></span><span style="font-size:.62rem;font-weight:700;color:#4CAF82;animation:textFade 2s ease-in-out infinite;">Онлайн</span></span>
         <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 2C6.477 2 2 6.145 2 11.243c0 2.906 1.395 5.503 3.582 7.235V22l3.27-1.793c.874.24 1.8.37 2.748.37 5.523 0 10-4.145 10-9.243C22 6.145 17.523 2 12 2z" fill="#4A9EF5"/><path d="M13.5 14.5L10.5 11 5 14.5l6.167-6.5 3 3.5 5.5-3.5L13.5 14.5z" fill="#fff"/></svg>
         Пиши ни в Messenger
@@ -1430,8 +1594,9 @@ initPreview();
 
 <footer>
   <div class="logo">Ти Почиваш — Ние Ремонтираме<span style="font-size:.58rem; color:#2e3e50; letter-spacing:.15em; font-family:'Jost'; font-weight:300; display:block; margin-top:.2rem;">София · Банкя · Бояна · Лозен · Витоша</span></div>
-  <p>© 2026 · Всички права запазени · <a href="#" onclick="showPrivacy()">Политика за поверителност</a></p>
+  <p>© 2026 · Всички права запазени · <a href="javascript:void(0)" onclick="showPrivacy()">Политика за поверителност</a></p>
   <p style="color:#1e2e3e;">Шпакловка · Боядисване · Гипсокартон · ВиК · Декоративна мазилка</p>
+  <p style="color:#1e2e3e;font-size:.7rem;margin-top:.4rem;">Обслужваме: Люлин · Младост · Надежда · Красна поляна · Овча купел · Студентски град · Лозенец · Борово · Дружба · Банкя · Бояна · Лозен · Витоша · Княжево · Горна баня · Триадица · Средец · Оборище · Подуяне · Слатина · Изгрев · Красно село · Илинден · Бъкстон · Гео Милев · Яворов · Хладилника · Павлово · Стрелбище · Кръстова вада</p>
 </footer>
 
 <script>
@@ -1575,12 +1740,12 @@ initPreview();
 
   // SERVICE MODAL DATA
   const serviceData = {
-    spak: { img: 'https://raw.githubusercontent.com/Traqnivanov/Remonti-/main/shpaklovka-steni-apartament-sofia.jpg', title: 'Шпакловка', botState: 'putty_menu', priceRange: 'от €4.09 / 8 лв до €8.18 / 16 лв на м²', priceUnit: 'м²', desc: 'Постигаме идеална гладост на стените. Изпълнява се с професионални шпакли и ножове — финната шпакловка се нанася с валяк за максимална равномерност и огледален ефект.', includes: ['Почистване и грундиране','Шпакловане на ъгли с профили','Финишна шпакловка','Шлайфане и изглаждане','Почистване след работа','Писмена гаранция'], options: [{ name: 'Основна укрепваща', price: '€8.18 / 16 лв/м²', desc: 'Стари основи, панелни жилища, влага/мухъл.' },{ name: 'Гипсова шпакловка', price: '€6.14 / 12 лв/м²', desc: 'Гипсова шпакловка за по-гладък финиш. При напуквания се нанася мрежа или воал за укрепване.' },{ name: 'Фина шпакловка', price: '€5.50 / 10.76 лв/м²', desc: 'Огледална гладост — финален слой преди боядисване.' }] },
-    boya: { img: 'https://raw.githubusercontent.com/Traqnivanov/Remonti-/main/boyadisvane-apartament-sofia.jpg', title: 'Боядисване', botState: 'painting_menu', priceRange: 'от €4.20 / 8.21 лв до €7.82 / 15.30 лв на м²', priceUnit: 'м²', desc: 'Прецизно боядисване с висококачествени бои. Гарантираме равномерно покритие, наситени цветове и дълготраен резултат.', includes: ['Грундиране на повърхността','Прецизно отсичане','2 ръце боя','Защита на пода и мебелите','Почистване след работа','Писмена гаранция'], options: [{ name: 'Един цвят – Бяло', price: '€4.20 / 8.21 лв/м²', desc: 'Класическо боядисване в бяло. Равномерно покритие, чист и светъл вид.' },{ name: 'Стандартно — стени и тавани', price: '€4.80 / 9.39 лв/м²', desc: 'Латекс, двуслойно нанасяне за трайно покритие.' },{ name: 'Премиум покритие', price: '€6.80 / 13.30 лв/м²', desc: 'Висок клас — максимална трайност и визия.' },{ name: 'Боядисване с корекции', price: '€7.82 / 15.30 лв/м²', desc: 'Запълване на дупки и надраскванията, грунд и боядисване — пълна подготовка и финиш.' }] },
-    gyp: { img: 'https://raw.githubusercontent.com/Traqnivanov/Remonti-/main/gipsokarton-okachen-tavan-sofia.jpg', title: 'Гипсокартон и Тавани', botState: 'gk_menu', priceRange: 'от €14.00 / 27.38 лв до €25.00 / 48.90 лв на м² · LED: €26.00 / 50.85 лв/л.м.', priceUnit: 'м²', desc: 'Изграждаме сложни конструкции с Knauf и Rigips — материали с европейски стандарт и отлична изолация.', includes: ['Метална конструкция Knauf/Rigips','Двуслойно окачване','Запълване на фуги','Звукоизолация по желание','LED осветление по желание','Писмена гаранция'], options: [{ name: 'Прав таван', price: '€15.00 / 29.34 лв/м²', desc: 'Стандартен окачен таван от гипсокартон.' },{ name: 'LED ниша', price: '€26.00 / 50.85 лв/л.м.', desc: 'За LED лента.' },{ name: 'Предстенна обшивка от гипсокартон', price: '€14.00 / 27.38 лв/м²', desc: 'Обшивка пред стена.' },{ name: 'Преградна стена от гипсокартон', price: '€25.00 / 48.90 лв/м²', desc: 'Нова преградна стена.' }] },
-    vik: { img: 'https://raw.githubusercontent.com/Traqnivanov/Remonti-/main/vik-uslugi-sofia.jpg', title: 'ВиК', botState: 'vik_menu', priceRange: 'от €15.00 / 29.34 лв до €50.00 / 97.79 лв на бр.', priceUnit: 'бр', desc: 'Пълна подмяна или изграждане на нови водопроводни инсталации по проект. Монтаж на санитария.', includes: ['Изготвяне на схема','Полагане на тръби в шлайц','Монтаж на фитинги','Тестване под налягане','Запълване на шлайцове','Писмена гаранция'], options: [{ name: 'Смяна на смесител', price: '€18.00 / 35.20 лв/бр', desc: 'Демонтаж на стария, монтаж на новия, проверка за теч.' },{ name: 'Смяна на тоалетна чиния', price: '€50.00 / 97.79 лв/бр', desc: 'Демонтаж на старата, монтаж на новата, закрепване, свързване.' },{ name: 'Смяна на сифон / гъвкава връзка', price: '€15.00 / 29.34 лв/бр', desc: 'Демонтаж на стария, монтаж на новия, проверка.' },{ name: 'Нова ВиК инсталация', price: 'по оглед', desc: 'Безплатен оглед + фиксирана оферта.' },{ name: 'Авариен ремонт', price: 'по оглед', desc: 'Отстраняване на аварията.' }] },
-    dog: { img: 'https://raw.githubusercontent.com/Traqnivanov/Remonti-/main/obrushchane-dograma-prozorci-sofia.jpg', title: 'Обръщане Дограма', botState: 'windows_menu', priceRange: '€7.67 / 15 лв на л.м.', priceUnit: 'л.м.', desc: 'Прецизно обръщане около врати и прозорци след смяна на дограма. Перфектни ъгли и безупречен финиш.', includes: ['Почистване на стария материал','Армировъчна мрежа','Алуминиеви ъглови профили','Финишна шпакловка','Готово за боядисване','Писмена гаранция'], options: [{ name: 'Обръщане на прозорец с лайсна', price: '€7.67 / 15 лв/л.м.', desc: 'Шпакловаме и заглаждаме около дограмата, монтираме лайсна за перфектен ъгъл.' },{ name: 'Обръщане на врата с лайсна', price: '€7.67 / 15 лв/л.м.', desc: 'Шпакловаме и заглаждаме около дограмата, монтираме лайсна за перфектен ъгъл.' }] },
-    maz: { img: 'https://raw.githubusercontent.com/Traqnivanov/Remonti-/main/dekorativna-mazilka-sofia.jpg', title: 'Декоративна Мазилка', botState: null, desc: 'Венецианска, структурна или релефна мазилка — уникална текстура и луксозен вид.', includes: ['Подготовка и грундиране','2–3 слоя мазилка','Полиране и финиш','Защитен лак по желание','Уникален резултат','Писмена гаранция'], options: [{ name: 'Структурна мазилка', desc: 'Релефна текстура с различни зърна.' },{ name: 'Венецианска мазилка', desc: 'Луксозна гладка мазилка с мраморен ефект.' },{ name: 'Релефна мазилка', desc: 'Ръчно нанесен релеф. Уникален вид.' },{ name: 'С метален ефект', desc: 'Злато, сребро или бронз. Луксозен финиш.' }] }
+    spak: { img: 'https://traqnivanov.github.io/Remonti-/shpaklovka-steni-apartament-sofia.jpg', title: 'Шпакловка', botState: 'putty_menu', priceRange: 'от €4.09 / 8 лв до €8.18 / 16 лв на м²', priceUnit: 'м²', desc: 'Постигаме идеална гладост на стените. Изпълнява се с професионални шпакли и ножове — финната шпакловка се нанася с валяк за максимална равномерност и огледален ефект.', includes: ['Почистване и грундиране','Шпакловане на ъгли с профили','Финишна шпакловка','Шлайфане и изглаждане','Почистване след работа','Писмена гаранция'], options: [{ name: 'Основна укрепваща', price: '€8.18 / 16 лв/м²', desc: 'Стари основи, панелни жилища, влага/мухъл.' },{ name: 'Гипсова шпакловка', price: '€6.14 / 12 лв/м²', desc: 'Гипсова шпакловка за по-гладък финиш. При напуквания се нанася мрежа или воал за укрепване.' },{ name: 'Фина шпакловка', price: '€5.50 / 10.76 лв/м²', desc: 'Огледална гладост — финален слой преди боядисване.' }] },
+    boya: { img: 'https://traqnivanov.github.io/Remonti-/boyadisvane-apartament-sofia.jpg', title: 'Боядисване', botState: 'painting_menu', priceRange: 'от €4.20 / 8.21 лв до €7.82 / 15.30 лв на м²', priceUnit: 'м²', desc: 'Прецизно боядисване с висококачествени бои. Гарантираме равномерно покритие, наситени цветове и дълготраен резултат.', includes: ['Грундиране на повърхността','Прецизно отсичане','2 ръце боя','Защита на пода и мебелите','Почистване след работа','Писмена гаранция'], options: [{ name: 'Един цвят – Бяло', price: '€4.20 / 8.21 лв/м²', desc: 'Класическо боядисване в бяло. Равномерно покритие, чист и светъл вид.' },{ name: 'Стандартно — стени и тавани', price: '€4.80 / 9.39 лв/м²', desc: 'Латекс, двуслойно нанасяне за трайно покритие.' },{ name: 'Премиум покритие', price: '€6.80 / 13.30 лв/м²', desc: 'Висок клас — максимална трайност и визия.' },{ name: 'Боядисване с корекции', price: '€7.82 / 15.30 лв/м²', desc: 'Запълване на дупки и надраскванията, грунд и боядисване — пълна подготовка и финиш.' }] },
+    gyp: { img: 'https://traqnivanov.github.io/Remonti-/gipsokarton-okachen-tavan-sofia.jpg', title: 'Гипсокартон и Тавани', botState: 'gk_menu', priceRange: 'от €14.00 / 27.38 лв до €25.00 / 48.90 лв на м² · LED: €26.00 / 50.85 лв/л.м.', priceUnit: 'м²', desc: 'Изграждаме сложни конструкции с Knauf и Rigips — материали с европейски стандарт и отлична изолация.', includes: ['Метална конструкция Knauf/Rigips','Двуслойно окачване','Запълване на фуги','Звукоизолация по желание','LED осветление по желание','Писмена гаранция'], options: [{ name: 'Прав таван', price: '€15.00 / 29.34 лв/м²', desc: 'Стандартен окачен таван от гипсокартон.' },{ name: 'LED ниша', price: '€26.00 / 50.85 лв/л.м.', desc: 'За LED лента.' },{ name: 'Предстенна обшивка от гипсокартон', price: '€14.00 / 27.38 лв/м²', desc: 'Обшивка пред стена.' },{ name: 'Преградна стена от гипсокартон', price: '€25.00 / 48.90 лв/м²', desc: 'Нова преградна стена.' }] },
+    vik: { img: 'https://traqnivanov.github.io/Remonti-/vik-uslugi-sofia.jpg', title: 'ВиК', botState: 'vik_menu', priceRange: 'от €15.00 / 29.34 лв до €50.00 / 97.79 лв на бр.', priceUnit: 'бр', desc: 'Пълна подмяна или изграждане на нови водопроводни инсталации по проект. Монтаж на санитария.', includes: ['Изготвяне на схема','Полагане на тръби в шлайц','Монтаж на фитинги','Тестване под налягане','Запълване на шлайцове','Писмена гаранция'], options: [{ name: 'Смяна на смесител', price: '€18.00 / 35.20 лв/бр', desc: 'Демонтаж на стария, монтаж на новия, проверка за теч.' },{ name: 'Смяна на тоалетна чиния', price: '€50.00 / 97.79 лв/бр', desc: 'Демонтаж на старата, монтаж на новата, закрепване, свързване.' },{ name: 'Смяна на сифон / гъвкава връзка', price: '€15.00 / 29.34 лв/бр', desc: 'Демонтаж на стария, монтаж на новия, проверка.' },{ name: 'Нова ВиК инсталация', price: 'по оглед', desc: 'Безплатен оглед + фиксирана оферта.' },{ name: 'Авариен ремонт', price: 'по оглед', desc: 'Отстраняване на аварията.' }] },
+    dog: { img: 'https://traqnivanov.github.io/Remonti-/obrushchane-dograma-prozorci-sofia.jpg', title: 'Обръщане Дограма', botState: 'windows_menu', priceRange: '€7.67 / 15 лв на л.м.', priceUnit: 'л.м.', desc: 'Прецизно обръщане около врати и прозорци след смяна на дограма. Перфектни ъгли и безупречен финиш.', includes: ['Почистване на стария материал','Армировъчна мрежа','Алуминиеви ъглови профили','Финишна шпакловка','Готово за боядисване','Писмена гаранция'], options: [{ name: 'Обръщане на прозорец с лайсна', price: '€7.67 / 15 лв/л.м.', desc: 'Шпакловаме и заглаждаме около дограмата, монтираме лайсна за перфектен ъгъл.' },{ name: 'Обръщане на врата с лайсна', price: '€7.67 / 15 лв/л.м.', desc: 'Шпакловаме и заглаждаме около дограмата, монтираме лайсна за перфектен ъгъл.' }] },
+    maz: { img: 'https://traqnivanov.github.io/Remonti-/dekorativna-mazilka-sofia.jpg', title: 'Декоративна Мазилка', botState: null, desc: 'Венецианска, структурна или релефна мазилка — уникална текстура и луксозен вид.', includes: ['Подготовка и грундиране','2–3 слоя мазилка','Полиране и финиш','Защитен лак по желание','Уникален резултат','Писмена гаранция'], options: [{ name: 'Структурна мазилка', desc: 'Релефна текстура с различни зърна.' },{ name: 'Венецианска мазилка', desc: 'Луксозна гладка мазилка с мраморен ефект.' },{ name: 'Релефна мазилка', desc: 'Ръчно нанесен релеф. Уникален вид.' },{ name: 'С метален ефект', desc: 'Злато, сребро или бронз. Луксозен финиш.' }] }
   };
   let currentSvc = '', selectedSvcOption = '';
 
@@ -1588,6 +1753,7 @@ initPreview();
     const s = serviceData[id];
     currentSvc = id; selectedSvcOption = '';
     document.getElementById('svcModalImg').src = s.img;
+    document.getElementById('svcModalImg').alt = s.title;
     document.getElementById('svcModalTitle').textContent = s.title;
     document.getElementById('svcModalDesc').textContent = s.desc;
     // Показваме ценовия диапазон горе (само ако услугата има цени)
@@ -1684,65 +1850,65 @@ initPreview();
 
 
 const spakGallery = [
-  "https://raw.githubusercontent.com/Traqnivanov/Remonti-/main/fina-shpaklovka-steni-sofia-01.jpg",
-  "https://raw.githubusercontent.com/Traqnivanov/Remonti-/main/shpaklovka-s-mreja-sofia-01.jpg",
-  "https://raw.githubusercontent.com/Traqnivanov/Remonti-/main/shpaklovka-boyadisvane-gipsokarton-sofia-08.jpg",
-  "https://raw.githubusercontent.com/Traqnivanov/Remonti-/main/cyalosen-remont-shpaklovka-sofia-01.jpg",
-  "https://raw.githubusercontent.com/Traqnivanov/Remonti-/main/remont-apartament-sofia-01.jpg",
-  "https://raw.githubusercontent.com/Traqnivanov/Remonti-/main/gipsokarton-shpaklovka-boyadisvane-sofia-01.jpg",
-  "https://raw.githubusercontent.com/Traqnivanov/Remonti-/main/bezprahovo-shlaifane-sofia-01.jpg",
-  "https://raw.githubusercontent.com/Traqnivanov/Remonti-/main/instrumenti-shpaklovka-sofia.jpg",
-  "https://raw.githubusercontent.com/Traqnivanov/Remonti-/main/boyadisvane-gipsovo-lepilo-lateks-sofia.jpg",
+  "https://traqnivanov.github.io/Remonti-/fina-shpaklovka-steni-sofia-01.jpg",
+  "https://traqnivanov.github.io/Remonti-/shpaklovka-s-mreja-sofia-01.jpg",
+  "https://traqnivanov.github.io/Remonti-/shpaklovka-boyadisvane-gipsokarton-sofia-08.jpg",
+  "https://traqnivanov.github.io/Remonti-/cyalosen-remont-shpaklovka-sofia-01.jpg",
+  "https://traqnivanov.github.io/Remonti-/remont-apartament-sofia-01.jpg",
+  "https://traqnivanov.github.io/Remonti-/gipsokarton-shpaklovka-boyadisvane-sofia-01.jpg",
+  "https://traqnivanov.github.io/Remonti-/bezprahovo-shlaifane-sofia-01.jpg",
+  "https://traqnivanov.github.io/Remonti-/instrumenti-shpaklovka-sofia.jpg",
+  "https://traqnivanov.github.io/Remonti-/boyadisvane-gipsovo-lepilo-lateks-sofia.jpg",
 ];
 
 const boyaGallery = [
-  "https://raw.githubusercontent.com/Traqnivanov/Remonti-/main/boyadisvane-apartament-naseteni-cvetove-lateks-sofia.jpg",
-  "https://raw.githubusercontent.com/Traqnivanov/Remonti-/main/boyadisvane-lateks-steni-cena-trud-sofia.jpg",
-  "https://raw.githubusercontent.com/Traqnivanov/Remonti-/main/gipsokarton-tavan-shpaklovka-lateks-cena-trud-sofia.jpg",
-  "https://raw.githubusercontent.com/Traqnivanov/Remonti-/main/remont-apartament-sofia-01.jpg",
-  "https://raw.githubusercontent.com/Traqnivanov/Remonti-/main/gipsokarton-shpaklovka-boyadisvane-sofia-01.jpg",
-  "https://raw.githubusercontent.com/Traqnivanov/Remonti-/main/remont-apartament-gipsokarton-shpaklovka-boyadisvane-sofia.jpg",
-  "https://raw.githubusercontent.com/Traqnivanov/Remonti-/main/boyadisvane-steni-tavani-apartament-sofia.jpg",
-  "https://raw.githubusercontent.com/Traqnivanov/Remonti-/main/oferta-boyadisvane-lateks-kvadraten-metar-sofia.jpg",
-  "https://raw.githubusercontent.com/Traqnivanov/Remonti-/main/boyadisvane-gipsovo-lepilo-lateks-sofia.jpg",
-  "https://raw.githubusercontent.com/Traqnivanov/Remonti-/main/boyadisvane-gipsokarton-skrito-osvetlenie-led-nisha-sofia.jpg",
-  "https://raw.githubusercontent.com/Traqnivanov/Remonti-/main/boyadisvane-steni-cveten-lateks-apartament-sofia.jpg",
-  "https://raw.githubusercontent.com/Traqnivanov/Remonti-/main/boyadisvane-lateks-ceni-apartament-sofia.jpg",
+  "https://traqnivanov.github.io/Remonti-/boyadisvane-apartament-naseteni-cvetove-lateks-sofia.jpg",
+  "https://traqnivanov.github.io/Remonti-/boyadisvane-lateks-steni-cena-trud-sofia.jpg",
+  "https://traqnivanov.github.io/Remonti-/gipsokarton-tavan-shpaklovka-lateks-cena-trud-sofia.jpg",
+  "https://traqnivanov.github.io/Remonti-/remont-apartament-sofia-01.jpg",
+  "https://traqnivanov.github.io/Remonti-/gipsokarton-shpaklovka-boyadisvane-sofia-01.jpg",
+  "https://traqnivanov.github.io/Remonti-/remont-apartament-gipsokarton-shpaklovka-boyadisvane-sofia.jpg",
+  "https://traqnivanov.github.io/Remonti-/boyadisvane-steni-tavani-apartament-sofia.jpg",
+  "https://traqnivanov.github.io/Remonti-/oferta-boyadisvane-lateks-kvadraten-metar-sofia.jpg",
+  "https://traqnivanov.github.io/Remonti-/boyadisvane-gipsovo-lepilo-lateks-sofia.jpg",
+  "https://traqnivanov.github.io/Remonti-/boyadisvane-gipsokarton-skrito-osvetlenie-led-nisha-sofia.jpg",
+  "https://traqnivanov.github.io/Remonti-/boyadisvane-steni-cveten-lateks-apartament-sofia.jpg",
+  "https://traqnivanov.github.io/Remonti-/boyadisvane-lateks-ceni-apartament-sofia.jpg",
 ];
 
 const gypGallery = [
-  "https://raw.githubusercontent.com/Traqnivanov/Remonti-/main/gipsokarton-led-nisha-sofia-03.jpg",
-  "https://raw.githubusercontent.com/Traqnivanov/Remonti-/main/gipsokarton-predstenna-obshivka-sofia.jpg",
-  "https://raw.githubusercontent.com/Traqnivanov/Remonti-/main/gipsokarton-tavan-sofia-16.jpg",
-  "https://raw.githubusercontent.com/Traqnivanov/Remonti-/main/shpaklovka-boyadisvane-gipsokarton-sofia-01.jpg",
-  "https://raw.githubusercontent.com/Traqnivanov/Remonti-/main/shpaklovka-boyadisvane-gipsokarton-sofia-08.jpg",
-  "https://raw.githubusercontent.com/Traqnivanov/Remonti-/main/gipsokarton-montazh-apartament-sofia.jpg",
-  "https://raw.githubusercontent.com/Traqnivanov/Remonti-/main/gipsokarton-shpaklovka-boyadisvane-sofia-01.jpg",
-  "https://raw.githubusercontent.com/Traqnivanov/Remonti-/main/predi-sled-remont-dnevna-gipsokarton-led-sofia.jpg",
-  "https://raw.githubusercontent.com/Traqnivanov/Remonti-/main/gipsokarton-predstena-dnevna-sofia.jpg",
-  "https://raw.githubusercontent.com/Traqnivanov/Remonti-/main/gipsokarton-rgb-led-nisha-dnevna-sofia.jpg",
-  "https://raw.githubusercontent.com/Traqnivanov/Remonti-/main/gipsokarton-nishi-banya-vlagoustoichiv-sofia.jpg",
-  "https://raw.githubusercontent.com/Traqnivanov/Remonti-/main/gipsokarton-izolaciya-mineralna-vata-tavan-steni-sofia.jpg",
-  "https://raw.githubusercontent.com/Traqnivanov/Remonti-/main/gipsokarton-tavan-figura-dekorativen-dnevna-sofia.jpg",
+  "https://traqnivanov.github.io/Remonti-/gipsokarton-led-nisha-sofia-03.jpg",
+  "https://traqnivanov.github.io/Remonti-/gipsokarton-predstenna-obshivka-sofia.jpg",
+  "https://traqnivanov.github.io/Remonti-/gipsokarton-tavan-sofia-16.jpg",
+  "https://traqnivanov.github.io/Remonti-/shpaklovka-boyadisvane-gipsokarton-sofia-01.jpg",
+  "https://traqnivanov.github.io/Remonti-/shpaklovka-boyadisvane-gipsokarton-sofia-08.jpg",
+  "https://traqnivanov.github.io/Remonti-/gipsokarton-montazh-apartament-sofia.jpg",
+  "https://traqnivanov.github.io/Remonti-/gipsokarton-shpaklovka-boyadisvane-sofia-01.jpg",
+  "https://traqnivanov.github.io/Remonti-/predi-sled-remont-dnevna-gipsokarton-led-sofia.jpg",
+  "https://traqnivanov.github.io/Remonti-/gipsokarton-predstena-dnevna-sofia.jpg",
+  "https://traqnivanov.github.io/Remonti-/gipsokarton-rgb-led-nisha-dnevna-sofia.jpg",
+  "https://traqnivanov.github.io/Remonti-/gipsokarton-nishi-banya-vlagoustoichiv-sofia.jpg",
+  "https://traqnivanov.github.io/Remonti-/gipsokarton-izolaciya-mineralna-vata-tavan-steni-sofia.jpg",
+  "https://traqnivanov.github.io/Remonti-/gipsokarton-tavan-figura-dekorativen-dnevna-sofia.jpg",
 ];
 
 const vikGallery = [
-  "https://raw.githubusercontent.com/Traqnivanov/Remonti-/main/vik-instalacia-sofia-02.jpg",
-  "https://raw.githubusercontent.com/Traqnivanov/Remonti-/main/smyana-vik-instalaciya-apartament-sofia.jpg",
-  "https://raw.githubusercontent.com/Traqnivanov/Remonti-/main/vik-remont-apartament-maystor-sofia.jpg",
+  "https://traqnivanov.github.io/Remonti-/vik-instalacia-sofia-02.jpg",
+  "https://traqnivanov.github.io/Remonti-/smyana-vik-instalaciya-apartament-sofia.jpg",
+  "https://traqnivanov.github.io/Remonti-/vik-remont-apartament-maystor-sofia.jpg",
 ];
 
 const dogGallery = [
-  "https://raw.githubusercontent.com/Traqnivanov/Remonti-/main/obrushchane-prozorci-apartament-sofia-01.jpg",
-  "https://raw.githubusercontent.com/Traqnivanov/Remonti-/main/obrushchane-vrata-apartament-sofia.jpg",
-  "https://raw.githubusercontent.com/Traqnivanov/Remonti-/main/obrushchane-dograma-cena-trud-sofia.jpg",
-  "https://raw.githubusercontent.com/Traqnivanov/Remonti-/main/obrushchane-prozorci-sofia-03.jpg",
+  "https://traqnivanov.github.io/Remonti-/obrushchane-prozorci-apartament-sofia-01.jpg",
+  "https://traqnivanov.github.io/Remonti-/obrushchane-vrata-apartament-sofia.jpg",
+  "https://traqnivanov.github.io/Remonti-/obrushchane-dograma-cena-trud-sofia.jpg",
+  "https://traqnivanov.github.io/Remonti-/obrushchane-prozorci-sofia-03.jpg",
 ];
 
 const mazGallery = [
-  "https://raw.githubusercontent.com/Traqnivanov/Remonti-/main/dekorativna-mazilka-sofia-02.jpg",
-  "https://raw.githubusercontent.com/Traqnivanov/Remonti-/main/dekorativna-pqsachna-mazilka-sofia-04.jpg",
-  "https://raw.githubusercontent.com/Traqnivanov/Remonti-/main/dekorativna-pqsachna-mazilka-sofia-01.jpg",
+  "https://traqnivanov.github.io/Remonti-/dekorativna-mazilka-sofia-02.jpg",
+  "https://traqnivanov.github.io/Remonti-/dekorativna-pqsachna-mazilka-sofia-04.jpg",
+  "https://traqnivanov.github.io/Remonti-/dekorativna-pqsachna-mazilka-sofia-01.jpg",
 ];
 
 
@@ -1812,6 +1978,7 @@ function openGalleryLb(imgs, idx) {
   currentGalleryIdx = idx;
   const lb = document.getElementById('galleryLightbox');
   document.getElementById('galleryLbImg').src = imgs[idx];
+  document.getElementById('galleryLbImg').alt = 'Ремонт ' + (idx+1);
   document.getElementById('galleryLbCounter').textContent = (idx+1) + ' / ' + imgs.length;
   lb.classList.add('active');
   document.body.style.overflow = 'hidden';
@@ -1900,11 +2067,11 @@ function buildGalleryHTML(id) {
 
   // LIGHTBOX
   const galleryImgs = [
-    'https://raw.githubusercontent.com/Traqnivanov/Remonti-/main/IMG_20230322_094845.jpg',
-    'https://raw.githubusercontent.com/Traqnivanov/Remonti-/main/IMG_20230322_134120.jpg',
-    'https://raw.githubusercontent.com/Traqnivanov/Remonti-/main/IMG_20240724_172122.jpg',
-    'https://raw.githubusercontent.com/Traqnivanov/Remonti-/main/IMG_20260325_170739.jpg',
-    'https://raw.githubusercontent.com/Traqnivanov/Remonti-/main/ivanov-remonti-stroitelni-uslugi-kachestvo-garantsiya-sofia.jpg'
+    'https://traqnivanov.github.io/Remonti-/IMG_20230322_094845.jpg',
+    'https://traqnivanov.github.io/Remonti-/IMG_20230322_134120.jpg',
+    'https://traqnivanov.github.io/Remonti-/IMG_20240724_172122.jpg',
+    'https://traqnivanov.github.io/Remonti-/IMG_20260325_170739.jpg',
+    'https://traqnivanov.github.io/Remonti-/ivanov-remonti-stroitelni-uslugi-kachestvo-garantsiya-sofia.jpg'
   ];
   let currentPhoto = 0;
   function openLightbox(i) {
@@ -1966,14 +2133,14 @@ function buildGalleryHTML(id) {
 
 <!-- SERVICE MODAL -->
 <div id="serviceOverlay" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.85);z-index:9998;align-items:center;justify-content:center;padding:1rem;backdrop-filter:blur(4px);" onclick="closeServiceModal(event)">
-  <div style="background:#111827;border-radius:24px;border:1px solid rgba(201,148,58,.3);max-width:560px;width:100%;max-height:90vh;overflow-y:auto;">
-    <div id="svcModalTop" style="height:180px;position:relative;overflow:hidden;border-radius:24px 24px 0 0;">
+  <div style="background:#111827;border-radius:24px;border:1px solid rgba(201,148,58,.3);max-width:560px;width:100%;max-height:90vh;overflow-y:auto;position:relative;">
+    <button type="button" onclick="closeServiceModalDirect()" style="position:sticky;top:1rem;float:right;margin:.8rem .8rem 0 0;background:rgba(0,0,0,.7);border:1px solid rgba(255,255,255,.15);color:white;width:36px;height:36px;border-radius:50%;font-size:1.2rem;cursor:pointer;z-index:10;flex-shrink:0;">×</button>
+    <div id="svcModalTop" style="height:180px;position:relative;overflow:hidden;border-radius:24px 24px 0 0;margin-top:-44px;">
       <img id="svcModalImg" src="" alt="" style="width:100%;height:100%;object-fit:cover;"/>
       <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(7,11,17,.8) 0%,transparent 50%);"></div>
-      <button onclick="closeServiceModalDirect()" style="position:absolute;top:1rem;right:1rem;background:rgba(0,0,0,.5);border:none;color:white;width:36px;height:36px;border-radius:50%;font-size:1.2rem;cursor:pointer;z-index:2;">×</button>
     </div>
     <div style="padding:2rem;">
-      <h2 id="svcModalTitle" style="font-size:1.5rem;color:white;margin-bottom:.5rem;"></h2>
+      <p id="svcModalTitle" style="font-size:1.5rem;color:white;margin-bottom:.5rem;font-weight:600;"></p>
       <div style="width:40px;height:2px;background:linear-gradient(90deg,#c9943a,#e8b84b);margin-bottom:1.2rem;"></div>
       <p id="svcModalDesc" style="color:#9ca3af;font-size:.9rem;margin-bottom:1.5rem;line-height:1.8;"></p>
       <div id="svcModalPrices" style="display:none;background:rgba(201,148,58,0.08);border:1px solid rgba(201,148,58,0.3);border-radius:12px;padding:1rem 1.2rem;margin-bottom:1.5rem;text-align:center;">
@@ -1995,13 +2162,13 @@ function buildGalleryHTML(id) {
             <div style="font-size:.75rem;font-weight:700;color:#c9943a;margin-bottom:.2rem;">🧮 Точна цена за моите квадрати</div>
             <div id="svcModalBotOptName" style="font-size:.68rem;color:rgba(201,148,58,.6);"></div>
           </div>
-          <button onclick="openBotFromModal()" style="background:linear-gradient(135deg,#c9943a,#e8b84b);color:#0d1b2e;border:none;border-radius:8px;padding:.6rem 1.2rem;font-size:.8rem;font-weight:700;cursor:pointer;white-space:nowrap;flex-shrink:0;font-family:inherit;">Изчисли &rarr;</button>
+          <button type="button" onclick="openBotFromModal()" style="background:linear-gradient(135deg,#c9943a,#e8b84b);color:#0d1b2e;border:none;border-radius:8px;padding:.6rem 1.2rem;font-size:.8rem;font-weight:700;cursor:pointer;white-space:nowrap;flex-shrink:0;font-family:inherit;">Изчисли &rarr;</button>
         </div>
       </div>
       <div id="svcModalMazHint" style="display:none;margin-bottom:1rem;padding:.8rem 1rem;background:rgba(201,148,58,.06);border:1px solid rgba(201,148,58,.2);border-radius:10px;font-size:.8rem;color:rgba(201,148,58,.8);text-align:center;font-style:italic;">Цената се определя индивидуално след оглед — по договаряне</div>
       <div style="display:flex;gap:1rem;flex-wrap:wrap;">
-        <button onclick="window.location.href='tel:0877810418'" style="background:linear-gradient(135deg,#c9943a,#e8b84b);color:#0d1b2e;border:none;padding:.9rem 1.8rem;border-radius:12px;font-weight:700;font-size:.9rem;cursor:pointer;flex:1;font-family:inherit;">&#128222; 0877 810 418</button>
-        <a href="https://m.me/IvanovRemonti" target="_blank" style="display:inline-flex;align-items:center;justify-content:center;gap:.6rem;background:rgba(24,119,242,.15);color:#4A9EF5;border:1px solid rgba(24,119,242,.4);padding:.9rem 1.8rem;border-radius:12px;font-weight:700;font-size:.9rem;flex:1;font-family:inherit;text-decoration:none;"><span style="width:7px;height:7px;border-radius:50%;background:#4CAF82;display:inline-block;animation:dotPulse 2s ease-in-out infinite;flex-shrink:0;"></span><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M12 2C6.477 2 2 6.145 2 11.243c0 2.906 1.395 5.503 3.582 7.235V22l3.27-1.793c.874.24 1.8.37 2.748.37 5.523 0 10-4.145 10-9.243C22 6.145 17.523 2 12 2z" fill="#4A9EF5"/><path d="M13.5 14.5L10.5 11 5 14.5l6.167-6.5 3 3.5 5.5-3.5L13.5 14.5z" fill="#fff"/></svg>Messenger</a>
+        <button type="button" onclick="window.location.href='tel:0877810418'" style="background:linear-gradient(135deg,#c9943a,#e8b84b);color:#0d1b2e;border:none;padding:.9rem 1.8rem;border-radius:12px;font-weight:700;font-size:.9rem;cursor:pointer;flex:1;font-family:inherit;">&#128222; 0877 810 418</button>
+        <a href="https://m.me/IvanovRemonti" target="_blank" rel="noopener noreferrer" style="display:inline-flex;align-items:center;justify-content:center;gap:.6rem;background:rgba(24,119,242,.15);color:#4A9EF5;border:1px solid rgba(24,119,242,.4);padding:.9rem 1.8rem;border-radius:12px;font-weight:700;font-size:.9rem;flex:1;font-family:inherit;text-decoration:none;"><span style="width:7px;height:7px;border-radius:50%;background:#4CAF82;display:inline-block;animation:dotPulse 2s ease-in-out infinite;flex-shrink:0;"></span><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M12 2C6.477 2 2 6.145 2 11.243c0 2.906 1.395 5.503 3.582 7.235V22l3.27-1.793c.874.24 1.8.37 2.748.37 5.523 0 10-4.145 10-9.243C22 6.145 17.523 2 12 2z" fill="#4A9EF5"/><path d="M13.5 14.5L10.5 11 5 14.5l6.167-6.5 3 3.5 5.5-3.5L13.5 14.5z" fill="#fff"/></svg>Messenger</a>
       </div>
     </div>
   </div>
@@ -2009,10 +2176,10 @@ function buildGalleryHTML(id) {
 
 <!-- GALLERY LIGHTBOX -->
 <div class="gallery-lightbox" id="galleryLightbox">
-  <button class="gallery-lb-close" onclick="closeGalleryLb()">×</button>
-  <button class="gallery-lb-prev" onclick="galleryLbNav(-1)">‹</button>
+  <button type="button" class="gallery-lb-close" onclick="closeGalleryLb()">×</button>
+  <button type="button" class="gallery-lb-prev" onclick="galleryLbNav(-1)">‹</button>
   <img id="galleryLbImg" src="" alt=""/>
-  <button class="gallery-lb-next" onclick="galleryLbNav(1)">›</button>
+  <button type="button" class="gallery-lb-next" onclick="galleryLbNav(1)">›</button>
   <div class="gallery-lb-counter" id="galleryLbCounter"></div>
 </div>
 
