@@ -2953,7 +2953,7 @@ elToggle.addEventListener('click', () => {
     if (stepsToRemove > 0) {
       _backFromHistory = true; // блокираме popstate да не вика goBack()
       try { history.go(-stepsToRemove); } catch(e) {}
-      setTimeout(() => { _backFromHistory = false; }, 300);
+      setTimeout(() => { _backFromHistory = false; }, 600);
     }
   }
   if(open && elMsgs.children.length === 0){
@@ -2971,7 +2971,7 @@ document.getElementById('tb-close').addEventListener('click', () => {
   if (stepsToRemove > 0) {
     _backFromHistory = true; // блокираме popstate да не вика goBack()
     try { history.go(-stepsToRemove); } catch(e) {}
-    setTimeout(() => { _backFromHistory = false; }, 300);
+    setTimeout(() => { _backFromHistory = false; }, 600);
   }
 });
 
@@ -2986,9 +2986,11 @@ window.addEventListener('popstate', function(e) {
     clearCho();
     goBack();
   } else {
-    // Ботът е на началото → затваряме го
+    // Ботът е на началото → затваряме го, но оставаме на сайта
     elWidget.classList.remove('open');
     elToggle.classList.remove('open');
+    // Поправка: добавяме запис за да не излезем от сайта при следващ "Назад"
+    try { history.pushState(null, ''); } catch(e) {}
   }
   setTimeout(function() { _backFromHistory = false; }, 100);
 });
