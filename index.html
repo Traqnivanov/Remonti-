@@ -890,7 +890,7 @@
   <span class="section-tag" style="text-align:center;display:block;">&#10086; Доказателство за качество</span>
   <h2 class="section-h2" style="text-align:center;">На живо от нашите обекти</h2>
   <div class="gold-line center"></div>
-  <p style="text-align:center;font-size:.85rem;color:var(--muted);margin:0 auto 2rem;font-weight:300;">36 снимки &middot; 3 видеа от реални обекти</p>
+  <p style="text-align:center;font-size:.85rem;color:var(--muted);margin:0 auto 2rem;font-weight:300;">39 снимки &middot; 3 видеа от реални обекти</p>
 
   <p class="section-tag" style="text-align:center;margin-bottom:1.2rem;">&#9654; Видеа от обекти</p>
   <div class="videos-grid" style="margin-bottom:3rem;">
@@ -1091,7 +1091,22 @@ function loadMoreGallery(){
 }
 function filterGallery(cat){
   document.querySelectorAll('.gal-filter').forEach(b=>b.classList.toggle('active',b.dataset.cat===cat));
-  renderGallery(cat);
+  // Update preview grid
+  const filtered = cat==='all'?galleryImages:galleryImages.filter(i=>i.cat===cat);
+  const shuffled=[...filtered].sort(()=>Math.random()-.5).slice(0,6);
+  const grid=document.getElementById('gal-preview');
+  grid.innerHTML='';
+  shuffled.forEach((img,i)=>{
+    const div=document.createElement('div');div.className='preview-item';
+    div.innerHTML='<img src="'+img.url+'" alt="'+img.label+'" loading="lazy"/><div class="masonry-badge">'+img.label+'</div><div class="masonry-zoom"><div class="masonry-zoom-icon">&#128269;</div></div>';
+    const image=div.querySelector('img');
+    image.onload=()=>image.classList.add('gal-loaded');
+    if(image.complete)image.classList.add('gal-loaded');
+    div.addEventListener('click',()=>{openFullGallery();renderGallery(cat);setTimeout(()=>openLightboxGal(galleryImages.indexOf(img)),300);});
+    grid.appendChild(div);
+  });
+  // Also update overlay if open
+  if(document.getElementById('gal-overlay').style.display==='block') renderGallery(cat);
 }
 function openLightboxGal(idx){
   if(idx<0)idx=0;
@@ -1123,7 +1138,7 @@ document.addEventListener('keydown',e=>{
 });
 
 // Премахваме филтрите от основната секция (са в overlay)
-document.getElementById('gal-filters')&&(document.getElementById('gal-filters').style.display='none');
+document.getElementById('gal-overlay')&&(document.getElementById('gal-overlay').style.display='none');
 initPreview();
 </script>
 <section class="reviews" id="reviews">
