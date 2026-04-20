@@ -31,6 +31,10 @@
 
     // Ако вече е дадено съгласие — зареждаме веднага
     try { if (localStorage.getItem('cookiesAccepted') === '1') loadGA4(); } catch(x) {}
+    window.addEventListener('load', function() {
+      var fb = document.querySelector('.floating-btns');
+      if (fb) fb.classList.add('ready');
+    });
   </script>
   <script>
     function acceptCookies(){var e=document.getElementById('cookieBanner');if(e)e.classList.add('hidden');try{localStorage.setItem('cookiesAccepted','1')}catch(x){}loadGA4();}
@@ -288,7 +292,8 @@
     #progress-bar { position: fixed; top: 0; left: 0; height: 3px; width: 0%; background: linear-gradient(90deg, var(--gold), var(--gold2)); z-index: 9999; transition: width .1s linear; }
 
     /* FLOATING */
-    .floating-btns { position: fixed; bottom: 24px; right: 20px; display: flex; flex-direction: column; gap: 12px; z-index: 1000; }
+    .floating-btns { position: fixed; bottom: 24px; right: 20px; display: flex; flex-direction: column; gap: 12px; z-index: 1000; opacity: 0; transition: opacity .3s; }
+    .floating-btns.ready { opacity: 1; }
     .float-btn { width: 58px; height: 58px; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; font-size: 26px; box-shadow: 0 8px 24px rgba(0,0,0,0.4); transition: transform .25s, box-shadow .25s; }
     .float-btn:hover { transform: scale(1.15) translateY(-3px); box-shadow: 0 16px 32px rgba(0,0,0,0.5); }
     .btn-call { background: linear-gradient(135deg, var(--gold), var(--gold2)); color: white; animation: pulse 2s infinite; }
@@ -664,16 +669,7 @@
 
 <div id="progress-bar"></div>
 
-<div class="floating-btns">
-  <div id="bot-tooltip" style="position:absolute;bottom:calc(100% + 10px);right:0;background:#1a1910;border:1px solid rgba(201,148,58,0.45);border-radius:10px;padding:8px 14px;white-space:nowrap;font-size:.78rem;font-weight:600;color:#c9943a;pointer-events:none;opacity:0;transition:opacity .4s;font-family:'Outfit',sans-serif;">💬 Изчисли цена<span style="position:absolute;bottom:-6px;right:20px;width:10px;height:6px;background:#1a1910;clip-path:polygon(0 0,100% 0,50% 100%);border-bottom:1px solid rgba(201,148,58,0.45);"></span></div>
-  <a href="https://m.me/IvanovRemonti" target="_blank" rel="noopener noreferrer" class="float-btn btn-messenger" title="Пишете ни в Messenger">
-    <div class="ms-live"><div class="ms-dot"></div><span class="ms-txt">Онлайн</span></div>
-    <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M12 2C6.477 2 2 6.145 2 11.243c0 2.906 1.395 5.503 3.582 7.235V22l3.27-1.793c.874.24 1.8.37 2.748.37 5.523 0 10-4.145 10-9.243C22 6.145 17.523 2 12 2z" fill="#fff"/><path d="M13.5 14.5L10.5 11 5 14.5l6.167-6.5 3 3.5 5.5-3.5L13.5 14.5z" fill="#1877f2"/></svg>
-  </a>
-  <a href="tel:0877810418" class="float-btn btn-call" title="Обадете се сега">
-    <svg width="26" height="26" viewBox="0 0 24 24" fill="none" style="animation:phoneMurda 3.6s ease-in-out infinite;"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z" fill="white" style="animation:phoneGlow 3.6s ease-in-out infinite;"/></svg>
-  </a>
-</div>
+
 
 <div class="sticky-cta">
   <a href="tel:0877810418">📞 Обади се сега — 0877 810 418</a>
@@ -2183,5 +2179,16 @@ function buildGalleryHTML(id) {
   <div class="gallery-lb-counter" id="galleryLbCounter"></div>
 </div>
 
+
+<div class="floating-btns">
+  <div id="bot-tooltip" style="position:absolute;bottom:calc(100% + 10px);right:0;background:#1a1910;border:1px solid rgba(201,148,58,0.45);border-radius:10px;padding:8px 14px;white-space:nowrap;font-size:.78rem;font-weight:600;color:#c9943a;pointer-events:none;opacity:0;transition:opacity .4s;font-family:'Outfit',sans-serif;">💬 Изчисли цена<span style="position:absolute;bottom:-6px;right:20px;width:10px;height:6px;background:#1a1910;clip-path:polygon(0 0,100% 0,50% 100%);border-bottom:1px solid rgba(201,148,58,0.45);"></span></div>
+  <a href="https://m.me/IvanovRemonti" target="_blank" rel="noopener noreferrer" class="float-btn btn-messenger" title="Пишете ни в Messenger">
+    <div class="ms-live"><div class="ms-dot"></div><span class="ms-txt">Онлайн</span></div>
+    <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M12 2C6.477 2 2 6.145 2 11.243c0 2.906 1.395 5.503 3.582 7.235V22l3.27-1.793c.874.24 1.8.37 2.748.37 5.523 0 10-4.145 10-9.243C22 6.145 17.523 2 12 2z" fill="#fff"/><path d="M13.5 14.5L10.5 11 5 14.5l6.167-6.5 3 3.5 5.5-3.5L13.5 14.5z" fill="#1877f2"/></svg>
+  </a>
+  <a href="tel:0877810418" class="float-btn btn-call" title="Обадете се сега">
+    <svg width="26" height="26" viewBox="0 0 24 24" fill="none" style="animation:phoneMurda 3.6s ease-in-out infinite;"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z" fill="white" style="animation:phoneGlow 3.6s ease-in-out infinite;"/></svg>
+  </a>
+</div>
 </body>
 </html>
