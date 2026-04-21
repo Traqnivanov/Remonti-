@@ -19,8 +19,12 @@
   .c-desc { font-size: 13px !important; }
   .c-label { font-size: 15px !important; }
 
-  #tb-toggle{position:fixed;bottom:28px;right:28px;width:72px;height:72px;border-radius:50%;background:linear-gradient(135deg,var(--gold),var(--gold-dark));border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 32px rgba(201,168,76,0.5);z-index:9999;transition:transform .25s, opacity .25s;}
-  #tb-toggle:hover{transform:scale(1.1);}
+  #tb-toggle{position:fixed;bottom:28px;right:28px;height:56px;padding:0 20px;border-radius:28px;background:linear-gradient(135deg,var(--gold),var(--gold-dark));border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px;box-shadow:0 8px 32px rgba(201,168,76,0.5);z-index:9999;white-space:nowrap;overflow:hidden;transition:padding .35s ease, border-radius .35s ease, transform .25s;animation:tbShrinkToIcon .4s ease 5s forwards;}
+  #tb-toggle:hover{transform:scale(1.05);padding:0 20px !important;border-radius:28px !important;}
+  #tb-toggle .tg-label{font-size:14px;font-weight:700;color:#0d1b2e;font-family:'Segoe UI',system-ui,sans-serif;opacity:1;transition:opacity .3s ease, max-width .35s ease;max-width:150px;overflow:hidden;}
+  #tb-toggle.shrunk .tg-label{opacity:0;max-width:0;}
+  #tb-toggle:hover .tg-label{opacity:1 !important;max-width:150px !important;}
+  @keyframes tbShrinkToIcon{to{padding:0;border-radius:50%;}}
   #tb-toggle.open{opacity:0;pointer-events:none;}
   #tb-badge{position:absolute;top:-4px;right:-4px;width:24px;height:24px;border-radius:50%;background:var(--red);color:#fff;font-size:12px;font-weight:bold;display:none;align-items:center;justify-content:center;}
   #tb-badge.show{display:flex;}
@@ -48,7 +52,9 @@
   }
   @media (max-width: 600px) {
     #tb-widget { position: fixed !important; right:0;bottom:0;left:0;top:0; width:100% !important; height:100% !important; border-radius:0; transform-origin:center center; }
-    #tb-toggle{right:16px;bottom:16px;}
+    #tb-toggle{right:16px;bottom:16px;width:56px;padding:0 !important;border-radius:50% !important;animation:none !important;}
+    #tb-toggle:hover{padding:0 !important;border-radius:50% !important;}
+    #tb-toggle .tg-label{display:none !important;}
     #tb-sidebar { display: none !important; }
     #tb-bottom-bar { display: block !important; }
     .tb-msgs { flex: 1; min-height: 0; }
@@ -321,8 +327,9 @@
 </head>
 <body>
 
-<button id="tb-toggle" aria-label="Чат">
-  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#0E0E0F" stroke-width="2.2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+<button id="tb-toggle" aria-label="Изчисли цена">
+  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0d1b2e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="3"/><rect x="7" y="5" width="10" height="3" rx="1"/><circle cx="8" cy="12" r="1.2" fill="#0d1b2e" stroke="none"/><circle cx="12" cy="12" r="1.2" fill="#0d1b2e" stroke="none"/><circle cx="16" cy="12" r="1.2" fill="#0d1b2e" stroke="none"/><circle cx="8" cy="16" r="1.2" fill="#0d1b2e" stroke="none"/><circle cx="12" cy="16" r="1.2" fill="#0d1b2e" stroke="none"/><rect x="14.5" y="14" width="3" height="4" rx="1" fill="#0d1b2e" stroke="none"/></svg>
+  <span class="tg-label">Изчисли цена</span>
   <div id="tb-badge"></div>
 </button>
 
@@ -933,7 +940,6 @@ let cur = 'start', ctx = {}, offer = [], hist = [], cbQueue = [];
 ctx._queueAwaitingArea = false; ctx.queueArea = null; ctx.usesPrevArea = false;
 let _backBusy = false;
 let _backFromHistory = false;
-let _replaceNextHistory = false; // Фикс #C: следващият go() ще ползва replaceState
 
 function pushHist(){
   hist.push({ cur, dom: elMsgs.children.length, ctx: JSON.parse(JSON.stringify(ctx)), panel: JSON.parse(JSON.stringify(panelItems)), cbQueue: cbQueue.slice() });
@@ -1267,14 +1273,7 @@ function go(name){
   pushHist(); cur = name;
   // Browser history integration — добавя запис при всяка нормална навигация
   if (!_backFromHistory) {
-    try {
-      if (_replaceNextHistory) {
-        history.replaceState({ botStep: hist.length, state: name }, '');
-        _replaceNextHistory = false;
-      } else {
-        history.pushState({ botStep: hist.length, state: name }, '');
-      }
-    } catch(e) {}
+    try { history.pushState({ botStep: hist.length, state: name }, ''); } catch(e) {}
   }
   updateBackBtn();
   showTyping();
@@ -2943,19 +2942,13 @@ S.primer_result = { msg: (c) => calcMsg(c,'м²'), choices:[{label:'➕ Доба
 S.vik_direct = { msg: (c) => calcMsg(c, c.displayUnit || 'бр.'), choices:[{label:'📋 Виж офертата', next:'offer_summary'},{label:'➕ Добави още ВиК', next:'vik_menu'},{label:'➕ Друга услуга', next:'start'}], save:{pre:'ВиК', unit:'бр.', last:'vik'} };
 
 // ======================== БУТОНИ И СЛУШАТЕЛИ ========================
+// След 5 сек бутонът става shrunk (етикетът се скрива освен при hover)
+setTimeout(() => { if(elToggle) elToggle.classList.add('shrunk'); }, 5000);
+
 elToggle.addEventListener('click', () => {
   const open = elWidget.classList.toggle('open');
   elToggle.classList.toggle('open', open);
   if (open) tbTrack('bot_opened');
-  if (!open) {
-    // Фикс #B: при toggle-затваряне — изчистваме botStep записите
-    const stepsToRemove = hist.length + 1;
-    if (stepsToRemove > 0) {
-      _backFromHistory = true; // блокираме popstate да не вика goBack()
-      try { history.go(-stepsToRemove); } catch(e) {}
-      setTimeout(() => { _backFromHistory = false; }, 600);
-    }
-  }
   if(open && elMsgs.children.length === 0){
     const seen = sessionStorage.getItem('terybot_seen');
     setTimeout(() => go(seen ? 'start' : 'before_we_start'), 270);
@@ -2964,15 +2957,8 @@ elToggle.addEventListener('click', () => {
 });
 elBack.addEventListener('click', goBack);
 document.getElementById('tb-close').addEventListener('click', () => {
-  // Фикс #A: изчистваме botStep записите от history преди затваряне
-  const stepsToRemove = hist.length + 1; // +1 за текущата стъпка
   elWidget.classList.remove('open');
   elToggle.classList.remove('open');
-  if (stepsToRemove > 0) {
-    _backFromHistory = true; // блокираме popstate да не вика goBack()
-    try { history.go(-stepsToRemove); } catch(e) {}
-    setTimeout(() => { _backFromHistory = false; }, 600);
-  }
 });
 
 // BROWSER BACK BUTTON — физическото "Назад" връща 1 стъпка в бота
@@ -2986,11 +2972,9 @@ window.addEventListener('popstate', function(e) {
     clearCho();
     goBack();
   } else {
-    // Ботът е на началото → затваряме го, но оставаме на сайта
+    // Ботът е на началото → затваряме го
     elWidget.classList.remove('open');
     elToggle.classList.remove('open');
-    // Поправка: добавяме запис за да не излезем от сайта при следващ "Назад"
-    try { history.pushState(null, ''); } catch(e) {}
   }
   setTimeout(function() { _backFromHistory = false; }, 100);
 });
@@ -3131,8 +3115,6 @@ window.tbGoState = function(state) {
   elInputRow.style.display = 'flex';
   elBack.classList.remove('on');
   elMsgs.scrollTop = 0;
-  // Фикс #C: go() ще ползва replaceState вместо pushState за да не остава "празен" modal запис
-  _replaceNextHistory = true;
   setTimeout(() => go(state), 100);
 };
 </script>
