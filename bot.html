@@ -2948,7 +2948,12 @@ setTimeout(() => { if(elToggle) elToggle.classList.add('shrunk'); }, 5000);
 elToggle.addEventListener('click', () => {
   const open = elWidget.classList.toggle('open');
   elToggle.classList.toggle('open', open);
-  if (open) tbTrack('bot_opened');
+  if (open) {
+    tbTrack('bot_opened');
+    try { history.pushState({ botStep: 0, state: 'open' }, ''); } catch(e) {}
+  } else {
+    document.body.style.overflow = '';
+  }
   if(window.innerWidth <= 600) document.body.style.overflow = open ? 'hidden' : '';
   if(open && elMsgs.children.length === 0){
     const seen = sessionStorage.getItem('terybot_seen');
@@ -2960,7 +2965,7 @@ elBack.addEventListener('click', goBack);
 document.getElementById('tb-close').addEventListener('click', () => {
   elWidget.classList.remove('open');
   elToggle.classList.remove('open');
-  if(window.innerWidth <= 600) document.body.style.overflow = '';
+  document.body.style.overflow = '';
 });
 
 // BROWSER BACK BUTTON — физическото "Назад" връща 1 стъпка в бота
@@ -2977,6 +2982,7 @@ window.addEventListener('popstate', function(e) {
     // Ботът е на началото → затваряме го
     elWidget.classList.remove('open');
     elToggle.classList.remove('open');
+    document.body.style.overflow = '';
   }
   setTimeout(function() { _backFromHistory = false; }, 100);
 });
