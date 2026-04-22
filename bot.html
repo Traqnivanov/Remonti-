@@ -1893,10 +1893,10 @@ function showOfferOverlay(){
     document.getElementById('offer-overlay').classList.remove('open');
     choEl = null;
     clearCho();
-    addBubble('📞 Оставете телефон — ще се обадим скоро:', 'bot');
+    addBubble('📞 Оставете телефон — обаждаме се в рамките на 2 часа.', 'bot');
     setTimeout(() => {
       renderContactForm((phone) => {
-        if(phone) addBubble(`✅ <strong>Получихме вашия контакт!</strong><br>Ще се свържем с вас скоро на 📞 ${phone}<br><br><button class="call-btn" onclick="callPhone()">📞 Обадете се сега на ${PHONE_DISPLAY}</button>`, 'bot');
+        if(phone) addBubble(`✅ <strong>Получихме вашия номер. Траян ще се обади лично.</strong><br><br><button class="call-btn" onclick="callPhone()">📞 Обадете се сега на ${PHONE_DISPLAY}</button>`, 'bot');
         elInputRow.style.display = 'flex';
         setTimeout(() => renderCho([
           { label:'➕ Добави още услуга', next:'start' },
@@ -2515,6 +2515,13 @@ function renderStartGrid(){
   intro.innerHTML = `<span style="font-size:20px;animation:bounceDown 0.8s ease-in-out 6;display:inline-block;">👇</span>
     <span style="font-size:14px;font-weight:700;color:var(--gold);">Изберете услуга → получете цена за секунди</span>`;
   elMsgs.appendChild(intro);
+
+  // Цитат 1 — тих, личен, без анимация
+  const quote1 = document.createElement('div');
+  quote1.style.cssText = 'margin-bottom:14px;padding:0 4px;';
+  quote1.innerHTML = `<span style="font-size:13px;color:var(--muted);font-style:italic;line-height:1.6;">"Казвам цената преди да започна и не напускам докато не сте доволни. Ако имате въпроси за бюджета — говорим открито."</span>`;
+  elMsgs.appendChild(quote1);
+
   const services = [
     { next:'putty_menu',    badge:'⭐ Топ избор',    badgeCls:'sg-badge-gold',
       name:'Шпакловки',     price:()=>`от ${eur(P.putty_fuge)} €/м²`,   meta:'старт до 3 дни',
@@ -2978,11 +2985,14 @@ window.addEventListener('popstate', function(e) {
   if (hist.length > 0) {
     clearCho();
     goBack();
+    // Добавяме нов запис за да не излезем от сайта при следващо назад
+    try { history.pushState({ botStep: hist.length, state: cur }, ''); } catch(e2) {}
   } else {
-    // Ботът е на началото → затваряме го
+    // Ботът е на началото → затваряме го и push-ваме защитен запис на сайта
     elWidget.classList.remove('open');
     elToggle.classList.remove('open');
     document.body.style.overflow = '';
+    try { history.pushState({ botStep: -1, state: 'site' }, ''); } catch(e2) {}
   }
   setTimeout(function() { _backFromHistory = false; }, 100);
 });
@@ -3094,13 +3104,20 @@ if(cartBarClear) cartBarClear.addEventListener('click', () => {
 
 
 // Бъг 1: при focus — applyViewport + scroll за да се вижда полето под клавиатурата
+// + Fix за Facebook in-app browser който не поддържа visualViewport
 elInp.addEventListener('focus', () => {
   if(window.innerWidth <= 600){
     setTimeout(() => {
       applyViewport();
-      // Скролираме до дъното за да се вижда input-ът
       elMsgs.scrollTop = elMsgs.scrollHeight;
+      // Facebook browser fix — scrollIntoView като fallback
+      elInp.scrollIntoView({ behavior: 'smooth', block: 'end' });
     }, 350);
+    // Втори опит след 600ms за бавни браузъри като Facebook
+    setTimeout(() => {
+      elMsgs.scrollTop = elMsgs.scrollHeight;
+      elInp.scrollIntoView({ behavior: 'smooth', block: 'end' });
+    }, 650);
   }
 });
 
