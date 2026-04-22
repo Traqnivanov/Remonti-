@@ -61,6 +61,10 @@
   <meta property="og:image:height" content="630" />
   <meta property="og:url" content="https://ivanov-remonti.com/" />
   <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Ремонти София 2026 | Шпакловка, Боядисване, Гипсокартон" />
+  <meta name="twitter:description" content="Довършителни ремонти в София — шпакловка, боядисване, гипсокартон, ВиК. Писмена гаранция, безплатен оглед до 24ч." />
+  <meta name="twitter:image" content="https://raw.githubusercontent.com/Traqnivanov/Remonti-/main/ivanov-remonti-stroitelni-uslugi-kachestvo-garantsiya-sofia.jpg" />
   <!-- Schema Markup за местен бизнес -->
   <script type="application/ld+json">
   {
@@ -131,6 +135,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;1,9..144,300;1,9..144,400&family=Outfit:wght@200;300;400;500;600&display=swap" rel="stylesheet"/>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body { max-width: 100%; overflow-x: hidden; }
     :root {
       --ink: #0a0e17;
       --ink2: #111827;
@@ -201,6 +206,27 @@
       overflow: hidden;
       cursor: pointer;
       perspective: 1000px;
+      /* Facebook browser fix */
+      -webkit-transform: translateZ(0);
+      transform: translateZ(0);
+    }
+    /* Facebook in-app browser fix — принудително показваме overlay и текст */
+    @media screen and (max-width: 600px) {
+      .svc-prem-card .card-img {
+        position: relative;
+        display: block;
+        width: 100%;
+        height: 320px !important;
+        object-fit: cover;
+      }
+      .card-overlay {
+        position: absolute !important;
+        top: 0 !important; left: 0 !important; right: 0 !important; bottom: 0 !important;
+      }
+      .card-pcontent {
+        position: absolute !important;
+        bottom: 0 !important; left: 0 !important; right: 0 !important;
+      }
     }
     /* Equal size cards */
     .svc-prem-card .card-img {
@@ -848,7 +874,6 @@ document.addEventListener('DOMContentLoaded', function() {
   <h1>Довършителни Ремонти<span class="accent">в София 2026</span></h1>
   <p class="hero-tagline">Ти Почиваш — Ние Ремонтираме</p>
   <p class="hero-sub">Забравете за праха, хаоса и некоректните майстори. Ние <strong>поемаме всичко</strong> — от консултацията до финалното почистване. Вие получавате <strong>завършен дом — без компромис, без изненади, без главоболие</strong>.</p>
-  <p style="font-size:.8rem;font-weight:500;color:rgba(201,148,58,0.55);letter-spacing:.12em;text-transform:uppercase;margin-bottom:.5rem;">Без изненади. Без главоболия. Без компромиси.</p>
   <p class="hero-location">📍 <span>гр. София</span> · Банкя · Бояна · Лозен · Витоша и всички квартали</p>
   <div class="hero-btns">
     <a href="tel:0877810418" class="btn-gold">📞 Обадете се сега</a>
@@ -872,6 +897,14 @@ document.addEventListener('DOMContentLoaded', function() {
     <div class="hstat"><span class="hstat-num">0</span><span class="hstat-label">Рекламации</span></div>
   </div>
 </section>
+
+<!-- QUOTE STRIP -->
+<div style="background:#0a0e17;padding:3rem 1.5rem;text-align:center;position:relative;">
+  <div style="position:absolute;top:0;left:10%;right:10%;height:1px;background:linear-gradient(90deg,transparent,rgba(201,148,58,0.3),transparent);"></div>
+  <div style="position:absolute;bottom:0;left:10%;right:10%;height:1px;background:linear-gradient(90deg,transparent,rgba(201,148,58,0.3),transparent);"></div>
+  <div style="font-size:3rem;color:rgba(201,148,58,0.2);line-height:1;margin-bottom:.5rem;font-family:Georgia,serif;">"</div>
+  <p style="font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:clamp(1.1rem,3vw,1.4rem);color:rgba(201,148,58,0.85);line-height:1.7;max-width:520px;margin:0 auto;letter-spacing:.01em;">Клиентът не търси най-евтиния — търси този, на когото може да вярва.</p>
+</div>
 
 <!-- SERVICES -->
 <section class="services" id="services">
@@ -1521,9 +1554,6 @@ openServiceModal = function(id) {
       <div class="advisor-quote" id="advisor-quote-slide" style="opacity:0;transform:translateX(-16px);transition:all .6s ease;">
         <p>„Напълно безпристрастно и във ваша полза ще ви дам безценни съвети — как най-качествено и точно от какво се нуждае вашият ремонт според вашите изисквания и бюджет."</p>
       </div>
-      <div style="margin:1rem 0;padding:.8rem 1.2rem;border-left:3px solid rgba(201,148,58,0.4);background:rgba(201,148,58,0.04);border-radius:0 4px 4px 0;">
-        <p style="font-size:.82rem;font-style:italic;color:rgba(255,255,255,.5);line-height:1.6;font-weight:300;">„Клиентът не търси най-евтиния — търси този, на когото може да вярва."</p>
-      </div>
       <p class="advisor-text">Преди да вземете каквото и да е решение, ще ви обясня <strong>точно какви процедури са необходими</strong> — без излишно, без скрито. Работя с <strong>коректност и гаранция</strong> и не напускам обекта докато не сте доволни.</p>
       <p class="advisor-text">Когато знаете как протича строителният процес, <strong>никой не може да ви заблуди</strong> или да ви накара да платите за ненужни дейности.</p>
       <div class="advisor-warning">
@@ -1556,7 +1586,7 @@ openServiceModal = function(id) {
     </div>
     <p style="font-size:.85rem; margin-bottom:.8rem; color:#a07840;">Остава <strong style="color:var(--gold2);">1 свободно място</strong> — не чакайте.</p>
     <p style="font-size:.8rem;color:rgba(201,148,58,.45);margin-bottom:1.5rem;font-style:italic;">Не отлагайте спокойствието за утре.</p>
-    <a href="tel:0877810418" class="btn-gold" style="font-size:1rem; padding:1.2rem 3rem;">📞 Резервирай безплатен оглед</a>
+    <a href="tel:0877810418" class="btn-gold" style="font-size:1rem; padding:1.2rem 2rem; display:inline-block; max-width:100%; box-sizing:border-box; white-space:normal; word-break:break-word;">📞 Резервирай безплатен оглед</a>
     <p style="margin-top:1rem;font-size:.75rem;color:rgba(201,148,58,.35);">или <a onclick="openTeryBot()" style="color:rgba(201,148,58,.5);cursor:pointer;text-decoration:underline;">изчисли цена за 2 минути →</a></p>
   </div>
 </section>
@@ -2298,6 +2328,18 @@ function buildGalleryHTML(id) {
           else ns.textContent = s.textContent;
           document.body.appendChild(ns);
         });
+
+        // 4. ?bot=open — отваряме бота автоматично след зареждане
+        try {
+          var params = new URLSearchParams(window.location.search);
+          if (params.get('bot') === 'open') {
+            setTimeout(function() {
+              var toggle = document.getElementById('tb-toggle');
+              if (toggle) toggle.click();
+            }, 1200);
+          }
+        } catch(e) {}
+
       } catch(e) {
         console.warn('Bot inject failed:', e);
       }
