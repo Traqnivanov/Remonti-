@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="bg">
 <head>
@@ -2518,9 +2519,22 @@ function renderStartGrid(){
 
   // Цитат 1 — тих, личен, без анимация
   const quote1 = document.createElement('div');
-  quote1.style.cssText = 'margin-bottom:14px;padding:0 4px;';
-  quote1.innerHTML = `<span style="font-size:13px;color:var(--muted);font-style:italic;line-height:1.6;">"Казвам цената преди да започна и не напускам докато не сте доволни. Ако имате въпроси за бюджета — говорим открито."</span>`;
+  quote1.style.cssText = 'margin-bottom:14px;padding:0 4px;background:rgba(201,168,76,0.04);border-top:1px solid rgba(201,168,76,0.18);border-bottom:1px solid rgba(201,168,76,0.18);border-radius:6px;padding:16px 18px;text-align:center;';
+  quote1.innerHTML = `<span id="bot-quote-tw" style="font-size:16px;color:#C9A84C;font-style:italic;line-height:1.8;letter-spacing:0.01em;"></span><span id="bot-quote-cur" style="color:#C9A84C;font-style:normal;">|</span>`;
   elMsgs.appendChild(quote1);
+  // Пишеща машина ефект
+  (function(){
+    var txt = '\u201eКазвам цената преди да започна и не напускам докато не сте доволни. Ако имате въпроси за бюджета \u2014 говорим открито.\u201c';
+    var el = document.getElementById('bot-quote-tw');
+    var cur = document.getElementById('bot-quote-cur');
+    var i = 0;
+    var blink = setInterval(function(){ cur.style.opacity = cur.style.opacity==='0'?'1':'0'; }, 500);
+    setTimeout(function tick(){
+      if(!el) return;
+      if(i <= txt.length){ el.textContent = txt.slice(0,i); i++; setTimeout(tick, 36); }
+      else { clearInterval(blink); setTimeout(function(){ if(cur) cur.style.display='none'; }, 1200); }
+    }, 600);
+  })();
 
   const services = [
     { next:'putty_menu',    badge:'⭐ Топ избор',    badgeCls:'sg-badge-gold',
