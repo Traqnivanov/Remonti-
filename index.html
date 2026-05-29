@@ -93,13 +93,13 @@
         "@type": "ImageObject",
         "url": "https://traqnivanov.github.io/Remonti-/fina-shpaklovka-steni-sofia-01.jpg",
         "name": "Фина шпакловка на стени — довършителен ремонт апартамент София",
-        "description": "Резултат от фина шпакловка на стени в апартамент в София — огледално гладка повърхност"
+        "description": "Резултат от фина шпакловка на стени в апартамент в София — гладка повърхност, готова за боядисване"
       },
       {
         "@type": "ImageObject",
         "url": "https://traqnivanov.github.io/Remonti-/boyadisvane-apartament-naseteni-cvetove-lateks-sofia.jpg",
         "name": "Боядисване с латекс — апартамент София, наситени цветове",
-        "description": "Боядисване на апартамент в София с качествен латекс — наситени цветове и прецизна изработка"
+        "description": "Боядисване на апартаменти, къщи и офиси в София — шлайфане, грундиране и двуслойно нанасяне на латекс"
       },
       {
         "@type": "ImageObject",
@@ -132,7 +132,7 @@
     ]
   }
   </script>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;1,9..144,300;1,9..144,400&family=Outfit:wght@200;300;400;500;600&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=DM+Serif+Display:ital@0;1&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;1,9..144,300;1,9..144,400&family=Jost:wght@300;400;600;700&family=Outfit:wght@200;300;400;500;600&display=swap" rel="stylesheet"/>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html, body { max-width: 100%; overflow-x: hidden; }
@@ -282,7 +282,7 @@
     .card-calc-btn { display: inline-flex; align-items: center; gap: .6rem; margin-top: .5rem; font-size: .62rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--gold); opacity: 0; transform: translateY(8px); transition: opacity .4s .25s, transform .4s .25s; background: rgba(201,148,58,.12); border: 1px solid rgba(201,148,58,.35); border-radius: 20px; padding: .4rem 1rem; cursor: pointer; font-family: inherit; }
     .svc-prem-card:hover .card-calc-btn { opacity: 1; transform: translateY(0); }
     .card-calc-btn:hover { background: rgba(201,148,58,.22); border-color: rgba(201,148,58,.6); }
-    @media (max-width: 768px) { .card-calc-btn { opacity: 1; transform: translateY(0); } }
+    @media (max-width: 768px) { .card-calc-btn { opacity: 1; transform: translateY(0); } .gold-particles { display: none; } }
     .svc-bottom-bar { display: flex; align-items: center; justify-content: center; gap: 3rem; padding: 2rem 3rem; background: linear-gradient(90deg, transparent, rgba(201,148,58,.06), transparent); border-top: 1px solid rgba(201,148,58,.15); border-bottom: 1px solid rgba(201,148,58,.15); flex-wrap: wrap; }
     .svc-bar-item { display: flex; align-items: center; gap: .6rem; font-size: .72rem; letter-spacing: .1em; text-transform: uppercase; color: rgba(255,255,255,.4); }
     .svc-bar-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--gold); opacity: .6; }
@@ -310,9 +310,6 @@
     }
 
 
-    /* CUSTOM CURSOR */
-    .cursor { width: 8px; height: 8px; background: #d4a84b; border-radius: 50%; position: fixed; pointer-events: none; z-index: 9999; transition: transform .15s; box-shadow: 0 0 6px rgba(212,168,75,.8); }
-    .cursor-ring { width: 36px; height: 36px; border: 1px solid rgba(212,168,75,.5); border-radius: 50%; position: fixed; pointer-events: none; z-index: 9998; transition: all .4s cubic-bezier(.25,.46,.45,.94); }
     /* NOISE */
     body::before { content: ''; position: fixed; inset: 0; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.035'/%3E%3C/svg%3E"); pointer-events: none; z-index: 1000; opacity: .4; }
     /* HERO WATERMARK */
@@ -334,7 +331,7 @@
     .scroll-hint-wc span { font-size: .55rem; letter-spacing: .22em; text-transform: uppercase; color: rgba(255,255,255,.38); writing-mode: vertical-rl; }
     .scroll-line-wc { width: 1px; height: 60px; background: linear-gradient(180deg, #d4a84b, transparent); animation: scroll-pulse 2s ease-in-out infinite; }
     @keyframes scroll-pulse { 0%,100% { opacity: .3; } 50% { opacity: 1; } }
-    @media(max-width:900px) { body { cursor: auto; } .cursor, .cursor-ring { display: none; } .hero-lines::before { margin-left: 2rem; } }
+    @media(max-width:900px) { .hero-lines::before { margin-left: 2rem; } }
 
 
     /* SERVICE GALLERY */
@@ -734,9 +731,6 @@
   </style>
 </head>
 <body>
-<div class="cursor" id="cursor"></div>
-<div class="cursor-ring" id="cursorRing"></div>
-
 <div class="gold-particles" id="goldParticles"></div>
 
 
@@ -873,7 +867,7 @@ document.addEventListener('DOMContentLoaded', function() {
   <span class="hero-badge">✦ Майсторска работа с писмена гаранция · София</span>
   <h1>Довършителни Ремонти<span class="accent">в София <span id="hero-year"></span></span></h1>
   <p class="hero-tagline">Ти Почиваш — Ние Ремонтираме</p>
-  <p class="hero-sub">Забравете за праха, хаоса и некоректните майстори. Ние <strong>поемаме всичко</strong> — от консултацията до финалното почистване. Вие получавате <strong>завършен дом — без компромис, без изненади, без главоболие</strong>.</p>
+  <p class="hero-sub">Забравете за праха, хаоса и некоректните майстори. Ние <strong>поемаме всичко</strong> — от консултацията до финалното почистване. Вие получавате <strong>завършен дом — точно в срок и точно по договор</strong>.</p>
   <p class="hero-location">📍 <span>гр. София</span> · Банкя · Бояна · Лозен · Витоша и всички квартали</p>
   <div class="hero-btns">
     <a href="tel:0877810418" class="btn-gold">📞 Обадете се сега</a>
@@ -892,9 +886,9 @@ document.addEventListener('DOMContentLoaded', function() {
   </div>
   <div class="hero-stats">
     <div class="hstat"><span class="hstat-num" data-target="250">0</span><span class="hstat-label">Доволни клиенти</span></div>
-    <div class="hstat"><span class="hstat-num" data-target="8">0</span><span class="hstat-label">Години опит</span></div>
+    <div class="hstat"><span class="hstat-num" data-target="23">0</span><span class="hstat-label">Години опит</span></div>
     <div class="hstat"><span class="hstat-num">100%</span><span class="hstat-label">Гаранция</span></div>
-    <div class="hstat"><span class="hstat-num">0</span><span class="hstat-label">Рекламации</span></div>
+    <div class="hstat"><span class="hstat-num">0€</span><span class="hstat-label">При проблеми и рекламации</span></div>
   </div>
 </section>
 
@@ -927,7 +921,7 @@ document.addEventListener('DOMContentLoaded', function() {
     <div class="card-pcontent">
       <div class="card-pline"><span>Шпакловка</span></div>
       <div class="card-pname">Шпакловка</div>
-      <div class="card-pdesc">Огледално гладки стени и тавани — без вълни, без следи, без компромис.</div>
+      <div class="card-pdesc">Гладки стени и тавани с безпрашно шкурене — без вълни, без следи, готови за боя.</div>
       <button type="button" class="card-pbtn" onclick="openServiceModal('spak')">Подробности и цени <span class="pbtn-circle">→</span></button>
       <button type="button" class="card-calc-btn" onclick="openTeryBot('putty_menu')"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#c9943a" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="3"/><rect x="7" y="5" width="10" height="3" rx="1"/><circle cx="8" cy="12" r="1" fill="#c9943a" stroke="none"/><circle cx="12" cy="12" r="1" fill="#c9943a" stroke="none"/><circle cx="16" cy="12" r="1" fill="#c9943a" stroke="none"/><circle cx="8" cy="16" r="1" fill="#c9943a" stroke="none"/><circle cx="12" cy="16" r="1" fill="#c9943a" stroke="none"/><rect x="14.5" y="14" width="3" height="4" rx="1" fill="#c9943a" stroke="none"/></svg> Изчисли цена</button>
     </div>
@@ -941,7 +935,7 @@ document.addEventListener('DOMContentLoaded', function() {
     <div class="card-pcontent">
       <div class="card-pline"><span>Боядисване</span></div>
       <div class="card-pname">Боядисване</div>
-      <div class="card-pdesc">Наситени цветове и прецизност. Доказани бои за дълготраен резултат.</div>
+      <div class="card-pdesc">Боядисване с латекс в два слоя, върху грунд — със защита на подове, мебели и дограма.</div>
       <button type="button" class="card-pbtn" onclick="openServiceModal('boya')">Подробности и цени <span class="pbtn-circle">→</span></button>
       <button type="button" class="card-calc-btn" onclick="openTeryBot('painting_menu')"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#c9943a" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="3"/><rect x="7" y="5" width="10" height="3" rx="1"/><circle cx="8" cy="12" r="1" fill="#c9943a" stroke="none"/><circle cx="12" cy="12" r="1" fill="#c9943a" stroke="none"/><circle cx="16" cy="12" r="1" fill="#c9943a" stroke="none"/><circle cx="8" cy="16" r="1" fill="#c9943a" stroke="none"/><circle cx="12" cy="16" r="1" fill="#c9943a" stroke="none"/><rect x="14.5" y="14" width="3" height="4" rx="1" fill="#c9943a" stroke="none"/></svg> Изчисли цена</button>
     </div>
@@ -955,7 +949,7 @@ document.addEventListener('DOMContentLoaded', function() {
     <div class="card-pcontent">
       <div class="card-pline"><span>Гипсокартон</span></div>
       <div class="card-pname">Гипсокартон и Тавани</div>
-      <div class="card-pdesc">Окачени тавани, преградни стени и декоративни ниши с отлична изолация.</div>
+      <div class="card-pdesc">Окачени тавани, преградни стени и LED ниши от Knauf и Rigips — със звуко- и топлоизолация при нужда.</div>
       <button type="button" class="card-pbtn" onclick="openServiceModal('gyp')">Подробности и цени <span class="pbtn-circle">→</span></button>
       <button type="button" class="card-calc-btn" onclick="openTeryBot('gk_menu')"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#c9943a" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="3"/><rect x="7" y="5" width="10" height="3" rx="1"/><circle cx="8" cy="12" r="1" fill="#c9943a" stroke="none"/><circle cx="12" cy="12" r="1" fill="#c9943a" stroke="none"/><circle cx="16" cy="12" r="1" fill="#c9943a" stroke="none"/><circle cx="8" cy="16" r="1" fill="#c9943a" stroke="none"/><circle cx="12" cy="16" r="1" fill="#c9943a" stroke="none"/><rect x="14.5" y="14" width="3" height="4" rx="1" fill="#c9943a" stroke="none"/></svg> Изчисли цена</button>
     </div>
@@ -983,7 +977,7 @@ document.addEventListener('DOMContentLoaded', function() {
     <div class="card-pcontent">
       <div class="card-pline"><span>Обръщане Дограма</span></div>
       <div class="card-pname">Обръщане Дограма</div>
-      <div class="card-pdesc">Прецизно обръщане около врати и прозорци — безупречен финиш.</div>
+      <div class="card-pdesc">Обръщане около врати и прозорци с армировъчна мрежа — без пукнатини, готово за боядисване.</div>
       <button type="button" class="card-pbtn" onclick="openServiceModal('dog')">Подробности и цени <span class="pbtn-circle">→</span></button>
       <button type="button" class="card-calc-btn" onclick="openTeryBot('windows_menu')"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#c9943a" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="3"/><rect x="7" y="5" width="10" height="3" rx="1"/><circle cx="8" cy="12" r="1" fill="#c9943a" stroke="none"/><circle cx="12" cy="12" r="1" fill="#c9943a" stroke="none"/><circle cx="16" cy="12" r="1" fill="#c9943a" stroke="none"/><circle cx="8" cy="16" r="1" fill="#c9943a" stroke="none"/><circle cx="12" cy="16" r="1" fill="#c9943a" stroke="none"/><rect x="14.5" y="14" width="3" height="4" rx="1" fill="#c9943a" stroke="none"/></svg> Изчисли цена</button>
     </div>
@@ -1034,7 +1028,7 @@ document.addEventListener('DOMContentLoaded', function() {
   <div class="process-inner">
     <div class="process-header reveal">
       <span class="section-tag">✦ Как работим</span>
-      <h2 class="section-h2">4 прости стъпки до мечтания дом</h2>
+      <h2 class="section-h2">Нашият процес: 4 стъпки от оглед до предаване</h2>
       <div class="gold-line center"></div>
       <p class="section-lead" style="color:var(--muted); max-width:500px; margin:0 auto;">Без стрес, без изненади — само ясен процес и предсказуем резултат.</p>
     </div>
@@ -1072,7 +1066,7 @@ document.addEventListener('DOMContentLoaded', function() {
 </section>
 <section class="work-showcase" id="video">
   <span class="section-tag" style="text-align:center;display:block;">&#10086; Доказателство за качество</span>
-  <h2 class="section-h2" style="text-align:center;">На живо от нашите обекти</h2>
+  <h2 class="section-h2" style="text-align:center;">На живо от обектите: Реални резултати преди и след</h2>
   <div class="gold-line center"></div>
   <p style="text-align:center;font-size:.85rem;color:var(--muted);margin:0 auto 2rem;font-weight:300;">39 снимки &middot; 3 видеа от реални обекти</p>
 
@@ -1405,7 +1399,7 @@ openServiceModal = function(id) {
   <div class="reviews-inner">
     <div class="reviews-header reveal">
       <span class="section-tag">✦ Доволни клиенти</span>
-      <h2 class="section-h2" style="color:white;">Какво казват хората</h2>
+      <h2 class="section-h2" style="color:white;">Какво казват клиентите, които вече ни се довериха</h2>
       <div class="gold-line center"></div>
     </div>
     <div class="reviews-grid">
@@ -1441,7 +1435,7 @@ openServiceModal = function(id) {
       <span>100%</span>
       <span>Гаранция</span>
     </div>
-    <h2 class="section-h2">Писмена гаранция за всяка дейност</h2>
+    <h2 class="section-h2">Писмена гаранция за всеки ремонт и всяка дейност</h2>
     <div class="gold-line center"></div>
     <p class="section-lead" style="max-width:550px; margin:0 auto;">Не просто обещание — подписан документ. Ако нещо не отговаря на договореното, се връщаме и оправяме безплатно. Без въпроси.</p>
     <div class="guarantee-points">
@@ -1485,7 +1479,7 @@ openServiceModal = function(id) {
     <div class="benefits-top">
       <div>
         <span class="section-tag">✦ Защо да изберете нас</span>
-        <h2 class="section-h2">Работим с отговорност и прозрачност</h2>
+        <h2 class="section-h2">Как работим: отговорно, прозрачно, в срок</h2>
         <div class="gold-line"></div>
         <p class="section-lead" style="color:var(--muted);">Не сме поредният майстор — ние сме вашият партньор. Поемаме всичко и ви информираме на всяка крачка.</p>
         <div class="guarantee-strip">
@@ -1494,10 +1488,10 @@ openServiceModal = function(id) {
         </div>
       </div>
       <div class="benefits-top-right">
-        <div class="benefit-row"><div class="benefit-icon-wrap">😌</div><div><h4>0% Стрес за вас</h4><p>Поемаме цялата работа и отговорност от начало до край.</p></div></div>
+        <div class="benefit-row"><div class="benefit-icon-wrap">😌</div><div><h4>Спокойно за вас</h4><p>Поемаме цялата работа и отговорност от начало до край.</p></div></div>
         <div class="benefit-row"><div class="benefit-icon-wrap">🤝</div><div><h4>Без скрити проблеми</h4><p>Пълна прозрачност — само чист, завършен резултат и ясна сметка.</p></div></div>
         <div class="benefit-row"><div class="benefit-icon-wrap">👑</div><div><h4>Гарантирано качество</h4><p>Поемаме ограничен брой обекти за пълно внимание към вашия ремонт.</p></div></div>
-        <div class="benefit-row"><div class="benefit-icon-wrap">⏱️</div><div><h4>Спазваме сроковете</h4><p>Договореният срок е свещен. Планираме точно и изпълняваме навреме.</p></div></div>
+        <div class="benefit-row"><div class="benefit-icon-wrap">⏱️</div><div><h4>Спазваме сроковете</h4><p>Работим по график. Ако нещо изскочи — казваме предварително, не накрая.</p></div></div>
       </div>
     </div>
   </div>
@@ -1540,7 +1534,7 @@ openServiceModal = function(id) {
   <div class="advisor-inner">
     <div class="advisor-left reveal-left">
       <span class="section-tag">✦ Нещо, което малко майстори предлагат</span>
-      <h2 class="section-h2">Безплатен<br/>и безпристрастен съвет</h2>
+      <h2 class="section-h2">Безплатен съвет<br/>преди ремонт</h2>
       <div class="gold-line"></div>
       <div id="advisor-counter" style="margin:1.5rem 0;padding:1.2rem 1.5rem;background:rgba(201,148,58,0.06);border:1px solid rgba(201,148,58,0.15);border-radius:4px;display:flex;align-items:center;gap:1.2rem;">
         <div style="flex-shrink:0;text-align:center;">
@@ -1552,12 +1546,11 @@ openServiceModal = function(id) {
         </div>
       </div>
       <div class="advisor-quote" id="advisor-quote-slide" style="opacity:0;transform:translateX(-16px);transition:all .6s ease;">
-        <p>„Напълно безпристрастно и във ваша полза ще ви дам безценни съвети — как най-качествено и точно от какво се нуждае вашият ремонт според вашите изисквания и бюджет."</p>
+        <p>„След 23 години опит знам какво да гледам на обекта. Идвам, оглеждам и ви казвам какво наистина е нужно. После решавате Вие — без натиск, без обещания."</p>
       </div>
       <p class="advisor-text">Преди да вземете каквото и да е решение, ще ви обясня <strong>точно какви процедури са необходими</strong> — без излишно, без скрито. Работя с <strong>коректност и гаранция</strong> и не напускам обекта докато не сте доволни.</p>
-      <p class="advisor-text">Когато знаете как протича строителният процес, <strong>никой не може да ви заблуди</strong> или да ви накара да платите за ненужни дейности.</p>
       <div class="advisor-warning">
-        <p style="color:#ff6666; font-weight:600; font-size:1rem; line-height:1.7; border-left:3px solid #ff4444; padding-left:1rem; background:rgba(255,50,50,.08); padding:1rem 1rem 1rem 1.2rem; border-radius:4px;">⚠️ <strong style="color:#ff8888;">Внимание:</strong> Много майстори предлагат нереални процедури с цел финансово ощетяване. Когато ви запозная с реалните стъпки — <strong style="color:#ff8888;">това няма как да се случи</strong>. Плащате само за това, което наистина е нужно.</p>
+        <p style="color:#c9943a; font-weight:500; font-size:.95rem; line-height:1.7; border-left:3px solid #c9943a; padding:1rem 1rem 1rem 1.2rem; background:rgba(201,148,58,.06); border-radius:4px;">💡 <strong style="color:#e8b84b;">Важно:</strong> В тази професия се срещат и нереални оферти. Затова ви обясняваме процеса предварително — какво се прави, защо и колко струва. Преценявате сами още преди да започнем.</p>
       </div>
     </div>
     <div class="advisor-right reveal-right">
@@ -1577,7 +1570,7 @@ openServiceModal = function(id) {
 <section class="urgency">
   <div class="urgency-inner">
     <span class="section-tag" style="color:var(--gold2); display:block; text-align:center;">✦ Важно</span>
-    <h2>Приемаме само 3 нови обекта месечно</h2>
+    <h2>Свободни места за ремонт — само 3 на месец</h2>
     <p>За да гарантираме пълно внимание и качество на всеки ремонт, работим с ограничен брой клиенти едновременно. Свободните места за този месец:</p>
     <div class="urgency-slots">
       <div class="slot taken">✓</div>
@@ -1595,7 +1588,7 @@ openServiceModal = function(id) {
 <section class="faq" id="faq">
   <div class="faq-inner">
     <span class="section-tag">✦ Отговори на вашите въпроси</span>
-    <h2 class="section-h2">Често задавани въпроси</h2>
+    <h2 class="section-h2">Често задавани въпроси за ремонти</h2>
     <div class="gold-line center"></div>
     <div class="faq-item"><div class="faq-q">Променя ли се цената в процеса на работа? <span>+</span></div><div class="faq-a"><p>Категорично не. Цената, която договорим след огледа, остава крайна. Промяна има само ако вие добавите нова дейност.</p><p style="margin-top:.6rem;font-size:.82rem;"><a onclick="openTeryBot()" style="color:#c9943a;text-decoration:none;cursor:pointer;">→ Изчислете ориентировъчна цена в калкулатора</a></p></div></div>
     <div class="faq-item"><div class="faq-q">Кой купува материалите? <span>+</span></div><div class="faq-a"><p>Ние можем да се погрижим за всичко – доставка, качване и избор на най-добрите материали с нашите отстъпки от доставчици.</p></div></div>
@@ -1635,7 +1628,7 @@ openServiceModal = function(id) {
   <div class="contact-inner">
     <div class="contact-left">
       <span class="section-tag">✦ Свържете се с нас сега</span>
-      <h2 class="section-h2">Безплатна консултация и оферта</h2>
+      <h2 class="section-h2">Безплатна консултация, оглед и оферта</h2>
       <div class="gold-line"></div>
       <p class="section-lead">Обадете се или попълнете формата. Ще ви отговорим бързо с честен съвет — без ангажимент.</p>
       <div style="display:flex; flex-direction:column; gap:1rem; margin-bottom:1.5rem;">
@@ -1833,11 +1826,11 @@ openServiceModal = function(id) {
 
   // SERVICE MODAL DATA
   const serviceData = {
-    spak: { img: 'https://traqnivanov.github.io/Remonti-/shpaklovka-steni-apartament-sofia.jpg', title: 'Шпакловка', botState: 'putty_menu', priceRange: 'от €4.09 / 8 лв до €8.18 / 16 лв на м²', priceUnit: 'м²', desc: 'Постигаме идеална гладост на стените. Изпълнява се с професионални шпакли и ножове — финната шпакловка се нанася с валяк за максимална равномерност и огледален ефект.', includes: ['Почистване и грундиране','Шпакловане на ъгли с профили','Финишна шпакловка','Шлайфане и изглаждане','Почистване след работа','Писмена гаранция'], options: [{ name: 'Основна укрепваща', price: '€8.18 / 16 лв/м²', desc: 'Стари основи, панелни жилища, влага/мухъл.' },{ name: 'Гипсова шпакловка', price: '€6.14 / 12 лв/м²', desc: 'Гипсова шпакловка за по-гладък финиш. При напуквания се нанася мрежа или воал за укрепване.' },{ name: 'Фина шпакловка', price: '€5.50 / 10.76 лв/м²', desc: 'Огледална гладост — финален слой преди боядисване.' }] },
-    boya: { img: 'https://traqnivanov.github.io/Remonti-/boyadisvane-apartament-sofia.jpg', title: 'Боядисване', botState: 'painting_menu', priceRange: 'от €4.20 / 8.21 лв до €7.82 / 15.30 лв на м²', priceUnit: 'м²', desc: 'Прецизно боядисване с висококачествени бои. Гарантираме равномерно покритие, наситени цветове и дълготраен резултат.', includes: ['Грундиране на повърхността','Прецизно отсичане','2 ръце боя','Защита на пода и мебелите','Почистване след работа','Писмена гаранция'], options: [{ name: 'Един цвят – Бяло', price: '€4.20 / 8.21 лв/м²', desc: 'Класическо боядисване в бяло. Равномерно покритие, чист и светъл вид.' },{ name: 'Стандартно — стени и тавани', price: '€4.80 / 9.39 лв/м²', desc: 'Латекс, двуслойно нанасяне за трайно покритие.' },{ name: 'Премиум покритие', price: '€6.80 / 13.30 лв/м²', desc: 'Висок клас — максимална трайност и визия.' },{ name: 'Боядисване с корекции', price: '€7.82 / 15.30 лв/м²', desc: 'Запълване на дупки и надраскванията, грунд и боядисване — пълна подготовка и финиш.' }] },
-    gyp: { img: 'https://traqnivanov.github.io/Remonti-/gipsokarton-okachen-tavan-sofia.jpg', title: 'Гипсокартон и Тавани', botState: 'gk_menu', priceRange: 'от €14.00 / 27.38 лв до €25.00 / 48.90 лв на м² · LED: €26.00 / 50.85 лв/л.м.', priceUnit: 'м²', desc: 'Изграждаме сложни конструкции с Knauf и Rigips — материали с европейски стандарт и отлична изолация.', includes: ['Метална конструкция Knauf/Rigips','Двуслойно окачване','Запълване на фуги','Звукоизолация по желание','LED осветление по желание','Писмена гаранция'], options: [{ name: 'Прав таван', price: '€15.00 / 29.34 лв/м²', desc: 'Стандартен окачен таван от гипсокартон.' },{ name: 'LED ниша', price: '€26.00 / 50.85 лв/л.м.', desc: 'За LED лента.' },{ name: 'Предстенна обшивка от гипсокартон', price: '€14.00 / 27.38 лв/м²', desc: 'Обшивка пред стена.' },{ name: 'Преградна стена от гипсокартон', price: '€25.00 / 48.90 лв/м²', desc: 'Нова преградна стена.' }] },
+    spak: { img: 'https://traqnivanov.github.io/Remonti-/shpaklovka-steni-apartament-sofia.jpg', title: 'Шпакловка', botState: 'putty_menu', priceRange: 'от €4.09 / 8 лв до €8.18 / 16 лв на м²', priceUnit: 'м²', desc: 'Шпакловка на стени и тавани в няколко слоя — основна, гипсова и фина според състоянието. Шкуренето е безпрашно — не остава облак прах в дома ви.', includes: ['Почистване и грундиране','Шпакловане на ъгли с профили','Финишна шпакловка','Шлайфане и изглаждане','Почистване след работа','Писмена гаранция'], options: [{ name: 'Основна укрепваща', price: '€8.18 / 16 лв/м²', desc: 'Стари основи, панелни жилища, влага/мухъл.' },{ name: 'Гипсова шпакловка', price: '€6.14 / 12 лв/м²', desc: 'Гипсова шпакловка за по-гладък финиш. При напуквания се нанася мрежа или воал за укрепване.' },{ name: 'Фина шпакловка', price: '€5.50 / 10.76 лв/м²', desc: 'Последен слой преди боя — гладка основа без следи и неравности.' }] },
+    boya: { img: 'https://traqnivanov.github.io/Remonti-/boyadisvane-apartament-sofia.jpg', title: 'Боядисване', botState: 'painting_menu', priceRange: 'от €4.20 / 8.21 лв до €7.82 / 15.30 лв на м²', priceUnit: 'м²', desc: 'Двуслойно боядисване с висококачествен латекс върху грунд. Шлайфаме дефекти, защитаваме подове и мебели с найлон, прецизно отсичане около ъгли и дограма.', includes: ['Грундиране на повърхността','Прецизно отсичане','2 ръце боя','Защита на пода и мебелите','Почистване след работа','Писмена гаранция'], options: [{ name: 'Един цвят – Бяло', price: '€4.20 / 8.21 лв/м²', desc: 'Двуслойно боядисване само в бяло. Най-икономичното решение за чист и светъл интериор.' },{ name: 'Стандартно — стени и тавани', price: '€4.80 / 9.39 лв/м²', desc: 'Двуслойно боядисване с латекс в желания от Вас цвят — за стени и тавани.' },{ name: 'Премиум покритие', price: '€6.80 / 13.30 лв/м²', desc: 'Висок клас латекс — миещо се покритие, наситен цвят, устойчивост във времето.' },{ name: 'Боядисване с корекции', price: '€7.82 / 15.30 лв/м²', desc: 'Запълване на дупки, пукнатини и надрасквания, шлайфане и грундиране — пълна подготовка преди боядисване с избран от Вас латекс.' }] },
+    gyp: { img: 'https://traqnivanov.github.io/Remonti-/gipsokarton-okachen-tavan-sofia.jpg', title: 'Гипсокартон и Тавани', botState: 'gk_menu', priceRange: 'от €14.00 / 27.38 лв до €25.00 / 48.90 лв на м² · LED: €26.00 / 50.85 лв/л.м.', priceUnit: 'м²', desc: 'Изграждаме окачени тавани, преградни стени и ниши с метална конструкция Knauf и Rigips. Звуко- и топлоизолация по желание, скрито LED осветление.', includes: ['Метална конструкция Knauf/Rigips','Двуслойно окачване','Запълване на фуги','Звукоизолация по желание','LED осветление по желание','Писмена гаранция'], options: [{ name: 'Прав таван', price: '€15.00 / 29.34 лв/м²', desc: 'Стандартен окачен таван от гипсокартон.' },{ name: 'LED ниша', price: '€26.00 / 50.85 лв/л.м.', desc: 'LED ниша — скрито осветление за таван и стена.' },{ name: 'Предстенна обшивка от гипсокартон', price: '€14.00 / 27.38 лв/м²', desc: 'Обшивка пред стена.' },{ name: 'Преградна стена от гипсокартон', price: '€25.00 / 48.90 лв/м²', desc: 'Нова преградна стена.' }] },
     vik: { img: 'https://traqnivanov.github.io/Remonti-/vik-uslugi-sofia.jpg', title: 'ВиК', botState: 'vik_menu', priceRange: 'от €15.00 / 29.34 лв до €50.00 / 97.79 лв на бр.', priceUnit: 'бр', desc: 'Пълна подмяна или изграждане на нови водопроводни инсталации по проект. Монтаж на санитария.', includes: ['Изготвяне на схема','Полагане на тръби в шлайц','Монтаж на фитинги','Тестване под налягане','Запълване на шлайцове','Писмена гаранция'], options: [{ name: 'Смяна на смесител', price: '€18.00 / 35.20 лв/бр', desc: 'Демонтаж на стария, монтаж на новия, проверка за теч.' },{ name: 'Смяна на тоалетна чиния', price: '€50.00 / 97.79 лв/бр', desc: 'Демонтаж на старата, монтаж на новата, закрепване, свързване.' },{ name: 'Смяна на сифон / гъвкава връзка', price: '€15.00 / 29.34 лв/бр', desc: 'Демонтаж на стария, монтаж на новия, проверка.' },{ name: 'Нова ВиК инсталация', price: 'по оглед', desc: 'Безплатен оглед + фиксирана оферта.' },{ name: 'Авариен ремонт', price: 'по оглед', desc: 'Отстраняване на аварията.' }] },
-    dog: { img: 'https://traqnivanov.github.io/Remonti-/obrushchane-dograma-prozorci-sofia.jpg', title: 'Обръщане Дограма', botState: 'windows_menu', priceRange: '€7.67 / 15 лв на л.м.', priceUnit: 'л.м.', desc: 'Прецизно обръщане около врати и прозорци след смяна на дограма. Перфектни ъгли и безупречен финиш.', includes: ['Почистване на стария материал','Армировъчна мрежа','Алуминиеви ъглови профили','Финишна шпакловка','Готово за боядисване','Писмена гаранция'], options: [{ name: 'Обръщане с лайсна', price: '€7.67 / 15 лв/л.м.', desc: 'Шпакловаме и заглаждаме около дограмата (прозорец или врата), монтираме лайсна за перфектен ъгъл.' }] },
+    dog: { img: 'https://traqnivanov.github.io/Remonti-/obrushchane-dograma-prozorci-sofia.jpg', title: 'Обръщане Дограма', botState: 'windows_menu', priceRange: '€7.67 / 15 лв на л.м.', priceUnit: 'л.м.', desc: 'Обръщане на пространството около врати и прозорци след смяна на дограма. Работим с армировъчна мрежа и ъглови профили — без пукнатини и криви ъгли.', includes: ['Почистване на стария материал','Армировъчна мрежа','Алуминиеви ъглови профили','Финишна шпакловка','Готово за боядисване','Писмена гаранция'], options: [{ name: 'Обръщане с лайсна', price: '€7.67 / 15 лв/л.м.', desc: 'Шпакловане около прозореца или вратата с алуминиева ъглова лайсна — равен ръб, готов за боядисване.' }] },
     maz: { img: 'https://traqnivanov.github.io/Remonti-/dekorativna-mazilka-sofia.jpg', title: 'Декоративна Мазилка', botState: null, desc: 'Венецианска, структурна или релефна мазилка — уникална текстура и луксозен вид.', includes: ['Подготовка и грундиране','2–3 слоя мазилка','Полиране и финиш','Защитен лак по желание','Уникален резултат','Писмена гаранция'], options: [{ name: 'Структурна мазилка', desc: 'Релефна текстура с различни зърна.' },{ name: 'Венецианска мазилка', desc: 'Луксозна гладка мазилка с мраморен ефект.' },{ name: 'Релефна мазилка', desc: 'Ръчно нанесен релеф. Уникален вид.' },{ name: 'С метален ефект', desc: 'Злато, сребро или бронз. Луксозен финиш.' }] }
   };
   let currentSvc = '', selectedSvcOption = '';
@@ -2018,21 +2011,6 @@ const mazGallery = [
   }
 
 
-  // CUSTOM CURSOR
-  const wcCursor = document.getElementById('cursor');
-  const wcRing = document.getElementById('cursorRing');
-  if (wcCursor && wcRing) {
-    let mx=0,my=0,rx=0,ry=0;
-    document.addEventListener('mousemove', e => {
-      mx=e.clientX; my=e.clientY;
-      wcCursor.style.left=(mx-4)+'px'; wcCursor.style.top=(my-4)+'px';
-    });
-    (function animRing(){ rx+=(mx-rx)*.12; ry+=(my-ry)*.12; wcRing.style.left=(rx-18)+'px'; wcRing.style.top=(ry-18)+'px'; requestAnimationFrame(animRing); })();
-    document.querySelectorAll('a,button,.svc-prem-card,.service-card').forEach(el => {
-      el.addEventListener('mouseenter',()=>{ wcCursor.style.transform='scale(2.5)'; wcRing.style.transform='scale(1.5)'; wcRing.style.borderColor='rgba(212,168,75,.8)'; });
-      el.addEventListener('mouseleave',()=>{ wcCursor.style.transform='scale(1)'; wcRing.style.transform='scale(1)'; wcRing.style.borderColor='rgba(212,168,75,.5)'; });
-    });
-  }
   // WATERMARK PARALLAX
   document.addEventListener('mousemove', e => {
     const x=(e.clientX/window.innerWidth-.5)*15;
@@ -2154,7 +2132,7 @@ function buildGalleryHTML(id) {
       current += step;
       if (current >= target) { current = target; clearInterval(timer); }
       if (target === 250) el.textContent = current + '+';
-      else if (target === 8) el.textContent = current + 'г.';
+      else if (target === 23) el.textContent = current + 'г.';
       else el.textContent = current;
     }, 25);
   }
