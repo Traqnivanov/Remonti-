@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="bg">
 <head>
@@ -161,9 +160,9 @@
   .c-btn:hover{background:rgba(201,168,76,0.1);border-color:var(--gold);transform:translateX(4px);}
   .c-num{width:28px;height:28px;border-radius:50%;background:linear-gradient(135deg,var(--gold),var(--gold-dark));color:#0E0E0F;font-size:14px;font-weight:700;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;}
   .c-body{flex:1;}
-  .c-row{display:flex;align-items:baseline;justify-content:space-between;gap:8px;}
+  .c-row{display:flex;flex-direction:column;gap:2px;}
   .c-label{font-size:16px;font-weight:500;}
-  .c-price{font-size:13px;font-weight:700;color:var(--gold);white-space:nowrap;}
+  .c-price{font-size:13px;font-weight:700;color:var(--gold);}
   .c-desc{font-size:13px;color:var(--muted);margin-top:3px;}
   .cb-wrap{display:flex;flex-direction:column;gap:6px;}
   .cb-section{background:var(--bg-bubble-bot);border:1px solid var(--border-bubble);border-radius:14px;padding:10px 12px;width:100%;}
@@ -2439,8 +2438,8 @@ function renderPackages(packages, area){
       elInputRow.style.display = 'flex';
       addBubble('🎨 Избор на вид боядисване:', 'bot');
       setTimeout(() => renderCho([
-        {label:'Един цвят – Бяло', desc:'4.20 €/м²', next:'painting_area', price:P.paint_white, serviceType:'Един цвят – Бяло', serviceName:'Боядисване', displayUnit:'м²'},
-        {label:'Премиум покритие', desc:'6.80 €/м²', next:'painting_area', price:P.paint_premium, serviceType:'Премиум', serviceName:'Боядисване', displayUnit:'м²'},
+        {label:'Един цвят – Бяло', priceLabel:pTag(P.paint_white,'м²'), desc:'Двуслойно боядисване само в бяло — икономично решение за чист и светъл интериор.', next:'painting_area', price:P.paint_white, serviceType:'Един цвят – Бяло', serviceName:'Боядисване', displayUnit:'м²'},
+        {label:'Премиум покритие', priceLabel:pTag(P.paint_premium,'м²'), desc:'Висок клас латекс — миещо се покритие, наситен цвят, устойчивост във времето.', next:'painting_area', price:P.paint_premium, serviceType:'Премиум', serviceName:'Боядисване', displayUnit:'м²'},
         {label:'⬅ Назад към пакетите', next:null, specialBack:true}
       ]), 300);
     });
@@ -2832,7 +2831,7 @@ const S = {
 
   gk_menu: { msg: () => 'Изберете вид конструкция:<br><small style="color:rgba(201,168,76,0.6);font-style:italic;">Всички цени са само за труд — без материали</small>', choicesFn: () => [
     {label:'Прав таван', priceLabel:pTag(P.ceiling_flat,'м²'), desc:'Стандартен окачен таван от гипсокартон', next:'gk_area', price:P.ceiling_flat, serviceType:'Прав таван', serviceName:'Гипсокартон', displayUnit:'м²'},
-    {label:'LED ниша', priceLabel:pTag(P.ceiling_led,'л.м.'), desc:'За LED лента', next:'gk_length', price:P.ceiling_led, serviceType:'LED ниша', serviceName:'Гипсокартон', displayUnit:'л.м.'},
+    {label:'LED ниша', priceLabel:pTag(P.ceiling_led,'л.м.'), desc:'Скрито осветление за таван и стена', next:'gk_length', price:P.ceiling_led, serviceType:'LED ниша', serviceName:'Гипсокартон', displayUnit:'л.м.'},
     {label:'Предстенна обшивка от гипсокартон', priceLabel:pTag(P.gk_pre,'м²'), desc:'Обшивка пред стена', next:'gk_area', price:P.gk_pre, serviceType:'Предстенна обшивка', serviceName:'Гипсокартон', displayUnit:'м²'},
     {label:'Преградна стена от гипсокартон', priceLabel:pTag(P.gk_wall2,'м²'), desc:'Нова преградна стена', next:'gk_area', price:P.gk_wall2, serviceType:'Преградна стена', serviceName:'Гипсокартон', displayUnit:'м²'},
     {label:'📞 Обадете се', next:null, specialCall:true}
@@ -2845,14 +2844,14 @@ const S = {
   putty_menu: { msg: () => 'Изберете вид шпакловка:<br><small style="color:rgba(201,168,76,0.6);font-style:italic;">Всички цени са само за труд — без материали</small>', choicesFn: () => [
     {label:'Основна укрепваща', priceLabel:pTag(P.putty_basic,'м²'), desc:'Стари основи, панелни жилища, влага/мухъл', next:'putty_area', price:P.putty_basic, serviceType:'Основна укрепваща', serviceName:'Шпакловки', displayUnit:'м²'},
     {label:'Гипсова шпакловка', priceLabel:pTag(P.putty_gypsum,'м²'), desc:'За леки неравности, ронещи стени и малки дупки. При пукнатини се поставя армираща мрежа.', next:'putty_area', price:P.putty_gypsum, serviceType:'Гипсова', serviceName:'Шпакловки', displayUnit:'м²'},
-    {label:'Фина шпакловка', priceLabel:pTag(P.putty_fina,'м²'), desc:'Огледална гладкост, финален слой преди боядисване', next:'putty_area', price:P.putty_fina, serviceType:'Фина', serviceName:'Шпакловки', displayUnit:'м²'},
+    {label:'Фина шпакловка', priceLabel:pTag(P.putty_fina,'м²'), desc:'Финишен слой преди боя — заглажда дребните неравности за гладка повърхност.', next:'putty_area', price:P.putty_fina, serviceType:'Фина', serviceName:'Шпакловки', displayUnit:'м²'},
     {label:'📞 Обадете се', next:null, specialCall:true}
   ] },
   putty_area: { msg: () => '📏 Въведете квадратура (м²).<br><button onclick="(function(){document.querySelector(\'#tb-input\').value=\'не знам\';document.querySelector(\'#tb-input\').dispatchEvent(new KeyboardEvent(\'keydown\',{key:\'Enter\',bubbles:true}))})()" style="margin-top:8px;background:rgba(224,85,85,0.1);border:1px solid rgba(224,85,85,0.35);border-radius:20px;padding:6px 16px;font-size:13px;font-weight:700;color:#E05555;cursor:pointer;">🆘 Не знам — помогнете ми</button>', input:'number', label:'м²', displayUnit:'м²', next:'putty_result' },
   painting_menu: { msg: () => 'Изберете тип боядисване:<br><small style="color:rgba(201,168,76,0.6);font-style:italic;">Всички цени са само за труд — без материали</small>', choicesFn: () => [
-    {label:'Един цвят – Бяло', priceLabel:pTag(P.paint_white,'м²'), desc:'Бюджетно решение – свеж резултат без излишни разходи', next:'painting_area', price:P.paint_white, serviceType:'Един цвят – Бяло', serviceName:'Боядисване', displayUnit:'м²'},
-    {label:'Стандартно — стени и тавани', priceLabel:pTag(P.paint_walls_ceilings,'м²'), desc:'Латекс, двуслойно нанасяне за трайно покритие', next:'painting_area', price:P.paint_walls_ceilings, serviceType:'Стандартно — стени и тавани', serviceName:'Боядисване', displayUnit:'м²'},
-    {label:'Премиум покритие', priceLabel:pTag(P.paint_premium,'м²'), desc:'Висок клас — максимална трайност и визия', next:'painting_area', price:P.paint_premium, serviceType:'Премиум', serviceName:'Боядисване', displayUnit:'м²'},
+    {label:'Един цвят – Бяло', priceLabel:pTag(P.paint_white,'м²'), desc:'Двуслойно боядисване само в бяло — икономично решение за чист и светъл интериор.', next:'painting_area', price:P.paint_white, serviceType:'Един цвят – Бяло', serviceName:'Боядисване', displayUnit:'м²'},
+    {label:'Стандартно — стени и тавани', priceLabel:pTag(P.paint_walls_ceilings,'м²'), desc:'Двуслойно боядисване с латекс в желания от Вас цвят.', next:'painting_area', price:P.paint_walls_ceilings, serviceType:'Стандартно — стени и тавани', serviceName:'Боядисване', displayUnit:'м²'},
+    {label:'Премиум покритие', priceLabel:pTag(P.paint_premium,'м²'), desc:'Висок клас латекс — миещо се покритие, наситен цвят, устойчивост във времето.', next:'painting_area', price:P.paint_premium, serviceType:'Премиум', serviceName:'Боядисване', displayUnit:'м²'},
     {label:'Боядисване с корекции', priceLabel:pTag(P.paint_corrections,'м²'), desc:'Запълване на дупки и надраскванията, грунд и боядисване — пълна подготовка и финиш', next:'painting_area', price:P.paint_corrections, serviceType:'С корекции', serviceName:'Боядисване', displayUnit:'м²'},
     {label:'📞 Обадете се', next:null, specialCall:true}
   ] },
@@ -2861,7 +2860,7 @@ const S = {
   painting_with_primer: { msg: (c) => '', save:{pre:'Грунд (боядисване)', unit:'м²', last:'primer'}, autoNext:'painting_result' },
   painting_result: { msg: (c) => { if(ctx._paintServiceType !== undefined){ ctx.serviceType = ctx._paintServiceType; ctx.serviceName = ctx._paintServiceName || 'Боядисване'; ctx.price = ctx._paintPrice; ctx._paintServiceType = undefined; } const unit = 'м²'; const label = 'Боядисване' + (ctx.serviceType ? ` (${ctx.serviceType})` : ''); const total = Math.round(ctx.price * ctx.value * 100)/100; if(!panelItems.some(p => p.label === label)){ panelItems.push({id:++idSeq, label, qty:ctx.value, unit, price:ctx.price, total}); renderPanel(); } ctx.prevValue = ctx.value; ctx.prevUnit = unit; ctx.lastService = 'painting'; return calcMsg(c,'м²'); }, choices:[{label:'➕ Добави друга услуга', next:'start'},{label:'📋 Виж офертата', next:'offer_summary'}] },
   windows_menu: { msg: () => 'Прецизно обръщане около врати и прозорци след смяна на дограма. Перфектни ъгли и безупречен финиш.', onEnter: () => { ctx.displayUnit = 'л.м.'; ctx.usesPrevArea = false; ctx.prevUnit = null; ctx.prevValue = null; }, choicesFn: () => [
-    {label:'Обръщане с лайсна', priceLabel:pTag(P.window_lm,'л.м.'), desc:'Шпакловаме и заглаждаме около дограмата, монтираме лайсна за перфектен ъгъл', next:'windows_count', price:P.window_lm, serviceType:'С лайсна', serviceName:'Обръщане на прозорци', displayUnit:'л.м.'},
+    {label:'Обръщане с лайсна', priceLabel:pTag(P.window_lm,'л.м.'), desc:'Шпакловане около прозореца или вратата с алуминиева ъглова лайсна — равен ръб, готов за боядисване.', next:'windows_count', price:P.window_lm, serviceType:'С лайсна', serviceName:'Обръщане на прозорци', displayUnit:'л.м.'},
     {label:'📞 Обадете се', next:null, specialCall:true}
   ] },
   windows_count: { msg: () => '🔢 Въведете линейни метри (л.м.).<br><small style="color:var(--muted);">Обиколката около прозореца/вратата.</small><br><button onclick="(function(){document.querySelector(\'#tb-input\').value=\'не знам\';document.querySelector(\'#tb-input\').dispatchEvent(new KeyboardEvent(\'keydown\',{key:\'Enter\',bubbles:true}))})()" style="margin-top:8px;background:rgba(224,85,85,0.1);border:1px solid rgba(224,85,85,0.35);border-radius:20px;padding:6px 16px;font-size:13px;font-weight:700;color:#E05555;cursor:pointer;">🆘 Не знам — помогнете ми</button>', input:'number', label:'л.м.', displayUnit:'л.м.', next:'windows_result' },
@@ -2881,7 +2880,7 @@ const S = {
     return `${priceHtml}✅ <strong>Добавено!</strong><br><br>Изберете следващите стъпки за довършване:`;
   }, onEnter: () => { setTimeout(() => { const area = ctx.prevValue || null; const allItems = [
     {id:'cg_fuge', label:'Шпакловка на фуги', emoji:'🔧', desc:'Задължително след монтаж на гипсокартон — запълва и армира фугите между плочите', price:P.putty_fuge, serviceName:'Шпакловки', serviceType:'Шпакловка на фуги', displayUnit:'м²'},
-    {id:'cg_fina', label:'Фина шпакловка', emoji:'✨', desc:'Огледална гладкост — финален слой преди боядисване', price:P.putty_fina, serviceName:'Шпакловки', serviceType:'Фина', displayUnit:'м²'},
+    {id:'cg_fina', label:'Фина шпакловка', emoji:'✨', desc:'Финишен слой преди боя — заглажда дребните неравности за гладка повърхност.', price:P.putty_fina, serviceName:'Шпакловки', serviceType:'Фина', displayUnit:'м²'},
     {id:'cg_sand', label:'Шлайфане', emoji:'🔲', desc:'Шлайфане след фина шпакловка за перфектно гладка повърхност', price:P.sanding, serviceName:'Шлайфане', serviceType:'Шлайфане', displayUnit:'м²'},
     {id:'cg_prim', label:'Грунд (шпакловка)', emoji:'🪣', desc:'Задължително преди боядисване — осигурява трайно залепване на боята', price:P.primer, serviceName:'Грунд', serviceType:'шпакловка', displayUnit:'м²'},
     {id:'cg_paint', label:'Боядисване', emoji:'🎨', desc:'Латекс двуслойно нанасяне — бяло, цветно или премиум покритие по избор', price:null, serviceName:'Боядисване', serviceType:'', displayUnit:'м²', isPaintMenu:true},
@@ -2904,12 +2903,12 @@ const S = {
     return `${priceHtml}<div style="background:rgba(201,168,76,0.12);border:1.5px solid rgba(201,168,76,0.5);border-radius:12px;padding:12px 14px;margin-top:4px;"><div style="font-size:15px;font-weight:700;color:var(--gold);">💡 Изберете следващите стъпки:</div></div>`;
   }, onEnter: () => { ctx._paintAfterQueue = false; setTimeout(() => { const area = ctx.prevValue || null; const serviceType = ctx.serviceType || ''; let allItems = []; if (serviceType.includes('Основна укрепваща')) { allItems = [
       {id:'ps_gyp', label:'Гипсова шпакловка', emoji:'🧱', desc:'За леки неравности, ронещи стени и малки дупки. При пукнатини се поставя армираща мрежа.', price:P.putty_gypsum, serviceName:'Шпакловки', serviceType:'Гипсова', displayUnit:'м²'},
-      {id:'ps_fina', label:'Фина шпакловка', emoji:'✨', desc:'Огледална гладкост — финален слой преди боядисване', price:P.putty_fina, serviceName:'Шпакловки', serviceType:'Фина', displayUnit:'м²'},
+      {id:'ps_fina', label:'Фина шпакловка', emoji:'✨', desc:'Финишен слой преди боя — заглажда дребните неравности за гладка повърхност.', price:P.putty_fina, serviceName:'Шпакловки', serviceType:'Фина', displayUnit:'м²'},
       {id:'ps_sand', label:'Шлайфане', emoji:'🔲', desc:'Шлайфане след фина шпакловка за перфектно гладка повърхност', price:P.sanding, serviceName:'Шлайфане', serviceType:'Шлайфане', displayUnit:'м²'},
       {id:'ps_prim', label:'Грунд (шпакловка)', emoji:'🪣', desc:'Задължително преди боядисване — осигурява трайно залепване на боята', price:P.primer, serviceName:'Грунд', serviceType:'шпакловка', displayUnit:'м²'},
       {id:'ps_paint', label:'Боядисване', emoji:'🎨', desc:'Латекс двуслойно нанасяне — бяло, цветно или премиум покритие по избор', price:null, serviceName:'Боядисване', serviceType:'', displayUnit:'м²', isPaintMenu:true},
     ]; } else if (serviceType.includes('Гипсова')) { allItems = [
-      {id:'ps_fina', label:'Фина шпакловка', emoji:'✨', desc:'Огледална гладкост — финален слой преди боядисване', price:P.putty_fina, serviceName:'Шпакловки', serviceType:'Фина', displayUnit:'м²'},
+      {id:'ps_fina', label:'Фина шпакловка', emoji:'✨', desc:'Финишен слой преди боя — заглажда дребните неравности за гладка повърхност.', price:P.putty_fina, serviceName:'Шпакловки', serviceType:'Фина', displayUnit:'м²'},
       {id:'ps_sand', label:'Шлайфане', emoji:'🔲', desc:'Шлайфане след фина шпакловка за перфектно гладка повърхност', price:P.sanding, serviceName:'Шлайфане', serviceType:'Шлайфане', displayUnit:'м²'},
       {id:'ps_prim', label:'Грунд (шпакловка)', emoji:'🪣', desc:'Задължително преди боядисване — осигурява трайно залепване на боята', price:P.primer, serviceName:'Грунд', serviceType:'шпакловка', displayUnit:'м²'},
       {id:'ps_paint', label:'Боядисване', emoji:'🎨', desc:'Латекс двуслойно нанасяне — бяло, цветно или премиум покритие по избор', price:null, serviceName:'Боядисване', serviceType:'', displayUnit:'м²', isPaintMenu:true},
