@@ -3,16 +3,41 @@
 <head>
   <link rel="preconnect" href="https://traqnivanov.github.io" crossorigin/>
   <meta charset="UTF-8" />
+
+  <!-- Google tag (gtag.js) — GA4 : G-SVED9CDFPR — зарежда се само след съгласие -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    function loadGA4() {
+      if (window._ga4Loaded) return;
+      window._ga4Loaded = true;
+      var s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=G-SVED9CDFPR';
+      document.head.appendChild(s);
+      s.onload = function() {
+        gtag('js', new Date());
+        gtag('config', 'G-SVED9CDFPR');
+        document.querySelectorAll('a[href^="tel:"]').forEach(function(el) {
+          el.addEventListener('click', function() {
+            gtag('event', 'phone_call_click', { event_category: 'Contact', event_label: 'Call 0876936184' });
+          });
+        });
+      };
+    }
+    try { if (localStorage.getItem('cookiesAccepted') === '1') loadGA4(); } catch(x) {}
+  </script>
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <link rel="icon" type="image/x-icon" href="https://traqnivanov.github.io/Remonti-/favicon.png"/>
   <link rel="apple-touch-icon" href="https://traqnivanov.github.io/Remonti-/favicon.png"/>
 
   <title>Ремонти Лом | Шпакловка, Боядисване, Гипсокартон — Ivanov Remonti</title>
-  <meta name="description" content="Довършителни ремонти в Лом и региона — шпакловка, боядисване, гипсокартон, ВиК. Писмена гаранция, безплатен оглед. 23 години опит. 0877 810 418" />
+  <meta name="description" content="Довършителни ремонти в Лом — шпакловка, боядисване, гипсокартон, ВиК. Писмена гаранция, фиксирана цена, безплатен оглед. 23 г. опит." />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://ivanov-remonti.com/lom/" />
-  <meta property="og:title" content="Ремонти Лом | Шпакловка, Боядисване, Гипсокартон | 0877 810 418" />
-  <meta property="og:description" content="Довършителни ремонти в Лом — шпакловка, боядисване, гипсокартон, ВиК. Безплатна консултация, писмена гаранция. Идваме при вас. 0877 810 418" />
+  <meta property="og:title" content="Ремонти Лом | Шпакловка, Боядисване, Гипсокартон | 0876 936 184" />
+  <meta property="og:description" content="Довършителни ремонти в Лом — шпакловка, боядисване, гипсокартон, ВиК. Безплатна консултация, писмена гаранция. Идваме при вас. 0876 936 184" />
   <meta property="og:image" content="https://raw.githubusercontent.com/Traqnivanov/Remonti-/main/ivanov-remonti-stroitelni-uslugi-kachestvo-garantsiya-sofia.jpg" />
   <meta property="og:url" content="https://ivanov-remonti.com/lom/" />
   <meta property="og:type" content="website" />
@@ -23,7 +48,7 @@
     "@type": "LocalBusiness",
     "name": "Ivanov Remonti — Лом",
     "description": "Професионални довършителни ремонти в Лом и региона. Шпакловка, боядисване, гипсокартон, ВиК, декоративна мазилка. 23 години опит.",
-    "telephone": "+359877810418",
+    "telephone": "+359876936184",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "ул. Георги Спасов 15А",
@@ -42,6 +67,115 @@
     "priceRange": "$$",
     "areaServed": ["Лом", "Монтана", "Берковица", "Козлодуй", "Ковачица", "Трайково", "Сталийска махала", "Вълчедръм", "Василовци"]
   }
+  </script>
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Идвате ли в Лом?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Да, работя в Лом и целия регион — Монтана, Берковица, Козлодуй, Ковачица, Трайково, Сталийска махала, Вълчедръм, Василовци и околните места. Идвам при вас за безплатен оглед."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Променя ли се цената в процеса на работа?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Категорично не. Цената, която договорим след огледа, остава крайна. Промяна има само ако вие добавите нова дейност."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Какво ако бюджетът ви е ограничен?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Кажете ни. Намираме решение заедно — кое е приоритет, кое може да почака, как да получите максимум от вашия бюджет. За мен няма малки и големи клиенти."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Има ли писмена гаранция?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Да. За всяка извършена дейност давам писмена гаранция. Ако нещо не е наред — връщам се и оправям без доплащане."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Кой купува материалите?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Зависи от Вас. Можем да доставим материалите по списък, или Вие да ги купите сами. Преди работа уточняваме заедно кои материали, в какво количество и за коя стая."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Трябва ли да съм на обекта по време на ремонта?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Не е задължително. Пращам ви фото и видео отчет на всеки етап. Вие следите напредъка от телефона, където и да сте."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Кога се плаща?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Плащате когато сте доволни. Не преди. Не по средата с неясни условия. Казвам цената преди да започнем — и тя не се мени."
+      }
+    }
+  ]
+}
+  </script>
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "ImageObject",
+      "contentUrl": "https://traqnivanov.github.io/Remonti-/shpaklovka-steni-apartament-sofia.jpg",
+      "caption": "Шпакловка на стени и тавани — ремонти в Лом",
+      "description": "Шпакловка на стени и тавани — ремонти в Лом"
+    },
+    {
+      "@type": "ImageObject",
+      "contentUrl": "https://traqnivanov.github.io/Remonti-/boyadisvane-apartament-sofia.jpg",
+      "caption": "Боядисване с латекс — апартамент в Лом",
+      "description": "Боядисване с латекс — апартамент в Лом"
+    },
+    {
+      "@type": "ImageObject",
+      "contentUrl": "https://traqnivanov.github.io/Remonti-/gipsokarton-okachen-tavan-sofia.jpg",
+      "caption": "Гипсокартон и окачен таван — ремонти в Лом",
+      "description": "Гипсокартон и окачен таван — ремонти в Лом"
+    },
+    {
+      "@type": "ImageObject",
+      "contentUrl": "https://traqnivanov.github.io/Remonti-/vik-uslugi-sofia.jpg",
+      "caption": "ВиК услуги — водопроводни инсталации в Лом",
+      "description": "ВиК услуги — водопроводни инсталации в Лом"
+    },
+    {
+      "@type": "ImageObject",
+      "contentUrl": "https://traqnivanov.github.io/Remonti-/obrushchane-dograma-prozorci-sofia.jpg",
+      "caption": "Обръщане на дограма и прозорци — Лом",
+      "description": "Обръщане на дограма и прозорци — Лом"
+    },
+    {
+      "@type": "ImageObject",
+      "contentUrl": "https://traqnivanov.github.io/Remonti-/dekorativna-mazilka-sofia.jpg",
+      "caption": "Декоративна мазилка — луксозен интериор в Лом",
+      "description": "Декоративна мазилка — луксозен интериор в Лом"
+    }
+  ]
+}
   </script>
 
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;1,9..144,300;1,9..144,400&family=Outfit:wght@200;300;400;500;600&display=swap" rel="stylesheet"/>
@@ -136,12 +270,15 @@
     .showcase { display: grid; grid-template-columns: repeat(3,1fr); grid-template-rows: repeat(2,300px); gap: 2px; margin-bottom: 2px; }
     .svc-prem-card { position: relative; overflow: hidden; cursor: pointer; }
     .svc-prem-card .card-img { width: 100%; height: 100%; object-fit: cover; filter: brightness(.6) saturate(.7); transition: transform 1.2s cubic-bezier(.25,.46,.45,.94), filter 1.2s; }
-    .svc-prem-card:hover .card-img { transform: scale(1.1); filter: brightness(.35) saturate(.5); }
+    .svc-prem-card:hover .card-img,
+    .svc-prem-card.touched .card-img { transform: scale(1.1); filter: brightness(.35) saturate(.5); }
     .card-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(8,17,30,.98) 0%, rgba(8,17,30,.1) 60%); z-index: 1; }
     .card-pcontent { position: absolute; bottom: 0; left: 0; right: 0; padding: 1.2rem 1.4rem; z-index: 2; }
     .card-pname { font-family: 'Fraunces', serif; font-size: 1.3rem; font-weight: 300; font-style: italic; color: white; margin-bottom: .3rem; }
-    .card-pdesc { font-size: .78rem; color: rgba(255,255,255,.55); line-height: 1.5; margin-bottom: .8rem; display: none; }
-    .svc-prem-card:hover .card-pdesc { display: block; }
+    .card-pdesc { font-size: .78rem; color: rgba(255,255,255,.55); line-height: 1.5; margin-bottom: .8rem; max-height: 0; overflow: hidden; opacity: 0; transition: max-height .6s .05s, opacity .5s .05s; }
+    .svc-prem-card:hover .card-pdesc,
+    .svc-prem-card.touched .card-pdesc { max-height: 120px; opacity: 1; }
+    .svc-prem-card.touched .card-img { transform: scale(1.1); filter: brightness(.35) saturate(.5); }
     .card-ptag { position: absolute; top: 12px; left: 12px; background: linear-gradient(135deg,var(--gold),var(--gold2)); color: #0d1b2e; font-size: .55rem; font-weight: 700; padding: .25rem .7rem; border-radius: 20px; letter-spacing: .1em; text-transform: uppercase; z-index: 2; }
     .card-pnum { position: absolute; top: 10px; right: 14px; font-family: 'Fraunces', serif; font-size: 3rem; color: rgba(201,148,58,.07); font-weight: 700; z-index: 2; line-height: 1; }
     .card-pline { display: flex; align-items: center; gap: .6rem; margin-bottom: .2rem; }
@@ -320,9 +457,74 @@
       footer { justify-content: center; text-align: center; }
     }
     @media (max-width: 540px) {
+      .card-pdesc { max-height: 100px; opacity: .75; }
       .showcase { grid-template-columns: 1fr; grid-template-rows: repeat(6,240px); }
       .hero-stats { gap: 1.5rem; }
     }
+  
+    /* SERVICE MODAL — Лом */
+    #lomSvcOverlay { display:none; position:fixed; inset:0; background:rgba(0,0,0,.85); z-index:9998; align-items:center; justify-content:center; padding:1rem; backdrop-filter:blur(4px); }
+    #lomSvcOverlay.open { display:flex; }
+    .lom-svc-box { background:var(--navy2); border:1px solid rgba(201,148,58,.25); border-radius:16px; max-width:560px; width:100%; max-height:88vh; overflow-y:auto; position:relative; }
+    .lom-svc-head { position:relative; height:160px; overflow:hidden; border-radius:16px 16px 0 0; }
+    .lom-svc-head img { width:100%; height:100%; object-fit:cover; filter:brightness(.55); }
+    .lom-svc-close { position:absolute; top:12px; right:12px; width:40px; height:40px; border-radius:50%; background:rgba(0,0,0,.55); border:none; color:#fff; font-size:1.4rem; cursor:pointer; z-index:2; }
+    .lom-svc-body { padding:1.6rem 1.8rem 2rem; }
+    .lom-svc-title { font-family:'Fraunces',serif; font-size:1.5rem; color:#fff; font-weight:300; margin-bottom:.4rem; }
+    .lom-svc-line { width:40px; height:2px; background:linear-gradient(90deg,var(--gold),var(--gold2)); margin-bottom:1.1rem; }
+    .lom-svc-desc { color:#9ca3af; font-size:.9rem; line-height:1.8; margin-bottom:1.4rem; }
+    .lom-svc-h4 { color:var(--gold); font-size:.7rem; text-transform:uppercase; letter-spacing:.1em; margin-bottom:.8rem; }
+    .lom-svc-inc { display:flex; align-items:center; gap:.6rem; color:#d1d5db; font-size:.85rem; margin-bottom:.5rem; }
+    .lom-svc-inc span { color:#10b981; font-weight:700; }
+    .lom-svc-opt { padding:.9rem 1rem; border-radius:12px; border:1px solid rgba(255,255,255,.08); margin-bottom:.7rem; background:rgba(255,255,255,.03); }
+    .lom-svc-opt-name { font-size:.9rem; color:#fff; font-weight:600; margin-bottom:.25rem; }
+    .lom-svc-opt-desc { font-size:.8rem; color:#9ca3af; line-height:1.5; }
+    .lom-svc-btns { display:flex; gap:.8rem; flex-wrap:wrap; margin-top:1.6rem; }
+    .lom-svc-btns a, .lom-svc-btns button { flex:1; min-width:130px; padding:.9rem 1.2rem; border-radius:12px; font-weight:700; font-size:.9rem; cursor:pointer; text-decoration:none; text-align:center; font-family:inherit; border:none; }
+    .lom-svc-call { background:linear-gradient(135deg,var(--gold),var(--gold2)); color:#0d1b2e; }
+    .lom-svc-msg { background:rgba(24,119,242,.15); color:#4A9EF5; border:1px solid rgba(24,119,242,.4); }
+    .card-details-btn { display:inline-flex; align-items:center; gap:.4rem; background:transparent; border:1px solid rgba(201,148,58,.5); color:var(--gold); padding:.5rem 1rem; border-radius:20px; font-size:.75rem; font-weight:700; cursor:pointer; margin-top:.5rem; font-family:inherit; }
+  
+    /* GALLERY Лом (Б) */
+    .lomgal { padding: 6rem 2.5rem; background:#070c16; }
+    .lomgal-inner { max-width:1200px; margin:0 auto; }
+    .lomgal-head { text-align:center; margin-bottom:2.5rem; }
+    .lomgal-filters { display:flex; flex-wrap:wrap; gap:.6rem; justify-content:center; margin-bottom:2rem; }
+    .lomgal-fbtn { background:rgba(201,148,58,.06); border:1px solid rgba(201,148,58,.25); color:rgba(255,255,255,.65); font-family:inherit; font-size:.8rem; font-weight:600; letter-spacing:.03em; padding:.5rem 1.1rem; border-radius:30px; cursor:pointer; transition:all .2s; }
+    .lomgal-fbtn:hover { color:var(--gold); }
+    .lomgal-fbtn.active { background:linear-gradient(135deg,var(--gold),var(--gold2)); color:#0d1b2e; border-color:transparent; }
+    .lomgal-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:4px; }
+    .lomgal-item { position:relative; overflow:hidden; aspect-ratio:4/3; cursor:pointer; background:var(--navy); }
+    .lomgal-item img { width:100%; height:100%; object-fit:cover; display:block; filter:brightness(.9); transition:transform .6s, filter .6s; opacity:0; }
+    .lomgal-item img.loaded { opacity:1; }
+    .lomgal-item:hover img { transform:scale(1.06); filter:brightness(1.05); }
+    .lomgal-badge { position:absolute; bottom:8px; left:8px; background:rgba(13,27,46,.8); color:var(--gold2); font-size:.65rem; font-weight:700; padding:.25rem .7rem; border-radius:20px; letter-spacing:.05em; opacity:0; transition:opacity .3s; }
+    .lomgal-item:hover .lomgal-badge { opacity:1; }
+    .lomgal-zoom { position:absolute; top:50%; left:50%; transform:translate(-50%,-50%) scale(.8); width:44px; height:44px; border-radius:50%; background:rgba(201,148,58,.85); color:#fff; display:flex; align-items:center; justify-content:center; font-size:1.1rem; opacity:0; transition:all .3s; pointer-events:none; }
+    .lomgal-item:hover .lomgal-zoom { opacity:1; transform:translate(-50%,-50%) scale(1); }
+    .lomgal-more { display:block; margin:2rem auto 0; background:transparent; border:1px solid rgba(201,148,58,.5); color:var(--gold); font-family:inherit; font-weight:700; font-size:.85rem; padding:.8rem 2rem; border-radius:30px; cursor:pointer; }
+    /* LIGHTBOX Лом */
+    .lomlb { display:none; position:fixed; inset:0; z-index:9999; background:rgba(5,10,20,.97); align-items:center; justify-content:center; padding:1.5rem; }
+    .lomlb.open { display:flex; }
+    .lomlb img { max-width:92vw; max-height:82vh; object-fit:contain; border:1px solid rgba(201,148,58,.25); border-radius:4px; }
+    .lomlb-close { position:absolute; top:1.2rem; right:1.4rem; background:none; border:none; color:var(--gold); font-size:2.4rem; cursor:pointer; line-height:1; }
+    .lomlb-nav { position:absolute; top:50%; transform:translateY(-50%); background:rgba(201,148,58,.15); border:1px solid rgba(201,148,58,.3); color:var(--gold2); font-size:1.4rem; width:48px; height:48px; border-radius:50%; cursor:pointer; display:flex; align-items:center; justify-content:center; }
+    .lomlb-prev { left:1.2rem; } .lomlb-next { right:1.2rem; }
+    .lomlb-counter { position:absolute; bottom:1.4rem; left:50%; transform:translateX(-50%); color:rgba(255,255,255,.6); font-size:.85rem; letter-spacing:.05em; }
+    @media (max-width:900px){ .lomgal-grid{ grid-template-columns:repeat(2,1fr);} .lomgal{padding:4rem 1.5rem;} }
+    @media (max-width:540px){ .lomgal-grid{ grid-template-columns:1fr;} }
+
+  
+    /* VIDEOS Лом */
+    .lomvid-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1.5rem; max-width:1100px; margin:0 auto 3rem; }
+    .lomvid-wrap { position:relative; padding-bottom:56.25%; height:0; border:2px solid rgba(201,148,58,.3); border-radius:6px; overflow:hidden; }
+    .lomvid-wrap iframe { position:absolute; top:0; left:0; width:100%; height:100%; border:none; }
+    @media (max-width:900px){ .lomvid-grid{ grid-template-columns:1fr; } }
+  
+    .lom-svc-thumbs { display:grid; grid-template-columns:repeat(3,1fr); gap:6px; margin-top:.6rem; }
+    .lom-svc-thumb { aspect-ratio:4/3; overflow:hidden; border-radius:8px; cursor:pointer; border:1px solid rgba(201,148,58,.15); }
+    .lom-svc-thumb img { width:100%; height:100%; object-fit:cover; transition:transform .4s; }
+    .lom-svc-thumb:hover img { transform:scale(1.08); }
   </style>
 </head>
 <body>
@@ -330,7 +532,7 @@
 <div id="progress-bar"></div>
 
 <div class="sticky-cta" id="stickyCta">
-  <a href="tel:0877810418">📞 Безплатен оглед в Лом — 0877 810 418</a>
+  <a href="tel:0876936184">📞 Безплатен оглед в Лом — 0876 936 184</a>
 </div>
 
 <!-- COOKIE -->
@@ -347,7 +549,7 @@
   <a href="#bonuses" onclick="closeMobileMenu()">Гаранции</a>
   <a href="#reviews" onclick="closeMobileMenu()">Отзиви</a>
   <a href="#faq" onclick="closeMobileMenu()">Въпроси</a>
-  <a href="tel:0877810418" onclick="closeMobileMenu()" style="color:var(--gold);font-weight:700;">📞 0877 810 418</a>
+  <a href="tel:0876936184" onclick="closeMobileMenu()" style="color:var(--gold);font-weight:700;">📞 0876 936 184</a>
   <a href="https://ivanov-remonti.com" onclick="closeMobileMenu()" style="font-size:.8rem;opacity:.5;">← Главен сайт</a>
 </div>
 
@@ -364,7 +566,7 @@
     <li><a href="#reviews">Отзиви</a></li>
     <li><a href="#faq">Въпроси</a></li>
     <li><a href="https://ivanov-remonti.com" style="opacity:.5;font-size:.72rem;">← Главен сайт</a></li>
-    <li><a href="tel:0877810418" class="nav-phone">📞 0877 810 418</a></li>
+    <li><a href="tel:0876936184" class="nav-phone">📞 0876 936 184</a></li>
   </ul>
   <div class="hamburger" id="hamburger" onclick="toggleMenu()">
     <span></span><span></span><span></span>
@@ -382,7 +584,7 @@
   <p class="hero-sub"><strong>Тръгнах от Лом. Изградих се в София — 23 години. Сега връщам занаята у дома</strong> — с писмен договор, фиксирана цена и ясен срок.</p>
   <p class="hero-location">📍 <strong>гр. Лом</strong> · Монтана · Берковица · Козлодуй · Ковачица · Трайково · Сталийска махала · Вълчедръм · Василовци и региона</p>
   <div class="hero-btns">
-    <a href="tel:0877810418" class="btn-gold">📞 Обадете се</a>
+    <a href="tel:0876936184" class="btn-gold">📞 Обадете се</a>
     <a href="#advisor" class="btn-outline">Безплатен съвет →</a>
     <a href="#contact" class="btn-outline">Безплатен оглед →</a>
   </div>
@@ -444,10 +646,11 @@
         <div class="card-ptag">✦ Услуга 01</div>
         <div class="card-pnum">01</div>
         <div class="card-pcontent">
-          <div class="card-pline"><span>от 4 евро/м²</span></div>
+          <div class="card-pline"><span>по оглед</span></div>
           <div class="card-pname">Шпакловка</div>
           <div class="card-pdesc">Гладки стени и тавани с безпрашно шкурене — без вълни, без следи, готови за боя.</div>
-          <a href="tel:0877810418" style="display:inline-flex;align-items:center;gap:.4rem;background:linear-gradient(135deg,#c9943a,#e8b84b);color:#0d1b2e;padding:.5rem 1rem;border-radius:20px;font-size:.75rem;font-weight:700;text-decoration:none;margin-top:.5rem;">📞 Питай за цена</a>
+          <button type="button" class="card-details-btn" onclick="openLomSvc('spak')">Подробности &rarr;</button>
+          <a href="tel:0876936184" style="display:inline-flex;align-items:center;gap:.4rem;background:linear-gradient(135deg,#c9943a,#e8b84b);color:#0d1b2e;padding:.5rem 1rem;border-radius:20px;font-size:.75rem;font-weight:700;text-decoration:none;margin-top:.5rem;">📞 Питай за цена</a>
         </div>
       </div>
 
@@ -457,10 +660,11 @@
         <div class="card-ptag">✦ Услуга 02</div>
         <div class="card-pnum">02</div>
         <div class="card-pcontent">
-          <div class="card-pline"><span>от 4 евро/м²</span></div>
+          <div class="card-pline"><span>по оглед</span></div>
           <div class="card-pname">Боядисване</div>
           <div class="card-pdesc">Боядисване с латекс в два слоя, върху грунд — със защита на подове, мебели и дограма.</div>
-          <a href="tel:0877810418" style="display:inline-flex;align-items:center;gap:.4rem;background:linear-gradient(135deg,#c9943a,#e8b84b);color:#0d1b2e;padding:.5rem 1rem;border-radius:20px;font-size:.75rem;font-weight:700;text-decoration:none;margin-top:.5rem;">📞 Питай за цена</a>
+          <button type="button" class="card-details-btn" onclick="openLomSvc('boya')">Подробности &rarr;</button>
+          <a href="tel:0876936184" style="display:inline-flex;align-items:center;gap:.4rem;background:linear-gradient(135deg,#c9943a,#e8b84b);color:#0d1b2e;padding:.5rem 1rem;border-radius:20px;font-size:.75rem;font-weight:700;text-decoration:none;margin-top:.5rem;">📞 Питай за цена</a>
         </div>
       </div>
 
@@ -470,10 +674,11 @@
         <div class="card-ptag">✦ Услуга 03</div>
         <div class="card-pnum">03</div>
         <div class="card-pcontent">
-          <div class="card-pline"><span>от 15 евро/м²</span></div>
+          <div class="card-pline"><span>по оглед</span></div>
           <div class="card-pname">Гипсокартон</div>
           <div class="card-pdesc">Окачени тавани, преградни стени и декоративни ниши с отлична изолация.</div>
-          <a href="tel:0877810418" style="display:inline-flex;align-items:center;gap:.4rem;background:linear-gradient(135deg,#c9943a,#e8b84b);color:#0d1b2e;padding:.5rem 1rem;border-radius:20px;font-size:.75rem;font-weight:700;text-decoration:none;margin-top:.5rem;">📞 Питай за цена</a>
+          <button type="button" class="card-details-btn" onclick="openLomSvc('gyp')">Подробности &rarr;</button>
+          <a href="tel:0876936184" style="display:inline-flex;align-items:center;gap:.4rem;background:linear-gradient(135deg,#c9943a,#e8b84b);color:#0d1b2e;padding:.5rem 1rem;border-radius:20px;font-size:.75rem;font-weight:700;text-decoration:none;margin-top:.5rem;">📞 Питай за цена</a>
         </div>
       </div>
 
@@ -486,7 +691,8 @@
           <div class="card-pline"><span>по оглед</span></div>
           <div class="card-pname">ВиК</div>
           <div class="card-pdesc">Пълна подмяна или изграждане на нови водопроводни инсталации.</div>
-          <a href="tel:0877810418" style="display:inline-flex;align-items:center;gap:.4rem;background:linear-gradient(135deg,#c9943a,#e8b84b);color:#0d1b2e;padding:.5rem 1rem;border-radius:20px;font-size:.75rem;font-weight:700;text-decoration:none;margin-top:.5rem;">📞 Питай за цена</a>
+          <button type="button" class="card-details-btn" onclick="openLomSvc('vik')">Подробности &rarr;</button>
+          <a href="tel:0876936184" style="display:inline-flex;align-items:center;gap:.4rem;background:linear-gradient(135deg,#c9943a,#e8b84b);color:#0d1b2e;padding:.5rem 1rem;border-radius:20px;font-size:.75rem;font-weight:700;text-decoration:none;margin-top:.5rem;">📞 Питай за цена</a>
         </div>
       </div>
 
@@ -496,10 +702,11 @@
         <div class="card-ptag">✦ Услуга 05</div>
         <div class="card-pnum">05</div>
         <div class="card-pcontent">
-          <div class="card-pline"><span>от 7.67 евро/л.м.</span></div>
+          <div class="card-pline"><span>по оглед</span></div>
           <div class="card-pname">Обръщане Дограма</div>
           <div class="card-pdesc">Обръщане около врати и прозорци с армировъчна мрежа — без пукнатини, готово за боядисване.</div>
-          <a href="tel:0877810418" style="display:inline-flex;align-items:center;gap:.4rem;background:linear-gradient(135deg,#c9943a,#e8b84b);color:#0d1b2e;padding:.5rem 1rem;border-radius:20px;font-size:.75rem;font-weight:700;text-decoration:none;margin-top:.5rem;">📞 Питай за цена</a>
+          <button type="button" class="card-details-btn" onclick="openLomSvc('dog')">Подробности &rarr;</button>
+          <a href="tel:0876936184" style="display:inline-flex;align-items:center;gap:.4rem;background:linear-gradient(135deg,#c9943a,#e8b84b);color:#0d1b2e;padding:.5rem 1rem;border-radius:20px;font-size:.75rem;font-weight:700;text-decoration:none;margin-top:.5rem;">📞 Питай за цена</a>
         </div>
       </div>
 
@@ -512,7 +719,8 @@
           <div class="card-pline"><span>по оглед</span></div>
           <div class="card-pname">Декоративна Мазилка</div>
           <div class="card-pdesc">Венецианска, структурна или релефна мазилка с уникална текстура.</div>
-          <a href="tel:0877810418" style="display:inline-flex;align-items:center;gap:.4rem;background:linear-gradient(135deg,#c9943a,#e8b84b);color:#0d1b2e;padding:.5rem 1rem;border-radius:20px;font-size:.75rem;font-weight:700;text-decoration:none;margin-top:.5rem;">📞 Питай за цена</a>
+          <button type="button" class="card-details-btn" onclick="openLomSvc('maz')">Подробности &rarr;</button>
+          <a href="tel:0876936184" style="display:inline-flex;align-items:center;gap:.4rem;background:linear-gradient(135deg,#c9943a,#e8b84b);color:#0d1b2e;padding:.5rem 1rem;border-radius:20px;font-size:.75rem;font-weight:700;text-decoration:none;margin-top:.5rem;">📞 Питай за цена</a>
         </div>
       </div>
     </div>
@@ -536,11 +744,50 @@
       </div>
       <div style="margin-top:1.5rem;">
         <p style="font-size:.82rem;color:rgba(255,255,255,.4);margin-bottom:.8rem;">Ако бюджетът е ограничен — кажете ни. Намираме решение заедно.</p>
-        <a href="tel:0877810418" class="btn-gold">📞 Обадете се — 0877 810 418</a>
+        <a href="tel:0876936184" class="btn-gold">📞 Обадете се — 0876 936 184</a>
       </div>
     </div>
   </div>
 </section>
+
+
+<!-- GALLERY Лом -->
+<section class="lomgal" id="gallery">
+  <div class="lomgal-inner">
+    <div class="lomgal-head">
+      <span class="section-tag">✦ Реални обекти</span>
+      <h2 class="section-h2" style="color:#fff;">Моята работа в снимки</h2>
+      <div class="gold-line center"></div>
+      <p class="section-lead" style="max-width:520px;margin:0 auto;">Истински обекти — преди, по време и след. Натисни снимка за уголемяване.</p>
+    </div>
+    <p class="section-tag" style="text-align:center;margin-bottom:1.2rem;">▶ Видеа от обекти</p>
+    <div class="lomvid-grid">
+      <div class="lomvid-wrap"><iframe src="https://www.youtube.com/embed/WNbgtSS7hlU" title="Ремонт 1 — Ivanov Remonti" allowfullscreen loading="lazy"></iframe></div>
+      <div class="lomvid-wrap"><iframe src="https://www.youtube.com/embed/Wp8iLS5HqPM" title="Ремонт 2 — Ivanov Remonti" allowfullscreen loading="lazy"></iframe></div>
+      <div class="lomvid-wrap"><iframe src="https://www.youtube.com/embed/P9afybbtrWM" title="Ремонт 3 — Ivanov Remonti" allowfullscreen loading="lazy"></iframe></div>
+    </div>
+    <p class="section-tag" style="text-align:center;margin:0 0 1.2rem;">▦ Снимки от обекти</p>
+    <div class="lomgal-filters" id="lomgalFilters">
+      <button type="button" class="lomgal-fbtn active" data-cat="all" onclick="lomgalFilter('all')">Всички</button>
+      <button type="button" class="lomgal-fbtn" data-cat="spak" onclick="lomgalFilter('spak')">Шпакловка</button>
+      <button type="button" class="lomgal-fbtn" data-cat="boya" onclick="lomgalFilter('boya')">Боядисване</button>
+      <button type="button" class="lomgal-fbtn" data-cat="gyp" onclick="lomgalFilter('gyp')">Гипсокартон</button>
+      <button type="button" class="lomgal-fbtn" data-cat="vik" onclick="lomgalFilter('vik')">ВиК</button>
+      <button type="button" class="lomgal-fbtn" data-cat="dog" onclick="lomgalFilter('dog')">Дограма</button>
+      <button type="button" class="lomgal-fbtn" data-cat="maz" onclick="lomgalFilter('maz')">Мазилка</button>
+    </div>
+    <div class="lomgal-grid" id="lomgalGrid"></div>
+    <button type="button" class="lomgal-more" id="lomgalMore" onclick="lomgalLoadMore()" style="display:none;">Покажи още</button>
+  </div>
+</section>
+<!-- LIGHTBOX Лом -->
+<div class="lomlb" id="lomlb" onclick="if(event.target===this)lomlbClose()">
+  <button type="button" class="lomlb-close" onclick="lomlbClose()">&times;</button>
+  <button type="button" class="lomlb-nav lomlb-prev" onclick="lomlbNav(-1)">&#8249;</button>
+  <img id="lomlbImg" src="" alt=""/>
+  <button type="button" class="lomlb-nav lomlb-next" onclick="lomlbNav(1)">&#8250;</button>
+  <div class="lomlb-counter" id="lomlbCounter"></div>
+</div>
 
 <!-- EQUIPMENT — от обявата -->
 <section class="equipment" id="equipment">
@@ -592,7 +839,7 @@
       </div>
     </div>
     <div style="text-align:center;margin-top:2.5rem;padding-top:2rem;border-top:1px solid rgba(201,148,58,.12);">
-      <a href="tel:0877810418" class="btn-gold">📞 Запиши безплатен оглед в Лом</a>
+      <a href="tel:0876936184" class="btn-gold">📞 Запиши безплатен оглед в Лом</a>
     </div>
   </div>
 </section>
@@ -672,7 +919,7 @@
         <li><span class="adv-icon">🛡️</span><div class="adv-content"><strong>Защита от некоректни оферти</strong><span>Как да разпознаете надута оферта и да се предпазите.</span></div></li>
       </ul>
       <div style="margin-top:2rem;">
-        <a href="tel:0877810418" class="btn-gold" style="display:inline-block;">📞 Запитай за безплатен оглед</a>
+        <a href="tel:0876936184" class="btn-gold" style="display:inline-block;">📞 Запитай за безплатен оглед</a>
       </div>
     </div>
   </div>
@@ -706,8 +953,8 @@
     <span class="section-tag">✦ Моят начин</span>
     <h2>Един обект наведнъж — докрай</h2>
     <p>Не разпилявам на десет места едновременно. Работя съсредоточено — за да довърша твоя обект както трябва, без да тичам между други. Затова поемам малко обекти, но всеки получава цялото ми внимание.</p>
-    <a href="tel:0877810418" class="btn-gold" style="font-size:1rem;padding:1.2rem 2rem;display:inline-block;margin-top:1rem;">📞 Запишете оглед в Лом</a>
-    <p style="margin-top:1rem;font-size:.75rem;color:rgba(201,148,58,.35);">или <a href="https://ivanov-remonti.com" style="color:rgba(201,148,58,.5);text-decoration:underline;">вижте реални обекти преди и след →</a></p>
+    <a href="tel:0876936184" class="btn-gold" style="font-size:1rem;padding:1.2rem 2rem;display:inline-block;margin-top:1rem;">📞 Запишете оглед в Лом</a>
+    <p style="margin-top:1rem;font-size:.75rem;color:rgba(201,148,58,.35);">или <a href="#gallery" style="color:rgba(201,148,58,.5);text-decoration:underline;">вижте моите обекти преди и след →</a></p>
   </div>
 </section>
 
@@ -782,7 +1029,7 @@
 
     <div style="margin-top:2.5rem;padding:1.8rem 2rem;background:rgba(201,148,58,.06);border:1px solid rgba(201,148,58,.2);border-radius:8px;text-align:center;">
       <p style="font-size:.92rem;color:rgba(255,255,255,.65);margin-bottom:.6rem;font-weight:300;">Имате друг въпрос?</p>
-      <a href="tel:0877810418" class="btn-gold">📞 0877 810 418</a>
+      <a href="tel:0876936184" class="btn-gold">📞 0876 936 184</a>
     </div>
   </div>
 </section>
@@ -806,13 +1053,13 @@
       <div class="gold-line"></div>
       <p class="section-lead">Обадете се или пишете. Ще ви отговоря бързо с честен съвет — без ангажимент.</p>
       <div style="margin-top:1.5rem;">
-        <a href="tel:0877810418" class="phone-link">0877 810 418</a>
+        <a href="tel:0876936184" class="phone-link">0876 936 184</a>
         <p class="phone-sub">За безплатна консултация · Viber</p>
       </div>
       <div class="contact-items">
         <div class="contact-item"><div class="c-icon">📍</div><div class="c-text"><strong>Работна зона</strong><span>гр. Лом, Монтана и региона</span></div></div>
         <div class="contact-item"><div class="c-icon">⏰</div><div class="c-text"><strong>Работно време</strong><span>Пон – Съб: 08:00 – 19:00 · Нед: 09:00 – 16:00</span></div></div>
-        <div class="contact-item"><div class="c-icon">📲</div><div class="c-text"><strong>Viber</strong><a href="viber://chat?number=%2B359877810418">0877 810 418</a></div></div>
+        <div class="contact-item"><div class="c-icon">📲</div><div class="c-text"><strong>Viber</strong><a href="viber://chat?number=%2B359876936184">0876 936 184</a></div></div>
         <div class="contact-item">
           <div class="c-icon" style="background:rgba(24,119,242,.12);border-color:rgba(24,119,242,.35);">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 2C6.477 2 2 6.145 2 11.243c0 2.906 1.395 5.503 3.582 7.235V22l3.27-1.793c.874.24 1.8.37 2.748.37 5.523 0 10-4.145 10-9.243C22 6.145 17.523 2 12 2z" fill="#4A9EF5"/><path d="M13.5 14.5L10.5 11 5 14.5l6.167-6.5 3 3.5 5.5-3.5L13.5 14.5z" fill="#fff"/></svg>
@@ -823,19 +1070,16 @@
     </div>
     <div style="display:flex;flex-direction:column;gap:1.2rem;padding-top:1rem;">
       <p style="color:var(--muted);font-size:.95rem;line-height:1.8;font-weight:300;">Обадете се директно — отговарям бързо и давам честен съвет без ангажимент.</p>
-      <a href="tel:0877810418" class="btn-gold" style="font-size:1.1rem;padding:1.2rem 2.5rem;display:inline-flex;align-items:center;gap:.7rem;">📞 0877 810 418</a>
+      <a href="tel:0876936184" class="btn-gold" style="font-size:1.1rem;padding:1.2rem 2.5rem;display:inline-flex;align-items:center;gap:.7rem;">📞 0876 936 184</a>
       <a href="https://m.me/IvanovRemonti" target="_blank" rel="noopener noreferrer" style="display:inline-flex;align-items:center;gap:.9rem;background:rgba(24,119,242,0.12);border:1px solid rgba(24,119,242,0.4);color:#4A9EF5;padding:1rem 2rem;border-radius:2px;text-decoration:none;font-weight:600;font-size:.95rem;">
         <span style="display:inline-flex;align-items:center;gap:5px;"><span style="width:8px;height:8px;border-radius:50%;background:#4CAF82;display:inline-block;animation:dotPulse 2s ease-in-out infinite;"></span><span style="font-size:.62rem;font-weight:700;color:#4CAF82;">Онлайн</span></span>
         <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 2C6.477 2 2 6.145 2 11.243c0 2.906 1.395 5.503 3.582 7.235V22l3.27-1.793c.874.24 1.8.37 2.748.37 5.523 0 10-4.145 10-9.243C22 6.145 17.523 2 12 2z" fill="#4A9EF5"/><path d="M13.5 14.5L10.5 11 5 14.5l6.167-6.5 3 3.5 5.5-3.5L13.5 14.5z" fill="#fff"/></svg>
         Пиши ми в Messenger
       </a>
-      <a href="viber://chat?number=%2B359877810418" style="display:inline-flex;align-items:center;gap:.8rem;background:#7360f2;color:white;padding:1rem 2rem;border-radius:2px;text-decoration:none;font-weight:600;font-size:.95rem;">
+      <a href="viber://chat?number=%2B359876936184" style="display:inline-flex;align-items:center;gap:.8rem;background:#7360f2;color:white;padding:1rem 2rem;border-radius:2px;text-decoration:none;font-weight:600;font-size:.95rem;">
         <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 1C6.48 1 2 5.02 2 10c0 2.74 1.24 5.2 3.2 6.9V20l3.1-1.55c1.2.34 2.44.55 3.7.55 5.52 0 10-4.02 10-9S17.52 1 12 1z" fill="#fff"/><path d="M16.5 14.5c-.3.5-.9.9-1.5 1-.4.1-.9.1-1.3-.1-1.2-.5-2.3-1.2-3.2-2.1-.9-.9-1.6-2-2.1-3.2-.2-.4-.2-.9-.1-1.3.1-.6.5-1.2 1-1.5.3-.2.7-.1.9.2l1.2 1.6c.2.3.2.7-.1 1l-.4.4c-.1.1-.1.3 0 .4.4.6.9 1.1 1.5 1.5.1.1.3.1.4 0l.4-.4c.3-.3.7-.3 1-.1l1.6 1.2c.3.2.4.6.2.9z" fill="#7360F2"/></svg>
         Пиши ми на Viber
       </a>
-      <div style="margin-top:.5rem;padding:1rem 1.2rem;background:rgba(201,148,58,.05);border:1px solid rgba(201,148,58,.15);border-radius:8px;">
-        <p style="font-size:.8rem;color:rgba(255,255,255,.5);line-height:1.7;">🌐 Вижте пълното ми портфолио и реални обекти преди и след:<br/><a href="https://ivanov-remonti.com" style="color:var(--gold);font-weight:600;">ivanov-remonti.com →</a></p>
-      </div>
     </div>
   </div>
 </section>
@@ -843,7 +1087,7 @@
 <!-- PRIVACY -->
 <div id="privacySection" style="display:none;padding:8rem 3rem 5rem;max-width:800px;margin:0 auto;">
   <h2 style="font-family:'Fraunces',serif;font-size:2rem;color:white;margin-bottom:2rem;font-weight:300;">Политика за поверителност</h2>
-  <p style="font-size:.88rem;color:rgba(255,255,255,.5);line-height:1.9;margin-bottom:1rem;">Събираме само данните, които вие ни предоставяте доброволно. Не предоставяме данни на трети страни. За въпроси: 0877 810 418.</p>
+  <p style="font-size:.88rem;color:rgba(255,255,255,.5);line-height:1.9;margin-bottom:1rem;">Събираме само данните, които вие ни предоставяте доброволно. Не предоставяме данни на трети страни. За въпроси: 0876 936 184.</p>
   <a href="#" onclick="hidePrivacy()" class="btn-gold" style="display:inline-block;text-decoration:none;margin-top:1rem;">← Обратно</a>
 </div>
 
@@ -859,7 +1103,7 @@
     <div class="ms-live"><div class="ms-dot"></div><span class="ms-txt">Онлайн</span></div>
     <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M12 2C6.477 2 2 6.145 2 11.243c0 2.906 1.395 5.503 3.582 7.235V22l3.27-1.793c.874.24 1.8.37 2.748.37 5.523 0 10-4.145 10-9.243C22 6.145 17.523 2 12 2z" fill="#fff"/><path d="M13.5 14.5L10.5 11 5 14.5l6.167-6.5 3 3.5 5.5-3.5L13.5 14.5z" fill="#1877f2"/></svg>
   </a>
-  <a href="tel:0877810418" class="float-btn btn-call" title="Обади се">
+  <a href="tel:0876936184" class="float-btn btn-call" title="Обади се">
     <svg width="26" height="26" viewBox="0 0 24 24" fill="none" style="animation:phoneMurda 3.6s ease-in-out infinite;"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z" fill="white"/></svg>
   </a>
 </div>
@@ -934,10 +1178,195 @@
   function acceptCookies(){
     try{ localStorage.setItem('cookiesAccepted','1'); }catch(x){}
     document.getElementById('cookieBanner').classList.add('hidden');
+    if(typeof loadGA4==='function') loadGA4();
   }
   function showPrivacy(){ document.getElementById('privacySection').style.display='block'; window.scrollTo(0,0); }
   function hidePrivacy(){ document.getElementById('privacySection').style.display='none'; }
   try{ if(localStorage.getItem('cookiesAccepted')) document.getElementById('cookieBanner').classList.add('hidden'); }catch(x){}
+
+  // КАРТИ УСЛУГИ — тап на телефон (отваря описанието)
+  document.querySelectorAll('.svc-prem-card').forEach(function(card){
+    card.addEventListener('click', function(e){
+      if (e.target.closest('a')) return; // ако е натиснат линк/бутон — не пипаме
+      document.querySelectorAll('.svc-prem-card').forEach(function(c){ if(c!==card) c.classList.remove('touched'); });
+      card.classList.toggle('touched');
+    });
+  });
+  document.addEventListener('click', function(e){
+    if(!e.target.closest('.svc-prem-card')){
+      document.querySelectorAll('.svc-prem-card').forEach(function(c){ c.classList.remove('touched'); });
+    }
+  });
+  // SERVICE MODAL Лом — данни (без цени)
+  var lomSvcData = {
+    spak: {
+      img: 'https://traqnivanov.github.io/Remonti-/shpaklovka-steni-apartament-sofia.jpg',
+      title: 'Шпакловка',
+      desc: 'Шпакловка на стени и тавани в няколко слоя — основна, гипсова и фина според състоянието. Шкуренето е безпрашно — не остава облак прах в дома ви.',
+      includes: ['Почистване и грундиране','Шпакловане на ъгли с профили','Финишна шпакловка','Шлайфане и изглаждане','Почистване след работа','Писмена гаранция'],
+      options: [
+        {name:'Основна укрепваща', desc:'Стари основи, панелни жилища, влага/мухъл.'},
+        {name:'Гипсова шпакловка', desc:'За по-гладък финиш. При напуквания се нанася мрежа или воал за укрепване.'},
+        {name:'Фина шпакловка', desc:'Последен слой преди боя — гладка основа без следи и неравности.'}
+      ]
+    },
+    boya: { img:'https://traqnivanov.github.io/Remonti-/boyadisvane-apartament-sofia.jpg', title:'Боядисване', desc:'Двуслойно боядисване с висококачествен латекс върху грунд. Шлайфаме дефекти, защитаваме подове и мебели с найлон, прецизно отсичане около ъгли и дограма.', includes:['Грундиране на повърхността','Прецизно отсичане','2 ръце боя','Защита на пода и мебелите','Почистване след работа','Писмена гаранция'], options:[{name:'Един цвят – Бяло',desc:'Двуслойно боядисване само в бяло. Най-икономичното решение за чист и светъл интериор.'},{name:'Стандартно — стени и тавани',desc:'Двуслойно боядисване с латекс в желания от Вас цвят — за стени и тавани.'},{name:'Премиум покритие',desc:'Висок клас латекс — миещо се покритие, наситен цвят, устойчивост във времето.'},{name:'Боядисване с корекции',desc:'Запълване на дупки, пукнатини и надрасквания, шлайфане и грундиране — пълна подготовка преди боядисване с избран от Вас латекс.'}] },
+    gyp: { img:'https://traqnivanov.github.io/Remonti-/gipsokarton-okachen-tavan-sofia.jpg', title:'Гипсокартон', desc:'Изграждаме окачени тавани, преградни стени и ниши с метална конструкция Knauf и Rigips. Звуко- и топлоизолация по желание, скрито LED осветление.', includes:['Метална конструкция Knauf/Rigips','Двуслойно окачване','Запълване на фуги','Звукоизолация по желание','LED осветление по желание','Писмена гаранция'], options:[{name:'Прав таван',desc:'Стандартен окачен таван от гипсокартон.'},{name:'LED ниша',desc:'Скрито осветление за таван и стена.'},{name:'Предстенна обшивка',desc:'Обшивка пред стена от гипсокартон.'},{name:'Преградна стена',desc:'Нова преградна стена от гипсокартон.'}] },
+    vik: { img:'https://traqnivanov.github.io/Remonti-/vik-uslugi-sofia.jpg', title:'ВиК', desc:'Пълна подмяна или изграждане на нови водопроводни инсталации по проект. Монтаж на санитария.', includes:['Изготвяне на схема','Полагане на тръби в шлайц','Монтаж на фитинги','Тестване под налягане','Запълване на шлайцове','Писмена гаранция'], options:[{name:'Смяна на смесител',desc:'Демонтаж на стария, монтаж на новия, проверка за теч.'},{name:'Смяна на тоалетна чиния',desc:'Демонтаж на старата, монтаж на новата, закрепване, свързване.'},{name:'Смяна на сифон / гъвкава връзка',desc:'Демонтаж на стария, монтаж на новия, проверка.'},{name:'Нова ВиК инсталация',desc:'Безплатен оглед + фиксирана оферта.'},{name:'Авариен ремонт',desc:'Отстраняване на аварията.'}] },
+    dog: { img:'https://traqnivanov.github.io/Remonti-/obrushchane-dograma-prozorci-sofia.jpg', title:'Обръщане Дограма', desc:'Обръщане на пространството около врати и прозорци след смяна на дограма. Работим с армировъчна мрежа и ъглови профили — без пукнатини и криви ъгли.', includes:['Почистване на стария материал','Армировъчна мрежа','Алуминиеви ъглови профили','Финишна шпакловка','Готово за боядисване','Писмена гаранция'], options:[{name:'Обръщане с лайсна',desc:'Шпакловане около прозореца или вратата с алуминиева ъглова лайсна — равен ръб, готов за боядисване.'}] },
+    maz: { img:'https://traqnivanov.github.io/Remonti-/dekorativna-mazilka-sofia.jpg', title:'Декоративна Мазилка', desc:'Венецианска, структурна или релефна мазилка — уникална текстура и луксозен вид.', includes:['Подготовка и грундиране','2–3 слоя мазилка','Полиране и финиш','Защитен лак по желание','Уникален резултат','Писмена гаранция'], options:[{name:'Структурна мазилка',desc:'Релефна текстура с различни зърна.'},{name:'Венецианска мазилка',desc:'Луксозна гладка мазилка с мраморен ефект.'},{name:'Релефна мазилка',desc:'Ръчно нанесен релеф. Уникален вид.'},{name:'С метален ефект',desc:'Злато, сребро или бронз. Луксозен финиш.'}] }
+  };
+  function openLomSvc(id){
+    var d = lomSvcData[id]; if(!d) return;
+    document.getElementById('lomSvcImg').src = d.img;
+    document.getElementById('lomSvcImg').alt = d.title;
+    document.getElementById('lomSvcTitle').textContent = d.title;
+    document.getElementById('lomSvcDesc').textContent = d.desc;
+    document.getElementById('lomSvcIncludes').innerHTML = d.includes.map(function(i){ return '<div class="lom-svc-inc"><span>&#10003;</span>'+i+'</div>'; }).join('');
+    document.getElementById('lomSvcOptions').innerHTML = d.options.map(function(o){ return '<div class="lom-svc-opt"><div class="lom-svc-opt-name">'+o.name+'</div><div class="lom-svc-opt-desc">'+o.desc+'</div></div>'; }).join('');
+    var svcImgs = (typeof lomgalImgs!=='undefined') ? lomgalImgs.filter(function(x){return x.c===id;}) : [];
+    var tw=document.getElementById('lomSvcGalWrap'), tc=document.getElementById('lomSvcThumbs');
+    if(svcImgs.length){ tw.style.display='block';
+      tc.innerHTML = svcImgs.slice(0,6).map(function(im,k){ return '<div class="lom-svc-thumb" onclick="lomlbOpenSet(\''+id+'\','+k+')"><img src="'+im.u+'" alt="'+im.l+' — Лом" loading="lazy"/></div>'; }).join('');
+    } else { tw.style.display='none'; }
+    document.getElementById('lomSvcOverlay').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeLomSvc(){
+    document.getElementById('lomSvcOverlay').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  // GALLERY Лом — данни (alt = услуга + " — Лом")
+  var lomgalImgs = [
+    {u:"https://traqnivanov.github.io/Remonti-/fina-shpaklovka-steni-sofia-01.jpg",c:"spak",l:"Шпакловка"},
+    {u:"https://traqnivanov.github.io/Remonti-/shpaklovka-s-mreja-sofia-01.jpg",c:"spak",l:"Шпакловка"},
+    {u:"https://traqnivanov.github.io/Remonti-/shpaklovka-boyadisvane-gipsokarton-sofia-08.jpg",c:"spak",l:"Шпакловка"},
+    {u:"https://traqnivanov.github.io/Remonti-/cyalosen-remont-shpaklovka-sofia-01.jpg",c:"spak",l:"Шпакловка"},
+    {u:"https://traqnivanov.github.io/Remonti-/remont-apartament-sofia-01.jpg",c:"spak",l:"Шпакловка"},
+    {u:"https://traqnivanov.github.io/Remonti-/gipsokarton-shpaklovka-boyadisvane-sofia-01.jpg",c:"spak",l:"Шпакловка"},
+    {u:"https://traqnivanov.github.io/Remonti-/bezprahovo-shlaifane-sofia-01.jpg",c:"spak",l:"Шпакловка"},
+    {u:"https://traqnivanov.github.io/Remonti-/instrumenti-shpaklovka-sofia.jpg",c:"spak",l:"Шпакловка"},
+    {u:"https://traqnivanov.github.io/Remonti-/boyadisvane-apartament-naseteni-cvetove-lateks-sofia.jpg",c:"boya",l:"Боядисване"},
+    {u:"https://traqnivanov.github.io/Remonti-/boyadisvane-lateks-steni-cena-trud-sofia.jpg",c:"boya",l:"Боядисване"},
+    {u:"https://traqnivanov.github.io/Remonti-/gipsokarton-tavan-shpaklovka-lateks-cena-trud-sofia.jpg",c:"boya",l:"Боядисване"},
+    {u:"https://traqnivanov.github.io/Remonti-/remont-apartament-gipsokarton-shpaklovka-boyadisvane-sofia.jpg",c:"boya",l:"Боядисване"},
+    {u:"https://traqnivanov.github.io/Remonti-/boyadisvane-steni-tavani-apartament-sofia.jpg",c:"boya",l:"Боядисване"},
+    {u:"https://traqnivanov.github.io/Remonti-/oferta-boyadisvane-lateks-kvadraten-metar-sofia.jpg",c:"boya",l:"Боядисване"},
+    {u:"https://traqnivanov.github.io/Remonti-/boyadisvane-gipsovo-lepilo-lateks-sofia.jpg",c:"boya",l:"Боядисване"},
+    {u:"https://traqnivanov.github.io/Remonti-/boyadisvane-gipsokarton-skrito-osvetlenie-led-nisha-sofia.jpg",c:"boya",l:"Боядисване"},
+    {u:"https://traqnivanov.github.io/Remonti-/boyadisvane-steni-cveten-lateks-apartament-sofia.jpg",c:"boya",l:"Боядисване"},
+    {u:"https://traqnivanov.github.io/Remonti-/boyadisvane-lateks-ceni-apartament-sofia.jpg",c:"boya",l:"Боядисване"},
+    {u:"https://traqnivanov.github.io/Remonti-/gipsokarton-led-nisha-sofia-03.jpg",c:"gyp",l:"Гипсокартон"},
+    {u:"https://traqnivanov.github.io/Remonti-/gipsokarton-predstenna-obshivka-sofia.jpg",c:"gyp",l:"Гипсокартон"},
+    {u:"https://traqnivanov.github.io/Remonti-/gipsokarton-tavan-sofia-16.jpg",c:"gyp",l:"Гипсокартон"},
+    {u:"https://traqnivanov.github.io/Remonti-/shpaklovka-boyadisvane-gipsokarton-sofia-01.jpg",c:"gyp",l:"Гипсокартон"},
+    {u:"https://traqnivanov.github.io/Remonti-/gipsokarton-montazh-apartament-sofia.jpg",c:"gyp",l:"Гипсокартон"},
+    {u:"https://traqnivanov.github.io/Remonti-/predi-sled-remont-dnevna-gipsokarton-led-sofia.jpg",c:"gyp",l:"Гипсокартон"},
+    {u:"https://traqnivanov.github.io/Remonti-/gipsokarton-predstena-dnevna-sofia.jpg",c:"gyp",l:"Гипсокартон"},
+    {u:"https://traqnivanov.github.io/Remonti-/gipsokarton-rgb-led-nisha-dnevna-sofia.jpg",c:"gyp",l:"Гипсокартон"},
+    {u:"https://traqnivanov.github.io/Remonti-/gipsokarton-nishi-banya-vlagoustoichiv-sofia.jpg",c:"gyp",l:"Гипсокартон"},
+    {u:"https://traqnivanov.github.io/Remonti-/gipsokarton-izolaciya-mineralna-vata-tavan-steni-sofia.jpg",c:"gyp",l:"Гипсокартон"},
+    {u:"https://traqnivanov.github.io/Remonti-/gipsokarton-tavan-figura-dekorativen-dnevna-sofia.jpg",c:"gyp",l:"Гипсокартон"},
+    {u:"https://traqnivanov.github.io/Remonti-/vik-instalacia-sofia-02.jpg",c:"vik",l:"ВиК"},
+    {u:"https://traqnivanov.github.io/Remonti-/smyana-vik-instalaciya-apartament-sofia.jpg",c:"vik",l:"ВиК"},
+    {u:"https://traqnivanov.github.io/Remonti-/vik-remont-apartament-maystor-sofia.jpg",c:"vik",l:"ВиК"},
+    {u:"https://traqnivanov.github.io/Remonti-/obrushchane-prozorci-apartament-sofia-01.jpg",c:"dog",l:"Дограма"},
+    {u:"https://traqnivanov.github.io/Remonti-/obrushchane-vrata-apartament-sofia.jpg",c:"dog",l:"Дограма"},
+    {u:"https://traqnivanov.github.io/Remonti-/obrushchane-dograma-cena-trud-sofia.jpg",c:"dog",l:"Дограма"},
+    {u:"https://traqnivanov.github.io/Remonti-/obrushchane-prozorci-sofia-03.jpg",c:"dog",l:"Дограма"},
+    {u:"https://traqnivanov.github.io/Remonti-/dekorativna-mazilka-sofia-02.jpg",c:"maz",l:"Мазилка"},
+    {u:"https://traqnivanov.github.io/Remonti-/dekorativna-pqsachna-mazilka-sofia-04.jpg",c:"maz",l:"Мазилка"},
+    {u:"https://traqnivanov.github.io/Remonti-/dekorativna-pqsachna-mazilka-sofia-01.jpg",c:"maz",l:"Мазилка"}
+  ];
+  var lomgalCat='all', lomgalShown=0, lomgalVisible=[], LOMGAL_BATCH=12, lomlbIdx=0;
+  function lomgalRender(){
+    lomgalVisible = lomgalCat==='all' ? lomgalImgs : lomgalImgs.filter(function(i){return i.c===lomgalCat;});
+    lomgalShown=0;
+    document.getElementById('lomgalGrid').innerHTML='';
+    lomgalLoadMore();
+  }
+  function lomgalLoadMore(){
+    var grid=document.getElementById('lomgalGrid');
+    var batch=lomgalVisible.slice(lomgalShown, lomgalShown+LOMGAL_BATCH);
+    batch.forEach(function(img,k){
+      var idx=lomgalShown+k;
+      var div=document.createElement('div'); div.className='lomgal-item';
+      div.innerHTML='<img src="'+img.u+'" alt="'+img.l+' — Лом" loading="lazy"/><div class="lomgal-badge">'+img.l+'</div><div class="lomgal-zoom">&#128269;</div>';
+      var im=div.querySelector('img');
+      im.onload=function(){im.classList.add('loaded');}; if(im.complete)im.classList.add('loaded');
+      div.addEventListener('click',function(){lomlbOpen(idx);});
+      grid.appendChild(div);
+    });
+    lomgalShown+=batch.length;
+    document.getElementById('lomgalMore').style.display = lomgalShown<lomgalVisible.length ? 'block':'none';
+  }
+  function lomgalFilter(cat){
+    lomgalCat=cat;
+    document.querySelectorAll('.lomgal-fbtn').forEach(function(b){ b.classList.toggle('active', b.dataset.cat===cat); });
+    lomgalRender();
+  }
+  function lomlbOpen(idx){
+    lomlbIdx=idx;
+    var img=lomgalVisible[idx]; if(!img)return;
+    document.getElementById('lomlbImg').src=img.u;
+    document.getElementById('lomlbImg').alt=img.l+' — Лом';
+    document.getElementById('lomlbCounter').textContent=(idx+1)+' / '+lomgalVisible.length;
+    document.getElementById('lomlb').classList.add('open');
+    document.body.style.overflow='hidden';
+  }
+  function lomlbOpenSet(cat, idx){
+    lomgalVisible = lomgalImgs.filter(function(x){return x.c===cat;});
+    lomlbOpen(idx);
+  }
+  function lomlbNav(d){ lomlbIdx=(lomlbIdx+d+lomgalVisible.length)%lomgalVisible.length; lomlbOpen(lomlbIdx); }
+  function lomlbClose(){ document.getElementById('lomlb').classList.remove('open'); document.body.style.overflow=''; }
+  (function(){
+    var sx=0, lb=document.getElementById('lomlb');
+    if(lb){
+      lb.addEventListener('touchstart',function(e){sx=e.touches[0].clientX;},{passive:true});
+      lb.addEventListener('touchend',function(e){var dx=sx-e.changedTouches[0].clientX; if(Math.abs(dx)>40)lomlbNav(dx>0?1:-1);},{passive:true});
+    }
+    document.addEventListener('keydown',function(e){
+      if(document.getElementById('lomlb').classList.contains('open')){
+        if(e.key==='ArrowRight')lomlbNav(1);
+        if(e.key==='ArrowLeft')lomlbNav(-1);
+        if(e.key==='Escape')lomlbClose();
+      }
+    });
+    lomgalRender();
+  })();
 </script>
+<!-- SERVICE MODAL Лом -->
+<div id="lomSvcOverlay" onclick="if(event.target===this)closeLomSvc()">
+  <div class="lom-svc-box">
+    <div class="lom-svc-head">
+      <button type="button" class="lom-svc-close" onclick="closeLomSvc()">&times;</button>
+      <img id="lomSvcImg" src="" alt=""/>
+    </div>
+    <div class="lom-svc-body">
+      <div id="lomSvcTitle" class="lom-svc-title"></div>
+      <div class="lom-svc-line"></div>
+      <div id="lomSvcDesc" class="lom-svc-desc"></div>
+      <div style="margin-bottom:1.4rem;">
+        <div class="lom-svc-h4">&#10022; Включено в услугата</div>
+        <div id="lomSvcIncludes"></div>
+      </div>
+      <div>
+        <div class="lom-svc-h4">&#10022; Видове</div>
+        <div id="lomSvcOptions"></div>
+      </div>
+      <div id="lomSvcGalWrap" style="margin-top:1.4rem;">
+        <div class="lom-svc-h4">&#10022; Снимки от обекти</div>
+        <div id="lomSvcThumbs" class="lom-svc-thumbs"></div>
+      </div>
+      <div class="lom-svc-btns">
+        <button type="button" class="lom-svc-call" onclick="window.location.href='tel:0876936184'">📞 0876 936 184</button>
+        <a class="lom-svc-msg" href="https://m.me/IvanovRemonti" target="_blank" rel="noopener noreferrer">Messenger</a>
+      </div>
+    </div>
+  </div>
+</div>
+
 </body>
 </html>
