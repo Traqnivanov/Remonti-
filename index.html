@@ -21,6 +21,7 @@
       s.onload = function() {
         gtag('js', new Date());
         gtag('config', 'G-SVED9CDFPR');
+        gtag('config', 'AW-18264667036');
         document.querySelectorAll('a[href^="tel:"]').forEach(function(el) {
           el.addEventListener('click', function() {
             gtag('event', 'phone_call_click', { event_category: 'Contact', event_label: 'Call 0877810418' });
@@ -2444,7 +2445,10 @@ function buildGalleryHTML(id) {
         document.getElementById('leadForm').reset();
         document.getElementById('lf-ok').style.display='block';
         btn.style.display='none';
-        if(typeof gtag!=='undefined'){ gtag('event','lead_form_submit'); }
+        if(typeof gtag!=='undefined'){
+          gtag('event','lead_form_submit');
+          gtag('event','conversion',{'send_to':'AW-18264667036'});
+        }
       } else { btn.disabled=false; btn.textContent='Изпрати запитване →'; alert('Не успяхме да изпратим. Моля обадете се на 0877 810 418.'); }
     }).catch(function(){ btn.disabled=false; btn.textContent='Изпрати запитване →'; alert('Няма връзка. Моля обадете се на 0877 810 418.'); });
     return false;
