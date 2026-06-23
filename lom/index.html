@@ -223,7 +223,7 @@
     .mobile-menu a:hover { color: var(--gold); }
 
     /* HERO */
-    .hero { min-height: 100vh; padding: 8rem 2.5rem 5rem; display: flex; flex-direction: column; justify-content: center; position: relative; overflow: hidden; }
+    .hero { min-height: 100vh; padding: 8rem 2.5rem 5rem; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; position: relative; overflow: hidden; }
     .hero-bg { position: absolute; inset: 0; background: radial-gradient(ellipse 80% 60% at 50% 40%, rgba(201,148,58,.06) 0%, transparent 70%); }
     .hero-lines { position: absolute; inset: 0; background: repeating-linear-gradient(90deg, transparent 0%, transparent calc(100%/12 - 1px), rgba(201,148,58,.03) calc(100%/12 - 1px), rgba(201,148,58,.03) calc(100%/12)); }
     .hero-watermark { position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); font-family: 'Fraunces', serif; font-size: clamp(5rem,18vw,16rem); color: rgba(201,148,58,.025); white-space: nowrap; pointer-events: none; user-select: none; z-index: 0; }
@@ -232,15 +232,15 @@
     .hero h1 { font-family: 'Fraunces', serif; font-weight: 300; font-size: clamp(2.4rem,6vw,5rem); line-height: 1.1; margin-bottom: 1rem; animation-delay: .25s; }
     .hero h1 .accent { font-style: italic; display: block; background: linear-gradient(90deg,#c9943a 0%,#f5d680 25%,#fff8e8 50%,#f5d680 75%,#c9943a 100%); background-size: 400%; -webkit-background-clip: text; -webkit-text-fill-color: transparent; animation: gold-shine 10s linear infinite; }
     .hero-tagline { font-size: clamp(1rem,2.5vw,1.3rem); color: rgba(255,255,255,.7); font-weight: 300; margin-bottom: .8rem; animation-delay: .38s; }
-    .hero-sub { font-size: clamp(.9rem,2vw,1rem); color: rgba(255,255,255,.55); max-width: 600px; line-height: 1.8; font-weight: 300; margin-bottom: 1.2rem; animation-delay: .46s; }
+    .hero-sub { font-size: clamp(.9rem,2vw,1rem); color: rgba(255,255,255,.55); max-width: 600px; margin-left: auto; margin-right: auto; line-height: 1.8; font-weight: 300; margin-bottom: 1.2rem; animation-delay: .46s; }
     .hero-sub strong { color: rgba(255,255,255,.85); }
     .hero-location { font-size: .82rem; color: rgba(201,148,58,.7); letter-spacing: .06em; margin-bottom: 1.8rem; animation-delay: .54s; }
-    .hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 1.5rem; animation-delay: .64s; }
+    .hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center; margin-bottom: 1.5rem; animation-delay: .64s; }
     .btn-gold { background: linear-gradient(135deg,var(--gold),var(--gold2)); color: #0d1b2e; padding: .9rem 2rem; border-radius: 2px; font-weight: 700; font-size: .88rem; letter-spacing: .06em; text-decoration: none; display: inline-block; transition: transform .2s, box-shadow .2s; }
     .btn-gold:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(201,148,58,.4); }
     .btn-outline { border: 1px solid rgba(201,148,58,.4); color: var(--gold); padding: .9rem 2rem; border-radius: 2px; font-weight: 600; font-size: .88rem; text-decoration: none; display: inline-block; transition: all .2s; }
     .btn-outline:hover { background: rgba(201,148,58,.1); }
-    .hero-stats { display: flex; gap: 3rem; flex-wrap: wrap; margin-top: 1rem; animation-delay: .76s; }
+    .hero-stats { display: flex; gap: 3rem; flex-wrap: wrap; justify-content: center; margin-top: 1rem; animation-delay: .76s; }
     .hstat { display: flex; flex-direction: column; }
     .hstat-num { font-family: 'Fraunces', serif; font-size: 2.2rem; font-weight: 300; color: var(--gold); line-height: 1; }
     .hstat-label { font-size: .68rem; color: rgba(255,255,255,.4); letter-spacing: .1em; text-transform: uppercase; margin-top: .3rem; }
@@ -555,7 +555,7 @@
 </div>
 
 <nav>
-  <a class="logo" href="https://ivanov-remonti.com">
+  <a class="logo" href="https://ivanov-remonti.com/lom/">
     <img src="https://traqnivanov.github.io/Remonti-/ivanov-remonti-logo-stroitelni-uslugi-sofia.jpg" alt="Ivanov Remonti лого"/>
     <div>Ти Почиваш — Ние Ремонтираме<span>Ремонти Лом и региона</span></div>
   </a>
