@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="icon" type="image/x-icon" href="https://traqnivanov.github.io/Remonti-/favicon.png"/>
+  <title>За мен | Ivanov Remonti Лом — майсторът, който се връща у дома</title>
+  <meta name="description" content="Историята зад Ivanov Remonti в Лом. Роден в Лом, изучен в София, върнат у дома. Довършителни ремонти с писмен договор и гаранция."/>
+  <meta name="robots" content="index, follow"/>
+  <link rel="canonical" href="https://ivanov-remonti.com/lom/za-men"/>
+  <meta property="og:title" content="За мен | Ivanov Remonti Лом"/>
+  <meta property="og:description" content="Роден в Лом. Изучен в София. Връщам занаята у дома."/>
+  <meta property="og:type" content="profile"/>
+  <meta property="og:url" content="https://ivanov-remonti.com/lom/za-men"/>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;1,9..144,300;1,9..144,400&family=Jost:wght@300;400;600;700&family=Outfit:wght@200;300;400;500;600&subset=cyrillic,cyrillic-ext&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body { max-width: 100%; overflow-x: hidden; }
+    :root {
+      --ink: #0a0e17; --navy: #0d1b2e; --navy2: #162540;
+      --gold: #c9943a; --gold2: #e8b84b; --cream: #f4f0e8;
+      --white: #ffffff; --muted: #8a9ab0;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Outfit', sans-serif; background: #0a0e17; color: white; overflow-x: hidden; }
+
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(28px); } to { opacity: 1; transform: translateY(0); } }
+
+    /* NAV */
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 1rem 3rem; background: rgba(13,27,46,.97); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(201,148,58,.2); }
+    .logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+    .logo img { width: 38px; height: 38px; object-fit: contain; border-radius: 6px; flex-shrink: 0; }
+    .logo-txt { font-family: 'Cormorant Garamond', serif; font-size: 1rem; color: var(--gold); font-weight: 600; line-height: 1.1; }
+    .logo-txt span { display: block; font-size: .58rem; color: var(--muted); letter-spacing: .15em; font-family: 'Jost'; font-weight: 300; text-transform: uppercase; margin-top: .2rem; }
+    .nav-back { color: rgba(255,255,255,.6); text-decoration: none; font-size: .82rem; letter-spacing: .04em; font-family: 'Jost'; transition: color .2s; white-space: nowrap; }
+    .nav-back:hover { color: var(--gold); }
+
+    /* HERO of page */
+    .about-wrap { max-width: 760px; margin: 0 auto; padding: 9rem 1.6rem 5rem; }
+    .about-tag { font-size: .72rem; font-weight: 600; letter-spacing: .2em; text-transform: uppercase; color: var(--gold); display: block; text-align: center; margin-bottom: 1rem; animation: fadeUp .7s ease both; }
+    .about-h1 { font-family: 'Fraunces', 'Cormorant Garamond', serif; font-weight: 600; font-size: clamp(2.2rem, 6vw, 3.4rem); line-height: 1.1; text-align: center; margin-bottom: 1.2rem; animation: fadeUp .7s ease .1s both; }
+    .gold-divider { width: 50px; height: 2px; background: linear-gradient(90deg, var(--gold), var(--gold2)); margin: 0 auto 2.5rem; animation: fadeUp .7s ease .15s both; }
+
+    /* PHOTO placeholder */
+    .about-photo { width: 100%; max-width: 380px; margin: 0 auto 2.8rem; aspect-ratio: 4/5; border-radius: 12px; overflow: hidden; border: 1px solid rgba(201,148,58,.25); background: linear-gradient(145deg, rgba(201,148,58,.06), rgba(13,27,46,.9)); display: flex; align-items: center; justify-content: center; animation: fadeUp .7s ease .2s both; }
+    .about-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .photo-ph { text-align: center; color: rgba(201,148,58,.4); font-size: .8rem; font-family: 'Jost'; padding: 2rem; }
+    .photo-ph .ph-ico { font-size: 2.5rem; display: block; margin-bottom: .8rem; opacity: .5; }
+
+    /* TEXT */
+    .about-text { animation: fadeUp .7s ease .25s both; }
+    .about-text p { font-size: 1.08rem; line-height: 1.95; color: rgba(255,255,255,.85); font-weight: 300; margin-bottom: 1.5rem; }
+    .about-text p.lead { color: rgba(255,255,255,.8); }
+    .about-quote { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: clamp(1.6rem, 4vw, 2.2rem); text-align: center; color: var(--gold2); line-height: 1.4; margin: 2.5rem 0; padding: 1.5rem 0; border-top: 1px solid rgba(201,148,58,.15); border-bottom: 1px solid rgba(201,148,58,.15); }
+    /* акцент-ред: по-силно от обикновен текст, подчинено на главния цитат */
+    .about-line { font-family: 'Cormorant Garamond', serif; font-weight: 600; font-style: italic; font-size: clamp(1.25rem, 3.2vw, 1.55rem); text-align: center; color: var(--gold); line-height: 1.45; margin: 2.2rem auto; max-width: 90%; }
+    /* разстояние между смисловите етапи */
+    .about-text .stage { margin-top: 2.6rem; }
+    .about-close { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.3rem, 3vw, 1.6rem); font-weight: 600; text-align: center; color: var(--white); margin-top: 2.5rem; line-height: 1.5; }
+    .about-close .yrs { color: var(--gold); }
+
+    /* CTA */
+    .about-cta { text-align: center; margin-top: 3.5rem; animation: fadeUp .7s ease .3s both; }
+    .btn-gold { display: inline-block; background: linear-gradient(135deg, var(--gold), var(--gold2)); color: var(--navy); padding: 1rem 2.5rem; border-radius: 2px; text-decoration: none; font-weight: 700; font-size: .9rem; letter-spacing: .05em; font-family: 'Jost'; transition: transform .2s, box-shadow .2s; }
+    .btn-gold:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(201,148,58,.4); }
+    .cta-sub { margin-top: 1rem; }
+    .cta-sub a { color: rgba(201,148,58,.7); text-decoration: none; font-size: .85rem; }
+    .cta-sub a:hover { color: var(--gold); }
+
+    /* FOOTER */
+    footer { background: #070c16; padding: 2.5rem 2rem; text-align: center; border-top: 1px solid rgba(201,148,58,.12); }
+    footer .f-logo { font-family: 'Cormorant Garamond', serif; font-size: 1rem; color: var(--gold); font-weight: 600; }
+    footer p { color: #2e3e50; font-size: .76rem; margin-top: .6rem; line-height: 1.7; }
+    footer a { color: var(--gold); text-decoration: none; }
+
+    @media (max-width: 640px) {
+      nav { padding: 1rem 1.2rem; }
+      .logo-txt { font-size: .85rem; }
+      .about-wrap { padding: 7.5rem 1.3rem 4rem; }
+      .about-text p { font-size: 1.02rem; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a class="logo" href="https://ivanov-remonti.com/lom/">
+    <img src="https://traqnivanov.github.io/Remonti-/ivanov-remonti-logo-stroitelni-uslugi-sofia.jpg" alt="Ivanov Remonti — строителни услуги София" loading="lazy"/>
+    <div class="logo-txt">Ivanov Remonti<span>Довършителни ремонти · Лом</span></div>
+  </a>
+  <a class="nav-back" href="https://ivanov-remonti.com/lom/">← Към сайта</a>
+</nav>
+
+<main class="about-wrap">
+  <span class="about-tag">✦ Човекът зад работата</span>
+  <h1 class="about-h1">Тръгнах от Лом.<br/>Връщам се у дома.</h1>
+  <div class="gold-divider"></div>
+
+  <div class="about-photo">
+    <img src="https://traqnivanov.github.io/Remonti-/maistor-ivanov-remonti-sofia.jpg" alt="Траян Първанов — майстор, Ivanov Remonti, довършителни ремонти Лом"/>
+  </div>
+
+  <div class="about-text">
+    <p class="lead">Роден съм в Лом. Тук пораснах, тук са корените ми.</p>
+
+    <p>Занаята започнах в София. Майстор не се става за ден — започнах като всички: гледах, повтарях, грешах.</p>
+
+    <p class="stage">Минаха години. Дълго носех едно усещане — че нещо не е наред. Че не работя така, както искам.</p>
+
+    <p>После ми се роди дете. И разбрах: ако не съм сериозен в работата, не уважавам нито клиента, нито хората, които разчитат на мен вкъщи.</p>
+
+    <p class="stage">Започнах да приемам всеки обект като свой дом. Започнах да инвестирам в точност — лазерна ролетка, по-добри инструменти. Не защото клиентът го вижда, а защото аз знам.</p>
+
+    <div class="about-quote">Аз знам.<br/>И това е достатъчно.</div>
+
+    <p class="stage">Знам, че не винаги можеш да си на обекта. Затова пращам снимки и видео на всеки етап — следиш всичко от телефона, където и да си.</p>
+
+    <p>Преди работа всеки обещава — аз казвам: съди ме накрая.</p>
+
+    <div class="about-line">Доверието не се обещава.<br/>Печели се на обекта, ден след ден.</div>
+
+    <p class="stage">А накрая идва онзи момент: човекът оглежда дома си и одобрението се чете в погледа му, без нито дума.</p>
+
+    <div class="about-line">Днес връщам занаята там, откъдето тръгнах — у дома, в Лом.</div>
+
+    <p>Тук хората се познават. Затова всеки обект го правя така, че да мога да <span style="color:#c9943a;">погледна човека в очите и след години.</span></p>
+  </div>
+
+  <div class="about-cta">
+    <a href="tel:0876936184" class="btn-gold">📞 Свържи се с мен</a>
+    <p class="cta-sub"><a href="https://ivanov-remonti.com/lom/">← Виж услуги, цени и реални обекти</a></p>
+  </div>
+</main>
+
+<footer>
+  <div class="f-logo">Ти Почиваш — Ние Ремонтираме</div>
+  <p>© <span class="cur-year"></span> · Всички права запазени · <a href="https://ivanov-remonti.com/lom/">ivanov-remonti.com/lom</a></p>
+  <p>Шпакловка · Боядисване · Гипсокартон · ВиК · Декоративна мазилка · Лом и региона</p>
+</footer>
+
+<script>
+  document.querySelectorAll('.cur-year').forEach(function(el){ el.textContent = new Date().getFullYear(); });
+</script>
+</body>
+</html>
