@@ -12,7 +12,7 @@
   <meta property="og:description" content="23 години на обекта. Историята зад работата."/>
   <meta property="og:type" content="profile"/>
   <meta property="og:url" content="https://ivanov-remonti.com/za-men"/>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;1,9..144,300;1,9..144,400&family=Jost:wght@300;400;600;700&family=Outfit:wght@200;300;400;500;600&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;1,9..144,300;1,9..144,400&family=Jost:wght@300;400;600;700&family=Outfit:wght@200;300;400;500;600&subset=cyrillic,cyrillic-ext&display=swap" rel="stylesheet"/>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html, body { max-width: 100%; overflow-x: hidden; }
@@ -38,7 +38,7 @@
     /* HERO of page */
     .about-wrap { max-width: 760px; margin: 0 auto; padding: 9rem 1.6rem 5rem; }
     .about-tag { font-size: .72rem; font-weight: 600; letter-spacing: .2em; text-transform: uppercase; color: var(--gold); display: block; text-align: center; margin-bottom: 1rem; animation: fadeUp .7s ease both; }
-    .about-h1 { font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: clamp(2.2rem, 6vw, 3.4rem); line-height: 1.1; text-align: center; margin-bottom: 1.2rem; animation: fadeUp .7s ease .1s both; }
+    .about-h1 { font-family: 'Fraunces', 'Cormorant Garamond', serif; font-weight: 600; font-size: clamp(2.2rem, 6vw, 3.4rem); line-height: 1.1; text-align: center; margin-bottom: 1.2rem; animation: fadeUp .7s ease .1s both; }
     .gold-divider { width: 50px; height: 2px; background: linear-gradient(90deg, var(--gold), var(--gold2)); margin: 0 auto 2.5rem; animation: fadeUp .7s ease .15s both; }
 
     /* PHOTO placeholder */
@@ -49,9 +49,13 @@
 
     /* TEXT */
     .about-text { animation: fadeUp .7s ease .25s both; }
-    .about-text p { font-size: 1.08rem; line-height: 1.95; color: rgba(255,255,255,.72); font-weight: 300; margin-bottom: 1.5rem; }
+    .about-text p { font-size: 1.08rem; line-height: 1.95; color: rgba(255,255,255,.85); font-weight: 300; margin-bottom: 1.5rem; }
     .about-text p.lead { color: rgba(255,255,255,.8); }
     .about-quote { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: clamp(1.6rem, 4vw, 2.2rem); text-align: center; color: var(--gold2); line-height: 1.4; margin: 2.5rem 0; padding: 1.5rem 0; border-top: 1px solid rgba(201,148,58,.15); border-bottom: 1px solid rgba(201,148,58,.15); }
+    /* акцент-ред: по-силно от обикновен текст, подчинено на главния цитат */
+    .about-line { font-family: 'Cormorant Garamond', serif; font-weight: 600; font-style: italic; font-size: clamp(1.25rem, 3.2vw, 1.55rem); text-align: center; color: var(--gold); line-height: 1.45; margin: 2.2rem auto; max-width: 90%; }
+    /* разстояние между смисловите етапи */
+    .about-text .stage { margin-top: 2.6rem; }
     .about-close { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.3rem, 3vw, 1.6rem); font-weight: 600; text-align: center; color: var(--white); margin-top: 2.5rem; line-height: 1.5; }
     .about-close .yrs { color: var(--gold); }
 
@@ -82,7 +86,7 @@
 <nav>
   <a class="logo" href="https://ivanov-remonti.com">
     <img src="https://traqnivanov.github.io/Remonti-/ivanov-remonti-logo-stroitelni-uslugi-sofia.jpg" alt="Ivanov Remonti — строителни услуги София" loading="lazy"/>
-    <div class="logo-txt">Ти Почиваш — Ние Ремонтираме<span>Довършителни ремонти · София</span></div>
+    <div class="logo-txt">Ivanov Remonti<span>Довършителни ремонти · София</span></div>
   </a>
   <a class="nav-back" href="https://ivanov-remonti.com">← Към сайта</a>
 </nav>
@@ -93,23 +97,31 @@
   <div class="gold-divider"></div>
 
   <div class="about-photo">
-    <img src="https://traqnivanov.github.io/Remonti-/portret.jpg" alt="Майстор Иванов — Ivanov Remonti, 23 години довършителни ремонти София"/>
+    <img src="https://traqnivanov.github.io/Remonti-/maistor-ivanov-remonti-sofia.jpg" alt="Траян Първанов — майстор, Ivanov Remonti, довършителни ремонти София"/>
   </div>
 
   <div class="about-text">
-    <p class="lead">Майстор не се става за ден. Започнах като всички — гледах, повтарях, грешах. Бързах между обектите, мислех, че така изкарвам повече. Не довършвах както трябва.</p>
+    <p class="lead">Майстор не се става за ден. Започнах като всички — гледах, повтарях, грешах. Бързах между обектите и мислех, че повече работа означава по-добра работа. Тогава още не разбирах разликата.</p>
 
-    <p>Минаха години. И бавно нещо в мен се промени. Един ден си купих лазерна ролетка — не защото клиент я поиска, а защото аз исках да съм точен. Никой не вижда дали меря с уред или на око.</p>
+    <p class="stage">Минаха години. Дълго носех едно усещане — че нещо не е наред. Че не работя така, както искам.</p>
+
+    <p>После ми се роди дете. И разбрах: ако не съм сериозен в работата, не уважавам нито клиента, нито хората, които разчитат на мен вкъщи.</p>
+
+    <p class="stage">Започнах да приемам всеки обект като свой дом. Започнах да инвестирам в точност — лазерна ролетка, по-добри инструменти. Не защото клиентът го вижда, а защото аз знам.</p>
 
     <div class="about-quote">Аз знам.<br/>И това е достатъчно.</div>
 
-    <p>Но точността е само едната половина. Другата е човекът отсреща.</p>
+    <p class="stage">Но точността е само едната половина. Другата е човекът, който те пуска в дома си и ти се доверява.</p>
 
-    <p>Затова не обещавам на приказки. Преди работа всеки обещава — аз казвам: съди ме накрая. Доверието не идва от думи. Печели се по пътя, с всяка удържана дума.</p>
+    <p>Затова не обещавам на приказки. Преди работа всеки обещава — аз казвам: съди ме накрая.</p>
 
-    <p>А накрая идва онзи момент: човекът оглежда дома си, и одобрението се чете в погледа му, без нито дума.</p>
+    <div class="about-line">Доверието не се обещава.<br/>Печели се на обекта, ден след ден.</div>
 
-    <p>Това не се купува с реклама — изгражда се. Точно затова <span style="color:#c9943a;">23 години работя повече на препоръка, отколкото на обяви.</span></p>
+    <p class="stage">А накрая идва онзи момент: човекът оглежда дома си и одобрението се чете в погледа му, без нито дума.</p>
+
+    <div class="about-line">Това не се купува с реклама — изгражда се.</div>
+
+    <p>Точно затова <span style="color:#c9943a;">23 години повечето ми работа идва от препоръка.</span></p>
   </div>
 
   <div class="about-cta">
