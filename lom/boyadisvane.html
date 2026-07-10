@@ -47,6 +47,10 @@ nav .logo span{display:block;font-family:'Outfit';font-size:.62rem;color:var(--m
 .hero h1{font-size:clamp(1.9rem,5vw,3rem);color:var(--white);}
 .hero h1 em{color:var(--gold2);font-style:italic;}
 .hero p.lead{margin-top:1.2rem;font-size:1.08rem;color:#c7d0dc;max-width:640px;}
+.hero-trust{display:flex;flex-wrap:wrap;gap:.6rem .8rem;margin-top:1.5rem;list-style:none;}
+.hero-trust li{display:flex;align-items:center;gap:.45rem;font-size:.9rem;color:#d8dee8;background:var(--navy2);border:1px solid rgba(201,148,58,.22);border-radius:999px;padding:.42rem .95rem;}
+.hero-trust li::before{content:"✓";color:var(--gold2);font-weight:600;}
+.mid-cta{text-align:center;margin:2.4rem auto 0;max-width:900px;padding:0 5%;}
 .cta-row{display:flex;gap:1rem;margin-top:2rem;flex-wrap:wrap;}
 .btn-gold{background:linear-gradient(135deg,var(--gold),var(--gold2));color:var(--ink);padding:.85rem 1.6rem;border-radius:8px;font-weight:600;font-size:.95rem;}
 .btn-outline{border:1px solid rgba(201,148,58,.5);color:var(--gold2);padding:.85rem 1.6rem;border-radius:8px;font-size:.95rem;}
@@ -82,8 +86,18 @@ footer .logo-text{font-family:'Fraunces',serif;color:var(--cream);font-size:1rem
 
 <style>
 .lom-gallery{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin:24px 0;}
-.lom-gallery img{width:100%;height:180px;object-fit:cover;border-radius:10px;border:1px solid rgba(201,148,58,.25);display:block;}
-@media(max-width:600px){.lom-gallery img{height:150px;}}
+.lom-gallery-btn{padding:0;border:none;background:none;cursor:pointer;display:block;width:100%;}
+.lom-gallery-btn img{width:100%;height:180px;object-fit:cover;border-radius:10px;border:1px solid rgba(201,148,58,.25);display:block;transition:opacity .15s;}
+.lom-gallery-btn:hover img,.lom-gallery-btn:focus-visible img{opacity:.85;}
+@media(max-width:600px){.lom-gallery-btn img{height:150px;}}
+.lom-lightbox{display:none;position:fixed;inset:0;background:rgba(10,14,23,.94);z-index:200;align-items:center;justify-content:center;}
+.lom-lightbox.open{display:flex;}
+.lom-lightbox img{max-width:88vw;max-height:82vh;border-radius:8px;object-fit:contain;}
+.lom-lb-close{position:absolute;top:18px;right:5%;background:none;border:1px solid rgba(201,148,58,.4);color:var(--cream);width:38px;height:38px;border-radius:50%;font-size:1.1rem;cursor:pointer;}
+.lom-lb-nav{position:absolute;top:50%;transform:translateY(-50%);background:none;border:1px solid rgba(201,148,58,.4);color:var(--gold2);width:44px;height:44px;border-radius:50%;font-size:1.6rem;cursor:pointer;line-height:1;}
+.lom-lb-prev{left:3%;}
+.lom-lb-next{right:3%;}
+@media(max-width:600px){.lom-lb-nav{width:38px;height:38px;font-size:1.3rem;}}
 </style>
 </head>
 <body>
@@ -96,6 +110,7 @@ footer .logo-text{font-family:'Fraunces',serif;color:var(--cream);font-size:1rem
     <li><a href="https://ivanov-remonti.com/lom/">Начало</a></li>
     <li><a href="shpaklovka">Шпакловка</a></li>
 <li><a href="gipsokarton">Гипсокартон</a></li>
+<li><a href="vik">ВиК</a></li>
 <li><a href="https://ivanov-remonti.com/lom/za-men">За мен</a></li>
     <li><a href="tel:0876936184" class="nav-phone">📞 0876 936 184</a></li>
   </ul>
@@ -105,6 +120,12 @@ footer .logo-text{font-family:'Fraunces',serif;color:var(--cream);font-size:1rem
   <div class="crumb"><a href="https://ivanov-remonti.com/lom/">Ремонти Лом</a> / Боядисване</div>
   <h1>Боядисване в Лом — <em>латекс в два слоя</em>, върху грунд</h1>
   <p class="lead">Боядисване с латекс в два слоя, върху грунд — със защита на подове, мебели и дограма. Поемам ангажимент лично и довеждам всеки обект докрай — без прехвърляне на отговорност.</p>
+  <ul class="hero-trust">
+    <li>23 години опит</li>
+    <li>Писмена гаранция</li>
+    <li>Безплатен оглед</li>
+    <li>Работя лично по всеки обект</li>
+  </ul>
   <div class="cta-row">
     <a href="tel:0876936184" class="btn-gold">📞 0876 936 184</a>
     <a href="viber://chat?number=%2B359876936184" class="btn-outline">Viber съобщение</a>
@@ -132,12 +153,25 @@ footer .logo-text{font-family:'Fraunces',serif;color:var(--cream);font-size:1rem
 <section>
   <h2>Снимки от наши обекти</h2>
   <div class="lom-gallery">
-    <img src="https://traqnivanov.github.io/Remonti-/boyadisvane-steni-tavani-apartament-sofia.jpg" alt="Боядисване на стени и тавани в апартамент — Лом" loading="lazy"/>
-    <img src="https://traqnivanov.github.io/Remonti-/boyadisvane-lateks-steni-cena-trud-sofia.jpg" alt="Боядисване с латекс на стени — Лом" loading="lazy"/>
-    <img src="https://traqnivanov.github.io/Remonti-/boyadisvane-steni-cveten-lateks-apartament-sofia.jpg" alt="Боядисване с цветен латекс — Лом" loading="lazy"/>
-    <img src="https://traqnivanov.github.io/Remonti-/boyadisvane-apartament-naseteni-cvetove-lateks-sofia.jpg" alt="Боядисване на апартамент в наситени цветове — Лом" loading="lazy"/>
+    <button type="button" class="lom-gallery-btn" data-i="0"><img src="https://traqnivanov.github.io/Remonti-/boyadisvane-steni-tavani-apartament-sofia.jpg" alt="Боядисване на стени и тавани в апартамент — Лом" loading="lazy"/></button>
+    <button type="button" class="lom-gallery-btn" data-i="1"><img src="https://traqnivanov.github.io/Remonti-/boyadisvane-lateks-steni-cena-trud-sofia.jpg" alt="Боядисване с латекс на стени — Лом" loading="lazy"/></button>
+    <button type="button" class="lom-gallery-btn" data-i="2"><img src="https://traqnivanov.github.io/Remonti-/boyadisvane-steni-cveten-lateks-apartament-sofia.jpg" alt="Боядисване с цветен латекс — Лом" loading="lazy"/></button>
+    <button type="button" class="lom-gallery-btn" data-i="3"><img src="https://traqnivanov.github.io/Remonti-/boyadisvane-apartament-naseteni-cvetove-lateks-sofia.jpg" alt="Боядисване на апартамент в наситени цветове — Лом" loading="lazy"/></button>
+    <button type="button" class="lom-gallery-btn" data-i="4"><img src="https://traqnivanov.github.io/Remonti-/gipsokarton-tavan-shpaklovka-lateks-cena-trud-sofia.jpg" alt="Гипсокартон, шпакловка и латекс на таван — Лом" loading="lazy"/></button>
+    <button type="button" class="lom-gallery-btn" data-i="5"><img src="https://traqnivanov.github.io/Remonti-/remont-apartament-gipsokarton-shpaklovka-boyadisvane-sofia.jpg" alt="Ремонт на апартамент — гипсокартон, шпакловка и боядисване — Лом" loading="lazy"/></button>
+    <button type="button" class="lom-gallery-btn" data-i="6"><img src="https://traqnivanov.github.io/Remonti-/oferta-boyadisvane-lateks-kvadraten-metar-lom.jpg" alt="Оферта за боядисване с латекс на квадратен метър — Лом" loading="lazy"/></button>
+    <button type="button" class="lom-gallery-btn" data-i="7"><img src="https://traqnivanov.github.io/Remonti-/boyadisvane-gipsovo-lepilo-lateks-sofia.jpg" alt="Боядисване върху гипсово лепило с латекс — Лом" loading="lazy"/></button>
+    <button type="button" class="lom-gallery-btn" data-i="8"><img src="https://traqnivanov.github.io/Remonti-/boyadisvane-gipsokarton-skrito-osvetlenie-led-nisha-sofia.jpg" alt="Боядисване на гипсокартон със скрито LED осветление — Лом" loading="lazy"/></button>
+    <button type="button" class="lom-gallery-btn" data-i="9"><img src="https://traqnivanov.github.io/Remonti-/boyadisvane-lateks-ceni-apartament-lom.jpg" alt="Латекс боядисване на апартамент — цени — Лом" loading="lazy"/></button>
   </div>
 </section>
+
+<div id="lomLightbox" class="lom-lightbox" role="dialog" aria-modal="true" aria-label="Преглед на снимка">
+  <button type="button" class="lom-lb-close" id="lomLbClose" aria-label="Затвори">✕</button>
+  <button type="button" class="lom-lb-nav lom-lb-prev" id="lomLbPrev" aria-label="Предишна снимка">‹</button>
+  <img id="lomLbImg" src="" alt=""/>
+  <button type="button" class="lom-lb-nav lom-lb-next" id="lomLbNext" aria-label="Следваща снимка">›</button>
+</div>
 
 
 <section>
@@ -161,6 +195,7 @@ footer .logo-text{font-family:'Fraunces',serif;color:var(--cream);font-size:1rem
   <li><strong style="color:#fff;">Детайлите</strong> — много дограма, тръби, радиатори и ъгли забавят работата</li>
 </ul>
 <p style="color:#c7d0dc;margin-top:1rem;">След огледа получавате писмена цена, която не се променя — освен ако вие не добавите нова дейност.</p>
+  <div class="mid-cta"><a href="tel:0876936184" class="btn-gold">📞 Обади се за оглед — 0876 936 184</a></div>
 </section>
 
 <section>
@@ -245,6 +280,7 @@ footer .logo-text{font-family:'Fraunces',serif;color:var(--cream);font-size:1rem
   <div class="other-services">
     <a href="shpaklovka">Шпакловка в Лом →</a>
 <a href="gipsokarton">Гипсокартон в Лом →</a>
+    <a href="vik">ВиК в Лом →</a>
     <a href="https://ivanov-remonti.com/lom/">Всички услуги →</a>
   </div>
 </section>
@@ -261,5 +297,34 @@ footer .logo-text{font-family:'Fraunces',serif;color:var(--cream);font-size:1rem
   <p style="color:#5a6a80;">Шпакловка · Боядисване · Гипсокартон · Лом · Монтана · Берковица · Козлодуй · Вълчедръм</p>
 </footer>
 <script>document.querySelector('.cur-year').textContent=new Date().getFullYear();</script>
+<script>
+(function(){
+  var thumbs = document.querySelectorAll('.lom-gallery-btn img');
+  var items = Array.prototype.map.call(thumbs, function(img){ return {src: img.getAttribute('src'), alt: img.getAttribute('alt')}; });
+  var lb = document.getElementById('lomLightbox');
+  var lbImg = document.getElementById('lomLbImg');
+  var cur = 0;
+  function show(i){
+    cur = (i + items.length) % items.length;
+    lbImg.setAttribute('src', items[cur].src);
+    lbImg.setAttribute('alt', items[cur].alt);
+  }
+  function open(i){ show(i); lb.classList.add('open'); document.body.style.overflow='hidden'; }
+  function close(){ lb.classList.remove('open'); document.body.style.overflow=''; }
+  document.querySelectorAll('.lom-gallery-btn').forEach(function(btn){
+    btn.addEventListener('click', function(){ open(parseInt(btn.getAttribute('data-i'), 10)); });
+  });
+  document.getElementById('lomLbClose').addEventListener('click', close);
+  document.getElementById('lomLbPrev').addEventListener('click', function(){ show(cur - 1); });
+  document.getElementById('lomLbNext').addEventListener('click', function(){ show(cur + 1); });
+  lb.addEventListener('click', function(e){ if(e.target === lb) close(); });
+  document.addEventListener('keydown', function(e){
+    if(!lb.classList.contains('open')) return;
+    if(e.key === 'Escape') close();
+    if(e.key === 'ArrowLeft') show(cur - 1);
+    if(e.key === 'ArrowRight') show(cur + 1);
+  });
+})();
+</script>
 </body>
 </html>
