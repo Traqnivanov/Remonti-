@@ -210,7 +210,8 @@
           },
           "provider": {
             "@id": "https://ivanov-remonti.com/#business"
-          }
+          },
+          "url": "https://ivanov-remonti.com/shpaklovka.html"
         },
         "priceSpecification": {
           "@type": "PriceSpecification",
@@ -232,7 +233,8 @@
           },
           "provider": {
             "@id": "https://ivanov-remonti.com/#business"
-          }
+          },
+          "url": "https://ivanov-remonti.com/boyadisvane.html"
         },
         "priceSpecification": {
           "@type": "PriceSpecification",
@@ -254,7 +256,8 @@
           },
           "provider": {
             "@id": "https://ivanov-remonti.com/#business"
-          }
+          },
+          "url": "https://ivanov-remonti.com/gipsokarton.html"
         },
         "priceSpecification": {
           "@type": "PriceSpecification",
@@ -529,7 +532,7 @@
     .card-pnum { position: absolute; top: 16px; right: 20px; z-index: 4; font-family: 'DM Serif Display', serif; font-size: 7rem; font-weight: 700; line-height: 1; color: rgba(201,148,58,.07); transition: all .8s; user-select: none; }
     .svc-prem-card:hover .card-pnum,
     .svc-prem-card.touched .card-pnum { color: rgba(201,148,58,.18); transform: scale(1.05) translateY(-5px); }
-    .card-pcontent { position: absolute; bottom: 0; left: 0; right: 0; padding: 2.5rem 2.5rem 2rem; z-index: 4; transform: translateY(0); transition: transform .6s cubic-bezier(0.25, 0.46, 0.45, 0.94); }
+    .card-pcontent { position: absolute; bottom: 0; left: 0; right: 0; padding: 2.5rem 2.5rem 2rem; z-index: 5; transform: translateY(0); transition: transform .6s cubic-bezier(0.25, 0.46, 0.45, 0.94); }
     .svc-prem-card:hover .card-pcontent,
     .svc-prem-card.touched .card-pcontent { transform: translateY(-8px); }
     .card-pline { display: flex; align-items: center; gap: .8rem; margin-bottom: 1rem; }
@@ -549,7 +552,7 @@
     .card-calc-btn { display: inline-flex; align-items: center; gap: .6rem; margin-top: .5rem; font-size: .62rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--gold); opacity: 0; transform: translateY(8px); transition: opacity .4s .25s, transform .4s .25s; background: rgba(201,148,58,.12); border: 1px solid rgba(201,148,58,.35); border-radius: 20px; padding: .4rem 1rem; cursor: pointer; font-family: inherit; }
     .svc-prem-card:hover .card-calc-btn { opacity: 1; transform: translateY(0); }
     .card-calc-btn:hover { background: rgba(201,148,58,.22); border-color: rgba(201,148,58,.6); }
-    @media (max-width: 768px) { .card-calc-btn { opacity: 1; transform: translateY(0); } .gold-particles { display: none; } }
+    @media (max-width: 768px) { .card-calc-btn { opacity: 1; transform: translateY(0); } .card-pbtn { opacity: 1; transform: translateY(0); } .gold-particles { display: none; } }
     .svc-bottom-bar { display: flex; align-items: center; justify-content: center; gap: 3rem; padding: 2rem 3rem; background: linear-gradient(90deg, transparent, rgba(201,148,58,.06), transparent); border-top: 1px solid rgba(201,148,58,.15); border-bottom: 1px solid rgba(201,148,58,.15); flex-wrap: wrap; }
     .svc-bar-item { display: flex; align-items: center; gap: .6rem; font-size: .72rem; letter-spacing: .1em; text-transform: uppercase; color: rgba(255,255,255,.4); }
     .svc-bar-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--gold); opacity: .6; }
@@ -1219,6 +1222,7 @@ document.addEventListener('DOMContentLoaded', function() {
 <div class="showcase">
 
   <div class="svc-prem-card" id="spaklovka">
+    <a class="card-link" href="shpaklovka" aria-label="Шпакловка на стени и тавани в София" style="position:absolute;inset:0;z-index:2;"></a>
     <img class="card-img" src="https://traqnivanov.github.io/Remonti-/shpaklovka-steni-apartament-sofia.jpg" alt="Шпакловка на стени — довършителни ремонти София" loading="lazy"/>
     <div class="card-overlay"></div><div class="card-shine"></div><div class="card-border"></div>
     <div class="card-ptag">✦ Услуга 01</div>
@@ -1233,6 +1237,7 @@ document.addEventListener('DOMContentLoaded', function() {
   </div>
 
   <div class="svc-prem-card" id="boyadisvane">
+    <a class="card-link" href="boyadisvane" aria-label="Боядисване на стени и тавани в София" style="position:absolute;inset:0;z-index:2;"></a>
     <img class="card-img" src="https://traqnivanov.github.io/Remonti-/boyadisvane-apartament-sofia.jpg" alt="Боядисване на апартамент София — Ivanov Remonti" loading="lazy"/>
     <div class="card-overlay"></div><div class="card-shine"></div><div class="card-border"></div>
     <div class="card-ptag">✦ Услуга 02</div>
@@ -1247,6 +1252,7 @@ document.addEventListener('DOMContentLoaded', function() {
   </div>
 
   <div class="svc-prem-card" id="gipsokarton">
+    <a class="card-link" href="gipsokarton" aria-label="Гипсокартон и окачени тавани в София" style="position:absolute;inset:0;z-index:2;"></a>
     <img class="card-img" src="https://traqnivanov.github.io/Remonti-/gipsokarton-okachen-tavan-sofia.jpg" alt="Окачен таван гипсокартон София — Ivanov Remonti" loading="lazy"/>
     <div class="card-overlay"></div><div class="card-shine"></div><div class="card-border"></div>
     <div class="card-ptag">✦ Услуга 03</div>
@@ -1981,7 +1987,7 @@ openServiceModal = function(id) {
 <footer>
   <div class="logo">Ivanov Remonti<span style="font-size:.58rem; color:#2e3e50; letter-spacing:.15em; font-family:'Jost'; font-weight:300; display:block; margin-top:.2rem;">Ти Почиваш — Ние Ремонтираме</span></div>
   <p>© <span class="cur-year"></span> · Всички права запазени · <a href="javascript:void(0)" onclick="showPrivacy()">Политика за поверителност</a></p>
-  <p style="color:#1e2e3e;">Шпакловка · Боядисване · Гипсокартон · ВиК · Декоративна мазилка</p>
+  <p style="color:#1e2e3e;"><a href="shpaklovka" style="color:#1e2e3e;">Шпакловка</a> · <a href="boyadisvane" style="color:#1e2e3e;">Боядисване</a> · <a href="gipsokarton" style="color:#1e2e3e;">Гипсокартон</a> · ВиК · Декоративна мазилка</p>
   <p style="color:#1e2e3e;font-size:.7rem;margin-top:.4rem;">Обслужваме: Люлин · Младост · Надежда · Красна поляна · Овча купел · Студентски град · Лозенец · Борово · Дружба · Банкя · Бояна · Лозен · Витоша · Княжево · Горна баня · Триадица · Средец · Оборище · Подуяне · Слатина · Изгрев · Красно село · Илинден · Бъкстон · Гео Милев · Яворов · Хладилника · Павлово · Стрелбище · Кръстова вада</p>
 </footer>
 
