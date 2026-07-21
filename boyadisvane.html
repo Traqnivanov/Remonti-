@@ -10,9 +10,9 @@
 <meta property="og:description" content="Боядисване с латекс в София — апартаменти, къщи, офиси. Само труд, без материали. Фиксирана цена, писмена гаранция, безплатен оглед. 23 г. опит."/>
 <meta property="og:url" content="https://ivanov-remonti.com/boyadisvane"/>
 <meta property="og:type" content="website"/>
-<meta property="og:image" content="https://traqnivanov.github.io/Remonti-/boyadisvane-steni-tavani-apartament-sofia.jpg"/>
-<meta property="og:image:width" content="1200"/>
-<meta property="og:image:height" content="630"/>
+<meta property="og:image" content="https://traqnivanov.github.io/Remonti-/boyadisvane-lateks-ceni-apartament-sofia.jpg"/>
+<meta property="og:image:width" content="1600"/>
+<meta property="og:image:height" content="1200"/>
 <meta property="og:locale" content="bg_BG"/>
 <link rel="icon" type="image/x-icon" href="https://traqnivanov.github.io/Remonti-/favicon.png"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
@@ -312,6 +312,60 @@ footer .logo-text{font-family:'Fraunces',serif;color:var(--cream);font-size:1rem
   document.getElementById('lomLbNext').addEventListener('click',function(){show(cur+1);});
   lb.addEventListener('click',function(e){if(e.target===lb)close();});
   document.addEventListener('keydown',function(e){if(!lb.classList.contains('open'))return;if(e.key==='Escape')close();if(e.key==='ArrowLeft')show(cur-1);if(e.key==='ArrowRight')show(cur+1);});
+})();
+</script>
+
+<!-- TERYBOT LOADER — зарежда bot.html в сайта -->
+<script>
+(function() {
+  fetch('/bot.html?v=5', { cache: 'no-cache' })
+    .then(function(r) {
+      if (!r.ok) throw new Error('HTTP ' + r.status);
+      return r.text();
+    })
+    .then(function(html) {
+      try {
+        var parser = new DOMParser();
+        var doc = parser.parseFromString(html, 'text/html');
+        // 1. Копираме <head> съдържанието (CSS, стилове) в сайта
+        var headNodes = doc.head.querySelectorAll('style, link[rel="stylesheet"]');
+        headNodes.forEach(function(n) { document.head.appendChild(n.cloneNode(true)); });
+        // 2. Копираме <body> HTML-а (без scripts)
+        var bodyClone = doc.body.cloneNode(true);
+        var scripts = Array.prototype.slice.call(bodyClone.querySelectorAll('script'));
+        scripts.forEach(function(s) { s.remove(); });
+        while (bodyClone.firstChild) {
+          document.body.appendChild(bodyClone.firstChild);
+        }
+        // 3. Изпълняваме scripts на бота в ред
+        doc.body.querySelectorAll('script').forEach(function(s) {
+          var ns = document.createElement('script');
+          if (s.src) ns.src = s.src;
+          else ns.textContent = s.textContent;
+          document.body.appendChild(ns);
+        });
+
+        // 4. ?bot=open — отваряме бота автоматично след зареждане
+        try {
+          var params = new URLSearchParams(window.location.search);
+          if (params.get('bot') === 'open') {
+            // Добавяме страницата в историята — така назад връща в сайта, не в Google
+            try { history.replaceState(null, '', window.location.pathname); } catch(e2) {}
+            try { history.pushState(null, '', '?bot=open'); } catch(e2) {}
+            setTimeout(function() {
+              var toggle = document.getElementById('tb-toggle');
+              if (toggle) toggle.click();
+            }, 1200);
+          }
+        } catch(e) {}
+
+      } catch(e) {
+        console.warn('Bot inject failed:', e);
+      }
+    })
+    .catch(function(e) {
+      console.warn('Bot load failed:', e);
+    });
 })();
 </script>
 </body>
