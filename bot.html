@@ -482,12 +482,12 @@ function pTag(lv,u){ return eur(lv)+' €/'+u+' · '+Number(lv)+' лв/'+u; }
 const PRICES = {
   ceiling_flat:35, ceiling_led:58,
   gk_pre:32, gk_wall2:55,
-  putty_fuge:8, putty_fina:13,
-  putty_basic:18, putty_gypsum:14,
-  paint_white:12, paint_walls_ceilings:13, paint_premium:16,
+  putty_fuge:8, putty_fina:11.54,
+  putty_basic:14.67, putty_gypsum:10.76,
+  paint_white:7.53, paint_walls_ceilings:8.31, paint_premium:11.05,
   window_lm:15,
   vik_mixer:35.20, vik_toilet:97.79, vik_siphon:29.34, vik_pipes:29.34,
-  sanding:4, primer:2, paint_corrections:18
+  sanding:3.91, primer:2.84, paint_corrections:13.01
 };
 const P = PRICES;
 
@@ -1567,12 +1567,12 @@ function handlePriceQuestion(question, areaFromInput = null) {
     if (area) {
       const total = area * 2;
       const totalEur = (total / 1.95583).toFixed(2);
-      return `Грунд (полагане) – 2 лв/м² × ${area} м² = ${total} лв (${totalEur} €) **само за труд** (без материали).`;
+      return `Грунд (полагане) – 2.84 лв/м² × ${area} м² = ${total} лв (${totalEur} €) **само за труд** (без материали).`;
     } else {
-      return `Грунд (полагане) – 2 лв/м² **само за труд** (без материали). Нужна е квадратура.`;
+      return `Грунд (полагане) – 2.84 лв/м² **само за труд** (без материали). Нужна е квадратура.`;
     }
   }
-  if (q.includes('шлайфане')) return priceResponse(4, 'Шлайфане');
+  if (q.includes('шлайфане')) return priceResponse(3.91, 'Шлайфане');
   if (q.includes('гипсокартон')) {
     if (q.includes('стена')) return priceResponse(38, 'Гипсокартон (стена)');
     if (q.includes('предстена')) return priceResponse(42, 'Предстена');
@@ -2866,7 +2866,7 @@ const S = {
     {label:'📞 Обадете се', next:null, specialCall:true}
   ] },
   painting_area: { msg: () => '📏 Въведете квадратура (м²).<br><button onclick="(function(){document.querySelector(\'#tb-input\').value=\'не знам\';document.querySelector(\'#tb-input\').dispatchEvent(new KeyboardEvent(\'keydown\',{key:\'Enter\',bubbles:true}))})()" style="margin-top:8px;background:rgba(224,85,85,0.1);border:1px solid rgba(224,85,85,0.35);border-radius:20px;padding:6px 16px;font-size:13px;font-weight:700;color:#E05555;cursor:pointer;">🆘 Не знам — помогнете ми</button>', input:'number', label:'м²', displayUnit:'м²', next:'painting_ask_primer' },
-  painting_ask_primer: { msg: () => ctx.serviceType === 'С корекции' ? '' : '🪣 Препоръчваме грунд преди боядисване.<br><small style="color:rgba(201,168,76,0.6);">Без грунд боята не лепи трайно. Цена: 1.02 €/м² — само труд</small>', onEnter: () => { if(ctx.serviceType === 'С корекции'){ setTimeout(() => go('painting_result'), 300); return; } ctx._paintServiceType = ctx.serviceType; ctx._paintServiceName = ctx.serviceName; ctx._paintPrice = ctx.price; }, choicesFn: () => ctx.serviceType === 'С корекции' ? [] : [{label:'✅ Да, добави грунд  ⭐ Препоръчано', next:'painting_with_primer', price:P.primer, serviceName:'Грунд', serviceType:'', displayUnit:'м²'},{label:'❌ Не, само боядисване', next:'painting_result'}] },
+  painting_ask_primer: { msg: () => ctx.serviceType === 'С корекции' ? '' : '🪣 Препоръчваме грунд преди боядисване.<br><small style="color:rgba(201,168,76,0.6);">Без грунд боята не лепи трайно. Цена: 1.45 €/м² — само труд</small>', onEnter: () => { if(ctx.serviceType === 'С корекции'){ setTimeout(() => go('painting_result'), 300); return; } ctx._paintServiceType = ctx.serviceType; ctx._paintServiceName = ctx.serviceName; ctx._paintPrice = ctx.price; }, choicesFn: () => ctx.serviceType === 'С корекции' ? [] : [{label:'✅ Да, добави грунд  ⭐ Препоръчано', next:'painting_with_primer', price:P.primer, serviceName:'Грунд', serviceType:'', displayUnit:'м²'},{label:'❌ Не, само боядисване', next:'painting_result'}] },
   painting_with_primer: { msg: (c) => '', save:{pre:'Грунд (боядисване)', unit:'м²', last:'primer'}, autoNext:'painting_result' },
   painting_result: { msg: (c) => { if(ctx._paintServiceType !== undefined){ ctx.serviceType = ctx._paintServiceType; ctx.serviceName = ctx._paintServiceName || 'Боядисване'; ctx.price = ctx._paintPrice; ctx._paintServiceType = undefined; } const unit = 'м²'; const label = 'Боядисване' + (ctx.serviceType ? ` (${ctx.serviceType})` : ''); const total = Math.round(ctx.price * ctx.value * 100)/100; if(!panelItems.some(p => p.label === label)){ panelItems.push({id:++idSeq, label, qty:ctx.value, unit, price:ctx.price, total}); renderPanel(); } ctx.prevValue = ctx.value; ctx.prevUnit = unit; ctx.lastService = 'painting'; return calcMsg(c,'м²'); }, choices:[{label:'➕ Добави друга услуга', next:'start'},{label:'📋 Виж офертата', next:'offer_summary'}] },
   windows_menu: { msg: () => 'Прецизно обръщане около врати и прозорци след смяна на дограма. Перфектни ъгли и безупречен финиш.', onEnter: () => { ctx.displayUnit = 'л.м.'; ctx.usesPrevArea = false; ctx.prevUnit = null; ctx.prevValue = null; }, choicesFn: () => [
