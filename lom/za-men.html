@@ -80,6 +80,25 @@
       .about-text p { font-size: 1.02rem; }
     }
   </style>
+
+  <!-- Google tag (gtag.js) — GA4 : G-SVED9CDFPR — зарежда се само след съгласие -->
+  <script>
+    function loadGA4() {
+      if (window._ga4Loaded) return;
+      window._ga4Loaded = true;
+      var s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=G-SVED9CDFPR';
+      document.head.appendChild(s);
+      s.onload = function() {
+        gtag('js', new Date());
+        gtag('config', 'G-SVED9CDFPR');
+      };
+    }
+
+    // Ако вече е дадено съгласие — зареждаме веднага
+    try { if (localStorage.getItem('cookiesAccepted') === '1') loadGA4(); } catch(x) {}
+  </script>
 </head>
 <body>
 
