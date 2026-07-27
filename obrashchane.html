@@ -103,6 +103,45 @@ footer .logo-text{font-family:'Fraunces',serif;color:var(--cream);font-size:1rem
 @media(max-width:760px){.nav-links{flex-wrap:wrap;gap:.8rem;font-size:.78rem;justify-content:center;}nav{flex-direction:column;gap:.7rem;}.lom-gallery-btn img{height:150px;}.lom-lb-nav{width:38px;height:38px;font-size:1.3rem;}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto;}}
 </style>
+
+    <!-- Google Ads AW — зарежда се ВИНАГИ, без да чака cookie съгласие -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18264667036"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'AW-18264667036');
+
+    // Tracking на телефонни кликове — веднага след зареждане на страницата
+    window.addEventListener('load', function() {
+      document.querySelectorAll('a[href^="tel:"]').forEach(function(el) {
+        el.addEventListener('click', function() {
+          gtag('event', 'conversion', {'send_to': 'AW-18264667036/SmmrCLHN9dQcEJznooVE'});
+        });
+      });
+      var fb = document.querySelector('.floating-btns');
+      if (fb) fb.classList.add('ready');
+    });
+  </script>
+
+<!-- Google tag (gtag.js) — GA4 : G-SVED9CDFPR — зарежда се само след съгласие -->
+  <script>
+    function loadGA4() {
+      if (window._ga4Loaded) return;
+      window._ga4Loaded = true;
+      var s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=G-SVED9CDFPR';
+      document.head.appendChild(s);
+      s.onload = function() {
+        gtag('js', new Date());
+        gtag('config', 'G-SVED9CDFPR');
+      };
+    }
+
+    // Ако вече е дадено съгласие — зареждаме веднага
+    try { if (localStorage.getItem('cookiesAccepted') === '1') loadGA4(); } catch(x) {}
+  </script>
 </head>
 <body>
 
@@ -156,22 +195,6 @@ footer .logo-text{font-family:'Fraunces',serif;color:var(--cream);font-size:1rem
 </section>
 
 <section>
-  <h2>Какво включва услугата</h2>
-  <div class="card-grid">
-    <div class="card"><h3>Армировъчна мрежа</h3><p>Нанасяме мрежа в ъглите за трайност — без нея пукнатините се връщат при следващото разширение на дограмата.</p></div>
-    <div class="card"><h3>Ъглова лайсна</h3><p>Алуминиева ъглова лайсна за чист, прав ъгъл — видим резултат, устойчив на удари.</p></div>
-    <div class="card"><h3>Финна шпакловка</h3><p>Финишен слой шпакловка и шлайфане — готово за директно боядисване без допълнителна подготовка.</p></div>
-  </div>
-  <ul class="checks">
-    <li>Почистване на стария мазилков ръб около дограмата</li>
-    <li>Армировъчна мрежа в ъглите за трайност</li>
-    <li>Ъглова лайсна за равен ъгъл и чист ръб</li>
-    <li>Финна шпакловка и шлайфане — готово за боя</li>
-    <li>Почистване след приключване</li>
-  </ul>
-</section>
-
-<section>
   <h2>Снимки от наши обекти в София</h2>
   <div class="lom-gallery">
     <button type="button" class="lom-gallery-btn" data-i="0"><img src="https://traqnivanov.github.io/Remonti-/obrushchane-prozorci-sofia-03.jpg" alt="Обръщане на прозорци след дограма — Ivanov Remonti Sofia" loading="lazy"/></button>
@@ -187,6 +210,34 @@ footer .logo-text{font-family:'Fraunces',serif;color:var(--cream);font-size:1rem
   <img id="lomLbImg" src="" alt=""/>
   <button type="button" class="lom-lb-nav lom-lb-next" id="lomLbNext" aria-label="Следваща снимка">›</button>
 </div>
+
+<section>
+  <h2>Видео от наши обекти</h2>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:1rem;">
+    <div style="position:relative;padding-bottom:177.78%;height:0;overflow:hidden;border-radius:12px;">
+      <iframe src="https://www.youtube.com/embed/WNbgtSS7hlU" title="Ремонт видео 1" allowfullscreen loading="lazy" style="position:absolute;top:0;left:0;width:100%;height:100%;border:none;border-radius:12px;"></iframe>
+    </div>
+    <div style="position:relative;padding-bottom:177.78%;height:0;overflow:hidden;border-radius:12px;">
+      <iframe src="https://www.youtube.com/embed/Wp8iLS5HqPM" title="Ремонт видео 2" allowfullscreen loading="lazy" style="position:absolute;top:0;left:0;width:100%;height:100%;border:none;border-radius:12px;"></iframe>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Какво включва услугата</h2>
+  <div class="card-grid">
+    <div class="card"><h3>Армировъчна мрежа</h3><p>Нанасяме мрежа в ъглите за трайност — без нея пукнатините се връщат при следващото разширение на дограмата.</p></div>
+    <div class="card"><h3>Ъглова лайсна</h3><p>Алуминиева ъглова лайсна за чист, прав ъгъл — видим резултат, устойчив на удари.</p></div>
+    <div class="card"><h3>Финна шпакловка</h3><p>Финишен слой шпакловка и шлайфане — готово за директно боядисване без допълнителна подготовка.</p></div>
+  </div>
+  <ul class="checks">
+    <li>Почистване на стария мазилков ръб около дограмата</li>
+    <li>Армировъчна мрежа в ъглите за трайност</li>
+    <li>Ъглова лайсна за равен ъгъл и чист ръб</li>
+    <li>Финна шпакловка и шлайфане — готово за боя</li>
+    <li>Почистване след приключване</li>
+  </ul>
+</section>
 
 <section>
   <h2>Как протича работата</h2>
