@@ -21,6 +21,45 @@
     .btn-out { border:1px solid rgba(201,148,58,.4); color:var(--gold2); }
     .logo { font-size:.85rem; letter-spacing:.15em; color:var(--gold); margin-bottom:2.5rem; font-weight:700; text-transform:uppercase; }
   </style>
+
+    <!-- Google Ads AW — зарежда се ВИНАГИ, без да чака cookie съгласие -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18264667036"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'AW-18264667036');
+
+    // Tracking на телефонни кликове — веднага след зареждане на страницата
+    window.addEventListener('load', function() {
+      document.querySelectorAll('a[href^="tel:"]').forEach(function(el) {
+        el.addEventListener('click', function() {
+          gtag('event', 'conversion', {'send_to': 'AW-18264667036/SmmrCLHN9dQcEJznooVE'});
+        });
+      });
+      var fb = document.querySelector('.floating-btns');
+      if (fb) fb.classList.add('ready');
+    });
+  </script>
+
+<!-- Google tag (gtag.js) — GA4 : G-SVED9CDFPR — зарежда се само след съгласие -->
+  <script>
+    function loadGA4() {
+      if (window._ga4Loaded) return;
+      window._ga4Loaded = true;
+      var s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=G-SVED9CDFPR';
+      document.head.appendChild(s);
+      s.onload = function() {
+        gtag('js', new Date());
+        gtag('config', 'G-SVED9CDFPR');
+      };
+    }
+
+    // Ако вече е дадено съгласие — зареждаме веднага
+    try { if (localStorage.getItem('cookiesAccepted') === '1') loadGA4(); } catch(x) {}
+  </script>
 </head>
 <body>
   <div class="wrap">
