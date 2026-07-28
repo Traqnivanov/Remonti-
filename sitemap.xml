@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://ivanov-remonti.com/</loc>
     <lastmod>2026-07-22</lastmod>
@@ -74,7 +75,7 @@
   </url>
   <url>
     <loc>https://ivanov-remonti.com/lom/</loc>
-    <lastmod>2026-07-05</lastmod>
+    <lastmod>2026-07-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -114,4 +115,29 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+
+  <!-- EN версия -->
+  <url>
+    <loc>https://ivanov-remonti.com/en/lom</loc>
+    <lastmod>2026-07-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="bg" href="https://ivanov-remonti.com/lom/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ivanov-remonti.com/en/lom"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://ivanov-remonti.com/de/lom"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ivanov-remonti.com/lom/"/>
+  </url>
+
+  <!-- DE версия -->
+  <url>
+    <loc>https://ivanov-remonti.com/de/lom</loc>
+    <lastmod>2026-07-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="bg" href="https://ivanov-remonti.com/lom/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ivanov-remonti.com/en/lom"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://ivanov-remonti.com/de/lom"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ivanov-remonti.com/lom/"/>
+  </url>
+
 </urlset>
