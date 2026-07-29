@@ -116,6 +116,14 @@
     <priority>0.7</priority>
   </url>
 
+  <!-- Montana -->
+  <url>
+    <loc>https://ivanov-remonti.com/montana/</loc>
+    <lastmod>2026-07-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
   <!-- EN версия -->
   <url>
     <loc>https://ivanov-remonti.com/en/lom</loc>
