@@ -196,6 +196,31 @@
     .trust-strip { background: #070c16; border-top: 1px solid rgba(201,148,58,.1); border-bottom: 1px solid rgba(201,148,58,.1); padding: 3.5rem 2.5rem; }
     .trust-strip-inner { max-width: 900px; margin: 0 auto; }
     .trust-items { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.5rem; margin-bottom: 2.5rem; }
+    #svcOverlay { display:none; position:fixed; inset:0; background:rgba(0,0,0,.85); z-index:9998; align-items:center; justify-content:center; padding:1rem; backdrop-filter:blur(4px); }
+    #svcOverlay.open { display:flex; }
+    .svc-box { background:var(--navy2); border:1px solid rgba(201,148,58,.25); border-radius:16px; max-width:560px; width:100%; max-height:88vh; overflow-y:auto; position:relative; }
+    .svc-head { position:relative; height:160px; overflow:hidden; border-radius:16px 16px 0 0; }
+    .svc-head img { width:100%; height:100%; object-fit:cover; filter:brightness(.55); }
+    .svc-close { position:absolute; top:12px; right:12px; width:40px; height:40px; border-radius:50%; background:rgba(0,0,0,.55); border:none; color:#fff; font-size:1.4rem; cursor:pointer; z-index:2; }
+    .svc-body { padding:1.6rem 1.8rem 2rem; }
+    .svc-title { font-family:'Fraunces',serif; font-size:1.5rem; color:#fff; font-weight:300; margin-bottom:.4rem; }
+    .svc-line { width:40px; height:2px; background:linear-gradient(90deg,var(--gold),var(--gold2)); margin-bottom:1.1rem; }
+    .svc-desc { color:#9ca3af; font-size:.9rem; line-height:1.8; margin-bottom:1.4rem; }
+    .svc-h4 { color:var(--gold); font-size:.7rem; text-transform:uppercase; letter-spacing:.1em; margin-bottom:.8rem; }
+    .svc-inc { display:flex; align-items:center; gap:.6rem; color:#d1d5db; font-size:.85rem; margin-bottom:.5rem; }
+    .svc-inc span { color:#10b981; font-weight:700; }
+    .svc-opt { padding:.9rem 1rem; border-radius:12px; border:1px solid rgba(255,255,255,.08); margin-bottom:.7rem; background:rgba(255,255,255,.03); }
+    .svc-opt-name { font-size:.9rem; color:#fff; font-weight:600; margin-bottom:.25rem; }
+    .svc-opt-desc { font-size:.8rem; color:#9ca3af; line-height:1.5; }
+    .svc-btns { display:flex; gap:.8rem; flex-wrap:wrap; margin-top:1.6rem; }
+    .svc-btns a, .svc-btns button { flex:1; min-width:130px; padding:.9rem 1.2rem; border-radius:12px; font-weight:700; font-size:.9rem; cursor:pointer; text-decoration:none; text-align:center; font-family:inherit; border:none; }
+    .svc-call { background:linear-gradient(135deg,var(--gold),var(--gold2)); color:#0d1b2e; }
+    .svc-msg { background:rgba(37,211,102,.12); color:#25d366; border:1px solid rgba(37,211,102,.4); }
+    .svc-thumbs { display:grid; grid-template-columns:repeat(3,1fr); gap:6px; margin-top:.6rem; }
+    .svc-thumb { aspect-ratio:4/3; overflow:hidden; border-radius:8px; cursor:pointer; border:1px solid rgba(201,148,58,.15); }
+    .svc-thumb img { width:100%; height:100%; object-fit:cover; transition:transform .4s; }
+    .svc-thumb:hover img { transform:scale(1.08); }
+
     @media (max-width: 700px) { .trust-items { grid-template-columns: 1fr; } }
     .trust-item { background: rgba(201,148,58,.04); border: 1px solid rgba(201,148,58,.15); border-radius: 10px; padding: 1.2rem 1.4rem; }
     .trust-icon { font-size: 1.4rem; margin-bottom: .5rem; }
@@ -410,7 +435,6 @@
   <a href="#reviews" onclick="closeMobileMenu()">Bewertungen</a>
   <a href="#faq" onclick="closeMobileMenu()">FAQ</a>
   <a href="tel:+359876936184" onclick="closeMobileMenu()" style="color:var(--gold);font-weight:700;">📞 +359 876 936 184</a>
-  <a href="/lom/" onclick="closeMobileMenu()" style="font-size:.8rem;opacity:.5;">🇧🇬 Български</a>
 </div>
 
 <nav>
@@ -425,9 +449,8 @@
     <li><a href="#guarantee">Garantie</a></li>
     <li><a href="#reviews">Bewertungen</a></li>
     <li><a href="#faq">FAQ</a></li>
-    <li><a href="https://ivanov-remonti.com/lom/za-men">Über mich</a></li>
+    <li><a href="/de/about/">Über mich</a></li>
     <li class="lang-switch">
-      <a href="/lom/" class="lang-btn">BG</a>
       <a href="/en/lom" class="lang-btn">EN</a>
       <a href="/de/lom" class="lang-btn active">DE</a>
     </li>
@@ -462,11 +485,11 @@
     <div class="hstat"><span class="hstat-num">0€</span><span class="hstat-label">Bei Mängeln</span></div>
   </div>
   <div style="display:flex;align-items:center;gap:1rem;margin-top:2rem;background:rgba(201,148,58,.06);border:1px solid rgba(201,148,58,.2);border-radius:12px;padding:1rem 1.4rem;max-width:420px;animation-delay:.9s;" class="reveal">
-    <img src="https://traqnivanov.github.io/Remonti-/maistor-ivanov-remonti-sofia.jpg" alt="Trayan Ivanov — Renovierungsfirma Lom" style="width:56px;height:56px;border-radius:50%;object-fit:cover;border:2px solid rgba(201,148,58,.4);flex-shrink:0;"/>
+    <img src="https://traqnivanov.github.io/Remonti-/trayan-ivanov-renovation-contractor-lom.jpg" alt="Trayan Ivanov — Renovierungsfirma Lom" style="width:56px;height:56px;border-radius:50%;object-fit:cover;border:2px solid rgba(201,148,58,.4);flex-shrink:0;"/>
     <div style="text-align:left;">
       <div style="font-family:'Fraunces',serif;font-size:1rem;color:white;font-weight:300;">Trayan Ivanov</div>
       <div style="font-size:.72rem;color:rgba(201,148,58,.7);letter-spacing:.06em;margin-top:.2rem;">Renovierungsfirma · 23 Jahre · Lom, Bulgarien</div>
-      <a href="https://ivanov-remonti.com/lom/za-men" style="font-size:.7rem;color:rgba(255,255,255,.35);text-decoration:none;margin-top:.2rem;display:block;">Über mich →</a>
+      <a href="/de/about/" style="font-size:.7rem;color:rgba(255,255,255,.35);text-decoration:none;margin-top:.2rem;display:block;">Über mich →</a>
     </div>
   </div>
 </section>
@@ -536,7 +559,7 @@
     </div>
 
     <div class="showcase">
-      <div class="svc-prem-card">
+      <div class="svc-prem-card" onclick="openSvc('spak')" style="cursor:pointer;">
         <img class="card-img" src="https://traqnivanov.github.io/Remonti-/shpaklovka-steni-apartament-sofia.jpg" alt="Spachtelarbeiten — Lom, Bulgarien" loading="lazy"/>
         <div class="card-overlay"></div>
         <div class="card-ptag">✦ Leistung 01</div>
@@ -545,11 +568,11 @@
           <div class="card-pline"><span>Preis nach Besichtigung</span></div>
           <div class="card-pname">Spachteln</div>
           <div class="card-pdesc">Glatte Wände und Decken — mehrschichtig gespachtelt, staubfrei geschliffen, bereit für Farbe.</div>
-          <a href="tel:+359876936184" style="display:inline-flex;align-items:center;gap:.4rem;background:linear-gradient(135deg,#c9943a,#e8b84b);color:#0d1b2e;padding:.5rem 1rem;border-radius:20px;font-size:.75rem;font-weight:700;text-decoration:none;margin-top:.5rem;">📞 Angebot anfragen</a>
+          <div style="display:flex;align-items:center;gap:.7rem;margin-top:.5rem;"><a href="#contact" style="display:inline-flex;align-items:center;gap:.4rem;background:linear-gradient(135deg,#c9943a,#e8b84b);color:#0d1b2e;padding:.5rem 1rem;border-radius:20px;font-size:.75rem;font-weight:700;text-decoration:none;">Kostenloses Angebot →</a><span onclick="openSvc('spak')" style="display:inline-flex;align-items:center;gap:.3rem;background:linear-gradient(135deg,#c9943a,#e8b84b);color:#0d1b2e;padding:.5rem 1rem;border-radius:20px;font-size:.75rem;font-weight:700;white-space:nowrap;cursor:pointer;">ⓘ Mehr Infos →</span></div>
         </div>
       </div>
 
-      <div class="svc-prem-card">
+      <div class="svc-prem-card" onclick="openSvc('boya')" style="cursor:pointer;">
         <img class="card-img" src="https://traqnivanov.github.io/Remonti-/boyadisvane-apartament-sofia.jpg" alt="Malerarbeiten — Lom, Bulgarien" loading="lazy"/>
         <div class="card-overlay"></div>
         <div class="card-ptag">✦ Leistung 02</div>
@@ -558,11 +581,11 @@
           <div class="card-pline"><span>Preis nach Besichtigung</span></div>
           <div class="card-pname">Malerarbeiten</div>
           <div class="card-pdesc">Zweischichtiger Latexanstrich auf Grundierung. Böden und Möbel geschützt. Präzise Kantenarbeit.</div>
-          <a href="tel:+359876936184" style="display:inline-flex;align-items:center;gap:.4rem;background:linear-gradient(135deg,#c9943a,#e8b84b);color:#0d1b2e;padding:.5rem 1rem;border-radius:20px;font-size:.75rem;font-weight:700;text-decoration:none;margin-top:.5rem;">📞 Angebot anfragen</a>
+          <div style="display:flex;align-items:center;gap:.7rem;margin-top:.5rem;"><a href="#contact" style="display:inline-flex;align-items:center;gap:.4rem;background:linear-gradient(135deg,#c9943a,#e8b84b);color:#0d1b2e;padding:.5rem 1rem;border-radius:20px;font-size:.75rem;font-weight:700;text-decoration:none;">Kostenloses Angebot →</a><span onclick="openSvc('boya')" style="display:inline-flex;align-items:center;gap:.3rem;background:linear-gradient(135deg,#c9943a,#e8b84b);color:#0d1b2e;padding:.5rem 1rem;border-radius:20px;font-size:.75rem;font-weight:700;white-space:nowrap;cursor:pointer;">ⓘ Mehr Infos →</span></div>
         </div>
       </div>
 
-      <div class="svc-prem-card">
+      <div class="svc-prem-card" onclick="openSvc('gyp')" style="cursor:pointer;">
         <img class="card-img" src="https://traqnivanov.github.io/Remonti-/gipsokarton-okachen-tavan-sofia.jpg" alt="Trockenbau — Lom, Bulgarien" loading="lazy"/>
         <div class="card-overlay"></div>
         <div class="card-ptag">✦ Leistung 03</div>
@@ -571,11 +594,11 @@
           <div class="card-pline"><span>Preis nach Besichtigung</span></div>
           <div class="card-pname">Trockenbau</div>
           <div class="card-pdesc">Abgehängte Decken, Trennwände, LED-Nischen — mit Schallschutz auf Wunsch.</div>
-          <a href="tel:+359876936184" style="display:inline-flex;align-items:center;gap:.4rem;background:linear-gradient(135deg,#c9943a,#e8b84b);color:#0d1b2e;padding:.5rem 1rem;border-radius:20px;font-size:.75rem;font-weight:700;text-decoration:none;margin-top:.5rem;">📞 Angebot anfragen</a>
+          <div style="display:flex;align-items:center;gap:.7rem;margin-top:.5rem;"><a href="#contact" style="display:inline-flex;align-items:center;gap:.4rem;background:linear-gradient(135deg,#c9943a,#e8b84b);color:#0d1b2e;padding:.5rem 1rem;border-radius:20px;font-size:.75rem;font-weight:700;text-decoration:none;">Kostenloses Angebot →</a><span onclick="openSvc('gyp')" style="display:inline-flex;align-items:center;gap:.3rem;background:linear-gradient(135deg,#c9943a,#e8b84b);color:#0d1b2e;padding:.5rem 1rem;border-radius:20px;font-size:.75rem;font-weight:700;white-space:nowrap;cursor:pointer;">ⓘ Mehr Infos →</span></div>
         </div>
       </div>
 
-      <div class="svc-prem-card">
+      <div class="svc-prem-card" onclick="openSvc('vik')" style="cursor:pointer;">
         <img class="card-img" src="https://traqnivanov.github.io/Remonti-/vik-uslugi-sofia.jpg" alt="Sanitärarbeiten — Lom, Bulgarien" loading="lazy"/>
         <div class="card-overlay"></div>
         <div class="card-ptag">✦ Leistung 04</div>
@@ -584,11 +607,11 @@
           <div class="card-pline"><span>Preis nach Besichtigung</span></div>
           <div class="card-pname">Sanitär</div>
           <div class="card-pdesc">Kompletterneuerung oder Neubau von Wasserinstallationen. Sanitärmontage.</div>
-          <a href="tel:+359876936184" style="display:inline-flex;align-items:center;gap:.4rem;background:linear-gradient(135deg,#c9943a,#e8b84b);color:#0d1b2e;padding:.5rem 1rem;border-radius:20px;font-size:.75rem;font-weight:700;text-decoration:none;margin-top:.5rem;">📞 Angebot anfragen</a>
+          <div style="display:flex;align-items:center;gap:.7rem;margin-top:.5rem;"><a href="#contact" style="display:inline-flex;align-items:center;gap:.4rem;background:linear-gradient(135deg,#c9943a,#e8b84b);color:#0d1b2e;padding:.5rem 1rem;border-radius:20px;font-size:.75rem;font-weight:700;text-decoration:none;">Kostenloses Angebot →</a><span onclick="openSvc('vik')" style="display:inline-flex;align-items:center;gap:.3rem;background:linear-gradient(135deg,#c9943a,#e8b84b);color:#0d1b2e;padding:.5rem 1rem;border-radius:20px;font-size:.75rem;font-weight:700;white-space:nowrap;cursor:pointer;">ⓘ Mehr Infos →</span></div>
         </div>
       </div>
 
-      <div class="svc-prem-card">
+      <div class="svc-prem-card" onclick="openSvc('dog')" style="cursor:pointer;">
         <img class="card-img" src="https://traqnivanov.github.io/Remonti-/obrushchane-dograma-prozorci-sofia.jpg" alt="Fenster- und Türlaibungen — Lom, Bulgarien" loading="lazy"/>
         <div class="card-overlay"></div>
         <div class="card-ptag">✦ Leistung 05</div>
@@ -597,11 +620,11 @@
           <div class="card-pline"><span>Preis nach Besichtigung</span></div>
           <div class="card-pname">Fensterlaibungen</div>
           <div class="card-pdesc">Laibungsarbeiten um neue Türen und Fenster mit Armierungsgewebe — rissfrei, malerfertig.</div>
-          <a href="tel:+359876936184" style="display:inline-flex;align-items:center;gap:.4rem;background:linear-gradient(135deg,#c9943a,#e8b84b);color:#0d1b2e;padding:.5rem 1rem;border-radius:20px;font-size:.75rem;font-weight:700;text-decoration:none;margin-top:.5rem;">📞 Angebot anfragen</a>
+          <div style="display:flex;align-items:center;gap:.7rem;margin-top:.5rem;"><a href="#contact" style="display:inline-flex;align-items:center;gap:.4rem;background:linear-gradient(135deg,#c9943a,#e8b84b);color:#0d1b2e;padding:.5rem 1rem;border-radius:20px;font-size:.75rem;font-weight:700;text-decoration:none;">Kostenloses Angebot →</a><span onclick="openSvc('dog')" style="display:inline-flex;align-items:center;gap:.3rem;background:linear-gradient(135deg,#c9943a,#e8b84b);color:#0d1b2e;padding:.5rem 1rem;border-radius:20px;font-size:.75rem;font-weight:700;white-space:nowrap;cursor:pointer;">ⓘ Mehr Infos →</span></div>
         </div>
       </div>
 
-      <div class="svc-prem-card">
+      <div class="svc-prem-card" onclick="openSvc('maz')" style="cursor:pointer;">
         <img class="card-img" src="https://traqnivanov.github.io/Remonti-/dekorativna-mazilka-sofia.jpg" alt="Dekorputz — Lom, Bulgarien" loading="lazy"/>
         <div class="card-overlay"></div>
         <div class="card-ptag">✦ Leistung 06</div>
@@ -610,7 +633,7 @@
           <div class="card-pline"><span>Preis nach Besichtigung</span></div>
           <div class="card-pname">Dekorputz</div>
           <div class="card-pdesc">Venezianischer, strukturierter oder Reliefputz — einzigartiger Look für ein hochwertiges Interieur.</div>
-          <a href="tel:+359876936184" style="display:inline-flex;align-items:center;gap:.4rem;background:linear-gradient(135deg,#c9943a,#e8b84b);color:#0d1b2e;padding:.5rem 1rem;border-radius:20px;font-size:.75rem;font-weight:700;text-decoration:none;margin-top:.5rem;">📞 Angebot anfragen</a>
+          <div style="display:flex;align-items:center;gap:.7rem;margin-top:.5rem;"><a href="#contact" style="display:inline-flex;align-items:center;gap:.4rem;background:linear-gradient(135deg,#c9943a,#e8b84b);color:#0d1b2e;padding:.5rem 1rem;border-radius:20px;font-size:.75rem;font-weight:700;text-decoration:none;">Kostenloses Angebot →</a><span onclick="openSvc('maz')" style="display:inline-flex;align-items:center;gap:.3rem;background:linear-gradient(135deg,#c9943a,#e8b84b);color:#0d1b2e;padding:.5rem 1rem;border-radius:20px;font-size:.75rem;font-weight:700;white-space:nowrap;cursor:pointer;">ⓘ Mehr Infos →</span></div>
         </div>
       </div>
     </div>
@@ -921,6 +944,8 @@
         <div class="contact-item"><div class="c-icon">📍</div><div class="c-text"><strong>Einsatzgebiet</strong><span>Lom, Region Montana, Bulgarien</span></div></div>
         <div class="contact-item"><div class="c-icon">⏰</div><div class="c-text"><strong>Arbeitszeiten</strong><span>Mo – Sa: 08:00 – 19:00 · So: 09:00 – 16:00</span></div></div>
         <div class="contact-item"><div class="c-icon">📲</div><div class="c-text"><strong>WhatsApp</strong><a href="https://wa.me/359876936184">+359 876 936 184</a></div></div>
+        <div class="contact-item"><div class="c-icon">📳</div><div class="c-text"><strong>Viber</strong><a href="viber://chat?number=%2B359876936184">+359 876 936 184</a></div></div>
+        <div class="contact-item"><div class="c-icon">✉️</div><div class="c-text"><strong>E-Mail</strong><a href="mailto:ivanovremontibg@gmail.com">ivanovremontibg@gmail.com</a></div></div>
         <div class="contact-item">
           <div class="c-icon" style="background:rgba(24,119,242,.12);border-color:rgba(24,119,242,.35);">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 2C6.477 2 2 6.145 2 11.243c0 2.906 1.395 5.503 3.582 7.235V22l3.27-1.793c.874.24 1.8.37 2.748.37 5.523 0 10-4.145 10-9.243C22 6.145 17.523 2 12 2z" fill="#4A9EF5"/><path d="M13.5 14.5L10.5 11 5 14.5l6.167-6.5 3 3.5 5.5-3.5L13.5 14.5z" fill="#fff"/></svg>
@@ -947,7 +972,7 @@
 
 <footer>
   <div class="logo-text">Ivanov Remonti — Lom, Bulgarien<span style="font-size:.58rem;color:#2e3e50;letter-spacing:.15em;font-family:'Outfit';font-weight:300;display:block;margin-top:.2rem;">Renovierungsfirma · 23 Jahre Erfahrung</span></div>
-  <p>© <span class="cur-year"></span> · Alle Rechte vorbehalten · <a href="/lom/">🇧🇬 Български</a> · <a href="/en/lom">🇬🇧 English</a></p>
+  <p>© <span class="cur-year"></span> · Alle Rechte vorbehalten · <a href="/en/lom">🇬🇧 English</a></p>
 </footer>
 
 <div class="floating-btns">
@@ -1119,6 +1144,109 @@
     });
     lomgalRender();
   })();
+</script>
+<div id="svcOverlay" onclick="if(event.target===this)closeSvc()">
+  <div class="svc-box">
+    <div class="svc-head">
+      <button type="button" class="svc-close" onclick="closeSvc()">&times;</button>
+      <img id="svcImg" src="" alt=""/>
+    </div>
+    <div class="svc-body">
+      <div id="svcTitle" class="svc-title"></div>
+      <div class="svc-line"></div>
+      <div id="svcDesc" class="svc-desc"></div>
+      <div style="margin-bottom:1.4rem;">
+        <div class="svc-h4">✦ Im Leistungsumfang enthalten</div>
+        <div id="svcIncludes"></div>
+      </div>
+      <div>
+        <div class="svc-h4">✦ Leistungsarten</div>
+        <div id="svcOptions"></div>
+      </div>
+      <div id="svcGalWrap" style="margin-top:1.4rem;">
+        <div class="svc-h4">✦ Fotos von echten Projekten</div>
+        <div id="svcThumbs" class="svc-thumbs"></div>
+      </div>
+      <div class="svc-btns">
+        <button type="button" class="svc-call" onclick="window.location.href='tel:+359876936184'">📞 +359 876 936 184</button>
+        <a class="svc-msg" href="https://wa.me/359876936184" target="_blank" rel="noopener noreferrer">💬 WhatsApp</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  var deSvcData = {
+    spak: { img:'https://traqnivanov.github.io/Remonti-/shpaklovka-steni-apartament-sofia.jpg', title:'Spachteln', desc:'Mehrschichtiges Spachteln von Wänden und Decken. Staubfreies Schleifen für eine glatte Oberfläche. Wir reparieren Risse, verstärken mit Gewebe wo nötig und bereiten die Fläche für den Anstrich vor.', includes:['Untergrundvorbereitung','Armierungsgewebe wo nötig','Mehrschichtige Ausführung','Staubfreies Schleifen','Malerfertig','Schriftliche Garantie'], options:[{name:'Standardspachtel',desc:'Zweischichtiger Spachtel auf grundierter Fläche. Glatter Finish malerfertig.'},{name:'Gipsputz',desc:'Für einen feineren Finish. Risse mit Gewebe oder Vliess verstärkt.'},{name:'Feinputz',desc:'Letzte Schicht vor dem Anstrich — perfekt glatt, keine Spuren oder Unebenheiten.'}] },
+    boya: { img:'https://traqnivanov.github.io/Remonti-/boyadisvane-apartament-sofia.jpg', title:'Malerarbeiten', desc:'Zweischichtiger Latexanstrich auf Grundierung. Wir schleifen Defekte, schützen Böden und Möbel mit Schutzfolie und schneiden Kanten präzise an Ecken und Rahmen.', includes:['Flächengrundierung','Präzises Kantenschneiden','2 Anstriche','Boden- und Möbelschutz','Reinigung nach der Arbeit','Schriftliche Garantie'], options:[{name:'Einfarbig — Weiß',desc:'Zweischichtiger Anstrich in Weiß. Die wirtschaftlichste Lösung.'},{name:'Standard — Wände und Decken',desc:'Zweischichtiger Latexanstrich in Ihrer Wunschfarbe.'},{name:'Premium-Finish',desc:'Hochwertiger waschbarer Latex — satte Farbe, langlebiger Finish.'},{name:'Anstrich mit Reparaturen',desc:'Löcher und Risse füllen, schleifen und grundieren — vollständige Vorbereitung vor dem Anstrich.'}] },
+    gyp: { img:'https://traqnivanov.github.io/Remonti-/gipsokarton-okachen-tavan-sofia.jpg', title:'Trockenbau', desc:'Wir bauen abgehängte Decken, Trennwände und Nischen mit Knauf und Rigips Metallrahmen. Schall- und Wärmeschutz auf Wunsch, verdeckte LED-Beleuchtung auf Anfrage.', includes:['Knauf/Rigips Metallrahmen','Zweilagige Montage','Fugenfüllung','Schallschutz auf Wunsch','LED-Beleuchtung auf Wunsch','Schriftliche Garantie'], options:[{name:'Flache Decke',desc:'Standard abgehängte Gipskartondecke.'},{name:'LED-Nische',desc:'Verdeckte Beleuchtung für Decke und Wand.'},{name:'Wandverkleidung',desc:'Gipskartonverkleidung vor der Wand.'},{name:'Trennwand',desc:'Neue Trennwand aus Gipskarton.'}] },
+    vik: { img:'https://traqnivanov.github.io/Remonti-/vik-uslugi-sofia.jpg', title:'Sanitär', desc:'Vollständiger Austausch oder Neuinstallation von Wasser- und Abwassersystemen nach Plan. Sanitärmontage und Rohrverlegung.', includes:['Installationsplan','Rohrverlegung im Schlitz','Anschlussinstallation','Druckprüfung','Schlitzfüllung','Schriftliche Garantie'], options:[{name:'Mischbatterie austauschen',desc:'Alt entfernen, neu einbauen, auf Undichtigkeiten prüfen.'},{name:'Toilette austauschen',desc:'Alt entfernen, neu einbauen, befestigen und anschließen.'},{name:'Siphon / Flexrohr austauschen',desc:'Alt entfernen, neu einbauen, prüfen.'},{name:'Neue Sanitärinstallation',desc:'Kostenlose Besichtigung + festes Angebot.'},{name:'Notfallreparatur',desc:'Fehlerdiagnose und Reparatur.'}] },
+    dog: { img:'https://traqnivanov.github.io/Remonti-/obrushchane-dograma-prozorci-sofia.jpg', title:'Fenster- & Türlaibungen', desc:'Laibungsarbeiten um Türen und Fenster nach Rahmenaustausch. Wir arbeiten mit Armierungsgewebe und Eckprofilen — keine Risse, keine ungleichmäßigen Kanten.', includes:['Altes Material entfernen','Armierungsgewebe','Aluminium-Eckprofile','Abschlussputz','Malerfertig','Schriftliche Garantie'], options:[{name:'Laibung mit Eckschiene',desc:'Spachteln um Fenster oder Tür mit Aluminium-Eckschiene — gerader Rand, malerfertig.'}] },
+    maz: { img:'https://traqnivanov.github.io/Remonti-/dekorativna-mazilka-sofia.jpg', title:'Dekorputz', desc:'Venezianischer, strukturierter oder Reliefputz — einzigartige Textur und hochwertiger Finish.', includes:['Untergrundvorbereitung und Grundierung','2–3 Schichten Putz','Polieren und Finish','Schutzlack auf Wunsch','Einzigartiges Ergebnis','Schriftliche Garantie'], options:[{name:'Strukturputz',desc:'Relieftextur in verschiedenen Korngrößen.'},{name:'Venezianischer Putz',desc:'Luxuriöser glatter Putz mit Marmoreffekt.'},{name:'Reliefputz',desc:'Handaufgetragenes Relief. Einzigartiges Aussehen.'},{name:'Metalliceffekt',desc:'Gold, Silber oder Bronze. Premium-Finish.'}] }
+  };
+
+  var deGalImgs = [
+    {u:"https://traqnivanov.github.io/Remonti-/fina-shpaklovka-steni-sofia-01.jpg",c:"spak"},
+    {u:"https://traqnivanov.github.io/Remonti-/shpaklovka-s-mreja-sofia-01.jpg",c:"spak"},
+    {u:"https://traqnivanov.github.io/Remonti-/shpaklovka-boyadisvane-gipsokarton-sofia-08.jpg",c:"spak"},
+    {u:"https://traqnivanov.github.io/Remonti-/cyalosen-remont-shpaklovka-sofia-01.jpg",c:"spak"},
+    {u:"https://traqnivanov.github.io/Remonti-/remont-apartament-lom-01.jpg",c:"spak"},
+    {u:"https://traqnivanov.github.io/Remonti-/bezprahovo-shlaifane-lom-01.jpg",c:"spak"},
+    {u:"https://traqnivanov.github.io/Remonti-/boyadisvane-apartament-naseteni-cvetove-lateks-sofia.jpg",c:"boya"},
+    {u:"https://traqnivanov.github.io/Remonti-/boyadisvane-lateks-steni-cena-trud-sofia.jpg",c:"boya"},
+    {u:"https://traqnivanov.github.io/Remonti-/boyadisvane-steni-tavani-apartament-sofia.jpg",c:"boya"},
+    {u:"https://traqnivanov.github.io/Remonti-/boyadisvane-gipsokarton-skrito-osvetlenie-led-nisha-sofia.jpg",c:"boya"},
+    {u:"https://traqnivanov.github.io/Remonti-/gipsokarton-led-nisha-sofia-03.jpg",c:"gyp"},
+    {u:"https://traqnivanov.github.io/Remonti-/gipsokarton-predstenna-obshivka-sofia.jpg",c:"gyp"},
+    {u:"https://traqnivanov.github.io/Remonti-/gipsokarton-tavan-sofia-16.jpg",c:"gyp"},
+    {u:"https://traqnivanov.github.io/Remonti-/gipsokarton-montazh-apartament-sofia.jpg",c:"gyp"},
+    {u:"https://traqnivanov.github.io/Remonti-/predi-sled-remont-dnevna-gipsokarton-led-sofia.jpg",c:"gyp"},
+    {u:"https://traqnivanov.github.io/Remonti-/gipsokarton-rgb-led-nisha-dnevna-sofia.jpg",c:"gyp"},
+    {u:"https://traqnivanov.github.io/Remonti-/vik-instalacia-sofia-02.jpg",c:"vik"},
+    {u:"https://traqnivanov.github.io/Remonti-/smyana-vik-instalaciya-apartament-sofia.jpg",c:"vik"},
+    {u:"https://traqnivanov.github.io/Remonti-/vik-remont-apartament-maystor-sofia.jpg",c:"vik"},
+    {u:"https://traqnivanov.github.io/Remonti-/instalaciya-vik-lom.jpg",c:"vik"},
+    {u:"https://traqnivanov.github.io/Remonti-/montaj-vik-instalaciya-lom.jpg",c:"vik"},
+    {u:"https://traqnivanov.github.io/Remonti-/smyana-sifoni-mivki-lom.jpg",c:"vik"},
+    {u:"https://traqnivanov.github.io/Remonti-/vodoprovod-kanalizaciya-lom.jpg",c:"vik"},
+    {u:"https://traqnivanov.github.io/Remonti-/izgrazhdane-na-vik-lom.jpg",c:"vik"},
+    {u:"https://traqnivanov.github.io/Remonti-/podmenya-sanitariya-lom.jpg",c:"vik"},
+    {u:"https://traqnivanov.github.io/Remonti-/montaj-sanitariya-lom.jpg",c:"vik"},
+    {u:"https://traqnivanov.github.io/Remonti-/obrushchane-prozorci-apartament-sofia-01.jpg",c:"dog"},
+    {u:"https://traqnivanov.github.io/Remonti-/obrushchane-vrata-apartament-sofia.jpg",c:"dog"},
+    {u:"https://traqnivanov.github.io/Remonti-/obrushchane-dograma-cena-trud-sofia.jpg",c:"dog"},
+    {u:"https://traqnivanov.github.io/Remonti-/dekorativna-mazilka-sofia-02.jpg",c:"maz"},
+    {u:"https://traqnivanov.github.io/Remonti-/dekorativna-pqsachna-mazilka-sofia-04.jpg",c:"maz"},
+    {u:"https://traqnivanov.github.io/Remonti-/dekorativna-pqsachna-mazilka-sofia-01.jpg",c:"maz"}
+  ];
+
+  function openSvc(id) {
+    var d = deSvcData[id]; if(!d) return;
+    document.getElementById('svcImg').src = d.img;
+    document.getElementById('svcImg').alt = d.title;
+    document.getElementById('svcTitle').textContent = d.title;
+    document.getElementById('svcDesc').textContent = d.desc;
+    document.getElementById('svcIncludes').innerHTML = d.includes.map(function(i){ return '<div class="svc-inc"><span>✓</span>'+i+'</div>'; }).join('');
+    document.getElementById('svcOptions').innerHTML = d.options.map(function(o){ return '<div class="svc-opt"><div class="svc-opt-name">'+o.name+'</div><div class="svc-opt-desc">'+o.desc+'</div></div>'; }).join('');
+    var imgs = deGalImgs.filter(function(x){return x.c===id;});
+    var gw = document.getElementById('svcGalWrap'), gt = document.getElementById('svcThumbs');
+    if(imgs.length){ gw.style.display='block'; gt.innerHTML = imgs.slice(0,6).map(function(im,k){ return '<div class="svc-thumb" onclick="openLb(\''+id+'\','+k+')"><img src="'+im.u+'" alt="'+d.title+'" loading="lazy"/></div>'; }).join(''); }
+    else { gw.style.display='none'; }
+    document.getElementById('svcOverlay').classList.add('open');
+    document.body.style.overflow='hidden';
+  }
+  function closeSvc() {
+    document.getElementById('svcOverlay').classList.remove('open');
+    document.body.style.overflow='';
+  }
+  function openLb(id, idx) {
+    var imgs = deGalImgs.filter(function(x){return x.c===id;});
+    lomlbIdx = idx; lomgalVisible = imgs;
+    document.getElementById('lomlbImg').src = imgs[idx].u;
+    document.getElementById('lomlbCounter').textContent = (idx+1)+' / '+imgs.length;
+    document.getElementById('lomlb').classList.add('open');
+  }
+  document.addEventListener('keydown', function(e){ if(e.key==='Escape') closeSvc(); });
 </script>
 </body>
 </html>
