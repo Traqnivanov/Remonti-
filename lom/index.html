@@ -17,7 +17,7 @@
       document.head.appendChild(s);
       s.onload = function() {
         gtag('js', new Date());
-        gtag('config', 'G-SVED9CDFPR');
+        gtag('config', 'G-SVED9CDFPR', {'anonymize_ip': true});
         document.querySelectorAll('a[href^="tel:"]').forEach(function(el) {
           el.addEventListener('click', function() {
             gtag('event', 'phone_call_click', { event_category: 'Contact', event_label: 'Call 0876936184' });
