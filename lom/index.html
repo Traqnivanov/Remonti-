@@ -36,9 +36,13 @@
   <meta name="description" content="Строителни и довършителни ремонти в Лом — шпакловка, боядисване, гипсокартон. Цялостен ремонт до ключ, обновяване на апартаменти и къщи. Безплатен оглед." />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://ivanov-remonti.com/lom/" />
-  <meta property="og:title" content="Строителни ремонти Лом | Шпакловка, Боядисване, Гипсокартон | Ivanov Remonti" />
+  <link rel="alternate" hreflang="bg" href="https://ivanov-remonti.com/lom/" />
+  <link rel="alternate" hreflang="en" href="https://ivanov-remonti.com/en/lom/" />
+  <link rel="alternate" hreflang="de" href="https://ivanov-remonti.com/de/lom/" />
+  <link rel="alternate" hreflang="x-default" href="https://ivanov-remonti.com/lom/" />
+  <meta property="og:title" content="Строителни ремонти Лом | Шпакловка, Боядисване, Гипсокартон" />
   <meta property="og:description" content="Довършителни ремонти в Лом — шпакловка, боядисване, гипсокартон, ВиК. Безплатна консултация, писмена гаранция. Идваме при вас. 0876 936 184" />
-  <meta property="og:image" content="https://raw.githubusercontent.com/Traqnivanov/Remonti-/main/lom/ivanov-remonti-stroitelni-remonti-lom-logo.jpg" />
+  <meta property="og:image" content="https://traqnivanov.github.io/Remonti-/lom/ivanov-remonti-stroitelni-remonti-lom-logo.jpg" />
   <meta property="og:url" content="https://ivanov-remonti.com/lom/" />
   <meta property="og:type" content="website" />
 
@@ -545,7 +549,7 @@
 
 <!-- COOKIE -->
 <div class="cookie-banner" id="cookieBanner">
-  <p><strong>Бисквитки:</strong> Използваме бисквитки за подобряване на преживяването. <a href="#" onclick="showPrivacy()" style="color:var(--gold);">Политика за поверителност</a></p>
+  <p><strong>Бисквитки:</strong> Използваме бисквитки за подобряване на преживяването. <a href="#privacy" onclick="showPrivacy()" style="color:var(--gold);">Политика за поверителност</a></p>
   <button type="button" class="cookie-btn" onclick="acceptCookies()">Приемам</button>
 </div>
 
@@ -569,7 +573,7 @@
 
 <nav>
   <a class="logo" href="https://ivanov-remonti.com/lom/">
-    <img src="https://traqnivanov.github.io/Remonti-/ivanov-remonti-logo-stroitelni-uslugi-sofia.jpg" alt="Ivanov Remonti лого"/>
+    <img src="https://traqnivanov.github.io/Remonti-/ivanov-remonti-logo-stroitelni-uslugi-sofia.jpg" alt="Ivanov Remonti лого" fetchpriority="high" decoding="async"/>
     <div>Ти Почиваш — Ние Ремонтираме<span>Ремонти Лом и региона</span></div>
   </a>
   <ul class="nav-links">
@@ -590,6 +594,7 @@
   </div>
 </nav>
 
+<main id="main-content">
 <!-- HERO -->
 <section class="hero">
   <div class="hero-watermark">Лом</div>
@@ -822,11 +827,47 @@
     </div>
     <p class="section-tag" style="text-align:center;margin-bottom:1.2rem;">▶ Видеа от обекти</p>
     <div class="lomvid-grid">
-      <div class="lomvid-wrap"><iframe src="https://www.youtube.com/embed/WNbgtSS7hlU" title="Ремонт 1 — Ivanov Remonti" allowfullscreen loading="lazy"></iframe></div>
-      <div class="lomvid-wrap"><iframe src="https://www.youtube.com/embed/Wp8iLS5HqPM" title="Ремонт 2 — Ivanov Remonti" allowfullscreen loading="lazy"></iframe></div>
-      <div class="lomvid-wrap"><iframe src="https://www.youtube.com/embed/P9afybbtrWM" title="Ремонт 3 — Ivanov Remonti" allowfullscreen loading="lazy"></iframe></div>
-      <div class="lomvid-wrap"><iframe src="https://www.youtube.com/embed/MnHOg0HSDm0" title="Ремонт на стара къща в Лом — Ivanov Remonti" allowfullscreen loading="lazy"></iframe></div>
+      <div class="lomvid-wrap yt-lite" data-id="WNbgtSS7hlU" data-title="Ремонт 1 — Ivanov Remonti" style="cursor:pointer;">
+        <img src="https://i.ytimg.com/vi/WNbgtSS7hlU/hqdefault.jpg" alt="Ремонт 1" loading="lazy" decoding="async" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;"/>
+        <button type="button" aria-label="Пусни видео" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:56px;height:56px;background:rgba(255,0,0,.85);border:none;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="white"><path d="M8 5v14l11-7z"/></svg>
+        </button>
+      </div>
+      <div class="lomvid-wrap yt-lite" data-id="Wp8iLS5HqPM" data-title="Ремонт 2 — Ivanov Remonti" style="cursor:pointer;">
+        <img src="https://i.ytimg.com/vi/Wp8iLS5HqPM/hqdefault.jpg" alt="Ремонт 2" loading="lazy" decoding="async" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;"/>
+        <button type="button" aria-label="Пусни видео" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:56px;height:56px;background:rgba(255,0,0,.85);border:none;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="white"><path d="M8 5v14l11-7z"/></svg>
+        </button>
+      </div>
+      <div class="lomvid-wrap yt-lite" data-id="P9afybbtrWM" data-title="Ремонт 3 — Ivanov Remonti" style="cursor:pointer;">
+        <img src="https://i.ytimg.com/vi/P9afybbtrWM/hqdefault.jpg" alt="Ремонт 3" loading="lazy" decoding="async" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;"/>
+        <button type="button" aria-label="Пусни видео" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:56px;height:56px;background:rgba(255,0,0,.85);border:none;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="white"><path d="M8 5v14l11-7z"/></svg>
+        </button>
+      </div>
+      <div class="lomvid-wrap yt-lite" data-id="MnHOg0HSDm0" data-title="Ремонт на стара къща в Лом — Ivanov Remonti" style="cursor:pointer;">
+        <img src="https://i.ytimg.com/vi/MnHOg0HSDm0/hqdefault.jpg" alt="Ремонт на стара къща в Лом" loading="lazy" decoding="async" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;"/>
+        <button type="button" aria-label="Пусни видео" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:56px;height:56px;background:rgba(255,0,0,.85);border:none;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="white"><path d="M8 5v14l11-7z"/></svg>
+        </button>
+      </div>
     </div>
+<script>
+document.querySelectorAll('.yt-lite').forEach(function(el) {
+  el.addEventListener('click', function() {
+    var id = el.getAttribute('data-id');
+    var title = el.getAttribute('data-title');
+    var iframe = document.createElement('iframe');
+    iframe.src = 'https://www.youtube-nocookie.com/embed/' + id + '?autoplay=1';
+    iframe.title = title;
+    iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+    iframe.allowFullscreen = true;
+    iframe.style.cssText = 'position:absolute;top:0;left:0;width:100%;height:100%;border:none;';
+    el.innerHTML = '';
+    el.appendChild(iframe);
+  });
+});
+</script>
     <p class="section-tag" style="text-align:center;margin:0 0 1.2rem;">▦ Снимки от обекти</p>
     <div class="lomgal-filters" id="lomgalFilters">
       <button type="button" class="lomgal-fbtn active" data-cat="all" onclick="lomgalFilter('all')">Всички</button>
@@ -880,22 +921,22 @@
     <div class="process-grid">
       <div class="process-step">
         <div class="process-circle">1</div>
-        <h4>Безплатен оглед в Лом</h4>
+        <h3>Безплатен оглед в Лом</h3>
         <p>Идвам, оглеждам и давам честен съвет — без ангажимент и без скрити цели.</p>
       </div>
       <div class="process-step">
         <div class="process-circle">2</div>
-        <h4>Точна оферта</h4>
+        <h3>Точна оферта</h3>
         <p>Получавате детайлна оферта с фиксирана цена. Без изненади в края — цената е крайна.</p>
       </div>
       <div class="process-step">
         <div class="process-circle">3</div>
-        <h4>Ремонтът започва</h4>
+        <h3>Ремонтът започва</h3>
         <p>Работя по договор и пращам фото и видео отчет на всеки етап директно на телефона.</p>
       </div>
       <div class="process-step">
         <div class="process-circle">4</div>
-        <h4>Предаване</h4>
+        <h3>Предаване</h3>
         <p>Почиствам задълбочено и предавам готов, чист обект — оглеждаме го заедно, преди да приема, че е завършен.</p>
       </div>
     </div>
@@ -916,17 +957,17 @@
     <div class="guarantee-points">
       <div class="gpoint">
         <span class="gpoint-icon">📄</span>
-        <h4>Подписан договор</h4>
+        <h3>Подписан договор</h3>
         <p>Работя само по договор с фиксирана цена и срок — никакви изненади в края.</p>
       </div>
       <div class="gpoint">
         <span class="gpoint-icon">🔏</span>
-        <h4>Писмена гаранция</h4>
+        <h3>Писмена гаранция</h3>
         <p>За всяка извършена дейност — черно на бяло, с подпис.</p>
       </div>
       <div class="gpoint">
         <span class="gpoint-icon">🔄</span>
-        <h4>Безплатна корекция</h4>
+        <h3>Безплатна корекция</h3>
         <p>Ако нещо не е наред — връщам се и оправям. Без доплащане, без оправдания.</p>
       </div>
     </div>
@@ -946,10 +987,10 @@
       </div>
     </div>
     <div>
-      <div class="benefit-row"><div class="benefit-icon-wrap">😌</div><div><h4>Спокойствие за теб</h4><p>Цялата работа и отговорност са на едно място. Няма прехвърляне, няма „това не е моя работа".</p></div></div>
-      <div class="benefit-row"><div class="benefit-icon-wrap">🤝</div><div><h4>Без скрито</h4><p>Ясна сметка, чист резултат, никакви изненади в края.</p></div></div>
-      <div class="benefit-row"><div class="benefit-icon-wrap">👑</div><div><h4>Доверени хора в дома ти</h4><p>Само хора, за които гарантирам — никой случаен.</p></div></div>
-      <div class="benefit-row"><div class="benefit-icon-wrap">⏱️</div><div><h4>Казаната дата се спазва</h4><p>Изскочи ли нещо, научаваш предварително — не накрая.</p></div></div>
+      <div class="benefit-row"><div class="benefit-icon-wrap">😌</div><div><h3>Спокойствие за теб</h3><p>Цялата работа и отговорност са на едно място. Няма прехвърляне, няма „това не е моя работа".</p></div></div>
+      <div class="benefit-row"><div class="benefit-icon-wrap">🤝</div><div><h3>Без скрито</h3><p>Ясна сметка, чист резултат, никакви изненади в края.</p></div></div>
+      <div class="benefit-row"><div class="benefit-icon-wrap">👑</div><div><h3>Доверени хора в дома ти</h3><p>Само хора, за които гарантирам — никой случаен.</p></div></div>
+      <div class="benefit-row"><div class="benefit-icon-wrap">⏱️</div><div><h3>Казаната дата се спазва</h3><p>Изскочи ли нещо, научаваш предварително — не накрая.</p></div></div>
     </div>
   </div>
 </section>
@@ -1077,7 +1118,7 @@
 
 <!-- GOOGLE MAPS — Лом -->
 <div style="width:100%;height:280px;filter:grayscale(.8) brightness(.6);">
-  <iframe src="https://maps.google.com/maps?q=43.8224411,23.2399387&z=16&output=embed" width="100%" height="280" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  <iframe src="https://maps.google.com/maps?q=43.8224411,23.2399387&z=16&output=embed" title="Местоположение на Ivanov Remonti в Лом" width="100%" height="280" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 </div>
 
 <!-- CONTACT -->
@@ -1126,6 +1167,8 @@
   <p style="font-size:.88rem;color:rgba(255,255,255,.5);line-height:1.9;margin-bottom:1rem;">Събираме само данните, които вие ни предоставяте доброволно. Не предоставяме данни на трети страни. За въпроси: 0876 936 184.</p>
   <a href="#" onclick="hidePrivacy()" class="btn-gold" style="display:inline-block;text-decoration:none;margin-top:1rem;">← Обратно</a>
 </div>
+
+</main>
 
 <footer>
   <div class="logo-text">Ти Почиваш — Ние Ремонтираме<span style="font-size:.58rem;color:#2e3e50;letter-spacing:.15em;font-family:'Outfit';font-weight:300;display:block;margin-top:.2rem;">Лом · Монтана · Берковица · Козлодуй · региона</span></div>
