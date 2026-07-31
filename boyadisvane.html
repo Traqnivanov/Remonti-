@@ -143,7 +143,7 @@ footer .logo-text{font-family:'Fraunces',serif;color:var(--cream);font-size:1rem
     });
   </script>
 
-<!-- Google tag (gtag.js) — GA4 : G-SVED9CDFPR — зарежда се само след съгласие -->
+<!-- Google tag (gtag.js) — GA4 : G-SVED9CDFPR -->
   <script>
     function loadGA4() {
       if (window._ga4Loaded) return;
@@ -154,12 +154,10 @@ footer .logo-text{font-family:'Fraunces',serif;color:var(--cream);font-size:1rem
       document.head.appendChild(s);
       s.onload = function() {
         gtag('js', new Date());
-        gtag('config', 'G-SVED9CDFPR');
+        gtag('config', 'G-SVED9CDFPR', {'anonymize_ip': true});
       };
     }
-
-    // Ако вече е дадено съгласие — зареждаме веднага
-    try { if (localStorage.getItem('cookiesAccepted') === '1') loadGA4(); } catch(x) {}
+    loadGA4();
   </script>
 </head>
 <body>
