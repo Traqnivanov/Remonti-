@@ -117,7 +117,7 @@ footer .logo-text{font-family:'Fraunces',serif;color:var(--cream);font-size:1rem
   .mobile-price-strip{display:flex;gap:0;margin:1.2rem 0 1rem;border-top:1px solid var(--gold);padding-top:.9rem;}
   .mps-item{flex:1;text-align:center;padding:.1rem .3rem;}
   .mps-item+.mps-item{border-left:1px solid rgba(201,148,58,.2);}
-  .mps-amount{font-family:'Fraunces',serif;font-size:1rem;color:var(--white);line-height:1.2;}
+  .mps-amount{font-family:'Fraunces',serif;font-size:1rem;color:var(--white);line-height:1.2;white-space:nowrap;}
   .mps-euro{font-size:.75rem;color:var(--muted);line-height:1.3;}
   .mps-label{font-size:.72rem;color:var(--muted);margin-top:.2rem;text-transform:uppercase;letter-spacing:.08em;line-height:1.3;}
 }
@@ -143,7 +143,7 @@ footer .logo-text{font-family:'Fraunces',serif;color:var(--cream);font-size:1rem
     });
   </script>
 
-<!-- Google tag (gtag.js) — GA4 : G-SVED9CDFPR — зарежда се само след съгласие -->
+<!-- Google tag (gtag.js) — GA4 : G-SVED9CDFPR -->
   <script>
     function loadGA4() {
       if (window._ga4Loaded) return;
@@ -154,12 +154,10 @@ footer .logo-text{font-family:'Fraunces',serif;color:var(--cream);font-size:1rem
       document.head.appendChild(s);
       s.onload = function() {
         gtag('js', new Date());
-        gtag('config', 'G-SVED9CDFPR');
+        gtag('config', 'G-SVED9CDFPR', {'anonymize_ip': true});
       };
     }
-
-    // Ако вече е дадено съгласие — зареждаме веднага
-    try { if (localStorage.getItem('cookiesAccepted') === '1') loadGA4(); } catch(x) {}
+    loadGA4();
   </script>
 </head>
 <body>
