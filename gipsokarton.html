@@ -15,7 +15,8 @@
 <link rel="icon" type="image/x-icon" href="https://traqnivanov.github.io/Remonti-/favicon.png"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;1,9..144,300;1,9..144,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;1,9..144,300;1,9..144,400&family=Outfit:wght@300;400;500;600&display=swap" onload="this.onload=null;this.rel='stylesheet'"/>
+<noscript><link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;1,9..144,300;1,9..144,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet"/></noscript>
 
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Service","serviceType":"Монтаж на гипсокартон — окачени тавани и преградни стени","name":"Гипсокартон София — Ivanov Remonti","description":"Монтаж на гипсокартон в София — окачени тавани, преградни стени, LED ниши, влагоустойчив гипсокартон за баня, звукоизолация. Фиксирана цена, писмена гаранция, безплатен оглед. 23 г. опит.","provider":{"@type":"HomeAndConstructionBusiness","name":"Ivanov Remonti","telephone":"+359877810418","address":{"@type":"PostalAddress","addressLocality":"София","addressCountry":"BG"},"url":"https://ivanov-remonti.com/","knowsAbout":["гипсокартон","монтаж на гипсокартон","окачени тавани","окачен таван","преградни стени","предстенна обшивка","влагоустойчив гипсокартон","гипсокартон за баня","звукоизолация","скрито осветление","LED ниши","лунички","довършителни ремонти","строителни ремонти","вътрешни ремонти","ремонт на апартамент","цялостен ремонт"]},"areaServed":"София","url":"https://ivanov-remonti.com/gipsokarton","offers":{"@type":"Offer","priceSpecification":{"@type":"PriceSpecification","priceCurrency":"BGN","minPrice":32,"unitText":"м²"}}}</script>
 
@@ -100,7 +101,7 @@ footer .logo-text{font-family:'Fraunces',serif;color:var(--cream);font-size:1rem
 .lom-lb-prev{left:3%;}
 .lom-lb-next{right:3%;}
 @media(max-width:760px){.nav-links{flex-wrap:wrap;gap:.8rem;font-size:.78rem;justify-content:center;}nav{flex-direction:column;gap:.7rem;}.lom-gallery-btn img{height:150px;}.lom-lb-nav{width:38px;height:38px;font-size:1.3rem;}}
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto;}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto;}*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;}}
 /* REVIEWS */
 .review-card { background: #111827; border: 1px solid rgba(201,148,58,0.25); border-radius: 4px; padding: 2rem; position: relative; }
 .review-card::before { content: '"'; position: absolute; top: .5rem; right: 1.5rem; font-family: 'Cormorant Garamond', serif; font-size: 5rem; color: rgba(201,148,58,.12); line-height: 1; }
@@ -176,6 +177,7 @@ footer .logo-text{font-family:'Fraunces',serif;color:var(--cream);font-size:1rem
   </ul>
 </nav>
 
+<main id="main-content">
 <div class="hero">
   <div class="crumb"><a href="https://ivanov-remonti.com/">Ремонти София</a> / Гипсокартон</div>
   <h1>Гипсокартон в София — <em>окачени тавани, преградни стени и LED ниши</em></h1>
@@ -276,14 +278,36 @@ footer .logo-text{font-family:'Fraunces',serif;color:var(--cream);font-size:1rem
 <section>
   <h2>Видео от наши обекти</h2>
   <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:1rem;">
-    <div style="position:relative;padding-bottom:177.78%;height:0;overflow:hidden;border-radius:12px;">
-      <iframe src="https://www.youtube.com/embed/WNbgtSS7hlU" title="Ремонт видео 1" allowfullscreen loading="lazy" style="position:absolute;top:0;left:0;width:100%;height:100%;border:none;border-radius:12px;"></iframe>
+    <div class="yt-lite" data-id="WNbgtSS7hlU" data-title="Ремонт видео 1" style="position:relative;padding-bottom:177.78%;height:0;overflow:hidden;border-radius:12px;background:#000;cursor:pointer;">
+      <img src="https://i.ytimg.com/vi/WNbgtSS7hlU/hqdefault.jpg" alt="Ремонт видео 1" loading="lazy" decoding="async" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;border-radius:12px;"/>
+      <button type="button" aria-label="Пусни видео" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:56px;height:56px;background:rgba(255,0,0,.85);border:none;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="white"><path d="M8 5v14l11-7z"/></svg>
+      </button>
     </div>
-    <div style="position:relative;padding-bottom:177.78%;height:0;overflow:hidden;border-radius:12px;">
-      <iframe src="https://www.youtube.com/embed/Wp8iLS5HqPM" title="Ремонт видео 2" allowfullscreen loading="lazy" style="position:absolute;top:0;left:0;width:100%;height:100%;border:none;border-radius:12px;"></iframe>
+    <div class="yt-lite" data-id="Wp8iLS5HqPM" data-title="Ремонт видео 2" style="position:relative;padding-bottom:177.78%;height:0;overflow:hidden;border-radius:12px;background:#000;cursor:pointer;">
+      <img src="https://i.ytimg.com/vi/Wp8iLS5HqPM/hqdefault.jpg" alt="Ремонт видео 2" loading="lazy" decoding="async" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;border-radius:12px;"/>
+      <button type="button" aria-label="Пусни видео" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:56px;height:56px;background:rgba(255,0,0,.85);border:none;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="white"><path d="M8 5v14l11-7z"/></svg>
+      </button>
     </div>
   </div>
 </section>
+<script>
+document.querySelectorAll('.yt-lite').forEach(function(el) {
+  el.addEventListener('click', function() {
+    var id = el.getAttribute('data-id');
+    var title = el.getAttribute('data-title');
+    var iframe = document.createElement('iframe');
+    iframe.src = 'https://www.youtube-nocookie.com/embed/' + id + '?autoplay=1';
+    iframe.title = title;
+    iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+    iframe.allowFullscreen = true;
+    iframe.style.cssText = 'position:absolute;top:0;left:0;width:100%;height:100%;border:none;border-radius:12px;';
+    el.innerHTML = '';
+    el.appendChild(iframe);
+  });
+});
+</script>
 
 <div id="lomLightbox" class="lom-lightbox" role="dialog" aria-modal="true" aria-label="Преглед на снимка">
   <button type="button" class="lom-lb-close" id="lomLbClose" aria-label="Затвори">✕</button>
@@ -398,6 +422,8 @@ footer .logo-text{font-family:'Fraunces',serif;color:var(--cream);font-size:1rem
   <a class="phone-big" href="tel:0877810418">📞 0877 810 418</a>
   <div style="margin-top:1rem;"><a href="viber://chat?number=%2B359877810418" class="btn-outline">Viber съобщение</a></div>
 </div>
+
+</main>
 
 <footer>
   <div class="logo-text">Ти Почиваш — Ние Ремонтираме</div>
