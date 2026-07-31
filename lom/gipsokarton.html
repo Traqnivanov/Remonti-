@@ -18,7 +18,12 @@
 <link rel="icon" type="image/x-icon" href="https://traqnivanov.github.io/Remonti-/favicon.png"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;1,9..144,300;1,9..144,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<link rel="preload" as="style"
+      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;1,9..144,300;1,9..144,400&family=Outfit:wght@300;400;500;600&display=swap"
+      onload="this.onload=null;this.rel='stylesheet'"/>
+<noscript>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;1,9..144,300;1,9..144,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+</noscript>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Service", "serviceType": "Монтаж на гипсокартон — окачени тавани и преградни стени", "name": "Гипсокартон Лом — Ivanov Remonti", "description": "Монтаж на гипсокартон в Лом — окачени тавани, преградни стени, скрито осветление и LED ниши, влагоустойчив гипсокартон за баня, звукоизолация. Фиксирана цена, писмена гаранция, безплатен оглед. 23 г. опит.", "provider": {"@type": "HomeAndConstructionBusiness", "knowsAbout": ["гипсокартон", "монтаж на гипсокартон", "окачени тавани", "окачен таван", "преградни стени", "предстенна обшивка", "влагоустойчив гипсокартон", "гипсокартон за баня", "звукоизолация", "скрито осветление", "LED ниши", "лунички", "майстор", "строителни услуги", "строителни ремонти", "вътрешни ремонти", "довършителни ремонти", "цялостен ремонт до ключ", "ремонт на къща", "обновяване на апартамент"],
     "name": "Ivanov Remonti", "telephone": "+359876936184", "address": {"@type": "PostalAddress", "addressLocality": "Лом", "addressCountry": "BG"}, "url": "https://ivanov-remonti.com/lom/"}, "areaServed": ["Лом", "Монтана", "Берковица", "Козлодуй", "Вълчедръм"], "url": "https://ivanov-remonti.com/lom/gipsokarton"}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Колко височина взима окаченият таван?", "acceptedAnswer": {"@type": "Answer", "text": "Минимално около 5–7 см при прав таван на конструкция. При скрито осветление второто ниво слиза с още 10–12 см, но само по периферията — центърът на стаята остава висок."}}, {"@type": "Question", "name": "Пука ли се гипсокартонът по фугите?", "acceptedAnswer": {"@type": "Answer", "text": "Пука се, когато е монтиран грешно — платна без разместване на фугите, пестене на профили или фугиране без лента. Спазвам правилата за разположение на платната именно затова — и давам писмена гаранция за работата си."}}, {"@type": "Question", "name": "Може ли гипсокартон в баня?", "acceptedAnswer": {"@type": "Answer", "text": "Да, с влагоустойчиви (зелени) платна и правилна хидроизолация на мокрите зони. За тавани в баня това е стандартно и надеждно решение."}}, {"@type": "Question", "name": "Държи ли гипсокартонената стена телевизор или шкафове?", "acceptedAnswer": {"@type": "Answer", "text": "Да, когато се планира отрано — на местата за окачване се слагат допълнителни профили или усилване вътре в стената. Затова питам още на огледа какво ще виси и къде."}}, {"@type": "Question", "name": "Помага ли гипсокартонът за звукоизолация?", "acceptedAnswer": {"@type": "Answer", "text": "Да. Преградна стена или предстенна обшивка с минерална вата в кухината намалява осезаемо шума. Ефектът зависи от дебелината, вида на платната и запълването — казвам реалистично какво да очаквате на огледа."}}, {"@type": "Question", "name": "Колко струва гипсокартон на квадратен метър в Лом?", "acceptedAnswer": {"@type": "Answer", "text": "Цената зависи от вида конструкция, броя нива, осветлението и платната, затова я давам след безплатен оглед — писмено и фиксирано. Веднъж договорена, цената не се променя."}}, {"@type": "Question", "name": "Правите ли гипсокартон извън Лом?", "acceptedAnswer": {"@type": "Answer", "text": "Да — Монтана, Берковица, Козлодуй, Вълчедръм и региона. Огледът и замерването са безплатни."}}]}</script>
@@ -86,6 +91,49 @@ footer{text-align:center;padding:2.5rem 5%;border-top:1px solid rgba(201,148,58,
 footer .logo-text{font-family:'Fraunces',serif;color:var(--cream);font-size:1rem;margin-bottom:.6rem;}
 @media(max-width:760px){.nav-links{flex-wrap:wrap;gap:.8rem;font-size:.78rem;justify-content:center;}nav{flex-direction:column;gap:.7rem;}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto;}}
+
+main p a:not(.btn-gold):not(.btn-outline):not(.phone-big){
+  text-decoration:underline;
+  text-decoration-thickness:1px;
+  text-underline-offset:3px;
+}
+footer{color:#9cabbc;}
+footer p[style*="#5a6a80"]{color:#9cabbc!important;}
+.review-meta{color:#aab6c5!important;}
+
+.video-lite{
+  position:relative;
+  aspect-ratio:16/9;
+  overflow:hidden;
+  border-radius:8px;
+  background:#0a0e17;
+  cursor:pointer;
+}
+.video-lite img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+}
+.video-lite button{
+  position:absolute;
+  inset:0;
+  margin:auto;
+  width:64px;
+  height:46px;
+  border:0;
+  border-radius:12px;
+  background:rgba(201,148,58,.95);
+  color:#0a0e17;
+  font-size:1.4rem;
+  cursor:pointer;
+}
+.video-lite iframe{
+  width:100%;
+  height:100%;
+  border:0;
+  display:block;
+}
 </style>
 
 <style>
@@ -105,18 +153,22 @@ footer .logo-text{font-family:'Fraunces',serif;color:var(--cream);font-size:1rem
 </style>
   <!-- Google tag (gtag.js) — GA4 : G-SVED9CDFPR -->
   <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ window.dataLayer.push(arguments); }
+
     function loadGA4() {
       if (window._ga4Loaded) return;
       window._ga4Loaded = true;
+
       var s = document.createElement('script');
       s.async = true;
       s.src = 'https://www.googletagmanager.com/gtag/js?id=G-SVED9CDFPR';
       document.head.appendChild(s);
-      s.onload = function() {
-        gtag('js', new Date());
-        gtag('config', 'G-SVED9CDFPR', {'anonymize_ip': true});
-      };
+
+      gtag('js', new Date());
+      gtag('config', 'G-SVED9CDFPR', {'anonymize_ip': true});
     }
+
     loadGA4();
   </script>
 
@@ -124,7 +176,7 @@ footer .logo-text{font-family:'Fraunces',serif;color:var(--cream);font-size:1rem
 <body>
 <nav>
   <a class="logo" href="https://ivanov-remonti.com/lom/">
-    <img src="https://traqnivanov.github.io/Remonti-/ivanov-remonti-logo-stroitelni-uslugi-sofia.jpg" alt="Ivanov Remonti лого"/>
+    <img src="https://traqnivanov.github.io/Remonti-/ivanov-remonti-logo-stroitelni-uslugi-sofia.jpg" width="42" height="42" fetchpriority="high" decoding="async" alt="Ivanov Remonti лого"/>
     <div>Ти Почиваш — Ние Ремонтираме<span>Ремонти Лом и региона</span></div>
   </a>
   <ul class="nav-links">
@@ -138,6 +190,7 @@ footer .logo-text{font-family:'Fraunces',serif;color:var(--cream);font-size:1rem
   </ul>
 </nav>
 
+<main id="main-content">
 <div class="hero">
   <div class="crumb"><a href="https://ivanov-remonti.com/lom/">Ремонти Лом</a> / <a href="stroitelni-uslugi">Строителни услуги</a> / Гипсокартон</div>
   <h1>Монтаж на гипсокартон в Лом — <em>окачени тавани, стени и ниши</em></h1>
@@ -173,30 +226,30 @@ footer .logo-text{font-family:'Fraunces',serif;color:var(--cream);font-size:1rem
 <section>
   <h2>Снимки от наши обекти</h2>
   <div class="lom-gallery">
-    <button type="button" class="lom-gallery-btn" data-i="0"><img src="https://traqnivanov.github.io/Remonti-/gipsokarton-okachen-tavan-sofia.jpg" alt="Окачен таван от гипсокартон — Лом" loading="lazy"/></button>
-    <button type="button" class="lom-gallery-btn" data-i="1"><img src="https://traqnivanov.github.io/Remonti-/gipsokarton-tavan-sofia-16.jpg" alt="Таван от гипсокартон в апартамент — Лом" loading="lazy"/></button>
-    <button type="button" class="lom-gallery-btn" data-i="2"><img src="https://traqnivanov.github.io/Remonti-/gipsokarton-tavan-figura-dekorativen-dnevna-sofia.jpg" alt="Декоративна фигура от гипсокартон на таван в дневна — Лом" loading="lazy"/></button>
-    <button type="button" class="lom-gallery-btn" data-i="3"><img src="https://traqnivanov.github.io/Remonti-/gipsokarton-tavan-shpaklovka-lateks-cena-trud-sofia.jpg" alt="Таван от гипсокартон с шпакловка и латекс — Лом" loading="lazy"/></button>
-    <button type="button" class="lom-gallery-btn" data-i="4"><img src="https://traqnivanov.github.io/Remonti-/gipsokarton-led-nisha-sofia-03.jpg" alt="Ниша за скрито LED осветление от гипсокартон — Лом" loading="lazy"/></button>
-    <button type="button" class="lom-gallery-btn" data-i="5"><img src="https://traqnivanov.github.io/Remonti-/gipsokarton-rgb-led-nisha-dnevna-sofia.jpg" alt="RGB LED ниша от гипсокартон в дневна — Лом" loading="lazy"/></button>
-    <button type="button" class="lom-gallery-btn" data-i="6"><img src="https://traqnivanov.github.io/Remonti-/boyadisvane-gipsokarton-skrito-osvetlenie-led-nisha-sofia.jpg" alt="Скрито осветление в LED ниша от гипсокартон — Лом" loading="lazy"/></button>
-    <button type="button" class="lom-gallery-btn" data-i="7"><img src="https://traqnivanov.github.io/Remonti-/predi-sled-remont-dnevna-gipsokarton-led-sofia.jpg" alt="Преди и след ремонт на дневна с гипсокартон и LED осветление — Лом" loading="lazy"/></button>
-    <button type="button" class="lom-gallery-btn" data-i="8"><img src="https://traqnivanov.github.io/Remonti-/gipsokarton-predstena-dnevna-sofia.jpg" alt="Предстена от гипсокартон в дневна — Лом" loading="lazy"/></button>
-    <button type="button" class="lom-gallery-btn" data-i="9"><img src="https://traqnivanov.github.io/Remonti-/gipsokarton-predstenna-obshivka-sofia.jpg" alt="Предстенна обшивка от гипсокартон — Лом" loading="lazy"/></button>
-    <button type="button" class="lom-gallery-btn" data-i="10"><img src="https://traqnivanov.github.io/Remonti-/gipsokarton-nishi-banya-vlagoustoichiv-sofia.jpg" alt="Влагоустойчив гипсокартон с ниши в баня — Лом" loading="lazy"/></button>
-    <button type="button" class="lom-gallery-btn" data-i="11"><img src="https://traqnivanov.github.io/Remonti-/gipsokarton-izolaciya-mineralna-vata-tavan-steni-sofia.jpg" alt="Минерална вата за изолация под гипсокартон на таван и стени — Лом" loading="lazy"/></button>
-    <button type="button" class="lom-gallery-btn" data-i="12"><img src="https://traqnivanov.github.io/Remonti-/gipsokarton-montazh-apartament-sofia.jpg" alt="Монтаж на гипсокартон в апартамент — Лом" loading="lazy"/></button>
-    <button type="button" class="lom-gallery-btn" data-i="13"><img src="https://traqnivanov.github.io/Remonti-/gipsokarton-shpaklovka-boyadisvane-sofia-01.jpg" alt="Гипсокартон, шпакловка и боядисване при ремонт — Лом" loading="lazy"/></button>
-    <button type="button" class="lom-gallery-btn" data-i="14"><img src="https://traqnivanov.github.io/Remonti-/remont-apartament-gipsokarton-shpaklovka-boyadisvane-sofia.jpg" alt="Ремонт на апартамент с гипсокартон, шпакловка и боядисване — Лом" loading="lazy"/></button>
-    <button type="button" class="lom-gallery-btn" data-i="15"><img src="https://traqnivanov.github.io/Remonti-/shpaklovka-boyadisvane-gipsokarton-sofia-01.jpg" alt="Цялостен ремонт — гипсокартон, шпакловка и боядисване — Лом" loading="lazy"/></button>
-    <button type="button" class="lom-gallery-btn" data-i="16"><img src="https://traqnivanov.github.io/Remonti-/shpaklovka-boyadisvane-gipsokarton-sofia-08.jpg" alt="Гипсокартон, шпакловка и боядисване — завършен обект — Лом" loading="lazy"/></button>
+    <button type="button" class="lom-gallery-btn" data-i="0"><img src="https://traqnivanov.github.io/Remonti-/gipsokarton-okachen-tavan-sofia.jpg" alt="Окачен таван от гипсокартон — Лом" loading="lazy" width="800" height="600" decoding="async"/></button>
+    <button type="button" class="lom-gallery-btn" data-i="1"><img src="https://traqnivanov.github.io/Remonti-/gipsokarton-tavan-sofia-16.jpg" alt="Таван от гипсокартон в апартамент — Лом" loading="lazy" width="800" height="600" decoding="async"/></button>
+    <button type="button" class="lom-gallery-btn" data-i="2"><img src="https://traqnivanov.github.io/Remonti-/gipsokarton-tavan-figura-dekorativen-dnevna-sofia.jpg" alt="Декоративна фигура от гипсокартон на таван в дневна — Лом" loading="lazy" width="800" height="600" decoding="async"/></button>
+    <button type="button" class="lom-gallery-btn" data-i="3"><img src="https://traqnivanov.github.io/Remonti-/gipsokarton-tavan-shpaklovka-lateks-cena-trud-sofia.jpg" alt="Таван от гипсокартон с шпакловка и латекс — Лом" loading="lazy" width="800" height="600" decoding="async"/></button>
+    <button type="button" class="lom-gallery-btn" data-i="4"><img src="https://traqnivanov.github.io/Remonti-/gipsokarton-led-nisha-sofia-03.jpg" alt="Ниша за скрито LED осветление от гипсокартон — Лом" loading="lazy" width="800" height="600" decoding="async"/></button>
+    <button type="button" class="lom-gallery-btn" data-i="5"><img src="https://traqnivanov.github.io/Remonti-/gipsokarton-rgb-led-nisha-dnevna-sofia.jpg" alt="RGB LED ниша от гипсокартон в дневна — Лом" loading="lazy" width="800" height="600" decoding="async"/></button>
+    <button type="button" class="lom-gallery-btn" data-i="6"><img src="https://traqnivanov.github.io/Remonti-/boyadisvane-gipsokarton-skrito-osvetlenie-led-nisha-sofia.jpg" alt="Скрито осветление в LED ниша от гипсокартон — Лом" loading="lazy" width="800" height="600" decoding="async"/></button>
+    <button type="button" class="lom-gallery-btn" data-i="7"><img src="https://traqnivanov.github.io/Remonti-/predi-sled-remont-dnevna-gipsokarton-led-sofia.jpg" alt="Преди и след ремонт на дневна с гипсокартон и LED осветление — Лом" loading="lazy" width="800" height="600" decoding="async"/></button>
+    <button type="button" class="lom-gallery-btn" data-i="8"><img src="https://traqnivanov.github.io/Remonti-/gipsokarton-predstena-dnevna-sofia.jpg" alt="Предстена от гипсокартон в дневна — Лом" loading="lazy" width="800" height="600" decoding="async"/></button>
+    <button type="button" class="lom-gallery-btn" data-i="9"><img src="https://traqnivanov.github.io/Remonti-/gipsokarton-predstenna-obshivka-sofia.jpg" alt="Предстенна обшивка от гипсокартон — Лом" loading="lazy" width="800" height="600" decoding="async"/></button>
+    <button type="button" class="lom-gallery-btn" data-i="10"><img src="https://traqnivanov.github.io/Remonti-/gipsokarton-nishi-banya-vlagoustoichiv-sofia.jpg" alt="Влагоустойчив гипсокартон с ниши в баня — Лом" loading="lazy" width="800" height="600" decoding="async"/></button>
+    <button type="button" class="lom-gallery-btn" data-i="11"><img src="https://traqnivanov.github.io/Remonti-/gipsokarton-izolaciya-mineralna-vata-tavan-steni-sofia.jpg" alt="Минерална вата за изолация под гипсокартон на таван и стени — Лом" loading="lazy" width="800" height="600" decoding="async"/></button>
+    <button type="button" class="lom-gallery-btn" data-i="12"><img src="https://traqnivanov.github.io/Remonti-/gipsokarton-montazh-apartament-sofia.jpg" alt="Монтаж на гипсокартон в апартамент — Лом" loading="lazy" width="800" height="600" decoding="async"/></button>
+    <button type="button" class="lom-gallery-btn" data-i="13"><img src="https://traqnivanov.github.io/Remonti-/gipsokarton-shpaklovka-boyadisvane-sofia-01.jpg" alt="Гипсокартон, шпакловка и боядисване при ремонт — Лом" loading="lazy" width="800" height="600" decoding="async"/></button>
+    <button type="button" class="lom-gallery-btn" data-i="14"><img src="https://traqnivanov.github.io/Remonti-/remont-apartament-gipsokarton-shpaklovka-boyadisvane-sofia.jpg" alt="Ремонт на апартамент с гипсокартон, шпакловка и боядисване — Лом" loading="lazy" width="800" height="600" decoding="async"/></button>
+    <button type="button" class="lom-gallery-btn" data-i="15"><img src="https://traqnivanov.github.io/Remonti-/shpaklovka-boyadisvane-gipsokarton-sofia-01.jpg" alt="Цялостен ремонт — гипсокартон, шпакловка и боядисване — Лом" loading="lazy" width="800" height="600" decoding="async"/></button>
+    <button type="button" class="lom-gallery-btn" data-i="16"><img src="https://traqnivanov.github.io/Remonti-/shpaklovka-boyadisvane-gipsokarton-sofia-08.jpg" alt="Гипсокартон, шпакловка и боядисване — завършен обект — Лом" loading="lazy" width="800" height="600" decoding="async"/></button>
   </div>
 </section>
 
 <div id="lomLightbox" class="lom-lightbox" role="dialog" aria-modal="true" aria-label="Преглед на снимка">
   <button type="button" class="lom-lb-close" id="lomLbClose" aria-label="Затвори">✕</button>
   <button type="button" class="lom-lb-nav lom-lb-prev" id="lomLbPrev" aria-label="Предишна снимка">‹</button>
-  <img id="lomLbImg" src="" alt=""/>
+  <img id="lomLbImg" alt="" hidden/>
   <button type="button" class="lom-lb-nav lom-lb-next" id="lomLbNext" aria-label="Следваща снимка">›</button>
 </div>
 
@@ -310,10 +363,30 @@ footer .logo-text{font-family:'Fraunces',serif;color:var(--cream);font-size:1rem
 <section style="max-width:860px;margin:2rem auto;padding:0 1.5rem;">
   <h2 style="font-family:'Fraunces',serif;color:#fff;margin-bottom:1.2rem;">Видеоклипове от обекти</h2>
   <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:12px;">
-    <div style="position:relative;padding-bottom:56.25%;height:0;"><iframe src="https://www.youtube.com/embed/WNbgtSS7hlU" title="Ремонт 1 — Ivanov Remonti" allowfullscreen loading="lazy" style="position:absolute;top:0;left:0;width:100%;height:100%;border:none;border-radius:8px;"></iframe></div>
-    <div style="position:relative;padding-bottom:56.25%;height:0;"><iframe src="https://www.youtube.com/embed/Wp8iLS5HqPM" title="Ремонт 2 — Ivanov Remonti" allowfullscreen loading="lazy" style="position:absolute;top:0;left:0;width:100%;height:100%;border:none;border-radius:8px;"></iframe></div>
-    <div style="position:relative;padding-bottom:56.25%;height:0;"><iframe src="https://www.youtube.com/embed/P9afybbtrWM" title="Ремонт 3 — Ivanov Remonti" allowfullscreen loading="lazy" style="position:absolute;top:0;left:0;width:100%;height:100%;border:none;border-radius:8px;"></iframe></div>
-    <div style="position:relative;padding-bottom:56.25%;height:0;"><iframe src="https://www.youtube.com/embed/MnHOg0HSDm0" title="Ремонт на стара къща — Ivanov Remonti" allowfullscreen loading="lazy" style="position:absolute;top:0;left:0;width:100%;height:100%;border:none;border-radius:8px;"></iframe></div>
+    <div class="video-lite" data-video="WNbgtSS7hlU">
+      <img src="https://i.ytimg.com/vi/WNbgtSS7hlU/hqdefault.jpg"
+           width="480" height="360" loading="lazy" decoding="async"
+           alt="Ремонт 1 — Ivanov Remonti">
+      <button type="button" aria-label="Пусни видеото: Ремонт 1 — Ivanov Remonti">▶</button>
+    </div>
+    <div class="video-lite" data-video="Wp8iLS5HqPM">
+      <img src="https://i.ytimg.com/vi/Wp8iLS5HqPM/hqdefault.jpg"
+           width="480" height="360" loading="lazy" decoding="async"
+           alt="Ремонт 2 — Ivanov Remonti">
+      <button type="button" aria-label="Пусни видеото: Ремонт 2 — Ivanov Remonti">▶</button>
+    </div>
+    <div class="video-lite" data-video="P9afybbtrWM">
+      <img src="https://i.ytimg.com/vi/P9afybbtrWM/hqdefault.jpg"
+           width="480" height="360" loading="lazy" decoding="async"
+           alt="Ремонт 3 — Ivanov Remonti">
+      <button type="button" aria-label="Пусни видеото: Ремонт 3 — Ivanov Remonti">▶</button>
+    </div>
+    <div class="video-lite" data-video="MnHOg0HSDm0">
+      <img src="https://i.ytimg.com/vi/MnHOg0HSDm0/hqdefault.jpg"
+           width="480" height="360" loading="lazy" decoding="async"
+           alt="Ремонт на стара къща — Ivanov Remonti">
+      <button type="button" aria-label="Пусни видеото: Ремонт на стара къща — Ivanov Remonti">▶</button>
+    </div>
   </div>
 </section>
 
@@ -354,6 +427,8 @@ footer .logo-text{font-family:'Fraunces',serif;color:var(--cream);font-size:1rem
   <a class="phone-big" href="tel:0876936184">📞 0876 936 184</a>
 </div>
 
+</main>
+
 <footer>
   <div class="logo-text">Ти Почиваш — Ние Ремонтираме</div>
   <p>© <span class="cur-year"></span> · Всички права запазени · <a href="https://ivanov-remonti.com/lom/">Ivanov Remonti — Ремонти Лом</a></p>
@@ -371,9 +446,14 @@ footer .logo-text{font-family:'Fraunces',serif;color:var(--cream);font-size:1rem
     cur = (i + items.length) % items.length;
     lbImg.setAttribute('src', items[cur].src);
     lbImg.setAttribute('alt', items[cur].alt);
+    lbImg.hidden = false;
   }
   function open(i){ show(i); lb.classList.add('open'); document.body.style.overflow='hidden'; }
-  function close(){ lb.classList.remove('open'); document.body.style.overflow=''; }
+  function close(){
+    lb.classList.remove('open');
+    document.body.style.overflow='';
+    lbImg.hidden = true;
+  }
   document.querySelectorAll('.lom-gallery-btn').forEach(function(btn){
     btn.addEventListener('click', function(){ open(parseInt(btn.getAttribute('data-i'), 10)); });
   });
@@ -389,5 +469,22 @@ footer .logo-text{font-family:'Fraunces',serif;color:var(--cream);font-size:1rem
   });
 })();
 </script>
+
+<script>
+document.querySelectorAll('.video-lite').forEach(function(box){
+  box.addEventListener('click', function(){
+    if (box.querySelector('iframe')) return;
+    var id = box.getAttribute('data-video');
+    var iframe = document.createElement('iframe');
+    iframe.src = 'https://www.youtube-nocookie.com/embed/' + id + '?autoplay=1';
+    iframe.title = box.querySelector('img').alt;
+    iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+    iframe.allowFullscreen = true;
+    box.innerHTML = '';
+    box.appendChild(iframe);
+  });
+});
+</script>
+
 </body>
 </html>
