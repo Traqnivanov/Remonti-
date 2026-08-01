@@ -146,19 +146,12 @@ footer p[style]{color:#aeb9c8!important;}
     });
   </script>
 
-<!-- Google tag (gtag.js) — GA4 : G-SVED9CDFPR -->
+<!-- GA4 uses the already loaded Google tag — no second gtag.js download -->
   <script>
     function loadGA4() {
       if (window._ga4Loaded) return;
       window._ga4Loaded = true;
-      var s = document.createElement('script');
-      s.async = true;
-      s.src = 'https://www.googletagmanager.com/gtag/js?id=G-SVED9CDFPR';
-      document.head.appendChild(s);
-      s.onload = function() {
-        gtag('js', new Date());
-        gtag('config', 'G-SVED9CDFPR', {'anonymize_ip': true});
-      };
+      gtag('config', 'G-SVED9CDFPR', {'anonymize_ip': true});
     }
     loadGA4();
   </script>
@@ -466,61 +459,5 @@ footer p[style]{color:#aeb9c8!important;}
 })();
 </script>
 
-<!-- TERYBOT LOADER — зарежда bot.html при първо натискане -->
-<script>
-(function() {
-  var botLoadPromise = null;
-
-  function injectBot(html) {
-    try {
-      var parser = new DOMParser();
-      var doc = parser.parseFromString(html, 'text/html');
-      var headNodes = doc.head.querySelectorAll('style, link[rel="stylesheet"]');
-      headNodes.forEach(function(n) { document.head.appendChild(n.cloneNode(true)); });
-      var bodyClone = doc.body.cloneNode(true);
-      var scripts = Array.prototype.slice.call(bodyClone.querySelectorAll('script'));
-      scripts.forEach(function(s) { s.remove(); });
-      while (bodyClone.firstChild) { document.body.appendChild(bodyClone.firstChild); }
-      doc.body.querySelectorAll('script').forEach(function(s) {
-        var ns = document.createElement('script');
-        if (s.src) ns.src = s.src;
-        else ns.textContent = s.textContent;
-        document.body.appendChild(ns);
-      });
-    } catch(e) { console.warn('Bot inject failed:', e); }
-  }
-
-  function loadBot() {
-    if (botLoadPromise) return botLoadPromise;
-    botLoadPromise = fetch('/bot.html?v=5')
-      .then(function(r) {
-        if (!r.ok) throw new Error('HTTP ' + r.status);
-        return r.text();
-      })
-      .then(injectBot)
-      .catch(function(e) { console.warn('Bot load failed:', e); });
-    return botLoadPromise;
-  }
-
-  // ?bot=open
-  try {
-    var params = new URLSearchParams(window.location.search);
-    if (params.get('bot') === 'open') {
-      try { history.replaceState(null, '', window.location.pathname); } catch(e2) {}
-      try { history.pushState(null, '', '?bot=open'); } catch(e2) {}
-      loadBot().then(function() {
-        setTimeout(function() {
-          var toggle = document.getElementById('tb-toggle');
-          if (toggle) toggle.click();
-        }, 1200);
-      });
-    }
-  } catch(e) {}
-
-  window.openTeryBot = function() { loadBot().then(function() {
-    setTimeout(function() { var t = document.getElementById('tb-toggle'); if(t) t.click(); }, 300);
-  }); };
-})();
-</script>
 </body>
 </html>
