@@ -104,6 +104,8 @@ footer .logo-text{font-family:'Fraunces',serif;color:var(--cream);font-size:1rem
 </style>
   <!-- Google tag (gtag.js) — GA4 : G-SVED9CDFPR -->
   <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
     function loadGA4() {
       if (window._ga4Loaded) return;
       window._ga4Loaded = true;
@@ -136,6 +138,7 @@ footer .logo-text{font-family:'Fraunces',serif;color:var(--cream);font-size:1rem
   </ul>
 </nav>
 
+<main id="main-content">
 <div class="hero">
   <div class="crumb"><a href="https://ivanov-remonti.com/lom/">Ремонти Лом</a> / <a href="stroitelni-uslugi">Строителни услуги</a> / Боядисване</div>
   <h1>Боядисване в Лом — <em>латекс в два слоя</em>, върху грунд</h1>
@@ -222,7 +225,7 @@ footer .logo-text{font-family:'Fraunces',serif;color:var(--cream);font-size:1rem
 <div id="lomLightbox" class="lom-lightbox" role="dialog" aria-modal="true" aria-label="Преглед на снимка">
   <button type="button" class="lom-lb-close" id="lomLbClose" aria-label="Затвори">✕</button>
   <button type="button" class="lom-lb-nav lom-lb-prev" id="lomLbPrev" aria-label="Предишна снимка">‹</button>
-  <img id="lomLbImg" src="" alt=""/>
+  <img id="lomLbImg" alt="" hidden/>
   <button type="button" class="lom-lb-nav lom-lb-next" id="lomLbNext" aria-label="Следваща снимка">›</button>
 </div>
 
@@ -345,10 +348,12 @@ footer .logo-text{font-family:'Fraunces',serif;color:var(--cream);font-size:1rem
   <a class="phone-big" href="tel:0876936184">📞 0876 936 184</a>
 </div>
 
+</main>
+
 <footer>
   <div class="logo-text">Ти Почиваш — Ние Ремонтираме</div>
   <p>© <span class="cur-year"></span> · Всички права запазени · <a href="https://ivanov-remonti.com/lom/">Ivanov Remonti — Ремонти Лом</a></p>
-  <p style="color:#5a6a80;">Шпакловка · Боядисване · Гипсокартон · Лом · Монтана · Берковица · Козлодуй · Вълчедръм</p>
+  <p style="color:#9ba9bb;">Шпакловка · Боядисване · Гипсокартон · Лом · Монтана · Берковица · Козлодуй · Вълчедръм</p>
 </footer>
 <script>document.querySelector('.cur-year').textContent=new Date().getFullYear();</script>
 <script>
@@ -362,6 +367,7 @@ footer .logo-text{font-family:'Fraunces',serif;color:var(--cream);font-size:1rem
     cur = (i + items.length) % items.length;
     lbImg.setAttribute('src', items[cur].src);
     lbImg.setAttribute('alt', items[cur].alt);
+    lbImg.hidden = false;
   }
   function open(i){ show(i); lb.classList.add('open'); document.body.style.overflow='hidden'; }
   function close(){ lb.classList.remove('open'); document.body.style.overflow=''; }
