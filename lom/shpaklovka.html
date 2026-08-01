@@ -12,8 +12,8 @@
 <meta property="og:type" content="website"/>
 <meta property="og:image" content="https://traqnivanov.github.io/Remonti-/shpaklovka-boyadisvane-gipsokarton-sofia-08.jpg"/>
 <meta property="og:image:alt" content="Шпакловка на стени и тавани в Лом — Ivanov Remonti"/>
-<meta property="og:image:width" content="1200"/>
-<meta property="og:image:height" content="1600"/>
+<link rel="alternate" hreflang="bg" href="https://ivanov-remonti.com/lom/shpaklovka"/>
+<link rel="alternate" hreflang="x-default" href="https://ivanov-remonti.com/lom/shpaklovka"/>
 <meta property="og:locale" content="bg_BG"/>
 <link rel="icon" type="image/x-icon" href="https://traqnivanov.github.io/Remonti-/favicon.png"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
@@ -88,7 +88,7 @@ ol.steps li strong{color:var(--white);font-weight:500;}
 footer{text-align:center;padding:2.5rem 5%;border-top:1px solid rgba(201,148,58,.12);font-size:.85rem;color:var(--muted);}
 footer .logo-text{font-family:'Fraunces',serif;color:var(--cream);font-size:1rem;margin-bottom:.6rem;}
 @media(max-width:760px){.nav-links{flex-wrap:wrap;gap:.8rem;font-size:.78rem;justify-content:center;}nav{flex-direction:column;gap:.7rem;}}
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto;}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto;}*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;}}
 </style>
 
 <style>
@@ -108,6 +108,8 @@ footer .logo-text{font-family:'Fraunces',serif;color:var(--cream);font-size:1rem
 </style>
   <!-- Google tag (gtag.js) — GA4 : G-SVED9CDFPR -->
   <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
     function loadGA4() {
       if (window._ga4Loaded) return;
       window._ga4Loaded = true;
@@ -127,7 +129,7 @@ footer .logo-text{font-family:'Fraunces',serif;color:var(--cream);font-size:1rem
 <body>
 <nav>
   <a class="logo" href="https://ivanov-remonti.com/lom/">
-    <img src="https://traqnivanov.github.io/Remonti-/ivanov-remonti-logo-stroitelni-uslugi-sofia.jpg" alt="Ivanov Remonti лого"/>
+    <img src="https://traqnivanov.github.io/Remonti-/ivanov-remonti-logo-stroitelni-uslugi-sofia.jpg" alt="Ivanov Remonti лого" fetchpriority="high" decoding="async"/>
     <div>Ти Почиваш — Ние Ремонтираме<span>Ремонти Лом и региона</span></div>
   </a>
   <ul class="nav-links">
@@ -141,6 +143,7 @@ footer .logo-text{font-family:'Fraunces',serif;color:var(--cream);font-size:1rem
   </ul>
 </nav>
 
+<main id="main-content">
 <div class="hero">
   <div class="crumb"><a href="https://ivanov-remonti.com/lom/">Ремонти Лом</a> / Шпакловка</div>
   <h1>Шпакловка в Лом — <em>гладки стени</em>, готови за боя</h1>
@@ -192,10 +195,38 @@ footer .logo-text{font-family:'Fraunces',serif;color:var(--cream);font-size:1rem
 <section style="max-width:860px;margin:2rem auto;padding:0 1.5rem;">
   <h2 style="font-family:'Fraunces',serif;color:#fff;margin-bottom:1.2rem;">Видеоклипове от обекти</h2>
   <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:12px;">
-    <div style="position:relative;padding-bottom:56.25%;height:0;"><iframe src="https://www.youtube.com/embed/WNbgtSS7hlU" title="Ремонт 1 — Ivanov Remonti" allowfullscreen loading="lazy" style="position:absolute;top:0;left:0;width:100%;height:100%;border:none;border-radius:8px;"></iframe></div>
-    <div style="position:relative;padding-bottom:56.25%;height:0;"><iframe src="https://www.youtube.com/embed/Wp8iLS5HqPM" title="Ремонт 2 — Ivanov Remonti" allowfullscreen loading="lazy" style="position:absolute;top:0;left:0;width:100%;height:100%;border:none;border-radius:8px;"></iframe></div>
-    <div style="position:relative;padding-bottom:56.25%;height:0;"><iframe src="https://www.youtube.com/embed/P9afybbtrWM" title="Ремонт 3 — Ivanov Remonti" allowfullscreen loading="lazy" style="position:absolute;top:0;left:0;width:100%;height:100%;border:none;border-radius:8px;"></iframe></div>
-    <div style="position:relative;padding-bottom:56.25%;height:0;"><iframe src="https://www.youtube.com/embed/MnHOg0HSDm0" title="Ремонт на стара къща — Ivanov Remonti" allowfullscreen loading="lazy" style="position:absolute;top:0;left:0;width:100%;height:100%;border:none;border-radius:8px;"></iframe></div>
+    <div style="position:relative;padding-bottom:56.25%;height:0;" class="yt-lite" data-id="WNbgtSS7hlU" data-title="Ремонт 1 — Ivanov Remonti" style="cursor:pointer;background:#000;">
+      <img src="https://i.ytimg.com/vi/WNbgtSS7hlU/hqdefault.jpg" alt="Ремонт 1" loading="lazy" decoding="async" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;border-radius:8px;"/>
+      <button type="button" aria-label="Пусни видео" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:56px;height:56px;background:rgba(255,0,0,.85);border:none;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;"><svg width="22" height="22" viewBox="0 0 24 24" fill="white"><path d="M8 5v14l11-7z"/></svg></button>
+    </div>
+    <div style="position:relative;padding-bottom:56.25%;height:0;" class="yt-lite" data-id="Wp8iLS5HqPM" data-title="Ремонт 2 — Ivanov Remonti" style="cursor:pointer;background:#000;">
+      <img src="https://i.ytimg.com/vi/Wp8iLS5HqPM/hqdefault.jpg" alt="Ремонт 2" loading="lazy" decoding="async" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;border-radius:8px;"/>
+      <button type="button" aria-label="Пусни видео" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:56px;height:56px;background:rgba(255,0,0,.85);border:none;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;"><svg width="22" height="22" viewBox="0 0 24 24" fill="white"><path d="M8 5v14l11-7z"/></svg></button>
+    </div>
+    <div style="position:relative;padding-bottom:56.25%;height:0;" class="yt-lite" data-id="P9afybbtrWM" data-title="Ремонт 3 — Ivanov Remonti" style="cursor:pointer;background:#000;">
+      <img src="https://i.ytimg.com/vi/P9afybbtrWM/hqdefault.jpg" alt="Ремонт 3" loading="lazy" decoding="async" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;border-radius:8px;"/>
+      <button type="button" aria-label="Пусни видео" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:56px;height:56px;background:rgba(255,0,0,.85);border:none;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;"><svg width="22" height="22" viewBox="0 0 24 24" fill="white"><path d="M8 5v14l11-7z"/></svg></button>
+    </div>
+    <div style="position:relative;padding-bottom:56.25%;height:0;" class="yt-lite" data-id="MnHOg0HSDm0" data-title="Ремонт на стара къща — Ivanov Remonti" style="cursor:pointer;background:#000;">
+      <img src="https://i.ytimg.com/vi/MnHOg0HSDm0/hqdefault.jpg" alt="Ремонт на стара къща" loading="lazy" decoding="async" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;border-radius:8px;"/>
+      <button type="button" aria-label="Пусни видео" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:56px;height:56px;background:rgba(255,0,0,.85);border:none;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;"><svg width="22" height="22" viewBox="0 0 24 24" fill="white"><path d="M8 5v14l11-7z"/></svg></button>
+    </div>
+<script>
+document.querySelectorAll('.yt-lite').forEach(function(el) {
+  el.addEventListener('click', function() {
+    var id = el.getAttribute('data-id');
+    var title = el.getAttribute('data-title');
+    var iframe = document.createElement('iframe');
+    iframe.src = 'https://www.youtube-nocookie.com/embed/' + id + '?autoplay=1';
+    iframe.title = title;
+    iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+    iframe.allowFullscreen = true;
+    iframe.style.cssText = 'position:absolute;top:0;left:0;width:100%;height:100%;border:none;border-radius:8px;';
+    el.innerHTML = '';
+    el.appendChild(iframe);
+  });
+});
+</script>
   </div>
 </section>
 
@@ -233,7 +264,7 @@ footer .logo-text{font-family:'Fraunces',serif;color:var(--cream);font-size:1rem
 <div id="lomLightbox" class="lom-lightbox" role="dialog" aria-modal="true" aria-label="Преглед на снимка">
   <button type="button" class="lom-lb-close" id="lomLbClose" aria-label="Затвори">✕</button>
   <button type="button" class="lom-lb-nav lom-lb-prev" id="lomLbPrev" aria-label="Предишна снимка">‹</button>
-  <img id="lomLbImg" src="" alt=""/>
+  <img id="lomLbImg" alt="" hidden/>
   <button type="button" class="lom-lb-nav lom-lb-next" id="lomLbNext" aria-label="Следваща снимка">›</button>
 </div>
 
@@ -320,10 +351,12 @@ footer .logo-text{font-family:'Fraunces',serif;color:var(--cream);font-size:1rem
   <a class="phone-big" href="tel:0876936184">📞 0876 936 184</a>
 </div>
 
+</main>
+
 <footer>
   <div class="logo-text">Ти Почиваш — Ние Ремонтираме</div>
   <p>© <span class="cur-year"></span> · Всички права запазени · <a href="https://ivanov-remonti.com/lom/">Ivanov Remonti — Ремонти Лом</a></p>
-  <p style="color:#5a6a80;">Шпакловка · Боядисване · Гипсокартон · Лом · Монтана · Берковица · Козлодуй · Вълчедръм</p>
+  <p style="color:#9ba9bb;">Шпакловка · Боядисване · Гипсокартон · Лом · Монтана · Берковица · Козлодуй · Вълчедръм</p>
 </footer>
 <script>document.querySelector('.cur-year').textContent=new Date().getFullYear();</script>
 <script>
@@ -337,6 +370,7 @@ footer .logo-text{font-family:'Fraunces',serif;color:var(--cream);font-size:1rem
     cur = (i + items.length) % items.length;
     lbImg.setAttribute('src', items[cur].src);
     lbImg.setAttribute('alt', items[cur].alt);
+    lbImg.hidden = false;
   }
   function open(i){ show(i); lb.classList.add('open'); document.body.style.overflow='hidden'; }
   function close(){ lb.classList.remove('open'); document.body.style.overflow=''; }
