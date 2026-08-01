@@ -6,14 +6,14 @@
 <title>Строителни услуги и ремонти до ключ в Лом | Майстор с 23 г. опит</title>
 <meta name="description" content="Строителни услуги в Лом и ремонти до ключ – шпакловка, боядисване, гипсокартон и ВиК. Лично водя всеки обект. Фиксирана цена, писмена гаранция, безплатен оглед."/>
 <link rel="canonical" href="https://ivanov-remonti.com/lom/stroitelni-uslugi"/>
+<link rel="alternate" hreflang="bg" href="https://ivanov-remonti.com/lom/stroitelni-uslugi"/>
+<link rel="alternate" hreflang="x-default" href="https://ivanov-remonti.com/lom/stroitelni-uslugi"/>
 <meta property="og:title" content="Строителни услуги и ремонти до ключ в Лом | Майстор с 23 г. опит"/>
 <meta property="og:description" content="Строителни услуги и цялостни ремонти до ключ в Лом — за къщи и апартаменти. Лично водя всеки обект — шпакловка, боядисване, гипсокартон, ВиК, довършителни работи. Фиксирана цена, писмена гаранция, безплатен оглед. 23 г. опит."/>
 <meta property="og:url" content="https://ivanov-remonti.com/lom/stroitelni-uslugi"/>
 <meta property="og:type" content="website"/>
-<meta property="og:image" content="https://raw.githubusercontent.com/Traqnivanov/Remonti-/main/lom/ivanov-remonti-stroitelni-remonti-lom-logo.jpg"/>
+<meta property="og:image" content="https://traqnivanov.github.io/Remonti-/lom/ivanov-remonti-stroitelni-remonti-lom-logo.jpg"/>
 <meta property="og:image:alt" content="Ivanov Remonti — строителни услуги и ремонти до ключ в Лом"/>
-<meta property="og:image:width" content="1600"/>
-<meta property="og:image:height" content="983"/>
 <meta property="og:locale" content="bg_BG"/>
 <link rel="icon" type="image/x-icon" href="https://traqnivanov.github.io/Remonti-/favicon.png"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
@@ -93,7 +93,7 @@ ol.steps li strong{color:var(--white);font-weight:500;}
 footer{text-align:center;padding:2.5rem 5%;border-top:1px solid rgba(201,148,58,.12);font-size:.85rem;color:var(--muted);}
 footer .logo-text{font-family:'Fraunces',serif;color:var(--cream);font-size:1rem;margin-bottom:.6rem;}
 @media(max-width:760px){.nav-links{flex-wrap:wrap;gap:.8rem;font-size:.78rem;justify-content:center;}nav{flex-direction:column;gap:.7rem;}}
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto;}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto;}*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;}}
 .lom-gallery{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin:24px 0;}
 .lom-gallery-btn{padding:0;border:none;background:none;cursor:pointer;display:block;width:100%;}
 .lom-gallery-btn img{width:100%;height:180px;object-fit:cover;border-radius:10px;border:1px solid rgba(201,148,58,.25);display:block;transition:opacity .15s;}
@@ -108,26 +108,26 @@ footer .logo-text{font-family:'Fraunces',serif;color:var(--cream);font-size:1rem
 .lom-lb-next{right:3%;}
 @media(max-width:600px){.lom-lb-nav{width:38px;height:38px;font-size:1.3rem;}}
 </style>
-  <!-- Google tag (gtag.js) — GA4 : G-SVED9CDFPR — зарежда се само след съгласие -->
+  <!-- Google tag (gtag.js) — GA4 : G-SVED9CDFPR -->
   <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
     (function(){
-      if(document.cookie.indexOf('ga_consent=yes')!==-1){
-        var s=document.createElement('script');
-        s.async=true;
-        s.src='https://www.googletagmanager.com/gtag/js?id=G-SVED9CDFPR';
-        document.head.appendChild(s);
-        window.dataLayer=window.dataLayer||[];
-        function gtag(){dataLayer.push(arguments);}
+      var s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=G-SVED9CDFPR';
+      document.head.appendChild(s);
+      s.onload = function() {
         gtag('js', new Date());
-        gtag('config', 'G-SVED9CDFPR');
-      }
+        gtag('config', 'G-SVED9CDFPR', {'anonymize_ip': true});
+      };
     })();
   </script>
 </head>
 <body>
 <nav>
   <a class="logo" href="https://ivanov-remonti.com/lom/">
-    <img src="https://traqnivanov.github.io/Remonti-/ivanov-remonti-logo-stroitelni-uslugi-sofia.jpg" alt="Ivanov Remonti лого"/>
+    <img src="https://traqnivanov.github.io/Remonti-/ivanov-remonti-logo-stroitelni-uslugi-sofia.jpg" alt="Ivanov Remonti лого" fetchpriority="high" decoding="async"/>
     <div>Ти Почиваш — Ние Ремонтираме<span>Ремонти Лом и региона</span></div>
   </a>
   <ul class="nav-links">
@@ -140,6 +140,7 @@ footer .logo-text{font-family:'Fraunces',serif;color:var(--cream);font-size:1rem
   </ul>
 </nav>
 
+<main id="main-content">
 <div class="hero">
   <div class="crumb"><a href="https://ivanov-remonti.com/lom/">Ремонти Лом</a> / Строителни услуги</div>
   <h1>Строителни услуги и ремонти в Лом — <em>за къщи и апартаменти</em></h1>
@@ -251,10 +252,38 @@ footer .logo-text{font-family:'Fraunces',serif;color:var(--cream);font-size:1rem
 <section style="max-width:860px;margin:2rem auto;padding:0 1.5rem;">
   <h2 style="font-family:'Fraunces',serif;color:#fff;margin-bottom:1.2rem;">Видеоклипове от обекти</h2>
   <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:12px;">
-    <div style="position:relative;padding-bottom:56.25%;height:0;"><iframe src="https://www.youtube.com/embed/WNbgtSS7hlU" title="Ремонт 1 — Ivanov Remonti" allowfullscreen loading="lazy" style="position:absolute;top:0;left:0;width:100%;height:100%;border:none;border-radius:8px;"></iframe></div>
-    <div style="position:relative;padding-bottom:56.25%;height:0;"><iframe src="https://www.youtube.com/embed/Wp8iLS5HqPM" title="Ремонт 2 — Ivanov Remonti" allowfullscreen loading="lazy" style="position:absolute;top:0;left:0;width:100%;height:100%;border:none;border-radius:8px;"></iframe></div>
-    <div style="position:relative;padding-bottom:56.25%;height:0;"><iframe src="https://www.youtube.com/embed/P9afybbtrWM" title="Ремонт 3 — Ivanov Remonti" allowfullscreen loading="lazy" style="position:absolute;top:0;left:0;width:100%;height:100%;border:none;border-radius:8px;"></iframe></div>
-    <div style="position:relative;padding-bottom:56.25%;height:0;"><iframe src="https://www.youtube.com/embed/MnHOg0HSDm0" title="Ремонт на стара къща — Ivanov Remonti" allowfullscreen loading="lazy" style="position:absolute;top:0;left:0;width:100%;height:100%;border:none;border-radius:8px;"></iframe></div>
+    <div style="position:relative;padding-bottom:56.25%;height:0;" class="yt-lite" data-id="WNbgtSS7hlU" data-title="Ремонт 1 — Ivanov Remonti" style="cursor:pointer;background:#000;">
+      <img src="https://i.ytimg.com/vi/WNbgtSS7hlU/hqdefault.jpg" alt="Ремонт 1" loading="lazy" decoding="async" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;border-radius:8px;"/>
+      <button type="button" aria-label="Пусни видео" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:56px;height:56px;background:rgba(255,0,0,.85);border:none;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;"><svg width="22" height="22" viewBox="0 0 24 24" fill="white"><path d="M8 5v14l11-7z"/></svg></button>
+    </div>
+    <div style="position:relative;padding-bottom:56.25%;height:0;" class="yt-lite" data-id="Wp8iLS5HqPM" data-title="Ремонт 2 — Ivanov Remonti" style="cursor:pointer;background:#000;">
+      <img src="https://i.ytimg.com/vi/Wp8iLS5HqPM/hqdefault.jpg" alt="Ремонт 2" loading="lazy" decoding="async" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;border-radius:8px;"/>
+      <button type="button" aria-label="Пусни видео" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:56px;height:56px;background:rgba(255,0,0,.85);border:none;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;"><svg width="22" height="22" viewBox="0 0 24 24" fill="white"><path d="M8 5v14l11-7z"/></svg></button>
+    </div>
+    <div style="position:relative;padding-bottom:56.25%;height:0;" class="yt-lite" data-id="P9afybbtrWM" data-title="Ремонт 3 — Ivanov Remonti" style="cursor:pointer;background:#000;">
+      <img src="https://i.ytimg.com/vi/P9afybbtrWM/hqdefault.jpg" alt="Ремонт 3" loading="lazy" decoding="async" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;border-radius:8px;"/>
+      <button type="button" aria-label="Пусни видео" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:56px;height:56px;background:rgba(255,0,0,.85);border:none;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;"><svg width="22" height="22" viewBox="0 0 24 24" fill="white"><path d="M8 5v14l11-7z"/></svg></button>
+    </div>
+    <div style="position:relative;padding-bottom:56.25%;height:0;" class="yt-lite" data-id="MnHOg0HSDm0" data-title="Ремонт на стара къща — Ivanov Remonti" style="cursor:pointer;background:#000;">
+      <img src="https://i.ytimg.com/vi/MnHOg0HSDm0/hqdefault.jpg" alt="Ремонт на стара къща" loading="lazy" decoding="async" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;border-radius:8px;"/>
+      <button type="button" aria-label="Пусни видео" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:56px;height:56px;background:rgba(255,0,0,.85);border:none;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;"><svg width="22" height="22" viewBox="0 0 24 24" fill="white"><path d="M8 5v14l11-7z"/></svg></button>
+    </div>
+<script>
+document.querySelectorAll('.yt-lite').forEach(function(el) {
+  el.addEventListener('click', function() {
+    var id = el.getAttribute('data-id');
+    var title = el.getAttribute('data-title');
+    var iframe = document.createElement('iframe');
+    iframe.src = 'https://www.youtube-nocookie.com/embed/' + id + '?autoplay=1';
+    iframe.title = title;
+    iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+    iframe.allowFullscreen = true;
+    iframe.style.cssText = 'position:absolute;top:0;left:0;width:100%;height:100%;border:none;border-radius:8px;';
+    el.innerHTML = '';
+    el.appendChild(iframe);
+  });
+});
+</script>
   </div>
 </section>
 
@@ -334,6 +363,8 @@ footer .logo-text{font-family:'Fraunces',serif;color:var(--cream);font-size:1rem
   <p style="color:#c7d0dc;max-width:520px;margin:0 auto;">Идвам на място, оглеждам и казвам точно какво е нужно и на каква цена — без ангажимент от ваша страна. 23 години опит. Лом, Монтана, Берковица, Козлодуй, Вълчедръм.</p>
   <a class="phone-big" href="tel:0876936184">📞 0876 936 184</a>
 </div>
+
+</main>
 
 <footer>
   <div class="logo-text">Ти Почиваш — Ние Ремонтираме</div>
