@@ -127,9 +127,37 @@ footer p[style*="#5a6a80"]{color:#9cabbc!important;}
   
 
 <style id="ivanov-consent-style">
-.ivanov-cookie-actions{display:flex;gap:.6rem;align-items:center;flex-wrap:wrap}
-.cookie-btn.cookie-reject{background:transparent!important;color:var(--gold,#c9943a)!important;border:1px solid var(--gold,#c9943a)!important}
-@media(max-width:640px){.ivanov-cookie-actions{width:100%}.ivanov-cookie-actions .cookie-btn{flex:1}}
+  .cookie-banner{
+    position:fixed!important;
+    left:0!important;
+    right:0!important;
+    bottom:0!important;
+    top:auto!important;
+    z-index:99999!important;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:1rem;
+    padding:.8rem 1rem;
+    box-sizing:border-box;
+    background:#0b1c2e;
+    border-top:1px solid var(--gold,#c9943a);
+    color:#fff;
+  }
+  .cookie-banner.hidden{display:none!important}
+  .cookie-banner p{margin:0}
+  .ivanov-cookie-actions{display:flex;gap:.6rem;align-items:center;flex-wrap:wrap}
+  .cookie-btn.cookie-reject{
+    background:transparent!important;
+    color:var(--gold,#c9943a)!important;
+    border:1px solid var(--gold,#c9943a)!important;
+  }
+  @media(max-width:640px){
+    .cookie-banner{display:block;padding:.75rem}
+    .cookie-banner p{margin:0 0 .65rem}
+    .ivanov-cookie-actions{width:100%}
+    .ivanov-cookie-actions .cookie-btn{flex:1}
+  }
 </style>
 <!-- GA4: зарежда се само след изрично съгласие -->
 <script id="ivanov-consent-script">
