@@ -7,8 +7,6 @@
 <link href="https://traqnivanov.github.io" rel="dns-prefetch"/>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<!-- Google Ads AW — зарежда се ВИНАГИ, без да чака cookie съгласие -->
-<script async="" src="https://www.googletagmanager.com/gtag/js?id=AW-18264667036"></script>
 <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
@@ -26,29 +24,101 @@
       if (fb) fb.classList.add('ready');
     });
   </script>
-<!-- Google tag (gtag.js) — GA4 : G-SVED9CDFPR — зарежда се само след съгласие -->
+
+<!-- Google Analytics и Google Ads се зареждат само след изрично съгласие -->
 <script>
-    function loadGA4() {
-      if (window._ga4Loaded) return;
-      window._ga4Loaded = true;
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){ dataLayer.push(arguments); }
+
+  const IVANOV_CONSENT_KEY = 'ivanovCookieConsentV2';
+
+  function loadGoogleTracking() {
+    if (window._ivanovGoogleTrackingLoaded) return;
+    window._ivanovGoogleTrackingLoaded = true;
+
+    var script = document.createElement('script');
+    script.async = true;
+    script.src = 'https://www.googletagmanager.com/gtag/js?id=AW-18264667036';
+    script.onload = function () {
       gtag('js', new Date());
-      gtag('config', 'G-SVED9CDFPR', {'anonymize_ip': true});
+      gtag('config', 'AW-18264667036');
+      gtag('config', 'G-SVED9CDFPR', { 'anonymize_ip': true });
+    };
+    document.head.appendChild(script);
+  }
+
+  function getIvanovConsent() {
+    try { return localStorage.getItem(IVANOV_CONSENT_KEY); }
+    catch (e) { return null; }
+  }
+
+  function saveIvanovConsent(value) {
+    try { localStorage.setItem(IVANOV_CONSENT_KEY, value); }
+    catch (e) {}
+  }
+
+  function hideCookieBanner() {
+    var banner = document.getElementById('cookieBanner');
+    if (banner) banner.classList.add('hidden');
+  }
+
+  function acceptCookies() {
+    saveIvanovConsent('accepted');
+    hideCookieBanner();
+    loadGoogleTracking();
+  }
+
+  function rejectCookies() {
+    saveIvanovConsent('rejected');
+    hideCookieBanner();
+  }
+
+  function showPrivacy() {
+    var section = document.getElementById('privacySection');
+    if (!section) return;
+    section.classList.add('active');
+    section.style.display = 'block';
+    window.scrollTo(0, 0);
+  }
+
+  function hidePrivacy() {
+    var section = document.getElementById('privacySection');
+    if (!section) return;
+    section.classList.remove('active');
+    section.style.display = 'none';
+  }
+
+  document.addEventListener('DOMContentLoaded', function () {
+    var choice = getIvanovConsent();
+    if (choice === 'accepted') {
+      hideCookieBanner();
+      loadGoogleTracking();
+    } else if (choice === 'rejected') {
+      hideCookieBanner();
     }
 
-    // Ако вече е дадено съгласие — зареждаме веднага
-    try { if (localStorage.getItem('cookiesAccepted') === '1') loadGA4(); } catch(x) {}
-  </script>
+    document.querySelectorAll('a[href^="tel:"]').forEach(function (el) {
+      el.addEventListener('click', function () {
+        if (getIvanovConsent() === 'accepted' && window._ivanovGoogleTrackingLoaded) {
+          gtag('event', 'conversion', {
+            'send_to': 'AW-18264667036/SmmrCLHN9dQcEJznooVE'
+          });
+        }
+      });
+    });
+
+    var fb = document.querySelector('.floating-btns');
+    if (fb) fb.classList.add('ready');
+  });
+</script>
+
 <script>
-    function acceptCookies(){var e=document.getElementById('cookieBanner');if(e)e.classList.add('hidden');try{localStorage.setItem('cookiesAccepted','1')}catch(x){}loadGA4();}
-    function showPrivacy(){var e=document.getElementById('privacySection');if(e)e.style.display='block';window.scrollTo(0,0);}
-    function hidePrivacy(){var e=document.getElementById('privacySection');if(e)e.style.display='none';}
-    function openServiceModal(id){setTimeout(function(){if(window._svc)window._svc(id);},50);}
-    function selectSvcOpt(el,name){if(window._selSvc)window._selSvc(el,name);}
-    function sendServiceViber(){if(window._vibSvc)window._vibSvc();}
-    function closeServiceModal(e){if(window._closeSvc)window._closeSvc(e);}
-    function closeServiceModalDirect(){if(window._closeSvcD)window._closeSvcD();}
-    document.addEventListener('DOMContentLoaded',function(){try{if(localStorage.getItem('cookiesAccepted')){var e=document.getElementById('cookieBanner');if(e)e.classList.add('hidden');}}catch(x){}});
-  </script>
+  function openServiceModal(id){setTimeout(function(){if(window._svc)window._svc(id);},50);}
+  function selectSvcOpt(el,name){if(window._selSvc)window._selSvc(el,name);}
+  function sendServiceViber(){if(window._vibSvc)window._vibSvc();}
+  function closeServiceModal(e){if(window._closeSvc)window._closeSvc(e);}
+  function closeServiceModalDirect(){if(window._closeSvcD)window._closeSvcD();}
+</script>
 <link href="https://traqnivanov.github.io/Remonti-/favicon.png" rel="icon" type="image/x-icon"/>
 <link href="https://traqnivanov.github.io/Remonti-/favicon.png" rel="icon" type="image/png"/>
 <link href="https://traqnivanov.github.io/Remonti-/favicon.png" rel="apple-touch-icon"/>
@@ -1007,7 +1077,43 @@
     .equip-grid .equip-text{order:2;}
     .equip-grid .equip-box{order:1;}
   }
-  </style>
+  
+/* COOKIE CONSENT */
+.cookie-banner{
+  position:fixed;left:0;right:0;bottom:0;z-index:9000;
+  display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;
+  padding:1rem 1.25rem;background:#111c2e;border-top:1px solid rgba(201,148,58,.35);
+  box-shadow:0 -10px 30px rgba(0,0,0,.35);
+}
+.cookie-banner.hidden{display:none!important;}
+.cookie-banner p{margin:0;flex:1;min-width:240px;color:#c8d3e2;font-size:.84rem;line-height:1.55;}
+.cookie-banner strong{color:#fff;}
+.cookie-actions{display:flex;gap:.65rem;flex-wrap:wrap;}
+.cookie-btn{
+  border:1px solid rgba(201,148,58,.65);border-radius:4px;padding:.65rem 1.15rem;
+  font:600 .82rem 'Outfit',sans-serif;cursor:pointer;
+}
+.cookie-accept{background:linear-gradient(135deg,#c9943a,#e8b84b);color:#111827;}
+.cookie-reject{background:transparent;color:#e8b84b;}
+.cookie-info{border:0;background:transparent;color:#e8b84b;text-decoration:underline;cursor:pointer;font:inherit;padding:0;}
+.privacy-section{
+  display:none;position:fixed;inset:0;z-index:9100;overflow:auto;
+  background:#0d1b2e;color:#d7dfeb;padding:5rem max(1.25rem,calc((100vw - 850px)/2));
+}
+.privacy-section.active{display:block;}
+.privacy-section h2,.privacy-section h3{color:#e8b84b;margin:1.2rem 0 .55rem;}
+.privacy-section p{line-height:1.7;margin:.45rem 0;color:#c8d3e2;}
+.privacy-close{
+  margin-top:1.5rem;background:linear-gradient(135deg,#c9943a,#e8b84b);color:#111827;
+  border:0;border-radius:4px;padding:.75rem 1.2rem;font-weight:700;cursor:pointer;
+}
+@media(max-width:650px){
+  .cookie-banner{align-items:stretch;padding:.9rem;}
+  .cookie-actions{width:100%;}
+  .cookie-btn{flex:1;}
+}
+
+</style>
 <style id="lighthouse-fixes">
 .skip-link{position:fixed;top:-80px;left:1rem;z-index:10001;background:#fff;color:#0a0e17;padding:.75rem 1rem;border-radius:4px;font-weight:700;text-decoration:none}
 .skip-link:focus{top:1rem}
@@ -1030,11 +1136,16 @@ footer p[style]{color:#aeb9c8!important;}
 <div class="sticky-cta">
 <a href="tel:0877810418">📞 Обади се — 0877 810 418</a>
 </div>
+
 <!-- COOKIE BANNER -->
-<div class="cookie-banner" id="cookieBanner">
-<p><strong>Бисквитки:</strong> Използваме бисквитки за да подобрим вашето преживяване. С продължаването на сайта приемате нашата <button aria-label="Отвори политиката за поверителност" onclick="showPrivacy()" style="border:none;font:inherit;" type="button">Политика за поверителност</button>.</p>
-<button class="cookie-btn" onclick="acceptCookies()" type="button">Приемам</button>
+<div class="cookie-banner" id="cookieBanner" role="dialog" aria-label="Настройки за бисквитки">
+  <p><strong>Бисквитки и статистика:</strong> Google Analytics и Google Ads се включват само след ваше съгласие. Ivanov Analytics отчита анонимна обща статистика без име, телефон, съдържание на формата или пълен IP адрес. <button class="cookie-info" type="button" onclick="showPrivacy()">Повече информация</button></p>
+  <div class="cookie-actions">
+    <button class="cookie-btn cookie-reject" type="button" onclick="rejectCookies()">Отказвам</button>
+    <button class="cookie-btn cookie-accept" type="button" onclick="acceptCookies()">Приемам</button>
+  </div>
 </div>
+
 <!-- MOBILE MENU -->
 <div aria-hidden="true" aria-label="Мобилна навигация" class="mobile-menu" id="mobileMenu">
 <a href="#services" onclick="closeMobileMenu()">Услуги и цени</a>
@@ -2000,22 +2111,30 @@ openServiceModal = function(id) {
 </div>
 </div>
 </section><!-- PRIVACY SECTION -->
-</main><div class="privacy-section" id="privacySection">
-<h3 class="privacy-title">Политика за поверителност</h3>
-<p>Последна актуализация: <span class="cur-year"></span> г.</p>
-<h3>Кои сме ние</h3>
-<p>Ivanov Remonti („Ти Почиваш — Ние Ремонтираме") е фирма за довършителни ремонти, базирана в гр. София. Телефон за контакт: 0877 810 418.</p>
-<h3>Какви данни събираме</h3>
-<p>Събираме данните, които ни предоставяте доброволно чрез контактната форма — три имена и телефонен номер. С ваше съгласие използваме и Google Analytics, който събира анонимна статистика за посещенията (например кои страници се разглеждат), за да подобряваме сайта.</p>
-<h3>Как използваме данните</h3>
-<p>Данните се използват единствено за да се свържем с вас относно вашето запитване за ремонт. Не предоставяме данни на трети страни.</p>
-<h3>Бисквитки</h3>
-<p>Сайтът използва технически бисквитки, необходими за нормалното му функциониране. След ваше съгласие използваме и аналитични бисквитки (Google Analytics) за анонимна статистика. Не използваме бисквитки за реклама. Можете да откажете съгласие чрез банера за бисквитки.</p>
-<h3>Вашите права</h3>
-<p>Имате право да поискате изтриване или корекция на вашите данни по всяко време. За въпроси: 0877 810 418.</p>
-<br/>
-<button class="btn-gold" onclick="hidePrivacy()" style="display:inline-block; text-decoration:none;" type="button">← Обратно към сайта</button>
+</main>
+
+<div class="privacy-section" id="privacySection" aria-label="Политика за поверителност">
+  <h2>Политика за поверителност</h2>
+  <p><strong>Ivanov Remonti</strong>, София · телефон 0877 810 418.</p>
+
+  <h3>Данни от формата за контакт</h3>
+  <p>Използваме само данните, които изпращате доброволно, за да отговорим на вашето запитване. Не продаваме лични данни.</p>
+
+  <h3>Google Analytics и Google Ads</h3>
+  <p>Тези услуги се зареждат само след натискане на „Приемам“. При „Отказвам“ Google Analytics, Google Ads и техните рекламни конверсии не се зареждат.</p>
+
+  <h3>Ivanov Analytics</h3>
+  <p>Собствената ни система отчита анонимна обща статистика: посетена страница, временна сесия, устройство, браузър, източник, активно време, скрол и действия като натискане на телефон, Viber или изпращане на форма. Не записва име, телефонен номер, текст от формата, пълен IP адрес или постоянен fingerprint.</p>
+
+  <h3>Вашият избор</h3>
+  <p>Изборът за Google услугите се запазва локално в браузъра. Можете да го изтриете чрез настройките на браузъра и банерът ще се покаже отново.</p>
+
+  <h3>Вашите права</h3>
+  <p>За въпроси, корекция или изтриване на предоставени от вас лични данни се свържете на 0877 810 418.</p>
+
+  <button class="privacy-close" type="button" onclick="hidePrivacy()">← Обратно към сайта</button>
 </div>
+
 <footer>
 <div class="logo">Ivanov Remonti<span style="font-size:.58rem; color:#2e3e50; letter-spacing:.15em; font-family:'Jost'; font-weight:300; display:block; margin-top:.2rem;">Ти Почиваш — Ние Ремонтираме</span></div>
 <p>© <span class="cur-year"></span> · Всички права запазени · <button aria-label="Отвори политиката за поверителност" onclick="showPrivacy()" style="border:none;font:inherit;" type="button">Политика за поверителност</button></p>
@@ -2399,23 +2518,7 @@ function buildGalleryHTML(id) {
     imgs.map((src, i) => '<div class="gallery-thumb" onclick="openGalleryLb(galleries.'+id+','+i+')"><img src="'+src+'" alt="Снимка '+(i+1)+'"/></div>').join('') +
     '</div></div>';
 }
-
-  // COOKIE BANNER — скриваме банера при зареждане, ако вече има съгласие.
-  // (acceptCookies() е дефинирана в <head> и пуска loadGA4() веднага.)
-  if (localStorage.getItem('cookiesAccepted')) {
-    document.getElementById('cookieBanner').classList.add('hidden');
-  }
-
-  // PRIVACY PAGE
-  function showPrivacy() {
-    document.getElementById('privacySection').classList.add('active');
-    window.scrollTo(0, 0);
-  }
-  function hidePrivacy() {
-    document.getElementById('privacySection').classList.remove('active');
-  }
-
-  // SCROLL REVEAL ANIMATIONS
+// SCROLL REVEAL ANIMATIONS
   const revealEls = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
   const revealObserver = new IntersectionObserver((entries) => {
     entries.forEach((e, i) => {
@@ -2663,7 +2766,8 @@ function ensureBotLoaded() {
     return false;
   }
 </script>
-  <!-- Ivanov Analytics -->
+
+  <!-- Ivanov Analytics: анонимна обща статистика -->
   <script type="module" src="https://traqnivanov.github.io/ivanov-tools/analytics/tracker.js"></script>
 </body>
 </html>
