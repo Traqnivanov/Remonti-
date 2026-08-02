@@ -209,12 +209,12 @@
           "provider": {
             "@id": "https://ivanov-remonti.com/#business"
           },
-          "url": "https://ivanov-remonti.com/shpaklovka.html"
+          "url": "https://ivanov-remonti.com/shpaklovka"
         },
         "priceSpecification": {
           "@type": "PriceSpecification",
           "priceCurrency": "EUR",
-          "minPrice": 5.50,
+          "minPrice": 5.90,
           "unitText": "м²"
         }
       },
@@ -232,12 +232,12 @@
           "provider": {
             "@id": "https://ivanov-remonti.com/#business"
           },
-          "url": "https://ivanov-remonti.com/boyadisvane.html"
+          "url": "https://ivanov-remonti.com/boyadisvane"
         },
         "priceSpecification": {
           "@type": "PriceSpecification",
           "priceCurrency": "EUR",
-          "minPrice": 3.85,
+          "minPrice": 4.25,
           "unitText": "м²"
         }
       },
@@ -255,7 +255,7 @@
           "provider": {
             "@id": "https://ivanov-remonti.com/#business"
           },
-          "url": "https://ivanov-remonti.com/gipsokarton.html"
+          "url": "https://ivanov-remonti.com/gipsokarton"
         },
         "priceSpecification": {
           "@type": "PriceSpecification",
@@ -1008,7 +1008,6 @@
     .equip-grid .equip-box{order:1;}
   }
   </style>
-
 <style id="lighthouse-fixes">
 .skip-link{position:fixed;top:-80px;left:1rem;z-index:10001;background:#fff;color:#0a0e17;padding:.75rem 1rem;border-radius:4px;font-weight:700;text-decoration:none}
 .skip-link:focus{top:1rem}
@@ -1016,8 +1015,14 @@ button.hamburger{background:transparent;border:0}
 button[onclick="showPrivacy()"],button[onclick="hidePrivacy()"]{cursor:pointer;color:inherit;background:transparent}
 .hero-sub,.section-lead,.service-card p,.card-pdesc,.svc-bar-item{color:rgba(255,255,255,.68)!important}
 @media(max-width:768px){body::before{display:none}.gold-particles{display:none!important}}
+.yt-lite{cursor:pointer;background:#000;border-radius:8px;overflow:hidden;}
+.yt-lite img{display:block;}
+footer a{text-decoration:underline;text-underline-offset:.18em;}
+footer p[style]{color:#aeb9c8!important;}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto!important}*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}.gold-particles{display:none!important}}
 </style>
+
+&lt;!-- CLIENT FLOW PREVIEW: Sofia index reorganized 2026-08-02 --&gt;
 </head>
 <body><a class="skip-link" href="#main-content">Към основното съдържание</a>
 <div class="gold-particles" id="goldParticles"></div>
@@ -1150,12 +1155,12 @@ document.addEventListener('DOMContentLoaded', function() {
 <span class="hero-badge">✦ Безплатен оглед до 24ч · София</span>
 <h1>Строителни и довършителни ремонти<span class="accent"> в София <span id="hero-year"></span></span></h1>
 <p class="hero-tagline">Ти Почиваш — Ние Ремонтираме</p>
-<p class="hero-sub">Забравете за праха, хаоса и недовършените ремонти. Ние <strong>поемаме всичко</strong> — от консултацията до финалното почистване. Вие получавате <strong>завършен дом — точно в срок и точно по договор</strong>.</p>
-<p class="hero-sub" style="margin-top:.6rem;"><strong style="color:var(--gold);">Малък проект или цялостен ремонт — без компромис с детайла.</strong></p>
+<p class="hero-sub">Поемаме ремонта от първоначалния оглед до окончателното завършване. Получавате <strong>ясна оферта, фиксирана цена по договор и постоянна информация за напредъка.</strong></p>
+<p class="hero-sub" style="margin-top:.6rem;"><strong style="color:var(--gold);">Малък проект или цялостен ремонт — с еднакво внимание към изпълнението.</strong></p>
 <p class="hero-location">📍 <span>гр. София</span> · Банкя · Бояна · Лозен · Витоша и всички квартали</p>
 <div class="hero-btns">
-<a class="btn-gold" href="tel:0877810418">📞 Обадете се</a>
-<a class="btn-outline" href="#contact">Безплатен оглед →</a>
+<a class="btn-gold" href="tel:0877810418">📞 0877 810 418</a>
+<a class="btn-outline" href="#contact">Запази безплатен оглед →</a>
 </div>
 <div id="hero-calc-badge" onclick="openTeryBot()" onmouseout="this.style.background='rgba(201,148,58,0.08)';this.style.borderColor='rgba(201,148,58,0.28)'" onmouseover="this.style.background='rgba(201,148,58,0.15)';this.style.borderColor='rgba(201,148,58,0.5)'" style="display:inline-flex;align-items:center;gap:10px;margin-top:1.2rem;background:rgba(201,148,58,0.08);border:1px solid rgba(201,148,58,0.28);border-radius:30px;padding:10px 22px;cursor:pointer;transition:all .25s;">
 <span style="width:8px;height:8px;border-radius:50%;background:#c9943a;display:inline-block;animation:heroBadgePulse 2s ease-in-out infinite;flex-shrink:0;"></span>
@@ -1195,9 +1200,9 @@ document.addEventListener('DOMContentLoaded', function() {
 </div>
 </div>
 <div style="background:rgba(201,148,58,.06);border:1px solid rgba(201,148,58,.2);border-radius:10px;padding:1.6rem 2rem;text-align:center;">
-<p style="font-family:'Cormorant Garamond',Georgia,serif;font-size:1.5rem;color:#e8b84b;line-height:1.3;margin-bottom:.8rem;">При нас — не.</p>
-<p style="font-size:1rem;color:rgba(255,255,255,.75);line-height:1.7;">Знаете фиксираната цена преди старт — <strong style="color:#c9943a;">без изненади, без скрити такси</strong>. Работим до завършване. Плащате, когато сте доволни. Обясняваме какво наистина е нужно — и какво не.</p>
-<p style="color:rgba(201,148,58,.75);font-size:.92rem;font-style:italic;margin-top:.8rem;">Решавате спокойно — преди още да сме започнали.</p>
+<p style="font-family:'Cormorant Garamond',Georgia,serif;font-size:1.5rem;color:#e8b84b;line-height:1.3;margin-bottom:.8rem;">При нас условията са ясни предварително.</p>
+<p style="font-size:1rem;color:rgba(255,255,255,.75);line-height:1.7;">След огледа получавате конкретна оферта с описани дейности, цена и срок. Ако пожелаете допълнителна работа, тя се обсъжда и одобрява отделно. <strong style="color:#c9943a;">Плащането е на етапи — след завършена и приета работа.</strong> Обясняваме какво действително е необходимо и какво може да бъде спестено или отложено.</p>
+<p style="color:rgba(201,148,58,.75);font-size:.92rem;font-style:italic;margin-top:.8rem;">Решавате спокойно, преди да започнем.</p>
 </div>
 </div>
 </div>
@@ -1216,7 +1221,7 @@ document.addEventListener('DOMContentLoaded', function() {
 <span class="section-tag">✦ Основни услуги</span>
 <h2 class="section-h2">Ремонт на апартаменти, къщи и офиси в София</h2>
 <div class="gold-line center"></div>
-<p class="section-lead" style="max-width:560px; margin:0 auto;">Избери услуга — виж точно какво включва и колко струва.</p>
+<p class="section-lead" style="max-width:560px; margin:0 auto;">Изберете услуга, за да видите какво включва и как се формира цената.</p>
 </div>
 <div class="showcase">
 <div class="svc-prem-card" id="spaklovka">
@@ -1325,7 +1330,7 @@ document.addEventListener('DOMContentLoaded', function() {
 <p style="margin-top:1.8rem;font-family:'Cormorant Garamond',Georgia,serif;font-size:1.3rem;color:#e8b84b;line-height:1.4;">За нас няма малки и големи клиенти — всеки заслужава пълно внимание.</p>
 <p style="margin-top:.4rem;font-size:.92rem;color:rgba(255,255,255,.55);">Малък проект или цялостен ремонт — кажете ни какво ви трябва.</p>
 </div>
-</div>
+<div style="margin:2.2rem auto 0;max-width:900px;padding:1.4rem 1.6rem;background:rgba(201,148,58,.06);border:1px solid rgba(201,148,58,.2);border-radius:10px;text-align:center;"><p style="color:rgba(255,255,255,.78);font-size:.95rem;line-height:1.8;margin:0;"><strong style="color:#c9943a;">Във всяка услуга:</strong> безплатен оглед · ясна оферта · фиксирана цена по договор · писмена гаранция · постоянна информация за напредъка</p></div></div>
 </section>
 <section class="reviews" id="reviews">
 <div class="reviews-inner">
@@ -1352,68 +1357,60 @@ document.addEventListener('DOMContentLoaded', function() {
 </div>
 </section>
 <!-- EQUIPMENT -->
-<section style="padding:5rem 2.5rem;background:#070c16;">
-<div class="equip-grid">
-<div class="equip-text">
-<span style="font-size:.68rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:#c9943a;display:block;margin-bottom:.9rem;">✦ Идваме подготвени</span>
-<h2 style="font-family:'Cormorant Garamond',Georgia,serif;font-weight:400;font-size:clamp(1.7rem,4vw,2.6rem);line-height:1.2;color:#fff;margin-bottom:.4rem;">Идваме с всичко необходимо.</h2>
-<p style="font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:1.25rem;color:#c9943a;margin-bottom:1.2rem;">Това е уважение към занаята.</p>
-<div style="width:40px;height:2px;background:linear-gradient(90deg,#c9943a,#e8b84b);margin-bottom:1.3rem;"></div>
-<p style="font-size:.95rem;color:rgba(255,255,255,.6);line-height:1.85;margin-bottom:1.3rem;">Идваме с пълно професионално оборудване. Не взимаме нищо назаем, не прекъсваме за липсваща машина — захващаме се и довършваме.</p>
-<div style="display:flex;gap:.7rem;flex-wrap:wrap;">
-<span style="background:rgba(201,148,58,.1);border:1px solid rgba(201,148,58,.25);color:#c9943a;font-size:.8rem;font-weight:700;padding:.4rem 1rem;border-radius:6px;letter-spacing:.05em;">Bosch</span>
-<span style="background:rgba(201,148,58,.1);border:1px solid rgba(201,148,58,.25);color:#c9943a;font-size:.8rem;font-weight:700;padding:.4rem 1rem;border-radius:6px;letter-spacing:.05em;">Milwaukee</span>
-<span style="background:rgba(201,148,58,.1);border:1px solid rgba(201,148,58,.25);color:#c9943a;font-size:.8rem;font-weight:700;padding:.4rem 1rem;border-radius:6px;letter-spacing:.05em;">DeWalt</span>
-</div>
-</div>
-<div class="equip-box" style="background:rgba(201,148,58,.05);border:1px solid rgba(201,148,58,.2);border-radius:12px;padding:1.8rem 2rem;">
-<div style="font-size:2rem;margin-bottom:1.1rem;">🛠️</div>
-<p style="font-size:.92rem;color:rgba(255,255,255,.55);margin-bottom:1rem;letter-spacing:.04em;">От нас няма да чуете:</p>
-<p style="font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:1.4rem;color:#fff;line-height:1.9;">„Купи валяк."<br/>„Нямам машина."<br/>„Ще го измислим."</p>
-</div>
-</div>
-</section>
+
 <section class="work-showcase" id="video">
 <span class="section-tag" style="text-align:center;display:block;">❦ Доказателство за качество</span>
-<h2 class="section-h2" style="text-align:center;">На живо от обектите в София: реални резултати преди и след</h2>
+<h2 class="section-h2" style="text-align:center;">Реални ремонти в София — снимки и видео от наши обекти</h2>
 <div class="gold-line center"></div>
 <p style="text-align:center;font-size:.85rem;color:var(--muted);margin:0 auto 2rem;font-weight:300;">39 снимки · 3 видеа от реални обекти</p>
 <p class="section-tag" style="text-align:center;margin-bottom:1.2rem;">▶ Видеа от обекти</p>
 <div class="videos-grid" style="margin-bottom:3rem;">
 <div class="video-wrap yt-lite" data-id="WNbgtSS7hlU" data-title="Ремонт 1" style="cursor:pointer;">
-  <img src="https://i.ytimg.com/vi/WNbgtSS7hlU/hqdefault.jpg" alt="Ремонт 1" loading="lazy" decoding="async" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;"/>
-  <button type="button" aria-label="Пусни видео" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:56px;height:56px;background:rgba(255,0,0,.85);border:none;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;">
-    <svg width="22" height="22" viewBox="0 0 24 24" fill="white"><path d="M8 5v14l11-7z"/></svg>
-  </button>
+<img alt="Ремонт 1" decoding="async" height="360" loading="lazy" src="https://i.ytimg.com/vi/WNbgtSS7hlU/hqdefault.jpg" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;" width="480"/>
+<button aria-label="Пусни видео" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:56px;height:56px;background:rgba(255,0,0,.85);border:none;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;" type="button">
+<svg fill="white" height="22" viewbox="0 0 24 24" width="22"><path d="M8 5v14l11-7z"></path></svg>
+</button>
 </div>
 <div class="video-wrap yt-lite" data-id="Wp8iLS5HqPM" data-title="Ремонт 2" style="cursor:pointer;">
-  <img src="https://i.ytimg.com/vi/Wp8iLS5HqPM/hqdefault.jpg" alt="Ремонт 2" loading="lazy" decoding="async" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;"/>
-  <button type="button" aria-label="Пусни видео" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:56px;height:56px;background:rgba(255,0,0,.85);border:none;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;">
-    <svg width="22" height="22" viewBox="0 0 24 24" fill="white"><path d="M8 5v14l11-7z"/></svg>
-  </button>
+<img alt="Ремонт 2" decoding="async" height="360" loading="lazy" src="https://i.ytimg.com/vi/Wp8iLS5HqPM/hqdefault.jpg" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;" width="480"/>
+<button aria-label="Пусни видео" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:56px;height:56px;background:rgba(255,0,0,.85);border:none;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;" type="button">
+<svg fill="white" height="22" viewbox="0 0 24 24" width="22"><path d="M8 5v14l11-7z"></path></svg>
+</button>
 </div>
 <div class="video-wrap yt-lite" data-id="P9afybbtrWM" data-title="Ремонт 3" style="cursor:pointer;">
-  <img src="https://i.ytimg.com/vi/P9afybbtrWM/hqdefault.jpg" alt="Ремонт 3" loading="lazy" decoding="async" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;"/>
-  <button type="button" aria-label="Пусни видео" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:56px;height:56px;background:rgba(255,0,0,.85);border:none;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;">
-    <svg width="22" height="22" viewBox="0 0 24 24" fill="white"><path d="M8 5v14l11-7z"/></svg>
-  </button>
+<img alt="Ремонт 3" decoding="async" height="360" loading="lazy" src="https://i.ytimg.com/vi/P9afybbtrWM/hqdefault.jpg" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;" width="480"/>
+<button aria-label="Пусни видео" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:56px;height:56px;background:rgba(255,0,0,.85);border:none;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;" type="button">
+<svg fill="white" height="22" viewbox="0 0 24 24" width="22"><path d="M8 5v14l11-7z"></path></svg>
+</button>
 </div>
 </div>
 <script>
-document.querySelectorAll('.yt-lite').forEach(function(el) {
-  el.addEventListener('click', function() {
-    var id = el.getAttribute('data-id');
-    var title = el.getAttribute('data-title');
-    var iframe = document.createElement('iframe');
-    iframe.src = 'https://www.youtube-nocookie.com/embed/' + id + '?autoplay=1';
-    iframe.title = title;
-    iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
-    iframe.allowFullscreen = true;
-    iframe.style.cssText = 'position:absolute;top:0;left:0;width:100%;height:100%;border:none;';
-    el.innerHTML = '';
-    el.appendChild(iframe);
+(function(){
+  var els = document.querySelectorAll('.yt-lite');
+  els.forEach(function(el) {
+    function loadVideo() {
+      if (el.dataset.loaded) return;
+      el.dataset.loaded = '1';
+      var id = el.getAttribute('data-id');
+      var title = el.getAttribute('data-title');
+      var iframe = document.createElement('iframe');
+      iframe.src = 'https://www.youtube-nocookie.com/embed/' + id + '?autoplay=1';
+      iframe.title = title;
+      iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+      iframe.allowFullscreen = true;
+      iframe.style.cssText = 'position:absolute;top:0;left:0;width:100%;height:100%;border:none;border-radius:12px;';
+      el.removeAttribute('role');
+      el.removeAttribute('tabindex');
+      el.removeAttribute('aria-label');
+      el.innerHTML = '';
+      el.appendChild(iframe);
+    }
+    el.addEventListener('click', loadVideo);
+    el.addEventListener('keydown', function(e) {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); loadVideo(); }
+    });
   });
-});
+})();
 </script>
 <div style="max-width:900px;margin:0 auto 3rem;">
 <p class="section-tag" style="text-align:center;margin-bottom:1.5rem;">⟺ Преди и след — плъзни, за да видиш разликата</p>
@@ -1733,10 +1730,14 @@ openServiceModal = function(id) {
 <div class="advisor-inner">
 <div class="advisor-left reveal-left">
 <span class="section-tag">✦ Първо разбирате, после решавате</span>
-<h2 class="section-h2">Безплатен съвет<br/>преди ремонт</h2>
+<h2 class="section-h2">Безплатен оглед и честен съвет<br/>преди ремонт</h2>
 <div class="gold-line"></div>
 <div class="advisor-quote" id="advisor-quote-slide" style="opacity:0;transform:translateX(-16px);transition:all .6s ease;">
-<p>„След 23 години опит знам какво да гледам на обекта. Идвам, оглеждам и ви казвам какво наистина е нужно. После решавате Вие — без натиск, без обещания."</p>
+<p style="font-size:1.08rem;line-height:1.85;color:rgba(255,255,255,.78);margin-bottom:1rem;">След 23 години работа знам какво трябва да се провери още при първия оглед.</p>
+<p style="font-size:1rem;line-height:1.85;color:rgba(255,255,255,.72);margin-bottom:1rem;">Идвам на обекта, разглеждам състоянието и ви казвам какво действително е необходимо. Когато дадена дейност може да бъде спестена или отложена, ще го кажа открито.</p>
+<p style="font-size:.95rem;line-height:1.8;color:rgba(255,255,255,.68);">Обсъждаме състоянието, правилната последователност, подходящите материали, ориентировъчния срок, реалния бюджет и кои дейности са приоритетни.</p>
+<p style="color:#c9943a;font-weight:700;margin-top:1rem;">След това решавате вие — без натиск и без задължение.</p>
+<a class="btn-gold" href="#contact" style="display:inline-flex;margin-top:1.2rem;">Запази безплатен оглед →</a>
 </div>
 <div style="margin:1.8rem 0;padding:1.6rem 1.8rem;border-left:4px solid #c9943a;background:linear-gradient(90deg,rgba(201,148,58,.1),transparent);border-radius:0 6px 6px 0;">
 <p style="font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:1.45rem;color:#fff;line-height:1.55;">Когато знаете как протича ремонтът, никой не може да ви заблуди — нито ние, нито друг.</p>
@@ -1760,30 +1761,30 @@ openServiceModal = function(id) {
 <div class="process-inner">
 <div class="process-header reveal">
 <span class="section-tag">✦ Как работим</span>
-<h2 class="section-h2">Нашият процес: 4 стъпки от оглед до предаване</h2>
+<h2 class="section-h2">Как протича ремонтът — 4 ясни стъпки</h2>
 <div class="gold-line center"></div>
 <p class="section-lead" style="color:var(--muted); max-width:500px; margin:0 auto;">Знаете какво следва на всяка стъпка — без неизвестни по време на ремонта.</p>
 </div>
 <div class="process-grid">
 <div class="process-step">
 <div class="process-circle">1</div>
-<h3>Безплатен оглед</h3>
-<p>Идваме на обекта, оглеждаме и ви даваме честен съвет — без ангажимент и без скрити цели.</p>
+<h3>Оглед и уточняване</h3>
+<p>Оглеждаме обекта, обсъждаме вашите изисквания и определяме необходимите дейности.</p>
 </div>
 <div class="process-step">
 <div class="process-circle">2</div>
-<h3>Точна оферта</h3>
-<p>Получавате подробна оферта с описани дейности и ясна крайна цена.</p>
+<h3>Подробна оферта</h3>
+<p>Получавате ясно описание на работата, цената, срока и начина на плащане.</p>
 </div>
 <div class="process-step">
 <div class="process-circle">3</div>
-<h3>Ремонтът започва</h3>
-<p>Работим по договор и ви изпращаме фото и видео отчет на всеки етап директно на телефона.</p>
+<h3>Изпълнение на ремонта</h3>
+<p>Работим по договорената последователност и ви информираме за напредъка със снимки и видео при необходимост.</p>
 </div>
 <div class="process-step">
 <div class="process-circle">4</div>
-<h3>Предаване</h3>
-<p>Почистваме, предаваме и подписваме писмена гаранция.</p>
+<h3>Приемане на работата</h3>
+<p>Всеки етап се преглежда и приема. Финалното плащане е след завършване на договорената работа.</p>
 </div>
 </div>
 <div style="text-align:center; margin-top:2.5rem; padding-top:2rem; border-top:1px solid rgba(201,148,58,.12);">
@@ -1794,6 +1795,26 @@ openServiceModal = function(id) {
 </div>
 </div>
 </div>
+</section><section style="padding:5rem 2.5rem;background:#070c16;">
+<div class="equip-grid">
+<div class="equip-text">
+<span style="font-size:.68rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:#c9943a;display:block;margin-bottom:.9rem;">✦ Идваме подготвени</span>
+<h2 style="font-family:'Cormorant Garamond',Georgia,serif;font-weight:400;font-size:clamp(1.7rem,4vw,2.6rem);line-height:1.2;color:#fff;margin-bottom:.4rem;">Идваме с всичко необходимо.</h2>
+<p style="font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:1.25rem;color:#c9943a;margin-bottom:1.2rem;">Това е уважение към занаята.</p>
+<div style="width:40px;height:2px;background:linear-gradient(90deg,#c9943a,#e8b84b);margin-bottom:1.3rem;"></div>
+<p style="font-size:.95rem;color:rgba(255,255,255,.6);line-height:1.85;margin-bottom:1.3rem;">Идваме с пълно професионално оборудване. Не взимаме нищо назаем, не прекъсваме за липсваща машина — захващаме се и довършваме.</p>
+<div style="display:flex;gap:.7rem;flex-wrap:wrap;">
+<span style="background:rgba(201,148,58,.1);border:1px solid rgba(201,148,58,.25);color:#c9943a;font-size:.8rem;font-weight:700;padding:.4rem 1rem;border-radius:6px;letter-spacing:.05em;">Bosch</span>
+<span style="background:rgba(201,148,58,.1);border:1px solid rgba(201,148,58,.25);color:#c9943a;font-size:.8rem;font-weight:700;padding:.4rem 1rem;border-radius:6px;letter-spacing:.05em;">Milwaukee</span>
+<span style="background:rgba(201,148,58,.1);border:1px solid rgba(201,148,58,.25);color:#c9943a;font-size:.8rem;font-weight:700;padding:.4rem 1rem;border-radius:6px;letter-spacing:.05em;">DeWalt</span>
+</div>
+</div>
+<div class="equip-box" style="background:rgba(201,148,58,.05);border:1px solid rgba(201,148,58,.2);border-radius:12px;padding:1.8rem 2rem;">
+<div style="font-size:2rem;margin-bottom:1.1rem;">🛠️</div>
+<p style="font-size:.92rem;color:rgba(255,255,255,.55);margin-bottom:1rem;letter-spacing:.04em;">От нас няма да чуете:</p>
+<p style="font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:1.4rem;color:#fff;line-height:1.9;">„Купи валяк."<br/>„Нямам машина."<br/>„Ще го измислим."</p>
+</div>
+</div>
 </section>
 <!-- GUARANTEE -->
 <section class="guarantee-section" id="guarantee">
@@ -1802,13 +1823,13 @@ openServiceModal = function(id) {
 <div class="guarantee-badge">
 <span>100%</span>
 </div>
-<h2 class="section-h2">Не просто обещание — подписан документ.</h2>
+<h2 class="section-h2">Ясни условия, договор и писмена гаранция</h2>
 <div class="gold-line center"></div>
 <p class="section-lead" style="max-width:550px; margin:0 auto;">Ако нещо не отговаря на договореното, връщаме се и го оправяме. Без въпроси, без доплащане.</p>
 <div class="guarantee-points">
-<div class="gpoint"><span class="gpoint-icon">📄</span><h3>Подписан договор</h3><p>Фиксирана цена и срок, договорени преди старт.</p></div>
-<div class="gpoint"><span class="gpoint-icon">🔏</span><h3>Писмена гаранция</h3><p>За всяка извършена дейност — черно на бяло, с подпис.</p></div>
-<div class="gpoint"><span class="gpoint-icon">🔄</span><h3>Безплатна корекция</h3><p>Без доплащане, без оправдания.</p></div>
+<div class="gpoint"><span class="gpoint-icon">📄</span><h3>Подробна оферта и договор</h3><p>Предварително знаете какво включва цената, срока и начинът на плащане.</p></div>
+<div class="gpoint"><span class="gpoint-icon">🔏</span><h3>Писмена гаранция</h3><p>Получавате документ за извършените дейности и гаранционните условия.</p></div>
+<div class="gpoint"><span class="gpoint-icon">🔄</span><h3>Корекция без доплащане</h3><p>При проблем, за който носим отговорност, се връщаме и го отстраняваме без допълнително заплащане.</p></div>
 </div>
 <div style="display:flex; justify-content:center; margin-top:3rem;">
 <svg height="160" style="filter:drop-shadow(0 0 15px rgba(212,168,75,.4));" viewbox="0 0 220 220" width="160" xmlns="http://www.w3.org/2000/svg">
@@ -1845,25 +1866,37 @@ openServiceModal = function(id) {
 <div class="benefits-top">
 <div>
 <span class="section-tag">✦ Защо нас</span>
-<h2 class="section-h2">Не пореден майстор — а вашият партньор.</h2>
+<h2 class="section-h2">Един човек поема отговорността</h2>
 <div class="gold-line"></div>
 <p class="section-lead" style="color:var(--muted);">Водим всеки обект отговорно, под наш контрол. Стая или цял апартамент — знаете кой е в дома ви.</p>
 </div>
 <div class="benefits-top-right">
-<div class="benefit-row"><div class="benefit-icon-wrap">😌</div><div><h3>Спокойно за вас</h3><p>Цялата работа и отговорност са на едно място. Без прехвърляне, без „това не е по нашата част".</p></div></div>
-<div class="benefit-row"><div class="benefit-icon-wrap">🤝</div><div><h3>Без скрито</h3><p>Казваме какво ще се направи, защо е необходимо и колко струва — преди да започне ремонтът.</p></div></div>
-<div class="benefit-row"><div class="benefit-icon-wrap">👑</div><div><h3>Доверени хора в дома ви</h3><p>Само хора, за които гарантираме. Никой случаен.</p></div></div>
-<div class="benefit-row"><div class="benefit-icon-wrap">⏱️</div><div><h3>Спазваме сроковете</h3><p>Изскочи ли нещо, научавате предварително — не накрая.</p></div></div>
+<div class="benefit-row"><div class="benefit-icon-wrap">💬</div><div><h3>Ясна комуникация</h3><p>Знаете какво се прави, защо се прави и как напредва обектът.</p></div></div>
+<div class="benefit-row"><div class="benefit-icon-wrap">🛠️</div><div><h3>Лична ангажираност</h3><p>Работя лично по всеки обект и следя изпълнението от началото до края.</p></div></div>
+<div class="benefit-row"><div class="benefit-icon-wrap">🤝</div><div><h3>Подбрани хора</h3><p>Когато участват други специалисти, това са хора, за чиято работа мога да поема отговорност.</p></div></div>
+<div class="benefit-row"><div class="benefit-icon-wrap">⚠️</div><div><h3>Предварително предупреждение</h3><p>Ако се открие скрит проблем или възникне промяна, научавате веднага — не при финалната сметка.</p></div></div>
 </div>
 </div>
 </div>
 </section>
 <!-- DOVEREN KRUG -->
+
+<!-- FOCUS -->
+<section class="urgency">
+<div class="urgency-inner">
+<span class="section-tag" style="color:var(--gold2); display:block; text-align:center;">✦ Нашият начин</span>
+<h2>Малко обекти. Пълно внимание.</h2>
+<p>Поемаме ограничен брой ремонти едновременно, за да отделим нужното време на всеки обект и да довеждаме започнатата работа докрай. Поемаме както малки, така и по-големи ремонти, когато можем да им осигурим необходимото внимание.</p>
+<a class="btn-gold" href="tel:0877810418" style="font-size:1rem; padding:1.2rem 2rem; display:inline-block; max-width:100%; box-sizing:border-box; white-space:normal; word-break:break-word;">Провери свободен срок за оглед →</a>
+<p style="margin-top:1rem;font-size:.75rem;color:rgba(201,148,58,.35);">или <button onclick="openTeryBot()" style="color:rgba(201,148,58,.5);cursor:pointer;text-decoration:underline;" type="button">изчислете цена за 2 минути →</button></p>
+</div>
+</section>
+<!-- FAQ -->
 <section class="bonuses" id="bonuses">
 <div class="bonuses-inner">
 <div class="bonuses-header reveal">
 <span class="section-tag">✦ Доверен кръг</span>
-<h2 class="section-h2">За нас ремонтът не свършва на последния ден</h2>
+<h2 class="section-h2">Доверен кръг</h2>
 <div class="gold-line center"></div>
 <p class="section-lead" style="max-width:480px; margin:0 auto; color:var(--muted);">Оставаме на същия телефон — за гаранция, въпрос или нова работа, за години напред. Тези клиенти наричаме Доверен кръг.</p>
 </div>
@@ -1880,17 +1913,7 @@ openServiceModal = function(id) {
 <p style="text-align:center;margin-top:2rem;font-size:.88rem;color:rgba(255,255,255,.4);font-weight:300;font-style:italic;">🤝 Не изчезваме след последния ден. При въпрос, проблем или нов ремонт — ние сме на телефона.</p>
 </div>
 </section>
-<!-- FOCUS -->
-<section class="urgency">
-<div class="urgency-inner">
-<span class="section-tag" style="color:var(--gold2); display:block; text-align:center;">✦ Нашият начин</span>
-<h2>Малко обекти. Пълно внимание.</h2>
-<p>Поемаме ограничен брой ремонти едновременно — за да върви всеки с нужното внимание и качество, без бързане. Така резултатът е предвидим и спокоен.</p>
-<a class="btn-gold" href="tel:0877810418" style="font-size:1rem; padding:1.2rem 2rem; display:inline-block; max-width:100%; box-sizing:border-box; white-space:normal; word-break:break-word;">📞 Запишете безплатен оглед</a>
-<p style="margin-top:1rem;font-size:.75rem;color:rgba(201,148,58,.35);">или <button onclick="openTeryBot()" style="color:rgba(201,148,58,.5);cursor:pointer;text-decoration:underline;" type="button">изчислете цена за 2 минути →</button></p>
-</div>
-</section>
-<!-- FAQ -->
+
 <section class="faq" id="faq">
 <div class="faq-inner">
 <span class="section-tag">✦ Отговори на вашите въпроси</span>
@@ -1900,10 +1923,10 @@ openServiceModal = function(id) {
 <div class="faq-item"><div class="faq-q">Кой купува материалите? <span>+</span></div><div class="faq-a"><p>Зависи от вас. Можем да доставим материалите по списък, или вие да ги купите сами. Преди работа уточняваме заедно кои материали, в какво количество и за коя стая.</p></div></div>
 <div class="faq-item"><div class="faq-q">Работите ли в цяла София? <span>+</span></div><div class="faq-a"><p>Да, обслужваме всички квартали на София и околните места — Банкя, Бояна, Лозен, Витоша и др.</p></div></div>
 <div class="faq-item"><div class="faq-q">Има ли писмена гаранция? <span>+</span></div><div class="faq-a"><p>Да. За всяка извършена дейност предоставяме писмена гаранция. Ако нещо не е наред — връщаме се и оправяме без доплащане.</p></div></div>
-<div class="faq-item"><div class="faq-q">Как протича безплатната консултация? <span>+</span></div><div class="faq-a"><p>Идваме на обекта, оглеждаме и обясняваме точно какво е необходимо, в каква последователност и на каква цена — без ангажимент от ваша страна.</p></div></div>
+<div class="faq-item"><div class="faq-q">Как протича безплатният оглед? <span>+</span></div><div class="faq-a"><p>Посещаваме обекта, оглеждаме състоянието, обсъждаме вашите изисквания и уточняваме какво реално трябва да се направи. След това получавате оферта и решавате дали да продължим. Огледът не ви задължава да възложите ремонта.</p></div></div>
 <div class="faq-item"><div class="faq-q">Трябва ли да съм на обекта по време на ремонта? <span>+</span></div><div class="faq-a"><p>Не е задължително. Изпращаме ви фото и видео отчет всеки ден. Вие следите напредъка от телефона си, където и да сте.</p></div></div>
-<div class="faq-item"><div class="faq-q">Кога се плаща? <span>+</span></div><div class="faq-a"><p>Цената е ясна преди да започнем и не се мени. При нужда от материали — авансово плащане за тях, след което плащате на етапи срещу завършена и приета работа. Плащате когато сте доволни от свършеното, не преди.</p></div></div>
-<div class="faq-item"><div class="faq-q">Какво ако бюджетът е ограничен? <span>+</span></div><div class="faq-a"><p>Кажете ни. Намираме решение заедно — кое е приоритет, кое може да почака, как да получите максимум от бюджета си. За нас няма малки и големи клиенти.</p></div></div>
+<div class="faq-item"><div class="faq-q">Кога се плаща? <span>+</span></div><div class="faq-a"><p>При необходимост материалите се заплащат предварително. Трудът се плаща на договорени етапи след завършена и приета работа. Точният начин на плащане се записва в офертата или договора.</p></div></div>
+<div class="faq-item"><div class="faq-q">Какво ако бюджетът е ограничен? <span>+</span></div><div class="faq-a"><p>Можем да определим кои дейности са най-належащи, кое може да се направи на етапи и кое може да бъде отложено. Не препоръчваме компромиси, които ще доведат до повторен ремонт след кратко време.</p></div></div>
 <div style="margin-top:2.5rem; padding:1.8rem 2rem; background:rgba(201,148,58,.06); border:1px solid rgba(201,148,58,.2); border-radius:8px; text-align:center;">
 <p style="font-size:.92rem; color:rgba(255,255,255,.65); margin-bottom:.6rem; font-weight:300;">Имате друг въпрос, на който не намерихте отговор?</p>
 <p style="font-size:.78rem; color:var(--muted); margin-bottom:1.4rem; font-weight:300;">Питайте ни директно — отговаряме веднага.</p>
@@ -1937,9 +1960,9 @@ openServiceModal = function(id) {
 <div class="contact-inner">
 <div class="contact-left">
 <span class="section-tag">✦ Свържи се</span>
-<h2 class="section-h2">Безплатна консултация, оглед и оферта за ремонт в София</h2>
+<h2 class="section-h2">Запазете безплатен оглед за ремонт в София</h2>
 <div class="gold-line"></div>
-<p class="section-lead">Обадете се или попълнете формата. Ще ви отговорим бързо с честен съвет — без ангажимент.</p>
+<p class="section-lead">Обадете се или изпратете кратко описание на ремонта. Ще уточним какво ви е необходимо и ще уговорим удобен ден за оглед.</p>
 <div style="display:flex; flex-direction:column; gap:1rem; margin-bottom:1.5rem;">
 <img alt="Ivanov Remonti строителни услуги София" decoding="async" height="900" loading="lazy" onclick="openVizitkaLightbox()" onmouseout="this.style.transform='';this.style.boxShadow=''" onmouseover="this.style.transform='scale(1.04)';this.style.boxShadow='0 0 20px rgba(201,148,58,.3)'" src="https://traqnivanov.github.io/Remonti-/ivanov-remonti-stroitelni-uslugi-kachestvo-garantsiya-sofia.jpg" style="width:100%;height:auto;object-fit:contain;border-radius:12px;border:1px solid rgba(201,148,58,.3);cursor:pointer;transition:transform .2s,box-shadow .2s;" width="1200"/>
 <div>
@@ -1962,7 +1985,7 @@ openServiceModal = function(id) {
 <input autocomplete="name" id="lf-name" placeholder="👤 Вашето име" required="" style="background:rgba(255,255,255,.05);border:1px solid rgba(201,148,58,.25);border-radius:8px;padding:.8rem 1rem;color:#fff;font-family:inherit;font-size:.9rem;outline:none;" type="text"/>
 <input autocomplete="tel" id="lf-phone" oninput="document.getElementById('lf-phone-err').style.display='none';this.style.borderColor='rgba(201,148,58,.25)';" placeholder="📞 Вашият телефон" required="" style="background:rgba(255,255,255,.05);border:1px solid rgba(201,148,58,.25);border-radius:8px;padding:.8rem 1rem;color:#fff;font-family:inherit;font-size:.9rem;outline:none;" type="tel"/>
 <div id="lf-phone-err" style="display:none;font-size:.78rem;color:#ff7b7b;margin-top:-.5rem;">⚠️ Моля въведете валиден телефон</div>
-<textarea id="lf-msg" placeholder="💬 Какво ви трябва? (по избор)" rows="3" style="background:rgba(255,255,255,.05);border:1px solid rgba(201,148,58,.25);border-radius:8px;padding:.8rem 1rem;color:#fff;font-family:inherit;font-size:.9rem;outline:none;resize:vertical;"></textarea>
+<textarea id="lf-msg" placeholder="💬 Какъв ремонт планирате? Квартал и кратко описание" rows="3" style="background:rgba(255,255,255,.05);border:1px solid rgba(201,148,58,.25);border-radius:8px;padding:.8rem 1rem;color:#fff;font-family:inherit;font-size:.9rem;outline:none;resize:vertical;"></textarea>
 <button class="btn-gold" id="lf-btn" style="width:100%;justify-content:center;" type="submit">Изпрати запитване →</button>
 <div id="lf-ok" style="display:none;font-size:.9rem;color:#10b981;text-align:center;">✅ Благодаря! Ще се свържа с вас скоро.</div>
 </form>
@@ -1976,8 +1999,7 @@ openServiceModal = function(id) {
 <a href="viber://chat?number=%2B359877810418" style="display:inline-flex; align-items:center; gap:.8rem; background:#7360f2; color:white; padding:1rem 2rem; border-radius:2px; text-decoration:none; font-weight:600; font-size:.95rem;"><svg fill="none" height="22" viewbox="0 0 24 24" width="22"><path d="M12 1C6.48 1 2 5.02 2 10c0 2.74 1.24 5.2 3.2 6.9V20l3.1-1.55c1.2.34 2.44.55 3.7.55 5.52 0 10-4.02 10-9S17.52 1 12 1z" fill="#fff"></path><path d="M16.5 14.5c-.3.5-.9.9-1.5 1-.4.1-.9.1-1.3-.1-1.2-.5-2.3-1.2-3.2-2.1-.9-.9-1.6-2-2.1-3.2-.2-.4-.2-.9-.1-1.3.1-.6.5-1.2 1-1.5.3-.2.7-.1.9.2l1.2 1.6c.2.3.2.7-.1 1l-.4.4c-.1.1-.1.3 0 .4.4.6.9 1.1 1.5 1.5.1.1.3.1.4 0l.4-.4c.3-.3.7-.3 1-.1l1.6 1.2c.3.2.4.6.2.9z" fill="#7360F2"></path></svg> Пиши ни на Viber</a>
 </div>
 </div>
-</section>
-<!-- PRIVACY SECTION -->
+</section><!-- PRIVACY SECTION -->
 </main><div class="privacy-section" id="privacySection">
 <h3 class="privacy-title">Политика за поверителност</h3>
 <p>Последна актуализация: <span class="cur-year"></span> г.</p>
@@ -2639,4 +2661,9 @@ function ensureBotLoaded() {
       } else { btn.disabled=false; btn.textContent='Изпрати запитване →'; alert('Не успяхме да изпратим. Моля обадете се на 0877 810 418.'); }
     }).catch(function(){ btn.disabled=false; btn.textContent='Изпрати запитване →'; alert('Няма връзка. Моля обадете се на 0877 810 418.'); });
     return false;
-  
+  }
+</script>
+  <!-- Ivanov Analytics -->
+  <script type="module" src="https://traqnivanov.github.io/ivanov-tools/analytics/tracker.js"></script>
+</body>
+</html>
