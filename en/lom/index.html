@@ -5,28 +5,7 @@
   <meta charset="UTF-8" />
 
   <!-- Google tag (gtag.js) — GA4 : G-SVED9CDFPR -->
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    function loadGA4() {
-      if (window._ga4Loaded) return;
-      window._ga4Loaded = true;
-      var s = document.createElement('script');
-      s.async = true;
-      s.src = 'https://www.googletagmanager.com/gtag/js?id=G-SVED9CDFPR';
-      document.head.appendChild(s);
-      s.onload = function() {
-        gtag('js', new Date());
-        gtag('config', 'G-SVED9CDFPR');
-        document.querySelectorAll('a[href^="tel:"]').forEach(function(el) {
-          el.addEventListener('click', function() {
-            gtag('event', 'phone_call_click', { event_category: 'Contact', event_label: 'Call 0876936184' });
-          });
-        });
-      };
-    }
-    try { if (localStorage.getItem('cookiesAccepted') === '1') loadGA4(); } catch(x) {}
-  </script>
+  
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <link rel="icon" type="image/x-icon" href="https://traqnivanov.github.io/Remonti-/favicon.png"/>
@@ -450,6 +429,43 @@
       .lomgal-grid { grid-template-columns: repeat(2,1fr); }
     }
   </style>
+<style id="ivanov-consent-style">
+.ivanov-cookie-actions{display:flex;gap:.6rem;align-items:center;flex-wrap:wrap}
+.cookie-btn.cookie-reject{background:transparent!important;color:var(--gold,#c9943a)!important;border:1px solid var(--gold,#c9943a)!important}
+@media(max-width:640px){.ivanov-cookie-actions{width:100%}.ivanov-cookie-actions .cookie-btn{flex:1}}
+</style>
+<!-- GA4: зарежда се само след изрично съгласие -->
+<script id="ivanov-consent-script">
+window.dataLayer=window.dataLayer||[];
+function gtag(){window.dataLayer.push(arguments);}
+function loadGA4(){
+  if(window._ga4Loaded)return;
+  window._ga4Loaded=true;
+  var s=document.createElement('script');
+  s.async=true;
+  s.src='https://www.googletagmanager.com/gtag/js?id=G-SVED9CDFPR';
+  s.onload=function(){
+    gtag('js',new Date());
+    gtag('config','G-SVED9CDFPR',{'anonymize_ip':true});
+  };
+  document.head.appendChild(s);
+}
+function acceptCookies(){
+  try{localStorage.setItem('cookiesAccepted','1');}catch(x){}
+  var b=document.getElementById('cookieBanner');if(b)b.classList.add('hidden');
+  loadGA4();
+}
+function rejectCookies(){
+  try{localStorage.setItem('cookiesAccepted','0');}catch(x){}
+  var b=document.getElementById('cookieBanner');if(b)b.classList.add('hidden');
+}
+document.addEventListener('DOMContentLoaded',function(){
+  var c=null;try{c=localStorage.getItem('cookiesAccepted');}catch(x){}
+  var b=document.getElementById('cookieBanner');
+  if(c==='1'){if(b)b.classList.add('hidden');loadGA4();}
+  else if(c==='0'){if(b)b.classList.add('hidden');}
+});
+</script>
 </head>
 <body>
 
@@ -460,9 +476,12 @@
 </div>
 
 <!-- COOKIE -->
-<div class="cookie-banner" id="cookieBanner">
-  <p><strong>Cookies:</strong> We use cookies to improve your experience.</p>
-  <button type="button" class="cookie-btn" onclick="acceptCookies()">Accept</button>
+<div class="cookie-banner" id="cookieBanner" role="dialog" aria-label="Cookies:">
+  <p><strong>Cookies:</strong> Google Analytics is enabled only after your consent.</p>
+  <div class="ivanov-cookie-actions">
+    <button type="button" class="cookie-btn cookie-reject" onclick="rejectCookies()">Reject</button>
+    <button type="button" class="cookie-btn" onclick="acceptCookies()">Accept</button>
+  </div>
 </div>
 
 <!-- MOBILE MENU -->
@@ -1092,12 +1111,8 @@
   });
 
   // COOKIE
-  function acceptCookies(){
-    try{ localStorage.setItem('cookiesAccepted','1'); }catch(x){}
-    document.getElementById('cookieBanner').classList.add('hidden');
-    if(typeof loadGA4==='function') loadGA4();
-  }
-  try{ if(localStorage.getItem('cookiesAccepted')) document.getElementById('cookieBanner').classList.add('hidden'); }catch(x){}
+  
+  
 
   // SERVICE CARDS — touch
   document.querySelectorAll('.svc-prem-card').forEach(function(card){
@@ -1305,5 +1320,8 @@
   }
   document.addEventListener('keydown', function(e){ if(e.key==='Escape') closeSvc(); });
 </script>
+
+<!-- Ivanov Analytics -->
+<script type="module" src="https://traqnivanov.github.io/ivanov-tools/analytics/tracker.js"></script>
 </body>
 </html>
