@@ -103,26 +103,54 @@ footer .logo-text{font-family:'Fraunces',serif;color:var(--cream);font-size:1rem
 @media(max-width:600px){.lom-lb-nav{width:38px;height:38px;font-size:1.3rem;}}
 </style>
   <!-- Google tag (gtag.js) — GA4 : G-SVED9CDFPR -->
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    function loadGA4() {
-      if (window._ga4Loaded) return;
-      window._ga4Loaded = true;
-      var s = document.createElement('script');
-      s.async = true;
-      s.src = 'https://www.googletagmanager.com/gtag/js?id=G-SVED9CDFPR';
-      document.head.appendChild(s);
-      s.onload = function() {
-        gtag('js', new Date());
-        gtag('config', 'G-SVED9CDFPR', {'anonymize_ip': true});
-      };
-    }
-    loadGA4();
-  </script>
+  
 
+<style id="ivanov-consent-style">
+.ivanov-cookie-actions{display:flex;gap:.6rem;align-items:center;flex-wrap:wrap}
+.cookie-btn.cookie-reject{background:transparent!important;color:var(--gold,#c9943a)!important;border:1px solid var(--gold,#c9943a)!important}
+@media(max-width:640px){.ivanov-cookie-actions{width:100%}.ivanov-cookie-actions .cookie-btn{flex:1}}
+</style>
+<!-- GA4: зарежда се само след изрично съгласие -->
+<script id="ivanov-consent-script">
+window.dataLayer=window.dataLayer||[];
+function gtag(){window.dataLayer.push(arguments);}
+function loadGA4(){
+  if(window._ga4Loaded)return;
+  window._ga4Loaded=true;
+  var s=document.createElement('script');
+  s.async=true;
+  s.src='https://www.googletagmanager.com/gtag/js?id=G-SVED9CDFPR';
+  s.onload=function(){
+    gtag('js',new Date());
+    gtag('config','G-SVED9CDFPR',{'anonymize_ip':true});
+  };
+  document.head.appendChild(s);
+}
+function acceptCookies(){
+  try{localStorage.setItem('cookiesAccepted','1');}catch(x){}
+  var b=document.getElementById('cookieBanner');if(b)b.classList.add('hidden');
+  loadGA4();
+}
+function rejectCookies(){
+  try{localStorage.setItem('cookiesAccepted','0');}catch(x){}
+  var b=document.getElementById('cookieBanner');if(b)b.classList.add('hidden');
+}
+document.addEventListener('DOMContentLoaded',function(){
+  var c=null;try{c=localStorage.getItem('cookiesAccepted');}catch(x){}
+  var b=document.getElementById('cookieBanner');
+  if(c==='1'){if(b)b.classList.add('hidden');loadGA4();}
+  else if(c==='0'){if(b)b.classList.add('hidden');}
+});
+</script>
 </head>
 <body>
+<div class="cookie-banner" id="cookieBanner" role="dialog" aria-label="Бисквитки:">
+  <p><strong>Бисквитки:</strong> Google Analytics се включва само след вашето съгласие.</p>
+  <div class="ivanov-cookie-actions">
+    <button type="button" class="cookie-btn cookie-reject" onclick="rejectCookies()">Отказвам</button>
+    <button type="button" class="cookie-btn" onclick="acceptCookies()">Приемам</button>
+  </div>
+</div>
 <nav>
   <a class="logo" href="https://ivanov-remonti.com/lom/">
     <img src="https://traqnivanov.github.io/Remonti-/ivanov-remonti-logo-stroitelni-uslugi-sofia.jpg" alt="Ivanov Remonti лого"/>
@@ -386,5 +414,8 @@ footer .logo-text{font-family:'Fraunces',serif;color:var(--cream);font-size:1rem
   });
 })();
 </script>
+
+<!-- Ivanov Analytics -->
+<script type="module" src="https://traqnivanov.github.io/ivanov-tools/analytics/tracker.js"></script>
 </body>
 </html>
