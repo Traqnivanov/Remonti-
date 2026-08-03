@@ -12,11 +12,11 @@
   <link rel="apple-touch-icon" href="https://traqnivanov.github.io/Remonti-/favicon.png"/>
 
   <title>Довършителни ремонти Монтана | Строителни услуги</title>
-  <meta name="description" content="Ремонти в Монтана и региона. Шпакловка, боядисване, гипсокартон и ВиК. Фиксирана цена. Писмена гаранция. Снимки и видео по време на ремонта." />
+  <meta name="description" content="Цялостни и довършителни ремонти в Монтана и региона — шпакловка, боядисване, гипсокартон, ВиК и обръщане на дограма. Фиксирана цена и писмена гаранция." />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://ivanov-remonti.com/montana/" />
   <meta property="og:title" content="Довършителни ремонти Монтана | Строителни услуги" />
-  <meta property="og:description" content="Довършителни ремонти в Монтана — шпакловка, боядисване, гипсокартон, ВиК. Безплатна консултация, писмена гаранция. Идваме при вас. 0876 936 184" />
+  <meta property="og:description" content="Цялостни и довършителни ремонти в Монтана и региона — шпакловка, боядисване, гипсокартон, ВиК и обръщане на дограма. Фиксирана цена и писмена гаранция." />
   <meta property="og:image" content="https://traqnivanov.github.io/Remonti-/ivanov-remonti-montana-logo.jpg" />
   <meta property="og:url" content="https://ivanov-remonti.com/montana/" />
   <meta property="og:type" content="website" />
@@ -547,36 +547,28 @@
   }
 </style>
 <!-- GA4: зарежда се само след изрично съгласие -->
-<script id="ivanov-consent-script">
-window.dataLayer=window.dataLayer||[];
-function gtag(){window.dataLayer.push(arguments);}
-function loadGA4(){
-  if(window._ga4Loaded)return;
-  window._ga4Loaded=true;
-  var s=document.createElement('script');
-  s.async=true;
-  s.src='https://www.googletagmanager.com/gtag/js?id=G-SVED9CDFPR';
-  s.onload=function(){
-    gtag('js',new Date());
-    gtag('config','G-SVED9CDFPR',{'anonymize_ip':true});
-  };
-  document.head.appendChild(s);
+
+<script type="application/ld+json" id="ivanov-business-schema">
+{
+  "@context": "https://schema.org",
+  "@type": "HomeAndConstructionBusiness",
+  "@id": "https://ivanov-remonti.com/montana#ivanov-remonti",
+  "name": "Ivanov Remonti",
+  "url": "https://ivanov-remonti.com/montana/",
+  "telephone": "+359876936184",
+  "areaServed": [
+    {
+      "@type": "City",
+      "name": "Монтана"
+    },
+    {
+      "@type": "City",
+      "name": "Лом"
+    }
+  ],
+  "currenciesAccepted": "BGN, EUR",
+  "priceRange": "Цени в BGN и EUR след оглед"
 }
-function acceptCookies(){
-  try{localStorage.setItem('cookiesAccepted','1');}catch(x){}
-  var b=document.getElementById('cookieBanner');if(b)b.classList.add('hidden');
-  loadGA4();
-}
-function rejectCookies(){
-  try{localStorage.setItem('cookiesAccepted','0');}catch(x){}
-  var b=document.getElementById('cookieBanner');if(b)b.classList.add('hidden');
-}
-document.addEventListener('DOMContentLoaded',function(){
-  var c=null;try{c=localStorage.getItem('cookiesAccepted');}catch(x){}
-  var b=document.getElementById('cookieBanner');
-  if(c==='1'){if(b)b.classList.add('hidden');loadGA4();}
-  else if(c==='0'){if(b)b.classList.add('hidden');}
-});
 </script>
 </head>
 <body>
@@ -612,7 +604,7 @@ document.addEventListener('DOMContentLoaded',function(){
 
 <nav>
   <a class="logo" href="https://ivanov-remonti.com/montana/">
-    <img src="https://traqnivanov.github.io/Remonti-/ivanov-remonti-logo-stroitelni-uslugi-sofia.jpg" alt="Ivanov Remonti лого"/>
+    <img src="https://traqnivanov.github.io/Remonti-/ivanov-remonti-logo-stroitelni-uslugi-sofia.jpg" alt="Ivanov Remonti лого"/ width="36" height="36">
     <div>Ти Почиваш — Ние Ремонтираме<span>Ремонти Монтана и региона</span></div>
   </a>
   <ul class="nav-links">
@@ -701,7 +693,7 @@ document.addEventListener('DOMContentLoaded',function(){
 
     <div class="showcase">
       <div class="svc-prem-card">
-        <img class="card-img" src="https://traqnivanov.github.io/Remonti-/shpaklovka-steni-apartament-sofia.jpg" alt="Шпакловка на стени и тавани — Монтана" loading="lazy"/>
+        <img class="card-img" src="https://traqnivanov.github.io/Remonti-/shpaklovka-steni-apartament-sofia.jpg" alt="Шпакловка на стени и тавани — Монтана" loading="lazy"/ width="1200" height="800">
         
         <div class="card-overlay"></div>
         <div class="card-ptag">✦ Услуга 01</div>
@@ -716,7 +708,7 @@ document.addEventListener('DOMContentLoaded',function(){
       </div>
 
       <div class="svc-prem-card">
-        <img class="card-img" src="https://traqnivanov.github.io/Remonti-/boyadisvane-apartament-sofia.jpg" alt="Боядисване на стени и тавани — Монтана" loading="lazy"/>
+        <img class="card-img" src="https://traqnivanov.github.io/Remonti-/boyadisvane-apartament-sofia.jpg" alt="Боядисване на стени и тавани — Монтана" loading="lazy"/ width="1200" height="800">
         
         <div class="card-overlay"></div>
         <div class="card-ptag">✦ Услуга 02</div>
@@ -731,7 +723,7 @@ document.addEventListener('DOMContentLoaded',function(){
       </div>
 
       <div class="svc-prem-card">
-        <img class="card-img" src="https://traqnivanov.github.io/Remonti-/gipsokarton-okachen-tavan-sofia.jpg" alt="Гипсокартон — окачени тавани и стени — Монтана" loading="lazy"/>
+        <img class="card-img" src="https://traqnivanov.github.io/Remonti-/gipsokarton-okachen-tavan-sofia.jpg" alt="Гипсокартон — окачени тавани и стени — Монтана" loading="lazy"/ width="1200" height="800">
         
         <div class="card-overlay"></div>
         <div class="card-ptag">✦ Услуга 03</div>
@@ -746,7 +738,7 @@ document.addEventListener('DOMContentLoaded',function(){
       </div>
 
       <div class="svc-prem-card">
-        <img class="card-img" src="https://traqnivanov.github.io/Remonti-/vik-uslugi-sofia.jpg" alt="ВиК услуги — водопровод и канализация — Монтана" loading="lazy"/>
+        <img class="card-img" src="https://traqnivanov.github.io/Remonti-/vik-uslugi-sofia.jpg" alt="ВиК услуги — водопровод и канализация — Монтана" loading="lazy"/ width="1200" height="800">
         
         <div class="card-overlay"></div>
         <div class="card-ptag">✦ Услуга 04</div>
@@ -761,7 +753,7 @@ document.addEventListener('DOMContentLoaded',function(){
       </div>
 
       <div class="svc-prem-card">
-        <img class="card-img" src="https://traqnivanov.github.io/Remonti-/obrushchane-dograma-prozorci-sofia.jpg" alt="Обръщане дограма прозорци Монтана" loading="lazy"/>
+        <img class="card-img" src="https://traqnivanov.github.io/Remonti-/obrushchane-dograma-prozorci-sofia.jpg" alt="Обръщане дограма прозорци Монтана" loading="lazy"/ width="1200" height="800">
         <div class="card-overlay"></div>
         <div class="card-ptag">✦ Услуга 05</div>
         <div class="card-pnum">05</div>
@@ -775,7 +767,7 @@ document.addEventListener('DOMContentLoaded',function(){
       </div>
 
       <div class="svc-prem-card">
-        <img class="card-img" src="https://traqnivanov.github.io/Remonti-/dekorativna-mazilka-sofia.jpg" alt="Декоративна мазилка Монтана" loading="lazy"/>
+        <img class="card-img" src="https://traqnivanov.github.io/Remonti-/dekorativna-mazilka-sofia.jpg" alt="Декоративна мазилка Монтана" loading="lazy"/ width="1200" height="800">
         <div class="card-overlay"></div>
         <div class="card-ptag">✦ Услуга 06</div>
         <div class="card-pnum">06</div>
@@ -896,10 +888,10 @@ document.addEventListener('DOMContentLoaded',function(){
 </section>
 <!-- LIGHTBOX Лом -->
 <div class="lomlb" id="lomlb" onclick="if(event.target===this)lomlbClose()">
-  <button type="button" class="lomlb-close" onclick="lomlbClose()">&times;</button>
-  <button type="button" class="lomlb-nav lomlb-prev" onclick="lomlbNav(-1)">&#8249;</button>
+  <button type="button" class="lomlb-close" onclick="lomlbClose()" aria-label="Затвори галерията">&times;</button>
+  <button type="button" class="lomlb-nav lomlb-prev" onclick="lomlbNav(-1)" aria-label="Предишна снимка">&#8249;</button>
   <img id="lomlbImg" src="" alt=""/>
-  <button type="button" class="lomlb-nav lomlb-next" onclick="lomlbNav(1)">&#8250;</button>
+  <button type="button" class="lomlb-nav lomlb-next" onclick="lomlbNav(1)" aria-label="Следваща снимка">&#8250;</button>
   <div class="lomlb-counter" id="lomlbCounter"></div>
 </div>
 
@@ -1426,7 +1418,7 @@ document.addEventListener('DOMContentLoaded',function(){
 <div id="lomSvcOverlay" onclick="if(event.target===this)closeLomSvc()">
   <div class="lom-svc-box">
     <div class="lom-svc-head">
-      <button type="button" class="lom-svc-close" onclick="closeLomSvc()">&times;</button>
+      <button type="button" class="lom-svc-close" onclick="closeLomSvc()" aria-label="Затвори прозореца">&times;</button>
       <img id="lomSvcImg" src="" alt=""/>
     </div>
     <div class="lom-svc-body">
@@ -1446,7 +1438,7 @@ document.addEventListener('DOMContentLoaded',function(){
         <div id="lomSvcThumbs" class="lom-svc-thumbs"></div>
       </div>
       <div class="lom-svc-btns">
-        <button type="button" class="lom-svc-call" onclick="window.location.href='tel:0876936184'">📞 0876 936 184</button>
+        <a class="lom-svc-call" href="tel:0876936184">📞 0876 936 184</a>
         <a class="lom-svc-msg" href="https://m.me/IvanovRemonti" target="_blank" rel="noopener noreferrer">Messenger</a>
       </div>
     </div>
@@ -1455,6 +1447,42 @@ document.addEventListener('DOMContentLoaded',function(){
 
 
 <!-- Ivanov Analytics -->
+<script id="ivanov-consent-script">
+window.dataLayer = window.dataLayer || [];
+function gtag(){ window.dataLayer.push(arguments); }
+const IVANOV_CONSENT_KEY = 'ivanovCookieConsentV2';
+
+function loadGoogleTracking(){
+  if(window._ivanovGoogleTrackingLoaded) return;
+  window._ivanovGoogleTrackingLoaded = true;
+  var s = document.createElement('script');
+  s.async = true;
+  s.src = 'https://www.googletagmanager.com/gtag/js?id=AW-18264667036';
+  s.onload = function(){
+    gtag('js', new Date());
+    gtag('config', 'AW-18264667036');
+    gtag('config', 'G-SVED9CDFPR', {'anonymize_ip': true});
+  };
+  document.head.appendChild(s);
+}
+function getIvanovConsent(){ try{return localStorage.getItem(IVANOV_CONSENT_KEY);}catch(e){return null;} }
+function saveIvanovConsent(v){ try{localStorage.setItem(IVANOV_CONSENT_KEY,v);}catch(e){} }
+function hideCookieBanner(){ var b=document.getElementById('cookieBanner'); if(b)b.classList.add('hidden'); }
+function acceptCookies(){ saveIvanovConsent('accepted'); hideCookieBanner(); loadGoogleTracking(); }
+function rejectCookies(){ saveIvanovConsent('rejected'); hideCookieBanner(); }
+document.addEventListener('DOMContentLoaded', function(){
+  var c=getIvanovConsent();
+  if(c==='accepted'){ hideCookieBanner(); loadGoogleTracking(); }
+  else if(c==='rejected'){ hideCookieBanner(); }
+  document.querySelectorAll('a[href^="tel:"]').forEach(function(el){
+    el.addEventListener('click', function(){
+      if(getIvanovConsent()==='accepted' && window._ivanovGoogleTrackingLoaded){
+        gtag('event','conversion',{'send_to':'AW-18264667036/SmmrCLHN9dQcEJznooVE'});
+      }
+    });
+  });
+});
+</script>
 <script type="module" src="https://traqnivanov.github.io/ivanov-tools/analytics/tracker.js"></script>
 </body>
 </html>
