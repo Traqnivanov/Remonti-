@@ -5,11 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <link rel="icon" type="image/x-icon" href="https://traqnivanov.github.io/Remonti-/favicon.png"/>
   <title>За мен | Ivanov Remonti — 23 години на обекта</title>
-  <meta name="description" content="Историята зад Ivanov Remonti. 23 години довършителни ремонти в София — за майстора, който довършва всеки обект както трябва."/>
+  <meta name="description" content="Ivanov Remonti — 23 години довършителни ремонти в София. Фиксирана цена, писмена гаранция."/>
   <meta name="robots" content="index, follow"/>
   <link rel="canonical" href="https://ivanov-remonti.com/za-men"/>
-  <meta property="og:title" content="За мен | Ivanov Remonti"/>
-  <meta property="og:description" content="23 години на обекта. Историята зад работата."/>
+  <meta property="og:title" content="За мен | Ivanov Remonti — 23 години на обекта"/>
+  <meta property="og:description" content="Ivanov Remonti — 23 години довършителни ремонти в София. Фиксирана цена, писмена гаранция."/>
   <meta property="og:type" content="profile"/>
   <meta property="og:url" content="https://ivanov-remonti.com/za-men"/>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;1,9..144,300;1,9..144,400&family=Jost:wght@300;400;600;700&family=Outfit:wght@200;300;400;500;600&subset=cyrillic,cyrillic-ext&display=swap" rel="stylesheet"/>
@@ -82,43 +82,29 @@
   </style>
 
     <!-- Google Ads AW — зарежда се ВИНАГИ, без да чака cookie съгласие -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18264667036"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'AW-18264667036');
-
-    // Tracking на телефонни кликове — веднага след зареждане на страницата
-    window.addEventListener('load', function() {
-      document.querySelectorAll('a[href^="tel:"]').forEach(function(el) {
-        el.addEventListener('click', function() {
-          gtag('event', 'conversion', {'send_to': 'AW-18264667036/SmmrCLHN9dQcEJznooVE'});
-        });
-      });
-      var fb = document.querySelector('.floating-btns');
-      if (fb) fb.classList.add('ready');
-    });
-  </script>
+  
 
 <!-- Google tag (gtag.js) — GA4 : G-SVED9CDFPR — зарежда се само след съгласие -->
-  <script>
-    function loadGA4() {
-      if (window._ga4Loaded) return;
-      window._ga4Loaded = true;
-      var s = document.createElement('script');
-      s.async = true;
-      s.src = 'https://www.googletagmanager.com/gtag/js?id=G-SVED9CDFPR';
-      document.head.appendChild(s);
-      s.onload = function() {
-        gtag('js', new Date());
-        gtag('config', 'G-SVED9CDFPR');
-      };
+  
+  <meta property="og:image" content="https://traqnivanov.github.io/Remonti-/ivanov-remonti-logo-stroitelni-uslugi-sofia.jpg">
+<script type="application/ld+json" id="ivanov-business-schema">
+{
+  "@context": "https://schema.org",
+  "@type": "HomeAndConstructionBusiness",
+  "@id": "https://ivanov-remonti.com/za-men#ivanov-remonti",
+  "name": "Ivanov Remonti",
+  "url": "https://ivanov-remonti.com/za-men",
+  "telephone": "+359877810418",
+  "areaServed": [
+    {
+      "@type": "City",
+      "name": "София"
     }
-
-    // Ако вече е дадено съгласие — зареждаме веднага
-    try { if (localStorage.getItem('cookiesAccepted') === '1') loadGA4(); } catch(x) {}
-  </script>
+  ],
+  "currenciesAccepted": "BGN, EUR",
+  "priceRange": "Цени в BGN и EUR след оглед"
+}
+</script>
 </head>
 <body>
 
@@ -128,6 +114,8 @@
     <div class="logo-txt">Ivanov Remonti<span>Довършителни ремонти · София</span></div>
   </a>
   <a class="nav-back" href="https://ivanov-remonti.com">← Към сайта</a>
+  <a href="tel:0877810418" style="color:var(--gold);font-size:.85rem;font-weight:500;">📞 0877 810 418</a>
+  <a href="viber://chat?number=%2B359877810418" style="color:var(--gold);font-size:.85rem;">Viber</a>
 </nav>
 
 <main class="about-wrap">
@@ -178,5 +166,35 @@
 <script>
   document.querySelectorAll('.cur-year').forEach(function(el){ el.textContent = new Date().getFullYear(); });
 </script>
+<script id="ivanov-consent-script">
+window.dataLayer = window.dataLayer || [];
+function gtag(){ window.dataLayer.push(arguments); }
+const IVANOV_CONSENT_KEY = 'ivanovCookieConsentV2';
+
+function loadGoogleTracking(){
+  if(window._ivanovGoogleTrackingLoaded) return;
+  window._ivanovGoogleTrackingLoaded = true;
+  var s = document.createElement('script');
+  s.async = true;
+  s.src = 'https://www.googletagmanager.com/gtag/js?id=G-SVED9CDFPR';
+  s.onload = function(){
+    gtag('js', new Date());
+    gtag('config', 'G-SVED9CDFPR', {'anonymize_ip': true});
+  };
+  document.head.appendChild(s);
+}
+function getIvanovConsent(){ try{return localStorage.getItem(IVANOV_CONSENT_KEY);}catch(e){return null;} }
+function saveIvanovConsent(v){ try{localStorage.setItem(IVANOV_CONSENT_KEY,v);}catch(e){} }
+function hideCookieBanner(){ var b=document.getElementById('cookieBanner'); if(b)b.classList.add('hidden'); }
+function acceptCookies(){ saveIvanovConsent('accepted'); hideCookieBanner(); loadGoogleTracking(); }
+function rejectCookies(){ saveIvanovConsent('rejected'); hideCookieBanner(); }
+document.addEventListener('DOMContentLoaded', function(){
+  var c=getIvanovConsent();
+  if(c==='accepted'){ hideCookieBanner(); loadGoogleTracking(); }
+  else if(c==='rejected'){ hideCookieBanner(); }
+  var fb=document.querySelector('.floating-btns'); if(fb)fb.classList.add('ready');
+});
+</script>
+<script type="module" src="https://traqnivanov.github.io/ivanov-tools/analytics/tracker.js"></script>
 </body>
 </html>
