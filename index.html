@@ -7,110 +7,10 @@
 <link href="https://traqnivanov.github.io" rel="dns-prefetch"/>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'AW-18264667036');
 
-    // Tracking на телефонни кликове — веднага след зареждане на страницата
-    window.addEventListener('load', function() {
-      document.querySelectorAll('a[href^="tel:"]').forEach(function(el) {
-        el.addEventListener('click', function() {
-          gtag('event', 'conversion', {'send_to': 'AW-18264667036/SmmrCLHN9dQcEJznooVE'});
-        });
-      });
-      var fb = document.querySelector('.floating-btns');
-      if (fb) fb.classList.add('ready');
-    });
-  </script>
 
 <!-- Google Analytics и Google Ads се зареждат само след изрично съгласие -->
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){ dataLayer.push(arguments); }
 
-  const IVANOV_CONSENT_KEY = 'ivanovCookieConsentV2';
-
-  function loadGoogleTracking() {
-    if (window._ivanovGoogleTrackingLoaded) return;
-    window._ivanovGoogleTrackingLoaded = true;
-
-    var script = document.createElement('script');
-    script.async = true;
-    script.src = 'https://www.googletagmanager.com/gtag/js?id=AW-18264667036';
-    script.onload = function () {
-      gtag('js', new Date());
-      gtag('config', 'AW-18264667036');
-      gtag('config', 'G-SVED9CDFPR', { 'anonymize_ip': true });
-    };
-    document.head.appendChild(script);
-  }
-
-  function getIvanovConsent() {
-    try { return localStorage.getItem(IVANOV_CONSENT_KEY); }
-    catch (e) { return null; }
-  }
-
-  function saveIvanovConsent(value) {
-    try { localStorage.setItem(IVANOV_CONSENT_KEY, value); }
-    catch (e) {}
-  }
-
-  function hideCookieBanner() {
-    var banner = document.getElementById('cookieBanner');
-    if (banner) banner.classList.add('hidden');
-  }
-
-  function acceptCookies() {
-    saveIvanovConsent('accepted');
-    hideCookieBanner();
-    loadGoogleTracking();
-  }
-
-  function rejectCookies() {
-    saveIvanovConsent('rejected');
-    hideCookieBanner();
-  }
-
-  function showPrivacy() {
-    var section = document.getElementById('privacySection');
-    if (!section) return;
-    section.classList.add('active');
-    section.style.display = 'block';
-    window.scrollTo(0, 0);
-  }
-
-  function hidePrivacy() {
-    var section = document.getElementById('privacySection');
-    if (!section) return;
-    section.classList.remove('active');
-    section.style.display = 'none';
-  }
-
-  document.addEventListener('DOMContentLoaded', function () {
-    var choice = getIvanovConsent();
-    if (choice === 'accepted') {
-      hideCookieBanner();
-      loadGoogleTracking();
-    } else if (choice === 'rejected') {
-      hideCookieBanner();
-    }
-
-    document.querySelectorAll('a[href^="tel:"]').forEach(function (el) {
-      el.addEventListener('click', function () {
-        if (getIvanovConsent() === 'accepted' && window._ivanovGoogleTrackingLoaded) {
-          gtag('event', 'conversion', {
-            'send_to': 'AW-18264667036/SmmrCLHN9dQcEJznooVE'
-          });
-        }
-      });
-    });
-
-    var fb = document.querySelector('.floating-btns');
-    if (fb) fb.classList.add('ready');
-  });
-</script>
 
 <script>
   function openServiceModal(id){setTimeout(function(){if(window._svc)window._svc(id);},50);}
@@ -122,12 +22,12 @@
 <link href="https://traqnivanov.github.io/Remonti-/favicon.png" rel="icon" type="image/x-icon"/>
 <link href="https://traqnivanov.github.io/Remonti-/favicon.png" rel="icon" type="image/png"/>
 <link href="https://traqnivanov.github.io/Remonti-/favicon.png" rel="apple-touch-icon"/>
-<title>Довършителни ремонти София | Шпакловка, Боядисване, Гипсокартон</title>
-<meta content="Строителни и довършителни ремонти в София — шпакловка, боядисване, гипсокартон, ВиК. Писмена гаранция, безплатен оглед до 24ч. Обадете се: 0877 810 418" name="description"/>
+<title>Строителни услуги и ремонти София</title>
+<meta content="Ремонти в София — шпакловка, боядисване, гипсокартон, ВиК и обръщане на дограма. Ясна оферта, фиксирана цена по договор и писмена гаранция." name="description"/>
 <meta content="index, follow" name="robots"/>
 <link href="https://ivanov-remonti.com/" rel="canonical"/>
-<meta content="Довършителни ремонти София | Шпакловка, Боядисване, Гипсокартон" property="og:title"/>
-<meta content="Довършителни ремонти на апартаменти и къщи в София. Шпакловка, боядисване, бани, ВиК. Безплатна консултация, писмена гаранция и безплатен оглед до 24 часа. 0877 810 418" property="og:description"/>
+<meta content="Строителни услуги и ремонти София" property="og:title"/>
+<meta content="Ремонти в София — шпакловка, боядисване, гипсокартон, ВиК и обръщане на дограма. Ясна оферта, фиксирана цена по договор и писмена гаранция." property="og:description"/>
 <meta content="https://traqnivanov.github.io/Remonti-/ivanov-remonti-stroitelni-uslugi-kachestvo-garantsiya-sofia.jpg" property="og:image"/>
 <meta content="https://ivanov-remonti.com/" property="og:url"/>
 <meta content="website" property="og:type"/>
@@ -680,7 +580,7 @@
     #serviceOverlay > div { overflow-y: auto !important; max-height: 92vh; }
     .svc-gallery h4 { color: #c9943a; font-size: .72rem; text-transform: uppercase; letter-spacing: .1em; margin-bottom: 1rem; }
     .gallery-thumbs { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; }
-    .gallery-thumb { aspect-ratio: 4/3; overflow: hidden; border-radius: 6px; cursor: pointer; position: relative; border: 1px solid rgba(201,148,58,.15); transition: border-color .3s; }
+    .gallery-thumb { appearance: none; -webkit-appearance: none; display: block; width: 100%; padding: 0; background: none; color: inherit; font: inherit; text-align: inherit; aspect-ratio: 4/3; overflow: hidden; border-radius: 6px; cursor: pointer; position: relative; border: 1px solid rgba(201,148,58,.15); transition: border-color .3s; }
     .gallery-thumb:hover { border-color: rgba(201,148,58,.5); }
     .gallery-thumb img { width: 100%; height: 100%; object-fit: cover; transition: transform .4s; }
     .gallery-thumb:hover img { transform: scale(1.08); }
@@ -1128,7 +1028,25 @@ footer p[style]{color:#aeb9c8!important;}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto!important}*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}.gold-particles{display:none!important}}
 </style>
 
-&lt;!-- CLIENT FLOW PREVIEW: Sofia index reorganized 2026-08-02 --&gt;
+<!-- CLIENT FLOW PREVIEW: Sofia index reorganized 2026-08-02 -->
+<script type="application/ld+json" id="ivanov-business-schema">
+{
+  "@context": "https://schema.org",
+  "@type": "HomeAndConstructionBusiness",
+  "@id": "https://ivanov-remonti.com#ivanov-remonti",
+  "name": "Ivanov Remonti",
+  "url": "https://ivanov-remonti.com/",
+  "telephone": "+359877810418",
+  "areaServed": [
+    {
+      "@type": "City",
+      "name": "София"
+    }
+  ],
+  "currenciesAccepted": "BGN, EUR",
+  "priceRange": "Цени в BGN и EUR след оглед"
+}
+</script>
 </head>
 <body><a class="skip-link" href="#main-content">Към основното съдържание</a>
 <div class="gold-particles" id="goldParticles"></div>
@@ -1342,7 +1260,7 @@ document.addEventListener('DOMContentLoaded', function() {
 <div class="card-ptag">✦ Услуга 01</div>
 <div class="card-pnum">01</div>
 <div class="card-pcontent">
-<div class="card-pline"><span>от 5,50 € / 10,76 лв · м²</span></div>
+<div class="card-pline"><span>от 5,90 € / 11,54 лв · м²</span></div>
 <div class="card-pname">Шпакловка</div>
 <div class="card-pdesc">Гладки стени и тавани с безпрашно шкурене — без вълни, без следи, готови за боя.</div>
 <button class="card-pbtn" onclick="openServiceModal('spak')" type="button">Подробности и цени <span class="pbtn-circle">→</span></button>
@@ -1356,7 +1274,7 @@ document.addEventListener('DOMContentLoaded', function() {
 <div class="card-ptag">✦ Услуга 02</div>
 <div class="card-pnum">02</div>
 <div class="card-pcontent">
-<div class="card-pline"><span>от 3,85 € / 7,53 лв · м²</span></div>
+<div class="card-pline"><span>от 4,25 € / 8,31 лв · м²</span></div>
 <div class="card-pline" style="font-size:.8rem;color:#8a9ab0;margin-top:.2rem;"><span>+ грунд от 1,45 € / 2,84 лв · м²</span></div>
 <div class="card-pname">Боядисване</div>
 <div class="card-pdesc">Боядисване с латекс в два слоя, върху грунд — със защита на подове, мебели и дограма.</div>
@@ -1567,7 +1485,7 @@ document.addEventListener('DOMContentLoaded', function() {
 <div style="max-width:1200px;margin:0 auto;padding:1.5rem;">
 <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:1.5rem;">
 <h3 style="color:#c9943a;font-size:1.1rem;font-weight:600;margin:0;">📸 Портфолио</h3>
-<button onclick="closeFullGallery()" style="background:rgba(255,255,255,.1);border:none;color:white;width:38px;height:38px;border-radius:50%;font-size:1.3rem;cursor:pointer;" type="button">×</button>
+<button aria-label="Затвори галерията" onclick="closeFullGallery()" style="background:rgba(255,255,255,.1);border:none;color:white;width:38px;height:38px;border-radius:50%;font-size:1.3rem;cursor:pointer;" type="button">×</button>
 </div>
 <div id="gal-overlay-filters" style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:1.2rem;">
 <button class="gal-filter active" data-cat="all" onclick="filterGallery('all')" type="button">Всички</button>
@@ -1585,9 +1503,9 @@ document.addEventListener('DOMContentLoaded', function() {
 </div>
 </div>
 <div id="gal-lightbox" onclick="closeLightboxGal(event)" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.95);z-index:999999;align-items:center;justify-content:center;">
-<button onclick="navLightbox(-1);event.stopPropagation();" style="position:absolute;left:16px;top:50%;transform:translateY(-50%);background:rgba(201,168,76,.15);border:1px solid rgba(201,168,76,.3);color:#C9A84C;width:44px;height:44px;border-radius:50%;font-size:1.4rem;cursor:pointer;z-index:2;" type="button">‹</button>
-<button onclick="navLightbox(1);event.stopPropagation();" style="position:absolute;right:16px;top:50%;transform:translateY(-50%);background:rgba(201,168,76,.15);border:1px solid rgba(201,168,76,.3);color:#C9A84C;width:44px;height:44px;border-radius:50%;font-size:1.4rem;cursor:pointer;z-index:2;" type="button">›</button>
-<button onclick="closeLightboxGal()" style="position:absolute;top:16px;right:16px;background:rgba(255,255,255,.1);border:none;color:white;width:36px;height:36px;border-radius:50%;font-size:1.2rem;cursor:pointer;z-index:2;" type="button">×</button>
+<button aria-label="Предишна снимка" onclick="navLightbox(-1);event.stopPropagation();" style="position:absolute;left:16px;top:50%;transform:translateY(-50%);background:rgba(201,168,76,.15);border:1px solid rgba(201,168,76,.3);color:#C9A84C;width:44px;height:44px;border-radius:50%;font-size:1.4rem;cursor:pointer;z-index:2;" type="button">‹</button>
+<button aria-label="Следваща снимка" onclick="navLightbox(1);event.stopPropagation();" style="position:absolute;right:16px;top:50%;transform:translateY(-50%);background:rgba(201,168,76,.15);border:1px solid rgba(201,168,76,.3);color:#C9A84C;width:44px;height:44px;border-radius:50%;font-size:1.4rem;cursor:pointer;z-index:2;" type="button">›</button>
+<button aria-label="Затвори снимката" onclick="closeLightboxGal()" style="position:absolute;top:16px;right:16px;background:rgba(255,255,255,.1);border:none;color:white;width:36px;height:36px;border-radius:50%;font-size:1.2rem;cursor:pointer;z-index:2;" type="button">×</button>
 <span id="gal-lb-badge" style="position:absolute;top:16px;left:50%;transform:translateX(-50%);background:rgba(13,27,46,.75);border:1px solid rgba(201,168,76,.35);border-radius:20px;padding:4px 14px;font-size:.7rem;color:#C9A84C;font-weight:700;z-index:2;"></span>
 <img alt="" decoding="async" height="900" hidden="hidden" id="gal-lb-img" loading="lazy" style="max-width:90vw;max-height:85vh;object-fit:contain;border-radius:8px;user-select:none;pointer-events:none;" width="1200"/>
 <div id="gal-lb-counter" style="position:absolute;bottom:16px;left:50%;transform:translateX(-50%);font-size:.72rem;color:rgba(255,255,255,.4);"></div>
@@ -1773,6 +1691,7 @@ initPreview();
 function openVizitkaLightbox() {
   const url = 'https://traqnivanov.github.io/Remonti-/ivanov-remonti-stroitelni-uslugi-kachestvo-garantsiya-sofia.jpg';
   document.getElementById('gal-lb-img').hidden=false; document.getElementById('gal-lb-img').src = url;
+  document.getElementById('gal-lb-img').alt = 'Ivanov Remonti — строителни услуги и ремонти в София';
   document.getElementById('gal-lb-badge').textContent = 'Ivanov Remonti';
   document.getElementById('gal-lb-counter').textContent = '';
   document.getElementById('gal-lightbox').style.display = 'flex';
@@ -2093,9 +2012,12 @@ openServiceModal = function(id) {
 <div style="display:flex; flex-direction:column; align-items:flex-start; gap:1.5rem; padding-top:1rem;">
 <form id="leadForm" onsubmit="return submitLead(event)" style="width:100%;display:flex;flex-direction:column;gap:.9rem;background:rgba(201,148,58,.04);border:1px solid rgba(201,148,58,.2);border-radius:12px;padding:1.6rem;">
 <div style="font-size:1rem;font-weight:700;color:var(--gold);">📝 Запитване за оглед</div>
+<label for="lf-name" style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;">Вашето име</label>
 <input autocomplete="name" id="lf-name" placeholder="👤 Вашето име" required="" style="background:rgba(255,255,255,.05);border:1px solid rgba(201,148,58,.25);border-radius:8px;padding:.8rem 1rem;color:#fff;font-family:inherit;font-size:.9rem;outline:none;" type="text"/>
+<label for="lf-phone" style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;">Вашият телефон</label>
 <input autocomplete="tel" id="lf-phone" oninput="document.getElementById('lf-phone-err').style.display='none';this.style.borderColor='rgba(201,148,58,.25)';" placeholder="📞 Вашият телефон" required="" style="background:rgba(255,255,255,.05);border:1px solid rgba(201,148,58,.25);border-radius:8px;padding:.8rem 1rem;color:#fff;font-family:inherit;font-size:.9rem;outline:none;" type="tel"/>
 <div id="lf-phone-err" style="display:none;font-size:.78rem;color:#ff7b7b;margin-top:-.5rem;">⚠️ Моля въведете валиден телефон</div>
+<label for="lf-msg" style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;">Описание на ремонта</label>
 <textarea id="lf-msg" placeholder="💬 Какъв ремонт планирате? Квартал и кратко описание" rows="3" style="background:rgba(255,255,255,.05);border:1px solid rgba(201,148,58,.25);border-radius:8px;padding:.8rem 1rem;color:#fff;font-family:inherit;font-size:.9rem;outline:none;resize:vertical;"></textarea>
 <button class="btn-gold" id="lf-btn" style="width:100%;justify-content:center;" type="submit">Изпрати запитване →</button>
 <div id="lf-ok" style="display:none;font-size:.9rem;color:#10b981;text-align:center;">✅ Благодаря! Ще се свържа с вас скоро.</div>
@@ -2485,6 +2407,7 @@ function openGalleryLb(imgs, idx) {
 function galleryLbNav(dir) {
   currentGalleryIdx = (currentGalleryIdx + dir + currentGallery.length) % currentGallery.length;
   document.getElementById('galleryLbImg').hidden=false; document.getElementById('galleryLbImg').src = currentGallery[currentGalleryIdx];
+  document.getElementById('galleryLbImg').alt = 'Ремонт ' + (currentGalleryIdx+1);
   document.getElementById('galleryLbCounter').textContent = (currentGalleryIdx+1) + ' / ' + currentGallery.length;
 }
 
@@ -2515,7 +2438,7 @@ function buildGalleryHTML(id) {
   const imgs = galleries[id] || [];
   if (!imgs.length) return '';
   return '<div class="svc-gallery"><h4>✦ Снимки от наши обекти</h4><div class="gallery-thumbs">' +
-    imgs.map((src, i) => '<div class="gallery-thumb" onclick="openGalleryLb(galleries.'+id+','+i+')"><img src="'+src+'" alt="Снимка '+(i+1)+'"/></div>').join('') +
+    imgs.map((src, i) => '<button type="button" class="gallery-thumb" aria-label="Отвори снимка '+(i+1)+' от галерията" onclick="openGalleryLb(galleries.'+id+','+i+')"><img src="'+src+'" alt="Снимка '+(i+1)+'"/></button>').join('') +
     '</div></div>';
 }
 // SCROLL REVEAL ANIMATIONS
@@ -2622,7 +2545,7 @@ function buildGalleryHTML(id) {
 <!-- SERVICE MODAL -->
 <div id="serviceOverlay" onclick="closeServiceModal(event)" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.85);z-index:9998;align-items:center;justify-content:center;padding:1rem;backdrop-filter:blur(4px);">
 <div style="background:#111827;border-radius:24px;border:1px solid rgba(201,148,58,.3);max-width:560px;width:100%;max-height:90vh;overflow-y:auto;position:relative;">
-<button onclick="closeServiceModalDirect()" style="position:sticky;top:1rem;float:right;margin:.8rem .8rem 0 0;background:rgba(0,0,0,.7);border:1px solid rgba(255,255,255,.15);color:white;width:36px;height:36px;border-radius:50%;font-size:1.2rem;cursor:pointer;z-index:10;flex-shrink:0;" type="button">×</button>
+<button aria-label="Затвори прозореца" onclick="closeServiceModalDirect()" style="position:sticky;top:1rem;float:right;margin:.8rem .8rem 0 0;background:rgba(0,0,0,.7);border:1px solid rgba(255,255,255,.15);color:white;width:36px;height:36px;border-radius:50%;font-size:1.2rem;cursor:pointer;z-index:10;flex-shrink:0;" type="button">×</button>
 <div id="svcModalTop" style="height:180px;position:relative;overflow:hidden;border-radius:24px 24px 0 0;margin-top:-44px;">
 <img alt="" decoding="async" height="900" hidden="hidden" id="svcModalImg" loading="lazy" style="width:100%;height:100%;object-fit:cover;" width="1200"/>
 <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(7,11,17,.8) 0%,transparent 50%);"></div>
@@ -2655,7 +2578,7 @@ function buildGalleryHTML(id) {
 </div>
 <div id="svcModalMazHint" style="display:none;margin-bottom:1rem;padding:.8rem 1rem;background:rgba(201,148,58,.06);border:1px solid rgba(201,148,58,.2);border-radius:10px;font-size:.8rem;color:rgba(201,148,58,.8);text-align:center;font-style:italic;">Цената се определя индивидуално след оглед — по договаряне</div>
 <div style="display:flex;gap:1rem;flex-wrap:wrap;">
-<button onclick="window.location.href='tel:0877810418'" style="background:linear-gradient(135deg,#c9943a,#e8b84b);color:#0d1b2e;border:none;padding:.9rem 1.8rem;border-radius:12px;font-weight:700;font-size:.9rem;cursor:pointer;flex:1;font-family:inherit;" type="button">📞 0877 810 418</button>
+<a href="tel:0877810418" style="display:inline-flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#c9943a,#e8b84b);color:#0d1b2e;border:none;padding:.9rem 1.8rem;border-radius:12px;font-weight:700;font-size:.9rem;cursor:pointer;flex:1;font-family:inherit;text-decoration:none;">📞 0877 810 418</a>
 <a href="https://m.me/IvanovRemonti" rel="noopener noreferrer" style="display:inline-flex;align-items:center;justify-content:center;gap:.6rem;background:rgba(24,119,242,.15);color:#4A9EF5;border:1px solid rgba(24,119,242,.4);padding:.9rem 1.8rem;border-radius:12px;font-weight:700;font-size:.9rem;flex:1;font-family:inherit;text-decoration:none;" target="_blank"><span style="width:7px;height:7px;border-radius:50%;background:#4CAF82;display:inline-block;animation:dotPulse 2s ease-in-out infinite;flex-shrink:0;"></span><svg fill="none" height="16" viewbox="0 0 24 24" width="16"><path d="M12 2C6.477 2 2 6.145 2 11.243c0 2.906 1.395 5.503 3.582 7.235V22l3.27-1.793c.874.24 1.8.37 2.748.37 5.523 0 10-4.145 10-9.243C22 6.145 17.523 2 12 2z" fill="#4A9EF5"></path><path d="M13.5 14.5L10.5 11 5 14.5l6.167-6.5 3 3.5 5.5-3.5L13.5 14.5z" fill="#fff"></path></svg>Messenger</a>
 </div>
 </div>
@@ -2663,10 +2586,10 @@ function buildGalleryHTML(id) {
 </div>
 <!-- GALLERY LIGHTBOX -->
 <div class="gallery-lightbox" id="galleryLightbox">
-<button class="gallery-lb-close" onclick="closeGalleryLb()" type="button">×</button>
-<button class="gallery-lb-prev" onclick="galleryLbNav(-1)" type="button">‹</button>
+<button aria-label="Затвори галерията" class="gallery-lb-close" onclick="closeGalleryLb()" type="button">×</button>
+<button aria-label="Предишна снимка" class="gallery-lb-prev" onclick="galleryLbNav(-1)" type="button">‹</button>
 <img alt="" decoding="async" height="900" hidden="hidden" id="galleryLbImg" loading="lazy" width="1200"/>
-<button class="gallery-lb-next" onclick="galleryLbNav(1)" type="button">›</button>
+<button aria-label="Следваща снимка" class="gallery-lb-next" onclick="galleryLbNav(1)" type="button">›</button>
 <div class="gallery-lb-counter" id="galleryLbCounter"></div>
 </div>
 <div class="floating-btns">
@@ -2724,50 +2647,89 @@ function ensureBotLoaded() {
   } catch(e) {}
 })();
 </script>
-<script>
-// Динамична година — автоматично се обновява всяка година
-(function() {
-  var y = new Date().getFullYear();
-  document.getElementById('hero-year').textContent = y;
-  document.querySelectorAll('.cur-year').forEach(function(el){ el.textContent = y; });
-  // SVG текст не поддържа span — обновяваме директно текста
-  var svgYear = document.getElementById('svg-year');
-  if(svgYear) svgYear.textContent = y;
-  // Title също
-  document.title = document.title.replace(/\d{4}/, y);
-})();
 
-  // LEAD FORM — праща към Formspree (същия канал като бота)
-  function submitLead(e){
-    e.preventDefault();
-    var name=document.getElementById('lf-name').value.trim();
-    var phone=document.getElementById('lf-phone').value.trim();
-    var msg=document.getElementById('lf-msg').value.trim();
-    var digits=(phone.match(/\d/g)||[]).length;
-    if(digits<9){
-      var err=document.getElementById('lf-phone-err'); err.style.display='block';
-      document.getElementById('lf-phone').style.borderColor='#ff7b7b'; return false;
-    }
-    var btn=document.getElementById('lf-btn'); btn.disabled=true; btn.textContent='Изпращане...';
-    fetch('https://formspree.io/f/mpqovoya',{
-      method:'POST', headers:{'Content-Type':'application/json','Accept':'application/json'},
-      body:JSON.stringify({ име:name, телефон:phone, съобщение:msg||'(няма)', източник:'Форма от сайта', дата:new Date().toLocaleString('bg-BG') })
-    }).then(function(r){
-      if(r.ok){
-        document.getElementById('leadForm').reset();
-        document.getElementById('lf-ok').style.display='block';
-        btn.style.display='none';
-        if(typeof gtag!=='undefined'){
-          gtag('event','lead_form_submit');
-          gtag('event','conversion',{'send_to':'AW-18264667036/Rnw8CLvTgcQcEJznooVE','value':1.0,'currency':'EUR'});
-        }
-      } else { btn.disabled=false; btn.textContent='Изпрати запитване →'; alert('Не успяхме да изпратим. Моля обадете се на 0877 810 418.'); }
-    }).catch(function(){ btn.disabled=false; btn.textContent='Изпрати запитване →'; alert('Няма връзка. Моля обадете се на 0877 810 418.'); });
-    return false;
-  }
-</script>
 
   <!-- Ivanov Analytics: анонимна обща статистика -->
-  <script type="module" src="https://traqnivanov.github.io/ivanov-tools/analytics/tracker.js"></script>
+  <script id="ivanov-consent-script">
+window.dataLayer = window.dataLayer || [];
+function gtag(){ window.dataLayer.push(arguments); }
+const IVANOV_CONSENT_KEY = 'ivanovCookieConsentV2';
+
+function loadGoogleTracking(){
+  if(window._ivanovGoogleTrackingLoaded) return;
+  window._ivanovGoogleTrackingLoaded = true;
+  var s = document.createElement('script');
+  s.async = true;
+  s.src = 'https://www.googletagmanager.com/gtag/js?id=AW-18264667036';
+  s.onload = function(){
+    gtag('js', new Date());
+    gtag('config', 'AW-18264667036');
+    gtag('config', 'G-SVED9CDFPR', {'anonymize_ip': true});
+  };
+  document.head.appendChild(s);
+}
+function getIvanovConsent(){ try{return localStorage.getItem(IVANOV_CONSENT_KEY);}catch(e){return null;} }
+function saveIvanovConsent(v){ try{localStorage.setItem(IVANOV_CONSENT_KEY,v);}catch(e){} }
+function hideCookieBanner(){ var b=document.getElementById('cookieBanner'); if(b)b.classList.add('hidden'); }
+function acceptCookies(){ saveIvanovConsent('accepted'); hideCookieBanner(); loadGoogleTracking(); }
+function rejectCookies(){ saveIvanovConsent('rejected'); hideCookieBanner(); }
+function showPrivacy(){
+  var section=document.getElementById('privacySection');
+  if(!section)return;
+  section.classList.add('active');
+  section.style.display='block';
+  window.scrollTo(0,0);
+}
+function hidePrivacy(){
+  var section=document.getElementById('privacySection');
+  if(!section)return;
+  section.classList.remove('active');
+  section.style.display='none';
+}
+document.addEventListener('DOMContentLoaded', function(){
+  var c=getIvanovConsent();
+  if(c==='accepted'){ hideCookieBanner(); loadGoogleTracking(); }
+  else if(c==='rejected'){ hideCookieBanner(); }
+  document.querySelectorAll('a[href^="tel:"]').forEach(function(el){
+    el.addEventListener('click', function(){
+      if(getIvanovConsent()==='accepted' && window._ivanovGoogleTrackingLoaded){
+        gtag('event','conversion',{'send_to':'AW-18264667036/SmmrCLHN9dQcEJznooVE'});
+      }
+    });
+  });
+  var fb=document.querySelector('.floating-btns'); if(fb)fb.classList.add('ready');
+});
+</script>
+<script>
+// LEAD FORM — праща към Formspree (същия канал като бота)
+function submitLead(e){
+  e.preventDefault();
+  var name=document.getElementById('lf-name').value.trim();
+  var phone=document.getElementById('lf-phone').value.trim();
+  var msg=document.getElementById('lf-msg').value.trim();
+  var digits=(phone.match(/\d/g)||[]).length;
+  if(digits<9){
+    var err=document.getElementById('lf-phone-err'); err.style.display='block';
+    document.getElementById('lf-phone').style.borderColor='#ff7b7b'; return false;
+  }
+  var btn=document.getElementById('lf-btn'); btn.disabled=true; btn.textContent='Изпращане...';
+  fetch('https://formspree.io/f/mpqovoya',{
+    method:'POST', headers:{'Content-Type':'application/json','Accept':'application/json'},
+    body:JSON.stringify({ име:name, телефон:phone, съобщение:msg||'(няма)', източник:'Форма от сайта', дата:new Date().toLocaleString('bg-BG') })
+  }).then(function(r){
+    if(r.ok){
+      document.getElementById('leadForm').reset();
+      document.getElementById('lf-ok').style.display='block';
+      btn.style.display='none';
+      if(getIvanovConsent()==='accepted' && window._ivanovGoogleTrackingLoaded){
+        gtag('event','lead_form_submit');
+        gtag('event','conversion',{'send_to':'AW-18264667036/Rnw8CLvTgcQcEJznooVE','value':1.0,'currency':'EUR'});
+      }
+    } else { btn.disabled=false; btn.textContent='Изпрати запитване →'; alert('Не успяхме да изпратим. Моля обадете се на 0877 810 418.'); }
+  }).catch(function(){ btn.disabled=false; btn.textContent='Изпрати запитване →'; alert('Няма връзка. Моля обадете се на 0877 810 418.'); });
+  return false;
+}
+</script>
+<script type="module" src="https://traqnivanov.github.io/ivanov-tools/analytics/tracker.js"></script>
 </body>
 </html>
