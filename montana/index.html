@@ -8,8 +8,9 @@
   
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <link rel="icon" type="image/x-icon" href="https://traqnivanov.github.io/Remonti-/favicon.png"/>
-  <link rel="apple-touch-icon" href="https://traqnivanov.github.io/Remonti-/favicon.png"/>
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 
   <title>Довършителни ремонти Монтана | Строителни услуги</title>
   <meta name="description" content="Цялостни и довършителни ремонти в Монтана и региона — шпакловка, боядисване, гипсокартон, ВиК и обръщане на дограма. Фиксирана цена и писмена гаранция." />
@@ -17,7 +18,7 @@
   <link rel="canonical" href="https://ivanov-remonti.com/montana/" />
   <meta property="og:title" content="Довършителни ремонти Монтана | Строителни услуги" />
   <meta property="og:description" content="Цялостни и довършителни ремонти в Монтана и региона — шпакловка, боядисване, гипсокартон, ВиК и обръщане на дограма. Фиксирана цена и писмена гаранция." />
-  <meta property="og:image" content="https://traqnivanov.github.io/Remonti-/ivanov-remonti-montana-logo.jpg" />
+  <meta property="og:image" content="https://traqnivanov.github.io/Remonti-/ivanov-remonti-montana-logo.webp" />
   <meta property="og:url" content="https://ivanov-remonti.com/montana/" />
   <meta property="og:type" content="website" />
 
@@ -50,7 +51,7 @@
       "https://www.facebook.com/IvanovRemonti",
       "https://maps.app.goo.gl/4FEYD5uvdGXZC74z6"
     ],
-    "image": "https://traqnivanov.github.io/Remonti-/ivanov-remonti-montana-logo.jpg",
+    "image": "https://traqnivanov.github.io/Remonti-/ivanov-remonti-montana-logo.webp",
     "@id": "https://ivanov-remonti.com/lom/#business"
   }
   </script>
@@ -164,7 +165,8 @@
 }
   </script>
 
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;1,9..144,300;1,9..144,400&family=Outfit:wght@200;300;400;500;600&display=swap" rel="stylesheet"/>
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;1,9..144,300;1,9..144,400&family=Outfit:wght@200;300;400;500;600&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;1,9..144,300;1,9..144,400&family=Outfit:wght@200;300;400;500;600&display=swap"></noscript>
 
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -298,7 +300,7 @@
     .process-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 2rem; }
     .process-step { text-align: center; }
     .process-circle { width: 56px; height: 56px; border-radius: 50%; border: 1px solid rgba(201,148,58,.4); display: flex; align-items: center; justify-content: center; font-family: 'Fraunces', serif; font-size: 1.3rem; color: var(--gold); margin: 0 auto 1rem; }
-    .process-step h4 { font-size: .9rem; font-weight: 600; margin-bottom: .5rem; color: white; }
+    .process-step h3 { font-size: .9rem; font-weight: 600; margin-bottom: .5rem; color: white; }
     .process-step p { font-size: .8rem; color: rgba(255,255,255,.5); line-height: 1.65; }
 
     /* GUARANTEE */
@@ -308,7 +310,7 @@
     .guarantee-points { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.5rem; margin-top: 2.5rem; }
     .gpoint { background: rgba(201,148,58,.04); border: 1px solid rgba(201,148,58,.15); border-radius: 10px; padding: 1.5rem; text-align: left; }
     .gpoint-icon { font-size: 1.6rem; display: block; margin-bottom: .7rem; }
-    .gpoint h4 { font-size: .88rem; font-weight: 600; color: white; margin-bottom: .4rem; }
+    .gpoint h3 { font-size: .88rem; font-weight: 600; color: white; margin-bottom: .4rem; }
     .gpoint p { font-size: .78rem; color: rgba(255,255,255,.5); line-height: 1.65; }
 
     /* BENEFITS / ЗАЩО НИЕ */
@@ -316,7 +318,7 @@
     .benefits-inner { max-width: 1000px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
     .benefit-row { display: flex; align-items: flex-start; gap: 1rem; margin-bottom: 1.5rem; }
     .benefit-icon-wrap { font-size: 1.4rem; flex-shrink: 0; margin-top: .1rem; }
-    .benefit-row h4 { font-size: .88rem; font-weight: 600; color: white; margin-bottom: .3rem; }
+    .benefit-row h3 { font-size: .88rem; font-weight: 600; color: white; margin-bottom: .3rem; }
     .benefit-row p { font-size: .8rem; color: rgba(255,255,255,.5); line-height: 1.6; }
 
     /* ADVISOR */
@@ -339,7 +341,7 @@
     .bonus-card { background: var(--navy); border: 1px solid rgba(201,148,58,.15); border-radius: 12px; padding: 1.8rem; }
     .bonus-card.featured { border-color: rgba(201,148,58,.4); background: linear-gradient(135deg,rgba(201,148,58,.08),rgba(13,27,46,1)); }
     .bonus-icon { font-size: 1.8rem; display: block; margin-bottom: .8rem; }
-    .bonus-card h4 { font-size: .9rem; font-weight: 600; color: white; margin-bottom: .6rem; }
+    .bonus-card h3 { font-size: .9rem; font-weight: 600; color: white; margin-bottom: .6rem; }
     .bonus-card p { font-size: .8rem; color: rgba(255,255,255,.5); line-height: 1.65; margin-bottom: .8rem; }
     .bonus-pill { display: inline-block; background: linear-gradient(135deg,var(--gold),var(--gold2)); color: #0d1b2e; font-size: .65rem; font-weight: 700; padding: .25rem .8rem; border-radius: 20px; letter-spacing: .05em; }
 
@@ -410,6 +412,13 @@
     footer .logo-text { font-family: 'Fraunces', serif; font-size: 1rem; color: var(--gold); font-weight: 300; }
     footer p { color: #2e3e50; font-size: .76rem; }
     footer a { color: var(--gold); font-size: .76rem; text-decoration: none; }
+
+
+    .privacy-link, .footer-privacy-link { background:none; border:0; padding:0; font:inherit; color:var(--gold); text-decoration:underline; cursor:pointer; }
+    footer p { color:#7f8fa4; }
+    footer .logo-text span { color:#7f8fa4 !important; }
+    footer > p[style] { color:#7f8fa4 !important; }
+    .breadcrumb a, .section-lead a, .guide-section a, footer a { text-decoration:underline; text-underline-offset:2px; }
 
     /* PROGRESS BAR */
     #progress-bar { position: fixed; top: 0; left: 0; height: 2px; background: linear-gradient(90deg,var(--gold),var(--gold2)); z-index: 9999; width: 0%; transition: width .1s; }
@@ -512,6 +521,11 @@
     .lom-svc-thumb { aspect-ratio:4/3; overflow:hidden; border-radius:8px; cursor:pointer; border:1px solid rgba(201,148,58,.15); }
     .lom-svc-thumb img { width:100%; height:100%; object-fit:cover; transition:transform .4s; }
     .lom-svc-thumb:hover img { transform:scale(1.08); }
+
+    @media (max-width: 900px), (prefers-reduced-motion: reduce) {
+      .gold-shine, .hero h1 .accent, .hero > *, .ms-dot, .floating-btns svg, [style*="animation:dotPulse"] { animation: none !important; }
+      .reveal { opacity:1; transform:none; transition:none; }
+    }
   </style>
 <style id="ivanov-consent-style">
   .cookie-banner{
@@ -581,7 +595,7 @@
 
 <!-- COOKIE -->
 <div class="cookie-banner" id="cookieBanner" role="dialog" aria-label="Бисквитки:">
-  <p><strong>Бисквитки:</strong> Google Analytics се включва само след вашето съгласие. <a href="#" onclick="showPrivacy()" style="color:var(--gold);">Политика за поверителност</a></p>
+  <p><strong>Бисквитки:</strong> Google Analytics се включва само след вашето съгласие. <button type="button" onclick="showPrivacy()" class="privacy-link">Политика за поверителност</button></p>
   <div class="ivanov-cookie-actions">
     <button type="button" class="cookie-btn cookie-reject" onclick="rejectCookies()">Отказвам</button>
     <button type="button" class="cookie-btn" onclick="acceptCookies()">Приемам</button>
@@ -604,7 +618,7 @@
 
 <nav>
   <a class="logo" href="https://ivanov-remonti.com/montana/">
-    <img src="https://traqnivanov.github.io/Remonti-/ivanov-remonti-logo-stroitelni-uslugi-sofia.jpg" alt="Ivanov Remonti лого"/ width="36" height="36">
+    <img src="https://traqnivanov.github.io/Remonti-/ivanov-remonti-logo-stroitelni-uslugi-sofia.jpg" alt="Ivanov Remonti лого" width="1600" height="873">
     <div>Ти Почиваш — Ние Ремонтираме<span>Ремонти Монтана и региона</span></div>
   </a>
   <ul class="nav-links">
@@ -693,7 +707,7 @@
 
     <div class="showcase">
       <div class="svc-prem-card">
-        <img class="card-img" src="https://traqnivanov.github.io/Remonti-/shpaklovka-steni-apartament-sofia.jpg" alt="Шпакловка на стени и тавани — Монтана" loading="lazy"/ width="1200" height="800">
+        <img class="card-img" src="https://traqnivanov.github.io/Remonti-/shpaklovka-steni-apartament-sofia.jpg" alt="Шпакловка на стени и тавани — Монтана" loading="lazy" width="1600" height="873">
         
         <div class="card-overlay"></div>
         <div class="card-ptag">✦ Услуга 01</div>
@@ -708,7 +722,7 @@
       </div>
 
       <div class="svc-prem-card">
-        <img class="card-img" src="https://traqnivanov.github.io/Remonti-/boyadisvane-apartament-sofia.jpg" alt="Боядисване на стени и тавани — Монтана" loading="lazy"/ width="1200" height="800">
+        <img class="card-img" src="https://traqnivanov.github.io/Remonti-/boyadisvane-apartament-sofia.jpg" alt="Боядисване на стени и тавани — Монтана" loading="lazy" width="1200" height="800">
         
         <div class="card-overlay"></div>
         <div class="card-ptag">✦ Услуга 02</div>
@@ -723,7 +737,7 @@
       </div>
 
       <div class="svc-prem-card">
-        <img class="card-img" src="https://traqnivanov.github.io/Remonti-/gipsokarton-okachen-tavan-sofia.jpg" alt="Гипсокартон — окачени тавани и стени — Монтана" loading="lazy"/ width="1200" height="800">
+        <img class="card-img" src="https://traqnivanov.github.io/Remonti-/gipsokarton-okachen-tavan-sofia.jpg" alt="Гипсокартон — окачени тавани и стени — Монтана" loading="lazy" width="1200" height="800">
         
         <div class="card-overlay"></div>
         <div class="card-ptag">✦ Услуга 03</div>
@@ -738,7 +752,7 @@
       </div>
 
       <div class="svc-prem-card">
-        <img class="card-img" src="https://traqnivanov.github.io/Remonti-/vik-uslugi-sofia.jpg" alt="ВиК услуги — водопровод и канализация — Монтана" loading="lazy"/ width="1200" height="800">
+        <img class="card-img" src="https://traqnivanov.github.io/Remonti-/vik-uslugi-sofia.jpg" alt="ВиК услуги — водопровод и канализация — Монтана" loading="lazy" width="1600" height="873">
         
         <div class="card-overlay"></div>
         <div class="card-ptag">✦ Услуга 04</div>
@@ -753,7 +767,7 @@
       </div>
 
       <div class="svc-prem-card">
-        <img class="card-img" src="https://traqnivanov.github.io/Remonti-/obrushchane-dograma-prozorci-sofia.jpg" alt="Обръщане дограма прозорци Монтана" loading="lazy"/ width="1200" height="800">
+        <img class="card-img" src="https://traqnivanov.github.io/Remonti-/obrushchane-dograma-prozorci-sofia.jpg" alt="Обръщане дограма прозорци Монтана" loading="lazy" width="1600" height="873">
         <div class="card-overlay"></div>
         <div class="card-ptag">✦ Услуга 05</div>
         <div class="card-pnum">05</div>
@@ -767,7 +781,7 @@
       </div>
 
       <div class="svc-prem-card">
-        <img class="card-img" src="https://traqnivanov.github.io/Remonti-/dekorativna-mazilka-sofia.jpg" alt="Декоративна мазилка Монтана" loading="lazy"/ width="1200" height="800">
+        <img class="card-img" src="https://traqnivanov.github.io/Remonti-/dekorativna-mazilka-sofia.jpg" alt="Декоративна мазилка Монтана" loading="lazy" width="1600" height="873">
         <div class="card-overlay"></div>
         <div class="card-ptag">✦ Услуга 06</div>
         <div class="card-pnum">06</div>
@@ -925,22 +939,22 @@
     <div class="process-grid">
       <div class="process-step">
         <div class="process-circle">1</div>
-        <h4>Безплатен оглед в Монтана</h4>
+        <h3>Безплатен оглед в Монтана</h3>
         <p>Идвам, оглеждам и давам честен съвет — без ангажимент и без скрити цели.</p>
       </div>
       <div class="process-step">
         <div class="process-circle">2</div>
-        <h4>Точна оферта</h4>
+        <h3>Точна оферта</h3>
         <p>Получавате детайлна оферта с фиксирана цена. Без изненади в края — цената е крайна.</p>
       </div>
       <div class="process-step">
         <div class="process-circle">3</div>
-        <h4>Ремонтът започва</h4>
+        <h3>Ремонтът започва</h3>
         <p>Работя по договор и пращам фото и видео отчет на всеки етап директно на телефона.</p>
       </div>
       <div class="process-step">
         <div class="process-circle">4</div>
-        <h4>Предаване</h4>
+        <h3>Предаване</h3>
         <p>Почиствам задълбочено и предавам готов, чист обект — оглеждаме го заедно, преди да приема, че е завършен.</p>
       </div>
     </div>
@@ -961,17 +975,17 @@
     <div class="guarantee-points">
       <div class="gpoint">
         <span class="gpoint-icon">📄</span>
-        <h4>Подписан договор</h4>
+        <h3>Подписан договор</h3>
         <p>Работя само по договор с фиксирана цена и срок — никакви изненади в края.</p>
       </div>
       <div class="gpoint">
         <span class="gpoint-icon">🔏</span>
-        <h4>Писмена гаранция</h4>
+        <h3>Писмена гаранция</h3>
         <p>За всяка извършена дейност — черно на бяло, с подпис.</p>
       </div>
       <div class="gpoint">
         <span class="gpoint-icon">🔄</span>
-        <h4>Безплатна корекция</h4>
+        <h3>Безплатна корекция</h3>
         <p>Ако нещо не е наред — връщам се и оправям. Без доплащане, без оправдания.</p>
       </div>
     </div>
@@ -991,10 +1005,10 @@
       </div>
     </div>
     <div>
-      <div class="benefit-row"><div class="benefit-icon-wrap">😌</div><div><h4>Спокойствие за теб</h4><p>Цялата работа и отговорност са на едно място. Няма прехвърляне, няма „това не е моя работа".</p></div></div>
-      <div class="benefit-row"><div class="benefit-icon-wrap">🤝</div><div><h4>Без скрито</h4><p>Ясна сметка, чист резултат, никакви изненади в края.</p></div></div>
-      <div class="benefit-row"><div class="benefit-icon-wrap">👑</div><div><h4>Доверени хора в дома ти</h4><p>Само хора, за които гарантирам — никой случаен.</p></div></div>
-      <div class="benefit-row"><div class="benefit-icon-wrap">⏱️</div><div><h4>Казаната дата се спазва</h4><p>Изскочи ли нещо, научаваш предварително — не накрая.</p></div></div>
+      <div class="benefit-row"><div class="benefit-icon-wrap">😌</div><div><h3>Спокойствие за теб</h3><p>Цялата работа и отговорност са на едно място. Няма прехвърляне, няма „това не е моя работа".</p></div></div>
+      <div class="benefit-row"><div class="benefit-icon-wrap">🤝</div><div><h3>Без скрито</h3><p>Ясна сметка, чист резултат, никакви изненади в края.</p></div></div>
+      <div class="benefit-row"><div class="benefit-icon-wrap">👑</div><div><h3>Доверени хора в дома ти</h3><p>Само хора, за които гарантирам — никой случаен.</p></div></div>
+      <div class="benefit-row"><div class="benefit-icon-wrap">⏱️</div><div><h3>Казаната дата се спазва</h3><p>Изскочи ли нещо, научаваш предварително — не накрая.</p></div></div>
     </div>
   </div>
 </section>
@@ -1122,7 +1136,7 @@
 
 <!-- GOOGLE MAPS — Лом -->
 <div style="width:100%;height:280px;filter:grayscale(.8) brightness(.6);">
-  <iframe src="https://maps.google.com/maps?q=43.4083,23.2249&z=14&output=embed" width="100%" height="280" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  <iframe title="Карта на обслужвания район в Монтана" src="https://maps.google.com/maps?q=43.4083,23.2249&z=14&output=embed" width="100%" height="280" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 </div>
 
 <!-- CONTACT -->
@@ -1169,12 +1183,12 @@
 <div id="privacySection" style="display:none;padding:8rem 3rem 5rem;max-width:800px;margin:0 auto;">
   <h2 style="font-family:'Fraunces',serif;font-size:2rem;color:white;margin-bottom:2rem;font-weight:300;">Политика за поверителност</h2>
   <p style="font-size:.88rem;color:rgba(255,255,255,.5);line-height:1.9;margin-bottom:1rem;">Събираме само данните, които вие ни предоставяте доброволно. Не предоставяме данни на трети страни. За въпроси: 0876 936 184.</p>
-  <a href="#" onclick="hidePrivacy()" class="btn-gold" style="display:inline-block;text-decoration:none;margin-top:1rem;">← Обратно</a>
+  <button type="button" onclick="hidePrivacy()" class="btn-gold" style="display:inline-block;margin-top:1rem;border:0;font-family:inherit;cursor:pointer;">← Обратно</button>
 </div>
 
 <footer>
   <div class="logo-text">Ти Почиваш — Ние Ремонтираме<span style="font-size:.58rem;color:#2e3e50;letter-spacing:.15em;font-family:'Outfit';font-weight:300;display:block;margin-top:.2rem;">Монтана · Берковица · Враца · Козлодуй · региона</span></div>
-  <p>© <span class="cur-year"></span> · Всички права запазени · <a href="javascript:void(0)" onclick="showPrivacy()">Политика за поверителност</a></p>
+  <p>© <span class="cur-year"></span> · Всички права запазени · <button type="button" onclick="showPrivacy()" class="footer-privacy-link">Политика за поверителност</button></p>
   <p style="color:#1e2e3e;">Строителни услуги · Шпакловка · Боядисване · Гипсокартон · ВиК · Декоративна мазилка</p>
 </footer>
 
@@ -1483,6 +1497,16 @@ document.addEventListener('DOMContentLoaded', function(){
   });
 });
 </script>
-<script type="module" src="https://traqnivanov.github.io/ivanov-tools/analytics/tracker.js"></script>
+<script>
+  window.addEventListener('load', () => {
+    const loadTracker = () => import('https://traqnivan.github.io/ivanov-tools/analytics/tracker.js')
+      .catch(error => console.warn('Tracker load failed:', error));
+    if ('requestIdleCallback' in window) {
+      requestIdleCallback(loadTracker, { timeout: 3000 });
+    } else {
+      setTimeout(loadTracker, 1500);
+    }
+  }, { once: true });
+</script>
 </body>
 </html>
