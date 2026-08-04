@@ -7,8 +7,9 @@
   
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <link rel="icon" type="image/x-icon" href="https://traqnivanov.github.io/Remonti-/favicon.png"/>
-  <link rel="apple-touch-icon" href="https://traqnivanov.github.io/Remonti-/favicon.png"/>
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 
   <title>Renovierungsfirma Lom & Montana, Bulgarien</title>
   <meta name="description" content="Renovierungen in Lom und Montana: Spachteln, Malen, Trockenbau und Sanitär. Preise in BGN und EUR, Festpreis und schriftliche Garantie." />
@@ -16,7 +17,7 @@
   <link rel="canonical" href="https://ivanov-remonti.com/de/lom/" />
   <meta property="og:title" content="Renovierungsfirma Lom & Montana, Bulgarien" />
   <meta property="og:description" content="Renovierungen in Lom und Montana: Spachteln, Malen, Trockenbau und Sanitär. Preise in BGN und EUR, Festpreis und schriftliche Garantie." />
-  <meta property="og:image" content="https://traqnivanov.github.io/Remonti-/lom/ivanov-remonti-stroitelni-remonti-lom-logo.jpg" />
+  <meta property="og:image" content="https://traqnivanov.github.io/Remonti-/ivanov-remonti-logo-stroitelni-uslugi-sofia.webp" />
   <meta property="og:url" content="https://ivanov-remonti.com/de/lom/" />
   <meta property="og:type" content="website" />
   <link rel="alternate" hreflang="bg" href="https://ivanov-remonti.com/lom/" />
@@ -113,7 +114,8 @@
   }
   </script>
 
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;1,9..144,300;1,9..144,400&family=Outfit:wght@200;300;400;500;600&display=swap" rel="stylesheet"/>
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;1,9..144,300;1,9..144,400&family=Outfit:wght@200;300;400;500;600&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;1,9..144,300;1,9..144,400&family=Outfit:wght@200;300;400;500;600&display=swap"></noscript>
 
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -203,7 +205,7 @@
     @media (max-width: 700px) { .trust-items { grid-template-columns: 1fr; } }
     .trust-item { background: rgba(201,148,58,.04); border: 1px solid rgba(201,148,58,.15); border-radius: 10px; padding: 1.2rem 1.4rem; }
     .trust-icon { font-size: 1.4rem; margin-bottom: .5rem; }
-    .trust-item h4 { font-size: .88rem; font-weight: 600; color: white; margin-bottom: .4rem; }
+    .trust-item h3 { font-size: .88rem; font-weight: 600; color: white; margin-bottom: .4rem; }
     .trust-item p { font-size: .85rem; color: rgba(255,255,255,.6); line-height: 1.6; }
     .trust-answer { background: rgba(201,148,58,.06); border: 1px solid rgba(201,148,58,.2); border-radius: 10px; padding: 1.5rem 2rem; text-align: center; }
     .trust-answer p { font-size: 1rem; color: rgba(255,255,255,.75); line-height: 1.7; }
@@ -255,7 +257,7 @@
     .process-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 2rem; }
     .process-step { text-align: center; }
     .process-circle { width: 56px; height: 56px; border-radius: 50%; border: 1px solid rgba(201,148,58,.4); display: flex; align-items: center; justify-content: center; font-family: 'Fraunces', serif; font-size: 1.3rem; color: var(--gold); margin: 0 auto 1rem; }
-    .process-step h4 { font-size: .9rem; font-weight: 600; margin-bottom: .5rem; color: white; }
+    .process-step h3 { font-size: .9rem; font-weight: 600; margin-bottom: .5rem; color: white; }
     .process-step p { font-size: .8rem; color: rgba(255,255,255,.5); line-height: 1.65; }
 
     .guarantee-section { padding: 6rem 2.5rem; background: #070c16; }
@@ -264,14 +266,14 @@
     .guarantee-points { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.5rem; margin-top: 2.5rem; }
     .gpoint { background: rgba(201,148,58,.04); border: 1px solid rgba(201,148,58,.15); border-radius: 10px; padding: 1.5rem; text-align: left; }
     .gpoint-icon { font-size: 1.6rem; display: block; margin-bottom: .7rem; }
-    .gpoint h4 { font-size: .88rem; font-weight: 600; color: white; margin-bottom: .4rem; }
+    .gpoint h3 { font-size: .88rem; font-weight: 600; color: white; margin-bottom: .4rem; }
     .gpoint p { font-size: .78rem; color: rgba(255,255,255,.5); line-height: 1.65; }
 
     .benefits { padding: 6rem 2.5rem; }
     .benefits-inner { max-width: 1000px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
     .benefit-row { display: flex; align-items: flex-start; gap: 1rem; margin-bottom: 1.5rem; }
     .benefit-icon-wrap { font-size: 1.4rem; flex-shrink: 0; margin-top: .1rem; }
-    .benefit-row h4 { font-size: .88rem; font-weight: 600; color: white; margin-bottom: .3rem; }
+    .benefit-row h3 { font-size: .88rem; font-weight: 600; color: white; margin-bottom: .3rem; }
     .benefit-row p { font-size: .8rem; color: rgba(255,255,255,.5); line-height: 1.6; }
 
     .reviews { padding: 6rem 2.5rem; }
@@ -352,7 +354,7 @@
 
     footer { background: #050c18; padding: 2.5rem 3rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; border-top: 1px solid rgba(201,148,58,.12); }
     footer .logo-text { font-family: 'Fraunces', serif; font-size: 1rem; color: var(--gold); font-weight: 300; }
-    footer p { color: #2e3e50; font-size: .76rem; }
+    footer p { color: #7f8fa4; font-size: .76rem; }
     footer a { color: var(--gold); font-size: .76rem; text-decoration: none; }
 
     #progress-bar { position: fixed; top: 0; left: 0; height: 2px; background: linear-gradient(90deg,var(--gold),var(--gold2)); z-index: 9999; width: 0%; transition: width .1s; }
@@ -391,7 +393,11 @@
       .hero-stats { gap: 1.5rem; }
       .lomgal-grid { grid-template-columns: repeat(2,1fr); }
     }
-  </style>
+  
+    @media (max-width: 900px), (prefers-reduced-motion: reduce) {
+      .gold-shine, .hero h1 .accent, .hero > *, .ms-dot { animation: none !important; }
+    }
+</style>
 <style id="ivanov-consent-style">
   .cookie-banner{
     position:fixed!important;
@@ -482,7 +488,7 @@
 
 <nav>
   <a class="logo" href="/de/lom">
-    <img src="https://traqnivanov.github.io/Remonti-/ivanov-remonti-logo-stroitelni-uslugi-sofia.jpg" alt="Ivanov Remonti Logo"/ width="36" height="36">
+    <img src="https://traqnivanov.github.io/Remonti-/ivanov-remonti-logo-stroitelni-uslugi-sofia.webp" alt="Ivanov Remonti Logo"/ width="36" height="36">
     <div>Ivanov Remonti — Lom, Bulgarien<span>Renovierungsfirma · 23 Jahre Erfahrung</span></div>
   </a>
   <ul class="nav-links">
@@ -528,7 +534,7 @@
     <div class="hstat"><span class="hstat-num">0€</span><span class="hstat-label">Bei Mängeln</span></div>
   </div>
   <div style="display:flex;align-items:center;gap:1rem;margin-top:2rem;background:rgba(201,148,58,.06);border:1px solid rgba(201,148,58,.2);border-radius:12px;padding:1rem 1.4rem;max-width:420px;animation-delay:.9s;" class="reveal">
-    <img src="https://traqnivanov.github.io/Remonti-/trayan-ivanov-renovation-contractor-lom.jpg" alt="Trayan Ivanov — Renovierungsfirma Lom" style="width:56px;height:56px;border-radius:50%;object-fit:cover;border:2px solid rgba(201,148,58,.4);flex-shrink:0;"/>
+    <img src="https://traqnivanov.github.io/Remonti-/trayan-ivanov-renovation-contractor-lom.webp" alt="Trayan Ivanov — Renovierungsfirma Lom" style="width:56px;height:56px;border-radius:50%;object-fit:cover;border:2px solid rgba(201,148,58,.4);flex-shrink:0;"/>
     <div style="text-align:left;">
       <div style="font-family:'Fraunces',serif;font-size:1rem;color:white;font-weight:300;">Trayan Ivanov</div>
       <div style="font-size:.72rem;color:rgba(201,148,58,.7);letter-spacing:.06em;margin-top:.2rem;">Renovierungsfirma · 23 Jahre · Lom, Bulgarien</div>
@@ -546,32 +552,32 @@
     <div class="trust-items">
       <div class="trust-item">
         <div class="trust-icon">📱</div>
-        <h4>Vollständige Fernbetreuung</h4>
+        <h3>Vollständige Fernbetreuung</h3>
         <p>Tägliche WhatsApp-Fotos und -Videos. Sie sehen genau, was an Ihrer Immobilie passiert — jeden Tag, jede Phase. Sie müssen nicht in Bulgarien sein.</p>
       </div>
       <div class="trust-item">
         <div class="trust-icon">👤</div>
-        <h4>Ein Ansprechpartner, von Anfang bis Ende</h4>
+        <h3>Ein Ansprechpartner, von Anfang bis Ende</h3>
         <p>Keine wechselnden Teams. Keine Unbekannten in Ihrer Immobilie. Ich leite jedes Projekt persönlich — von der Besichtigung bis zur Übergabe.</p>
       </div>
       <div class="trust-item">
         <div class="trust-icon">🏚️</div>
-        <h4>Spezialist für ältere bulgarische Immobilien</h4>
+        <h3>Spezialist für ältere bulgarische Immobilien</h3>
         <p>Viele Käufer erwerben ältere Häuser in Lom und Montana. Ich kenne diese Immobilien — was sie brauchen, was nicht, und wie man sie in komfortable Wohnhäuser verwandelt.</p>
       </div>
       <div class="trust-item">
         <div class="trust-icon">💳</div>
-        <h4>Zahlung per Revolut oder Überweisung</h4>
+        <h3>Zahlung per Revolut oder Überweisung</h3>
         <p>Revolut, SEPA-Banküberweisung oder Bargeld in EUR oder BGN — was für Sie aus Deutschland am einfachsten ist.</p>
       </div>
       <div class="trust-item">
         <div class="trust-icon">🛒</div>
-        <h4>Unterstützung bei Materialien vor Ort</h4>
+        <h3>Unterstützung bei Materialien vor Ort</h3>
         <p>Ich kann Materialien lokal nach einer detaillierten Liste beschaffen — Sie profitieren von lokalem Wissen, ohne selbst suchen zu müssen.</p>
       </div>
       <div class="trust-item">
         <div class="trust-icon">✅</div>
-        <h4>Klare Zahlungsbedingungen — schriftlich vereinbart</h4>
+        <h3>Klare Zahlungsbedingungen — schriftlich vereinbart</h3>
         <p>Materialien werden im Voraus bezahlt. Der Arbeitsaufwand wird in vereinbarten Etappen oder nach Abschluss der jeweiligen Phase beglichen. Der Gesamtpreis ist fest — er ändert sich nicht.</p>
       </div>
     </div>
@@ -603,7 +609,7 @@
 
     <div class="showcase">
       <div class="svc-prem-card" onclick="openSvc('spak')" style="cursor:pointer;">
-        <img class="card-img" src="https://traqnivanov.github.io/Remonti-/shpaklovka-steni-apartament-sofia.jpg" alt="Spachtelarbeiten — Lom, Bulgarien" loading="lazy"/ width="1200" height="800">
+        <img class="card-img" src="https://traqnivanov.github.io/Remonti-/shpaklovka-steni-apartament-sofia.webp" alt="Spachtelarbeiten — Lom, Bulgarien" loading="lazy"/ width="1200" height="654">
         <div class="card-overlay"></div>
         <div class="card-ptag">✦ Leistung 01</div>
         <div class="card-pnum">01</div>
@@ -616,7 +622,7 @@
       </div>
 
       <div class="svc-prem-card" onclick="openSvc('boya')" style="cursor:pointer;">
-        <img class="card-img" src="https://traqnivanov.github.io/Remonti-/boyadisvane-apartament-sofia.jpg" alt="Malerarbeiten — Lom, Bulgarien" loading="lazy"/ width="1200" height="800">
+        <img class="card-img" src="https://traqnivanov.github.io/Remonti-/boyadisvane-apartament-sofia.webp" alt="Malerarbeiten — Lom, Bulgarien" loading="lazy"/ width="1200" height="654">
         <div class="card-overlay"></div>
         <div class="card-ptag">✦ Leistung 02</div>
         <div class="card-pnum">02</div>
@@ -629,7 +635,7 @@
       </div>
 
       <div class="svc-prem-card" onclick="openSvc('gyp')" style="cursor:pointer;">
-        <img class="card-img" src="https://traqnivanov.github.io/Remonti-/gipsokarton-okachen-tavan-sofia.jpg" alt="Trockenbau — Lom, Bulgarien" loading="lazy"/ width="1200" height="800">
+        <img class="card-img" src="https://traqnivanov.github.io/Remonti-/gipsokarton-okachen-tavan-sofia.webp" alt="Trockenbau — Lom, Bulgarien" loading="lazy"/ width="1200" height="654">
         <div class="card-overlay"></div>
         <div class="card-ptag">✦ Leistung 03</div>
         <div class="card-pnum">03</div>
@@ -642,7 +648,7 @@
       </div>
 
       <div class="svc-prem-card" onclick="openSvc('vik')" style="cursor:pointer;">
-        <img class="card-img" src="https://traqnivanov.github.io/Remonti-/vik-uslugi-sofia.jpg" alt="Sanitärarbeiten — Lom, Bulgarien" loading="lazy"/ width="1200" height="800">
+        <img class="card-img" src="https://traqnivanov.github.io/Remonti-/vik-uslugi-sofia.webp" alt="Sanitärarbeiten — Lom, Bulgarien" loading="lazy"/ width="1200" height="654">
         <div class="card-overlay"></div>
         <div class="card-ptag">✦ Leistung 04</div>
         <div class="card-pnum">04</div>
@@ -655,7 +661,7 @@
       </div>
 
       <div class="svc-prem-card" onclick="openSvc('dog')" style="cursor:pointer;">
-        <img class="card-img" src="https://traqnivanov.github.io/Remonti-/obrushchane-dograma-prozorci-sofia.jpg" alt="Fenster- und Türlaibungen — Lom, Bulgarien" loading="lazy"/ width="1200" height="800">
+        <img class="card-img" src="https://traqnivanov.github.io/Remonti-/obrushchane-dograma-prozorci-sofia.webp" alt="Fenster- und Türlaibungen — Lom, Bulgarien" loading="lazy"/ width="1200" height="654">
         <div class="card-overlay"></div>
         <div class="card-ptag">✦ Leistung 05</div>
         <div class="card-pnum">05</div>
@@ -668,7 +674,7 @@
       </div>
 
       <div class="svc-prem-card" onclick="openSvc('maz')" style="cursor:pointer;">
-        <img class="card-img" src="https://traqnivanov.github.io/Remonti-/dekorativna-mazilka-sofia.jpg" alt="Dekorputz — Lom, Bulgarien" loading="lazy"/ width="1200" height="800">
+        <img class="card-img" src="https://traqnivanov.github.io/Remonti-/dekorativna-mazilka-sofia.webp" alt="Dekorputz — Lom, Bulgarien" loading="lazy"/ width="1200" height="654">
         <div class="card-overlay"></div>
         <div class="card-ptag">✦ Leistung 06</div>
         <div class="card-pnum">06</div>
@@ -747,22 +753,22 @@
     <div class="process-grid">
       <div class="process-step">
         <div class="process-circle">1</div>
-        <h4>Kostenlose Besichtigung</h4>
+        <h3>Kostenlose Besichtigung</h3>
         <p>Ich besuche die Immobilie, prüfe den Zustand und gebe ehrliche Empfehlungen — ohne Verpflichtung.</p>
       </div>
       <div class="process-step">
         <div class="process-circle">2</div>
-        <h4>Festpreis-Angebot</h4>
+        <h3>Festpreis-Angebot</h3>
         <p>Sie erhalten ein detailliertes schriftliches Angebot. Der Preis ist endgültig — keine Überraschungen am Ende.</p>
       </div>
       <div class="process-step">
         <div class="process-circle">3</div>
-        <h4>Beginn der Arbeiten</h4>
+        <h3>Beginn der Arbeiten</h3>
         <p>Ich arbeite nach dem vereinbarten Plan und schicke täglich Fotos und Videos direkt auf Ihr Handy.</p>
       </div>
       <div class="process-step">
         <div class="process-circle">4</div>
-        <h4>Übergabe</h4>
+        <h3>Übergabe</h3>
         <p>Ich reinige gründlich und übergebe eine fertige Immobilie — wir nehmen sie gemeinsam ab, bevor Sie zahlen.</p>
       </div>
     </div>
@@ -783,17 +789,17 @@
     <div class="guarantee-points">
       <div class="gpoint">
         <span class="gpoint-icon">📄</span>
-        <h4>Unterzeichneter Vertrag</h4>
+        <h3>Unterzeichneter Vertrag</h3>
         <p>Ich arbeite nur mit schriftlichem Vertrag — Festpreis, vereinbarter Zeitplan. Keine Überraschungen am Ende.</p>
       </div>
       <div class="gpoint">
         <span class="gpoint-icon">🔏</span>
-        <h4>Schriftliche Garantie</h4>
+        <h3>Schriftliche Garantie</h3>
         <p>Für jede abgeschlossene Leistung — schriftlich, unterschrieben. Sie haben es in der Hand.</p>
       </div>
       <div class="gpoint">
         <span class="gpoint-icon">🔄</span>
-        <h4>Kostenlose Nachbesserung</h4>
+        <h3>Kostenlose Nachbesserung</h3>
         <p>Falls etwas nicht stimmt — ich komme zurück und behebe es. Ohne Aufpreis, ohne Ausreden.</p>
       </div>
     </div>
@@ -813,10 +819,10 @@
       </div>
     </div>
     <div>
-      <div class="benefit-row"><div class="benefit-icon-wrap">😌</div><div><h4>Ruhe und Sicherheit</h4><p>Alle Verantwortung liegt an einer Stelle. Kein Abschieben, kein "das ist nicht mein Problem".</p></div></div>
-      <div class="benefit-row"><div class="benefit-icon-wrap">🤝</div><div><h4>Nichts versteckt</h4><p>Klarer Preis, sauberes Ergebnis. Keine Überraschungen bei der Rechnung.</p></div></div>
-      <div class="benefit-row"><div class="benefit-icon-wrap">👑</div><div><h4>Vertrauenswürdige Menschen in Ihrer Immobilie</h4><p>Nur Personen, für die ich persönlich bürge — keine Unbekannten.</p></div></div>
-      <div class="benefit-row"><div class="benefit-icon-wrap">⏱️</div><div><h4>Termine werden eingehalten</h4><p>Falls sich etwas ändert, erfahren Sie es im Voraus — nicht danach.</p></div></div>
+      <div class="benefit-row"><div class="benefit-icon-wrap">😌</div><div><h3>Ruhe und Sicherheit</h3><p>Alle Verantwortung liegt an einer Stelle. Kein Abschieben, kein "das ist nicht mein Problem".</p></div></div>
+      <div class="benefit-row"><div class="benefit-icon-wrap">🤝</div><div><h3>Nichts versteckt</h3><p>Klarer Preis, sauberes Ergebnis. Keine Überraschungen bei der Rechnung.</p></div></div>
+      <div class="benefit-row"><div class="benefit-icon-wrap">👑</div><div><h3>Vertrauenswürdige Menschen in Ihrer Immobilie</h3><p>Nur Personen, für die ich persönlich bürge — keine Unbekannten.</p></div></div>
+      <div class="benefit-row"><div class="benefit-icon-wrap">⏱️</div><div><h3>Termine werden eingehalten</h3><p>Falls sich etwas ändert, erfahren Sie es im Voraus — nicht danach.</p></div></div>
     </div>
   </div>
 </section>
@@ -968,7 +974,7 @@
 </div>
 
 <div style="width:100%;height:280px;filter:grayscale(.8) brightness(.6);">
-  <iframe src="https://maps.google.com/maps?q=43.8224411,23.2399387&z=16&output=embed" width="100%" height="280" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  <iframe title="Standort von Ivanov Remonti in Lom, Bulgarien" src="https://maps.google.com/maps?q=43.8224411,23.2399387&z=16&output=embed" width="100%" height="280" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 </div>
 
 <!-- KONTAKT -->
@@ -1014,7 +1020,7 @@
 </section>
 
 <footer>
-  <div class="logo-text">Ivanov Remonti — Lom, Bulgarien<span style="font-size:.58rem;color:#2e3e50;letter-spacing:.15em;font-family:'Outfit';font-weight:300;display:block;margin-top:.2rem;">Renovierungsfirma · 23 Jahre Erfahrung</span></div>
+  <div class="logo-text">Ivanov Remonti — Lom, Bulgarien<span style="font-size:.58rem;color:#7f8fa4;letter-spacing:.15em;font-family:'Outfit';font-weight:300;display:block;margin-top:.2rem;">Renovierungsfirma · 23 Jahre Erfahrung</span></div>
   <p>© <span class="cur-year"></span> · Alle Rechte vorbehalten · <a href="/en/lom">🇬🇧 English</a></p>
 </footer>
 
@@ -1103,31 +1109,31 @@
   });
 
   var lomgalImgs = [
-    {u:"https://traqnivanov.github.io/Remonti-/fina-shpaklovka-steni-sofia-01.jpg",c:"spak",l:"Spachteln"},
-    {u:"https://traqnivanov.github.io/Remonti-/shpaklovka-s-mreja-sofia-01.jpg",c:"spak",l:"Spachteln"},
-    {u:"https://traqnivanov.github.io/Remonti-/shpaklovka-boyadisvane-gipsokarton-sofia-08.jpg",c:"spak",l:"Spachteln"},
-    {u:"https://traqnivanov.github.io/Remonti-/cyalosen-remont-shpaklovka-sofia-01.jpg",c:"spak",l:"Spachteln"},
-    {u:"https://traqnivanov.github.io/Remonti-/remont-apartament-lom-01.jpg",c:"spak",l:"Spachteln"},
-    {u:"https://traqnivanov.github.io/Remonti-/gipsokarton-shpaklovka-boyadisvane-lom-01.jpg",c:"spak",l:"Spachteln"},
-    {u:"https://traqnivanov.github.io/Remonti-/bezprahovo-shlaifane-lom-01.jpg",c:"spak",l:"Spachteln"},
-    {u:"https://traqnivanov.github.io/Remonti-/boyadisvane-apartament-naseteni-cvetove-lateks-sofia.jpg",c:"boya",l:"Malen"},
-    {u:"https://traqnivanov.github.io/Remonti-/boyadisvane-lateks-steni-cena-trud-sofia.jpg",c:"boya",l:"Malen"},
-    {u:"https://traqnivanov.github.io/Remonti-/boyadisvane-steni-tavani-apartament-sofia.jpg",c:"boya",l:"Malen"},
-    {u:"https://traqnivanov.github.io/Remonti-/boyadisvane-gipsokarton-skrito-osvetlenie-led-nisha-sofia.jpg",c:"boya",l:"Malen"},
-    {u:"https://traqnivanov.github.io/Remonti-/gipsokarton-led-nisha-sofia-03.jpg",c:"gyp",l:"Trockenbau"},
-    {u:"https://traqnivanov.github.io/Remonti-/gipsokarton-predstenna-obshivka-sofia.jpg",c:"gyp",l:"Trockenbau"},
-    {u:"https://traqnivanov.github.io/Remonti-/gipsokarton-tavan-sofia-16.jpg",c:"gyp",l:"Trockenbau"},
-    {u:"https://traqnivanov.github.io/Remonti-/gipsokarton-montazh-apartament-sofia.jpg",c:"gyp",l:"Trockenbau"},
-    {u:"https://traqnivanov.github.io/Remonti-/predi-sled-remont-dnevna-gipsokarton-led-sofia.jpg",c:"gyp",l:"Trockenbau"},
-    {u:"https://traqnivanov.github.io/Remonti-/gipsokarton-rgb-led-nisha-dnevna-sofia.jpg",c:"gyp",l:"Trockenbau"},
-    {u:"https://traqnivanov.github.io/Remonti-/vik-instalacia-sofia-02.jpg",c:"vik",l:"Sanitär"},
-    {u:"https://traqnivanov.github.io/Remonti-/smyana-vik-instalaciya-apartament-sofia.jpg",c:"vik",l:"Sanitär"},
-    {u:"https://traqnivanov.github.io/Remonti-/vik-remont-apartament-maystor-sofia.jpg",c:"vik",l:"Sanitär"},
-    {u:"https://traqnivanov.github.io/Remonti-/obrushchane-prozorci-apartament-sofia-01.jpg",c:"dog",l:"Laibungen"},
-    {u:"https://traqnivanov.github.io/Remonti-/obrushchane-vrata-apartament-sofia.jpg",c:"dog",l:"Laibungen"},
-    {u:"https://traqnivanov.github.io/Remonti-/obrushchane-dograma-cena-trud-sofia.jpg",c:"dog",l:"Laibungen"},
-    {u:"https://traqnivanov.github.io/Remonti-/dekorativna-mazilka-sofia-02.jpg",c:"maz",l:"Dekorputz"},
-    {u:"https://traqnivanov.github.io/Remonti-/dekorativna-pqsachna-mazilka-sofia-04.jpg",c:"maz",l:"Dekorputz"},
+    {u:"https://traqnivanov.github.io/Remonti-/fina-shpaklovka-steni-sofia-01.webp",c:"spak",l:"Spachteln"},
+    {u:"https://traqnivanov.github.io/Remonti-/shpaklovka-s-mreja-sofia-01-800.webp",c:"spak",l:"Spachteln"},
+    {u:"https://traqnivanov.github.io/Remonti-/shpaklovka-boyadisvane-gipsokarton-sofia-08-800.webp",c:"spak",l:"Spachteln"},
+    {u:"https://traqnivanov.github.io/Remonti-/cyalosen-remont-shpaklovka-sofia-01.webp",c:"spak",l:"Spachteln"},
+    {u:"https://traqnivanov.github.io/Remonti-/remont-apartament-lom-01-800.webp",c:"spak",l:"Spachteln"},
+    {u:"https://traqnivanov.github.io/Remonti-/gipsokarton-shpaklovka-boyadisvane-lom-01-800.webp",c:"spak",l:"Spachteln"},
+    {u:"https://traqnivanov.github.io/Remonti-/bezprahovo-shlaifane-lom-01-800.webp",c:"spak",l:"Spachteln"},
+    {u:"https://traqnivanov.github.io/Remonti-/boyadisvane-apartament-naseteni-cvetove-lateks-sofia.webp",c:"boya",l:"Malen"},
+    {u:"https://traqnivanov.github.io/Remonti-/boyadisvane-lateks-steni-cena-trud-sofia.webp",c:"boya",l:"Malen"},
+    {u:"https://traqnivanov.github.io/Remonti-/boyadisvane-steni-tavani-apartament-sofia-800.webp",c:"boya",l:"Malen"},
+    {u:"https://traqnivanov.github.io/Remonti-/boyadisvane-gipsokarton-skrito-osvetlenie-led-nisha-sofia.webp",c:"boya",l:"Malen"},
+    {u:"https://traqnivanov.github.io/Remonti-/gipsokarton-led-nisha-sofia-03-800.webp",c:"gyp",l:"Trockenbau"},
+    {u:"https://traqnivanov.github.io/Remonti-/gipsokarton-predstenna-obshivka-sofia.webp",c:"gyp",l:"Trockenbau"},
+    {u:"https://traqnivanov.github.io/Remonti-/gipsokarton-tavan-sofia-16-800.webp",c:"gyp",l:"Trockenbau"},
+    {u:"https://traqnivanov.github.io/Remonti-/gipsokarton-montazh-apartament-sofia.webp",c:"gyp",l:"Trockenbau"},
+    {u:"https://traqnivanov.github.io/Remonti-/predi-sled-remont-dnevna-gipsokarton-led-sofia-800.webp",c:"gyp",l:"Trockenbau"},
+    {u:"https://traqnivanov.github.io/Remonti-/gipsokarton-rgb-led-nisha-dnevna-sofia.webp",c:"gyp",l:"Trockenbau"},
+    {u:"https://traqnivanov.github.io/Remonti-/vik-instalacia-sofia-02.webp",c:"vik",l:"Sanitär"},
+    {u:"https://traqnivanov.github.io/Remonti-/smyana-vik-instalaciya-apartament-sofia-800.webp",c:"vik",l:"Sanitär"},
+    {u:"https://traqnivanov.github.io/Remonti-/vik-remont-apartament-maystor-sofia-800.webp",c:"vik",l:"Sanitär"},
+    {u:"https://traqnivanov.github.io/Remonti-/obrushchane-prozorci-apartament-sofia-01-800.webp",c:"dog",l:"Laibungen"},
+    {u:"https://traqnivanov.github.io/Remonti-/obrushchane-vrata-apartament-sofia-800.webp",c:"dog",l:"Laibungen"},
+    {u:"https://traqnivanov.github.io/Remonti-/obrushchane-dograma-cena-trud-sofia-800.webp",c:"dog",l:"Laibungen"},
+    {u:"https://traqnivanov.github.io/Remonti-/dekorativna-mazilka-sofia-02-800.webp",c:"maz",l:"Dekorputz"},
+    {u:"https://traqnivanov.github.io/Remonti-/dekorativna-pqsachna-mazilka-sofia-04-800.webp",c:"maz",l:"Dekorputz"},
     {u:"https://traqnivanov.github.io/Remonti-/dekorativna-pqsachna-mazilka-sofia-01.jpg",c:"maz",l:"Dekorputz"}
   ];
   var lomgalCat='all', lomgalShown=0, lomgalVisible=[], LOMGAL_BATCH=6, lomlbIdx=0;
@@ -1216,46 +1222,46 @@
 
 <script>
   var deSvcData = {
-    spak: { img:'https://traqnivanov.github.io/Remonti-/shpaklovka-steni-apartament-sofia.jpg', title:'Spachteln', desc:'Mehrschichtiges Spachteln von Wänden und Decken. Staubfreies Schleifen für eine glatte Oberfläche. Wir reparieren Risse, verstärken mit Gewebe wo nötig und bereiten die Fläche für den Anstrich vor.', includes:['Untergrundvorbereitung','Armierungsgewebe wo nötig','Mehrschichtige Ausführung','Staubfreies Schleifen','Malerfertig','Schriftliche Garantie'], options:[{name:'Standardspachtel',desc:'Zweischichtiger Spachtel auf grundierter Fläche. Glatter Finish malerfertig.'},{name:'Gipsputz',desc:'Für einen feineren Finish. Risse mit Gewebe oder Vliess verstärkt.'},{name:'Feinputz',desc:'Letzte Schicht vor dem Anstrich — perfekt glatt, keine Spuren oder Unebenheiten.'}] },
-    boya: { img:'https://traqnivanov.github.io/Remonti-/boyadisvane-apartament-sofia.jpg', title:'Malerarbeiten', desc:'Zweischichtiger Latexanstrich auf Grundierung. Wir schleifen Defekte, schützen Böden und Möbel mit Schutzfolie und schneiden Kanten präzise an Ecken und Rahmen.', includes:['Flächengrundierung','Präzises Kantenschneiden','2 Anstriche','Boden- und Möbelschutz','Reinigung nach der Arbeit','Schriftliche Garantie'], options:[{name:'Einfarbig — Weiß',desc:'Zweischichtiger Anstrich in Weiß. Die wirtschaftlichste Lösung.'},{name:'Standard — Wände und Decken',desc:'Zweischichtiger Latexanstrich in Ihrer Wunschfarbe.'},{name:'Premium-Finish',desc:'Hochwertiger waschbarer Latex — satte Farbe, langlebiger Finish.'},{name:'Anstrich mit Reparaturen',desc:'Löcher und Risse füllen, schleifen und grundieren — vollständige Vorbereitung vor dem Anstrich.'}] },
-    gyp: { img:'https://traqnivanov.github.io/Remonti-/gipsokarton-okachen-tavan-sofia.jpg', title:'Trockenbau', desc:'Wir bauen abgehängte Decken, Trennwände und Nischen mit Knauf und Rigips Metallrahmen. Schall- und Wärmeschutz auf Wunsch, verdeckte LED-Beleuchtung auf Anfrage.', includes:['Knauf/Rigips Metallrahmen','Zweilagige Montage','Fugenfüllung','Schallschutz auf Wunsch','LED-Beleuchtung auf Wunsch','Schriftliche Garantie'], options:[{name:'Flache Decke',desc:'Standard abgehängte Gipskartondecke.'},{name:'LED-Nische',desc:'Verdeckte Beleuchtung für Decke und Wand.'},{name:'Wandverkleidung',desc:'Gipskartonverkleidung vor der Wand.'},{name:'Trennwand',desc:'Neue Trennwand aus Gipskarton.'}] },
-    vik: { img:'https://traqnivanov.github.io/Remonti-/vik-uslugi-sofia.jpg', title:'Sanitär', desc:'Vollständiger Austausch oder Neuinstallation von Wasser- und Abwassersystemen nach Plan. Sanitärmontage und Rohrverlegung.', includes:['Installationsplan','Rohrverlegung im Schlitz','Anschlussinstallation','Druckprüfung','Schlitzfüllung','Schriftliche Garantie'], options:[{name:'Mischbatterie austauschen',desc:'Alt entfernen, neu einbauen, auf Undichtigkeiten prüfen.'},{name:'Toilette austauschen',desc:'Alt entfernen, neu einbauen, befestigen und anschließen.'},{name:'Siphon / Flexrohr austauschen',desc:'Alt entfernen, neu einbauen, prüfen.'},{name:'Neue Sanitärinstallation',desc:'Kostenlose Besichtigung + festes Angebot.'},{name:'Notfallreparatur',desc:'Fehlerdiagnose und Reparatur.'}] },
-    dog: { img:'https://traqnivanov.github.io/Remonti-/obrushchane-dograma-prozorci-sofia.jpg', title:'Fenster- & Türlaibungen', desc:'Laibungsarbeiten um Türen und Fenster nach Rahmenaustausch. Wir arbeiten mit Armierungsgewebe und Eckprofilen — keine Risse, keine ungleichmäßigen Kanten.', includes:['Altes Material entfernen','Armierungsgewebe','Aluminium-Eckprofile','Abschlussputz','Malerfertig','Schriftliche Garantie'], options:[{name:'Laibung mit Eckschiene',desc:'Spachteln um Fenster oder Tür mit Aluminium-Eckschiene — gerader Rand, malerfertig.'}] },
-    maz: { img:'https://traqnivanov.github.io/Remonti-/dekorativna-mazilka-sofia.jpg', title:'Dekorputz', desc:'Venezianischer, strukturierter oder Reliefputz — einzigartige Textur und hochwertiger Finish.', includes:['Untergrundvorbereitung und Grundierung','2–3 Schichten Putz','Polieren und Finish','Schutzlack auf Wunsch','Einzigartiges Ergebnis','Schriftliche Garantie'], options:[{name:'Strukturputz',desc:'Relieftextur in verschiedenen Korngrößen.'},{name:'Venezianischer Putz',desc:'Luxuriöser glatter Putz mit Marmoreffekt.'},{name:'Reliefputz',desc:'Handaufgetragenes Relief. Einzigartiges Aussehen.'},{name:'Metalliceffekt',desc:'Gold, Silber oder Bronze. Premium-Finish.'}] }
+    spak: { img:'https://traqnivanov.github.io/Remonti-/shpaklovka-steni-apartament-sofia.webp', title:'Spachteln', desc:'Mehrschichtiges Spachteln von Wänden und Decken. Staubfreies Schleifen für eine glatte Oberfläche. Wir reparieren Risse, verstärken mit Gewebe wo nötig und bereiten die Fläche für den Anstrich vor.', includes:['Untergrundvorbereitung','Armierungsgewebe wo nötig','Mehrschichtige Ausführung','Staubfreies Schleifen','Malerfertig','Schriftliche Garantie'], options:[{name:'Standardspachtel',desc:'Zweischichtiger Spachtel auf grundierter Fläche. Glatter Finish malerfertig.'},{name:'Gipsputz',desc:'Für einen feineren Finish. Risse mit Gewebe oder Vliess verstärkt.'},{name:'Feinputz',desc:'Letzte Schicht vor dem Anstrich — perfekt glatt, keine Spuren oder Unebenheiten.'}] },
+    boya: { img:'https://traqnivanov.github.io/Remonti-/boyadisvane-apartament-sofia.webp', title:'Malerarbeiten', desc:'Zweischichtiger Latexanstrich auf Grundierung. Wir schleifen Defekte, schützen Böden und Möbel mit Schutzfolie und schneiden Kanten präzise an Ecken und Rahmen.', includes:['Flächengrundierung','Präzises Kantenschneiden','2 Anstriche','Boden- und Möbelschutz','Reinigung nach der Arbeit','Schriftliche Garantie'], options:[{name:'Einfarbig — Weiß',desc:'Zweischichtiger Anstrich in Weiß. Die wirtschaftlichste Lösung.'},{name:'Standard — Wände und Decken',desc:'Zweischichtiger Latexanstrich in Ihrer Wunschfarbe.'},{name:'Premium-Finish',desc:'Hochwertiger waschbarer Latex — satte Farbe, langlebiger Finish.'},{name:'Anstrich mit Reparaturen',desc:'Löcher und Risse füllen, schleifen und grundieren — vollständige Vorbereitung vor dem Anstrich.'}] },
+    gyp: { img:'https://traqnivanov.github.io/Remonti-/gipsokarton-okachen-tavan-sofia.webp', title:'Trockenbau', desc:'Wir bauen abgehängte Decken, Trennwände und Nischen mit Knauf und Rigips Metallrahmen. Schall- und Wärmeschutz auf Wunsch, verdeckte LED-Beleuchtung auf Anfrage.', includes:['Knauf/Rigips Metallrahmen','Zweilagige Montage','Fugenfüllung','Schallschutz auf Wunsch','LED-Beleuchtung auf Wunsch','Schriftliche Garantie'], options:[{name:'Flache Decke',desc:'Standard abgehängte Gipskartondecke.'},{name:'LED-Nische',desc:'Verdeckte Beleuchtung für Decke und Wand.'},{name:'Wandverkleidung',desc:'Gipskartonverkleidung vor der Wand.'},{name:'Trennwand',desc:'Neue Trennwand aus Gipskarton.'}] },
+    vik: { img:'https://traqnivanov.github.io/Remonti-/vik-uslugi-sofia.webp', title:'Sanitär', desc:'Vollständiger Austausch oder Neuinstallation von Wasser- und Abwassersystemen nach Plan. Sanitärmontage und Rohrverlegung.', includes:['Installationsplan','Rohrverlegung im Schlitz','Anschlussinstallation','Druckprüfung','Schlitzfüllung','Schriftliche Garantie'], options:[{name:'Mischbatterie austauschen',desc:'Alt entfernen, neu einbauen, auf Undichtigkeiten prüfen.'},{name:'Toilette austauschen',desc:'Alt entfernen, neu einbauen, befestigen und anschließen.'},{name:'Siphon / Flexrohr austauschen',desc:'Alt entfernen, neu einbauen, prüfen.'},{name:'Neue Sanitärinstallation',desc:'Kostenlose Besichtigung + festes Angebot.'},{name:'Notfallreparatur',desc:'Fehlerdiagnose und Reparatur.'}] },
+    dog: { img:'https://traqnivanov.github.io/Remonti-/obrushchane-dograma-prozorci-sofia.webp', title:'Fenster- & Türlaibungen', desc:'Laibungsarbeiten um Türen und Fenster nach Rahmenaustausch. Wir arbeiten mit Armierungsgewebe und Eckprofilen — keine Risse, keine ungleichmäßigen Kanten.', includes:['Altes Material entfernen','Armierungsgewebe','Aluminium-Eckprofile','Abschlussputz','Malerfertig','Schriftliche Garantie'], options:[{name:'Laibung mit Eckschiene',desc:'Spachteln um Fenster oder Tür mit Aluminium-Eckschiene — gerader Rand, malerfertig.'}] },
+    maz: { img:'https://traqnivanov.github.io/Remonti-/dekorativna-mazilka-sofia.webp', title:'Dekorputz', desc:'Venezianischer, strukturierter oder Reliefputz — einzigartige Textur und hochwertiger Finish.', includes:['Untergrundvorbereitung und Grundierung','2–3 Schichten Putz','Polieren und Finish','Schutzlack auf Wunsch','Einzigartiges Ergebnis','Schriftliche Garantie'], options:[{name:'Strukturputz',desc:'Relieftextur in verschiedenen Korngrößen.'},{name:'Venezianischer Putz',desc:'Luxuriöser glatter Putz mit Marmoreffekt.'},{name:'Reliefputz',desc:'Handaufgetragenes Relief. Einzigartiges Aussehen.'},{name:'Metalliceffekt',desc:'Gold, Silber oder Bronze. Premium-Finish.'}] }
   };
 
   var deGalImgs = [
-    {u:"https://traqnivanov.github.io/Remonti-/fina-shpaklovka-steni-sofia-01.jpg",c:"spak"},
-    {u:"https://traqnivanov.github.io/Remonti-/shpaklovka-s-mreja-sofia-01.jpg",c:"spak"},
-    {u:"https://traqnivanov.github.io/Remonti-/shpaklovka-boyadisvane-gipsokarton-sofia-08.jpg",c:"spak"},
-    {u:"https://traqnivanov.github.io/Remonti-/cyalosen-remont-shpaklovka-sofia-01.jpg",c:"spak"},
-    {u:"https://traqnivanov.github.io/Remonti-/remont-apartament-lom-01.jpg",c:"spak"},
-    {u:"https://traqnivanov.github.io/Remonti-/bezprahovo-shlaifane-lom-01.jpg",c:"spak"},
-    {u:"https://traqnivanov.github.io/Remonti-/boyadisvane-apartament-naseteni-cvetove-lateks-sofia.jpg",c:"boya"},
-    {u:"https://traqnivanov.github.io/Remonti-/boyadisvane-lateks-steni-cena-trud-sofia.jpg",c:"boya"},
-    {u:"https://traqnivanov.github.io/Remonti-/boyadisvane-steni-tavani-apartament-sofia.jpg",c:"boya"},
-    {u:"https://traqnivanov.github.io/Remonti-/boyadisvane-gipsokarton-skrito-osvetlenie-led-nisha-sofia.jpg",c:"boya"},
-    {u:"https://traqnivanov.github.io/Remonti-/gipsokarton-led-nisha-sofia-03.jpg",c:"gyp"},
-    {u:"https://traqnivanov.github.io/Remonti-/gipsokarton-predstenna-obshivka-sofia.jpg",c:"gyp"},
-    {u:"https://traqnivanov.github.io/Remonti-/gipsokarton-tavan-sofia-16.jpg",c:"gyp"},
-    {u:"https://traqnivanov.github.io/Remonti-/gipsokarton-montazh-apartament-sofia.jpg",c:"gyp"},
-    {u:"https://traqnivanov.github.io/Remonti-/predi-sled-remont-dnevna-gipsokarton-led-sofia.jpg",c:"gyp"},
-    {u:"https://traqnivanov.github.io/Remonti-/gipsokarton-rgb-led-nisha-dnevna-sofia.jpg",c:"gyp"},
-    {u:"https://traqnivanov.github.io/Remonti-/vik-instalacia-sofia-02.jpg",c:"vik"},
-    {u:"https://traqnivanov.github.io/Remonti-/smyana-vik-instalaciya-apartament-sofia.jpg",c:"vik"},
-    {u:"https://traqnivanov.github.io/Remonti-/vik-remont-apartament-maystor-sofia.jpg",c:"vik"},
-    {u:"https://traqnivanov.github.io/Remonti-/instalaciya-vik-lom.jpg",c:"vik"},
-    {u:"https://traqnivanov.github.io/Remonti-/montaj-vik-instalaciya-lom.jpg",c:"vik"},
-    {u:"https://traqnivanov.github.io/Remonti-/smyana-sifoni-mivki-lom.jpg",c:"vik"},
-    {u:"https://traqnivanov.github.io/Remonti-/vodoprovod-kanalizaciya-lom.jpg",c:"vik"},
-    {u:"https://traqnivanov.github.io/Remonti-/izgrazhdane-na-vik-lom.jpg",c:"vik"},
-    {u:"https://traqnivanov.github.io/Remonti-/podmenya-sanitariya-lom.jpg",c:"vik"},
-    {u:"https://traqnivanov.github.io/Remonti-/montaj-sanitariya-lom.jpg",c:"vik"},
-    {u:"https://traqnivanov.github.io/Remonti-/obrushchane-prozorci-apartament-sofia-01.jpg",c:"dog"},
-    {u:"https://traqnivanov.github.io/Remonti-/obrushchane-vrata-apartament-sofia.jpg",c:"dog"},
-    {u:"https://traqnivanov.github.io/Remonti-/obrushchane-dograma-cena-trud-sofia.jpg",c:"dog"},
-    {u:"https://traqnivanov.github.io/Remonti-/dekorativna-mazilka-sofia-02.jpg",c:"maz"},
-    {u:"https://traqnivanov.github.io/Remonti-/dekorativna-pqsachna-mazilka-sofia-04.jpg",c:"maz"},
+    {u:"https://traqnivanov.github.io/Remonti-/fina-shpaklovka-steni-sofia-01.webp",c:"spak"},
+    {u:"https://traqnivanov.github.io/Remonti-/shpaklovka-s-mreja-sofia-01-800.webp",c:"spak"},
+    {u:"https://traqnivanov.github.io/Remonti-/shpaklovka-boyadisvane-gipsokarton-sofia-08-800.webp",c:"spak"},
+    {u:"https://traqnivanov.github.io/Remonti-/cyalosen-remont-shpaklovka-sofia-01.webp",c:"spak"},
+    {u:"https://traqnivanov.github.io/Remonti-/remont-apartament-lom-01-800.webp",c:"spak"},
+    {u:"https://traqnivanov.github.io/Remonti-/bezprahovo-shlaifane-lom-01-800.webp",c:"spak"},
+    {u:"https://traqnivanov.github.io/Remonti-/boyadisvane-apartament-naseteni-cvetove-lateks-sofia.webp",c:"boya"},
+    {u:"https://traqnivanov.github.io/Remonti-/boyadisvane-lateks-steni-cena-trud-sofia.webp",c:"boya"},
+    {u:"https://traqnivanov.github.io/Remonti-/boyadisvane-steni-tavani-apartament-sofia-800.webp",c:"boya"},
+    {u:"https://traqnivanov.github.io/Remonti-/boyadisvane-gipsokarton-skrito-osvetlenie-led-nisha-sofia.webp",c:"boya"},
+    {u:"https://traqnivanov.github.io/Remonti-/gipsokarton-led-nisha-sofia-03-800.webp",c:"gyp"},
+    {u:"https://traqnivanov.github.io/Remonti-/gipsokarton-predstenna-obshivka-sofia.webp",c:"gyp"},
+    {u:"https://traqnivanov.github.io/Remonti-/gipsokarton-tavan-sofia-16-800.webp",c:"gyp"},
+    {u:"https://traqnivanov.github.io/Remonti-/gipsokarton-montazh-apartament-sofia.webp",c:"gyp"},
+    {u:"https://traqnivanov.github.io/Remonti-/predi-sled-remont-dnevna-gipsokarton-led-sofia-800.webp",c:"gyp"},
+    {u:"https://traqnivanov.github.io/Remonti-/gipsokarton-rgb-led-nisha-dnevna-sofia.webp",c:"gyp"},
+    {u:"https://traqnivanov.github.io/Remonti-/vik-instalacia-sofia-02.webp",c:"vik"},
+    {u:"https://traqnivanov.github.io/Remonti-/smyana-vik-instalaciya-apartament-sofia-800.webp",c:"vik"},
+    {u:"https://traqnivanov.github.io/Remonti-/vik-remont-apartament-maystor-sofia-800.webp",c:"vik"},
+    {u:"https://traqnivanov.github.io/Remonti-/instalaciya-vik-lom-800.webp",c:"vik"},
+    {u:"https://traqnivanov.github.io/Remonti-/montaj-vik-instalaciya-lom-800.webp",c:"vik"},
+    {u:"https://traqnivanov.github.io/Remonti-/smyana-sifoni-mivki-lom-800.webp",c:"vik"},
+    {u:"https://traqnivanov.github.io/Remonti-/vodoprovod-kanalizaciya-lom-800.webp",c:"vik"},
+    {u:"https://traqnivanov.github.io/Remonti-/izgrazhdane-na-vik-lom-800.webp",c:"vik"},
+    {u:"https://traqnivanov.github.io/Remonti-/podmenya-sanitariya-lom-800.webp",c:"vik"},
+    {u:"https://traqnivanov.github.io/Remonti-/montaj-sanitariya-lom-800.webp",c:"vik"},
+    {u:"https://traqnivanov.github.io/Remonti-/obrushchane-prozorci-apartament-sofia-01-800.webp",c:"dog"},
+    {u:"https://traqnivanov.github.io/Remonti-/obrushchane-vrata-apartament-sofia-800.webp",c:"dog"},
+    {u:"https://traqnivanov.github.io/Remonti-/obrushchane-dograma-cena-trud-sofia-800.webp",c:"dog"},
+    {u:"https://traqnivanov.github.io/Remonti-/dekorativna-mazilka-sofia-02-800.webp",c:"maz"},
+    {u:"https://traqnivanov.github.io/Remonti-/dekorativna-pqsachna-mazilka-sofia-04-800.webp",c:"maz"},
     {u:"https://traqnivanov.github.io/Remonti-/dekorativna-pqsachna-mazilka-sofia-01.jpg",c:"maz"}
   ];
 
@@ -1329,6 +1335,16 @@ document.addEventListener('DOMContentLoaded', function(){
 function showPrivacy(){ document.getElementById('privacySection').style.display='block'; window.scrollTo(0,0); }
 function hidePrivacy(){ document.getElementById('privacySection').style.display='none'; }
 </script>
-<script type="module" src="https://traqnivanov.github.io/ivanov-tools/analytics/tracker.js"></script>
+<script>
+window.addEventListener('load', () => {
+  const loadTracker = () => import('https://traqnivanov.github.io/ivanov-tools/analytics/tracker.js')
+    .catch(error => console.warn('Analytics tracker could not be loaded:', error));
+  if ('requestIdleCallback' in window) {
+    requestIdleCallback(loadTracker, { timeout: 3000 });
+  } else {
+    setTimeout(loadTracker, 1500);
+  }
+});
+</script>
 </body>
 </html>
