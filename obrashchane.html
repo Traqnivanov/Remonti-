@@ -309,14 +309,48 @@ footer .logo-text{font-family:'Fraunces',serif;color:var(--cream);font-size:1rem
 <section>
   <h2>Видео от наши обекти</h2>
   <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:1rem;">
-    <div style="position:relative;padding-bottom:177.78%;height:0;overflow:hidden;border-radius:12px;">
-      <iframe src="https://www.youtube.com/embed/WNbgtSS7hlU" title="Ремонт видео 1" allowfullscreen loading="lazy" style="position:absolute;top:0;left:0;width:100%;height:100%;border:none;border-radius:12px;"></iframe>
+    <div class="yt-lite" data-id="WNbgtSS7hlU" data-title="Ремонт видео 1" role="button" tabindex="0" aria-label="Пусни видео" style="position:relative;padding-bottom:177.78%;height:0;overflow:hidden;border-radius:12px;background:#000;cursor:pointer;">
+      <img src="https://i.ytimg.com/vi/WNbgtSS7hlU/hqdefault.jpg" width="480" height="360" alt="Ремонт видео 1" loading="lazy" decoding="async" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;border-radius:12px;"/>
+      <button type="button" aria-label="Пусни видео" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:56px;height:56px;background:rgba(255,0,0,.85);border:none;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="white"><path d="M8 5v14l11-7z"/></svg>
+      </button>
     </div>
-    <div style="position:relative;padding-bottom:177.78%;height:0;overflow:hidden;border-radius:12px;">
-      <iframe src="https://www.youtube.com/embed/Wp8iLS5HqPM" title="Ремонт видео 2" allowfullscreen loading="lazy" style="position:absolute;top:0;left:0;width:100%;height:100%;border:none;border-radius:12px;"></iframe>
+    <div class="yt-lite" data-id="Wp8iLS5HqPM" data-title="Ремонт видео 2" role="button" tabindex="0" aria-label="Пусни видео" style="position:relative;padding-bottom:177.78%;height:0;overflow:hidden;border-radius:12px;background:#000;cursor:pointer;">
+      <img src="https://i.ytimg.com/vi/Wp8iLS5HqPM/hqdefault.jpg" width="480" height="360" alt="Ремонт видео 2" loading="lazy" decoding="async" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;border-radius:12px;"/>
+      <button type="button" aria-label="Пусни видео" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:56px;height:56px;background:rgba(255,0,0,.85);border:none;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="white"><path d="M8 5v14l11-7z"/></svg>
+      </button>
     </div>
   </div>
 </section>
+<script>
+(function(){
+  var els = document.querySelectorAll('.yt-lite');
+  els.forEach(function(el) {
+    function loadVideo() {
+      if (el.dataset.loaded) return;
+      el.dataset.loaded = '1';
+      var id = el.getAttribute('data-id');
+      var title = el.getAttribute('data-title');
+      var iframe = document.createElement('iframe');
+      iframe.src = 'https://www.youtube-nocookie.com/embed/' + id + '?autoplay=1';
+      iframe.title = title;
+      iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+      iframe.allowFullscreen = true;
+      iframe.style.cssText = 'position:absolute;top:0;left:0;width:100%;height:100%;border:none;border-radius:12px;';
+      el.removeAttribute('role');
+      el.removeAttribute('tabindex');
+      el.removeAttribute('aria-label');
+      el.innerHTML = '';
+      el.appendChild(iframe);
+    }
+    el.addEventListener('click', loadVideo);
+    el.addEventListener('keydown', function(e) {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); loadVideo(); }
+    });
+  });
+})();
+</script>
 
 <section>
   <h2>Какво включва услугата</h2>
