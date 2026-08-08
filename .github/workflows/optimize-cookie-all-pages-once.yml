@@ -1,0 +1,120 @@
+name: Optimize cookie banner all pages once
+
+on:
+  push:
+    branches: [main]
+
+permissions:
+  contents: write
+
+jobs:
+  optimize:
+    if: contains(github.event.head_commit.message, 'RUN_COOKIE_ALL_PAGES')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Apply cookie startup optimization to all matching pages except root index
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import re, hashlib
+
+          root_index = Path('index.html')
+          root_before = hashlib.sha256(root_index.read_bytes()).hexdigest()
+
+          early_block = '''<style id="cookie-consent-early-style">\n.cookie-consent-known .cookie-banner{display:none!important;}\n</style>\n<script id="cookie-consent-early">\n(function(){\n  try {\n    var c = localStorage.getItem('ivanovCookieConsentV2');\n    if (c === 'accepted' || c === 'rejected') {\n      document.documentElement.classList.add('cookie-consent-known');\n    }\n  } catch(e) {}\n})();\n</script>\n'''
+
+          changed = []
+          candidates = []
+
+          for p in sorted(Path('.').rglob('*.html')):
+              if '.git' in p.parts or p == root_index:
+                  continue
+              text = p.read_text(encoding='utf-8')
+              if 'id="cookieBanner"' not in text or 'ivanovCookieConsentV2' not in text:
+                  continue
+              candidates.append(str(p))
+              original = text
+
+              if 'id="cookie-consent-early"' not in text:
+                  m = re.search(r'(<meta[^>]+name=["\']viewport["\'][^>]*>\s*)', text, flags=re.I)
+                  if m:
+                      text = text[:m.end()] + early_block + text[m.end():]
+                  else:
+                      text = re.sub(r'(<head[^>]*>\s*)', r'\1' + early_block, text, count=1, flags=re.I)
+              elif 'cookie-consent-known .cookie-banner' not in text:
+                  text = text.replace('<script id="cookie-consent-early">', '<style id="cookie-consent-early-style">\n.cookie-consent-known .cookie-banner{display:none!important;}\n</style>\n<script id="cookie-consent-early">', 1)
+
+              tag_re = re.compile(r'<div\b[^>]*\bid=["\']cookieBanner["\'][^>]*>', flags=re.I)
+              matches = list(tag_re.finditer(text))
+              assert len(matches) == 1, f'{p}: expected exactly one cookieBanner div, found {len(matches)}'
+              tag = matches[0].group(0)
+              class_m = re.search(r'class=(["\'])(.*?)\1', tag, flags=re.I|re.S)
+              assert class_m, f'{p}: cookieBanner div has no class attribute'
+              classes = class_m.group(2).split()
+              if 'hidden' in classes:
+                  classes = [c for c in classes if c != 'hidden']
+                  new_class = 'class=' + class_m.group(1) + ' '.join(classes) + class_m.group(1)
+                  new_tag = tag[:class_m.start()] + new_class + tag[class_m.end():]
+                  text = text[:matches[0].start()] + new_tag + text[matches[0].end():]
+
+              if text != original:
+                  p.write_text(text, encoding='utf-8')
+                  changed.append(str(p))
+
+          assert candidates, 'No matching cookie pages found; aborting'
+          assert changed, 'Matching pages found but nothing changed; aborting'
+          assert root_before == hashlib.sha256(root_index.read_bytes()).hexdigest(), 'Root index.html changed unexpectedly'
+
+          Path('/tmp/cookie_changed.txt').write_text('\n'.join(changed) + '\n', encoding='utf-8')
+          print(f'Matching pages: {len(candidates)}')
+          print(f'Changed pages: {len(changed)}')
+          print('\n'.join(changed))
+          PY
+
+      - name: Validate all changed pages
+        shell: bash
+        run: |
+          git diff --check
+          git diff --exit-code -- index.html
+          python3 - <<'PY'
+          from pathlib import Path
+          import re, subprocess, tempfile
+
+          changed = [Path(x) for x in Path('/tmp/cookie_changed.txt').read_text(encoding='utf-8').splitlines() if x]
+          assert changed
+          for p in changed:
+              html = p.read_text(encoding='utf-8')
+              assert html.count('id="cookie-consent-early"') == 1, f'{p}: early consent script count is not 1'
+              assert 'cookie-consent-known .cookie-banner{display:none!important;}' in html, f'{p}: early hide rule missing'
+              m = re.search(r'<div\b[^>]*\bid=["\']cookieBanner["\'][^>]*>', html, flags=re.I)
+              assert m, f'{p}: cookieBanner missing'
+              cm = re.search(r'class=(["\'])(.*?)\1', m.group(0), flags=re.I|re.S)
+              assert cm and 'hidden' not in cm.group(2).split(), f'{p}: cookieBanner still starts hidden'
+              assert 'getIvanovConsent' in html, f'{p}: consent logic missing'
+
+              scripts = re.findall(r'<script([^>]*)>(.*?)</script>', html, flags=re.I|re.S)
+              for attrs, code in scripts:
+                  if 'application/ld+json' in attrs.lower() or not code.strip():
+                      continue
+                  with tempfile.NamedTemporaryFile('w', suffix='.js', encoding='utf-8', delete=False) as f:
+                      f.write(code)
+                      name = f.name
+                  subprocess.run(['node', '--check', name], check=True, stdout=subprocess.DEVNULL)
+
+          print(f'Validated {len(changed)} changed HTML pages; inline JS syntax OK.')
+          PY
+          git diff --stat
+
+      - name: Commit optimized cookie banners
+        shell: bash
+        run: |
+          git config user.name "Ivanov Remonti Optimizer"
+          git config user.email "actions@users.noreply.github.com"
+          git add -- '*.html'
+          git commit -m "Optimize cookie banner startup across site pages"
+          git push origin main
