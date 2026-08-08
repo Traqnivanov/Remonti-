@@ -7,6 +7,16 @@
 <link href="https://traqnivanov.github.io" rel="dns-prefetch"/>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script id="cookie-consent-early">
+(function(){
+  try {
+    var c = localStorage.getItem('ivanovCookieConsentV2');
+    if (c === 'accepted' || c === 'rejected') {
+      document.documentElement.classList.add('cookie-consent-known');
+    }
+  } catch(e) {}
+})();
+</script>
 
 
 <!-- Google Analytics и Google Ads се зареждат само след изрично съгласие -->
@@ -624,14 +634,6 @@
     .sticky-cta a { color: white; font-weight: 700; text-decoration: none; font-size: .9rem; letter-spacing: .06em; text-transform: uppercase; }
     @media (max-width: 700px) { .sticky-cta { display: none; } }
 
-    /* COOKIE BANNER */
-    .cookie-banner { position: fixed; bottom: 0; left: 0; right: 0; z-index: 8000; background: var(--navy2); border-top: 1px solid rgba(201,148,58,.25); padding: 1.2rem 2rem; display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; flex-wrap: wrap; }
-    .cookie-banner p { color: #8a9ab0; font-size: .82rem; line-height: 1.6; flex: 1; }
-    .cookie-banner a { color: var(--gold); text-decoration: underline; }
-    .cookie-banner strong { color: var(--white); }
-    .cookie-btn { background: linear-gradient(135deg, var(--gold), var(--gold2)); color: white; border: none; padding: .6rem 1.8rem; border-radius: 2px; font-family: 'Jost'; font-weight: 700; font-size: .82rem; cursor: pointer; white-space: nowrap; }
-    .cookie-banner.hidden { display: none; }
-
     /* MOBILE MENU */
     .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: .5rem; z-index: 200; }
     .hamburger span { display: block; width: 26px; height: 2px; background: var(--gold); transition: transform .3s, opacity .3s; border-radius: 2px; }
@@ -985,13 +987,13 @@
   padding:1rem 1.25rem;background:#111c2e;border-top:1px solid rgba(201,148,58,.35);
   box-shadow:0 -10px 30px rgba(0,0,0,.35);
 }
-.cookie-banner.hidden{display:none!important;}
+.cookie-banner.hidden,.cookie-consent-known .cookie-banner{display:none!important;}
 .cookie-banner p{margin:0;flex:1;min-width:240px;color:#c8d3e2;font-size:.84rem;line-height:1.55;}
 .cookie-banner strong{color:#fff;}
 .cookie-actions{display:flex;gap:.65rem;flex-wrap:wrap;}
 .cookie-btn{
   border:1px solid rgba(201,148,58,.65);border-radius:4px;padding:.65rem 1.15rem;
-  font:600 .82rem 'Outfit',sans-serif;cursor:pointer;
+  font:600 .82rem 'Outfit',sans-serif;cursor:pointer;white-space:nowrap;
 }
 .cookie-accept{background:linear-gradient(135deg,#c9943a,#e8b84b);color:#111827;}
 .cookie-reject{background:transparent;color:#e8b84b;}
@@ -1050,6 +1052,7 @@ footer p[style]{color:#aeb9c8!important;}
 
 <style id="mobile-performance-animations">
 @media (max-width: 768px), (prefers-reduced-motion: reduce) {
+  .hero-badge, .hero > h1, .hero-tagline, .hero-sub, .hero-location, .hero-btns, .hero-stats { animation: none !important; }
   .gold-shine, .hero h1 .accent, .service-card h3 { animation: none !important; background-position: 50% 50% !important; }
   .gal-filter { transition: none !important; }
   .calc-svg-pulse svg, .float-btn { animation: none !important; filter: none !important; box-shadow: none !important; }
@@ -1064,7 +1067,7 @@ footer p[style]{color:#aeb9c8!important;}
 </div>
 
 <!-- COOKIE BANNER -->
-<div class="cookie-banner hidden" id="cookieBanner" role="dialog" aria-label="Настройки за бисквитки">
+<div class="cookie-banner" id="cookieBanner" role="dialog" aria-label="Настройки за бисквитки">
   <p><strong>Бисквитки и статистика:</strong> Google Analytics и Google Ads се включват само след ваше съгласие. Ivanov Analytics отчита анонимна обща статистика без име, телефон, съдържание на формата или пълен IP адрес. <button class="cookie-info" type="button" onclick="showPrivacy()">Повече информация</button></p>
   <div class="cookie-actions">
     <button class="cookie-btn cookie-reject" type="button" onclick="rejectCookies()">Отказвам</button>
@@ -2680,7 +2683,6 @@ document.addEventListener('DOMContentLoaded', function(){
   var c=getIvanovConsent();
   if(c==='accepted'){ hideCookieBanner(); loadGoogleTracking(); }
   else if(c==='rejected'){ hideCookieBanner(); }
-  else { var b=document.getElementById('cookieBanner'); if(b) b.classList.remove('hidden'); }
   document.querySelectorAll('a[href^="tel:"]').forEach(function(el){
     el.addEventListener('click', function(){
       if(getIvanovConsent()==='accepted' && window._ivanovGoogleTrackingLoaded){
