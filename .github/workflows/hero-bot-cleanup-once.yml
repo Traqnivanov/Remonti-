@@ -5,6 +5,8 @@ on:
     branches: [main]
     paths:
       - '.github/workflows/hero-bot-cleanup-once.yml'
+  pull_request:
+    branches: [main]
 
 permissions:
   contents: write
@@ -15,6 +17,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
+          ref: main
           fetch-depth: 0
 
       - name: Apply approved cleanup
@@ -36,22 +39,17 @@ jobs:
               s = s2
               print(f'{label}: {n}')
 
-          # 1) Remove Hero calculator badge + typewriter block.
           sub(
               r'\n<div id="hero-calc-badge".*?</div>\n<div style="margin-top:\.7rem;min-height:24px;">.*?</div>\n(?=<div class="hero-stats">)',
               '\n', expected=1, flags=re.S, label='hero calculator/typewriter block'
           )
 
-          # 2) Hero stats start with final values. Desktop animation resets them; mobile stays static.
           if '<span class="hstat-num" data-target="250">0</span>' not in s or '<span class="hstat-num" data-target="23">0</span>' not in s:
               raise SystemExit('hero counter source values not found')
           s = s.replace('<span class="hstat-num" data-target="250">0</span>', '<span class="hstat-num" data-target="250">250+</span>', 1)
           s = s.replace('<span class="hstat-num" data-target="23">0</span>', '<span class="hstat-num" data-target="23">23г.</span>', 1)
 
-          # 3) Remove calculator buttons from service cards.
           sub(r'\n<button class="card-calc-btn".*?</button>', '', expected=5, flags=re.S, label='service card bot buttons')
-
-          # 4) Remove bot-specific service-card CSS and finish the mobile Hero animation override.
           sub(r'\n    \.card-calc-btn \{.*?\n    \}', '', expected=1, flags=re.S, label='card calc css')
           sub(r'\n    \.svc-prem-card:hover \.card-calc-btn \{.*?\}', '', expected=1, flags=re.S, label='card calc hover css')
           sub(r'\n    \.card-calc-btn:hover \{.*?\}', '', expected=1, flags=re.S, label='card calc hover 2 css')
@@ -66,12 +64,10 @@ jobs:
           s = s.replace(old_hero_mobile, '.hero-lines, .hero-bg, .hero-badge, .hero > h1, .hero-tagline, .hero-sub, .hero-location, .hero-btns, .hero-stats { animation: none !important; }', 1)
           s = s.replace('.calc-svg-pulse svg, .float-btn { animation: none !important; filter: none !important; box-shadow: none !important; }', '.float-btn { animation: none !important; filter: none !important; box-shadow: none !important; }', 1)
 
-          # 5) Remove bot CTAs elsewhere, preserving direct phone/Messenger alternatives.
           sub(r'\n<p style="margin-top:1rem;font-size:\.75rem;color:rgba\(201,148,58,\.35\);">или <button onclick="openTeryBot\(\)".*?</p>', '', expected=1, flags=re.S, label='urgency bot line')
           sub(r'<p style="margin-top:\.6rem;font-size:\.82rem;"><button onclick="openTeryBot\(\)".*?</button></p>', '', expected=1, flags=re.S, label='faq calculator line')
           sub(r'<button onclick="openTeryBot\([^\)]*\)".*?</button>', '', expected=2, flags=re.S, label='process/faq bot buttons')
 
-          # 6) Service modal: remove bot CTA UI, keep decorative-plaster hint working.
           sub(r'\n<div id="svcModalBotBtn".*?</div>\n(?=<div id="svcModalMazHint")', '\n', expected=1, flags=re.S, label='modal bot block')
           sub(r", botState: '(?:putty_menu|painting_menu|gk_menu|vik_menu|windows_menu)'", '', expected=5, label='serviceData botState strings')
           sub(r', botState: null', '', expected=1, label='serviceData null botState')
@@ -101,28 +97,20 @@ jobs:
           sub(r'\n  // Fix #2: Отваря бота от service modal с правилния state\n  function openBotFromModal\(\) \{.*?\n  \}', '', expected=1, flags=re.S, label='openBotFromModal function')
           s = s.replace("\n  window._botFromModal = openBotFromModal;", '')
 
-          # 7) Remove TeryBot runtime, dynamic Hero pulse CSS and tooltip logic.
           sub(
               r'\n  // TERYBOT INTEGRATION — зарежда се само при първо отваряне.*?(?=\n  let scrollProgressTicking = false;)',
               '\n', expected=1, flags=re.S, label='TeryBot runtime + tooltip'
           )
-
-          # 8) Remove the visible bot tooltip node.
           sub(r'\n<div id="bot-tooltip".*?</div>', '', expected=1, flags=re.S, label='bot tooltip html')
-
-          # 9) Remove lazy TeryBot loader entirely.
           sub(
               r'\n<!-- TERYBOT LOADER — зарежда bot\.html само при първо отваряне -->\n<script>.*?</script>\n',
               '\n', expected=1, flags=re.S, label='TeryBot loader'
           )
-
-          # 10) Remove dynamic CSS injection + typewriter JS; quote observer remains.
           sub(
               r'\n  // ANIMATIONS CSS\n  \(function\(\)\{.*?\n  \}\)\(\);\n\n  // TYPEWRITER — "Питаш\. Получаваш\. Веднага\."\n  \(function\(\)\{.*?\n  \}\)\(\);\n',
               '\n', expected=1, flags=re.S, label='dynamic animation css + typewriter js'
           )
 
-          # 11) Mobile counters are static; desktop keeps the existing animation.
           counters_pattern = r'''  // ANIMATED COUNTERS\n  function animateCounter\(el\) \{.*?  if \(statsEl\) counterObserver\.observe\(statsEl\);\n'''
           counters_repl = '''  // HERO STATS — статични на мобилен, анимирани само на по-голям екран.
   function setCounterFinal(el) {
@@ -165,10 +153,8 @@ jobs:
 '''
           sub(counters_pattern, counters_repl, expected=1, flags=re.S, label='mobile static counters')
 
-          # 12) Update obsolete floating-button comment.
           s = s.replace('/* Mobile: скриваме Messenger — остават само Phone и Бот */', '/* Mobile: скриваме Messenger — остава директният телефон */')
 
-          # Safety assertions.
           forbidden = [
               'openTeryBot(', 'ensureBotLoaded', 'bot.html?v=', 'hero-calc-badge',
               'hero-tw', 'heroBadgePulse', 'card-calc-btn', 'svcModalBotBtn',
@@ -231,5 +217,3 @@ jobs:
           git add index.html
           git commit -m "perf: simplify mobile Hero and remove TeryBot"
           git push origin main
-
-# armed 2026-08-09
