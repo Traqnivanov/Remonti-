@@ -1064,7 +1064,7 @@ footer p[style]{color:#aeb9c8!important;}
 </div>
 
 <!-- COOKIE BANNER -->
-<div class="cookie-banner" id="cookieBanner" role="dialog" aria-label="Настройки за бисквитки">
+<div class="cookie-banner hidden" id="cookieBanner" role="dialog" aria-label="Настройки за бисквитки">
   <p><strong>Бисквитки и статистика:</strong> Google Analytics и Google Ads се включват само след ваше съгласие. Ivanov Analytics отчита анонимна обща статистика без име, телефон, съдържание на формата или пълен IP адрес. <button class="cookie-info" type="button" onclick="showPrivacy()">Повече информация</button></p>
   <div class="cookie-actions">
     <button class="cookie-btn cookie-reject" type="button" onclick="rejectCookies()">Отказвам</button>
@@ -2698,6 +2698,7 @@ document.addEventListener('DOMContentLoaded', function(){
   var c=getIvanovConsent();
   if(c==='accepted'){ hideCookieBanner(); loadGoogleTracking(); }
   else if(c==='rejected'){ hideCookieBanner(); }
+  else { setTimeout(function(){ var b=document.getElementById('cookieBanner'); if(b) b.classList.remove('hidden'); }, 2000); }
   document.querySelectorAll('a[href^="tel:"]').forEach(function(el){
     el.addEventListener('click', function(){
       if(getIvanovConsent()==='accepted' && window._ivanovGoogleTrackingLoaded){
