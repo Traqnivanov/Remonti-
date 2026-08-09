@@ -1051,6 +1051,65 @@ footer p[style]{color:#aeb9c8!important;}
 @media (max-width: 768px), (prefers-reduced-motion: reduce) {
   .hero-lines, .hero-bg, .hero-badge, .hero > h1, .hero-tagline, .hero-sub, .hero-location, .hero-btns, .hero-stats { animation: none !important; }
   .gold-shine, .hero h1 .accent, .service-card h3 { animation: none !important; background-position: 50% 50% !important; }
+
+  /* TEST: mobile service cards — keep layout/content, disable visual motion/GPU-heavy effects */
+  .svc-prem-card,
+  .svc-prem-card .card-img,
+  .svc-prem-card .card-overlay,
+  .svc-prem-card .card-shine,
+  .svc-prem-card .card-border::before,
+  .svc-prem-card .card-border::after,
+  .svc-prem-card .card-ptag,
+  .svc-prem-card .card-pnum,
+  .svc-prem-card .card-pcontent,
+  .svc-prem-card .card-pline::before,
+  .svc-prem-card .card-pdesc,
+  .svc-prem-card .card-pbtn,
+  .svc-prem-card .card-pbtn .pbtn-circle {
+    transition: none !important;
+    animation: none !important;
+  }
+  .svc-prem-card {
+    perspective: none !important;
+    transform: none !important;
+  }
+  .svc-prem-card .card-img {
+    transform: none !important;
+    filter: none !important;
+    will-change: auto !important;
+  }
+  .svc-prem-card:hover .card-img,
+  .svc-prem-card.touched .card-img {
+    transform: none !important;
+    filter: none !important;
+  }
+  .svc-prem-card:hover .card-overlay,
+  .svc-prem-card.touched .card-overlay {
+    background: linear-gradient(to top, rgba(8,17,30,.98) 0%, rgba(8,17,30,.1) 60%),
+                linear-gradient(135deg, rgba(201,148,58,.08) 0%, transparent 60%) !important;
+  }
+  .svc-prem-card .card-shine,
+  .svc-prem-card:hover .card-shine,
+  .svc-prem-card.touched .card-shine {
+    opacity: 0 !important;
+  }
+  .svc-prem-card:hover .card-border::before,
+  .svc-prem-card.touched .card-border::before {
+    width: 0 !important;
+  }
+  .svc-prem-card:hover .card-border::after,
+  .svc-prem-card.touched .card-border::after {
+    height: 0 !important;
+  }
+  .svc-prem-card:hover .card-pnum,
+  .svc-prem-card.touched .card-pnum,
+  .svc-prem-card:hover .card-pcontent,
+  .svc-prem-card.touched .card-pcontent,
+  .svc-prem-card:hover .card-pbtn .pbtn-circle,
+  .svc-prem-card.touched .card-pbtn .pbtn-circle {
+    transform: none !important;
+  }
+
   .gal-filter { transition: none !important; }
   .float-btn { animation: none !important; filter: none !important; box-shadow: none !important; }
 }
