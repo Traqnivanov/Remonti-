@@ -2612,10 +2612,4 @@ function submitLead(e){
 <script>
 window.addEventListener('load', () => {
   const loadTracker = () => import('https://traqnivanov.github.io/ivanov-tools/analytics/tracker.js')
-    .catch(error => console.warn('Analytics tracker could not be loaded:', error));
-  if ('requestIdleCallback' in window) requestIdleCallback(loadTracker, { timeout: 3000 });
-  else setTimeout(loadTracker, 1500);
-});
-</script>
-</body>
-</html>
+    .
