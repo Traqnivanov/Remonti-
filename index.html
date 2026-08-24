@@ -2597,6 +2597,7 @@ function submitLead(e){
     body:JSON.stringify({ име:name, телефон:phone, съобщение:msg||'(няма)', източник:'Форма от сайта', дата:new Date().toLocaleString('bg-BG') })
   }).then(function(r){
     if(r.ok){
+      document.dispatchEvent(new CustomEvent('ivanov:form-success',{detail:{formId:'leadForm'}}));
       document.getElementById('leadForm').reset();
       document.getElementById('lf-ok').style.display='block';
       btn.style.display='none';
