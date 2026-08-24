@@ -253,6 +253,16 @@ document.addEventListener('DOMContentLoaded', function(){
   else if(c==='rejected'){ hideCookieBanner(); }
 });
 </script>
-<script type="module" src="https://traqnivanov.github.io/ivanov-tools/analytics/tracker.js"></script>
+<script>
+window.addEventListener('load', function () {
+  const loadTracker = () => import('https://traqnivanov.github.io/ivanov-tools/analytics/tracker.js')
+    .catch(error => console.warn('Tracker failed to load:', error));
+  if ('requestIdleCallback' in window) {
+    requestIdleCallback(loadTracker, { timeout: 3000 });
+  } else {
+    setTimeout(loadTracker, 1500);
+  }
+});
+</script>
 </body>
 </html>
