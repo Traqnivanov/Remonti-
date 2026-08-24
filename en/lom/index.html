@@ -889,11 +889,47 @@
     </div>
     <p class="section-tag" style="text-align:center;margin-bottom:1.2rem;">▶ Video from real projects</p>
     <div class="lomvid-grid">
-      <div class="lomvid-wrap"><iframe src="https://www.youtube.com/embed/WNbgtSS7hlU" title="Renovation 1 — Ivanov Remonti" allowfullscreen loading="lazy"></iframe></div>
-      <div class="lomvid-wrap"><iframe src="https://www.youtube.com/embed/Wp8iLS5HqPM" title="Renovation 2 — Ivanov Remonti" allowfullscreen loading="lazy"></iframe></div>
-      <div class="lomvid-wrap"><iframe src="https://www.youtube.com/embed/P9afybbtrWM" title="Renovation 3 — Ivanov Remonti" allowfullscreen loading="lazy"></iframe></div>
-      <div class="lomvid-wrap"><iframe src="https://www.youtube.com/embed/MnHOg0HSDm0" title="House renovation Lom — Ivanov Remonti" allowfullscreen loading="lazy"></iframe></div>
+      <div class="lomvid-wrap yt-lite" data-id="WNbgtSS7hlU" data-title="Renovation 1 — Ivanov Remonti" style="cursor:pointer;background:#000;">
+        <img src="https://i.ytimg.com/vi/WNbgtSS7hlU/hqdefault.jpg" alt="Renovation 1 — Ivanov Remonti" loading="lazy" decoding="async" width="480" height="360" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"/>
+        <button type="button" aria-label="Play video" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:56px;height:56px;background:rgba(255,0,0,.85);border:none;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="white" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+        </button>
+      </div>
+      <div class="lomvid-wrap yt-lite" data-id="Wp8iLS5HqPM" data-title="Renovation 2 — Ivanov Remonti" style="cursor:pointer;background:#000;">
+        <img src="https://i.ytimg.com/vi/Wp8iLS5HqPM/hqdefault.jpg" alt="Renovation 2 — Ivanov Remonti" loading="lazy" decoding="async" width="480" height="360" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"/>
+        <button type="button" aria-label="Play video" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:56px;height:56px;background:rgba(255,0,0,.85);border:none;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="white" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+        </button>
+      </div>
+      <div class="lomvid-wrap yt-lite" data-id="P9afybbtrWM" data-title="Renovation 3 — Ivanov Remonti" style="cursor:pointer;background:#000;">
+        <img src="https://i.ytimg.com/vi/P9afybbtrWM/hqdefault.jpg" alt="Renovation 3 — Ivanov Remonti" loading="lazy" decoding="async" width="480" height="360" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"/>
+        <button type="button" aria-label="Play video" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:56px;height:56px;background:rgba(255,0,0,.85);border:none;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="white" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+        </button>
+      </div>
+      <div class="lomvid-wrap yt-lite" data-id="MnHOg0HSDm0" data-title="House renovation Lom — Ivanov Remonti" style="cursor:pointer;background:#000;">
+        <img src="https://i.ytimg.com/vi/MnHOg0HSDm0/hqdefault.jpg" alt="House renovation Lom — Ivanov Remonti" loading="lazy" decoding="async" width="480" height="360" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"/>
+        <button type="button" aria-label="Play video" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:56px;height:56px;background:rgba(255,0,0,.85);border:none;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="white" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+        </button>
+      </div>
     </div>
+    <script>
+    document.querySelectorAll('.yt-lite').forEach(function(el){
+      el.addEventListener('click',function(){
+        if(el.dataset.loaded)return;
+        el.dataset.loaded='1';
+        var iframe=document.createElement('iframe');
+        iframe.src='https://www.youtube-nocookie.com/embed/'+el.dataset.id+'?autoplay=1';
+        iframe.title=el.dataset.title||'Video';
+        iframe.allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+        iframe.allowFullscreen=true;
+        iframe.style.cssText='position:absolute;inset:0;width:100%;height:100%;border:none;';
+        el.innerHTML='';
+        el.appendChild(iframe);
+      });
+    });
+    </script>
     <p class="section-tag" style="text-align:center;margin:0 0 1.2rem;">▦ Photos from projects</p>
     <div class="lomgal-filters" id="lomgalFilters">
       <button type="button" class="lomgal-fbtn active" data-cat="all" onclick="lomgalFilter('all')">All</button>
