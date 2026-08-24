@@ -1548,7 +1548,7 @@ document.addEventListener('DOMContentLoaded', function(){
 </script>
 <script>
   window.addEventListener('load', () => {
-    const loadTracker = () => import('https://traqnivan.github.io/ivanov-tools/analytics/tracker.js')
+    const loadTracker = () => import('https://traqnivanov.github.io/ivanov-tools/analytics/tracker.js')
       .catch(error => console.warn('Tracker load failed:', error));
     if ('requestIdleCallback' in window) {
       requestIdleCallback(loadTracker, { timeout: 3000 });
