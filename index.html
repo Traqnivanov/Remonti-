@@ -1042,8 +1042,8 @@ footer p[style]{color:#aeb9c8!important;}
       "name": "София"
     }
   ],
-  "currenciesAccepted": "BGN, EUR",
-  "priceRange": "Цени в BGN и EUR след оглед"
+  "currenciesAccepted": "EUR",
+  "priceRange": "Цени в EUR след оглед"
 }
 </script>
 
@@ -1317,7 +1317,7 @@ document.addEventListener('DOMContentLoaded', function() {
 <div class="card-ptag">✦ Услуга 01</div>
 <div class="card-pnum">01</div>
 <div class="card-pcontent">
-<div class="card-pline"><span>от 5,90 € / 11,54 лв · м²</span></div>
+<div class="card-pline"><span>от 5,90 € · м²</span></div>
 <div class="card-pname">Шпакловка</div>
 <div class="card-pdesc">Гладки стени и тавани с безпрашно шкурене — без вълни, без следи, готови за боя.</div>
 <button class="card-pbtn" onclick="openServiceModal('spak')" type="button">Подробности и цени <span class="pbtn-circle">→</span></button>
@@ -1330,8 +1330,8 @@ document.addEventListener('DOMContentLoaded', function() {
 <div class="card-ptag">✦ Услуга 02</div>
 <div class="card-pnum">02</div>
 <div class="card-pcontent">
-<div class="card-pline"><span>от 4,25 € / 8,31 лв · м²</span></div>
-<div class="card-pline" style="font-size:.8rem;color:#8a9ab0;margin-top:.2rem;"><span>+ грунд от 1,45 € / 2,84 лв · м²</span></div>
+<div class="card-pline"><span>от 4,25 € · м²</span></div>
+<div class="card-pline" style="font-size:.8rem;color:#8a9ab0;margin-top:.2rem;"><span>+ грунд от 1,45 € · м²</span></div>
 <div class="card-pname">Боядисване</div>
 <div class="card-pdesc">Боядисване с латекс в два слоя, върху грунд — със защита на подове, мебели и дограма.</div>
 <button class="card-pbtn" onclick="openServiceModal('boya')" type="button">Подробности и цени <span class="pbtn-circle">→</span></button>
@@ -1344,7 +1344,7 @@ document.addEventListener('DOMContentLoaded', function() {
 <div class="card-ptag">✦ Услуга 03</div>
 <div class="card-pnum">03</div>
 <div class="card-pcontent">
-<div class="card-pline"><span>от 16,36 € / 32 лв · м²</span></div>
+<div class="card-pline"><span>от 16,36 € · м²</span></div>
 <div class="card-pname">Гипсокартон и Тавани</div>
 <div class="card-pdesc">Окачени тавани, преградни стени и LED ниши от Knauf и Rigips — със звуко- и топлоизолация при нужда.</div>
 <button class="card-pbtn" onclick="openServiceModal('gyp')" type="button">Подробности и цени <span class="pbtn-circle">→</span></button>
@@ -1369,7 +1369,7 @@ document.addEventListener('DOMContentLoaded', function() {
 <div class="card-ptag">✦ Услуга 05</div>
 <div class="card-pnum">05</div>
 <div class="card-pcontent">
-<div class="card-pline"><span>7,67 € / 15 лв · л.м.</span></div>
+<div class="card-pline"><span>7,67 € · л.м.</span></div>
 <div class="card-pname">Обръщане Дограма</div>
 <div class="card-pdesc">Обръщане около врати и прозорци с армировъчна мрежа — без пукнатини, готово за боядисване.</div>
 <button class="card-pbtn" onclick="openServiceModal('dog')" type="button">Подробности и цени <span class="pbtn-circle">→</span></button>
@@ -1986,7 +1986,7 @@ openServiceModal = function(id) {
 <span class="bonus-icon">🤝</span>
 <h3>За хора, които ни препоръчват</h3>
 <p>Работим предимно с клиенти, които ни познават и ни препоръчват на близки и колеги. Като такъв клиент, получавате:</p>
-<p style="margin:.6rem 0 0;line-height:1.9;">✓ <strong>50€ / 100 лв.</strong> бонус за всяка препоръка, която стане ремонт<br/>✓ <strong>10% отстъпка</strong> за всеки следващ ремонт<br/>✓ <strong>Предимство при следващ ремонт</strong> — без чакане на ред</p>
+<p style="margin:.6rem 0 0;line-height:1.9;">✓ <strong>50€</strong> бонус за всяка препоръка, която стане ремонт<br/>✓ <strong>10% отстъпка</strong> за всеки следващ ремонт<br/>✓ <strong>Предимство при следващ ремонт</strong> — без чакане на ред</p>
 <p style="margin:.9rem 0 0;font-style:italic;color:rgba(201,148,58,.75);font-size:.9rem;">Не се купува. Влиза се през работа.</p>
 <span class="bonus-pill">50€ + 10% + Приоритет</span>
 </div>
@@ -2160,11 +2160,11 @@ openServiceModal = function(id) {
 
   // SERVICE MODAL DATA
   const serviceData = {
-    spak: { img: 'https://traqnivanov.github.io/Remonti-/shpaklovka-steni-apartament-sofia.webp', title: 'Шпакловка', priceRange: 'от €5.50 / 10,76 лв до €7.50 / 14,67 лв на м²', priceUnit: 'м²', desc: 'Шпакловка на стени и тавани в няколко слоя — основна, гипсова и фина според състоянието. Шкуренето е безпрашно — не остава облак прах в дома ви.', includes: ['Защита на пода и мебелите','Почистване след работа','Писмена гаранция'], options: [{ name: 'Фина шпакловка / кит', price: '€5.90 / 11,54 лв/м²', desc: 'Финишен слой преди боя — заглажда дребните неравности за гладка повърхност.' },{ name: 'Гипсова шпакловка', price: '€5.50 / 10,76 лв/м²', desc: 'Гипсова шпакловка за по-гладък финиш. При напуквания се нанася мрежа или воал за укрепване.' },{ name: 'Основна укрепваща', price: '€7.50 / 14,67 лв/м²', desc: 'За стари основи, панелни жилища, газобетон, влага и мухъл. Нанася се с армировъчна мрежа за укрепване.' },{ name: 'Шлайфане', price: '€2.00 / 3,91 лв/м²', desc: 'Безпрашно машинно шлайфане — подготвя повърхността за боядисване.' },{ name: 'Грунд', price: '€1.45 / 2,84 лв/м²', desc: 'Препоръчително преди боядисване — подобрява адхезията и трайността на боята.' }] },
-    boya: { img: 'https://traqnivanov.github.io/Remonti-/boyadisvane-apartament-sofia.webp', title: 'Боядисване', priceRange: 'от €3.85 / 7,53 лв до €6.65 / 13,01 лв на м²', priceUnit: 'м²', desc: 'Двуслойно боядисване с висококачествен латекс върху грунд. Шлайфаме дефекти, защитаваме подове и мебели с найлон, прецизно отсичане около ъгли и дограма.', includes: ['Прецизно отсичане','2 ръце боя','Защита на пода и мебелите','Почистване след работа','Писмена гаранция'], options: [{ name: 'Един цвят – Бяло', price: '€3.85 / 7,53 лв/м²', desc: 'Двуслойно боядисване само в бяло — икономично решение за чист и светъл интериор.' },{ name: 'Стандартно — стени и тавани', price: '€4.25 / 8,31 лв/м²', desc: 'Двуслойно боядисване с латекс в желания от Вас цвят — за стени и тавани.' },{ name: 'Премиум покритие', price: '€5.65 / 11,05 лв/м²', desc: 'Висок клас латекс — миещо се покритие, наситен цвят, устойчивост във времето.' },{ name: 'Боядисване с корекции', price: '€6.65 / 13,01 лв/м²', desc: 'Запълване на дупки, пукнатини и надрасквания, шлайфане и грундиране — пълна подготовка преди боядисване с избран от Вас латекс.' },{ name: 'Грунд', price: '€1.45 / 2,84 лв/м²', desc: 'Препоръчително преди всяко боядисване — подобрява адхезията и трайността на боята.' }] },
-    gyp: { img: 'https://traqnivanov.github.io/Remonti-/gipsokarton-okachen-tavan-sofia.webp', title: 'Гипсокартон и Тавани', priceRange: 'от €16.36 / 32 лв до €28.12 / 55 лв на м² · LED: €29.65 / 58 лв/л.м.', priceUnit: 'м²', desc: 'Изграждаме окачени тавани, преградни стени и ниши с метална конструкция Knauf и Rigips. Звуко- и топлоизолация по желание, скрито LED осветление.', includes: ['Метална конструкция Knauf/Rigips','Двуслойно окачване','Запълване на фуги','Звукоизолация по желание','LED осветление по желание','Писмена гаранция'], options: [{ name: 'Прав таван', price: '€17.90 / 35 лв/м²', desc: 'Стандартен окачен таван от гипсокартон.' },{ name: 'LED ниша', price: '€29.65 / 58 лв/л.м.', desc: 'LED ниша — скрито осветление за таван и стена.' },{ name: 'Предстенна обшивка от гипсокартон', price: '€16.36 / 32 лв/м²', desc: 'Обшивка пред стена.' },{ name: 'Преградна стена от гипсокартон', price: '€28.12 / 55 лв/м²', desc: 'Нова преградна стена.' }] },
-    vik: { img: 'https://traqnivanov.github.io/Remonti-/vik-uslugi-sofia.webp', title: 'ВиК', priceRange: 'от €15.00 / 29.34 лв до €50.00 / 97.79 лв на бр.', priceUnit: 'бр', desc: 'Пълна подмяна или изграждане на нови водопроводни инсталации по проект. Монтаж на санитария.', includes: ['Изготвяне на схема','Полагане на тръби в шлайц','Монтаж на фитинги','Тестване под налягане','Запълване на шлайцове','Писмена гаранция'], options: [{ name: 'Смяна на смесител', price: '€18.00 / 35.20 лв/бр', desc: 'Демонтаж на стария, монтаж на новия, проверка за теч.' },{ name: 'Смяна на тоалетна чиния', price: '€50.00 / 97.79 лв/бр', desc: 'Демонтаж на старата, монтаж на новата, закрепване, свързване.' },{ name: 'Смяна на сифон / гъвкава връзка', price: '€15.00 / 29.34 лв/бр', desc: 'Демонтаж на стария, монтаж на новия, проверка.' },{ name: 'Нова ВиК инсталация', price: 'по оглед', desc: 'Безплатен оглед + фиксирана оферта.' },{ name: 'Авариен ремонт', price: 'по оглед', desc: 'Отстраняване на аварията.' }] },
-    dog: { img: 'https://traqnivanov.github.io/Remonti-/obrushchane-dograma-prozorci-sofia.webp', title: 'Обръщане Дограма', priceRange: '€7.67 / 15 лв на л.м.', priceUnit: 'л.м.', desc: 'Обръщане на пространството около врати и прозорци след смяна на дограма. Работим с армировъчна мрежа и ъглови профили — без пукнатини и криви ъгли.', includes: ['Почистване на стария материал','Армировъчна мрежа','Алуминиеви ъглови профили','Финишна шпакловка','Готово за боядисване','Писмена гаранция'], options: [{ name: 'Обръщане с лайсна', price: '€7.67 / 15 лв/л.м.', desc: 'Шпакловане около прозореца или вратата с алуминиева ъглова лайсна — равен ръб, готов за боядисване.' }] },
+    spak: { img: 'https://traqnivanov.github.io/Remonti-/shpaklovka-steni-apartament-sofia.webp', title: 'Шпакловка', priceRange: 'от €5.50 до €7.50 на м²', priceUnit: 'м²', desc: 'Шпакловка на стени и тавани в няколко слоя — основна, гипсова и фина според състоянието. Шкуренето е безпрашно — не остава облак прах в дома ви.', includes: ['Защита на пода и мебелите','Почистване след работа','Писмена гаранция'], options: [{ name: 'Фина шпакловка / кит', price: '€5.90/м²', desc: 'Финишен слой преди боя — заглажда дребните неравности за гладка повърхност.' },{ name: 'Гипсова шпакловка', price: '€5.50/м²', desc: 'Гипсова шпакловка за по-гладък финиш. При напуквания се нанася мрежа или воал за укрепване.' },{ name: 'Основна укрепваща', price: '€7.50/м²', desc: 'За стари основи, панелни жилища, газобетон, влага и мухъл. Нанася се с армировъчна мрежа за укрепване.' },{ name: 'Шлайфане', price: '€2.00/м²', desc: 'Безпрашно машинно шлайфане — подготвя повърхността за боядисване.' },{ name: 'Грунд', price: '€1.45/м²', desc: 'Препоръчително преди боядисване — подобрява адхезията и трайността на боята.' }] },
+    boya: { img: 'https://traqnivanov.github.io/Remonti-/boyadisvane-apartament-sofia.webp', title: 'Боядисване', priceRange: 'от €3.85 до €6.65 на м²', priceUnit: 'м²', desc: 'Двуслойно боядисване с висококачествен латекс върху грунд. Шлайфаме дефекти, защитаваме подове и мебели с найлон, прецизно отсичане около ъгли и дограма.', includes: ['Прецизно отсичане','2 ръце боя','Защита на пода и мебелите','Почистване след работа','Писмена гаранция'], options: [{ name: 'Един цвят – Бяло', price: '€3.85/м²', desc: 'Двуслойно боядисване само в бяло — икономично решение за чист и светъл интериор.' },{ name: 'Стандартно — стени и тавани', price: '€4.25/м²', desc: 'Двуслойно боядисване с латекс в желания от Вас цвят — за стени и тавани.' },{ name: 'Премиум покритие', price: '€5.65/м²', desc: 'Висок клас латекс — миещо се покритие, наситен цвят, устойчивост във времето.' },{ name: 'Боядисване с корекции', price: '€6.65/м²', desc: 'Запълване на дупки, пукнатини и надрасквания, шлайфане и грундиране — пълна подготовка преди боядисване с избран от Вас латекс.' },{ name: 'Грунд', price: '€1.45/м²', desc: 'Препоръчително преди всяко боядисване — подобрява адхезията и трайността на боята.' }] },
+    gyp: { img: 'https://traqnivanov.github.io/Remonti-/gipsokarton-okachen-tavan-sofia.webp', title: 'Гипсокартон и Тавани', priceRange: 'от €16.36 до €28.12 на м² · LED: €29.65/л.м.', priceUnit: 'м²', desc: 'Изграждаме окачени тавани, преградни стени и ниши с метална конструкция Knauf и Rigips. Звуко- и топлоизолация по желание, скрито LED осветление.', includes: ['Метална конструкция Knauf/Rigips','Двуслойно окачване','Запълване на фуги','Звукоизолация по желание','LED осветление по желание','Писмена гаранция'], options: [{ name: 'Прав таван', price: '€17.90/м²', desc: 'Стандартен окачен таван от гипсокартон.' },{ name: 'LED ниша', price: '€29.65/л.м.', desc: 'LED ниша — скрито осветление за таван и стена.' },{ name: 'Предстенна обшивка от гипсокартон', price: '€16.36/м²', desc: 'Обшивка пред стена.' },{ name: 'Преградна стена от гипсокартон', price: '€28.12/м²', desc: 'Нова преградна стена.' }] },
+    vik: { img: 'https://traqnivanov.github.io/Remonti-/vik-uslugi-sofia.webp', title: 'ВиК', priceRange: 'от €15.00 до €50.00 на бр.', priceUnit: 'бр', desc: 'Пълна подмяна или изграждане на нови водопроводни инсталации по проект. Монтаж на санитария.', includes: ['Изготвяне на схема','Полагане на тръби в шлайц','Монтаж на фитинги','Тестване под налягане','Запълване на шлайцове','Писмена гаранция'], options: [{ name: 'Смяна на смесител', price: '€18.00/бр', desc: 'Демонтаж на стария, монтаж на новия, проверка за теч.' },{ name: 'Смяна на тоалетна чиния', price: '€50.00/бр', desc: 'Демонтаж на старата, монтаж на новата, закрепване, свързване.' },{ name: 'Смяна на сифон / гъвкава връзка', price: '€15.00/бр', desc: 'Демонтаж на стария, монтаж на новия, проверка.' },{ name: 'Нова ВиК инсталация', price: 'по оглед', desc: 'Безплатен оглед + фиксирана оферта.' },{ name: 'Авариен ремонт', price: 'по оглед', desc: 'Отстраняване на аварията.' }] },
+    dog: { img: 'https://traqnivanov.github.io/Remonti-/obrushchane-dograma-prozorci-sofia.webp', title: 'Обръщане Дограма', priceRange: '€7.67 на л.м.', priceUnit: 'л.м.', desc: 'Обръщане на пространството около врати и прозорци след смяна на дограма. Работим с армировъчна мрежа и ъглови профили — без пукнатини и криви ъгли.', includes: ['Почистване на стария материал','Армировъчна мрежа','Алуминиеви ъглови профили','Финишна шпакловка','Готово за боядисване','Писмена гаранция'], options: [{ name: 'Обръщане с лайсна', price: '€7.67/л.м.', desc: 'Шпакловане около прозореца или вратата с алуминиева ъглова лайсна — равен ръб, готов за боядисване.' }] },
     maz: { img: 'https://traqnivanov.github.io/Remonti-/dekorativna-mazilka-sofia.webp', title: 'Декоративна Мазилка', desc: 'Венецианска, структурна или релефна мазилка — уникална текстура и луксозен вид.', includes: ['Подготовка и грундиране','2–3 слоя мазилка','Полиране и финиш','Защитен лак по желание','Уникален резултат','Писмена гаранция'], options: [{ name: 'Структурна мазилка', desc: 'Релефна текстура с различни зърна.' },{ name: 'Венецианска мазилка', desc: 'Луксозна гладка мазилка с мраморен ефект.' },{ name: 'Релефна мазилка', desc: 'Ръчно нанесен релеф. Уникален вид.' },{ name: 'С метален ефект', desc: 'Злато, сребро или бронз. Луксозен финиш.' }] }
   };
   let currentSvc = '', selectedSvcOption = '';
@@ -2193,7 +2193,7 @@ openServiceModal = function(id) {
     document.getElementById('svcModalIncludes').insertAdjacentHTML('afterend', buildGalleryHTML(id));
     // Рендерираме опциите с ценова бадж вдясно (ако има цена)
     document.getElementById('svcModalOptions').innerHTML = s.options.map((o,i) => {
-      var priceDisplay = o.price ? o.price.replace(/\/ ([\d.]+ лв\/[^\s<]+)/, '/ <span style="font-size:.62rem;font-weight:400;opacity:.7">$1</span>') : '';
+      var priceDisplay = o.price || '';
       var priceBadge = o.price ? '<div style="background:rgba(201,148,58,.15);border:1px solid rgba(201,148,58,.4);border-radius:14px;padding:.25rem .7rem;font-size:.72rem;color:#c9943a;font-weight:700;white-space:nowrap;display:inline-block;margin-bottom:.4rem;">' + priceDisplay + '</div>' : '';
       return '<div class="svc-opt" onclick="selectSvcOpt(this,\'' + o.name.replace(/'/g,"\'") + '\')" style="display:flex;align-items:flex-start;gap:1rem;padding:.9rem 1rem;border-radius:12px;border:1px solid rgba(255,255,255,.07);margin-bottom:.7rem;cursor:pointer;background:rgba(255,255,255,.03);transition:all .25s;"><div class="svc-radio" style="width:20px;height:20px;border-radius:50%;border:2px solid rgba(255,255,255,.2);flex-shrink:0;margin-top:2px;"></div><div style="flex:1;min-width:0;">' + priceBadge + '<div style="font-size:.62rem;color:#c9943a;font-weight:700;text-transform:uppercase;letter-spacing:.1em;margin-bottom:.2rem;">Опция ' + (i+1) + '</div><div style="font-size:.9rem;color:white;font-weight:600;margin-bottom:.2rem;">' + o.name + '</div><div style="font-size:.88rem;color:#9ca3af;line-height:1.5;">' + o.desc + '</div></div></div>';
     }).join('');
