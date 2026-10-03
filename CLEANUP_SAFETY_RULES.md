@@ -5,36 +5,38 @@
 
 ## 0. GLOBAL LIVE / MAIN SAFETY GATE
 
-This policy inherits and reinforces the repository-wide rule in `START_HERE.md`:
+This policy inherits the repository-wide rule in `START_HERE.md`.
 
-- No change may reach `main` or live production without mandatory checks.
-- No chat, agent, tool, or automation may infer merge permission from prior approval.
-- "Approved", "looks good", "do it", "continue", or approval of a deletion batch are **not** merge authorization.
-- The only merge authorization is the Owner explicitly writing **`merge`** for the exact current PR/change set.
-- Before merge, the exact head SHA, changed files, diff, and relevant QA must be re-checked against current `main`.
-- If the head moved after Owner review, approval is stale: stop and re-check before any merge.
-- If `main` moved and the cleanup branch is behind or has conflicts, stop and reconcile safely before merge.
-- Auto-merge is prohibited.
-- Direct pushes/edits to `main` for cleanup are prohibited.
-- A merge command applies only to the PR/change set under active review; it does not authorize later changes.
+For any cleanup mutation, deletion, rename, move, asset change, page/code change, SEO/config change, or other production-impacting change:
 
-**Failure of any gate = DO NOT MERGE / DO NOT DEPLOY / DO NOT CHANGE LIVE.**
+- Owner approval of the exact work scope is required;
+- a safe branch/PR and relevant QA are required;
+- the Owner must explicitly write **`merge`** for the exact current production-impacting PR/change set;
+- the exact head SHA, changed files, diff, and current `main` must be re-checked before merge;
+- auto-merge is prohibited;
+- direct cleanup edits to `main` are prohibited.
+
+The documentation-only exception from `START_HERE.md` applies only to internal documentation that records an already-approved Owner decision and has no production/site/runtime/asset/config effect.
+
+If impact is uncertain, treat the change as production-impacting.
+
+**Failure of any production safety gate = DO NOT MERGE / DO NOT DEPLOY / DO NOT CHANGE LIVE.**
 
 ## 0A. DISCOVERED-PROBLEM / ISSUE-LOG RULE
 
-Cleanup work frequently exposes problems that are not cleanup deletions.
+Cleanup work may expose problems outside the cleanup scope.
 
-Whenever cleanup reveals any code, content, asset, SEO, routing, UI, performance, deployment, naming, integrity, or other defect:
+Whenever cleanup reveals a possible code, content, asset, SEO, routing, UI, performance, deployment, naming, integrity, or other defect:
 
-- report it to the Owner;
-- record it in `ISSUE_LOG.md` when it requires later work;
-- do not repair it inside a deletion PR unless the Owner separately approved that exact scope;
-- do not mix unrelated fixes with cleanup deletion batches;
-- if the defect makes the current deletion unsafe, stop the deletion work;
-- preserve exact evidence: affected paths/pages, source `main` SHA, reproduction/checks, risk, and proposed safe next step;
-- after a later fix, record the fixing PR and merge commit in `ISSUE_LOG.md`.
+- report it to the Owner in chat first;
+- do not repair it automatically;
+- do not add it to `ISSUE_LOG.md` until the Owner approves recording it;
+- if the Owner approves logging it, preserve the evidence, affected paths/pages, source `main` SHA, risk, and proposed safe next step;
+- do not mix an unrelated repair into a deletion PR;
+- if the defect makes the current deletion unsafe, stop the affected deletion work and report it immediately;
+- approval to log the issue is not approval to fix it.
 
-Discovery is **not** authorization to fix.
+A later production-impacting fix still requires its own safe scope, branch/PR, QA, and explicit Owner `merge`.
 
 ## 1. Core principle
 
