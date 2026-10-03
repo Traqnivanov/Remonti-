@@ -20,6 +20,22 @@ This policy inherits and reinforces the repository-wide rule in `START_HERE.md`:
 
 **Failure of any gate = DO NOT MERGE / DO NOT DEPLOY / DO NOT CHANGE LIVE.**
 
+## 0A. DISCOVERED-PROBLEM / ISSUE-LOG RULE
+
+Cleanup work frequently exposes problems that are not cleanup deletions.
+
+Whenever cleanup reveals any code, content, asset, SEO, routing, UI, performance, deployment, naming, integrity, or other defect:
+
+- report it to the Owner;
+- record it in `ISSUE_LOG.md` when it requires later work;
+- do not repair it inside a deletion PR unless the Owner separately approved that exact scope;
+- do not mix unrelated fixes with cleanup deletion batches;
+- if the defect makes the current deletion unsafe, stop the deletion work;
+- preserve exact evidence: affected paths/pages, source `main` SHA, reproduction/checks, risk, and proposed safe next step;
+- after a later fix, record the fixing PR and merge commit in `ISSUE_LOG.md`.
+
+Discovery is **not** authorization to fix.
+
 ## 1. Core principle
 
 The cleanup objective is secondary to site integrity.
@@ -250,8 +266,9 @@ Any future history rewrite requires a completely separate Owner decision, separa
 Every future chat working on repository cleanup must first read:
 
 1. `START_HERE.md`
-2. `CLEANUP_SAFETY_RULES.md`
-3. `CLEANUP_AUDIT.md`
+2. `ISSUE_LOG.md`
+3. `CLEANUP_SAFETY_RULES.md`
+4. `CLEANUP_AUDIT.md`
 
 Then it must report:
 
