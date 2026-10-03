@@ -210,3 +210,25 @@ The following paths have passed the current read-only evidence checks strongly e
 - Live change: **NONE**
 
 Under the policy, these files must remain untouched until the Owner explicitly approves these exact paths as a deletion batch.
+
+## Repository integrity finding — missing favicon/touch-icon paths
+
+A read-only local-reference audit of all active HTML found repeated references to these repository-root paths:
+
+- `/favicon-32.png`
+- `/favicon-192.png`
+- `/apple-touch-icon.png`
+
+Those exact files are **absent from the current `main` tree**.
+
+The references occur across 14 active pages, including root Sofia pages, Lom pages, Montana, EN Lom and DE Lom.
+
+Related existing files:
+- `favicon.png` — present; added/renamed in April 2026
+- `apple-touch-icon(1).png` — present; added in August 2026
+
+Git history shows no commits for the exact missing names `favicon-32.png`, `favicon-192.png`, or `apple-touch-icon.png`.
+
+The live binary URLs could not be independently verified through the current fetch path, so this is recorded as a **repository-integrity defect / REVIEW**, not an automatic repair.
+
+No fix has been made. Any repair requires its own safe branch, exact diff, QA and explicit Owner merge approval.
