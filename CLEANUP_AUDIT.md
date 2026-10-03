@@ -232,3 +232,57 @@ Git history shows no commits for the exact missing names `favicon-32.png`, `favi
 The live binary URLs could not be independently verified through the current fetch path, so this is recorded as a **repository-integrity defect / REVIEW**, not an automatic repair.
 
 No fix has been made. Any repair requires its own safe branch, exact diff, QA and explicit Owner merge approval.
+
+## UNKNOWN resolution checkpoint — conservative closeout
+
+The original 29-file **UNKNOWN** set has now been resolved conservatively.
+
+### 22 files → PROTECTED / KEEP
+
+These are unique source/archive images or intentional responsive-family members. They have no proven safe replacement under the same path, so deletion would destroy unique recoverable content or an intentional source family.
+
+Protected paths:
+
+- `IMG_20230322_094845.jpg`
+- `IMG_20230322_094845-480.webp`
+- `IMG_20230322_094845-800.webp`
+- `portret.jpg`
+- `viber_изображение_2026-04-18_16-27-02-391.jpg`
+- `viber_изображение_2026-04-19_06-57-33-001.jpg`
+- `viber_изображение_2026-04-18_16-27-02-253.jpg`
+- `viber_изображение_2026-04-19_06-57-33-056 – Копие.jpg`
+- `viber_изображение_2026-04-18_16-27-02-292.jpg`
+- `viber_изображение_2026-04-18_16-27-02-330.jpg`
+- `viber_изображение_2026-04-18_16-34-19-790.jpg`
+- `viber_изображение_2026-04-18_16-29-13-919.jpg`
+- `viber_изображение_2026-04-18_16-34-19-816.jpg`
+- `shpaklovka-finishna-sofia-04.jpg`
+- `shpaklovka-boyadisvane-gipsokarton-sofia-03.jpg`
+- `cena-trud-kvadraten-metar-sofia.jpg`
+- `boyadisvane-steni-sofia-03.jpg`
+- `Монтаж гипсокартон тавани и стениСофия.jpg`
+- `Монтаж гипсокартон фина шпакловка — цялостен ремонт София.jpg`
+- `Декоративни ниши гипсокартон — Sofia.jpg`
+- `gipsokarton-sofia-09.jpg`
+- `vik-instalacia-sofia-04.jpg`
+
+Rationale: repository capacity is not under pressure, these are unique binary assets (or intentional responsive variants), and current tooling cannot prove a lossless semantic replacement for each path. Under the Owner safety rule, unique source material is preserved.
+
+### 2 files → POSSIBLE_DUPLICATE / KEEP
+
+- `casa-própria-1024x712-01.jpg`
+- `viber_изображение_2026-04-18_16-29-13-789.jpg`
+
+These two paths are exact-byte duplicates (same blob SHA) and neither has a current internal text reference, but provenance/external-link intent is uncertain. Because there is no meaningful capacity pressure, both remain **KEEP** and are not deletion candidates.
+
+### 5 files → CANDIDATE only
+
+The five paths already documented in Candidate review batch A remain the only current high-confidence deletion candidates.
+
+### Result for the original UNKNOWN set
+
+- UNKNOWN remaining: **0**
+- Protected/Keep: **22**
+- Possible Duplicate/Keep: **2**
+- Candidate, awaiting Owner decision: **5**
+- Deleted: **0**
