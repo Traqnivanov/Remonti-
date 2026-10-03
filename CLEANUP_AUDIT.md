@@ -148,3 +148,65 @@ Confirmed examples:
 No deletion has been authorized. No cleanup mutation has been made.
 
 The audit is reducing false-positive "junk" aggressively: active aliases, source JPGs, responsive variants, dormant functional pages, and unusual but referenced paths are being protected rather than removed.
+
+## Candidate review batch A — evidence complete, NO deletion authorized
+
+The following paths have passed the current read-only evidence checks strongly enough to be labeled **CANDIDATE**. This status does **not** authorize deletion.
+
+### A1 — `viber_изображение_2026-04-18_16-23-58-986.jpg`
+- Size: 127,871 bytes
+- Exact blob SHA: `ba31d1bb443dbf88d35034f8052da694f56a006e`
+- Exact-byte duplicates currently in repository:
+  - `ivanov-remonti-logo-stroitelni-uslugi-sofia.jpg`
+  - `довършителни ремонти София"`
+- The semantic logo path is actively referenced by About pages; the unusual quoted path is also actively referenced.
+- No current internal text reference to the Viber-named path was found.
+- Git history shows the same content was renamed from the Viber filename to `ivanov-remonti-sofia-logo.jpg`, then to the semantic logo filename.
+- Exact filename/direct-site public search returned no indexed result.
+- Classification: **CANDIDATE**, pending Owner approval only.
+
+### A2 — `shpaklovka-vurhu-gipsokarton-sofia.jpg`
+- Size: 113,390 bytes
+- Exact blob SHA: `5992d25def65beccc4ea82061a12f66527c44af0`
+- Exact-byte duplicate: `shpaklovka-steni-apartament-sofia.jpg`
+- `shpaklovka-steni-apartament-sofia.jpg` is referenced by `montana/index.html` and belongs to an active JPG/WebP family.
+- No current internal text reference to `shpaklovka-vurhu-gipsokarton-sofia.jpg` was found.
+- Exact filename/direct-site public search returned no indexed result.
+- Classification: **CANDIDATE**, pending Owner approval only.
+
+### A3 — `shpaklovka-boyadisvane-gipsokarton-sofia-01.jpg – Копие.jpg`
+- Size: 125,444 bytes
+- Exact blob SHA: `29cac141d7280984d6a5c7c4d07cbeaa52eb3aa7`
+- Exact-byte duplicate: `shpaklovka-boyadisvane-gipsokarton-sofia-08.jpg`
+- The `...-08` family has active 480/800 WebP variants used by site pages.
+- The filename itself explicitly contains `Копие`.
+- No current internal text reference to the copy path was found.
+- Exact filename/direct-site public search returned no indexed result.
+- Classification: **CANDIDATE**, pending Owner approval only.
+
+### A4 — `samorazlivna-zamazka-pod-sofia-01.jpg`
+- Size: 2 bytes
+- Blob content is only CRLF; it is not valid image data.
+- Exact duplicate of `tsyalosten-remont-sofia-01.jpg`.
+- No current internal text reference was found.
+- Exact filename/direct-site public search returned no indexed result.
+- Classification: **CANDIDATE**, pending Owner approval only.
+
+### A5 — `tsyalosten-remont-sofia-01.jpg`
+- Size: 2 bytes
+- Blob content is only CRLF; it is not valid image data.
+- Exact duplicate of `samorazlivna-zamazka-pod-sofia-01.jpg`.
+- No current internal text reference was found.
+- Exact filename/direct-site public search returned no indexed result.
+- Classification: **CANDIDATE**, pending Owner approval only.
+
+### Candidate batch A safety status
+
+- Candidate count: **5**
+- Files deleted: **0**
+- Owner deletion approval: **NOT YET GIVEN**
+- Delete branch: **NOT CREATED**
+- Delete PR: **NOT CREATED**
+- Live change: **NONE**
+
+Under the policy, these files must remain untouched until the Owner explicitly approves these exact paths as a deletion batch.
