@@ -1405,7 +1405,13 @@ document.querySelectorAll('.yt-lite').forEach(function(el) {
     {u:"https://traqnivanov.github.io/Remonti-/obrushchane-prozorci-sofia-03-800.webp",c:"dog",l:"Дограма"},
     {u:"https://traqnivanov.github.io/Remonti-/dekorativna-mazilka-sofia-02-800.webp",c:"maz",l:"Мазилка"},
     {u:"https://traqnivanov.github.io/Remonti-/dekorativna-pqsachna-mazilka-sofia-04-800.webp",c:"maz",l:"Мазилка"},
-    {u:"https://traqnivanov.github.io/Remonti-/dekorativna-pqsachna-mazilka-sofia-01-800.webp",c:"maz",l:"Мазилка"}
+    {u:"https://traqnivanov.github.io/Remonti-/dekorativna-pqsachna-mazilka-sofia-01-800.webp",c:"maz",l:"Мазилка"},
+    {u:"https://traqnivanov.github.io/Remonti-/ivanov-remonti-montaj-pvc-paneli-hol.webp",c:"maz",l:"PVC панели",a:"Монтаж на PVC панели в хол — Ivanov Remonti"},
+    {u:"https://traqnivanov.github.io/Remonti-/ivanov-remonti-remont-hol-pvc-paneli-dekorativna-mazilka.webp",c:"maz",l:"Мазилка",a:"Ремонт на хол с PVC панели и декоративна мазилка — Ivanov Remonti"},
+    {u:"https://traqnivanov.github.io/Remonti-/ivanov-remonti-zavurshen-hol-pvc-paneli-dekorativna-mazilka.webp",c:"maz",l:"Мазилка",a:"Завършен хол с PVC панели и декоративна мазилка — Ivanov Remonti"},
+    {u:"https://traqnivanov.github.io/Remonti-/ivanov-remonti-remont-spalnya-izmervane-podgotovka.webp",c:"maz",l:"Ремонт",a:"Ремонт на спалня — измерване и подготовка — Ivanov Remonti"},
+    {u:"https://traqnivanov.github.io/Remonti-/ivanov-remonti-zavurshena-spalnya-pvc-paneli-dekorativna-mazilka.webp",c:"maz",l:"Мазилка",a:"Завършена спалня с PVC панели и декоративна мазилка — Ivanov Remonti"},
+    {u:"https://traqnivanov.github.io/Remonti-/ivanov-remonti-zavurshen-remont-spalnya-pvc-paneli-dekorativna-mazilka.webp",c:"maz",l:"Мазилка",a:"Завършен ремонт на спалня с PVC панели и декоративна мазилка — Ivanov Remonti"}
   ];
   var lomgalCat='all', lomgalShown=0, lomgalVisible=[], LOMGAL_BATCH=6, lomlbIdx=0;
   function lomgalRender(){
@@ -1420,7 +1426,7 @@ document.querySelectorAll('.yt-lite').forEach(function(el) {
     batch.forEach(function(img,k){
       var idx=lomgalShown+k;
       var div=document.createElement('div'); div.className='lomgal-item';
-      div.innerHTML='<img src="'+img.u+'" alt="'+img.l+' — Лом" loading="lazy"/><div class="lomgal-badge">'+img.l+'</div><div class="lomgal-zoom">&#128269;</div>';
+      div.innerHTML='<img src="'+img.u+'" alt="'+(img.a||img.l+' — Лом')+'" loading="lazy"/><div class="lomgal-badge">'+img.l+'</div><div class="lomgal-zoom">&#128269;</div>';
       var im=div.querySelector('img');
       im.onload=function(){im.classList.add('loaded');}; if(im.complete)im.classList.add('loaded');
       div.addEventListener('click',function(){lomlbOpen(idx);});
@@ -1438,7 +1444,7 @@ document.querySelectorAll('.yt-lite').forEach(function(el) {
     lomlbIdx=idx;
     var img=lomgalVisible[idx]; if(!img)return;
     document.getElementById('lomlbImg').src=img.u;
-    document.getElementById('lomlbImg').alt=img.l+' — Лом';
+    document.getElementById('lomlbImg').alt=img.a||(img.l+' — Лом');
     document.getElementById('lomlbCounter').textContent=(idx+1)+' / '+lomgalVisible.length;
     document.getElementById('lomlb').classList.add('open');
     document.body.style.overflow='hidden';
