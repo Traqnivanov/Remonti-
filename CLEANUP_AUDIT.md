@@ -286,3 +286,38 @@ The five paths already documented in Candidate review batch A remain the only cu
 - Possible Duplicate/Keep: **2**
 - Candidate, awaiting Owner decision: **5**
 - Deleted: **0**
+
+## Safe repair candidate — favicon naming mismatch
+
+Further audit found the likely root cause of the missing favicon references.
+
+Present files in `main`:
+
+- `favicon-32(1).png` — 1,428 bytes
+- `favicon-192(1).png` — 25,974 bytes
+- `apple-touch-icon(1).png` — 23,008 bytes
+
+Expected by active HTML:
+
+- `favicon-32.png`
+- `favicon-192.png`
+- `apple-touch-icon.png`
+
+All three `(1)` files were added together in commit:
+
+`7af263ee70103f53c34a2a2098eea20a31328110` — “Add files via upload” — 2026-08-04.
+
+This strongly indicates an upload filename mismatch rather than missing intended artwork.
+
+### Safest repair strategy if Owner later approves
+
+Do **not** rename or delete the `(1)` files first.
+
+Instead, in a separate safety branch:
+
+1. create exact copies at the expected filenames without `(1)`;
+2. leave the existing `(1)` files untouched during initial repair;
+3. verify all affected pages and icon requests;
+4. only after successful live QA may the old `(1)` aliases be considered separately for cleanup.
+
+Status: **REPAIR CANDIDATE ONLY — NOT AUTHORIZED / NOT IMPLEMENTED**.
