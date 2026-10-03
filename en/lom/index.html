@@ -913,6 +913,18 @@
           <svg width="22" height="22" viewBox="0 0 24 24" fill="white" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
         </button>
       </div>
+<div class="lomvid-wrap yt-lite" data-id="ZN3uRkj_ASY" data-title="Living room renovation before and after — Ivanov Remonti" style="cursor:pointer;background:#000;">
+        <img src="https://i.ytimg.com/vi/ZN3uRkj_ASY/hqdefault.jpg" alt="Living room renovation before and after — Ivanov Remonti" loading="lazy" decoding="async" width="480" height="360" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"/>
+        <button type="button" aria-label="Play video: living room renovation before and after" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:56px;height:56px;background:rgba(255,0,0,.85);border:none;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="white" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+        </button>
+      </div>
+<div class="lomvid-wrap yt-lite" data-id="aK3s3FK6kPE" data-title="Bedroom renovation before and after — Ivanov Remonti" style="cursor:pointer;background:#000;">
+        <img src="https://i.ytimg.com/vi/aK3s3FK6kPE/hqdefault.jpg" alt="Bedroom renovation before and after — Ivanov Remonti" loading="lazy" decoding="async" width="480" height="360" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"/>
+        <button type="button" aria-label="Play video: bedroom renovation before and after" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:56px;height:56px;background:rgba(255,0,0,.85);border:none;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="white" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+        </button>
+      </div>
     </div>
     <script>
     document.querySelectorAll('.yt-lite').forEach(function(el){
@@ -1235,7 +1247,13 @@
     {u:"https://traqnivanov.github.io/Remonti-/obrushchane-dograma-cena-trud-sofia-800.webp",c:"dog",l:"Framing"},
     {u:"https://traqnivanov.github.io/Remonti-/dekorativna-mazilka-sofia-02-800.webp",c:"maz",l:"Decorative"},
     {u:"https://traqnivanov.github.io/Remonti-/dekorativna-pqsachna-mazilka-sofia-04-800.webp",c:"maz",l:"Decorative"},
-    {u:"https://traqnivanov.github.io/Remonti-/dekorativna-pqsachna-mazilka-sofia-01.jpg",c:"maz",l:"Decorative"}
+    {u:"https://traqnivanov.github.io/Remonti-/dekorativna-pqsachna-mazilka-sofia-01.jpg",c:"maz",l:"Decorative"},
+    {u:"../../ivanov-remonti-montaj-pvc-paneli-hol.webp",c:"maz",l:"PVC panels",a:"PVC wall panel installation in a living room — Ivanov Remonti"},
+    {u:"../../ivanov-remonti-remont-hol-pvc-paneli-dekorativna-mazilka.webp",c:"maz",l:"Decorative",a:"Living room renovation with PVC panels and decorative plaster — Ivanov Remonti"},
+    {u:"../../ivanov-remonti-zavurshen-hol-pvc-paneli-dekorativna-mazilka.webp",c:"maz",l:"Decorative",a:"Finished living room with PVC panels and decorative plaster — Ivanov Remonti"},
+    {u:"../../ivanov-remonti-remont-spalnya-izmervane-podgotovka.webp",c:"maz",l:"Renovation",a:"Bedroom renovation — measuring and preparation — Ivanov Remonti"},
+    {u:"../../ivanov-remonti-zavurshena-spalnya-pvc-paneli-dekorativna-mazilka.webp",c:"maz",l:"Decorative",a:"Finished bedroom with PVC panels and decorative plaster — Ivanov Remonti"},
+    {u:"../../ivanov-remonti-zavurshen-remont-spalnya-pvc-paneli-dekorativna-mazilka.webp",c:"maz",l:"Decorative",a:"Completed bedroom renovation with PVC panels and decorative plaster — Ivanov Remonti"}
   ];
   var lomgalCat='all', lomgalShown=0, lomgalVisible=[], LOMGAL_BATCH=6, lomlbIdx=0;
   function lomgalRender(){
@@ -1250,7 +1268,7 @@
     batch.forEach(function(img,k){
       var idx=lomgalShown+k;
       var div=document.createElement('div'); div.className='lomgal-item';
-      div.innerHTML='<img src="'+img.u+'" alt="'+img.l+' — Lom, Bulgaria" loading="lazy"/><div class="lomgal-badge">'+img.l+'</div><div class="lomgal-zoom">&#128269;</div>';
+      div.innerHTML='<img src="'+img.u+'" alt="'+(img.a||img.l+' — Lom, Bulgaria')+'" loading="lazy"/><div class="lomgal-badge">'+img.l+'</div><div class="lomgal-zoom">&#128269;</div>';
       var im=div.querySelector('img');
       im.onload=function(){im.classList.add('loaded');}; if(im.complete)im.classList.add('loaded');
       div.addEventListener('click',function(){lomlbOpen(idx);});
@@ -1268,7 +1286,7 @@
     lomlbIdx=idx;
     var img=lomgalVisible[idx]; if(!img)return;
     document.getElementById('lomlbImg').src=img.u;
-    document.getElementById('lomlbImg').alt=img.l+' — Lom, Bulgaria';
+    document.getElementById('lomlbImg').alt=img.a||(img.l+' — Lom, Bulgaria');
     document.getElementById('lomlbCounter').textContent=(idx+1)+' / '+lomgalVisible.length;
     document.getElementById('lomlb').classList.add('open');
     document.body.style.overflow='hidden';
