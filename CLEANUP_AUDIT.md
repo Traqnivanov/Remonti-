@@ -105,3 +105,46 @@ No file is authorized for deletion.
 Continue read-only analysis of the remaining **UNKNOWN** and **POSSIBLE_DUPLICATE** groups. Prioritize proving whether unreferenced duplicates have an actively referenced identical copy and whether unique old assets are source masters.
 
 No delete branch, deletion PR, or merge is authorized.
+
+## Read-only audit checkpoint 2 — source families, HTML, exact duplicates
+
+### Source/master protection
+
+The current tree contains **65 image families** where a JPG original exists together with one or more WebP/responsive variants. There are **65 JPG originals** in those families totaling **8,943,771 bytes**.
+
+Under the safety policy these JPG originals are **source/master material and are PROTECTED by default**. Their size is not a reason to delete them.
+
+This means a large part of the apparent repository "duplication" is intentional source + delivery-format storage, not cleanup garbage.
+
+### HTML / sitemap audit
+
+- HTML files in repository: **27**
+- URLs in `sitemap.xml`: **24**
+- Sitemap-mapped content pages: **24**
+- HTML files outside sitemap:
+  - `404.html` — expected infrastructure page; PROTECTED
+  - `thanks.html` — conversion/thank-you page and referenced from active site flow; PROTECTED/ACTIVE
+  - `bot.html` — standalone TeryBot assistant, canonical `https://ivanov-remonti.com/bot.html`, explicitly `noindex`; treat as dormant functional application and PROTECTED, not junk
+
+### Exact-byte duplicate reference audit
+
+The duplicate groups were checked against all repository text pages in two batches.
+
+Confirmed examples:
+
+- `ivanov-remonti-logo-stroitelni-uslugi-sofia.jpg` is referenced by active About pages.
+- `довършителни ремонти София"` is referenced by active pages.
+- `viber_изображение_2026-04-18_16-23-58-986.jpg` has the same bytes as those logo-related files but no direct internal reference found. It remains **POSSIBLE_DUPLICATE / KEEP** pending final source/external-link review.
+- `shpaklovka-steni-apartament-sofia.jpg` is directly referenced by `montana/index.html`.
+- `shpaklovka-vurhu-gipsokarton-sofia.jpg` has identical bytes but no direct internal reference found. It remains **POSSIBLE_DUPLICATE / KEEP** pending final review.
+- The two exact 800px duplicates `dekorativna-pqsachna-mazilka-01-800.webp` and `dekorativna-pqsachna-mazilka-sofia-01-800.webp` are both used under different active paths; neither may be deleted.
+- The exact 800px duplicates `gipsokarton-tavan-shpaklovka-lateks-cena-trud-sofia-800.webp` and `oferta-boyadisvane-lateks-kvadraten-metar-lom-800.webp` are both actively referenced; neither may be deleted.
+- Their corresponding 480px `gipsokarton...` and `oferta...` variants are also actively referenced.
+- Two 480px decorative-plaster duplicate paths currently have no direct internal exact-string reference. They remain **POSSIBLE_DUPLICATE / KEEP** until dynamic-path/source review is complete.
+- No evidence of a generic runtime `-800` → `-480` filename-construction rule was found in repository code search, but absence of such a search result alone is not deletion proof.
+
+### Safety conclusion
+
+No deletion has been authorized. No cleanup mutation has been made.
+
+The audit is reducing false-positive "junk" aggressively: active aliases, source JPGs, responsive variants, dormant functional pages, and unusual but referenced paths are being protected rather than removed.
