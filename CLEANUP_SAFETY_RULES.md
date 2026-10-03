@@ -3,6 +3,23 @@
 **Status: MANDATORY / OWNER SAFETY POLICY**  
 **Repository: `Traqnivanov/Remonti-`**
 
+## 0. GLOBAL LIVE / MAIN SAFETY GATE
+
+This policy inherits and reinforces the repository-wide rule in `START_HERE.md`:
+
+- No change may reach `main` or live production without mandatory checks.
+- No chat, agent, tool, or automation may infer merge permission from prior approval.
+- "Approved", "looks good", "do it", "continue", or approval of a deletion batch are **not** merge authorization.
+- The only merge authorization is the Owner explicitly writing **`merge`** for the exact current PR/change set.
+- Before merge, the exact head SHA, changed files, diff, and relevant QA must be re-checked against current `main`.
+- If the head moved after Owner review, approval is stale: stop and re-check before any merge.
+- If `main` moved and the cleanup branch is behind or has conflicts, stop and reconcile safely before merge.
+- Auto-merge is prohibited.
+- Direct pushes/edits to `main` for cleanup are prohibited.
+- A merge command applies only to the PR/change set under active review; it does not authorize later changes.
+
+**Failure of any gate = DO NOT MERGE / DO NOT DEPLOY / DO NOT CHANGE LIVE.**
+
 ## 1. Core principle
 
 The cleanup objective is secondary to site integrity.

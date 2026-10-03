@@ -11,6 +11,10 @@
 - Direct `main` cleanup changes: **PROHIBITED**
 - Owner approval required before any deletion: **YES**
 - Owner approval required again before merge: **YES**
+- Global live/main safety gate: **MANDATORY FOR ALL REPO WORK**
+- Exact Owner command `merge` required for the exact current PR/change set: **YES**
+- Pre-merge head/file/diff/QA re-check required: **YES**
+- Auto-merge: **PROHIBITED**
 
 ## Baseline
 
