@@ -37,26 +37,27 @@ Such documentation may be recorded and merged after verification without asking 
 
 If there is any doubt whether a change is documentation-only or production-impacting, treat it as production-impacting and ask the Owner.
 
-## GLOBAL RULE #2 — DISCOVERED PROBLEMS ARE REPORTED FIRST
+## GLOBAL RULE #2 — DISCOVERED PROBLEMS MUST BE REPORTED AND PERSISTED
 
 This rule applies to **ALL work in this repository**.
 
-If any chat, agent, tool, audit, test, or implementation discovers a possible problem of any kind, it must not be ignored or silently fixed.
+If any chat, agent, tool, audit, test, or implementation discovers a meaningful problem of any kind, it must not be ignored, left only in chat memory, or silently fixed.
 
 Problems include code, broken links, missing/wrong files, UI/mobile defects, SEO, media, performance, accessibility, duplicate/conflicting content, repository structure, deployment/build, security/privacy, or any other risk.
 
 Mandatory behavior:
 
-1. **REPORT THE PROBLEM TO THE OWNER IN CHAT FIRST**, clearly and in normal language.
-2. Give the evidence, affected area, likely risk, and the safest proposed next step.
-3. **DO NOT fix it automatically** and do not silently expand the current task.
-4. **DO NOT add it to `ISSUE_LOG.md` automatically.** The Owner first decides whether it should be recorded, fixed, ignored, or investigated further.
-5. If the Owner approves recording it for later work, then add it to `ISSUE_LOG.md`.
-6. If the problem is critical and makes the current task unsafe, stop the affected work and report it immediately.
-7. If it is non-blocking, report it and continue only with the already-approved task unless the Owner changes the scope.
-8. Approval to record a problem is not approval to fix it. Any production-impacting fix still requires its own safe scope, QA, and Owner `merge`.
+1. **REPORT THE PROBLEM TO THE OWNER IN CHAT** in clear, normal language.
+2. For every confirmed or materially plausible problem that may require later work, **also record it in `ISSUE_LOG.md` automatically** with evidence, affected area, risk, and safe next step.
+3. The Owner does **not** need to approve the act of logging a discovered problem. The log exists so important findings are not lost between chats.
+4. **DO NOT fix it automatically** and do not silently expand the current task.
+5. If the problem is critical and makes the current task unsafe, stop the affected work and report it immediately.
+6. If it is non-blocking, report and log it, then continue only with the already-approved task unless the Owner changes the scope.
+7. A logged issue is **not authorization to fix it**. Any production-impacting fix still requires its own safe scope, branch/PR, QA, and Owner `merge`.
+8. Trivial, transient, or disproven observations do not need permanent log entries. If uncertain whether a finding is meaningful, prefer logging it as DISCOVERED rather than losing it.
+9. Resolved issues remain in the log with the fixing PR/commit and verification result; they are not silently erased.
 
-For repository work, check `ISSUE_LOG.md` so previously Owner-approved tracked issues are not forgotten or reintroduced.
+For repository work, check `ISSUE_LOG.md` before making changes so known problems are not forgotten or reintroduced.
 
 ## Mandatory first step for any cleanup work
 

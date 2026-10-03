@@ -26,15 +26,16 @@ If impact is uncertain, treat the change as production-impacting.
 
 Cleanup work may expose problems outside the cleanup scope.
 
-Whenever cleanup reveals a possible code, content, asset, SEO, routing, UI, performance, deployment, naming, integrity, or other defect:
+Whenever cleanup reveals a meaningful code, content, asset, SEO, routing, UI, performance, deployment, naming, integrity, or other defect:
 
-- report it to the Owner in chat first;
-- do not repair it automatically;
-- do not add it to `ISSUE_LOG.md` until the Owner approves recording it;
-- if the Owner approves logging it, preserve the evidence, affected paths/pages, source `main` SHA, risk, and proposed safe next step;
+- report it to the Owner in chat;
+- record confirmed or materially plausible findings in `ISSUE_LOG.md` so they persist across chats;
+- the Owner does not need to approve the logging step;
+- do not repair the problem automatically;
 - do not mix an unrelated repair into a deletion PR;
+- preserve the evidence, affected paths/pages, source `main` SHA, risk, and proposed safe next step;
 - if the defect makes the current deletion unsafe, stop the affected deletion work and report it immediately;
-- approval to log the issue is not approval to fix it.
+- logging the issue is not approval to fix it.
 
 A later production-impacting fix still requires its own safe scope, branch/PR, QA, and explicit Owner `merge`.
 
