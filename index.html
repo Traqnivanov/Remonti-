@@ -1542,7 +1542,7 @@ document.addEventListener('DOMContentLoaded', function() {
 <div class="preview-item"><img alt="Декоративна мазилка на стени — апартамент София" decoding="async" loading="lazy" src="https://traqnivanov.github.io/Remonti-/dekorativna-mazilka-sofia-02-800.webp" srcset="https://traqnivanov.github.io/Remonti-/dekorativna-mazilka-sofia-02-480.webp 480w, https://traqnivanov.github.io/Remonti-/dekorativna-mazilka-sofia-02-800.webp 800w" sizes="(max-width: 600px) 100vw, 1200px" width="800" height="1066"/><div class="masonry-badge">Мазилка</div><div class="masonry-zoom"><div class="masonry-zoom-icon">🔍</div></div></div>
 </div>
 <div style="text-align:center;margin-top:1.2rem;">
-<button onclick="openFullGallery()" onmouseout="this.style.background='rgba(201,148,58,.1)'" onmouseover="this.style.background='rgba(201,148,58,.2)'" style="background:rgba(201,148,58,.1);border:1px solid rgba(201,148,58,.35);color:var(--gold);padding:.75rem 2rem;border-radius:30px;font-size:.85rem;font-weight:700;cursor:pointer;font-family:inherit;transition:all .25s;" type="button">📸 Виж всички 39 снимки →</button>
+<button onclick="openFullGallery()" onmouseout="this.style.background='rgba(201,148,58,.1)'" onmouseover="this.style.background='rgba(201,148,58,.2)'" style="background:rgba(201,148,58,.1);border:1px solid rgba(201,148,58,.35);color:var(--gold);padding:.75rem 2rem;border-radius:30px;font-size:.85rem;font-weight:700;cursor:pointer;font-family:inherit;transition:all .25s;" type="button">📸 Виж всички 45 снимки →</button>
 </div>
 <!-- FULL GALLERY OVERLAY -->
 <div id="gal-overlay" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.97);z-index:99998;overflow-y:auto;">
@@ -1644,6 +1644,12 @@ const galleryImages=[
   {url:"https://traqnivanov.github.io/Remonti-/dekorativna-mazilka-sofia-02-800.webp",cat:"maz",label:"Мазилка"},
   {url:"https://traqnivanov.github.io/Remonti-/dekorativna-pqsachna-mazilka-sofia-04-800.webp",cat:"maz",label:"Мазилка"},
   {url:"https://traqnivanov.github.io/Remonti-/dekorativna-pqsachna-mazilka-01-800.webp",cat:"maz",label:"Мазилка"},
+  {url:"https://traqnivanov.github.io/Remonti-/ivanov-remonti-montaj-pvc-paneli-hol.webp",cat:"maz",label:"PVC панели",alt:"Монтаж на PVC панели в хол — Ivanov Remonti"},
+  {url:"https://traqnivanov.github.io/Remonti-/ivanov-remonti-remont-hol-pvc-paneli-dekorativna-mazilka.webp",cat:"maz",label:"Мазилка",alt:"Ремонт на хол с PVC панели и декоративна мазилка — Ivanov Remonti"},
+  {url:"https://traqnivanov.github.io/Remonti-/ivanov-remonti-zavurshen-hol-pvc-paneli-dekorativna-mazilka.webp",cat:"maz",label:"Мазилка",alt:"Завършен хол с PVC панели и декоративна мазилка — Ivanov Remonti"},
+  {url:"https://traqnivanov.github.io/Remonti-/ivanov-remonti-remont-spalnya-izmervane-podgotovka.webp",cat:"maz",label:"Ремонт",alt:"Ремонт на спалня — измерване и подготовка — Ivanov Remonti"},
+  {url:"https://traqnivanov.github.io/Remonti-/ivanov-remonti-zavurshena-spalnya-pvc-paneli-dekorativna-mazilka.webp",cat:"maz",label:"Мазилка",alt:"Завършена спалня с PVC панели и декоративна мазилка — Ivanov Remonti"},
+  {url:"https://traqnivanov.github.io/Remonti-/ivanov-remonti-zavurshen-remont-spalnya-pvc-paneli-dekorativna-mazilka.webp",cat:"maz",label:"Мазилка",alt:"Завършен ремонт на спалня с PVC панели и декоративна мазилка — Ivanov Remonti"},
 ];
 let galCat='all',galIdx=0,galVisible=[],galShown=0;
 const GAL_BATCH=12;
@@ -1655,7 +1661,7 @@ function initPreview(){
   grid.innerHTML='';
   shuffled.forEach((img,i)=>{
     const div=document.createElement('div');div.className='preview-item';
-    div.innerHTML='<img src="'+img.url+'" alt="'+img.label+'" loading="lazy"/><div class="masonry-badge">'+img.label+'</div><div class="masonry-zoom"><div class="masonry-zoom-icon">&#128269;</div></div>';
+    div.innerHTML='<img src="'+img.url+'" alt="'+(img.alt||img.label)+'" loading="lazy"/><div class="masonry-badge">'+img.label+'</div><div class="masonry-zoom"><div class="masonry-zoom-icon">&#128269;</div></div>';
     const image=div.querySelector('img');
     image.onload=()=>image.classList.add('gal-loaded');
     if(image.complete)image.classList.add('gal-loaded');
@@ -1688,7 +1694,7 @@ function loadMoreGallery(){
   batch.forEach((img,i)=>{
     const idx=galShown+i;
     const div=document.createElement('div');div.className='masonry-item';
-    div.innerHTML='<img src="'+img.url+'" alt="'+img.label+'" loading="lazy"/><div class="masonry-badge">'+img.label+'</div><div class="masonry-zoom"><div class="masonry-zoom-icon">&#128269;</div></div>';
+    div.innerHTML='<img src="'+img.url+'" alt="'+(img.alt||img.label)+'" loading="lazy"/><div class="masonry-badge">'+img.label+'</div><div class="masonry-zoom"><div class="masonry-zoom-icon">&#128269;</div></div>';
     const image=div.querySelector('img');
     image.onload=()=>image.classList.add('gal-loaded');
     if(image.complete)image.classList.add('gal-loaded');
@@ -1707,7 +1713,7 @@ function filterGallery(cat){
   grid.innerHTML='';
   shuffled.forEach((img,i)=>{
     const div=document.createElement('div');div.className='preview-item';
-    div.innerHTML='<img src="'+img.url+'" alt="'+img.label+'" loading="lazy"/><div class="masonry-badge">'+img.label+'</div><div class="masonry-zoom"><div class="masonry-zoom-icon">&#128269;</div></div>';
+    div.innerHTML='<img src="'+img.url+'" alt="'+(img.alt||img.label)+'" loading="lazy"/><div class="masonry-badge">'+img.label+'</div><div class="masonry-zoom"><div class="masonry-zoom-icon">&#128269;</div></div>';
     const image=div.querySelector('img');
     image.onload=()=>image.classList.add('gal-loaded');
     if(image.complete)image.classList.add('gal-loaded');
@@ -1722,7 +1728,7 @@ function openLightboxGal(idx){
   galIdx=idx;
   const img=galVisible[idx]||galleryImages[idx];
   document.getElementById('gal-lb-img').hidden=false; document.getElementById('gal-lb-img').src=img.url;
-  document.getElementById('gal-lb-img').alt=img.label;
+  document.getElementById('gal-lb-img').alt=img.alt||img.label;
   document.getElementById('gal-lb-badge').textContent=img.label;
   document.getElementById('gal-lb-counter').textContent=(idx+1)+' / '+(galVisible.length||galleryImages.length);
   document.getElementById('gal-lightbox').style.display='flex';
