@@ -321,3 +321,28 @@ Instead, in a separate safety branch:
 4. only after successful live QA may the old `(1)` aliases be considered separately for cleanup.
 
 Status: **REPAIR CANDIDATE ONLY — NOT AUTHORIZED / NOT IMPLEMENTED**.
+
+## Cleanup Batch A — Gate 1 approved / pre-delete checkpoint
+
+**Owner deletion approval:** YES — exact five-file batch approved in chat on 2026-10-08.
+
+**Source current `main` SHA before first delete:**  
+`212835307e60cbd205d516c8bc5d331189dcbf23`
+
+**Pre-cleanup rollback branch:**  
+`safety/pre-cleanup-batch-a-2128353`
+
+**Delete work branch:**  
+`safety/cleanup-batch-a-5-approved-files`
+
+### Exact Owner-approved delete paths
+
+1. `viber_изображение_2026-04-18_16-23-58-986.jpg`
+2. `shpaklovka-vurhu-gipsokarton-sofia.jpg`
+3. `shpaklovka-boyadisvane-gipsokarton-sofia-01.jpg – Копие.jpg`
+4. `samorazlivna-zamazka-pod-sofia-01.jpg`
+5. `tsyalosten-remont-sofia-01.jpg`
+
+**Gate 1 authorizes branch deletion/QA only. It does NOT authorize merge.**
+
+No other file is approved for deletion in this batch.
