@@ -478,3 +478,55 @@ GitHub Pages deployment run **#625** for the merge commit completed with **SUCCE
 Before deployment finished, the live icon URLs temporarily returned 404. After deployment completed, they no longer returned 404; binary-image fetches produced no extractable text, as expected for PNG assets.
 
 **ISSUE-001 status: RESOLVED.**
+
+## Full-repository cleanup audit — complete candidate list before deletion
+
+**Source main SHA:** `26c5c5a1149b08c8b98197d6982b399cf460f86e`
+
+### Whole-repository accounting
+
+- Total files/blobs: **251**
+- Text / HTML / SEO / infrastructure / internal documentation: **34**
+- Non-text assets: **217**
+- Assets with direct references from the current 27 HTML pages: **124**
+- Assets without a direct runtime reference: **93**
+- Of those 93, **77 = KEEP / PROTECTED**
+- Current complete removal-candidate list: **16**
+- Files deleted in this stage: **0**
+
+The 77 non-referenced assets that are not deletion candidates are retained under the Owner safety policy because they are source/original files for active delivery assets, unique recoverable project/archive photos, brand/portrait material, or otherwise lack enough evidence for deletion.
+
+### Complete current removal-candidate list — 16 files
+
+1. `apple-touch-icon(1).png`
+2. `favicon-192(1).png`
+3. `favicon-32(1).png`
+4. `viber_изображение_2026-04-18_16-29-13-789.jpg`
+5. `IMG_20230322_094845-480.webp`
+6. `IMG_20230322_094845-800.webp`
+7. `IMG_20230322_134120-480.webp`
+8. `IMG_20230322_134120-800.webp`
+9. `IMG_20240724_172122.webp`
+10. `bezprahovo-shlaifane-sofia-01-480.webp`
+11. `dekorativna-pqsachna-mazilka-01-480.webp`
+12. `dekorativna-pqsachna-mazilka-sofia-01-480.webp`
+13. `maistor-ivanov-remonti-sofia-480.webp`
+14. `maistor-ivanov-remonti-sofia-800.webp`
+15. `oferta-boyadisvane-lateks-kvadraten-metar-sofia-480.webp`
+16. `remont-apartament-sofia-01-480.webp`
+
+### Why these 16, and not the other 77 unreferenced assets
+
+- The three `(1)` icon files are exact-byte duplicates of the corrected live filenames and are not referenced by current HTML.
+- The Viber file is an exact-byte duplicate of `casa-própria-1024x712-01.jpg`; the older copy is retained.
+- The remaining 12 files are unused derived/optimized delivery variants. Their source/original or another active delivery variant remains in the repository.
+- Current HTML uses explicit image paths / explicit `srcset` entries; the only observed JavaScript `replace()` operations do not construct image filenames.
+- None of these 16 paths appears in `sitemap.xml` or `robots.txt`.
+- No deletion is authorized by this list alone.
+
+### Required deletion workflow
+
+The Owner requested the whole-repository candidate list **before** deletion. That condition is now satisfied for the source main SHA above.
+
+When deletion starts, each deletion batch must receive a **fresh secondary verification** against the then-current `main`: exact path, references, duplicate/source survivor, current head/diff, and relevant live/runtime risk. Maximum 5 files per deletion PR still applies. Any new uncertainty = KEEP / STOP.
+
