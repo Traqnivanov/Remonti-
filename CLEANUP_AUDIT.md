@@ -459,3 +459,23 @@ Existing source files:
 Safest repair scope: add byte-identical copies at the three expected filenames; do not delete or rename the existing `(1)` files in the repair PR.
 
 Status: **OWNER FIX APPROVAL REQUIRED BEFORE IMPLEMENTATION.**
+
+## Favicon repair — merged and verified
+
+**PR:** #12  
+**Owner merge approval:** YES  
+**Merge commit / current main:** `1c512ea2ee64960bd78d5f07afcc60e7047a4435`
+
+Added only:
+
+- `favicon-32.png`
+- `favicon-192.png`
+- `apple-touch-icon.png`
+
+Each added file is byte-identical to its existing `(1)` source counterpart. Existing source aliases were retained.
+
+GitHub Pages deployment run **#625** for the merge commit completed with **SUCCESS**.
+
+Before deployment finished, the live icon URLs temporarily returned 404. After deployment completed, they no longer returned 404; binary-image fetches produced no extractable text, as expected for PNG assets.
+
+**ISSUE-001 status: RESOLVED.**

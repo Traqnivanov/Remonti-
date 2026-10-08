@@ -32,7 +32,7 @@ This file records meaningful problems discovered during any repository work so t
 
 ## ISSUE-001 — Favicon / touch-icon filename mismatch
 
-**Status:** CONFIRMED  
+**Status:** RESOLVED  
 **Category:** Repository integrity / browser icons  
 **Discovered during:** cleanup read-only audit  
 **Source main SHA:** `212835307e60cbd205d516c8bc5d331189dcbf23`
@@ -74,11 +74,14 @@ In a separate safe branch:
 
 ### Authorization / implementation
 
-- Fix approved by Owner: **NO**
-- Branch: **NONE**
-- PR: **NONE**
-- Merge authorization: **NONE**
-- Live change: **NONE**
+- Fix approved by Owner: **YES**
+- Branch: `fix/favicon-paths`
+- PR: **#12**
+- QA: **PASS**
+- Owner merge approval: **YES**
+- Merge commit: `1c512ea2ee64960bd78d5f07afcc60e7047a4435`
+- GitHub Pages deploy run: **#625 — SUCCESS**
+- Live verification: **PASS — the three icon URLs no longer return 404 after deployment**
 
 ---
 
