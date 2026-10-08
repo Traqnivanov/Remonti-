@@ -376,3 +376,42 @@ No other file is approved for deletion in this batch.
 - Gate 2 — Owner `merge`: **NOT YET GIVEN**
 
 **DO NOT MERGE PR #11 until the Owner explicitly writes `merge` for this exact reviewed PR/head.**
+
+## Cleanup Batch A — merged and post-merge QA
+
+**PR:** #11  
+**Owner Gate 2:** APPROVED — exact command `merge` received for PR #11.  
+**Merge commit:** `df2dc1d66d7f4d832aab793d2ac3ad97e7fed6d0`  
+**New `main` SHA:** `df2dc1d66d7f4d832aab793d2ac3ad97e7fed6d0`
+
+### Final merged diff
+
+Exactly five files removed:
+
+1. `viber_изображение_2026-04-18_16-23-58-986.jpg`
+2. `shpaklovka-vurhu-gipsokarton-sofia.jpg`
+3. `shpaklovka-boyadisvane-gipsokarton-sofia-01.jpg – Копие.jpg`
+4. `samorazlivna-zamazka-pod-sofia-01.jpg`
+5. `tsyalosten-remont-sofia-01.jpg`
+
+No other file changed in the merged diff.
+
+### Post-merge verification
+
+- PR #11: **CLOSED / MERGED**
+- `main` points to merge commit above: **PASS**
+- Exact merged changed-file set = approved five paths: **PASS**
+- Key live pages fetched successfully after merge: **PASS**
+  - home
+  - `/za-men`
+  - `/montana/`
+  - `/shpaklovka`
+  - `/gipsokarton`
+- Live fetch errors for those pages: **NONE**
+- Preserved replacement/source assets remain in repository and active pages continue to reference them: **PASS**
+- Regression observed from Batch A: **NONE**
+
+**Batch A status: COMPLETE / VERIFIED.**
+
+Pre-cleanup rollback branch remains:
+`safety/pre-cleanup-batch-a-2128353`
