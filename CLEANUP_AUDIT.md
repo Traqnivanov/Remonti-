@@ -321,3 +321,161 @@ Instead, in a separate safety branch:
 4. only after successful live QA may the old `(1)` aliases be considered separately for cleanup.
 
 Status: **REPAIR CANDIDATE ONLY — NOT AUTHORIZED / NOT IMPLEMENTED**.
+
+## Cleanup Batch A — Gate 1 approved / pre-delete checkpoint
+
+**Owner deletion approval:** YES — exact five-file batch approved in chat on 2026-10-08.
+
+**Source current `main` SHA before first delete:**  
+`212835307e60cbd205d516c8bc5d331189dcbf23`
+
+**Pre-cleanup rollback branch:**  
+`safety/pre-cleanup-batch-a-2128353`
+
+**Delete work branch:**  
+`safety/cleanup-batch-a-5-approved-files`
+
+### Exact Owner-approved delete paths
+
+1. `viber_изображение_2026-04-18_16-23-58-986.jpg`
+2. `shpaklovka-vurhu-gipsokarton-sofia.jpg`
+3. `shpaklovka-boyadisvane-gipsokarton-sofia-01.jpg – Копие.jpg`
+4. `samorazlivna-zamazka-pod-sofia-01.jpg`
+5. `tsyalosten-remont-sofia-01.jpg`
+
+**Gate 1 authorizes branch deletion/QA only. It does NOT authorize merge.**
+
+No other file is approved for deletion in this batch.
+
+## Cleanup Batch A — branch deletion and pre-merge QA
+
+**Delete PR:** #11  
+**Delete branch:** `safety/cleanup-batch-a-5-approved-files`  
+**PR head SHA:** `58dd8c3381423aafe919ddb254951b19f9bff4fc`  
+**Base/current main SHA at QA:** `212835307e60cbd205d516c8bc5d331189dcbf23`
+
+### QA result
+
+- PR state: **OPEN / DRAFT / NOT MERGED**
+- Mergeable: **YES**
+- Behind current `main`: **0**
+- Changed files: **exactly 5**
+- Change type: **removed only**
+- Unexpected additions/renames/modifications: **NONE**
+- Repeated full text-reference scan: **PASS**
+- Runtime/HTML/SEO references to the five deleted paths: **NONE**
+- References remaining only in audit documentation: **YES — intentional historical record**
+- Preserved exact-byte replacements/source assets still present: **PASS**
+- Active-page use of preserved replacement assets: **PASS**
+- Deleted paths absent from branch tree: **PASS**
+- Production/live change: **NONE — branch only**
+
+### Gate status
+
+- Gate 1 — exact deletion approval: **PASSED**
+- Gate 2 — Owner `merge`: **NOT YET GIVEN**
+
+**DO NOT MERGE PR #11 until the Owner explicitly writes `merge` for this exact reviewed PR/head.**
+
+## Cleanup Batch A — merged and post-merge QA
+
+**PR:** #11  
+**Owner Gate 2:** APPROVED — exact command `merge` received for PR #11.  
+**Merge commit:** `df2dc1d66d7f4d832aab793d2ac3ad97e7fed6d0`  
+**New `main` SHA:** `df2dc1d66d7f4d832aab793d2ac3ad97e7fed6d0`
+
+### Final merged diff
+
+Exactly five files removed:
+
+1. `viber_изображение_2026-04-18_16-23-58-986.jpg`
+2. `shpaklovka-vurhu-gipsokarton-sofia.jpg`
+3. `shpaklovka-boyadisvane-gipsokarton-sofia-01.jpg – Копие.jpg`
+4. `samorazlivna-zamazka-pod-sofia-01.jpg`
+5. `tsyalosten-remont-sofia-01.jpg`
+
+No other file changed in the merged diff.
+
+### Post-merge verification
+
+- PR #11: **CLOSED / MERGED**
+- `main` points to merge commit above: **PASS**
+- Exact merged changed-file set = approved five paths: **PASS**
+- Key live pages fetched successfully after merge: **PASS**
+  - home
+  - `/za-men`
+  - `/montana/`
+  - `/shpaklovka`
+  - `/gipsokarton`
+- Live fetch errors for those pages: **NONE**
+- Preserved replacement/source assets remain in repository and active pages continue to reference them: **PASS**
+- Regression observed from Batch A: **NONE**
+
+**Batch A status: COMPLETE / VERIFIED.**
+
+Pre-cleanup rollback branch remains:
+`safety/pre-cleanup-batch-a-2128353`
+
+## Cleanup Batch B review — no further safe deletions
+
+Source `main` after Batch A:
+
+`df2dc1d66d7f4d832aab793d2ac3ad97e7fed6d0`
+
+### Result
+
+- 65 JPG + WebP/480/800 source families were re-checked and are **PROTECTED / KEEP**.
+- No additional exact-byte duplicate passed the deletion safety threshold.
+- Unique old/Viber/archive images remain **PROTECTED / KEEP** because deleting them would destroy unique recoverable source material.
+- The exact duplicate pair `casa-própria-1024x712-01.jpg` / `viber_изображение_2026-04-18_16-29-13-789.jpg` remains **POSSIBLE_DUPLICATE / KEEP** due uncertain provenance/external-link value.
+- `dekorativna-pqsachna-mazilka-sofia-01-480.webp` remains **KEEP** because its 800px sibling is active and the 480px file is a plausible responsive companion.
+- Non-image/infrastructure review found no deletion candidate.
+- Current additional deletion candidates: **0**.
+
+### Cleanup campaign state
+
+- Batch A: **MERGED / LIVE QA PASS**
+- Further safe deletion batch: **NONE**
+- Normal repository cleanup should stop here rather than force more deletions.
+
+The next confirmed repository issue is the favicon/touch-icon filename mismatch already recorded in `ISSUE_LOG.md`.
+
+## Favicon repair read-only scope
+
+Confirmed active-page references:
+
+- `/favicon-32.png`
+- `/favicon-192.png`
+- `/apple-touch-icon.png`
+
+Each is referenced by **14 active pages**.
+
+Existing source files:
+
+- `favicon-32(1).png`
+- `favicon-192(1).png`
+- `apple-touch-icon(1).png`
+
+Safest repair scope: add byte-identical copies at the three expected filenames; do not delete or rename the existing `(1)` files in the repair PR.
+
+Status: **OWNER FIX APPROVAL REQUIRED BEFORE IMPLEMENTATION.**
+
+## Favicon repair — merged and verified
+
+**PR:** #12  
+**Owner merge approval:** YES  
+**Merge commit / current main:** `1c512ea2ee64960bd78d5f07afcc60e7047a4435`
+
+Added only:
+
+- `favicon-32.png`
+- `favicon-192.png`
+- `apple-touch-icon.png`
+
+Each added file is byte-identical to its existing `(1)` source counterpart. Existing source aliases were retained.
+
+GitHub Pages deployment run **#625** for the merge commit completed with **SUCCESS**.
+
+Before deployment finished, the live icon URLs temporarily returned 404. After deployment completed, they no longer returned 404; binary-image fetches produced no extractable text, as expected for PNG assets.
+
+**ISSUE-001 status: RESOLVED.**
