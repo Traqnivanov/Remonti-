@@ -415,3 +415,47 @@ No other file changed in the merged diff.
 
 Pre-cleanup rollback branch remains:
 `safety/pre-cleanup-batch-a-2128353`
+
+## Cleanup Batch B review — no further safe deletions
+
+Source `main` after Batch A:
+
+`df2dc1d66d7f4d832aab793d2ac3ad97e7fed6d0`
+
+### Result
+
+- 65 JPG + WebP/480/800 source families were re-checked and are **PROTECTED / KEEP**.
+- No additional exact-byte duplicate passed the deletion safety threshold.
+- Unique old/Viber/archive images remain **PROTECTED / KEEP** because deleting them would destroy unique recoverable source material.
+- The exact duplicate pair `casa-própria-1024x712-01.jpg` / `viber_изображение_2026-04-18_16-29-13-789.jpg` remains **POSSIBLE_DUPLICATE / KEEP** due uncertain provenance/external-link value.
+- `dekorativna-pqsachna-mazilka-sofia-01-480.webp` remains **KEEP** because its 800px sibling is active and the 480px file is a plausible responsive companion.
+- Non-image/infrastructure review found no deletion candidate.
+- Current additional deletion candidates: **0**.
+
+### Cleanup campaign state
+
+- Batch A: **MERGED / LIVE QA PASS**
+- Further safe deletion batch: **NONE**
+- Normal repository cleanup should stop here rather than force more deletions.
+
+The next confirmed repository issue is the favicon/touch-icon filename mismatch already recorded in `ISSUE_LOG.md`.
+
+## Favicon repair read-only scope
+
+Confirmed active-page references:
+
+- `/favicon-32.png`
+- `/favicon-192.png`
+- `/apple-touch-icon.png`
+
+Each is referenced by **14 active pages**.
+
+Existing source files:
+
+- `favicon-32(1).png`
+- `favicon-192(1).png`
+- `apple-touch-icon(1).png`
+
+Safest repair scope: add byte-identical copies at the three expected filenames; do not delete or rename the existing `(1)` files in the repair PR.
+
+Status: **OWNER FIX APPROVAL REQUIRED BEFORE IMPLEMENTATION.**
