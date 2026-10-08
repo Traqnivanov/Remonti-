@@ -346,3 +346,33 @@ Status: **REPAIR CANDIDATE ONLY — NOT AUTHORIZED / NOT IMPLEMENTED**.
 **Gate 1 authorizes branch deletion/QA only. It does NOT authorize merge.**
 
 No other file is approved for deletion in this batch.
+
+## Cleanup Batch A — branch deletion and pre-merge QA
+
+**Delete PR:** #11  
+**Delete branch:** `safety/cleanup-batch-a-5-approved-files`  
+**PR head SHA:** `58dd8c3381423aafe919ddb254951b19f9bff4fc`  
+**Base/current main SHA at QA:** `212835307e60cbd205d516c8bc5d331189dcbf23`
+
+### QA result
+
+- PR state: **OPEN / DRAFT / NOT MERGED**
+- Mergeable: **YES**
+- Behind current `main`: **0**
+- Changed files: **exactly 5**
+- Change type: **removed only**
+- Unexpected additions/renames/modifications: **NONE**
+- Repeated full text-reference scan: **PASS**
+- Runtime/HTML/SEO references to the five deleted paths: **NONE**
+- References remaining only in audit documentation: **YES — intentional historical record**
+- Preserved exact-byte replacements/source assets still present: **PASS**
+- Active-page use of preserved replacement assets: **PASS**
+- Deleted paths absent from branch tree: **PASS**
+- Production/live change: **NONE — branch only**
+
+### Gate status
+
+- Gate 1 — exact deletion approval: **PASSED**
+- Gate 2 — Owner `merge`: **NOT YET GIVEN**
+
+**DO NOT MERGE PR #11 until the Owner explicitly writes `merge` for this exact reviewed PR/head.**
