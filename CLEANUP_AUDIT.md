@@ -4,15 +4,18 @@
 
 ## Current status
 
-- Cleanup mode: **READ-ONLY AUDIT ONLY**
-- Files approved for deletion: **NONE**
-- Deletion batches merged: **NONE**
+- Cleanup campaign: **ACTIVE — full repository cleanup audit is NOT finished**
+- Current `main` SHA: `26c5c5a1149b08c8b98197d6982b399cf460f86e`
+- Current repository blob/file count: **251**
+- Deletion batches merged: **1**
+- Files deleted by cleanup: **5**
+- Last completed cleanup batch: **Batch A — MERGED / LIVE QA PASS**
+- Current additional files approved for deletion: **NONE**
+- Full-repository review must continue until every remaining file/group has a justified **KEEP / PROTECTED / CANDIDATE** outcome.
 - History rewrite: **PROHIBITED**
 - Direct `main` cleanup changes: **PROHIBITED**
 - Owner approval required before any deletion: **YES**
-- Owner approval required again before merge: **YES**
-- Global live/main safety gate: **MANDATORY FOR ALL REPO WORK**
-- Exact Owner command `merge` required for the exact current PR/change set: **YES**
+- Owner approval required again before production-impacting merge: **YES**
 - Pre-merge head/file/diff/QA re-check required: **YES**
 - Auto-merge: **PROHIBITED**
 
@@ -39,22 +42,18 @@ No file may be deleted unless its final status is **OWNER_APPROVED_DELETE**.
 
 ## Cleanup batches
 
-No cleanup deletion batch has been approved or executed yet.
+### Batch A — COMPLETE
 
-Future batches must record:
+- Exact files deleted: **5**
+- Owner Gate 1: **APPROVED**
+- PR: **#11**
+- Owner Gate 2 / merge: **APPROVED**
+- Merge commit: `df2dc1d66d7f4d832aab793d2ac3ad97e7fed6d0`
+- Post-merge live QA: **PASS**
 
-- batch number;
-- source `main` SHA;
-- safety branch;
-- Draft PR;
-- exact approved paths;
-- evidence summary;
-- QA result;
-- Owner deletion approval;
-- Owner merge approval;
-- merge commit;
-- live QA result;
-- rollback/revert information if needed.
+No later deletion batch has been approved or merged.
+
+The cleanup campaign itself remains open because the original task is a **whole-repository cleanup**, not only exact-duplicate removal.
 
 ## Read-only audit checkpoint — 2026-10-03
 
