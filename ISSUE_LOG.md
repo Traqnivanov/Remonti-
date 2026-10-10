@@ -141,6 +141,34 @@ In a separate safe branch:
 
 ---
 
+## ISSUE-004 — Payment and handover statements differ across Lom language pages
+
+**Status:** DISCOVERED  
+**Category:** Public content / cross-language operational consistency  
+**Discovered during:** 2026-10-10 remote Lom mechanism research  
+**Source main SHA:** `692c88acee13ee866c91fd11ffda251031ab61b1`
+
+**Affected paths/pages:** `lom/index.html`, `en/lom/index.html`, `de/lom/index.html`
+
+**Evidence / reproduction:** Public BG Lom FAQ says payment is when the client is satisfied, not before or midway; the BG process describes inspecting the completed property together. EN Lom says materials are paid upfront and labour in agreed stages or at stage completion, and says handover may happen by video call. DE FAQ likewise describes materials upfront and staged labour, with video-call handover. These may reflect different client arrangements, but that distinction is not explicit in the public wording. Public pages: https://ivanov-remonti.com/lom/ ; https://ivanov-remonti.com/en/lom/ ; https://ivanov-remonti.com/de/lom/ .
+
+**Risk / impact:** A remote client may form a payment or presence expectation that differs from the actual agreement. A new remote-Lom experience must not repeat one version as a universal rule.
+
+**Safe proposed next step:** Ask Owner which payment and handover arrangements are actually offered in each case, then audit the precise sentences and agree any separate content fix. Do not change the site or use unverified terms in the proposed mechanism.
+
+**Current-task blocker:** NO for concept comparison; YES for final public wording that mentions payment or remote handover.
+
+**Authorization / implementation:**
+- Owner fix approval: OPEN
+- Branch:
+- PR:
+- QA:
+- Owner merge approval:
+- Merge commit:
+- Live verification:
+
+---
+
 ## New issue template
 
 ### ISSUE-XXX — Short title
