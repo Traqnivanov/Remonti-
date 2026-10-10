@@ -85,20 +85,20 @@ In a separate safe branch:
 
 ---
 
-## ISSUE-002 — Incomplete reciprocal hreflang for Lom, EN and DE
+## ISSUE-002 — Verify historical hreflang change against Search Console warning
 
-**Status:** CONFIRMED  
+**Status:** DISCOVERED  
 **Category:** SEO / international targeting  
-**Discovered during:** 2026-10-10 public search and read-only source review  
+**Discovered during:** 2026-10-10 public search, source review, and Owner correction  
 **Source main SHA:** `26c5c5a1149b08c8b98197d6982b399cf460f86e`
 
 **Affected paths/pages:** `lom/index.html`, `en/lom/index.html`, `de/lom/index.html`, `sitemap.xml`
 
-**Evidence / reproduction:** The EN and DE HTML heads each declare bg, en, de, and x-default alternates. The BG Lom HTML head declares only bg and x-default; it does not link back to EN or DE. The sitemap adds language alternates to EN and DE URL entries, but not to the BG Lom URL entry. Google Search Central says alternate versions must list themselves and other language versions and that nonreciprocal links may be ignored. Sitemap EN/DE `loc` and alternate URLs omit the trailing slash used by each page's canonical; verify redirect handling before any fix.
+**Evidence / reproduction:** Current EN and DE HTML list bg, en, de, and x-default; current BG Lom HTML lists only bg and x-default. The sitemap provides language alternates for EN and DE URL entries but not BG Lom. Commit `9532438e33a22e7e4ad2a81e4fa47c961936fa58` deliberately removed the EN/DE alternates from BG Lom on 2026-08-07. The Owner states Google Search Console warned that the earlier setup was not okay. The exact warning and its target URLs have not yet been reviewed here. Sitemap EN/DE URLs omit the slash used by HTML canonical; live redirect behavior is unverified.
 
-**Risk / impact:** Google may ignore part of the language mapping, serving a less suitable version to users. This does not prove deindexing or ranking loss; Search Console is needed for actual index and performance status.
+**Risk / impact:** The current mapping is asymmetric, but its actual impact and the reason for the historical Google warning are unknown. Do not call this an indexing or ranking defect without reviewing the warning and URL Inspection.
 
-**Safe proposed next step:** Review live response URLs and Google Search Console URL Inspection for BG, EN, and DE. In a separate branch, make reciprocal language mappings and canonical URLs consistent in HTML and sitemap; validate the published pages and sitemap before requesting Owner merge.
+**Safe proposed next step:** Obtain the exact Search Console warning or screenshot and its affected URLs, then inspect those URLs in Search Console, including Google-selected canonical and index status. Compare the earlier and current configurations and determine whether any change is warranted. Do not restore the removed tags based only on this log.
 
 **Current-task blocker:** NO
 
