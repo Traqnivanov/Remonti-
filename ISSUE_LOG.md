@@ -113,19 +113,19 @@ In a separate safe branch:
 
 ---
 
-## ISSUE-003 — Montana has no verified incoming HTML navigation link
+## ISSUE-003 — Separate city navigation is intentional
 
-**Status:** CONFIRMED  
-**Category:** SEO / internal navigation  
+**Status:** KEEP / NO ACTION  
+**Category:** Site navigation / Owner decision  
 **Discovered during:** 2026-10-10 Search Console links export and repository review
 
 **Affected paths/pages:** `index.html`, `lom/index.html`, `montana/index.html`
 
 **Evidence / reproduction:** Search Console reports 55 internal links across its listed target pages, but `/montana/` is absent from its complete internal target export. Source inspection finds no `montana` reference in the Sofia root or Lom landing HTML; the Montana page points to itself. This does not prove there are no incoming links anywhere in the repository, but the checked primary entry points do not link to it.
 
-**Risk / impact:** Visitors and crawlers may have difficulty navigating to the Montana page; the page is nevertheless indexed and has impressions and clicks.
+**Risk / impact:** The Montana page is indexed and has impressions and clicks. The missing cross-city link is not established as a defect.
 
-**Safe proposed next step:** Audit all navigational entry points, then propose one useful, visible contextual link to Montana where it matches the actual service area. Review mobile navigation and avoid misleading cross-city claims.
+**Owner decision / next step:** The Owner does not want an automatic Sofia ↔ Lom ↔ Montana navigation link merely for SEO. Do not add one. Any future cross-city navigation requires a separate product reason and explicit review.
 
 **Current-task blocker:** NO
 
@@ -133,7 +133,7 @@ In a separate safe branch:
 
 ---
 
-## ISSUE-004 — Conflicting business identity in Montana structured data
+## ISSUE-004 — Multiple Montana business IDs in structured data
 
 **Status:** CONFIRMED  
 **Category:** SEO / structured data  
@@ -141,11 +141,11 @@ In a separate safe branch:
 
 **Affected paths/pages:** `montana/index.html`
 
-**Evidence / reproduction:** The first JSON-LD business entity uses `@id: https://ivanov-remonti.com/lom/#business` while its `url` is the Montana page. A second JSON-LD `HomeAndConstructionBusiness` entity on the same page uses `@id: https://ivanov-remonti.com/montana#ivanov-remonti`. The two entities also list different telephone numbers. The first entity uses a Lom address, which may be intentional; the identity and telephone mismatch need an Owner check before correction.
+**Evidence / reproduction:** The first JSON-LD business entity uses `@id: https://ivanov-remonti.com/lom/#business` while its `url` is the Montana page. A second JSON-LD `HomeAndConstructionBusiness` entity on the same page uses `@id: https://ivanov-remonti.com/montana#ivanov-remonti`. Both entities and the visible Montana contact links use the same telephone number, +359876936184; an earlier claim of differing numbers was incorrect. The first entity uses a Lom address, which may be intentional for the same business. The two IDs need interpretation before any correction.
 
-**Risk / impact:** Search systems may receive inconsistent identity/contact signals from the Montana page. No Search Console structured-data error has been established for this issue.
+**Risk / impact:** Search systems may treat the two IDs as distinct entities, but an actual error or ranking impact has not been established. There is no telephone mismatch and no Search Console structured-data error established for this issue.
 
-**Safe proposed next step:** Verify which phone and business address are intended for Montana, review the two JSON-LD blocks and Google-visible output, then prepare a separate scoped fix only if required.
+**Safe proposed next step:** Verify whether the business IDs intentionally represent the same company and whether the Lom address is the company address, then compare Google-visible output. Do not edit structured data without additional verification.
 
 **Current-task blocker:** NO
 
