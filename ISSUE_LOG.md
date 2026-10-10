@@ -85,6 +85,34 @@ In a separate safe branch:
 
 ---
 
+## ISSUE-002 — Incomplete reciprocal hreflang for Lom, EN and DE
+
+**Status:** CONFIRMED  
+**Category:** SEO / international targeting  
+**Discovered during:** 2026-10-10 public search and read-only source review  
+**Source main SHA:** `26c5c5a1149b08c8b98197d6982b399cf460f86e`
+
+**Affected paths/pages:** `lom/index.html`, `en/lom/index.html`, `de/lom/index.html`, `sitemap.xml`
+
+**Evidence / reproduction:** The EN and DE HTML heads each declare bg, en, de, and x-default alternates. The BG Lom HTML head declares only bg and x-default; it does not link back to EN or DE. The sitemap adds language alternates to EN and DE URL entries, but not to the BG Lom URL entry. Google Search Central says alternate versions must list themselves and other language versions and that nonreciprocal links may be ignored. Sitemap EN/DE `loc` and alternate URLs omit the trailing slash used by each page's canonical; verify redirect handling before any fix.
+
+**Risk / impact:** Google may ignore part of the language mapping, serving a less suitable version to users. This does not prove deindexing or ranking loss; Search Console is needed for actual index and performance status.
+
+**Safe proposed next step:** Review live response URLs and Google Search Console URL Inspection for BG, EN, and DE. In a separate branch, make reciprocal language mappings and canonical URLs consistent in HTML and sitemap; validate the published pages and sitemap before requesting Owner merge.
+
+**Current-task blocker:** NO
+
+**Authorization / implementation:**
+- Owner fix approval: NO
+- Branch:
+- PR:
+- QA:
+- Owner merge approval:
+- Merge commit:
+- Live verification:
+
+---
+
 ## New issue template
 
 ### ISSUE-XXX — Short title
