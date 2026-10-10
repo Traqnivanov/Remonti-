@@ -83,8 +83,8 @@ Current cleanup state/log: **CLEANUP_AUDIT.md**
 
 ## ACTIVE PRODUCT EXPLORATION — remote Lom clients
 
-Read [`REMOTE_LOM_PRODUCT_CONTRACT.md`](REMOTE_LOM_PRODUCT_CONTRACT.md) when working on the experience for people from Lom who live elsewhere and return briefly. It contains the Owner-confirmed audience and order of presentation, the five review criteria, open hypotheses, decision log, and the exact NEXT. This is a **working contract**, not approval for a new page, site change, sitemap edit, or prototype implementation.
+Read [`REMOTE_LOM_PRODUCT_CONTRACT.md`](REMOTE_LOM_PRODUCT_CONTRACT.md) when working on the experience for people from Lom who live elsewhere and return briefly. It contains the Owner-confirmed audience and order of presentation, the six review criteria, open hypotheses, decision log, and the exact NEXT. This is a **working contract**, not approval for a new page, site change, sitemap edit, or prototype implementation.
 
 **Current checkpoint (10.10.2026):** Show a concrete solution before asking for dates or contact details. The first standalone prototype is not approved because it asks questions first. The mechanism and whether it needs a separate page remain OPEN.
 
-**Next:** Compare two or three candidate mechanisms for showing a useful result before input. Apply the criteria and natural-uniqueness test from the working contract, discuss one point at a time with the Owner, then replace its current checkpoint when a decision is made. Do not restart the GSC audit or assume the v0 prototype is the chosen direction.
+**Next:** Compare two or three candidate mechanisms for showing a useful result before input. Apply the criteria, including the non-advertising voice gate, and natural-uniqueness test from the working contract, discuss one point at a time with the Owner, then replace its current checkpoint when a decision is made. Do not restart the GSC audit or assume the v0 prototype is the chosen direction.
