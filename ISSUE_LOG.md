@@ -113,6 +113,34 @@ In a separate safe branch:
 
 ---
 
+## ISSUE-003 — Remote Lom contract lacks an outcome and exit test
+
+**Status:** CONFIRMED  
+**Category:** Product criteria / decision continuity  
+**Discovered during:** 2026-10-10 Owner-requested audit of `REMOTE_LOM_PRODUCT_CONTRACT.md`  
+**Source main SHA:** `07188e450a30effef877b78e34f32a1f837f8ba9`
+
+**Affected paths/pages:** `REMOTE_LOM_PRODUCT_CONTRACT.md`, `START_HERE.md` handoff only. No production page is changed.
+
+**Evidence / reproduction:** Section 3 lists six quality gates for proposals but does not define observable end success or how to decide that a direction is good enough to stop comparing. Section 7 calls for 2–3 mechanisms without a tie-break or exit rule. The current wording also prejudges a `план/артефакт`, an `единствено действие`, and a three-second threshold before the mechanism is chosen. It does not explicitly test whether a visitor without dates/access can use the experience, whether the existing Lom page would serve better than a new page, or whether the displayed workflow can be delivered in actual operations.
+
+**Risk / impact:** A visually convincing concept could pass subjective criteria without helping a remote client make a real next decision. Repeated comparison of new mechanisms without an exit test can become a loop. A new page or tool might be built unnecessarily.
+
+**Safe proposed next step:** Agree with Owner on a short outcome contract: the exact human decision enabled; truthful proof tied to the real workflow; two representative scenario tests plus failure/unknown states; explicit reason for a separate page versus the existing Lom page; and a bounded proceed/revise/stop decision. Keep proposed thresholds and wording OPEN until Owner decides. Do not treat this log as authorization to change the product contract or site.
+
+**Current-task blocker:** YES for choosing/implementing the mechanism; NO for discussion and analysis.
+
+**Authorization / implementation:**
+- Owner fix approval: OPEN
+- Branch:
+- PR:
+- QA:
+- Owner merge approval:
+- Merge commit:
+- Live verification:
+
+---
+
 ## New issue template
 
 ### ISSUE-XXX — Short title
