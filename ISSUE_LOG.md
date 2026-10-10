@@ -113,6 +113,46 @@ In a separate safe branch:
 
 ---
 
+## ISSUE-003 — Montana has no verified incoming HTML navigation link
+
+**Status:** CONFIRMED  
+**Category:** SEO / internal navigation  
+**Discovered during:** 2026-10-10 Search Console links export and repository review
+
+**Affected paths/pages:** `index.html`, `lom/index.html`, `montana/index.html`
+
+**Evidence / reproduction:** Search Console reports 55 internal links across its listed target pages, but `/montana/` is absent from its complete internal target export. Source inspection finds no `montana` reference in the Sofia root or Lom landing HTML; the Montana page points to itself. This does not prove there are no incoming links anywhere in the repository, but the checked primary entry points do not link to it.
+
+**Risk / impact:** Visitors and crawlers may have difficulty navigating to the Montana page; the page is nevertheless indexed and has impressions and clicks.
+
+**Safe proposed next step:** Audit all navigational entry points, then propose one useful, visible contextual link to Montana where it matches the actual service area. Review mobile navigation and avoid misleading cross-city claims.
+
+**Current-task blocker:** NO
+
+**Authorization / implementation:** No production fix authorized; no code changed.
+
+---
+
+## ISSUE-004 — Conflicting business identity in Montana structured data
+
+**Status:** CONFIRMED  
+**Category:** SEO / structured data  
+**Discovered during:** 2026-10-10 repository review
+
+**Affected paths/pages:** `montana/index.html`
+
+**Evidence / reproduction:** The first JSON-LD business entity uses `@id: https://ivanov-remonti.com/lom/#business` while its `url` is the Montana page. A second JSON-LD `HomeAndConstructionBusiness` entity on the same page uses `@id: https://ivanov-remonti.com/montana#ivanov-remonti`. The two entities also list different telephone numbers. The first entity uses a Lom address, which may be intentional; the identity and telephone mismatch need an Owner check before correction.
+
+**Risk / impact:** Search systems may receive inconsistent identity/contact signals from the Montana page. No Search Console structured-data error has been established for this issue.
+
+**Safe proposed next step:** Verify which phone and business address are intended for Montana, review the two JSON-LD blocks and Google-visible output, then prepare a separate scoped fix only if required.
+
+**Current-task blocker:** NO
+
+**Authorization / implementation:** No production fix authorized; no code changed.
+
+---
+
 ## New issue template
 
 ### ISSUE-XXX — Short title
