@@ -169,6 +169,26 @@ In a separate safe branch:
 
 ---
 
+## ISSUE-005 — Remote Lom first-screen draft still reads as a generic process
+
+**Status:** DISCOVERED  
+**Category:** Product concept / proof of useful mechanism  
+**Discovered during:** 2026-10-11 scenario review of `REMOTE_LOM_FIRST_SCREEN_V1.md`  
+
+**Affected paths/pages:** Draft documentation in PR #24 only. No production page changed.
+
+**Evidence / reproduction:** The proposed first screen has three rows for access, inspection, and written offer plus a blank sample sheet. A client with a key can understand the sequence but does not yet see an actual decision change from unknown to checked. A client without access must read the second layer before their path is clear. This repeats much of the existing site's process description and has not shown the intended distinct practical ability.
+
+**Risk / impact:** Calling the draft a finished instrument could lead to a new page that is essentially a reformatted FAQ and misses the Owner's recognition criterion.
+
+**Safe proposed next step:** Confirm with Owner which inspection observations and follow-up artifacts are real practice; then show one conditional decision in action with a clearly marked illustrative situation, test both access scenarios on mobile, and compare it against the current Lom page. Do not implement or publish the present version.
+
+**Current-task blocker:** YES for implementation; NO for concept refinement.
+
+**Authorization / implementation:** Not approved; no production changes.
+
+---
+
 ## New issue template
 
 ### ISSUE-XXX — Short title
