@@ -209,6 +209,26 @@ In a separate safe branch:
 
 ---
 
+## ISSUE-007 — Hero counters expose zero before animation
+
+**Status:** DISCOVERED  
+**Category:** First impression / content reliability  
+**Discovered during:** 2026-10-12 first-screen audit
+
+**Affected paths/pages:** `lom/index.html` hero (check other language/city pages separately if a fix is scoped).
+
+**Evidence / reproduction:** In `main` `lom/index.html` lines 649–650, the visible HTML starts at `0 Доволни клиенти` and `0 Години опит`, with `data-target=250` and `data-target=23`. A later IntersectionObserver at approximately lines 1291–1296 starts the count animation only when `.hero-stats` intersects. The public text extraction currently shows the zeros. No live mobile screenshot or no-JS rendering was obtained in this audit.
+
+**Risk / impact:** A visitor or renderer may see misleading zero experience/customer counts before JavaScript runs, if it fails, or before the lower hero area intersects. This is a first-impression trust risk, not evidence that Google ranks the page lower.
+
+**Safe proposed next step:** Reproduce on a real phone at slow load and with scripts off; verify the factual targets with Owner. In a separate scoped fix, render the true verified value as initial HTML and use animation only as optional presentation. Do not silently roll this into the remote diary launch.
+
+**Current-task blocker:** NO for concept audit; YES if the final first-screen design retains those counters without verification.
+
+**Authorization / implementation:** Not approved; no production changes.
+
+---
+
 ## New issue template
 
 ### ISSUE-XXX — Short title
