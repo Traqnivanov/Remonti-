@@ -189,6 +189,26 @@ In a separate safe branch:
 
 ---
 
+## ISSUE-006 — Remote-update cadence and photo estimate claims need verification
+
+**Status:** DISCOVERED  
+**Category:** Public content / remote-work operational consistency  
+**Discovered during:** 2026-10-12 global remote renovation research  
+
+**Affected paths/pages:** `lom/index.html`, `en/lom/index.html`, potentially `de/lom/index.html` and any proposed remote-Lom experience. No production page has been changed.
+
+**Evidence / reproduction:** The live Bulgarian Lom page says photo/video reports are sent at each stage of work. The English Lom page promises daily photos and videos, and its footer invites photos on WhatsApp with an estimated price within 24 hours. The English page also describes live video inspection or a detailed photo report, and a video-call handover; the BG page describes inspecting the completed work together. Sources: https://ivanov-remonti.com/lom/ and https://ivanov-remonti.com/en/lom/ (reviewed 2026-10-12). ISSUE-004 already records the payment/handover difference; this new issue focuses on update cadence and estimate-before-inspection.
+
+**Risk / impact:** A visitor may interpret a fixed daily-update service or a reliable quote from photos as guaranteed, while the Bulgarian process and the new concept rely on an on-site inspection and stage-based reporting. Trust would weaken if the actual operating model differs from public promises. Do not call the EN statements false without asking Owner how they are delivered in practice.
+
+**Safe proposed next step:** Owner confirms (a) whether progress is reported daily or at defined stages, (b) what can be estimated from photos within 24 hours and how it is distinguished from a binding offer, and (c) whether remote video inspection and handover are actually available under agreed conditions. Then audit the exact public sentences and agree any separate content fix. The proposed new experience must not repeat unverified cadence, price or handover terms.
+
+**Current-task blocker:** YES for final public wording on reporting/remote handover/price; NO for research and a conditional prototype.
+
+**Authorization / implementation:** No fix approved; no production changes.
+
+---
+
 ## New issue template
 
 ### ISSUE-XXX — Short title
