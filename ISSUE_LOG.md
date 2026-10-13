@@ -169,6 +169,108 @@ In a separate safe branch:
 
 ---
 
+## ISSUE-005 — Remote Lom first-screen draft still reads as a generic process
+
+**Status:** CONFIRMED  
+**Category:** Product concept / proof of useful mechanism  
+**Discovered during:** 2026-10-11 scenario review of `REMOTE_LOM_FIRST_SCREEN_V1.md`  
+
+**Affected paths/pages:** Draft documentation in PR #24 only. No production page changed.
+
+**Evidence / reproduction:** The revised first screen shows an illustrative decision about wall preparation after inspection, but still only as a text scheme. It does not show the actual usable output sent to an absent owner. A visitor without access reaches that path only after the main example. The existing Lom page already explains inspection, detailed offer, and photo/video reporting. Independent six-criteria assessment in `REMOTE_LOM_FIRST_SCREEN_V1.md` finds natural uniqueness not met and other criteria partial.
+
+**Follow-up 12.10.2026:** The Owner-selected single-screen prototype in Draft PR #25 improves recognition and the order of information, but the first card still contains a photo placeholder and generic „Подготвена основа“. The later „Нужно решение“ state describes an unspecified discovered area. The six-criteria review in `REMOTE_LOM_FIRST_SCREEN_AUDIT.md` therefore keeps „Какво вижда“ and natural uniqueness as NOT PASSED for public use. This is the same unresolved proof gap, not a new independent issue.\n\n**Risk / impact:** Calling the draft a finished instrument could lead to a new page that is essentially a reformatted FAQ and misses the Owner's recognition criterion.
+
+**Safe proposed next step:** Confirm the actual follow-up message or artifact after an inspection, then show a clearly marked example with established facts, unresolved items, and the owner's real decision from afar. Test both access scenarios with target users and compare it against the current Lom page and a short phone explanation. Do not implement or publish the present version.
+
+**Current-task blocker:** YES for implementation; NO for concept refinement.
+
+**Authorization / implementation:** Not approved; no production changes.
+
+---
+
+## ISSUE-006 — Remote-update cadence and photo estimate claims need verification
+
+**Status:** DISCOVERED  
+**Category:** Public content / remote-work operational consistency  
+**Discovered during:** 2026-10-12 global remote renovation research  
+
+**Affected paths/pages:** `lom/index.html`, `en/lom/index.html`, potentially `de/lom/index.html` and any proposed remote-Lom experience. No production page has been changed.
+
+**Evidence / reproduction:** The live Bulgarian Lom page says photo/video reports are sent at each stage of work. The English Lom page promises daily photos and videos, and its footer invites photos on WhatsApp with an estimated price within 24 hours. The English page also describes live video inspection or a detailed photo report, and a video-call handover; the BG page describes inspecting the completed work together. Sources: https://ivanov-remonti.com/lom/ and https://ivanov-remonti.com/en/lom/ (reviewed 2026-10-12). ISSUE-004 already records the payment/handover difference; this new issue focuses on update cadence and estimate-before-inspection.
+
+**Risk / impact:** A visitor may interpret a fixed daily-update service or a reliable quote from photos as guaranteed, while the Bulgarian process and the new concept rely on an on-site inspection and stage-based reporting. Trust would weaken if the actual operating model differs from public promises. Do not call the EN statements false without asking Owner how they are delivered in practice.
+
+**Safe proposed next step:** Owner confirms (a) whether progress is reported daily or at defined stages, (b) what can be estimated from photos within 24 hours and how it is distinguished from a binding offer, and (c) whether remote video inspection and handover are actually available under agreed conditions. Then audit the exact public sentences and agree any separate content fix. The proposed new experience must not repeat unverified cadence, price or handover terms.
+
+**Current-task blocker:** YES for final public wording on reporting/remote handover/price; NO for research and a conditional prototype.
+
+**Authorization / implementation:** No fix approved; no production changes.
+
+---
+
+## ISSUE-007 — Hero counters expose zero before animation
+
+**Status:** DISCOVERED  
+**Category:** First impression / content reliability  
+**Discovered during:** 2026-10-12 first-screen audit
+
+**Affected paths/pages:** `lom/index.html` hero (check other language/city pages separately if a fix is scoped).
+
+**Evidence / reproduction:** In `main` `lom/index.html` lines 649–650, the visible HTML starts at `0 Доволни клиенти` and `0 Години опит`, with `data-target=250` and `data-target=23`. A later IntersectionObserver at approximately lines 1291–1296 starts the count animation only when `.hero-stats` intersects. The public text extraction currently shows the zeros. No live mobile screenshot or no-JS rendering was obtained in this audit.
+
+**Risk / impact:** A visitor or renderer may see misleading zero experience/customer counts before JavaScript runs, if it fails, or before the lower hero area intersects. This is a first-impression trust risk, not evidence that Google ranks the page lower.
+
+**Safe proposed next step:** Reproduce on a real phone at slow load and with scripts off; verify the factual targets with Owner. In a separate scoped fix, render the true verified value as initial HTML and use animation only as optional presentation. Do not silently roll this into the remote diary launch.
+
+**Current-task blocker:** NO for concept audit; YES if the final first-screen design retains those counters without verification.
+
+**Authorization / implementation:** Not approved; no production changes.
+
+---
+
+## ISSUE-008 — Трите отговора може да слизат под първия мобилен екран
+
+**Status:** DISCOVERED  
+**Category:** Prototype / mobile first impression  
+**Discovered during:** 2026-10-13 review of Draft PR #25
+
+**Affected paths/pages:** `prototypes/lom-first-screen-review.html` only. No production page changed.
+
+**Evidence / reproduction:** Commit `573cfb11dc62c1646f80a45084b98a106aacb57e` moves the three answers before the image, confirmed by the loaded DOM and interactive browser. At widths below 760 px the layout becomes a single column, with the review banner, navigation, eyebrow, multi-line H1 and subline all preceding the example card. Thus on a short phone screen the third answer may remain below the initial viewport. The available browser showed the desktop layout but did not provide a permitted 360/390/412 px visual viewport; this is a risk, not a reproduced visual defect.
+
+**Follow-up 13.10.2026:** Owner sent three phone screenshots of the older prototype: without scrolling the headline and start of the sample card are visible, while the photo precedes the three answers; later screenshots show the answers below. The current prototype already puts answers before the photo. Commit `5705afb47bf165df0ccdf6029ee3ebd97f6b025f` also shortens duplicate card labels and spacing. The new compact version still needs its own phone screenshot; do not transfer the old screenshot result to the new version.\n\n**Follow-up 13.10.2026, 23:55 Sofia:** Owner provided a phone screenshot of the pinned compact version (commit `5705afb47bf165df0ccdf6029ee3ebd97f6b025f`). In this actual mobile viewport, the headline, explanation, all three answers in the intended order, photo and disclosure caption appear without scrolling. This resolves the first-screen fold concern for the observed device. It does not test other viewport sizes, the exception interaction, comprehension by an unprompted visitor, or operational truth of the illustrative example.
+
+**Risk / impact:** The observed phone layout supports the five-second visual order; cross-device and product comprehension remain unverified. Do not treat this screenshot as full mobile or public-release approval.
+
+**Safe proposed next step:** Continue the prototype's next structural layer and check the exception interaction and two client scenarios. Review other viewport sizes when a permitted device is available. Keep this within Draft PR #25; no live page edits.
+
+**Current-task blocker:** YES for final mobile approval or production proposal; NO for continued prototype work.
+
+**Authorization / implementation:** Observed-device first-screen visual order PASS; wider mobile/product QA pending; no production change.
+
+---
+
+## ISSUE-009 — Първият екран смесва първия контакт с дневника на работата
+
+**Status:** CONFIRMED  
+**Category:** Product logic / first impression  
+**Discovered during:** Owner mobile and concept review, 14.10.2026
+
+**Affected paths/pages:** Draft PR #25 `prototypes/lom-first-screen-review.html`; working product documents in PR #24. No production page changed.
+
+**Evidence / reproduction:** The compact phone screenshot shows a first-screen H1 about seeing finished work and a leading example `Спалня · измерване` with a tape-measure photo. Owner reports the result as weak and unclear: a person with limited time in Lom or living elsewhere needs to understand how to find the responsible contractor and organize a renovation before seeing a work log. Several working-document examples also treat a needed decision as a website/diary action. Owner explicitly says important decisions are discussed in person or by phone.
+
+**Risk / impact:** A visually readable screen may fail recognition at the first visit, and an online approval flow would misrepresent the actual human process. A prototype could be mistaken for a currently available electronic diary.
+
+**Safe proposed next step:** Compare first-screen compositions for local, short-stay and absent owners using the six criteria, with credible real-work evidence and no unverified diary promise. Keep diary progress lower in the experience. Use the diary only to show facts and, if appropriate, a need for conversation; record outcomes after a human discussion. Rework Draft PR #25 only after product direction, then perform independent mobile and truth checks.
+
+**Current-task blocker:** YES for current first-screen direction and any production proposal; NO for analysis and draft redesign.
+
+**Authorization / implementation:** Owner correction recorded in PR #24 documents; Draft PR #25 remains unmerged. No production change.
+
+---
+
 ## New issue template
 
 ### ISSUE-XXX — Short title
