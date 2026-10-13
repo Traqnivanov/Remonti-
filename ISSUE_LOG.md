@@ -229,6 +229,26 @@ In a separate safe branch:
 
 ---
 
+## ISSUE-008 — Трите отговора може да слизат под първия мобилен екран
+
+**Status:** DISCOVERED  
+**Category:** Prototype / mobile first impression  
+**Discovered during:** 2026-10-13 review of Draft PR #25
+
+**Affected paths/pages:** `prototypes/lom-first-screen-review.html` only. No production page changed.
+
+**Evidence / reproduction:** Commit `573cfb11dc62c1646f80a45084b98a106aacb57e` moves the three answers before the image, confirmed by the loaded DOM and interactive browser. At widths below 760 px the layout becomes a single column, with the review banner, navigation, eyebrow, multi-line H1 and subline all preceding the example card. Thus on a short phone screen the third answer may remain below the initial viewport. The available browser showed the desktop layout but did not provide a permitted 360/390/412 px visual viewport; this is a risk, not a reproduced visual defect.
+
+**Risk / impact:** The intended five-second recognition may depend on scrolling; claiming mobile QA as PASS would be unsupported.
+
+**Safe proposed next step:** Obtain an actual 360/390/412 px rendered visual review through an approved preview or local browser environment. If the three answers are too low, reduce introductory height or simplify the sample card without changing the accepted H1 or inventing project facts. Recheck the exception state and image crop. Keep this within Draft PR #25; no live page edits.
+
+**Current-task blocker:** YES for final mobile approval or production proposal; NO for continued prototype work.
+
+**Authorization / implementation:** Pending visual QA; no production change.
+
+---
+
 ## New issue template
 
 ### ISSUE-XXX — Short title
