@@ -239,13 +239,15 @@ In a separate safe branch:
 
 **Evidence / reproduction:** Commit `573cfb11dc62c1646f80a45084b98a106aacb57e` moves the three answers before the image, confirmed by the loaded DOM and interactive browser. At widths below 760 px the layout becomes a single column, with the review banner, navigation, eyebrow, multi-line H1 and subline all preceding the example card. Thus on a short phone screen the third answer may remain below the initial viewport. The available browser showed the desktop layout but did not provide a permitted 360/390/412 px visual viewport; this is a risk, not a reproduced visual defect.
 
-**Follow-up 13.10.2026:** Owner sent three phone screenshots of the older prototype: without scrolling the headline and start of the sample card are visible, while the photo precedes the three answers; later screenshots show the answers below. The current prototype already puts answers before the photo. Commit `5705afb47bf165df0ccdf6029ee3ebd97f6b025f` also shortens duplicate card labels and spacing. The new compact version still needs its own phone screenshot; do not transfer the old screenshot result to the new version.\n\n**Risk / impact:** The intended five-second recognition may depend on scrolling; claiming mobile QA as PASS would be unsupported.
+**Follow-up 13.10.2026:** Owner sent three phone screenshots of the older prototype: without scrolling the headline and start of the sample card are visible, while the photo precedes the three answers; later screenshots show the answers below. The current prototype already puts answers before the photo. Commit `5705afb47bf165df0ccdf6029ee3ebd97f6b025f` also shortens duplicate card labels and spacing. The new compact version still needs its own phone screenshot; do not transfer the old screenshot result to the new version.\n\n**Follow-up 13.10.2026, 23:55 Sofia:** Owner provided a phone screenshot of the pinned compact version (commit `5705afb47bf165df0ccdf6029ee3ebd97f6b025f`). In this actual mobile viewport, the headline, explanation, all three answers in the intended order, photo and disclosure caption appear without scrolling. This resolves the first-screen fold concern for the observed device. It does not test other viewport sizes, the exception interaction, comprehension by an unprompted visitor, or operational truth of the illustrative example.
 
-**Safe proposed next step:** Obtain an actual 360/390/412 px rendered visual review through an approved preview or local browser environment. If the three answers are too low, reduce introductory height or simplify the sample card without changing the accepted H1 or inventing project facts. Recheck the exception state and image crop. Keep this within Draft PR #25; no live page edits.
+**Risk / impact:** The observed phone layout supports the five-second visual order; cross-device and product comprehension remain unverified. Do not treat this screenshot as full mobile or public-release approval.
+
+**Safe proposed next step:** Continue the prototype's next structural layer and check the exception interaction and two client scenarios. Review other viewport sizes when a permitted device is available. Keep this within Draft PR #25; no live page edits.
 
 **Current-task blocker:** YES for final mobile approval or production proposal; NO for continued prototype work.
 
-**Authorization / implementation:** Pending visual QA; no production change.
+**Authorization / implementation:** Observed-device first-screen visual order PASS; wider mobile/product QA pending; no production change.
 
 ---
 
