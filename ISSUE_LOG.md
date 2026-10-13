@@ -251,6 +251,26 @@ In a separate safe branch:
 
 ---
 
+## ISSUE-009 — Първият екран смесва първия контакт с дневника на работата
+
+**Status:** CONFIRMED  
+**Category:** Product logic / first impression  
+**Discovered during:** Owner mobile and concept review, 14.10.2026
+
+**Affected paths/pages:** Draft PR #25 `prototypes/lom-first-screen-review.html`; working product documents in PR #24. No production page changed.
+
+**Evidence / reproduction:** The compact phone screenshot shows a first-screen H1 about seeing finished work and a leading example `Спалня · измерване` with a tape-measure photo. Owner reports the result as weak and unclear: a person with limited time in Lom or living elsewhere needs to understand how to find the responsible contractor and organize a renovation before seeing a work log. Several working-document examples also treat a needed decision as a website/diary action. Owner explicitly says important decisions are discussed in person or by phone.
+
+**Risk / impact:** A visually readable screen may fail recognition at the first visit, and an online approval flow would misrepresent the actual human process. A prototype could be mistaken for a currently available electronic diary.
+
+**Safe proposed next step:** Compare first-screen compositions for local, short-stay and absent owners using the six criteria, with credible real-work evidence and no unverified diary promise. Keep diary progress lower in the experience. Use the diary only to show facts and, if appropriate, a need for conversation; record outcomes after a human discussion. Rework Draft PR #25 only after product direction, then perform independent mobile and truth checks.
+
+**Current-task blocker:** YES for current first-screen direction and any production proposal; NO for analysis and draft redesign.
+
+**Authorization / implementation:** Owner correction recorded in PR #24 documents; Draft PR #25 remains unmerged. No production change.
+
+---
+
 ## New issue template
 
 ### ISSUE-XXX — Short title
