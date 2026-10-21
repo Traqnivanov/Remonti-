@@ -281,6 +281,31 @@ In a separate safe branch:
 
 ---
 
+## ISSUE-009 — Assignment headings alone omit the detailed agreed scope
+
+**Status:** RESOLVED IN DRAFT, NOT MERGED  
+**Category:** Property diary / accuracy of client assignment  
+**Discovered during:** 2026-10-21 review of the room/task prototype  
+**Affected paths/pages:** `prototypes/property-diary-lab.html` in Draft PR #26.
+
+**Evidence / reproduction:** The first implementation allowed only short names for each point/subpoint. Real project assignments often contain quantities, inclusions, exclusions, and conditions that cannot be represented reliably by a title alone.
+
+**Risk / impact:** A client may read a vague task as the complete agreement and misinterpret the progress record.
+
+**Safe proposed next step:** The Draft prototype now has optional detailed text for each point and subpoint, shown in the client view. Verify the wording and real assignment import process before any real customer data. Existing offer/contract files are not parsed automatically.
+
+**Current-task blocker:** NO for prototype review; YES for a claim that real agreements are imported faithfully.
+
+**Authorization / implementation:**
+- Owner approval: `ok raboti` for assignment hierarchy and detailed scope
+- Branch: `prototype/property-diary-lab-v1`
+- PR: #26 (Draft)
+- QA: multiline point and subpoint descriptions created and visible in simulated client view; JavaScript syntax checked
+- Owner merge approval: NO
+- Live verification: not applicable
+
+---
+
 ## New issue template
 
 ### ISSUE-XXX — Short title
