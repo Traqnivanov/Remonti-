@@ -190,35 +190,63 @@ In a separate safe branch:
 - Owner fix approval: "ok raboti" in current chat
 - Branch: `prototype/property-diary-lab-v1`
 - PR: #26 (Draft)
-- QA: syntax and reversed work/publication date comparator test passed; full browser flow not rerun
+- QA: syntax, reversed work/publication date comparator, and interactive backdated publication test passed; history remains by work date
 - Owner merge approval: NO
 - Merge commit: none
 - Live verification: not applicable
 
 ---
 
-## ISSUE-006 — Cloud QA browser lacks IndexedDB
+## ISSUE-006 — False IndexedDB diagnosis during first-open test
 
-**Status:** DISCOVERED, ENVIRONMENT SCOPE UNCONFIRMED  
-**Category:** Prototype test environment / storage  
+**Status:** DISPROVEN; corrected on 2026-10-21  
+**Category:** QA interpretation  
 **Discovered during:** 2026-10-21 direct preview test  
-**Source main SHA:** Not applicable; Draft PR #26 preview `91748b8505728fc98ee3c778e721fa0fa6deb2a8`
+**Source main SHA:** Not applicable; Draft PR #26
 
-**Affected paths/pages:** `prototypes/property-diary-lab.html` preview on raw.githack in the cloud QA browser.
+**Affected paths/pages:** `prototypes/property-diary-lab.html` preview on raw.githack.
 
-**Evidence / reproduction:** The page reports that it cannot store records, disables create/save buttons, and browser inspection shows `typeof indexedDB === "undefined"`. Prior browser tests in a different environment had saved test entries; ordinary phone behavior has not been reverified.
+**Evidence / reproduction:** The page originally displayed a storage error. A restricted read-only browser evaluation reported `typeof indexedDB === "undefined"`, but this was not evidence of the page's own storage capability. After fixing the clean-start render error, the test object, published entries, and test image persisted through reload and across the next commit URL on the same origin.
 
-**Risk / impact:** This environment cannot exercise the create → draft → publish → client path. Do not interpret this as proof that customer browsers fail; the preview is still not a real client service.
+**Risk / impact:** The initial diagnosis incorrectly attributed a prototype code defect to the browser environment. The claim must not be repeated in handoff or user-facing QA.
 
-**Safe proposed next step:** Run isolated UX QA in a browser with IndexedDB, including reload, two records, photo and phone viewport; if ordinary browsers also fail, diagnose before further review. Keep real client data out of this prototype.
+**Safe proposed next step:** Treat the storage error as a prior symptom of ISSUE-007. Confirm fallback separately only in a controlled browser that truly disables storage.
 
-**Current-task blocker:** YES for full QA in this browser; NO for read-only/design review.
+**Current-task blocker:** NO
 
 **Authorization / implementation:**
-- Owner fix approval: not a confirmed product fix
+- Owner fix approval: "ok raboti" for current prototype task
 - Branch: `prototype/property-diary-lab-v1`
 - PR: #26 (Draft)
-- QA: cloud preview limitation observed; ordinary browser pending
+- QA: test records and photo survived reload
+- Owner merge approval: NO
+- Merge commit: none
+- Live verification: not applicable
+
+---
+
+## ISSUE-007 — Clean first-open render error misreported as storage failure
+
+**Status:** RESOLVED IN DRAFT, NOT MERGED  
+**Category:** Prototype / initial state and error handling  
+**Discovered during:** 2026-10-21 test following Owner screenshot  
+**Source main SHA:** Not applicable; Draft PR #26 head before fix `cda52d3d7963abcb8524f934ca950749c27a0f1a`
+
+**Affected paths/pages:** `prototypes/property-diary-lab.html` in Draft PR #26.
+
+**Evidence / reproduction:** When `state.recent=null` and there is no selected project, optional equality of two undefined IDs evaluated true in `showFields()`, then the code read `state.recent.roomId` and threw. The same risk existed in `showScopes()`. The broad initialization `catch` showed "browser cannot save" and disabled controls, making the actual defect look like a storage failure.
+
+**Risk / impact:** A new tester cannot create the first project and may believe their browser is incompatible.
+
+**Safe proposed next step:** Both recent-selection expressions require a real project, room, and recent state. The storage `try/catch` now covers only database open/read. The fallback, if needed, explicitly labels entries as temporary; normal storage explicitly labels browser-only storage. Do not use real client data.
+
+**Current-task blocker:** NO for Draft review; YES for real service until authentication and server persistence exist.
+
+**Authorization / implementation:**
+- Owner fix approval: "ok raboti" for prototype and screenshot steering
+- Branch: `prototype/property-diary-lab-v1`
+- PR: #26 (Draft)
+- QA: clean start, project/room/work, hidden draft, publish, photo, reload persistence, backdated publication card passed in browser
 - Owner merge approval: NO
 - Merge commit: none
 - Live verification: not applicable
