@@ -253,6 +253,34 @@ In a separate safe branch:
 
 ---
 
+## ISSUE-008 — Published work may lack a named activity
+
+**Status:** OPEN PRODUCT DECISION  
+**Category:** Property diary / scope versus performed action  
+**Discovered during:** 2026-10-21 Owner screenshot review  
+**Source main SHA:** Not applicable; Draft PR #26 head `93eb16e262b16f6e174d531f358317080f79657d`
+
+**Affected paths/pages:** `prototypes/property-diary-lab.html` and diary working model in Draft PR #26.
+
+**Evidence / reproduction:** Owner created a test project and a bedroom, published a progress entry with date, action and image, while the room showed "Няма добавена работа". The current publish check requires a selected agreed work only when the room already has at least one. The published entry is therefore titled generically "Извършена работа" and has no named work/phase. Screenshot provided in chat; the existing flow matches source behavior.
+
+**Risk / impact:** The client can see that something happened but not the work or phase it belongs to. A bare action could also be mistaken for confirmation that a newly found or additional activity was already agreed.
+
+**Safe proposed next step:** Review a model that keeps the agreed scope distinct from an actual performed activity. For a progress publication, require a clear activity name even if no agreed scope exists; allow an optional link to the agreed scope. A change of scope stays a separate in-person/phone discussion, not an online approval. Test this against a short first record and a newly discovered activity before changing the Draft UI. Owner approval of the model is pending.
+
+**Current-task blocker:** YES for WORK acceptance of this record structure; NO for continued prototype discussion.
+
+**Authorization / implementation:**
+- Owner fix approval: OPEN
+- Branch: `prototype/property-diary-lab-v1`
+- PR: #26 (Draft)
+- QA: screenshot and source review; no code change yet
+- Owner merge approval: NO
+- Merge commit: none
+- Live verification: not applicable
+
+---
+
 ## New issue template
 
 ### ISSUE-XXX — Short title
