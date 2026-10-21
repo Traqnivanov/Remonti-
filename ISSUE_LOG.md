@@ -306,6 +306,32 @@ In a separate safe branch:
 
 ---
 
+## ISSUE-010 — Client room navigation was displaced by a repeated photo; old demo lacked detail
+
+**Status:** RESOLVED IN DRAFT, NOT MERGED  
+**Category:** Property diary / client navigation and example continuity  
+**Discovered during:** 2026-10-21 browser review of room-first client view  
+**Affected paths/pages:** `prototypes/property-diary-lab.html` in Draft PR #26.
+
+**Evidence / reproduction:** First navigation version repeated the large most recent photo on both the room and work screens, pushing their primary information below the initial viewport. The pre-existing browser-local demo reused the old data shape and did not include detailed scope text later added to the demo template.
+
+**Risk / impact:** A client can lose the context of the room/work they selected; an Owner reviewing a stored demo can believe the agreed detail is missing from the current prototype.
+
+**Safe proposed next step:** The Draft now shows the large recent photo only on the client home. Selecting “Отвори примерен обект” uses a versioned demo identifier and creates the current demo without deleting older browser-local test data. Continue phone visual QA and keep real-client data out of this prototype.
+
+**Current-task blocker:** NO for Draft review; YES for claiming phone visual QA.
+
+**Authorization / implementation:**
+- Owner approval: asked to see the agreed client structure in the prototype
+- Branch: `prototype/property-diary-lab-v1`
+- PR: #26 (Draft)
+- QA: direct browser flow home → Спалня → work shows detailed scope and linked published photo, without repeating the large image; JavaScript syntax checked
+- Owner merge approval: NO
+- Merge commit: none
+- Live verification: not applicable
+
+---
+
 ## New issue template
 
 ### ISSUE-XXX — Short title
