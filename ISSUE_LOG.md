@@ -255,7 +255,7 @@ In a separate safe branch:
 
 ## ISSUE-008 — Published work may lack a named activity
 
-**Status:** OPEN PRODUCT DECISION  
+**Status:** RESOLVED IN DRAFT, NOT MERGED  
 **Category:** Property diary / scope versus performed action  
 **Discovered during:** 2026-10-21 Owner screenshot review  
 **Source main SHA:** Not applicable; Draft PR #26 head `93eb16e262b16f6e174d531f358317080f79657d`
@@ -266,15 +266,15 @@ In a separate safe branch:
 
 **Risk / impact:** The client can see that something happened but not the work or phase it belongs to. A bare action could also be mistaken for confirmation that a newly found or additional activity was already agreed.
 
-**Safe proposed next step:** Review a model that keeps the agreed scope distinct from an actual performed activity. For a progress publication, require a clear activity name even if no agreed scope exists; allow an optional link to the agreed scope. A change of scope stays a separate in-person/phone discussion, not an online approval. Test this against a short first record and a newly discovered activity before changing the Draft UI. Owner approval of the model is pending.
+**Safe proposed next step:** Review a model that keeps the agreed scope distinct from an actual performed activity. For a progress publication, require a clear activity name even if no agreed scope exists; allow an optional link to the agreed scope. A change of scope stays a separate in-person/phone discussion, not an online approval. Test this against a short first record and a newly discovered activity before changing the Draft UI. Owner approved a richer assignment hierarchy in chat: source of the current scope (contract and appendix, accepted offer, or agreed assignment), room, point, subpoint, and linked diary record. The Draft implementation requires a selected point for published progress; issue records remain separate and do not imply online consent.
 
 **Current-task blocker:** YES for WORK acceptance of this record structure; NO for continued prototype discussion.
 
 **Authorization / implementation:**
-- Owner fix approval: OPEN
+- Owner fix approval: `ok raboti` for the reviewed assignment-by-room prototype
 - Branch: `prototype/property-diary-lab-v1`
 - PR: #26 (Draft)
-- QA: screenshot and source review; no code change yet
+- QA: browser check of two-room sample, client room filter, dated supplement, new subpoint attached to supplement, draft linked to that subpoint; JavaScript syntax. Separate phone visual QA and real client authentication remain open.
 - Owner merge approval: NO
 - Merge commit: none
 - Live verification: not applicable
