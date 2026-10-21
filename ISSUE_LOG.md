@@ -169,6 +169,169 @@ In a separate safe branch:
 
 ---
 
+## ISSUE-005 — Latest published diary card used work date
+
+**Status:** RESOLVED IN DRAFT, NOT MERGED  
+**Category:** Prototype / client chronology  
+**Discovered during:** 2026-10-21 role test of Draft PR #26  
+**Source main SHA:** Not applicable; prototype branch head before fix `91748b8505728fc98ee3c778e721fa0fa6deb2a8`
+
+**Affected paths/pages:** `prototypes/property-diary-lab.html` in Draft PR #26.
+
+**Evidence / reproduction:** The client card "Последно публикувано" selected `entries[0]`, while `entries` was sorted by `workDate`. Publishing an older work day after a newer work day made the card show the wrong record.
+
+**Risk / impact:** A client checking the diary could miss the newest publication.
+
+**Safe proposed next step:** The card now selects by `publishedAt`; the history remains by `workDate`. Recheck this case in a browser with IndexedDB and on a phone before any real service.
+
+**Current-task blocker:** NO for Draft review; YES for claiming full end-to-end QA.
+
+**Authorization / implementation:**
+- Owner fix approval: "ok raboti" in current chat
+- Branch: `prototype/property-diary-lab-v1`
+- PR: #26 (Draft)
+- QA: syntax, reversed work/publication date comparator, and interactive backdated publication test passed; history remains by work date
+- Owner merge approval: NO
+- Merge commit: none
+- Live verification: not applicable
+
+---
+
+## ISSUE-006 — False IndexedDB diagnosis during first-open test
+
+**Status:** DISPROVEN; corrected on 2026-10-21  
+**Category:** QA interpretation  
+**Discovered during:** 2026-10-21 direct preview test  
+**Source main SHA:** Not applicable; Draft PR #26
+
+**Affected paths/pages:** `prototypes/property-diary-lab.html` preview on raw.githack.
+
+**Evidence / reproduction:** The page originally displayed a storage error. A restricted read-only browser evaluation reported `typeof indexedDB === "undefined"`, but this was not evidence of the page's own storage capability. After fixing the clean-start render error, the test object, published entries, and test image persisted through reload and across the next commit URL on the same origin.
+
+**Risk / impact:** The initial diagnosis incorrectly attributed a prototype code defect to the browser environment. The claim must not be repeated in handoff or user-facing QA.
+
+**Safe proposed next step:** Treat the storage error as a prior symptom of ISSUE-007. Confirm fallback separately only in a controlled browser that truly disables storage.
+
+**Current-task blocker:** NO
+
+**Authorization / implementation:**
+- Owner fix approval: "ok raboti" for current prototype task
+- Branch: `prototype/property-diary-lab-v1`
+- PR: #26 (Draft)
+- QA: test records and photo survived reload
+- Owner merge approval: NO
+- Merge commit: none
+- Live verification: not applicable
+
+---
+
+## ISSUE-007 — Clean first-open render error misreported as storage failure
+
+**Status:** RESOLVED IN DRAFT, NOT MERGED  
+**Category:** Prototype / initial state and error handling  
+**Discovered during:** 2026-10-21 test following Owner screenshot  
+**Source main SHA:** Not applicable; Draft PR #26 head before fix `cda52d3d7963abcb8524f934ca950749c27a0f1a`
+
+**Affected paths/pages:** `prototypes/property-diary-lab.html` in Draft PR #26.
+
+**Evidence / reproduction:** When `state.recent=null` and there is no selected project, optional equality of two undefined IDs evaluated true in `showFields()`, then the code read `state.recent.roomId` and threw. The same risk existed in `showScopes()`. The broad initialization `catch` showed "browser cannot save" and disabled controls, making the actual defect look like a storage failure.
+
+**Risk / impact:** A new tester cannot create the first project and may believe their browser is incompatible.
+
+**Safe proposed next step:** Both recent-selection expressions require a real project, room, and recent state. The storage `try/catch` now covers only database open/read. The fallback, if needed, explicitly labels entries as temporary; normal storage explicitly labels browser-only storage. Do not use real client data.
+
+**Current-task blocker:** NO for Draft review; YES for real service until authentication and server persistence exist.
+
+**Authorization / implementation:**
+- Owner fix approval: "ok raboti" for prototype and screenshot steering
+- Branch: `prototype/property-diary-lab-v1`
+- PR: #26 (Draft)
+- QA: clean start, project/room/work, hidden draft, publish, photo, reload persistence, backdated publication card passed in browser
+- Owner merge approval: NO
+- Merge commit: none
+- Live verification: not applicable
+
+---
+
+## ISSUE-008 — Published work may lack a named activity
+
+**Status:** RESOLVED IN DRAFT, NOT MERGED  
+**Category:** Property diary / scope versus performed action  
+**Discovered during:** 2026-10-21 Owner screenshot review  
+**Source main SHA:** Not applicable; Draft PR #26 head `93eb16e262b16f6e174d531f358317080f79657d`
+
+**Affected paths/pages:** `prototypes/property-diary-lab.html` and diary working model in Draft PR #26.
+
+**Evidence / reproduction:** Owner created a test project and a bedroom, published a progress entry with date, action and image, while the room showed "Няма добавена работа". The current publish check requires a selected agreed work only when the room already has at least one. The published entry is therefore titled generically "Извършена работа" and has no named work/phase. Screenshot provided in chat; the existing flow matches source behavior.
+
+**Risk / impact:** The client can see that something happened but not the work or phase it belongs to. A bare action could also be mistaken for confirmation that a newly found or additional activity was already agreed.
+
+**Safe proposed next step:** Review a model that keeps the agreed scope distinct from an actual performed activity. For a progress publication, require a clear activity name even if no agreed scope exists; allow an optional link to the agreed scope. A change of scope stays a separate in-person/phone discussion, not an online approval. Test this against a short first record and a newly discovered activity before changing the Draft UI. Owner approved a richer assignment hierarchy in chat: source of the current scope (contract and appendix, accepted offer, or agreed assignment), room, point, subpoint, and linked diary record. The Draft implementation requires a selected point for published progress; issue records remain separate and do not imply online consent.
+
+**Current-task blocker:** YES for WORK acceptance of this record structure; NO for continued prototype discussion.
+
+**Authorization / implementation:**
+- Owner fix approval: `ok raboti` for the reviewed assignment-by-room prototype
+- Branch: `prototype/property-diary-lab-v1`
+- PR: #26 (Draft)
+- QA: browser check of two-room sample, client room filter, dated supplement, new subpoint attached to supplement, draft linked to that subpoint; JavaScript syntax. Separate phone visual QA and real client authentication remain open.
+- Owner merge approval: NO
+- Merge commit: none
+- Live verification: not applicable
+
+---
+
+## ISSUE-009 — Assignment headings alone omit the detailed agreed scope
+
+**Status:** RESOLVED IN DRAFT, NOT MERGED  
+**Category:** Property diary / accuracy of client assignment  
+**Discovered during:** 2026-10-21 review of the room/task prototype  
+**Affected paths/pages:** `prototypes/property-diary-lab.html` in Draft PR #26.
+
+**Evidence / reproduction:** The first implementation allowed only short names for each point/subpoint. Real project assignments often contain quantities, inclusions, exclusions, and conditions that cannot be represented reliably by a title alone.
+
+**Risk / impact:** A client may read a vague task as the complete agreement and misinterpret the progress record.
+
+**Safe proposed next step:** The Draft prototype now has optional detailed text for each point and subpoint, shown in the client view. Verify the wording and real assignment import process before any real customer data. Existing offer/contract files are not parsed automatically.
+
+**Current-task blocker:** NO for prototype review; YES for a claim that real agreements are imported faithfully.
+
+**Authorization / implementation:**
+- Owner approval: `ok raboti` for assignment hierarchy and detailed scope
+- Branch: `prototype/property-diary-lab-v1`
+- PR: #26 (Draft)
+- QA: multiline point and subpoint descriptions created and visible in simulated client view; JavaScript syntax checked
+- Owner merge approval: NO
+- Live verification: not applicable
+
+---
+
+## ISSUE-010 — Client room navigation was displaced by a repeated photo; old demo lacked detail
+
+**Status:** RESOLVED IN DRAFT, NOT MERGED  
+**Category:** Property diary / client navigation and example continuity  
+**Discovered during:** 2026-10-21 browser review of room-first client view  
+**Affected paths/pages:** `prototypes/property-diary-lab.html` in Draft PR #26.
+
+**Evidence / reproduction:** First navigation version repeated the large most recent photo on both the room and work screens, pushing their primary information below the initial viewport. The pre-existing browser-local demo reused the old data shape and did not include detailed scope text later added to the demo template.
+
+**Risk / impact:** A client can lose the context of the room/work they selected; an Owner reviewing a stored demo can believe the agreed detail is missing from the current prototype.
+
+**Safe proposed next step:** The Draft now shows the large recent photo only on the client home. Selecting “Отвори примерен обект” uses a versioned demo identifier and creates the current demo without deleting older browser-local test data. Continue phone visual QA and keep real-client data out of this prototype.
+
+**Current-task blocker:** NO for Draft review; YES for claiming phone visual QA.
+
+**Authorization / implementation:**
+- Owner approval: asked to see the agreed client structure in the prototype
+- Branch: `prototype/property-diary-lab-v1`
+- PR: #26 (Draft)
+- QA: direct browser flow home → Спалня → work shows detailed scope and linked published photo, without repeating the large image; JavaScript syntax checked
+- Owner merge approval: NO
+- Merge commit: none
+- Live verification: not applicable
+
+---
+
 ## New issue template
 
 ### ISSUE-XXX — Short title
