@@ -169,6 +169,62 @@ In a separate safe branch:
 
 ---
 
+## ISSUE-005 — Latest published diary card used work date
+
+**Status:** RESOLVED IN DRAFT, NOT MERGED  
+**Category:** Prototype / client chronology  
+**Discovered during:** 2026-10-21 role test of Draft PR #26  
+**Source main SHA:** Not applicable; prototype branch head before fix `91748b8505728fc98ee3c778e721fa0fa6deb2a8`
+
+**Affected paths/pages:** `prototypes/property-diary-lab.html` in Draft PR #26.
+
+**Evidence / reproduction:** The client card "Последно публикувано" selected `entries[0]`, while `entries` was sorted by `workDate`. Publishing an older work day after a newer work day made the card show the wrong record.
+
+**Risk / impact:** A client checking the diary could miss the newest publication.
+
+**Safe proposed next step:** The card now selects by `publishedAt`; the history remains by `workDate`. Recheck this case in a browser with IndexedDB and on a phone before any real service.
+
+**Current-task blocker:** NO for Draft review; YES for claiming full end-to-end QA.
+
+**Authorization / implementation:**
+- Owner fix approval: "ok raboti" in current chat
+- Branch: `prototype/property-diary-lab-v1`
+- PR: #26 (Draft)
+- QA: syntax and reversed work/publication date comparator test passed; full browser flow not rerun
+- Owner merge approval: NO
+- Merge commit: none
+- Live verification: not applicable
+
+---
+
+## ISSUE-006 — Cloud QA browser lacks IndexedDB
+
+**Status:** DISCOVERED, ENVIRONMENT SCOPE UNCONFIRMED  
+**Category:** Prototype test environment / storage  
+**Discovered during:** 2026-10-21 direct preview test  
+**Source main SHA:** Not applicable; Draft PR #26 preview `91748b8505728fc98ee3c778e721fa0fa6deb2a8`
+
+**Affected paths/pages:** `prototypes/property-diary-lab.html` preview on raw.githack in the cloud QA browser.
+
+**Evidence / reproduction:** The page reports that it cannot store records, disables create/save buttons, and browser inspection shows `typeof indexedDB === "undefined"`. Prior browser tests in a different environment had saved test entries; ordinary phone behavior has not been reverified.
+
+**Risk / impact:** This environment cannot exercise the create → draft → publish → client path. Do not interpret this as proof that customer browsers fail; the preview is still not a real client service.
+
+**Safe proposed next step:** Run isolated UX QA in a browser with IndexedDB, including reload, two records, photo and phone viewport; if ordinary browsers also fail, diagnose before further review. Keep real client data out of this prototype.
+
+**Current-task blocker:** YES for full QA in this browser; NO for read-only/design review.
+
+**Authorization / implementation:**
+- Owner fix approval: not a confirmed product fix
+- Branch: `prototype/property-diary-lab-v1`
+- PR: #26 (Draft)
+- QA: cloud preview limitation observed; ordinary browser pending
+- Owner merge approval: NO
+- Merge commit: none
+- Live verification: not applicable
+
+---
+
 ## New issue template
 
 ### ISSUE-XXX — Short title
