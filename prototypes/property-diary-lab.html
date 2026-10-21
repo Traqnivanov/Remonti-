@@ -61,7 +61,7 @@
         $('rooms-list').innerHTML=p?.rooms.length?p.rooms.map(r=>`<div class="room"><strong>${escape(r.name)}</strong>${r.works.length?`<ul>${r.works.map(w=>`<li>${escape(w.name)}</li>`).join('')}</ul>`:'<span class="small muted">Няма добавена работа</span>'}</div>`).join(''):'<div class="empty small">Първо създай обект и добави помещение.</div>';
         const roomOptions=p?.rooms.map(r=>option(r.id,r.name)).join('')||'';
         for(const id of ['scope-room','entry-room']){
-          const prev=$(id).value, recent=state.recent?.projectId===p?.id?state.recent.roomId:null;
+          const prev=$(id).value, recent=state.recent&&p&&state.recent.projectId===p.id?state.recent.roomId:null;
           $(id).innerHTML=roomOptions||option('','Първо добави помещение');
           const preferred=id==='entry-room'?recent||prev:prev;
           if(p?.rooms.some(r=>r.id===preferred))$(id).value=preferred;
@@ -73,7 +73,7 @@
       function showScopes(){
         const p=project(),r=room(p,$('entry-room').value),previous=$('entry-scope').value;
         $('entry-scope').innerHTML=option('','Без връзка към конкретна работа')+(r?.works.map(w=>option(w.id,w.name)).join('')||'');
-        const preferred=r?.works.some(w=>w.id===previous)?previous:state.recent?.projectId===p?.id&&state.recent.roomId===r?.id?state.recent.scopeId:null;
+        const preferred=r?.works.some(w=>w.id===previous)?previous:state.recent&&p&&r&&state.recent.projectId===p.id&&state.recent.roomId===r.id?state.recent.scopeId:null;
         if(r?.works.some(w=>w.id===preferred))$('entry-scope').value=preferred;
         else if(r?.works.length===1)$('entry-scope').value=r.works[0].id;
       }
