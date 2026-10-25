@@ -351,7 +351,7 @@ In a separate safe branch:
 - Owner direction: continue the diary prototype; earlier explicit idea for opening each main operation and adding progress photos there
 - Branch: `prototype/property-diary-lab-v1`
 - PR: #26 (Draft)
-- QA: JavaScript syntax passed; interactive phone check remains open
+- QA: JavaScript syntax and direct browser flow passed: expand work, select linked room/work, block change with unsaved text, clear form, switch work with no implicit subpoint. Phone visual check remains open.
 - Owner merge approval: NO
 - Merge commit: none
 - Live verification: not applicable
