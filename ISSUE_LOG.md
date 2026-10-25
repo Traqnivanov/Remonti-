@@ -332,6 +332,32 @@ In a separate safe branch:
 
 ---
 
+## ISSUE-011 — Owner had to reselect work when adding progress from an agreed operation
+
+**Status:** RESOLVED IN DRAFT, NOT MERGED  
+**Category:** Property diary / field entry and incorrect association  
+**Discovered during:** 2026-10-25 review of room → work navigation  
+**Affected paths/pages:** `prototypes/property-diary-lab.html` in Draft PR #26.
+
+**Evidence / reproduction:** The client could open a room and its work, but the owner-side scope list was plain text. To add a photo for that work, the owner had to find and select the room and work again in the separate entry form. The form could still contain a previous selection.
+
+**Risk / impact:** Extra actions on site and a realistic chance of attaching a photo to the wrong work.
+
+**Safe proposed next step:** The Draft makes each owner-side work expandable and offers “Нов запис към тази работа”. It fills the visible room/work selectors, clears implicit subpoint selection, and blocks switching while another form/review is active. Saved drafts are not removed by “Изчисти формата”. Test the complete click → selected fields → photo → review flow on a phone before product acceptance.
+
+**Current-task blocker:** NO for Draft discussion; YES for claiming phone QA.
+
+**Authorization / implementation:**
+- Owner direction: continue the diary prototype; earlier explicit idea for opening each main operation and adding progress photos there
+- Branch: `prototype/property-diary-lab-v1`
+- PR: #26 (Draft)
+- QA: JavaScript syntax passed; interactive phone check remains open
+- Owner merge approval: NO
+- Merge commit: none
+- Live verification: not applicable
+
+---
+
 ## New issue template
 
 ### ISSUE-XXX — Short title
