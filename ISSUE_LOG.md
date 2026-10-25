@@ -358,6 +358,84 @@ In a separate safe branch:
 
 ---
 
+## ISSUE-012 — Publish review can become stale while the form remains editable
+
+**Status:** DISCOVERED IN DRAFT, NOT MERGED  
+**Category:** Property diary / publication accuracy  
+**Discovered during:** 2026-10-25 criteria audit  
+**Affected paths/pages:** `prototypes/property-diary-lab.html` in Draft PR #26.
+
+**Evidence / reproduction:** Submitting the entry form stores `review=collect()` and renders that snapshot. The form stays editable. The publish button later calls `publish(review)` without comparing it to the current form. A user can change room, work, date, or text after opening review, then publish the older snapshot. This is confirmed from the source path; a browser reproduction of the changed-form case is still pending.
+
+**Risk / impact:** The owner may believe the edited information will be published while the client sees a previous version, possibly associated with the wrong agreed work.
+
+**Safe proposed next step:** Keep the form unavailable while reviewing or invalidate/rebuild the review on every edit; then test changing each material field after opening review, including a draft with an existing photo. No production or customer data.
+
+**Current-task blocker:** YES for approval of the publication flow; NO for read-only prototype audit.
+
+**Authorization / implementation:**
+- Owner fix approval: NOT REQUESTED
+- Branch: `prototype/property-diary-lab-v1`
+- PR: #26 (Draft)
+- QA: Source-path audit; end-to-end browser reproduction still open
+- Owner merge approval: NO
+- Merge commit: none
+- Live verification: not applicable
+
+---
+
+## ISSUE-013 — Progress entry reaches final review without the required photo
+
+**Status:** CONFIRMED IN DRAFT, NOT MERGED  
+**Category:** Property diary / field-entry usability  
+**Discovered during:** 2026-10-25 browser audit  
+**Affected paths/pages:** `prototypes/property-diary-lab.html` in Draft PR #26.
+
+**Evidence / reproduction:** In the demo owner view, enter a progress text with no image, then choose “Преглед преди публикуване”. The preview opens. Only after “Публикувай записа” does the code reject it with “За публикуване на свършена работа добави поне една снимка.” No record was published.
+
+**Risk / impact:** A worker reaches what looks like the final confirmation before learning a mandatory item is missing. On a phone at the job site this costs time and weakens confidence in the flow.
+
+**Safe proposed next step:** Validate the photo and selected agreed work before entering review; focus the relevant field and state the requirement. Retest with a new progress entry, an existing photo in a draft, and a question-for-conversation record where a photo is optional.
+
+**Current-task blocker:** NO for reviewing the Draft; YES for accepting the owner publication flow as polished.
+
+**Authorization / implementation:**
+- Owner fix approval: NOT REQUESTED
+- Branch: `prototype/property-diary-lab-v1`
+- PR: #26 (Draft)
+- QA: Browser reproduction; publishing was correctly blocked
+- Owner merge approval: NO
+- Merge commit: none
+- Live verification: not applicable
+
+---
+
+## ISSUE-014 — In-memory published state precedes confirmed local storage
+
+**Status:** DISCOVERED IN DRAFT, NOT MERGED  
+**Category:** Property diary / persistence and failure handling  
+**Discovered during:** 2026-10-25 source audit  
+**Affected paths/pages:** `prototypes/property-diary-lab.html` in Draft PR #26.
+
+**Evidence / reproduction:** `publish(e)` changes the entry to `published`, writes it into `state.entries`, then awaits `persist()`. If IndexedDB rejects the write, the catch displays an error but does not restore the prior in-memory state. A storage-failure reproduction remains open.
+
+**Risk / impact:** The simulated client view may show a newly published entry until reload even though that record was not saved. Several large photos increase the chance of a storage failure. The prototype remains local and must not hold customer data.
+
+**Safe proposed next step:** Make publication transactional from the UI perspective: retain the previous state, persist successfully, then present success; on failure restore the previous state and show a clear retry path. Simulate a rejected storage write and reload as QA.
+
+**Current-task blocker:** YES for any claim of reliable publication; NO for read-only UX discussion.
+
+**Authorization / implementation:**
+- Owner fix approval: NOT REQUESTED
+- Branch: `prototype/property-diary-lab-v1`
+- PR: #26 (Draft)
+- QA: Source-path audit; failure reproduction pending
+- Owner merge approval: NO
+- Merge commit: none
+- Live verification: not applicable
+
+---
+
 ## New issue template
 
 ### ISSUE-XXX — Short title
