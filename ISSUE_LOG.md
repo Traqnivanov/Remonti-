@@ -360,7 +360,7 @@ In a separate safe branch:
 
 ## ISSUE-012 — Publish review can become stale while the form remains editable
 
-**Status:** DISCOVERED IN DRAFT, NOT MERGED  
+**Status:** RESOLVED IN DRAFT, NOT MERGED
 **Category:** Property diary / publication accuracy  
 **Discovered during:** 2026-10-25 criteria audit  
 **Affected paths/pages:** `prototypes/property-diary-lab.html` in Draft PR #26.
@@ -374,19 +374,22 @@ In a separate safe branch:
 **Current-task blocker:** YES for approval of the publication flow; NO for read-only prototype audit.
 
 **Authorization / implementation:**
-- Owner fix approval: NOT REQUESTED
+- Owner fix approval: 2026-11-09 `Ок, работи` after criteria audit
 - Branch: `prototype/property-diary-lab-v1`
 - PR: #26 (Draft)
-- QA: Source-path audit; end-to-end browser reproduction still open
+- QA: Source-path audit and edited-preview browser check; photo-backed draft and phone check open
+- Draft fix commit: `c5e6c06fe526385ec77205928848298354f904c7`
 - Owner merge approval: NO
 - Merge commit: none
 - Live verification: not applicable
 
+
+**Draft resolution, 2026-11-09:** Editing the entry form now closes and invalidates an open review. A new submit builds a fresh preview. Changing the test question text while its preview was open removed that preview; the next preview displayed the edited text. Draft review still needs a photo-backed field test on a phone.
 ---
 
 ## ISSUE-013 — Progress entry reaches final review without the required photo
 
-**Status:** CONFIRMED IN DRAFT, NOT MERGED  
+**Status:** RESOLVED IN DRAFT, NOT MERGED
 **Category:** Property diary / field-entry usability  
 **Discovered during:** 2026-10-25 browser audit  
 **Affected paths/pages:** `prototypes/property-diary-lab.html` in Draft PR #26.
@@ -400,19 +403,22 @@ In a separate safe branch:
 **Current-task blocker:** NO for reviewing the Draft; YES for accepting the owner publication flow as polished.
 
 **Authorization / implementation:**
-- Owner fix approval: NOT REQUESTED
+- Owner fix approval: 2026-11-09 `Ок, работи` after criteria audit
 - Branch: `prototype/property-diary-lab-v1`
 - PR: #26 (Draft)
-- QA: Browser reproduction; publishing was correctly blocked
+- QA: Browser no-photo pre-review block and photo-optional question publish; phone/existing-photo draft check open
+- Draft fix commit: `c5e6c06fe526385ec77205928848298354f904c7`
 - Owner merge approval: NO
 - Merge commit: none
 - Live verification: not applicable
 
+
+**Draft resolution, 2026-11-09:** Progress validation now runs before opening review and focuses the missing photo or work field. Browser QA: progress text without photo remained on the form with the error and focus on the photo picker; a question for conversation without photo still reached review and published successfully. Existing-photo draft and phone QA remain open.
 ---
 
 ## ISSUE-014 — In-memory published state precedes confirmed local storage
 
-**Status:** DISCOVERED IN DRAFT, NOT MERGED  
+**Status:** RESOLVED IN DRAFT, NOT MERGED
 **Category:** Property diary / persistence and failure handling  
 **Discovered during:** 2026-10-25 source audit  
 **Affected paths/pages:** `prototypes/property-diary-lab.html` in Draft PR #26.
@@ -426,10 +432,39 @@ In a separate safe branch:
 **Current-task blocker:** YES for any claim of reliable publication; NO for read-only UX discussion.
 
 **Authorization / implementation:**
+- Owner fix approval: 2026-11-09 `Ок, работи` after criteria audit
+- Branch: `prototype/property-diary-lab-v1`
+- PR: #26 (Draft)
+- QA: Failure and transaction-completion tests; browser publish/reload success; browser quota failure not reproduced
+- Draft fix commit: `c5e6c06fe526385ec77205928848298354f904c7`
+- Owner merge approval: NO
+- Merge commit: none
+- Live verification: not applicable
+
+
+**Draft resolution, 2026-11-09:** Publishing prepares a separate next-state snapshot, waits for IndexedDB transaction completion, then replaces the visible state. An isolated failure-path test rejected storage and confirmed the previous state and draft stayed unchanged; a completion/abort test checked transaction semantics. Browser QA published a test question and confirmed it after reload. This remains a local-only prototype, not reliable real-client storage.
+---
+
+## ISSUE-015 — Other local writes can appear saved after a failed transaction
+
+**Status:** DISCOVERED IN DRAFT, NOT MERGED  
+**Category:** Property diary / draft and setup persistence  
+**Discovered during:** 2026-11-09 follow-up implementation review  
+**Affected paths/pages:** `prototypes/property-diary-lab.html` in Draft PR #26.
+
+**Evidence / reproduction:** The draft-save handler and several project/assignment setup handlers mutate `state` before awaiting `persist()`. The publication path was corrected in commit `c5e6c06fe526385ec77205928848298354f904c7`, but these other paths still retain in-memory changes if the transaction rejects. A forced failure test for these paths is pending.
+
+**Risk / impact:** The owner could see a draft or agreed task in the current tab that disappears after reload. The prototype must not store real customer data.
+
+**Safe proposed next step:** Review all remaining write paths together, commit only after successful storage, and test quota/abort failures in addition to ordinary reload. Keep this outside the current three-issue publication fix scope until separately reviewed.
+
+**Current-task blocker:** NO for Draft publication-flow QA; YES for claiming the prototype as reliable storage.
+
+**Authorization / implementation:**
 - Owner fix approval: NOT REQUESTED
 - Branch: `prototype/property-diary-lab-v1`
 - PR: #26 (Draft)
-- QA: Source-path audit; failure reproduction pending
+- QA: Source-path review only
 - Owner merge approval: NO
 - Merge commit: none
 - Live verification: not applicable
